@@ -1,0 +1,1271 @@
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"PWM_UNFOLD_B_PM.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 E0000000 		.text
+  20      02007A00 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.bss
+  24              		.align	2
+  25              	PWM_UNFOLD_B_backup:
+  26 0000 00000000 		.space	12
+  26      00000000 
+  26      00000000 
+  27              		.section	.text.PWM_UNFOLD_B_SaveConfig,"ax",%progbits
+  28              		.align	2
+  29              		.global	PWM_UNFOLD_B_SaveConfig
+  30              		.thumb
+  31              		.thumb_func
+  32              		.type	PWM_UNFOLD_B_SaveConfig, %function
+  33              	PWM_UNFOLD_B_SaveConfig:
+  34              	.LFB0:
+  35              		.file 1 ".\\Generated_Source\\PSoC5\\PWM_UNFOLD_B_PM.c"
+   1:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * File Name: PWM_UNFOLD_B_PM.c
+   3:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Version 2.40
+   4:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+   5:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Description:
+   6:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  This file provides the power management source code to API for the
+   7:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  PWM.
+   8:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+   9:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Note:
+  10:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+  11:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *******************************************************************************/
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 2
+
+
+  17:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** #include "PWM_UNFOLD_B.h"
+  19:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+  20:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** static PWM_UNFOLD_B_backupStruct PWM_UNFOLD_B_backup;
+  21:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+  22:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+  23:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** /*******************************************************************************
+  24:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Function Name: PWM_UNFOLD_B_SaveConfig
+  25:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** ********************************************************************************
+  26:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+  27:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Summary:
+  28:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  Saves the current user configuration of the component.
+  29:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  
+  30:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Parameters:  
+  31:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+  32:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+  33:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Return: 
+  34:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+  35:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+  36:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Global variables:
+  37:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  PWM_UNFOLD_B_backup:  Variables of this global structure are modified to 
+  38:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  store the values of non retention configuration registers when Sleep() API is 
+  39:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  called.
+  40:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+  41:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** void PWM_UNFOLD_B_SaveConfig(void) 
+  43:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** {
+  36              		.loc 1 43 0
+  37              		.cfi_startproc
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 1, uses_anonymous_args = 0
+  40 0000 80B5     		push	{r7, lr}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 8
+  43 0002 00AF     		add	r7, sp, #0
+  44              		.cfi_offset 14, -4
+  45              		.cfi_offset 7, -8
+  46              	.LCFI1:
+  47              		.cfi_def_cfa_register 7
+  44:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     
+  45:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     #if(!PWM_UNFOLD_B_UsingFixedFunction)
+  46:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #if (CY_UDB_V0)
+  47:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             PWM_UNFOLD_B_backup.PWMUdb = PWM_UNFOLD_B_ReadCounter();
+  48              		.loc 1 47 0
+  49 0004 FFF7FEFF 		bl	PWM_UNFOLD_B_ReadCounter
+  50 0008 0346     		mov	r3, r0
+  51 000a 1A46     		mov	r2, r3
+  52 000c 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+  53 0010 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+  54 0014 5A80     		strh	r2, [r3, #2]	@ movhi
+  48:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             PWM_UNFOLD_B_backup.PWMPeriod = PWM_UNFOLD_B_ReadPeriod();
+  55              		.loc 1 48 0
+  56 0016 FFF7FEFF 		bl	PWM_UNFOLD_B_ReadPeriod
+  57 001a 0346     		mov	r3, r0
+  58 001c 1A46     		mov	r2, r3
+  59 001e 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+  60 0022 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 3
+
+
+  61 0026 9A80     		strh	r2, [r3, #4]	@ movhi
+  49:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if (PWM_UNFOLD_B_UseStatus)
+  50:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.InterruptMaskValue = PWM_UNFOLD_B_STATUS_MASK;
+  62              		.loc 1 50 0
+  63 0028 46F28453 		movw	r3, #:lower16:1073767812
+  64 002c C4F20003 		movt	r3, #:upper16:1073767812
+  65 0030 1B78     		ldrb	r3, [r3, #0]
+  66 0032 DAB2     		uxtb	r2, r3
+  67 0034 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+  68 0038 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+  69 003c 9A71     		strb	r2, [r3, #6]
+  51:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (PWM_UNFOLD_B_UseStatus) */
+  52:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             
+  53:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if(PWM_UNFOLD_B_UseOneCompareMode)
+  54:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.PWMCompareValue = PWM_UNFOLD_B_ReadCompare();
+  70              		.loc 1 54 0
+  71 003e FFF7FEFF 		bl	PWM_UNFOLD_B_ReadCompare
+  72 0042 0346     		mov	r3, r0
+  73 0044 1A46     		mov	r2, r3
+  74 0046 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+  75 004a C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+  76 004e 1A81     		strh	r2, [r3, #8]	@ movhi
+  55:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #else
+  56:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.PWMCompareValue1 = PWM_UNFOLD_B_ReadCompare1();
+  57:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.PWMCompareValue2 = PWM_UNFOLD_B_ReadCompare2();
+  58:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (PWM_UNFOLD_B_UseOneCompareMode) */
+  59:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             
+  60:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****            #if(PWM_UNFOLD_B_DeadBandUsed)
+  61:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.PWMdeadBandValue = PWM_UNFOLD_B_ReadDeadTime();
+  77              		.loc 1 61 0
+  78 0050 FFF7FEFF 		bl	PWM_UNFOLD_B_ReadDeadTime
+  79 0054 0346     		mov	r3, r0
+  80 0056 1A46     		mov	r2, r3
+  81 0058 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+  82 005c C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+  83 0060 9A72     		strb	r2, [r3, #10]
+  62:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (PWM_UNFOLD_B_DeadBandUsed) */
+  63:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****           
+  64:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if ( PWM_UNFOLD_B_KillModeMinTime)
+  65:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.PWMKillCounterPeriod = PWM_UNFOLD_B_ReadKillTime();
+  66:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* ( PWM_UNFOLD_B_KillModeMinTime) */
+  67:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #endif /* (CY_UDB_V0) */
+  68:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         
+  69:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #if (CY_UDB_V1)
+  70:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if(!PWM_UNFOLD_B_PWMModeIsCenterAligned)
+  71:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.PWMPeriod = PWM_UNFOLD_B_ReadPeriod();
+  72:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (!PWM_UNFOLD_B_PWMModeIsCenterAligned) */
+  73:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             PWM_UNFOLD_B_backup.PWMUdb = PWM_UNFOLD_B_ReadCounter();
+  74:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if (PWM_UNFOLD_B_UseStatus)
+  75:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.InterruptMaskValue = PWM_UNFOLD_B_STATUS_MASK;
+  76:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (PWM_UNFOLD_B_UseStatus) */
+  77:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             
+  78:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if(PWM_UNFOLD_B_DeadBandMode == PWM_UNFOLD_B__B_PWM__DBM_256_CLOCKS || \
+  79:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_DeadBandMode == PWM_UNFOLD_B__B_PWM__DBM_2_4_CLOCKS)
+  80:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_backup.PWMdeadBandValue = PWM_UNFOLD_B_ReadDeadTime();
+  81:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /*  deadband count is either 2-4 clocks or 256 clocks */
+  82:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 4
+
+
+  83:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if(PWM_UNFOLD_B_KillModeMinTime)
+  84:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                  PWM_UNFOLD_B_backup.PWMKillCounterPeriod = PWM_UNFOLD_B_ReadKillTime();
+  85:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (PWM_UNFOLD_B_KillModeMinTime) */
+  86:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #endif /* (CY_UDB_V1) */
+  87:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         
+  88:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #if(PWM_UNFOLD_B_UseControl)
+  89:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             PWM_UNFOLD_B_backup.PWMControlRegister = PWM_UNFOLD_B_ReadControlRegister();
+  84              		.loc 1 89 0
+  85 0062 FFF7FEFF 		bl	PWM_UNFOLD_B_ReadControlRegister
+  86 0066 0346     		mov	r3, r0
+  87 0068 1A46     		mov	r2, r3
+  88 006a 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+  89 006e C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+  90 0072 DA72     		strb	r2, [r3, #11]
+  90:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #endif /* (PWM_UNFOLD_B_UseControl) */
+  91:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     #endif  /* (!PWM_UNFOLD_B_UsingFixedFunction) */
+  92:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** }
+  91              		.loc 1 92 0
+  92 0074 80BD     		pop	{r7, pc}
+  93              		.cfi_endproc
+  94              	.LFE0:
+  95              		.size	PWM_UNFOLD_B_SaveConfig, .-PWM_UNFOLD_B_SaveConfig
+  96 0076 00BF     		.section	.text.PWM_UNFOLD_B_RestoreConfig,"ax",%progbits
+  97              		.align	2
+  98              		.global	PWM_UNFOLD_B_RestoreConfig
+  99              		.thumb
+ 100              		.thumb_func
+ 101              		.type	PWM_UNFOLD_B_RestoreConfig, %function
+ 102              	PWM_UNFOLD_B_RestoreConfig:
+ 103              	.LFB1:
+  93:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+  94:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+  95:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** /*******************************************************************************
+  96:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Function Name: PWM_UNFOLD_B_RestoreConfig
+  97:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** ********************************************************************************
+  98:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * 
+  99:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Summary:
+ 100:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  Restores the current user configuration of the component.
+ 101:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 102:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Parameters:  
+ 103:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+ 104:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 105:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Return: 
+ 106:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+ 107:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 108:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Global variables:
+ 109:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  PWM_UNFOLD_B_backup:  Variables of this global structure are used to  
+ 110:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  restore the values of non retention registers on wakeup from sleep mode.
+ 111:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 112:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *******************************************************************************/
+ 113:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** void PWM_UNFOLD_B_RestoreConfig(void) 
+ 114:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** {
+ 104              		.loc 1 114 0
+ 105              		.cfi_startproc
+ 106              		@ args = 0, pretend = 0, frame = 8
+ 107              		@ frame_needed = 1, uses_anonymous_args = 0
+ 108 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 5
+
+
+ 109              	.LCFI2:
+ 110              		.cfi_def_cfa_offset 8
+ 111 0002 82B0     		sub	sp, sp, #8
+ 112              	.LCFI3:
+ 113              		.cfi_def_cfa_offset 16
+ 114 0004 00AF     		add	r7, sp, #0
+ 115              		.cfi_offset 14, -4
+ 116              		.cfi_offset 7, -8
+ 117              	.LCFI4:
+ 118              		.cfi_def_cfa_register 7
+ 115:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #if(!PWM_UNFOLD_B_UsingFixedFunction)
+ 116:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if (CY_UDB_V0)
+ 117:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 /* Interrupt State Backup for Critical Region*/
+ 118:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 uint8 PWM_UNFOLD_B_interruptState;
+ 119:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 /* Enter Critical Region*/
+ 120:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_interruptState = CyEnterCriticalSection();
+ 119              		.loc 1 120 0
+ 120 0006 FFF7FEFF 		bl	CyEnterCriticalSection
+ 121 000a 0346     		mov	r3, r0
+ 122 000c FB71     		strb	r3, [r7, #7]
+ 121:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if (PWM_UNFOLD_B_UseStatus)
+ 122:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     /* Use the interrupt output of the status register for IRQ output */
+ 123:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_STATUS_AUX_CTRL |= PWM_UNFOLD_B_STATUS_ACTL_INT_EN_MASK;
+ 123              		.loc 1 123 0
+ 124 000e 46F29453 		movw	r3, #:lower16:1073767828
+ 125 0012 C4F20003 		movt	r3, #:upper16:1073767828
+ 126 0016 46F29452 		movw	r2, #:lower16:1073767828
+ 127 001a C4F20002 		movt	r2, #:upper16:1073767828
+ 128 001e 1278     		ldrb	r2, [r2, #0]
+ 129 0020 D2B2     		uxtb	r2, r2
+ 130 0022 42F01002 		orr	r2, r2, #16
+ 131 0026 D2B2     		uxtb	r2, r2
+ 132 0028 1A70     		strb	r2, [r3, #0]
+ 124:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     
+ 125:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_STATUS_MASK = PWM_UNFOLD_B_backup.InterruptMaskValue;
+ 133              		.loc 1 125 0
+ 134 002a 46F28453 		movw	r3, #:lower16:1073767812
+ 135 002e C4F20003 		movt	r3, #:upper16:1073767812
+ 136 0032 40F20002 		movw	r2, #:lower16:PWM_UNFOLD_B_backup
+ 137 0036 C0F20002 		movt	r2, #:upper16:PWM_UNFOLD_B_backup
+ 138 003a 9279     		ldrb	r2, [r2, #6]	@ zero_extendqisi2
+ 139 003c 1A70     		strb	r2, [r3, #0]
+ 126:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* (PWM_UNFOLD_B_UseStatus) */
+ 127:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 
+ 128:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if (PWM_UNFOLD_B_Resolution == 8)
+ 129:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     /* Set FIFO 0 to 1 byte register for period*/
+ 130:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_AUX_CONTROLDP0 |= (PWM_UNFOLD_B_AUX_CTRL_FIFO0_CLR);
+ 131:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #else /* (PWM_UNFOLD_B_Resolution == 16)*/
+ 132:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     /* Set FIFO 0 to 1 byte register for period */
+ 133:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_AUX_CONTROLDP0 |= (PWM_UNFOLD_B_AUX_CTRL_FIFO0_CLR);
+ 140              		.loc 1 133 0
+ 141 003e 46F29453 		movw	r3, #:lower16:1073767828
+ 142 0042 C4F20003 		movt	r3, #:upper16:1073767828
+ 143 0046 46F29452 		movw	r2, #:lower16:1073767828
+ 144 004a C4F20002 		movt	r2, #:upper16:1073767828
+ 145 004e 1278     		ldrb	r2, [r2, #0]
+ 146 0050 D2B2     		uxtb	r2, r2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 6
+
+
+ 147 0052 42F00102 		orr	r2, r2, #1
+ 148 0056 D2B2     		uxtb	r2, r2
+ 149 0058 1A70     		strb	r2, [r3, #0]
+ 134:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_AUX_CONTROLDP1 |= (PWM_UNFOLD_B_AUX_CTRL_FIFO0_CLR);
+ 150              		.loc 1 134 0
+ 151 005a 46F29553 		movw	r3, #:lower16:1073767829
+ 152 005e C4F20003 		movt	r3, #:upper16:1073767829
+ 153 0062 46F29552 		movw	r2, #:lower16:1073767829
+ 154 0066 C4F20002 		movt	r2, #:upper16:1073767829
+ 155 006a 1278     		ldrb	r2, [r2, #0]
+ 156 006c D2B2     		uxtb	r2, r2
+ 157 006e 42F00102 		orr	r2, r2, #1
+ 158 0072 D2B2     		uxtb	r2, r2
+ 159 0074 1A70     		strb	r2, [r3, #0]
+ 135:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* (PWM_UNFOLD_B_Resolution == 8) */
+ 136:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 /* Exit Critical Region*/
+ 137:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 CyExitCriticalSection(PWM_UNFOLD_B_interruptState);
+ 160              		.loc 1 137 0
+ 161 0076 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 162 0078 1846     		mov	r0, r3
+ 163 007a FFF7FEFF 		bl	CyExitCriticalSection
+ 138:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 
+ 139:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_WriteCounter(PWM_UNFOLD_B_backup.PWMUdb);
+ 164              		.loc 1 139 0
+ 165 007e 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 166 0082 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 167 0086 5B88     		ldrh	r3, [r3, #2]
+ 168 0088 1846     		mov	r0, r3
+ 169 008a FFF7FEFF 		bl	PWM_UNFOLD_B_WriteCounter
+ 140:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_WritePeriod(PWM_UNFOLD_B_backup.PWMPeriod);
+ 170              		.loc 1 140 0
+ 171 008e 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 172 0092 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 173 0096 9B88     		ldrh	r3, [r3, #4]
+ 174 0098 1846     		mov	r0, r3
+ 175 009a FFF7FEFF 		bl	PWM_UNFOLD_B_WritePeriod
+ 141:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 
+ 142:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if(PWM_UNFOLD_B_UseOneCompareMode)
+ 143:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WriteCompare(PWM_UNFOLD_B_backup.PWMCompareValue);
+ 176              		.loc 1 143 0
+ 177 009e 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 178 00a2 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 179 00a6 1B89     		ldrh	r3, [r3, #8]
+ 180 00a8 1846     		mov	r0, r3
+ 181 00aa FFF7FEFF 		bl	PWM_UNFOLD_B_WriteCompare
+ 144:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #else
+ 145:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WriteCompare1(PWM_UNFOLD_B_backup.PWMCompareValue1);
+ 146:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WriteCompare2(PWM_UNFOLD_B_backup.PWMCompareValue2);
+ 147:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* (PWM_UNFOLD_B_UseOneCompareMode) */
+ 148:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 
+ 149:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                #if(PWM_UNFOLD_B_DeadBandMode == PWM_UNFOLD_B__B_PWM__DBM_256_CLOCKS || \
+ 150:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                    PWM_UNFOLD_B_DeadBandMode == PWM_UNFOLD_B__B_PWM__DBM_2_4_CLOCKS)
+ 151:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WriteDeadTime(PWM_UNFOLD_B_backup.PWMdeadBandValue);
+ 182              		.loc 1 151 0
+ 183 00ae 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 184 00b2 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 185 00b6 9B7A     		ldrb	r3, [r3, #10]	@ zero_extendqisi2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 7
+
+
+ 186 00b8 1846     		mov	r0, r3
+ 187 00ba FFF7FEFF 		bl	PWM_UNFOLD_B_WriteDeadTime
+ 152:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* deadband count is either 2-4 clocks or 256 clocks */
+ 153:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             
+ 154:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if ( PWM_UNFOLD_B_KillModeMinTime)
+ 155:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WriteKillTime(PWM_UNFOLD_B_backup.PWMKillCounterPeriod);
+ 156:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* ( PWM_UNFOLD_B_KillModeMinTime) */
+ 157:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (CY_UDB_V0) */
+ 158:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             
+ 159:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if (CY_UDB_V1)
+ 160:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if(!PWM_UNFOLD_B_PWMModeIsCenterAligned)
+ 161:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WritePeriod(PWM_UNFOLD_B_backup.PWMPeriod);
+ 162:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* (!PWM_UNFOLD_B_PWMModeIsCenterAligned) */
+ 163:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_WriteCounter(PWM_UNFOLD_B_backup.PWMUdb);
+ 164:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if (PWM_UNFOLD_B_UseStatus)
+ 165:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_STATUS_MASK = PWM_UNFOLD_B_backup.InterruptMaskValue;
+ 166:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* (PWM_UNFOLD_B_UseStatus) */
+ 167:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 
+ 168:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if(PWM_UNFOLD_B_DeadBandMode == PWM_UNFOLD_B__B_PWM__DBM_256_CLOCKS || \
+ 169:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_DeadBandMode == PWM_UNFOLD_B__B_PWM__DBM_2_4_CLOCKS)
+ 170:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WriteDeadTime(PWM_UNFOLD_B_backup.PWMdeadBandValue);
+ 171:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* deadband count is either 2-4 clocks or 256 clocks */
+ 172:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 
+ 173:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #if(PWM_UNFOLD_B_KillModeMinTime)
+ 174:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                     PWM_UNFOLD_B_WriteKillTime(PWM_UNFOLD_B_backup.PWMKillCounterPeriod);
+ 175:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 #endif /* (PWM_UNFOLD_B_KillModeMinTime) */
+ 176:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (CY_UDB_V1) */
+ 177:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             
+ 178:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #if(PWM_UNFOLD_B_UseControl)
+ 179:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****                 PWM_UNFOLD_B_WriteControlRegister(PWM_UNFOLD_B_backup.PWMControlRegister); 
+ 188              		.loc 1 179 0
+ 189 00be 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 190 00c2 C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 191 00c6 DB7A     		ldrb	r3, [r3, #11]	@ zero_extendqisi2
+ 192 00c8 1846     		mov	r0, r3
+ 193 00ca FFF7FEFF 		bl	PWM_UNFOLD_B_WriteControlRegister
+ 180:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             #endif /* (PWM_UNFOLD_B_UseControl) */
+ 181:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         #endif  /* (!PWM_UNFOLD_B_UsingFixedFunction) */
+ 182:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     }
+ 194              		.loc 1 182 0
+ 195 00ce 07F10807 		add	r7, r7, #8
+ 196 00d2 BD46     		mov	sp, r7
+ 197 00d4 80BD     		pop	{r7, pc}
+ 198              		.cfi_endproc
+ 199              	.LFE1:
+ 200              		.size	PWM_UNFOLD_B_RestoreConfig, .-PWM_UNFOLD_B_RestoreConfig
+ 201 00d6 00BF     		.section	.text.PWM_UNFOLD_B_Sleep,"ax",%progbits
+ 202              		.align	2
+ 203              		.global	PWM_UNFOLD_B_Sleep
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.type	PWM_UNFOLD_B_Sleep, %function
+ 207              	PWM_UNFOLD_B_Sleep:
+ 208              	.LFB2:
+ 183:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+ 184:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+ 185:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** /*******************************************************************************
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 8
+
+
+ 186:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Function Name: PWM_UNFOLD_B_Sleep
+ 187:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** ********************************************************************************
+ 188:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * 
+ 189:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Summary:
+ 190:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  Disables block's operation and saves the user configuration. Should be called 
+ 191:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  just prior to entering sleep.
+ 192:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  
+ 193:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Parameters:  
+ 194:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+ 195:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 196:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Return: 
+ 197:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+ 198:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 199:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Global variables:
+ 200:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  PWM_UNFOLD_B_backup.PWMEnableState:  Is modified depending on the enable 
+ 201:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  state of the block before entering sleep mode.
+ 202:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 203:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *******************************************************************************/
+ 204:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** void PWM_UNFOLD_B_Sleep(void) 
+ 205:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** {
+ 209              		.loc 1 205 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 1, uses_anonymous_args = 0
+ 213 0000 80B5     		push	{r7, lr}
+ 214              	.LCFI5:
+ 215              		.cfi_def_cfa_offset 8
+ 216 0002 00AF     		add	r7, sp, #0
+ 217              		.cfi_offset 14, -4
+ 218              		.cfi_offset 7, -8
+ 219              	.LCFI6:
+ 220              		.cfi_def_cfa_register 7
+ 206:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     #if(PWM_UNFOLD_B_UseControl)
+ 207:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         if(PWM_UNFOLD_B_CTRL_ENABLE == (PWM_UNFOLD_B_CONTROL & PWM_UNFOLD_B_CTRL_ENABLE))
+ 221              		.loc 1 207 0
+ 222 0004 46F27553 		movw	r3, #:lower16:1073767797
+ 223 0008 C4F20003 		movt	r3, #:upper16:1073767797
+ 224 000c 1B78     		ldrb	r3, [r3, #0]
+ 225 000e DBB2     		uxtb	r3, r3
+ 226 0010 5BB2     		sxtb	r3, r3
+ 227 0012 002B     		cmp	r3, #0
+ 228 0014 07DA     		bge	.L6
+ 208:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         {
+ 209:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             /*Component is enabled */
+ 210:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             PWM_UNFOLD_B_backup.PWMEnableState = 1u;
+ 229              		.loc 1 210 0
+ 230 0016 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 231 001a C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 232 001e 4FF00102 		mov	r2, #1
+ 233 0022 1A70     		strb	r2, [r3, #0]
+ 234 0024 06E0     		b	.L7
+ 235              	.L6:
+ 211:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         }
+ 212:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         else
+ 213:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         {
+ 214:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             /* Component is disabled */
+ 215:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****             PWM_UNFOLD_B_backup.PWMEnableState = 0u;
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 9
+
+
+ 236              		.loc 1 215 0
+ 237 0026 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 238 002a C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 239 002e 4FF00002 		mov	r2, #0
+ 240 0032 1A70     		strb	r2, [r3, #0]
+ 241              	.L7:
+ 216:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         }
+ 217:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     #endif /* (PWM_UNFOLD_B_UseControl) */
+ 218:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+ 219:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     /* Stop component */
+ 220:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     PWM_UNFOLD_B_Stop();
+ 242              		.loc 1 220 0
+ 243 0034 FFF7FEFF 		bl	PWM_UNFOLD_B_Stop
+ 221:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     
+ 222:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     /* Save registers configuration */
+ 223:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     PWM_UNFOLD_B_SaveConfig();
+ 244              		.loc 1 223 0
+ 245 0038 FFF7FEFF 		bl	PWM_UNFOLD_B_SaveConfig
+ 224:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** }
+ 246              		.loc 1 224 0
+ 247 003c 80BD     		pop	{r7, pc}
+ 248              		.cfi_endproc
+ 249              	.LFE2:
+ 250              		.size	PWM_UNFOLD_B_Sleep, .-PWM_UNFOLD_B_Sleep
+ 251 003e 00BF     		.section	.text.PWM_UNFOLD_B_Wakeup,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	PWM_UNFOLD_B_Wakeup
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.type	PWM_UNFOLD_B_Wakeup, %function
+ 257              	PWM_UNFOLD_B_Wakeup:
+ 258              	.LFB3:
+ 225:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+ 226:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** 
+ 227:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** /*******************************************************************************
+ 228:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Function Name: PWM_UNFOLD_B_Wakeup
+ 229:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** ********************************************************************************
+ 230:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * 
+ 231:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Summary:
+ 232:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  Restores and enables the user configuration. Should be called just after 
+ 233:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  awaking from sleep.
+ 234:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  
+ 235:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Parameters:  
+ 236:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+ 237:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 238:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Return: 
+ 239:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  None
+ 240:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 241:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** * Global variables:
+ 242:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  PWM_UNFOLD_B_backup.pwmEnable:  Is used to restore the enable state of 
+ 243:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *  block on wakeup from sleep mode.
+ 244:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *
+ 245:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** *******************************************************************************/
+ 246:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** void PWM_UNFOLD_B_Wakeup(void) 
+ 247:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** {
+ 259              		.loc 1 247 0
+ 260              		.cfi_startproc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 10
+
+
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 1, uses_anonymous_args = 0
+ 263 0000 80B5     		push	{r7, lr}
+ 264              	.LCFI7:
+ 265              		.cfi_def_cfa_offset 8
+ 266 0002 00AF     		add	r7, sp, #0
+ 267              		.cfi_offset 14, -4
+ 268              		.cfi_offset 7, -8
+ 269              	.LCFI8:
+ 270              		.cfi_def_cfa_register 7
+ 248:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****      /* Restore registers values */
+ 249:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     PWM_UNFOLD_B_RestoreConfig();
+ 271              		.loc 1 249 0
+ 272 0004 FFF7FEFF 		bl	PWM_UNFOLD_B_RestoreConfig
+ 250:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     
+ 251:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     if(PWM_UNFOLD_B_backup.PWMEnableState != 0u)
+ 273              		.loc 1 251 0
+ 274 0008 40F20003 		movw	r3, #:lower16:PWM_UNFOLD_B_backup
+ 275 000c C0F20003 		movt	r3, #:upper16:PWM_UNFOLD_B_backup
+ 276 0010 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 277 0012 002B     		cmp	r3, #0
+ 278 0014 01D0     		beq	.L11
+ 252:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     {
+ 253:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         /* Enable component's operation */
+ 254:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****         PWM_UNFOLD_B_Enable();
+ 279              		.loc 1 254 0
+ 280 0016 FFF7FEFF 		bl	PWM_UNFOLD_B_Enable
+ 281              	.L11:
+ 255:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     } /* Do nothing if component's block was disabled before */
+ 256:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c ****     
+ 257:.\Generated_Source\PSoC5/PWM_UNFOLD_B_PM.c **** }
+ 282              		.loc 1 257 0
+ 283 001a 80BD     		pop	{r7, pc}
+ 284              		.cfi_endproc
+ 285              	.LFE3:
+ 286              		.size	PWM_UNFOLD_B_Wakeup, .-PWM_UNFOLD_B_Wakeup
+ 287              		.text
+ 288              	.Letext0:
+ 289              		.section	.debug_loc,"",%progbits
+ 290              	.Ldebug_loc0:
+ 291              	.LLST0:
+ 292 0000 00000000 		.4byte	.LFB0
+ 293 0004 02000000 		.4byte	.LCFI0
+ 294 0008 0100     		.2byte	0x1
+ 295 000a 5D       		.byte	0x5d
+ 296 000b 02000000 		.4byte	.LCFI0
+ 297 000f 04000000 		.4byte	.LCFI1
+ 298 0013 0200     		.2byte	0x2
+ 299 0015 7D       		.byte	0x7d
+ 300 0016 08       		.sleb128 8
+ 301 0017 04000000 		.4byte	.LCFI1
+ 302 001b 76000000 		.4byte	.LFE0
+ 303 001f 0200     		.2byte	0x2
+ 304 0021 77       		.byte	0x77
+ 305 0022 08       		.sleb128 8
+ 306 0023 00000000 		.4byte	0x0
+ 307 0027 00000000 		.4byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 11
+
+
+ 308              	.LLST1:
+ 309 002b 00000000 		.4byte	.LFB1
+ 310 002f 02000000 		.4byte	.LCFI2
+ 311 0033 0100     		.2byte	0x1
+ 312 0035 5D       		.byte	0x5d
+ 313 0036 02000000 		.4byte	.LCFI2
+ 314 003a 04000000 		.4byte	.LCFI3
+ 315 003e 0200     		.2byte	0x2
+ 316 0040 7D       		.byte	0x7d
+ 317 0041 08       		.sleb128 8
+ 318 0042 04000000 		.4byte	.LCFI3
+ 319 0046 06000000 		.4byte	.LCFI4
+ 320 004a 0200     		.2byte	0x2
+ 321 004c 7D       		.byte	0x7d
+ 322 004d 10       		.sleb128 16
+ 323 004e 06000000 		.4byte	.LCFI4
+ 324 0052 D6000000 		.4byte	.LFE1
+ 325 0056 0200     		.2byte	0x2
+ 326 0058 77       		.byte	0x77
+ 327 0059 10       		.sleb128 16
+ 328 005a 00000000 		.4byte	0x0
+ 329 005e 00000000 		.4byte	0x0
+ 330              	.LLST2:
+ 331 0062 00000000 		.4byte	.LFB2
+ 332 0066 02000000 		.4byte	.LCFI5
+ 333 006a 0100     		.2byte	0x1
+ 334 006c 5D       		.byte	0x5d
+ 335 006d 02000000 		.4byte	.LCFI5
+ 336 0071 04000000 		.4byte	.LCFI6
+ 337 0075 0200     		.2byte	0x2
+ 338 0077 7D       		.byte	0x7d
+ 339 0078 08       		.sleb128 8
+ 340 0079 04000000 		.4byte	.LCFI6
+ 341 007d 3E000000 		.4byte	.LFE2
+ 342 0081 0200     		.2byte	0x2
+ 343 0083 77       		.byte	0x77
+ 344 0084 08       		.sleb128 8
+ 345 0085 00000000 		.4byte	0x0
+ 346 0089 00000000 		.4byte	0x0
+ 347              	.LLST3:
+ 348 008d 00000000 		.4byte	.LFB3
+ 349 0091 02000000 		.4byte	.LCFI7
+ 350 0095 0100     		.2byte	0x1
+ 351 0097 5D       		.byte	0x5d
+ 352 0098 02000000 		.4byte	.LCFI7
+ 353 009c 04000000 		.4byte	.LCFI8
+ 354 00a0 0200     		.2byte	0x2
+ 355 00a2 7D       		.byte	0x7d
+ 356 00a3 08       		.sleb128 8
+ 357 00a4 04000000 		.4byte	.LCFI8
+ 358 00a8 1C000000 		.4byte	.LFE3
+ 359 00ac 0200     		.2byte	0x2
+ 360 00ae 77       		.byte	0x77
+ 361 00af 08       		.sleb128 8
+ 362 00b0 00000000 		.4byte	0x0
+ 363 00b4 00000000 		.4byte	0x0
+ 364              		.file 2 ".\\Generated_Source\\PSoC5\\/cytypes.h"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 12
+
+
+ 365              		.file 3 ".\\Generated_Source\\PSoC5\\/PWM_UNFOLD_B.h"
+ 366              		.section	.debug_info
+ 367 0000 88010000 		.4byte	0x188
+ 368 0004 0200     		.2byte	0x2
+ 369 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 370 000a 04       		.byte	0x4
+ 371 000b 01       		.uleb128 0x1
+ 372 000c 8C010000 		.4byte	.LASF27
+ 373 0010 01       		.byte	0x1
+ 374 0011 C2010000 		.4byte	.LASF28
+ 375 0015 94000000 		.4byte	.LASF29
+ 376 0019 00000000 		.4byte	0x0
+ 377 001d 00000000 		.4byte	0x0
+ 378 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 379 0025 00000000 		.4byte	.Ldebug_line0
+ 380 0029 02       		.uleb128 0x2
+ 381 002a 01       		.byte	0x1
+ 382 002b 06       		.byte	0x6
+ 383 002c F6010000 		.4byte	.LASF0
+ 384 0030 02       		.uleb128 0x2
+ 385 0031 01       		.byte	0x1
+ 386 0032 08       		.byte	0x8
+ 387 0033 77000000 		.4byte	.LASF1
+ 388 0037 02       		.uleb128 0x2
+ 389 0038 02       		.byte	0x2
+ 390 0039 05       		.byte	0x5
+ 391 003a B8010000 		.4byte	.LASF2
+ 392 003e 02       		.uleb128 0x2
+ 393 003f 02       		.byte	0x2
+ 394 0040 07       		.byte	0x7
+ 395 0041 33000000 		.4byte	.LASF3
+ 396 0045 02       		.uleb128 0x2
+ 397 0046 04       		.byte	0x4
+ 398 0047 05       		.byte	0x5
+ 399 0048 ED010000 		.4byte	.LASF4
+ 400 004c 02       		.uleb128 0x2
+ 401 004d 04       		.byte	0x4
+ 402 004e 07       		.byte	0x7
+ 403 004f D8000000 		.4byte	.LASF5
+ 404 0053 02       		.uleb128 0x2
+ 405 0054 08       		.byte	0x8
+ 406 0055 05       		.byte	0x5
+ 407 0056 00000000 		.4byte	.LASF6
+ 408 005a 02       		.uleb128 0x2
+ 409 005b 08       		.byte	0x8
+ 410 005c 07       		.byte	0x7
+ 411 005d 62010000 		.4byte	.LASF7
+ 412 0061 03       		.uleb128 0x3
+ 413 0062 04       		.byte	0x4
+ 414 0063 05       		.byte	0x5
+ 415 0064 696E7400 		.ascii	"int\000"
+ 416 0068 02       		.uleb128 0x2
+ 417 0069 04       		.byte	0x4
+ 418 006a 07       		.byte	0x7
+ 419 006b 55010000 		.4byte	.LASF8
+ 420 006f 04       		.uleb128 0x4
+ 421 0070 EA000000 		.4byte	.LASF9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 13
+
+
+ 422 0074 02       		.byte	0x2
+ 423 0075 4C       		.byte	0x4c
+ 424 0076 30000000 		.4byte	0x30
+ 425 007a 04       		.uleb128 0x4
+ 426 007b 26010000 		.4byte	.LASF10
+ 427 007f 02       		.byte	0x2
+ 428 0080 4D       		.byte	0x4d
+ 429 0081 3E000000 		.4byte	0x3e
+ 430 0085 02       		.uleb128 0x2
+ 431 0086 04       		.byte	0x4
+ 432 0087 04       		.byte	0x4
+ 433 0088 60000000 		.4byte	.LASF11
+ 434 008c 02       		.uleb128 0x2
+ 435 008d 08       		.byte	0x8
+ 436 008e 04       		.byte	0x4
+ 437 008f 1F010000 		.4byte	.LASF12
+ 438 0093 02       		.uleb128 0x2
+ 439 0094 01       		.byte	0x1
+ 440 0095 08       		.byte	0x8
+ 441 0096 98010000 		.4byte	.LASF13
+ 442 009a 05       		.uleb128 0x5
+ 443 009b 04       		.byte	0x4
+ 444 009c 07       		.byte	0x7
+ 445 009d 06       		.uleb128 0x6
+ 446 009e 0C       		.byte	0xc
+ 447 009f 03       		.byte	0x3
+ 448 00a0 69       		.byte	0x69
+ 449 00a1 08010000 		.4byte	0x108
+ 450 00a5 07       		.uleb128 0x7
+ 451 00a6 85000000 		.4byte	.LASF14
+ 452 00aa 03       		.byte	0x3
+ 453 00ab 6B       		.byte	0x6b
+ 454 00ac 6F000000 		.4byte	0x6f
+ 455 00b0 02       		.byte	0x2
+ 456 00b1 23       		.byte	0x23
+ 457 00b2 00       		.uleb128 0x0
+ 458 00b3 07       		.uleb128 0x7
+ 459 00b4 0E000000 		.4byte	.LASF15
+ 460 00b8 03       		.byte	0x3
+ 461 00b9 6F       		.byte	0x6f
+ 462 00ba 7A000000 		.4byte	0x7a
+ 463 00be 02       		.byte	0x2
+ 464 00bf 23       		.byte	0x23
+ 465 00c0 02       		.uleb128 0x2
+ 466 00c1 07       		.uleb128 0x7
+ 467 00c2 15000000 		.4byte	.LASF16
+ 468 00c6 03       		.byte	0x3
+ 469 00c7 70       		.byte	0x70
+ 470 00c8 7A000000 		.4byte	0x7a
+ 471 00cc 02       		.byte	0x2
+ 472 00cd 23       		.byte	0x23
+ 473 00ce 04       		.uleb128 0x4
+ 474 00cf 07       		.uleb128 0x7
+ 475 00d0 16020000 		.4byte	.LASF17
+ 476 00d4 03       		.byte	0x3
+ 477 00d5 72       		.byte	0x72
+ 478 00d6 6F000000 		.4byte	0x6f
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 14
+
+
+ 479 00da 02       		.byte	0x2
+ 480 00db 23       		.byte	0x23
+ 481 00dc 06       		.uleb128 0x6
+ 482 00dd 07       		.uleb128 0x7
+ 483 00de 2D010000 		.4byte	.LASF18
+ 484 00e2 03       		.byte	0x3
+ 485 00e3 75       		.byte	0x75
+ 486 00e4 7A000000 		.4byte	0x7a
+ 487 00e8 02       		.byte	0x2
+ 488 00e9 23       		.byte	0x23
+ 489 00ea 08       		.uleb128 0x8
+ 490 00eb 07       		.uleb128 0x7
+ 491 00ec 66000000 		.4byte	.LASF19
+ 492 00f0 03       		.byte	0x3
+ 493 00f1 7E       		.byte	0x7e
+ 494 00f2 6F000000 		.4byte	0x6f
+ 495 00f6 02       		.byte	0x2
+ 496 00f7 23       		.byte	0x23
+ 497 00f8 0A       		.uleb128 0xa
+ 498 00f9 07       		.uleb128 0x7
+ 499 00fa 0C010000 		.4byte	.LASF20
+ 500 00fe 03       		.byte	0x3
+ 501 00ff 9F       		.byte	0x9f
+ 502 0100 6F000000 		.4byte	0x6f
+ 503 0104 02       		.byte	0x2
+ 504 0105 23       		.byte	0x23
+ 505 0106 0B       		.uleb128 0xb
+ 506 0107 00       		.byte	0x0
+ 507 0108 04       		.uleb128 0x4
+ 508 0109 46000000 		.4byte	.LASF21
+ 509 010d 03       		.byte	0x3
+ 510 010e A4       		.byte	0xa4
+ 511 010f 9D000000 		.4byte	0x9d
+ 512 0113 08       		.uleb128 0x8
+ 513 0114 01       		.byte	0x1
+ 514 0115 3D010000 		.4byte	.LASF22
+ 515 0119 01       		.byte	0x1
+ 516 011a 2A       		.byte	0x2a
+ 517 011b 01       		.byte	0x1
+ 518 011c 00000000 		.4byte	.LFB0
+ 519 0120 76000000 		.4byte	.LFE0
+ 520 0124 00000000 		.4byte	.LLST0
+ 521 0128 09       		.uleb128 0x9
+ 522 0129 01       		.byte	0x1
+ 523 012a 9D010000 		.4byte	.LASF30
+ 524 012e 01       		.byte	0x1
+ 525 012f 71       		.byte	0x71
+ 526 0130 01       		.byte	0x1
+ 527 0131 00000000 		.4byte	.LFB1
+ 528 0135 D6000000 		.4byte	.LFE1
+ 529 0139 2B000000 		.4byte	.LLST1
+ 530 013d 50010000 		.4byte	0x150
+ 531 0141 0A       		.uleb128 0xa
+ 532 0142 F0000000 		.4byte	.LASF25
+ 533 0146 01       		.byte	0x1
+ 534 0147 76       		.byte	0x76
+ 535 0148 6F000000 		.4byte	0x6f
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 15
+
+
+ 536 014c 02       		.byte	0x2
+ 537 014d 91       		.byte	0x91
+ 538 014e 77       		.sleb128 -9
+ 539 014f 00       		.byte	0x0
+ 540 0150 08       		.uleb128 0x8
+ 541 0151 01       		.byte	0x1
+ 542 0152 79010000 		.4byte	.LASF23
+ 543 0156 01       		.byte	0x1
+ 544 0157 CC       		.byte	0xcc
+ 545 0158 01       		.byte	0x1
+ 546 0159 00000000 		.4byte	.LFB2
+ 547 015d 3E000000 		.4byte	.LFE2
+ 548 0161 62000000 		.4byte	.LLST2
+ 549 0165 08       		.uleb128 0x8
+ 550 0166 01       		.byte	0x1
+ 551 0167 1F000000 		.4byte	.LASF24
+ 552 016b 01       		.byte	0x1
+ 553 016c F6       		.byte	0xf6
+ 554 016d 01       		.byte	0x1
+ 555 016e 00000000 		.4byte	.LFB3
+ 556 0172 1C000000 		.4byte	.LFE3
+ 557 0176 8D000000 		.4byte	.LLST3
+ 558 017a 0A       		.uleb128 0xa
+ 559 017b 02020000 		.4byte	.LASF26
+ 560 017f 01       		.byte	0x1
+ 561 0180 14       		.byte	0x14
+ 562 0181 08010000 		.4byte	0x108
+ 563 0185 05       		.byte	0x5
+ 564 0186 03       		.byte	0x3
+ 565 0187 00000000 		.4byte	PWM_UNFOLD_B_backup
+ 566 018b 00       		.byte	0x0
+ 567              		.section	.debug_abbrev
+ 568 0000 01       		.uleb128 0x1
+ 569 0001 11       		.uleb128 0x11
+ 570 0002 01       		.byte	0x1
+ 571 0003 25       		.uleb128 0x25
+ 572 0004 0E       		.uleb128 0xe
+ 573 0005 13       		.uleb128 0x13
+ 574 0006 0B       		.uleb128 0xb
+ 575 0007 03       		.uleb128 0x3
+ 576 0008 0E       		.uleb128 0xe
+ 577 0009 1B       		.uleb128 0x1b
+ 578 000a 0E       		.uleb128 0xe
+ 579 000b 11       		.uleb128 0x11
+ 580 000c 01       		.uleb128 0x1
+ 581 000d 52       		.uleb128 0x52
+ 582 000e 01       		.uleb128 0x1
+ 583 000f 55       		.uleb128 0x55
+ 584 0010 06       		.uleb128 0x6
+ 585 0011 10       		.uleb128 0x10
+ 586 0012 06       		.uleb128 0x6
+ 587 0013 00       		.byte	0x0
+ 588 0014 00       		.byte	0x0
+ 589 0015 02       		.uleb128 0x2
+ 590 0016 24       		.uleb128 0x24
+ 591 0017 00       		.byte	0x0
+ 592 0018 0B       		.uleb128 0xb
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 16
+
+
+ 593 0019 0B       		.uleb128 0xb
+ 594 001a 3E       		.uleb128 0x3e
+ 595 001b 0B       		.uleb128 0xb
+ 596 001c 03       		.uleb128 0x3
+ 597 001d 0E       		.uleb128 0xe
+ 598 001e 00       		.byte	0x0
+ 599 001f 00       		.byte	0x0
+ 600 0020 03       		.uleb128 0x3
+ 601 0021 24       		.uleb128 0x24
+ 602 0022 00       		.byte	0x0
+ 603 0023 0B       		.uleb128 0xb
+ 604 0024 0B       		.uleb128 0xb
+ 605 0025 3E       		.uleb128 0x3e
+ 606 0026 0B       		.uleb128 0xb
+ 607 0027 03       		.uleb128 0x3
+ 608 0028 08       		.uleb128 0x8
+ 609 0029 00       		.byte	0x0
+ 610 002a 00       		.byte	0x0
+ 611 002b 04       		.uleb128 0x4
+ 612 002c 16       		.uleb128 0x16
+ 613 002d 00       		.byte	0x0
+ 614 002e 03       		.uleb128 0x3
+ 615 002f 0E       		.uleb128 0xe
+ 616 0030 3A       		.uleb128 0x3a
+ 617 0031 0B       		.uleb128 0xb
+ 618 0032 3B       		.uleb128 0x3b
+ 619 0033 0B       		.uleb128 0xb
+ 620 0034 49       		.uleb128 0x49
+ 621 0035 13       		.uleb128 0x13
+ 622 0036 00       		.byte	0x0
+ 623 0037 00       		.byte	0x0
+ 624 0038 05       		.uleb128 0x5
+ 625 0039 24       		.uleb128 0x24
+ 626 003a 00       		.byte	0x0
+ 627 003b 0B       		.uleb128 0xb
+ 628 003c 0B       		.uleb128 0xb
+ 629 003d 3E       		.uleb128 0x3e
+ 630 003e 0B       		.uleb128 0xb
+ 631 003f 00       		.byte	0x0
+ 632 0040 00       		.byte	0x0
+ 633 0041 06       		.uleb128 0x6
+ 634 0042 13       		.uleb128 0x13
+ 635 0043 01       		.byte	0x1
+ 636 0044 0B       		.uleb128 0xb
+ 637 0045 0B       		.uleb128 0xb
+ 638 0046 3A       		.uleb128 0x3a
+ 639 0047 0B       		.uleb128 0xb
+ 640 0048 3B       		.uleb128 0x3b
+ 641 0049 0B       		.uleb128 0xb
+ 642 004a 01       		.uleb128 0x1
+ 643 004b 13       		.uleb128 0x13
+ 644 004c 00       		.byte	0x0
+ 645 004d 00       		.byte	0x0
+ 646 004e 07       		.uleb128 0x7
+ 647 004f 0D       		.uleb128 0xd
+ 648 0050 00       		.byte	0x0
+ 649 0051 03       		.uleb128 0x3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 17
+
+
+ 650 0052 0E       		.uleb128 0xe
+ 651 0053 3A       		.uleb128 0x3a
+ 652 0054 0B       		.uleb128 0xb
+ 653 0055 3B       		.uleb128 0x3b
+ 654 0056 0B       		.uleb128 0xb
+ 655 0057 49       		.uleb128 0x49
+ 656 0058 13       		.uleb128 0x13
+ 657 0059 38       		.uleb128 0x38
+ 658 005a 0A       		.uleb128 0xa
+ 659 005b 00       		.byte	0x0
+ 660 005c 00       		.byte	0x0
+ 661 005d 08       		.uleb128 0x8
+ 662 005e 2E       		.uleb128 0x2e
+ 663 005f 00       		.byte	0x0
+ 664 0060 3F       		.uleb128 0x3f
+ 665 0061 0C       		.uleb128 0xc
+ 666 0062 03       		.uleb128 0x3
+ 667 0063 0E       		.uleb128 0xe
+ 668 0064 3A       		.uleb128 0x3a
+ 669 0065 0B       		.uleb128 0xb
+ 670 0066 3B       		.uleb128 0x3b
+ 671 0067 0B       		.uleb128 0xb
+ 672 0068 27       		.uleb128 0x27
+ 673 0069 0C       		.uleb128 0xc
+ 674 006a 11       		.uleb128 0x11
+ 675 006b 01       		.uleb128 0x1
+ 676 006c 12       		.uleb128 0x12
+ 677 006d 01       		.uleb128 0x1
+ 678 006e 40       		.uleb128 0x40
+ 679 006f 06       		.uleb128 0x6
+ 680 0070 00       		.byte	0x0
+ 681 0071 00       		.byte	0x0
+ 682 0072 09       		.uleb128 0x9
+ 683 0073 2E       		.uleb128 0x2e
+ 684 0074 01       		.byte	0x1
+ 685 0075 3F       		.uleb128 0x3f
+ 686 0076 0C       		.uleb128 0xc
+ 687 0077 03       		.uleb128 0x3
+ 688 0078 0E       		.uleb128 0xe
+ 689 0079 3A       		.uleb128 0x3a
+ 690 007a 0B       		.uleb128 0xb
+ 691 007b 3B       		.uleb128 0x3b
+ 692 007c 0B       		.uleb128 0xb
+ 693 007d 27       		.uleb128 0x27
+ 694 007e 0C       		.uleb128 0xc
+ 695 007f 11       		.uleb128 0x11
+ 696 0080 01       		.uleb128 0x1
+ 697 0081 12       		.uleb128 0x12
+ 698 0082 01       		.uleb128 0x1
+ 699 0083 40       		.uleb128 0x40
+ 700 0084 06       		.uleb128 0x6
+ 701 0085 01       		.uleb128 0x1
+ 702 0086 13       		.uleb128 0x13
+ 703 0087 00       		.byte	0x0
+ 704 0088 00       		.byte	0x0
+ 705 0089 0A       		.uleb128 0xa
+ 706 008a 34       		.uleb128 0x34
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 18
+
+
+ 707 008b 00       		.byte	0x0
+ 708 008c 03       		.uleb128 0x3
+ 709 008d 0E       		.uleb128 0xe
+ 710 008e 3A       		.uleb128 0x3a
+ 711 008f 0B       		.uleb128 0xb
+ 712 0090 3B       		.uleb128 0x3b
+ 713 0091 0B       		.uleb128 0xb
+ 714 0092 49       		.uleb128 0x49
+ 715 0093 13       		.uleb128 0x13
+ 716 0094 02       		.uleb128 0x2
+ 717 0095 0A       		.uleb128 0xa
+ 718 0096 00       		.byte	0x0
+ 719 0097 00       		.byte	0x0
+ 720 0098 00       		.byte	0x0
+ 721              		.section	.debug_pubnames,"",%progbits
+ 722 0000 78000000 		.4byte	0x78
+ 723 0004 0200     		.2byte	0x2
+ 724 0006 00000000 		.4byte	.Ldebug_info0
+ 725 000a 8C010000 		.4byte	0x18c
+ 726 000e 13010000 		.4byte	0x113
+ 727 0012 50574D5F 		.ascii	"PWM_UNFOLD_B_SaveConfig\000"
+ 727      554E464F 
+ 727      4C445F42 
+ 727      5F536176 
+ 727      65436F6E 
+ 728 002a 28010000 		.4byte	0x128
+ 729 002e 50574D5F 		.ascii	"PWM_UNFOLD_B_RestoreConfig\000"
+ 729      554E464F 
+ 729      4C445F42 
+ 729      5F526573 
+ 729      746F7265 
+ 730 0049 50010000 		.4byte	0x150
+ 731 004d 50574D5F 		.ascii	"PWM_UNFOLD_B_Sleep\000"
+ 731      554E464F 
+ 731      4C445F42 
+ 731      5F536C65 
+ 731      657000
+ 732 0060 65010000 		.4byte	0x165
+ 733 0064 50574D5F 		.ascii	"PWM_UNFOLD_B_Wakeup\000"
+ 733      554E464F 
+ 733      4C445F42 
+ 733      5F57616B 
+ 733      65757000 
+ 734 0078 00000000 		.4byte	0x0
+ 735              		.section	.debug_aranges,"",%progbits
+ 736 0000 34000000 		.4byte	0x34
+ 737 0004 0200     		.2byte	0x2
+ 738 0006 00000000 		.4byte	.Ldebug_info0
+ 739 000a 04       		.byte	0x4
+ 740 000b 00       		.byte	0x0
+ 741 000c 0000     		.2byte	0x0
+ 742 000e 0000     		.2byte	0x0
+ 743 0010 00000000 		.4byte	.LFB0
+ 744 0014 76000000 		.4byte	.LFE0-.LFB0
+ 745 0018 00000000 		.4byte	.LFB1
+ 746 001c D6000000 		.4byte	.LFE1-.LFB1
+ 747 0020 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 19
+
+
+ 748 0024 3E000000 		.4byte	.LFE2-.LFB2
+ 749 0028 00000000 		.4byte	.LFB3
+ 750 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 751 0030 00000000 		.4byte	0x0
+ 752 0034 00000000 		.4byte	0x0
+ 753              		.section	.debug_ranges,"",%progbits
+ 754              	.Ldebug_ranges0:
+ 755 0000 00000000 		.4byte	.Ltext0
+ 756 0004 00000000 		.4byte	.Letext0
+ 757 0008 00000000 		.4byte	.LFB0
+ 758 000c 76000000 		.4byte	.LFE0
+ 759 0010 00000000 		.4byte	.LFB1
+ 760 0014 D6000000 		.4byte	.LFE1
+ 761 0018 00000000 		.4byte	.LFB2
+ 762 001c 3E000000 		.4byte	.LFE2
+ 763 0020 00000000 		.4byte	.LFB3
+ 764 0024 1C000000 		.4byte	.LFE3
+ 765 0028 00000000 		.4byte	0x0
+ 766 002c 00000000 		.4byte	0x0
+ 767              		.section	.debug_str,"MS",%progbits,1
+ 768              	.LASF6:
+ 769 0000 6C6F6E67 		.ascii	"long long int\000"
+ 769      206C6F6E 
+ 769      6720696E 
+ 769      7400
+ 770              	.LASF15:
+ 771 000e 50574D55 		.ascii	"PWMUdb\000"
+ 771      646200
+ 772              	.LASF16:
+ 773 0015 50574D50 		.ascii	"PWMPeriod\000"
+ 773      6572696F 
+ 773      6400
+ 774              	.LASF24:
+ 775 001f 50574D5F 		.ascii	"PWM_UNFOLD_B_Wakeup\000"
+ 775      554E464F 
+ 775      4C445F42 
+ 775      5F57616B 
+ 775      65757000 
+ 776              	.LASF3:
+ 777 0033 73686F72 		.ascii	"short unsigned int\000"
+ 777      7420756E 
+ 777      7369676E 
+ 777      65642069 
+ 777      6E7400
+ 778              	.LASF21:
+ 779 0046 50574D5F 		.ascii	"PWM_UNFOLD_B_backupStruct\000"
+ 779      554E464F 
+ 779      4C445F42 
+ 779      5F626163 
+ 779      6B757053 
+ 780              	.LASF11:
+ 781 0060 666C6F61 		.ascii	"float\000"
+ 781      7400
+ 782              	.LASF19:
+ 783 0066 50574D64 		.ascii	"PWMdeadBandValue\000"
+ 783      65616442 
+ 783      616E6456 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 20
+
+
+ 783      616C7565 
+ 783      00
+ 784              	.LASF1:
+ 785 0077 756E7369 		.ascii	"unsigned char\000"
+ 785      676E6564 
+ 785      20636861 
+ 785      7200
+ 786              	.LASF14:
+ 787 0085 50574D45 		.ascii	"PWMEnableState\000"
+ 787      6E61626C 
+ 787      65537461 
+ 787      746500
+ 788              	.LASF29:
+ 789 0094 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 789      73657273 
+ 789      5C686F61 
+ 789      6E67705C 
+ 789      446F6375 
+ 790 00c1 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 790      6E766572 
+ 790      745C696E 
+ 790      76657274 
+ 790      2E637964 
+ 791              	.LASF5:
+ 792 00d8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 792      20756E73 
+ 792      69676E65 
+ 792      6420696E 
+ 792      7400
+ 793              	.LASF9:
+ 794 00ea 75696E74 		.ascii	"uint8\000"
+ 794      3800
+ 795              	.LASF25:
+ 796 00f0 50574D5F 		.ascii	"PWM_UNFOLD_B_interruptState\000"
+ 796      554E464F 
+ 796      4C445F42 
+ 796      5F696E74 
+ 796      65727275 
+ 797              	.LASF20:
+ 798 010c 50574D43 		.ascii	"PWMControlRegister\000"
+ 798      6F6E7472 
+ 798      6F6C5265 
+ 798      67697374 
+ 798      657200
+ 799              	.LASF12:
+ 800 011f 646F7562 		.ascii	"double\000"
+ 800      6C6500
+ 801              	.LASF10:
+ 802 0126 75696E74 		.ascii	"uint16\000"
+ 802      313600
+ 803              	.LASF18:
+ 804 012d 50574D43 		.ascii	"PWMCompareValue\000"
+ 804      6F6D7061 
+ 804      72655661 
+ 804      6C756500 
+ 805              	.LASF22:
+ 806 013d 50574D5F 		.ascii	"PWM_UNFOLD_B_SaveConfig\000"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 21
+
+
+ 806      554E464F 
+ 806      4C445F42 
+ 806      5F536176 
+ 806      65436F6E 
+ 807              	.LASF8:
+ 808 0155 756E7369 		.ascii	"unsigned int\000"
+ 808      676E6564 
+ 808      20696E74 
+ 808      00
+ 809              	.LASF7:
+ 810 0162 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 810      206C6F6E 
+ 810      6720756E 
+ 810      7369676E 
+ 810      65642069 
+ 811              	.LASF23:
+ 812 0179 50574D5F 		.ascii	"PWM_UNFOLD_B_Sleep\000"
+ 812      554E464F 
+ 812      4C445F42 
+ 812      5F536C65 
+ 812      657000
+ 813              	.LASF27:
+ 814 018c 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 814      4320342E 
+ 814      342E3100 
+ 815              	.LASF13:
+ 816 0198 63686172 		.ascii	"char\000"
+ 816      00
+ 817              	.LASF30:
+ 818 019d 50574D5F 		.ascii	"PWM_UNFOLD_B_RestoreConfig\000"
+ 818      554E464F 
+ 818      4C445F42 
+ 818      5F526573 
+ 818      746F7265 
+ 819              	.LASF2:
+ 820 01b8 73686F72 		.ascii	"short int\000"
+ 820      7420696E 
+ 820      7400
+ 821              	.LASF28:
+ 822 01c2 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\PWM_UNFOLD_B_PM.c\000"
+ 822      6E657261 
+ 822      7465645F 
+ 822      536F7572 
+ 822      63655C50 
+ 823              	.LASF4:
+ 824 01ed 6C6F6E67 		.ascii	"long int\000"
+ 824      20696E74 
+ 824      00
+ 825              	.LASF0:
+ 826 01f6 7369676E 		.ascii	"signed char\000"
+ 826      65642063 
+ 826      68617200 
+ 827              	.LASF26:
+ 828 0202 50574D5F 		.ascii	"PWM_UNFOLD_B_backup\000"
+ 828      554E464F 
+ 828      4C445F42 
+ 828      5F626163 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccbV82WD.s 			page 22
+
+
+ 828      6B757000 
+ 829              	.LASF17:
+ 830 0216 496E7465 		.ascii	"InterruptMaskValue\000"
+ 830      72727570 
+ 830      744D6173 
+ 830      6B56616C 
+ 830      756500
+ 831              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

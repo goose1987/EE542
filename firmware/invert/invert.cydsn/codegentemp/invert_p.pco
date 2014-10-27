@@ -1,0 +1,78 @@
+dont_use_io iocell 1 0
+dont_use_io iocell 1 1
+dont_use_io iocell 1 3
+set_location "\PWM_BUCK:PWMUDB:db_ph1_run_temp\" macrocell 0 0 0 3
+set_location "\PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\" macrocell 1 2 1 3
+set_location "\PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\" macrocell 3 0 0 1
+set_location "\PWM_BUCK:PWMUDB:sSTSReg:nrstSts:stsreg\" statusicell 1 0 4 
+set_location "\PWM_UNFOLD_A:PWMUDB:sSTSReg:nrstSts:stsreg\" statusicell 1 2 4 
+set_location "\PWM_UNFOLD_B:PWMUDB:sSTSReg:nrstSts:stsreg\" statusicell 2 0 4 
+set_location "\PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\" macrocell 2 0 0 3
+set_location "__ONE__" macrocell 1 5 0 3
+set_location "\PWM_BUCK:PWMUDB:db_ph2_run_temp\" macrocell 0 0 0 2
+set_location "\PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\" macrocell 1 0 0 1
+set_location "Net_147" macrocell 0 2 0 2
+set_location "Net_151" macrocell 2 1 0 3
+set_location "Net_149" macrocell 1 2 1 1
+set_location "\PWM_UNFOLD_B:PWMUDB:prevCompare1\" macrocell 2 0 0 0
+set_location "\PWM_BUCK:PWMUDB:prevCompare1\" macrocell 0 0 1 3
+set_location "\PWM_UNFOLD_A:PWMUDB:prevCompare1\" macrocell 1 2 0 1
+set_location "\PWM_BUCK:PWMUDB:sP16:pwmdp:u0\" datapathcell 0 0 2 
+set_location "\PWM_UNFOLD_A:PWMUDB:sP16:pwmdp:u0\" datapathcell 1 2 2 
+set_location "\PWM_UNFOLD_B:PWMUDB:sP16:pwmdp:u1\" datapathcell 3 0 2 
+set_location "\PWM_BUCK:PWMUDB:status_5\" macrocell 2 1 1 1
+set_location "\PWM_UNFOLD_B:PWMUDB:runmode_enable\" macrocell 2 0 1 2
+set_location "\PWM_BUCK:PWMUDB:runmode_enable\" macrocell 0 0 0 0
+set_location "\PWM_UNFOLD_A:PWMUDB:runmode_enable\" macrocell 1 2 1 0
+set_location "\PWM_BUCK:PWMUDB:sP16:pwmdp:u1\" datapathcell 1 0 2 
+set_location "\PWM_UNFOLD_A:PWMUDB:sP16:pwmdp:u1\" datapathcell 0 2 2 
+set_location "\PWM_BUCK:PWMUDB:status_0\" macrocell 0 0 1 2
+set_location "\PWM_UNFOLD_A:PWMUDB:status_0\" macrocell 1 2 1 2
+set_location "\PWM_UNFOLD_B:PWMUDB:status_0\" macrocell 2 0 0 2
+set_location "\PWM_UNFOLD_B:PWMUDB:sP16:pwmdp:u0\" datapathcell 2 0 2 
+set_location "\PWM_BUCK:PWMUDB:final_kill_reg\" macrocell 2 1 1 2
+set_location "\PWM_UNFOLD_B:PWMUDB:pwm_db_reg\" macrocell 3 0 0 0
+set_location "\PWM_BUCK:PWMUDB:pwm_db_reg\" macrocell 0 2 0 1
+set_location "\PWM_UNFOLD_A:PWMUDB:pwm_db_reg\" macrocell 1 0 0 2
+set_location "\PWM_UNFOLD_B:PWMUDB:db_cnt_0\" macrocell 2 1 1 0
+set_location "MODIN1_0" macrocell 0 1 1 0
+set_location "MODIN3_0" macrocell 1 1 1 0
+set_location "Net_148" macrocell 1 2 0 2
+set_location "Net_150" macrocell 3 1 1 3
+set_location "Net_146" macrocell 0 0 1 0
+set_location "MODIN1_1" macrocell 0 1 0 0
+set_location "MODIN3_1" macrocell 1 1 0 0
+set_location "\PWM_UNFOLD_B:PWMUDB:db_cnt_1\" macrocell 2 0 1 0
+set_io "\LCD_Char_1:LCDPort(4)\" iocell 2 4
+set_location "\ADC_DelSig_1:IRQ\" interrupt -1 -1 29
+set_io "Pin_4(0)" iocell 0 0
+set_location "\ADC_SAR_2:IRQ\" interrupt -1 -1 1
+set_location "\ADC_SAR_1:IRQ\" interrupt -1 -1 0
+set_io "\LCD_Char_1:LCDPort(6)\" iocell 2 6
+set_io "\LCD_Char_1:LCDPort(5)\" iocell 2 5
+set_io "\LCD_Char_1:LCDPort(2)\" iocell 2 2
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "Pin_2(0)" iocell 0 7
+set_io "Pin_6(0)" iocell 1 4
+set_io "Pin_1(0)" iocell 0 1
+set_location "\PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\" controlcell 0 0 6 
+set_location "\PWM_UNFOLD_A:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\" controlcell 1 0 6 
+set_location "\PWM_UNFOLD_B:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\" controlcell 3 0 6 
+set_location "\ADC_DelSig_1:DEC\" decimatorcell -1 -1 0
+set_location "\ADC_SAR_2:ADC_SAR\" sarcell -1 -1 0
+set_io "\LCD_Char_1:LCDPort(1)\" iocell 2 1
+set_io "\ADC_SAR_1:Bypass(0)\" iocell 0 2
+set_io "\LCD_Char_1:LCDPort(0)\" iocell 2 0
+set_io "\ADC_SAR_2:Bypass(0)\" iocell 0 4
+set_io "Pin_7(0)" iocell 0 6
+set_io "Pin_8(0)" iocell 0 5
+set_io "Pin_9(0)" iocell 3 5
+set_io "Pin_10(0)" iocell 4 3
+set_io "\LCD_Char_1:LCDPort(3)\" iocell 2 3
+set_io "Pin_3(0)" iocell 0 3
+set_location "\ADC_DelSig_1:DSM2\" dsmodcell -1 -1 0
+set_location "\PWM_BUCK:PWMUDB:sDB3:AsyncCtl:dbctrlreg\" controlcell 0 1 6 
+set_location "\PWM_UNFOLD_A:PWMUDB:sDB3:AsyncCtl:dbctrlreg\" controlcell 1 1 6 
+set_location "\PWM_UNFOLD_B:PWMUDB:sDB3:AsyncCtl:dbctrlreg\" controlcell 2 1 6 
+set_io "Pin_5(0)" iocell 1 2
+set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 1

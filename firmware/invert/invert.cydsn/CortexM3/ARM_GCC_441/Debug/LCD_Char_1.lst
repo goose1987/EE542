@@ -1,0 +1,3369 @@
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"LCD_Char_1.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 DC010000 		.text
+  20      02006300 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.global	LCD_Char_1_enableState
+  24              		.bss
+  25              		.type	LCD_Char_1_enableState, %object
+  26              		.size	LCD_Char_1_enableState, 1
+  27              	LCD_Char_1_enableState:
+  28 0000 00       		.space	1
+  29              		.global	LCD_Char_1_initVar
+  30              		.type	LCD_Char_1_initVar, %object
+  31              		.size	LCD_Char_1_initVar, 1
+  32              	LCD_Char_1_initVar:
+  33 0001 00       		.space	1
+  34              		.section	.text.LCD_Char_1_Init,"ax",%progbits
+  35              		.align	2
+  36              		.global	LCD_Char_1_Init
+  37              		.thumb
+  38              		.thumb_func
+  39              		.type	LCD_Char_1_Init, %function
+  40              	LCD_Char_1_Init:
+  41              	.LFB0:
+  42              		.file 1 ".\\Generated_Source\\PSoC5\\LCD_Char_1.c"
+   1:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/LCD_Char_1.c **** * File Name: LCD_Char_1.c
+   3:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Version 1.90
+   4:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+   5:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Description:
+   6:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  This file provides source code for the Character LCD component's API.
+   7:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+   8:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Note:
+   9:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  10:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 2
+
+
+  12:.\Generated_Source\PSoC5/LCD_Char_1.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC5/LCD_Char_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC5/LCD_Char_1.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  17:.\Generated_Source\PSoC5/LCD_Char_1.c **** #include "CyLib.h"
+  18:.\Generated_Source\PSoC5/LCD_Char_1.c **** #include "LCD_Char_1.h"
+  19:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  20:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  21:.\Generated_Source\PSoC5/LCD_Char_1.c **** static void LCD_Char_1_WrDatNib(uint8 nibble) ;
+  22:.\Generated_Source\PSoC5/LCD_Char_1.c **** static void LCD_Char_1_WrCntrlNib(uint8 nibble) ;
+  23:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  24:.\Generated_Source\PSoC5/LCD_Char_1.c **** /* Stores the state of conponent. Indicates wherewer component is 
+  25:.\Generated_Source\PSoC5/LCD_Char_1.c **** * in enable state or not.
+  26:.\Generated_Source\PSoC5/LCD_Char_1.c **** */
+  27:.\Generated_Source\PSoC5/LCD_Char_1.c **** uint8 LCD_Char_1_enableState = 0u;
+  28:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  29:.\Generated_Source\PSoC5/LCD_Char_1.c **** uint8 LCD_Char_1_initVar = 0u;
+  30:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  31:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  32:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+  33:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Function Name: LCD_Char_1_Init
+  34:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+  35:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  36:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+  37:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Perform initialization required for components normal work.
+  38:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  This function initializes the LCD hardware module as follows:
+  39:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Enable 4-bit interface
+  40:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Clear the display
+  41:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Enable auto cursor increment
+  42:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Resets the cursor to start position
+  43:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Also loads custom character set to LCD if it was defined in the customizer.
+  44:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  45:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+  46:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+  47:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  48:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+  49:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+  50:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  51:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Reentrant:
+  52:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  No.
+  53:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  54:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+  55:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_Init(void) 
+  56:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+  43              		.loc 1 56 0
+  44              		.cfi_startproc
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 1, uses_anonymous_args = 0
+  47 0000 80B5     		push	{r7, lr}
+  48              	.LCFI0:
+  49              		.cfi_def_cfa_offset 8
+  50 0002 00AF     		add	r7, sp, #0
+  51              		.cfi_offset 14, -4
+  52              		.cfi_offset 7, -8
+  53              	.LCFI1:
+  54              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 3
+
+
+  57:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* INIT CODE */
+  58:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelay(40u);                                                        /* Delay 40 ms */
+  55              		.loc 1 58 0
+  56 0004 4FF02800 		mov	r0, #40
+  57 0008 FFF7FEFF 		bl	CyDelay
+  59:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrCntrlNib(LCD_Char_1_DISPLAY_8_BIT_INIT);    /* Selects 8-bit mode */
+  58              		.loc 1 59 0
+  59 000c 4FF00300 		mov	r0, #3
+  60 0010 FFF7FEFF 		bl	LCD_Char_1_WrCntrlNib
+  60:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelay(5u);                                                         /* Delay 5 ms */
+  61              		.loc 1 60 0
+  62 0014 4FF00500 		mov	r0, #5
+  63 0018 FFF7FEFF 		bl	CyDelay
+  61:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrCntrlNib(LCD_Char_1_DISPLAY_8_BIT_INIT);    /* Selects 8-bit mode */
+  64              		.loc 1 61 0
+  65 001c 4FF00300 		mov	r0, #3
+  66 0020 FFF7FEFF 		bl	LCD_Char_1_WrCntrlNib
+  62:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelay(15u);                                                        /* Delay 15 ms */
+  67              		.loc 1 62 0
+  68 0024 4FF00F00 		mov	r0, #15
+  69 0028 FFF7FEFF 		bl	CyDelay
+  63:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrCntrlNib(LCD_Char_1_DISPLAY_8_BIT_INIT);    /* Selects 8-bit mode */
+  70              		.loc 1 63 0
+  71 002c 4FF00300 		mov	r0, #3
+  72 0030 FFF7FEFF 		bl	LCD_Char_1_WrCntrlNib
+  64:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelay(1u);                                                         /* Delay 1 ms */
+  73              		.loc 1 64 0
+  74 0034 4FF00100 		mov	r0, #1
+  75 0038 FFF7FEFF 		bl	CyDelay
+  65:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrCntrlNib(LCD_Char_1_DISPLAY_4_BIT_INIT);    /* Selects 4-bit mode */
+  76              		.loc 1 65 0
+  77 003c 4FF00200 		mov	r0, #2
+  78 0040 FFF7FEFF 		bl	LCD_Char_1_WrCntrlNib
+  66:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelay(5u);                                                         /* Delay 5 ms */
+  79              		.loc 1 66 0
+  80 0044 4FF00500 		mov	r0, #5
+  81 0048 FFF7FEFF 		bl	CyDelay
+  67:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  68:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteControl(LCD_Char_1_CURSOR_AUTO_INCR_ON);    /* Incr Cursor After Writes */
+  82              		.loc 1 68 0
+  83 004c 4FF00600 		mov	r0, #6
+  84 0050 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+  69:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteControl(LCD_Char_1_DISPLAY_CURSOR_ON);      /* Turn Display, Cursor ON */
+  85              		.loc 1 69 0
+  86 0054 4FF00E00 		mov	r0, #14
+  87 0058 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+  70:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteControl(LCD_Char_1_DISPLAY_2_LINES_5x10);   /* 2 Lines by 5x10 Characters */
+  88              		.loc 1 70 0
+  89 005c 4FF02C00 		mov	r0, #44
+  90 0060 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+  71:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteControl(LCD_Char_1_DISPLAY_CURSOR_OFF);     /* Turn Display, Cursor OFF */
+  91              		.loc 1 71 0
+  92 0064 4FF00800 		mov	r0, #8
+  93 0068 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+  72:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteControl(LCD_Char_1_CLEAR_DISPLAY);          /* Clear LCD Screen */
+  94              		.loc 1 72 0
+  95 006c 4FF00100 		mov	r0, #1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 4
+
+
+  96 0070 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+  73:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteControl(LCD_Char_1_DISPLAY_ON_CURSOR_OFF);  /* Turn Display ON, Cursor OFF */
+  97              		.loc 1 73 0
+  98 0074 4FF00C00 		mov	r0, #12
+  99 0078 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+  74:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteControl(LCD_Char_1_RESET_CURSOR_POSITION);  /* Set Cursor to 0,0 */
+ 100              		.loc 1 74 0
+ 101 007c 4FF00300 		mov	r0, #3
+ 102 0080 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+  75:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelay(5u);
+ 103              		.loc 1 75 0
+ 104 0084 4FF00500 		mov	r0, #5
+ 105 0088 FFF7FEFF 		bl	CyDelay
+  76:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  77:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #if(LCD_Char_1_CUSTOM_CHAR_SET != LCD_Char_1_NONE)
+  78:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_LoadCustomFonts(LCD_Char_1_customFonts);
+  79:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #endif /* LCD_Char_1_CUSTOM_CHAR_SET != LCD_Char_1_NONE */
+  80:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 106              		.loc 1 80 0
+ 107 008c 80BD     		pop	{r7, pc}
+ 108              		.cfi_endproc
+ 109              	.LFE0:
+ 110              		.size	LCD_Char_1_Init, .-LCD_Char_1_Init
+ 111 008e 00BF     		.section	.text.LCD_Char_1_Enable,"ax",%progbits
+ 112              		.align	2
+ 113              		.global	LCD_Char_1_Enable
+ 114              		.thumb
+ 115              		.thumb_func
+ 116              		.type	LCD_Char_1_Enable, %function
+ 117              	LCD_Char_1_Enable:
+ 118              	.LFB1:
+  81:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  82:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+  83:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+  84:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Function Name: LCD_Char_1_Enable
+  85:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+  86:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  87:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+  88:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Turns on the display.
+  89:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  90:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+  91:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+  92:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  93:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+  94:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+  95:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  96:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Reentrant:
+  97:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  No.
+  98:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+  99:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Theory:
+ 100:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  This finction has no effect when it called first time as
+ 101:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  LCD_Char_1_Init() turns on the LCD.
+ 102:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 103:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 104:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_Enable(void) 
+ 105:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 119              		.loc 1 105 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 5
+
+
+ 120              		.cfi_startproc
+ 121              		@ args = 0, pretend = 0, frame = 0
+ 122              		@ frame_needed = 1, uses_anonymous_args = 0
+ 123 0000 80B5     		push	{r7, lr}
+ 124              	.LCFI2:
+ 125              		.cfi_def_cfa_offset 8
+ 126 0002 00AF     		add	r7, sp, #0
+ 127              		.cfi_offset 14, -4
+ 128              		.cfi_offset 7, -8
+ 129              	.LCFI3:
+ 130              		.cfi_def_cfa_register 7
+ 106:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_DisplayOn();
+ 131              		.loc 1 106 0
+ 132 0004 4FF00C00 		mov	r0, #12
+ 133 0008 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+ 107:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_enableState = 1u;
+ 134              		.loc 1 107 0
+ 135 000c 40F20003 		movw	r3, #:lower16:LCD_Char_1_enableState
+ 136 0010 C0F20003 		movt	r3, #:upper16:LCD_Char_1_enableState
+ 137 0014 4FF00102 		mov	r2, #1
+ 138 0018 1A70     		strb	r2, [r3, #0]
+ 108:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 139              		.loc 1 108 0
+ 140 001a 80BD     		pop	{r7, pc}
+ 141              		.cfi_endproc
+ 142              	.LFE1:
+ 143              		.size	LCD_Char_1_Enable, .-LCD_Char_1_Enable
+ 144              		.section	.text.LCD_Char_1_Start,"ax",%progbits
+ 145              		.align	2
+ 146              		.global	LCD_Char_1_Start
+ 147              		.thumb
+ 148              		.thumb_func
+ 149              		.type	LCD_Char_1_Start, %function
+ 150              	LCD_Char_1_Start:
+ 151              	.LFB2:
+ 109:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 110:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 111:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 112:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Function Name: LCD_Char_1_Start
+ 113:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 114:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 115:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 116:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Perform initialization required for components normal work.
+ 117:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  This function initializes the LCD hardware module as follows:
+ 118:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Enable 4-bit interface
+ 119:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Clear the display
+ 120:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Enable auto cursor increment
+ 121:.\Generated_Source\PSoC5/LCD_Char_1.c **** *        Resets the cursor to start position
+ 122:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Also loads custom character set to LCD if it was defined in the customizer.
+ 123:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  If it was not the first call in this project then it just turns on the
+ 124:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  display
+ 125:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 126:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 127:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 128:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  LCD_Char_1_initVar - global variable.
+ 129:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 130:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 6
+
+
+ 131:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  LCD_Char_1_initVar - global variable.
+ 132:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 133:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Reentrant:
+ 134:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  No.
+ 135:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 136:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 137:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_Start(void) 
+ 138:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 152              		.loc 1 138 0
+ 153              		.cfi_startproc
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 1, uses_anonymous_args = 0
+ 156 0000 80B5     		push	{r7, lr}
+ 157              	.LCFI4:
+ 158              		.cfi_def_cfa_offset 8
+ 159 0002 00AF     		add	r7, sp, #0
+ 160              		.cfi_offset 14, -4
+ 161              		.cfi_offset 7, -8
+ 162              	.LCFI5:
+ 163              		.cfi_def_cfa_register 7
+ 139:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* If not initialized then perform initialization */
+ 140:.\Generated_Source\PSoC5/LCD_Char_1.c ****     if(LCD_Char_1_initVar == 0u)
+ 164              		.loc 1 140 0
+ 165 0004 40F20003 		movw	r3, #:lower16:LCD_Char_1_initVar
+ 166 0008 C0F20003 		movt	r3, #:upper16:LCD_Char_1_initVar
+ 167 000c 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 168 000e 002B     		cmp	r3, #0
+ 169 0010 08D1     		bne	.L6
+ 141:.\Generated_Source\PSoC5/LCD_Char_1.c ****     {
+ 142:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_Init();
+ 170              		.loc 1 142 0
+ 171 0012 FFF7FEFF 		bl	LCD_Char_1_Init
+ 143:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_initVar = 1u;
+ 172              		.loc 1 143 0
+ 173 0016 40F20003 		movw	r3, #:lower16:LCD_Char_1_initVar
+ 174 001a C0F20003 		movt	r3, #:upper16:LCD_Char_1_initVar
+ 175 001e 4FF00102 		mov	r2, #1
+ 176 0022 1A70     		strb	r2, [r3, #0]
+ 177              	.L6:
+ 144:.\Generated_Source\PSoC5/LCD_Char_1.c ****     }
+ 145:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 146:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Turn on the LCD */
+ 147:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_Enable();
+ 178              		.loc 1 147 0
+ 179 0024 FFF7FEFF 		bl	LCD_Char_1_Enable
+ 148:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 180              		.loc 1 148 0
+ 181 0028 80BD     		pop	{r7, pc}
+ 182              		.cfi_endproc
+ 183              	.LFE2:
+ 184              		.size	LCD_Char_1_Start, .-LCD_Char_1_Start
+ 185 002a 00BF     		.section	.text.LCD_Char_1_Stop,"ax",%progbits
+ 186              		.align	2
+ 187              		.global	LCD_Char_1_Stop
+ 188              		.thumb
+ 189              		.thumb_func
+ 190              		.type	LCD_Char_1_Stop, %function
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 7
+
+
+ 191              	LCD_Char_1_Stop:
+ 192              	.LFB3:
+ 149:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 150:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 151:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 152:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Function Name: LCD_Char_1_Stop
+ 153:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 154:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 155:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 156:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Turns off the display of the LCD screen.
+ 157:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 158:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 159:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 160:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 161:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 162:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 163:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 164:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Reentrant:
+ 165:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  No.
+ 166:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 167:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 168:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_Stop(void) 
+ 169:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 193              		.loc 1 169 0
+ 194              		.cfi_startproc
+ 195              		@ args = 0, pretend = 0, frame = 0
+ 196              		@ frame_needed = 1, uses_anonymous_args = 0
+ 197 0000 80B5     		push	{r7, lr}
+ 198              	.LCFI6:
+ 199              		.cfi_def_cfa_offset 8
+ 200 0002 00AF     		add	r7, sp, #0
+ 201              		.cfi_offset 14, -4
+ 202              		.cfi_offset 7, -8
+ 203              	.LCFI7:
+ 204              		.cfi_def_cfa_register 7
+ 170:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Calls LCD Off Macro */
+ 171:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_DisplayOff();
+ 205              		.loc 1 171 0
+ 206 0004 4FF00800 		mov	r0, #8
+ 207 0008 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+ 172:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_enableState = 0u;
+ 208              		.loc 1 172 0
+ 209 000c 40F20003 		movw	r3, #:lower16:LCD_Char_1_enableState
+ 210 0010 C0F20003 		movt	r3, #:upper16:LCD_Char_1_enableState
+ 211 0014 4FF00002 		mov	r2, #0
+ 212 0018 1A70     		strb	r2, [r3, #0]
+ 173:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 213              		.loc 1 173 0
+ 214 001a 80BD     		pop	{r7, pc}
+ 215              		.cfi_endproc
+ 216              	.LFE3:
+ 217              		.size	LCD_Char_1_Stop, .-LCD_Char_1_Stop
+ 218              		.section	.text.LCD_Char_1_Position,"ax",%progbits
+ 219              		.align	2
+ 220              		.global	LCD_Char_1_Position
+ 221              		.thumb
+ 222              		.thumb_func
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 8
+
+
+ 223              		.type	LCD_Char_1_Position, %function
+ 224              	LCD_Char_1_Position:
+ 225              	.LFB4:
+ 174:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 175:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 176:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 177:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Function Name: LCD_Char_1_Position
+ 178:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 179:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 180:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 181:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Moves active cursor location to a point specified by the input arguments
+ 182:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 183:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 184:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  row:     Specific row of LCD module to be written
+ 185:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  column:  Column of LCD module to be written
+ 186:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 187:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 188:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 189:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 190:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Note:
+ 191:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  This only applies for LCD displays which use the 2X40 address mode.
+ 192:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  This results in Row 2 offset from row one by 0x28.
+ 193:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  When there are more than 2 rows, each row must be fewer than 20 characters.
+ 194:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 195:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 196:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_Position(uint8 row, uint8 column) 
+ 197:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 226              		.loc 1 197 0
+ 227              		.cfi_startproc
+ 228              		@ args = 0, pretend = 0, frame = 8
+ 229              		@ frame_needed = 1, uses_anonymous_args = 0
+ 230 0000 80B5     		push	{r7, lr}
+ 231              	.LCFI8:
+ 232              		.cfi_def_cfa_offset 8
+ 233 0002 82B0     		sub	sp, sp, #8
+ 234              	.LCFI9:
+ 235              		.cfi_def_cfa_offset 16
+ 236 0004 00AF     		add	r7, sp, #0
+ 237              		.cfi_offset 14, -4
+ 238              		.cfi_offset 7, -8
+ 239              	.LCFI10:
+ 240              		.cfi_def_cfa_register 7
+ 241 0006 0246     		mov	r2, r0
+ 242 0008 0B46     		mov	r3, r1
+ 243 000a FA71     		strb	r2, [r7, #7]
+ 244 000c BB71     		strb	r3, [r7, #6]
+ 198:.\Generated_Source\PSoC5/LCD_Char_1.c ****     switch (row)
+ 245              		.loc 1 198 0
+ 246 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 247 0010 032B     		cmp	r3, #3
+ 248 0012 2AD8     		bhi	.L17
+ 249 0014 01A2     		adr	r2, .L16
+ 250 0016 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 251 001a 00BF     		.align	2
+ 252              	.L16:
+ 253 001c 2D000000 		.word	.L12+1
+ 254 0020 3D000000 		.word	.L13+1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 9
+
+
+ 255 0024 4D000000 		.word	.L14+1
+ 256 0028 5D000000 		.word	.L15+1
+ 257              	.L12:
+ 199:.\Generated_Source\PSoC5/LCD_Char_1.c ****     {
+ 200:.\Generated_Source\PSoC5/LCD_Char_1.c ****         case (uint8)0:
+ 201:.\Generated_Source\PSoC5/LCD_Char_1.c ****             LCD_Char_1_WriteControl(LCD_Char_1_ROW_0_START + column);
+ 258              		.loc 1 201 0
+ 259 002c BB79     		ldrb	r3, [r7, #6]
+ 260 002e A3F18003 		sub	r3, r3, #128
+ 261 0032 DBB2     		uxtb	r3, r3
+ 262 0034 1846     		mov	r0, r3
+ 263 0036 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+ 202:.\Generated_Source\PSoC5/LCD_Char_1.c ****             break;
+ 264              		.loc 1 202 0
+ 265 003a 16E0     		b	.L17
+ 266              	.L13:
+ 203:.\Generated_Source\PSoC5/LCD_Char_1.c ****         case (uint8) 1:
+ 204:.\Generated_Source\PSoC5/LCD_Char_1.c ****             LCD_Char_1_WriteControl(LCD_Char_1_ROW_1_START + column);
+ 267              		.loc 1 204 0
+ 268 003c BB79     		ldrb	r3, [r7, #6]
+ 269 003e A3F14003 		sub	r3, r3, #64
+ 270 0042 DBB2     		uxtb	r3, r3
+ 271 0044 1846     		mov	r0, r3
+ 272 0046 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+ 205:.\Generated_Source\PSoC5/LCD_Char_1.c ****             break;
+ 273              		.loc 1 205 0
+ 274 004a 0EE0     		b	.L17
+ 275              	.L14:
+ 206:.\Generated_Source\PSoC5/LCD_Char_1.c ****         case (uint8) 2:
+ 207:.\Generated_Source\PSoC5/LCD_Char_1.c ****             LCD_Char_1_WriteControl(LCD_Char_1_ROW_2_START + column);
+ 276              		.loc 1 207 0
+ 277 004c BB79     		ldrb	r3, [r7, #6]
+ 278 004e A3F16C03 		sub	r3, r3, #108
+ 279 0052 DBB2     		uxtb	r3, r3
+ 280 0054 1846     		mov	r0, r3
+ 281 0056 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+ 208:.\Generated_Source\PSoC5/LCD_Char_1.c ****             break;
+ 282              		.loc 1 208 0
+ 283 005a 06E0     		b	.L17
+ 284              	.L15:
+ 209:.\Generated_Source\PSoC5/LCD_Char_1.c ****         case (uint8) 3:
+ 210:.\Generated_Source\PSoC5/LCD_Char_1.c ****             LCD_Char_1_WriteControl(LCD_Char_1_ROW_3_START + column);
+ 285              		.loc 1 210 0
+ 286 005c BB79     		ldrb	r3, [r7, #6]
+ 287 005e A3F12C03 		sub	r3, r3, #44
+ 288 0062 DBB2     		uxtb	r3, r3
+ 289 0064 1846     		mov	r0, r3
+ 290 0066 FFF7FEFF 		bl	LCD_Char_1_WriteControl
+ 291              	.L17:
+ 211:.\Generated_Source\PSoC5/LCD_Char_1.c ****             break;
+ 212:.\Generated_Source\PSoC5/LCD_Char_1.c ****         default:
+ 213:.\Generated_Source\PSoC5/LCD_Char_1.c ****             /* if default case is hit, invalid row argument was passed.*/
+ 214:.\Generated_Source\PSoC5/LCD_Char_1.c ****             break;
+ 215:.\Generated_Source\PSoC5/LCD_Char_1.c ****     }
+ 216:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 292              		.loc 1 216 0
+ 293 006a 07F10807 		add	r7, r7, #8
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 10
+
+
+ 294 006e BD46     		mov	sp, r7
+ 295 0070 80BD     		pop	{r7, pc}
+ 296              		.cfi_endproc
+ 297              	.LFE4:
+ 298              		.size	LCD_Char_1_Position, .-LCD_Char_1_Position
+ 299 0072 00BF     		.section	.text.LCD_Char_1_PrintString,"ax",%progbits
+ 300              		.align	2
+ 301              		.global	LCD_Char_1_PrintString
+ 302              		.thumb
+ 303              		.thumb_func
+ 304              		.type	LCD_Char_1_PrintString, %function
+ 305              	LCD_Char_1_PrintString:
+ 306              	.LFB5:
+ 217:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 218:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 219:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 220:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Function Name: LCD_Char_1_PrintString
+ 221:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 222:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 223:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 224:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Writes a zero terminated string to the LCD.
+ 225:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 226:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 227:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  string:  pointer to head of char8 array to be written to the LCD module
+ 228:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 229:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 230:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 231:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 232:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 233:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_PrintString(char8 const string[]) 
+ 234:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 307              		.loc 1 234 0
+ 308              		.cfi_startproc
+ 309              		@ args = 0, pretend = 0, frame = 16
+ 310              		@ frame_needed = 1, uses_anonymous_args = 0
+ 311 0000 80B5     		push	{r7, lr}
+ 312              	.LCFI11:
+ 313              		.cfi_def_cfa_offset 8
+ 314 0002 84B0     		sub	sp, sp, #16
+ 315              	.LCFI12:
+ 316              		.cfi_def_cfa_offset 24
+ 317 0004 00AF     		add	r7, sp, #0
+ 318              		.cfi_offset 14, -4
+ 319              		.cfi_offset 7, -8
+ 320              	.LCFI13:
+ 321              		.cfi_def_cfa_register 7
+ 322 0006 7860     		str	r0, [r7, #4]
+ 235:.\Generated_Source\PSoC5/LCD_Char_1.c ****     uint8 indexU8 = 1u;
+ 323              		.loc 1 235 0
+ 324 0008 4FF00103 		mov	r3, #1
+ 325 000c BB73     		strb	r3, [r7, #14]
+ 236:.\Generated_Source\PSoC5/LCD_Char_1.c ****     char8 current = *string;
+ 326              		.loc 1 236 0
+ 327 000e 7B68     		ldr	r3, [r7, #4]
+ 328 0010 1B78     		ldrb	r3, [r3, #0]
+ 329 0012 FB73     		strb	r3, [r7, #15]
+ 237:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 11
+
+
+ 238:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Until null is reached, print next character */
+ 239:.\Generated_Source\PSoC5/LCD_Char_1.c ****     while((char8) '\0' != current)
+ 330              		.loc 1 239 0
+ 331 0014 0CE0     		b	.L19
+ 332              	.L20:
+ 240:.\Generated_Source\PSoC5/LCD_Char_1.c ****     {
+ 241:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_WriteData((uint8)current);
+ 333              		.loc 1 241 0
+ 334 0016 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 335 0018 1846     		mov	r0, r3
+ 336 001a FFF7FEFF 		bl	LCD_Char_1_WriteData
+ 242:.\Generated_Source\PSoC5/LCD_Char_1.c ****         current = string[indexU8];
+ 337              		.loc 1 242 0
+ 338 001e BA7B     		ldrb	r2, [r7, #14]	@ zero_extendqisi2
+ 339 0020 7B68     		ldr	r3, [r7, #4]
+ 340 0022 1344     		add	r3, r2, r3
+ 341 0024 1B78     		ldrb	r3, [r3, #0]
+ 342 0026 FB73     		strb	r3, [r7, #15]
+ 243:.\Generated_Source\PSoC5/LCD_Char_1.c ****         indexU8++;
+ 343              		.loc 1 243 0
+ 344 0028 BB7B     		ldrb	r3, [r7, #14]
+ 345 002a 03F10103 		add	r3, r3, #1
+ 346 002e BB73     		strb	r3, [r7, #14]
+ 347              	.L19:
+ 348              		.loc 1 239 0
+ 349 0030 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 350 0032 002B     		cmp	r3, #0
+ 351 0034 EFD1     		bne	.L20
+ 244:.\Generated_Source\PSoC5/LCD_Char_1.c ****     }
+ 245:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 352              		.loc 1 245 0
+ 353 0036 07F11007 		add	r7, r7, #16
+ 354 003a BD46     		mov	sp, r7
+ 355 003c 80BD     		pop	{r7, pc}
+ 356              		.cfi_endproc
+ 357              	.LFE5:
+ 358              		.size	LCD_Char_1_PrintString, .-LCD_Char_1_PrintString
+ 359 003e 00BF     		.section	.text.LCD_Char_1_PutChar,"ax",%progbits
+ 360              		.align	2
+ 361              		.global	LCD_Char_1_PutChar
+ 362              		.thumb
+ 363              		.thumb_func
+ 364              		.type	LCD_Char_1_PutChar, %function
+ 365              	LCD_Char_1_PutChar:
+ 366              	.LFB6:
+ 246:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 247:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 248:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 249:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Function Name: LCD_Char_1_PutChar
+ 250:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 251:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 252:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 253:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Writes a single character to the current cursor position of the LCD module.
+ 254:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Custom character names (_CUSTOM_0 through
+ 255:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  _CUSTOM_7) are acceptable as inputs.
+ 256:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 257:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 12
+
+
+ 258:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  character:  character to be written to the LCD
+ 259:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 260:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 261:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 262:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 263:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 264:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_PutChar(char8 character) 
+ 265:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 367              		.loc 1 265 0
+ 368              		.cfi_startproc
+ 369              		@ args = 0, pretend = 0, frame = 8
+ 370              		@ frame_needed = 1, uses_anonymous_args = 0
+ 371 0000 80B5     		push	{r7, lr}
+ 372              	.LCFI14:
+ 373              		.cfi_def_cfa_offset 8
+ 374 0002 82B0     		sub	sp, sp, #8
+ 375              	.LCFI15:
+ 376              		.cfi_def_cfa_offset 16
+ 377 0004 00AF     		add	r7, sp, #0
+ 378              		.cfi_offset 14, -4
+ 379              		.cfi_offset 7, -8
+ 380              	.LCFI16:
+ 381              		.cfi_def_cfa_register 7
+ 382 0006 0346     		mov	r3, r0
+ 383 0008 FB71     		strb	r3, [r7, #7]
+ 266:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WriteData((uint8)character);
+ 384              		.loc 1 266 0
+ 385 000a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 386 000c 1846     		mov	r0, r3
+ 387 000e FFF7FEFF 		bl	LCD_Char_1_WriteData
+ 267:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 388              		.loc 1 267 0
+ 389 0012 07F10807 		add	r7, r7, #8
+ 390 0016 BD46     		mov	sp, r7
+ 391 0018 80BD     		pop	{r7, pc}
+ 392              		.cfi_endproc
+ 393              	.LFE6:
+ 394              		.size	LCD_Char_1_PutChar, .-LCD_Char_1_PutChar
+ 395 001a 00BF     		.section	.text.LCD_Char_1_WriteData,"ax",%progbits
+ 396              		.align	2
+ 397              		.global	LCD_Char_1_WriteData
+ 398              		.thumb
+ 399              		.thumb_func
+ 400              		.type	LCD_Char_1_WriteData, %function
+ 401              	LCD_Char_1_WriteData:
+ 402              	.LFB7:
+ 268:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 269:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 270:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 271:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Function Name: LCD_Char_1_WriteData
+ 272:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 273:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 274:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 275:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Writes a data byte to the LCD module's Data Display RAM.
+ 276:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 277:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 278:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  dByte:  byte to be written to LCD module.
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 13
+
+
+ 279:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 280:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 281:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 282:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 283:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 284:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_WriteData(uint8 dByte) 
+ 285:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 403              		.loc 1 285 0
+ 404              		.cfi_startproc
+ 405              		@ args = 0, pretend = 0, frame = 16
+ 406              		@ frame_needed = 1, uses_anonymous_args = 0
+ 407 0000 80B5     		push	{r7, lr}
+ 408              	.LCFI17:
+ 409              		.cfi_def_cfa_offset 8
+ 410 0002 84B0     		sub	sp, sp, #16
+ 411              	.LCFI18:
+ 412              		.cfi_def_cfa_offset 24
+ 413 0004 00AF     		add	r7, sp, #0
+ 414              		.cfi_offset 14, -4
+ 415              		.cfi_offset 7, -8
+ 416              	.LCFI19:
+ 417              		.cfi_def_cfa_register 7
+ 418 0006 0346     		mov	r3, r0
+ 419 0008 FB71     		strb	r3, [r7, #7]
+ 286:.\Generated_Source\PSoC5/LCD_Char_1.c ****     uint8 nibble;
+ 287:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 288:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_IsReady();
+ 420              		.loc 1 288 0
+ 421 000a FFF7FEFF 		bl	LCD_Char_1_IsReady
+ 289:.\Generated_Source\PSoC5/LCD_Char_1.c ****     nibble = dByte >> LCD_Char_1_NIBBLE_SHIFT;
+ 422              		.loc 1 289 0
+ 423 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 424 0010 4FEA1313 		lsr	r3, r3, #4
+ 425 0014 FB73     		strb	r3, [r7, #15]
+ 290:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 291:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Write high nibble */
+ 292:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrDatNib(nibble);
+ 426              		.loc 1 292 0
+ 427 0016 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 428 0018 1846     		mov	r0, r3
+ 429 001a FFF7FEFF 		bl	LCD_Char_1_WrDatNib
+ 293:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 294:.\Generated_Source\PSoC5/LCD_Char_1.c ****     nibble = dByte & LCD_Char_1_NIBBLE_MASK;
+ 430              		.loc 1 294 0
+ 431 001e FB79     		ldrb	r3, [r7, #7]
+ 432 0020 03F00F03 		and	r3, r3, #15
+ 433 0024 FB73     		strb	r3, [r7, #15]
+ 295:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Write low nibble */
+ 296:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrDatNib(nibble);
+ 434              		.loc 1 296 0
+ 435 0026 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 436 0028 1846     		mov	r0, r3
+ 437 002a FFF7FEFF 		bl	LCD_Char_1_WrDatNib
+ 297:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 438              		.loc 1 297 0
+ 439 002e 07F11007 		add	r7, r7, #16
+ 440 0032 BD46     		mov	sp, r7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 14
+
+
+ 441 0034 80BD     		pop	{r7, pc}
+ 442              		.cfi_endproc
+ 443              	.LFE7:
+ 444              		.size	LCD_Char_1_WriteData, .-LCD_Char_1_WriteData
+ 445 0036 00BF     		.section	.text.LCD_Char_1_WriteControl,"ax",%progbits
+ 446              		.align	2
+ 447              		.global	LCD_Char_1_WriteControl
+ 448              		.thumb
+ 449              		.thumb_func
+ 450              		.type	LCD_Char_1_WriteControl, %function
+ 451              	LCD_Char_1_WriteControl:
+ 452              	.LFB8:
+ 298:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 299:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 300:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 301:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Function Name: LCD_Char_1_WriteControl
+ 302:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 303:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 304:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 305:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Writes a command byte to the LCD module.
+ 306:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 307:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 308:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  cByte:   byte to be written to LCD module.
+ 309:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 310:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 311:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 312:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 313:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 314:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_WriteControl(uint8 cByte) 
+ 315:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 453              		.loc 1 315 0
+ 454              		.cfi_startproc
+ 455              		@ args = 0, pretend = 0, frame = 16
+ 456              		@ frame_needed = 1, uses_anonymous_args = 0
+ 457 0000 80B5     		push	{r7, lr}
+ 458              	.LCFI20:
+ 459              		.cfi_def_cfa_offset 8
+ 460 0002 84B0     		sub	sp, sp, #16
+ 461              	.LCFI21:
+ 462              		.cfi_def_cfa_offset 24
+ 463 0004 00AF     		add	r7, sp, #0
+ 464              		.cfi_offset 14, -4
+ 465              		.cfi_offset 7, -8
+ 466              	.LCFI22:
+ 467              		.cfi_def_cfa_register 7
+ 468 0006 0346     		mov	r3, r0
+ 469 0008 FB71     		strb	r3, [r7, #7]
+ 316:.\Generated_Source\PSoC5/LCD_Char_1.c ****     uint8 nibble;
+ 317:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 318:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_IsReady();
+ 470              		.loc 1 318 0
+ 471 000a FFF7FEFF 		bl	LCD_Char_1_IsReady
+ 319:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 320:.\Generated_Source\PSoC5/LCD_Char_1.c ****     nibble = cByte >> LCD_Char_1_NIBBLE_SHIFT;
+ 472              		.loc 1 320 0
+ 473 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 474 0010 4FEA1313 		lsr	r3, r3, #4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 15
+
+
+ 475 0014 FB73     		strb	r3, [r7, #15]
+ 321:.\Generated_Source\PSoC5/LCD_Char_1.c ****     
+ 322:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* WrCntrlNib(High Nibble) */
+ 323:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrCntrlNib(nibble);
+ 476              		.loc 1 323 0
+ 477 0016 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 478 0018 1846     		mov	r0, r3
+ 479 001a FFF7FEFF 		bl	LCD_Char_1_WrCntrlNib
+ 324:.\Generated_Source\PSoC5/LCD_Char_1.c ****     nibble = cByte & LCD_Char_1_NIBBLE_MASK;
+ 480              		.loc 1 324 0
+ 481 001e FB79     		ldrb	r3, [r7, #7]
+ 482 0020 03F00F03 		and	r3, r3, #15
+ 483 0024 FB73     		strb	r3, [r7, #15]
+ 325:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 326:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* WrCntrlNib(Low Nibble) */
+ 327:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_WrCntrlNib(nibble);
+ 484              		.loc 1 327 0
+ 485 0026 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 486 0028 1846     		mov	r0, r3
+ 487 002a FFF7FEFF 		bl	LCD_Char_1_WrCntrlNib
+ 328:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 488              		.loc 1 328 0
+ 489 002e 07F11007 		add	r7, r7, #16
+ 490 0032 BD46     		mov	sp, r7
+ 491 0034 80BD     		pop	{r7, pc}
+ 492              		.cfi_endproc
+ 493              	.LFE8:
+ 494              		.size	LCD_Char_1_WriteControl, .-LCD_Char_1_WriteControl
+ 495 0036 00BF     		.section	.text.LCD_Char_1_IsReady,"ax",%progbits
+ 496              		.align	2
+ 497              		.global	LCD_Char_1_IsReady
+ 498              		.thumb
+ 499              		.thumb_func
+ 500              		.type	LCD_Char_1_IsReady, %function
+ 501              	LCD_Char_1_IsReady:
+ 502              	.LFB9:
+ 329:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 330:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 331:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 332:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Function Name: LCD_Char_1_IsReady
+ 333:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 334:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 335:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 336:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Polls LCD until the ready bit is set.
+ 337:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 338:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 339:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 340:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 341:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 342:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 343:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 344:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Note:
+ 345:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Changes pins to High-Z.
+ 346:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 347:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 348:.\Generated_Source\PSoC5/LCD_Char_1.c **** void LCD_Char_1_IsReady(void) 
+ 349:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 16
+
+
+ 503              		.loc 1 349 0
+ 504              		.cfi_startproc
+ 505              		@ args = 0, pretend = 0, frame = 8
+ 506              		@ frame_needed = 1, uses_anonymous_args = 0
+ 507 0000 80B5     		push	{r7, lr}
+ 508              	.LCFI23:
+ 509              		.cfi_def_cfa_offset 8
+ 510 0002 82B0     		sub	sp, sp, #8
+ 511              	.LCFI24:
+ 512              		.cfi_def_cfa_offset 16
+ 513 0004 00AF     		add	r7, sp, #0
+ 514              		.cfi_offset 14, -4
+ 515              		.cfi_offset 7, -8
+ 516              	.LCFI25:
+ 517              		.cfi_def_cfa_register 7
+ 350:.\Generated_Source\PSoC5/LCD_Char_1.c ****     uint8 value;
+ 351:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 352:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Clear the LCD port*/
+ 353:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_PORT_MASK));
+ 518              		.loc 1 353 0
+ 519 0006 45F22013 		movw	r3, #:lower16:1073762592
+ 520 000a C4F20003 		movt	r3, #:upper16:1073762592
+ 521 000e 45F22012 		movw	r2, #:lower16:1073762592
+ 522 0012 C4F20002 		movt	r2, #:upper16:1073762592
+ 523 0016 1278     		ldrb	r2, [r2, #0]
+ 524 0018 D2B2     		uxtb	r2, r2
+ 525 001a 02F08002 		and	r2, r2, #128
+ 526 001e 1A70     		strb	r2, [r3, #0]
+ 354:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 355:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* PSoC4 has a bit different port/pin organization for setting Drive Modes than
+ 356:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * PSoC3/5.
+ 357:.\Generated_Source\PSoC5/LCD_Char_1.c ****     */
+ 358:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #if (CY_PSOC4)
+ 359:.\Generated_Source\PSoC5/LCD_Char_1.c ****         
+ 360:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear old values out */
+ 361:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_PC_REG & ((uint32) (~ LCD_Char_1_DM_DATA_MASK));
+ 362:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Load in high Z values for data pins, others unchanged */
+ 363:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_PC_REG = value | LCD_Char_1_HIGH_Z_DATA_DM;
+ 364:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 365:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #else
+ 366:.\Generated_Source\PSoC5/LCD_Char_1.c ****     
+ 367:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Change Port to High-Z Status on data pins */
+ 368:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 369:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear old values out */
+ 370:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_DM0_REG & ((uint8)(~LCD_Char_1_DATA_MASK));
+ 527              		.loc 1 370 0
+ 528 0020 45F22213 		movw	r3, #:lower16:1073762594
+ 529 0024 C4F20003 		movt	r3, #:upper16:1073762594
+ 530 0028 1B78     		ldrb	r3, [r3, #0]
+ 531 002a DBB2     		uxtb	r3, r3
+ 532 002c 23F00F03 		bic	r3, r3, #15
+ 533 0030 FB71     		strb	r3, [r7, #7]
+ 371:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Load in high Z values for data pins, others unchanged */
+ 372:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DM0_REG = value | (LCD_Char_1_HIGH_Z_DM0 & LCD_Char_1_DATA_MASK);
+ 534              		.loc 1 372 0
+ 535 0032 45F22213 		movw	r3, #:lower16:1073762594
+ 536 0036 C4F20003 		movt	r3, #:upper16:1073762594
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 17
+
+
+ 537 003a FA79     		ldrb	r2, [r7, #7]
+ 538 003c 42F00F02 		orr	r2, r2, #15
+ 539 0040 D2B2     		uxtb	r2, r2
+ 540 0042 1A70     		strb	r2, [r3, #0]
+ 373:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 374:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear old values out */
+ 375:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_DM1_REG & ((uint8)(~LCD_Char_1_DATA_MASK));
+ 541              		.loc 1 375 0
+ 542 0044 45F22313 		movw	r3, #:lower16:1073762595
+ 543 0048 C4F20003 		movt	r3, #:upper16:1073762595
+ 544 004c 1B78     		ldrb	r3, [r3, #0]
+ 545 004e DBB2     		uxtb	r3, r3
+ 546 0050 23F00F03 		bic	r3, r3, #15
+ 547 0054 FB71     		strb	r3, [r7, #7]
+ 376:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Load in high Z values for data pins, others unchanged */
+ 377:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DM1_REG = value;
+ 548              		.loc 1 377 0
+ 549 0056 45F22313 		movw	r3, #:lower16:1073762595
+ 550 005a C4F20003 		movt	r3, #:upper16:1073762595
+ 551 005e FA79     		ldrb	r2, [r7, #7]
+ 552 0060 1A70     		strb	r2, [r3, #0]
+ 378:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 379:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear old values out */
+ 380:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_DM2_REG & ((uint8)(~LCD_Char_1_DATA_MASK));
+ 553              		.loc 1 380 0
+ 554 0062 45F22413 		movw	r3, #:lower16:1073762596
+ 555 0066 C4F20003 		movt	r3, #:upper16:1073762596
+ 556 006a 1B78     		ldrb	r3, [r3, #0]
+ 557 006c DBB2     		uxtb	r3, r3
+ 558 006e 23F00F03 		bic	r3, r3, #15
+ 559 0072 FB71     		strb	r3, [r7, #7]
+ 381:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Load in high Z values for data pins, others unchanged */
+ 382:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DM2_REG = value;
+ 560              		.loc 1 382 0
+ 561 0074 45F22413 		movw	r3, #:lower16:1073762596
+ 562 0078 C4F20003 		movt	r3, #:upper16:1073762596
+ 563 007c FA79     		ldrb	r2, [r7, #7]
+ 564 007e 1A70     		strb	r2, [r3, #0]
+ 383:.\Generated_Source\PSoC5/LCD_Char_1.c ****     
+ 384:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #endif /* CY_PSOC4 */
+ 385:.\Generated_Source\PSoC5/LCD_Char_1.c ****     
+ 386:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Make sure RS is low */
+ 387:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_RS));
+ 565              		.loc 1 387 0
+ 566 0080 45F22013 		movw	r3, #:lower16:1073762592
+ 567 0084 C4F20003 		movt	r3, #:upper16:1073762592
+ 568 0088 45F22012 		movw	r2, #:lower16:1073762592
+ 569 008c C4F20002 		movt	r2, #:upper16:1073762592
+ 570 0090 1278     		ldrb	r2, [r2, #0]
+ 571 0092 D2B2     		uxtb	r2, r2
+ 572 0094 02F0DF02 		and	r2, r2, #223
+ 573 0098 1A70     		strb	r2, [r3, #0]
+ 388:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 389:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Set R/W high to read */
+ 390:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG |= LCD_Char_1_RW;
+ 574              		.loc 1 390 0
+ 575 009a 45F22013 		movw	r3, #:lower16:1073762592
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 18
+
+
+ 576 009e C4F20003 		movt	r3, #:upper16:1073762592
+ 577 00a2 45F22012 		movw	r2, #:lower16:1073762592
+ 578 00a6 C4F20002 		movt	r2, #:upper16:1073762592
+ 579 00aa 1278     		ldrb	r2, [r2, #0]
+ 580 00ac D2B2     		uxtb	r2, r2
+ 581 00ae 42F04002 		orr	r2, r2, #64
+ 582 00b2 D2B2     		uxtb	r2, r2
+ 583 00b4 1A70     		strb	r2, [r3, #0]
+ 584              	.L29:
+ 391:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 392:.\Generated_Source\PSoC5/LCD_Char_1.c ****     do
+ 393:.\Generated_Source\PSoC5/LCD_Char_1.c ****     {
+ 394:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* 40 ns delay required before rising Enable and 500ns between neighbour Enables */
+ 395:.\Generated_Source\PSoC5/LCD_Char_1.c ****         CyDelayUs(0u);
+ 585              		.loc 1 395 0
+ 586 00b6 4FF00000 		mov	r0, #0
+ 587 00ba FFF7FEFF 		bl	CyDelayUs
+ 396:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 397:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Set E high */
+ 398:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG |= LCD_Char_1_E;
+ 588              		.loc 1 398 0
+ 589 00be 45F22013 		movw	r3, #:lower16:1073762592
+ 590 00c2 C4F20003 		movt	r3, #:upper16:1073762592
+ 591 00c6 45F22012 		movw	r2, #:lower16:1073762592
+ 592 00ca C4F20002 		movt	r2, #:upper16:1073762592
+ 593 00ce 1278     		ldrb	r2, [r2, #0]
+ 594 00d0 D2B2     		uxtb	r2, r2
+ 595 00d2 42F01002 		orr	r2, r2, #16
+ 596 00d6 D2B2     		uxtb	r2, r2
+ 597 00d8 1A70     		strb	r2, [r3, #0]
+ 399:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 400:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* 360 ns delay the setup time for data pins */
+ 401:.\Generated_Source\PSoC5/LCD_Char_1.c ****         CyDelayUs(1u);
+ 598              		.loc 1 401 0
+ 599 00da 4FF00100 		mov	r0, #1
+ 600 00de FFF7FEFF 		bl	CyDelayUs
+ 402:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 403:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Get port state */
+ 404:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_PS_REG;
+ 601              		.loc 1 404 0
+ 602 00e2 45F22113 		movw	r3, #:lower16:1073762593
+ 603 00e6 C4F20003 		movt	r3, #:upper16:1073762593
+ 604 00ea 1B78     		ldrb	r3, [r3, #0]
+ 605 00ec FB71     		strb	r3, [r7, #7]
+ 405:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 406:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Set enable low */
+ 407:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_E));
+ 606              		.loc 1 407 0
+ 607 00ee 45F22013 		movw	r3, #:lower16:1073762592
+ 608 00f2 C4F20003 		movt	r3, #:upper16:1073762592
+ 609 00f6 45F22012 		movw	r2, #:lower16:1073762592
+ 610 00fa C4F20002 		movt	r2, #:upper16:1073762592
+ 611 00fe 1278     		ldrb	r2, [r2, #0]
+ 612 0100 D2B2     		uxtb	r2, r2
+ 613 0102 02F0EF02 		and	r2, r2, #239
+ 614 0106 1A70     		strb	r2, [r3, #0]
+ 408:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 19
+
+
+ 409:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* This gives a true delay between disably Enable bit and poling Ready bit */
+ 410:.\Generated_Source\PSoC5/LCD_Char_1.c ****         CyDelayUs(0u);
+ 615              		.loc 1 410 0
+ 616 0108 4FF00000 		mov	r0, #0
+ 617 010c FFF7FEFF 		bl	CyDelayUs
+ 411:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 412:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Extract ready bit */
+ 413:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value &= LCD_Char_1_READY_BIT;
+ 618              		.loc 1 413 0
+ 619 0110 FB79     		ldrb	r3, [r7, #7]
+ 620 0112 03F00803 		and	r3, r3, #8
+ 621 0116 FB71     		strb	r3, [r7, #7]
+ 414:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 415:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Set E high as we in 4-bit interface we need extra oparation */
+ 416:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG |= LCD_Char_1_E;
+ 622              		.loc 1 416 0
+ 623 0118 45F22013 		movw	r3, #:lower16:1073762592
+ 624 011c C4F20003 		movt	r3, #:upper16:1073762592
+ 625 0120 45F22012 		movw	r2, #:lower16:1073762592
+ 626 0124 C4F20002 		movt	r2, #:upper16:1073762592
+ 627 0128 1278     		ldrb	r2, [r2, #0]
+ 628 012a D2B2     		uxtb	r2, r2
+ 629 012c 42F01002 		orr	r2, r2, #16
+ 630 0130 D2B2     		uxtb	r2, r2
+ 631 0132 1A70     		strb	r2, [r3, #0]
+ 417:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 418:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* 360 ns delay the setup time for data pins */
+ 419:.\Generated_Source\PSoC5/LCD_Char_1.c ****         CyDelayUs(1u);
+ 632              		.loc 1 419 0
+ 633 0134 4FF00100 		mov	r0, #1
+ 634 0138 FFF7FEFF 		bl	CyDelayUs
+ 420:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 421:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Set enable low */
+ 422:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_E));
+ 635              		.loc 1 422 0
+ 636 013c 45F22013 		movw	r3, #:lower16:1073762592
+ 637 0140 C4F20003 		movt	r3, #:upper16:1073762592
+ 638 0144 45F22012 		movw	r2, #:lower16:1073762592
+ 639 0148 C4F20002 		movt	r2, #:upper16:1073762592
+ 640 014c 1278     		ldrb	r2, [r2, #0]
+ 641 014e D2B2     		uxtb	r2, r2
+ 642 0150 02F0EF02 		and	r2, r2, #239
+ 643 0154 1A70     		strb	r2, [r3, #0]
+ 423:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 424:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Repeat until bit 4 is not zero. */
+ 425:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 426:.\Generated_Source\PSoC5/LCD_Char_1.c ****     } while (value != 0u);
+ 644              		.loc 1 426 0
+ 645 0156 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 646 0158 002B     		cmp	r3, #0
+ 647 015a ACD1     		bne	.L29
+ 427:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 428:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Set R/W low to write */
+ 429:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_RW));
+ 648              		.loc 1 429 0
+ 649 015c 45F22013 		movw	r3, #:lower16:1073762592
+ 650 0160 C4F20003 		movt	r3, #:upper16:1073762592
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 20
+
+
+ 651 0164 45F22012 		movw	r2, #:lower16:1073762592
+ 652 0168 C4F20002 		movt	r2, #:upper16:1073762592
+ 653 016c 1278     		ldrb	r2, [r2, #0]
+ 654 016e D2B2     		uxtb	r2, r2
+ 655 0170 02F0BF02 		and	r2, r2, #191
+ 656 0174 1A70     		strb	r2, [r3, #0]
+ 430:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 431:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Clear the LCD port*/
+ 432:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_PORT_MASK));
+ 657              		.loc 1 432 0
+ 658 0176 45F22013 		movw	r3, #:lower16:1073762592
+ 659 017a C4F20003 		movt	r3, #:upper16:1073762592
+ 660 017e 45F22012 		movw	r2, #:lower16:1073762592
+ 661 0182 C4F20002 		movt	r2, #:upper16:1073762592
+ 662 0186 1278     		ldrb	r2, [r2, #0]
+ 663 0188 D2B2     		uxtb	r2, r2
+ 664 018a 02F08002 		and	r2, r2, #128
+ 665 018e 1A70     		strb	r2, [r3, #0]
+ 433:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 434:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #if (CY_PSOC4)
+ 435:.\Generated_Source\PSoC5/LCD_Char_1.c ****         
+ 436:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear old values out */
+ 437:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_PC_REG & ((uint32)(~ LCD_Char_1_DM_DATA_MASK));
+ 438:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Load in high Z values for data pins, others unchanged */
+ 439:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_PC_REG = value | LCD_Char_1_STRONG_DATA_DM;
+ 440:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 441:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #else
+ 442:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 443:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Change Port to Output (Strong) on data pins */
+ 444:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear high z values out. Configure data pins 
+ 445:.\Generated_Source\PSoC5/LCD_Char_1.c ****         * to Strong Drive, others unchanged.
+ 446:.\Generated_Source\PSoC5/LCD_Char_1.c ****         */
+ 447:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DM0_REG &= ((uint8)(~LCD_Char_1_DATA_MASK));
+ 666              		.loc 1 447 0
+ 667 0190 45F22213 		movw	r3, #:lower16:1073762594
+ 668 0194 C4F20003 		movt	r3, #:upper16:1073762594
+ 669 0198 45F22212 		movw	r2, #:lower16:1073762594
+ 670 019c C4F20002 		movt	r2, #:upper16:1073762594
+ 671 01a0 1278     		ldrb	r2, [r2, #0]
+ 672 01a2 D2B2     		uxtb	r2, r2
+ 673 01a4 02F0F002 		and	r2, r2, #240
+ 674 01a8 1A70     		strb	r2, [r3, #0]
+ 448:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear high z values out */
+ 449:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_DM1_REG & ((uint8)(~LCD_Char_1_DATA_MASK));
+ 675              		.loc 1 449 0
+ 676 01aa 45F22313 		movw	r3, #:lower16:1073762595
+ 677 01ae C4F20003 		movt	r3, #:upper16:1073762595
+ 678 01b2 1B78     		ldrb	r3, [r3, #0]
+ 679 01b4 DBB2     		uxtb	r3, r3
+ 680 01b6 23F00F03 		bic	r3, r3, #15
+ 681 01ba FB71     		strb	r3, [r7, #7]
+ 450:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Configure data pins to Strong Drive, others unchanged */
+ 451:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DM1_REG = value | (LCD_Char_1_STRONG_DM1 & LCD_Char_1_DATA_MASK);
+ 682              		.loc 1 451 0
+ 683 01bc 45F22313 		movw	r3, #:lower16:1073762595
+ 684 01c0 C4F20003 		movt	r3, #:upper16:1073762595
+ 685 01c4 FA79     		ldrb	r2, [r7, #7]
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 21
+
+
+ 686 01c6 42F00F02 		orr	r2, r2, #15
+ 687 01ca D2B2     		uxtb	r2, r2
+ 688 01cc 1A70     		strb	r2, [r3, #0]
+ 452:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 453:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Mask off data pins to clear high z values out */
+ 454:.\Generated_Source\PSoC5/LCD_Char_1.c ****         value = LCD_Char_1_PORT_DM2_REG & ((uint8)(~LCD_Char_1_DATA_MASK));
+ 689              		.loc 1 454 0
+ 690 01ce 45F22413 		movw	r3, #:lower16:1073762596
+ 691 01d2 C4F20003 		movt	r3, #:upper16:1073762596
+ 692 01d6 1B78     		ldrb	r3, [r3, #0]
+ 693 01d8 DBB2     		uxtb	r3, r3
+ 694 01da 23F00F03 		bic	r3, r3, #15
+ 695 01de FB71     		strb	r3, [r7, #7]
+ 455:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Configure data pins to Strong Drive, others unchanged */
+ 456:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DM2_REG = value | (LCD_Char_1_STRONG_DM2 & LCD_Char_1_DATA_MASK);
+ 696              		.loc 1 456 0
+ 697 01e0 45F22413 		movw	r3, #:lower16:1073762596
+ 698 01e4 C4F20003 		movt	r3, #:upper16:1073762596
+ 699 01e8 FA79     		ldrb	r2, [r7, #7]
+ 700 01ea 42F00F02 		orr	r2, r2, #15
+ 701 01ee D2B2     		uxtb	r2, r2
+ 702 01f0 1A70     		strb	r2, [r3, #0]
+ 457:.\Generated_Source\PSoC5/LCD_Char_1.c ****     
+ 458:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #endif /* CY_PSOC4 */
+ 459:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 703              		.loc 1 459 0
+ 704 01f2 07F10807 		add	r7, r7, #8
+ 705 01f6 BD46     		mov	sp, r7
+ 706 01f8 80BD     		pop	{r7, pc}
+ 707              		.cfi_endproc
+ 708              	.LFE9:
+ 709              		.size	LCD_Char_1_IsReady, .-LCD_Char_1_IsReady
+ 710 01fa 00BF     		.section	.text.LCD_Char_1_WrDatNib,"ax",%progbits
+ 711              		.align	2
+ 712              		.thumb
+ 713              		.thumb_func
+ 714              		.type	LCD_Char_1_WrDatNib, %function
+ 715              	LCD_Char_1_WrDatNib:
+ 716              	.LFB10:
+ 460:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 461:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 462:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ 463:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Function Name: LCD_Char_1_WrDatNib
+ 464:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 465:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 466:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 467:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Writes a data nibble to the LCD module.
+ 468:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 469:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 470:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  nibble:  byte containing nibble in least significant nibble to be written
+ 471:.\Generated_Source\PSoC5/LCD_Char_1.c **** *           to LCD module.
+ 472:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 473:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 474:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 475:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 476:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 477:.\Generated_Source\PSoC5/LCD_Char_1.c **** static void LCD_Char_1_WrDatNib(uint8 nibble) 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 22
+
+
+ 478:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 717              		.loc 1 478 0
+ 718              		.cfi_startproc
+ 719              		@ args = 0, pretend = 0, frame = 8
+ 720              		@ frame_needed = 1, uses_anonymous_args = 0
+ 721 0000 80B5     		push	{r7, lr}
+ 722              	.LCFI26:
+ 723              		.cfi_def_cfa_offset 8
+ 724 0002 82B0     		sub	sp, sp, #8
+ 725              	.LCFI27:
+ 726              		.cfi_def_cfa_offset 16
+ 727 0004 00AF     		add	r7, sp, #0
+ 728              		.cfi_offset 14, -4
+ 729              		.cfi_offset 7, -8
+ 730              	.LCFI28:
+ 731              		.cfi_def_cfa_register 7
+ 732 0006 0346     		mov	r3, r0
+ 733 0008 FB71     		strb	r3, [r7, #7]
+ 479:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_IsReady();
+ 734              		.loc 1 479 0
+ 735 000a FFF7FEFF 		bl	LCD_Char_1_IsReady
+ 480:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 481:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* RS shoul be low to select data register */
+ 482:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG |= LCD_Char_1_RS;
+ 736              		.loc 1 482 0
+ 737 000e 45F22013 		movw	r3, #:lower16:1073762592
+ 738 0012 C4F20003 		movt	r3, #:upper16:1073762592
+ 739 0016 45F22012 		movw	r2, #:lower16:1073762592
+ 740 001a C4F20002 		movt	r2, #:upper16:1073762592
+ 741 001e 1278     		ldrb	r2, [r2, #0]
+ 742 0020 D2B2     		uxtb	r2, r2
+ 743 0022 42F02002 		orr	r2, r2, #32
+ 744 0026 D2B2     		uxtb	r2, r2
+ 745 0028 1A70     		strb	r2, [r3, #0]
+ 483:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Reset RW for write operation */
+ 484:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_RW));
+ 746              		.loc 1 484 0
+ 747 002a 45F22013 		movw	r3, #:lower16:1073762592
+ 748 002e C4F20003 		movt	r3, #:upper16:1073762592
+ 749 0032 45F22012 		movw	r2, #:lower16:1073762592
+ 750 0036 C4F20002 		movt	r2, #:upper16:1073762592
+ 751 003a 1278     		ldrb	r2, [r2, #0]
+ 752 003c D2B2     		uxtb	r2, r2
+ 753 003e 02F0BF02 		and	r2, r2, #191
+ 754 0042 1A70     		strb	r2, [r3, #0]
+ 485:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 486:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Two following lines of code will provide us with 40ns delay */
+ 487:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Clear data pins */
+ 488:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_DATA_MASK));
+ 755              		.loc 1 488 0
+ 756 0044 45F22013 		movw	r3, #:lower16:1073762592
+ 757 0048 C4F20003 		movt	r3, #:upper16:1073762592
+ 758 004c 45F22012 		movw	r2, #:lower16:1073762592
+ 759 0050 C4F20002 		movt	r2, #:upper16:1073762592
+ 760 0054 1278     		ldrb	r2, [r2, #0]
+ 761 0056 D2B2     		uxtb	r2, r2
+ 762 0058 02F0F002 		and	r2, r2, #240
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 23
+
+
+ 763 005c 1A70     		strb	r2, [r3, #0]
+ 489:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 490:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Write in data, bring E high*/
+ 491:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #if(0u != LCD_Char_1_PORT_SHIFT) /* MISRA forbids shift by 0 so need to handle that */
+ 492:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG |= 
+ 493:.\Generated_Source\PSoC5/LCD_Char_1.c ****             (LCD_Char_1_E | ((uint8)(((uint8) nibble) << LCD_Char_1_PORT_SHIFT)));
+ 494:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #else
+ 495:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG |= (LCD_Char_1_E | nibble);
+ 764              		.loc 1 495 0
+ 765 005e 45F22013 		movw	r3, #:lower16:1073762592
+ 766 0062 C4F20003 		movt	r3, #:upper16:1073762592
+ 767 0066 45F22012 		movw	r2, #:lower16:1073762592
+ 768 006a C4F20002 		movt	r2, #:upper16:1073762592
+ 769 006e 1278     		ldrb	r2, [r2, #0]
+ 770 0070 D1B2     		uxtb	r1, r2
+ 771 0072 FA79     		ldrb	r2, [r7, #7]
+ 772 0074 41EA0202 		orr	r2, r1, r2
+ 773 0078 D2B2     		uxtb	r2, r2
+ 774 007a 42F01002 		orr	r2, r2, #16
+ 775 007e D2B2     		uxtb	r2, r2
+ 776 0080 1A70     		strb	r2, [r3, #0]
+ 496:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #endif /* (0u != LCD_Char_1_PORT_SHIFT) */
+ 497:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 498:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Minimum of 230 ns delay */
+ 499:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelayUs(1u);
+ 777              		.loc 1 499 0
+ 778 0082 4FF00100 		mov	r0, #1
+ 779 0086 FFF7FEFF 		bl	CyDelayUs
+ 500:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 501:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_E));
+ 780              		.loc 1 501 0
+ 781 008a 45F22013 		movw	r3, #:lower16:1073762592
+ 782 008e C4F20003 		movt	r3, #:upper16:1073762592
+ 783 0092 45F22012 		movw	r2, #:lower16:1073762592
+ 784 0096 C4F20002 		movt	r2, #:upper16:1073762592
+ 785 009a 1278     		ldrb	r2, [r2, #0]
+ 786 009c D2B2     		uxtb	r2, r2
+ 787 009e 02F0EF02 		and	r2, r2, #239
+ 788 00a2 1A70     		strb	r2, [r3, #0]
+ 502:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 789              		.loc 1 502 0
+ 790 00a4 07F10807 		add	r7, r7, #8
+ 791 00a8 BD46     		mov	sp, r7
+ 792 00aa 80BD     		pop	{r7, pc}
+ 793              		.cfi_endproc
+ 794              	.LFE10:
+ 795              		.size	LCD_Char_1_WrDatNib, .-LCD_Char_1_WrDatNib
+ 796              		.section	.text.LCD_Char_1_WrCntrlNib,"ax",%progbits
+ 797              		.align	2
+ 798              		.thumb
+ 799              		.thumb_func
+ 800              		.type	LCD_Char_1_WrCntrlNib, %function
+ 801              	LCD_Char_1_WrCntrlNib:
+ 802              	.LFB11:
+ 503:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 504:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 505:.\Generated_Source\PSoC5/LCD_Char_1.c **** /*******************************************************************************
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 24
+
+
+ 506:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Function Name: LCD_Char_1_WrCntrlNib
+ 507:.\Generated_Source\PSoC5/LCD_Char_1.c **** ********************************************************************************
+ 508:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 509:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Summary:
+ 510:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  Writes a control nibble to the LCD module.
+ 511:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 512:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Parameters:
+ 513:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  nibble:  byte containing nibble in least significant nibble to be written
+ 514:.\Generated_Source\PSoC5/LCD_Char_1.c **** *           to LCD module.
+ 515:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 516:.\Generated_Source\PSoC5/LCD_Char_1.c **** * Return:
+ 517:.\Generated_Source\PSoC5/LCD_Char_1.c **** *  None.
+ 518:.\Generated_Source\PSoC5/LCD_Char_1.c **** *
+ 519:.\Generated_Source\PSoC5/LCD_Char_1.c **** *******************************************************************************/
+ 520:.\Generated_Source\PSoC5/LCD_Char_1.c **** static void LCD_Char_1_WrCntrlNib(uint8 nibble) 
+ 521:.\Generated_Source\PSoC5/LCD_Char_1.c **** {
+ 803              		.loc 1 521 0
+ 804              		.cfi_startproc
+ 805              		@ args = 0, pretend = 0, frame = 8
+ 806              		@ frame_needed = 1, uses_anonymous_args = 0
+ 807 0000 80B5     		push	{r7, lr}
+ 808              	.LCFI29:
+ 809              		.cfi_def_cfa_offset 8
+ 810 0002 82B0     		sub	sp, sp, #8
+ 811              	.LCFI30:
+ 812              		.cfi_def_cfa_offset 16
+ 813 0004 00AF     		add	r7, sp, #0
+ 814              		.cfi_offset 14, -4
+ 815              		.cfi_offset 7, -8
+ 816              	.LCFI31:
+ 817              		.cfi_def_cfa_register 7
+ 818 0006 0346     		mov	r3, r0
+ 819 0008 FB71     		strb	r3, [r7, #7]
+ 522:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* RS and RW shoul be low to select instruction register and  write operation respectively */
+ 523:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~(LCD_Char_1_RS | LCD_Char_1_RW)));
+ 820              		.loc 1 523 0
+ 821 000a 45F22013 		movw	r3, #:lower16:1073762592
+ 822 000e C4F20003 		movt	r3, #:upper16:1073762592
+ 823 0012 45F22012 		movw	r2, #:lower16:1073762592
+ 824 0016 C4F20002 		movt	r2, #:upper16:1073762592
+ 825 001a 1278     		ldrb	r2, [r2, #0]
+ 826 001c D2B2     		uxtb	r2, r2
+ 827 001e 02F09F02 		and	r2, r2, #159
+ 828 0022 1A70     		strb	r2, [r3, #0]
+ 524:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 525:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Two following lines of code will give provide ua with 40ns delay */
+ 526:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Clear data pins */
+ 527:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_DATA_MASK));
+ 829              		.loc 1 527 0
+ 830 0024 45F22013 		movw	r3, #:lower16:1073762592
+ 831 0028 C4F20003 		movt	r3, #:upper16:1073762592
+ 832 002c 45F22012 		movw	r2, #:lower16:1073762592
+ 833 0030 C4F20002 		movt	r2, #:upper16:1073762592
+ 834 0034 1278     		ldrb	r2, [r2, #0]
+ 835 0036 D2B2     		uxtb	r2, r2
+ 836 0038 02F0F002 		and	r2, r2, #240
+ 837 003c 1A70     		strb	r2, [r3, #0]
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 25
+
+
+ 528:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 529:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Write control data and set enable signal */
+ 530:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #if(0u != LCD_Char_1_PORT_SHIFT) /* MISRA forbids shift by 0 so need to handle that */
+ 531:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG |= 
+ 532:.\Generated_Source\PSoC5/LCD_Char_1.c ****             (LCD_Char_1_E | ((uint8)(((uint8) nibble) << LCD_Char_1_PORT_SHIFT)));
+ 533:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #else
+ 534:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PORT_DR_REG |= (LCD_Char_1_E | nibble);
+ 838              		.loc 1 534 0
+ 839 003e 45F22013 		movw	r3, #:lower16:1073762592
+ 840 0042 C4F20003 		movt	r3, #:upper16:1073762592
+ 841 0046 45F22012 		movw	r2, #:lower16:1073762592
+ 842 004a C4F20002 		movt	r2, #:upper16:1073762592
+ 843 004e 1278     		ldrb	r2, [r2, #0]
+ 844 0050 D1B2     		uxtb	r1, r2
+ 845 0052 FA79     		ldrb	r2, [r7, #7]
+ 846 0054 41EA0202 		orr	r2, r1, r2
+ 847 0058 D2B2     		uxtb	r2, r2
+ 848 005a 42F01002 		orr	r2, r2, #16
+ 849 005e D2B2     		uxtb	r2, r2
+ 850 0060 1A70     		strb	r2, [r3, #0]
+ 535:.\Generated_Source\PSoC5/LCD_Char_1.c ****     #endif /* (0u != LCD_Char_1_PORT_SHIFT) */
+ 536:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 537:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /* Minimum of 230 ns delay */
+ 538:.\Generated_Source\PSoC5/LCD_Char_1.c ****     CyDelayUs(1u);
+ 851              		.loc 1 538 0
+ 852 0062 4FF00100 		mov	r0, #1
+ 853 0066 FFF7FEFF 		bl	CyDelayUs
+ 539:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 540:.\Generated_Source\PSoC5/LCD_Char_1.c ****     LCD_Char_1_PORT_DR_REG &= ((uint8)(~LCD_Char_1_E));
+ 854              		.loc 1 540 0
+ 855 006a 45F22013 		movw	r3, #:lower16:1073762592
+ 856 006e C4F20003 		movt	r3, #:upper16:1073762592
+ 857 0072 45F22012 		movw	r2, #:lower16:1073762592
+ 858 0076 C4F20002 		movt	r2, #:upper16:1073762592
+ 859 007a 1278     		ldrb	r2, [r2, #0]
+ 860 007c D2B2     		uxtb	r2, r2
+ 861 007e 02F0EF02 		and	r2, r2, #239
+ 862 0082 1A70     		strb	r2, [r3, #0]
+ 541:.\Generated_Source\PSoC5/LCD_Char_1.c **** }
+ 863              		.loc 1 541 0
+ 864 0084 07F10807 		add	r7, r7, #8
+ 865 0088 BD46     		mov	sp, r7
+ 866 008a 80BD     		pop	{r7, pc}
+ 867              		.cfi_endproc
+ 868              	.LFE11:
+ 869              		.size	LCD_Char_1_WrCntrlNib, .-LCD_Char_1_WrCntrlNib
+ 870              		.section	.text.LCD_Char_1_PrintInt8,"ax",%progbits
+ 871              		.align	2
+ 872              		.global	LCD_Char_1_PrintInt8
+ 873              		.thumb
+ 874              		.thumb_func
+ 875              		.type	LCD_Char_1_PrintInt8, %function
+ 876              	LCD_Char_1_PrintInt8:
+ 877              	.LFB12:
+ 542:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 543:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 544:.\Generated_Source\PSoC5/LCD_Char_1.c **** #if(LCD_Char_1_CONVERSION_ROUTINES == 1u)
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 26
+
+
+ 545:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 546:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /*******************************************************************************
+ 547:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  Function Name: LCD_Char_1_PrintInt8
+ 548:.\Generated_Source\PSoC5/LCD_Char_1.c ****     ********************************************************************************
+ 549:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 550:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Summary:
+ 551:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  Print a byte as two ASCII characters.
+ 552:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 553:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Parameters:
+ 554:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  value:  The byte to be printed out as ASCII characters.
+ 555:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 556:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Return:
+ 557:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  None.
+ 558:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 559:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *******************************************************************************/
+ 560:.\Generated_Source\PSoC5/LCD_Char_1.c ****     void LCD_Char_1_PrintInt8(uint8 value) 
+ 561:.\Generated_Source\PSoC5/LCD_Char_1.c ****     {
+ 878              		.loc 1 561 0
+ 879              		.cfi_startproc
+ 880              		@ args = 0, pretend = 0, frame = 8
+ 881              		@ frame_needed = 1, uses_anonymous_args = 0
+ 882 0000 80B5     		push	{r7, lr}
+ 883              	.LCFI32:
+ 884              		.cfi_def_cfa_offset 8
+ 885 0002 82B0     		sub	sp, sp, #8
+ 886              	.LCFI33:
+ 887              		.cfi_def_cfa_offset 16
+ 888 0004 00AF     		add	r7, sp, #0
+ 889              		.cfi_offset 14, -4
+ 890              		.cfi_offset 7, -8
+ 891              	.LCFI34:
+ 892              		.cfi_def_cfa_register 7
+ 893 0006 0346     		mov	r3, r0
+ 894 0008 FB71     		strb	r3, [r7, #7]
+ 562:.\Generated_Source\PSoC5/LCD_Char_1.c ****         static char8 const CYCODE LCD_Char_1_hex[16u] = "0123456789ABCDEF";
+ 563:.\Generated_Source\PSoC5/LCD_Char_1.c ****         
+ 564:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PutChar((char8) LCD_Char_1_hex[value >> LCD_Char_1_BYTE_UPPER_NIBBLE_SHIFT]);
+ 895              		.loc 1 564 0
+ 896 000a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 897 000c 4FEA1313 		lsr	r3, r3, #4
+ 898 0010 DBB2     		uxtb	r3, r3
+ 899 0012 1A46     		mov	r2, r3
+ 900 0014 40F20003 		movw	r3, #:lower16:LCD_Char_1_hex.2143
+ 901 0018 C0F20003 		movt	r3, #:upper16:LCD_Char_1_hex.2143
+ 902 001c 9B5C     		ldrb	r3, [r3, r2]	@ zero_extendqisi2
+ 903 001e 1846     		mov	r0, r3
+ 904 0020 FFF7FEFF 		bl	LCD_Char_1_PutChar
+ 565:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PutChar((char8) LCD_Char_1_hex[value & LCD_Char_1_BYTE_LOWER_NIBBLE_MASK]);
+ 905              		.loc 1 565 0
+ 906 0024 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 907 0026 03F00F02 		and	r2, r3, #15
+ 908 002a 40F20003 		movw	r3, #:lower16:LCD_Char_1_hex.2143
+ 909 002e C0F20003 		movt	r3, #:upper16:LCD_Char_1_hex.2143
+ 910 0032 9B5C     		ldrb	r3, [r3, r2]	@ zero_extendqisi2
+ 911 0034 1846     		mov	r0, r3
+ 912 0036 FFF7FEFF 		bl	LCD_Char_1_PutChar
+ 566:.\Generated_Source\PSoC5/LCD_Char_1.c ****     }
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 27
+
+
+ 913              		.loc 1 566 0
+ 914 003a 07F10807 		add	r7, r7, #8
+ 915 003e BD46     		mov	sp, r7
+ 916 0040 80BD     		pop	{r7, pc}
+ 917              		.cfi_endproc
+ 918              	.LFE12:
+ 919              		.size	LCD_Char_1_PrintInt8, .-LCD_Char_1_PrintInt8
+ 920 0042 00BF     		.section	.text.LCD_Char_1_PrintInt16,"ax",%progbits
+ 921              		.align	2
+ 922              		.global	LCD_Char_1_PrintInt16
+ 923              		.thumb
+ 924              		.thumb_func
+ 925              		.type	LCD_Char_1_PrintInt16, %function
+ 926              	LCD_Char_1_PrintInt16:
+ 927              	.LFB13:
+ 567:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 568:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 569:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /*******************************************************************************
+ 570:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  Function Name: LCD_Char_1_PrintInt16
+ 571:.\Generated_Source\PSoC5/LCD_Char_1.c ****     ********************************************************************************
+ 572:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 573:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Summary:
+ 574:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  Print a uint16 as four ASCII characters.
+ 575:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 576:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Parameters:
+ 577:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  value:   The uint16 to be printed out as ASCII characters.
+ 578:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 579:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Return:
+ 580:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  None.
+ 581:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 582:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *******************************************************************************/
+ 583:.\Generated_Source\PSoC5/LCD_Char_1.c ****     void LCD_Char_1_PrintInt16(uint16 value) 
+ 584:.\Generated_Source\PSoC5/LCD_Char_1.c ****     {
+ 928              		.loc 1 584 0
+ 929              		.cfi_startproc
+ 930              		@ args = 0, pretend = 0, frame = 8
+ 931              		@ frame_needed = 1, uses_anonymous_args = 0
+ 932 0000 80B5     		push	{r7, lr}
+ 933              	.LCFI35:
+ 934              		.cfi_def_cfa_offset 8
+ 935 0002 82B0     		sub	sp, sp, #8
+ 936              	.LCFI36:
+ 937              		.cfi_def_cfa_offset 16
+ 938 0004 00AF     		add	r7, sp, #0
+ 939              		.cfi_offset 14, -4
+ 940              		.cfi_offset 7, -8
+ 941              	.LCFI37:
+ 942              		.cfi_def_cfa_register 7
+ 943 0006 0346     		mov	r3, r0
+ 944 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 585:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PrintInt8((uint8)(value >> LCD_Char_1_U16_UPPER_BYTE_SHIFT));
+ 945              		.loc 1 585 0
+ 946 000a FB88     		ldrh	r3, [r7, #6]
+ 947 000c 4FEA1323 		lsr	r3, r3, #8
+ 948 0010 9BB2     		uxth	r3, r3
+ 949 0012 DBB2     		uxtb	r3, r3
+ 950 0014 1846     		mov	r0, r3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 28
+
+
+ 951 0016 FFF7FEFF 		bl	LCD_Char_1_PrintInt8
+ 586:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PrintInt8((uint8)(value & LCD_Char_1_U16_LOWER_BYTE_MASK));
+ 952              		.loc 1 586 0
+ 953 001a FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 954 001c DBB2     		uxtb	r3, r3
+ 955 001e 1846     		mov	r0, r3
+ 956 0020 FFF7FEFF 		bl	LCD_Char_1_PrintInt8
+ 587:.\Generated_Source\PSoC5/LCD_Char_1.c ****     }
+ 957              		.loc 1 587 0
+ 958 0024 07F10807 		add	r7, r7, #8
+ 959 0028 BD46     		mov	sp, r7
+ 960 002a 80BD     		pop	{r7, pc}
+ 961              		.cfi_endproc
+ 962              	.LFE13:
+ 963              		.size	LCD_Char_1_PrintInt16, .-LCD_Char_1_PrintInt16
+ 964              		.section	.text.LCD_Char_1_PrintNumber,"ax",%progbits
+ 965              		.align	2
+ 966              		.global	LCD_Char_1_PrintNumber
+ 967              		.thumb
+ 968              		.thumb_func
+ 969              		.type	LCD_Char_1_PrintNumber, %function
+ 970              	LCD_Char_1_PrintNumber:
+ 971              	.LFB14:
+ 588:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 589:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 590:.\Generated_Source\PSoC5/LCD_Char_1.c ****     /*******************************************************************************
+ 591:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  Function Name: LCD_Char_1_PrintNumber
+ 592:.\Generated_Source\PSoC5/LCD_Char_1.c ****     ********************************************************************************
+ 593:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 594:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Summary:
+ 595:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  Print an uint32 value as a left-justified decimal value.
+ 596:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 597:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Parameters:
+ 598:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  value:  The byte to be printed out as ASCII characters.
+ 599:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 600:.\Generated_Source\PSoC5/LCD_Char_1.c ****     * Return:
+ 601:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *  None.
+ 602:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *
+ 603:.\Generated_Source\PSoC5/LCD_Char_1.c ****     *******************************************************************************/
+ 604:.\Generated_Source\PSoC5/LCD_Char_1.c ****     void LCD_Char_1_PrintNumber(uint16 value) 
+ 605:.\Generated_Source\PSoC5/LCD_Char_1.c ****     {
+ 972              		.loc 1 605 0
+ 973              		.cfi_startproc
+ 974              		@ args = 0, pretend = 0, frame = 24
+ 975              		@ frame_needed = 1, uses_anonymous_args = 0
+ 976 0000 80B5     		push	{r7, lr}
+ 977              	.LCFI38:
+ 978              		.cfi_def_cfa_offset 8
+ 979 0002 86B0     		sub	sp, sp, #24
+ 980              	.LCFI39:
+ 981              		.cfi_def_cfa_offset 32
+ 982 0004 00AF     		add	r7, sp, #0
+ 983              		.cfi_offset 14, -4
+ 984              		.cfi_offset 7, -8
+ 985              	.LCFI40:
+ 986              		.cfi_def_cfa_register 7
+ 987 0006 0346     		mov	r3, r0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 29
+
+
+ 988 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 606:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 607:.\Generated_Source\PSoC5/LCD_Char_1.c ****         char8 number[LCD_Char_1_NUMBER_OF_REMAINDERS];
+ 608:.\Generated_Source\PSoC5/LCD_Char_1.c ****         char8 temp[LCD_Char_1_NUMBER_OF_REMAINDERS];
+ 609:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 610:.\Generated_Source\PSoC5/LCD_Char_1.c ****         uint8 digIndex = 0u;
+ 989              		.loc 1 610 0
+ 990 000a 4FF00003 		mov	r3, #0
+ 991 000e BB75     		strb	r3, [r7, #22]
+ 611:.\Generated_Source\PSoC5/LCD_Char_1.c ****         uint8 numDigits;
+ 612:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 613:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Load these in reverse order */
+ 614:.\Generated_Source\PSoC5/LCD_Char_1.c ****         while(value >= LCD_Char_1_TEN)
+ 992              		.loc 1 614 0
+ 993 0010 2AE0     		b	.L40
+ 994              	.L41:
+ 615:.\Generated_Source\PSoC5/LCD_Char_1.c ****         {
+ 616:.\Generated_Source\PSoC5/LCD_Char_1.c ****             temp[digIndex] = (value % LCD_Char_1_TEN) + '0';
+ 995              		.loc 1 616 0
+ 996 0012 B87D     		ldrb	r0, [r7, #22]	@ zero_extendqisi2
+ 997 0014 FA88     		ldrh	r2, [r7, #6]
+ 998 0016 4CF6CD43 		movw	r3, #:lower16:-858993459
+ 999 001a CCF6CC43 		movt	r3, #:upper16:-858993459
+ 1000 001e A3FB0213 		umull	r1, r3, r3, r2
+ 1001 0022 4FEAD301 		lsr	r1, r3, #3
+ 1002 0026 0B46     		mov	r3, r1
+ 1003 0028 4FEA8303 		lsl	r3, r3, #2
+ 1004 002c 0B44     		add	r3, r3, r1
+ 1005 002e 4FEA4303 		lsl	r3, r3, #1
+ 1006 0032 C3EB0203 		rsb	r3, r3, r2
+ 1007 0036 9BB2     		uxth	r3, r3
+ 1008 0038 DBB2     		uxtb	r3, r3
+ 1009 003a 03F13003 		add	r3, r3, #48
+ 1010 003e DAB2     		uxtb	r2, r3
+ 1011 0040 07F11801 		add	r1, r7, #24
+ 1012 0044 01EB0003 		add	r3, r1, r0
+ 1013 0048 03F8102C 		strb	r2, [r3, #-16]
+ 617:.\Generated_Source\PSoC5/LCD_Char_1.c ****             value /= LCD_Char_1_TEN;
+ 1014              		.loc 1 617 0
+ 1015 004c FA88     		ldrh	r2, [r7, #6]
+ 1016 004e 4CF6CD43 		movw	r3, #:lower16:-858993459
+ 1017 0052 CCF6CC43 		movt	r3, #:upper16:-858993459
+ 1018 0056 A3FB0213 		umull	r1, r3, r3, r2
+ 1019 005a 4FEAD303 		lsr	r3, r3, #3
+ 1020 005e FB80     		strh	r3, [r7, #6]	@ movhi
+ 618:.\Generated_Source\PSoC5/LCD_Char_1.c ****             digIndex++;
+ 1021              		.loc 1 618 0
+ 1022 0060 BB7D     		ldrb	r3, [r7, #22]
+ 1023 0062 03F10103 		add	r3, r3, #1
+ 1024 0066 BB75     		strb	r3, [r7, #22]
+ 1025              	.L40:
+ 1026              		.loc 1 614 0
+ 1027 0068 FB88     		ldrh	r3, [r7, #6]
+ 1028 006a 092B     		cmp	r3, #9
+ 1029 006c D1D8     		bhi	.L41
+ 619:.\Generated_Source\PSoC5/LCD_Char_1.c ****         }
+ 620:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 30
+
+
+ 621:.\Generated_Source\PSoC5/LCD_Char_1.c ****         temp[digIndex] = (value % LCD_Char_1_TEN) + '0';
+ 1030              		.loc 1 621 0
+ 1031 006e B87D     		ldrb	r0, [r7, #22]	@ zero_extendqisi2
+ 1032 0070 FA88     		ldrh	r2, [r7, #6]
+ 1033 0072 4CF6CD43 		movw	r3, #:lower16:-858993459
+ 1034 0076 CCF6CC43 		movt	r3, #:upper16:-858993459
+ 1035 007a A3FB0213 		umull	r1, r3, r3, r2
+ 1036 007e 4FEAD301 		lsr	r1, r3, #3
+ 1037 0082 0B46     		mov	r3, r1
+ 1038 0084 4FEA8303 		lsl	r3, r3, #2
+ 1039 0088 0B44     		add	r3, r3, r1
+ 1040 008a 4FEA4303 		lsl	r3, r3, #1
+ 1041 008e C3EB0203 		rsb	r3, r3, r2
+ 1042 0092 9BB2     		uxth	r3, r3
+ 1043 0094 DBB2     		uxtb	r3, r3
+ 1044 0096 03F13003 		add	r3, r3, #48
+ 1045 009a DAB2     		uxtb	r2, r3
+ 1046 009c 07F11801 		add	r1, r7, #24
+ 1047 00a0 01EB0003 		add	r3, r1, r0
+ 1048 00a4 03F8102C 		strb	r2, [r3, #-16]
+ 622:.\Generated_Source\PSoC5/LCD_Char_1.c ****         numDigits = digIndex;
+ 1049              		.loc 1 622 0
+ 1050 00a8 BB7D     		ldrb	r3, [r7, #22]
+ 1051 00aa FB75     		strb	r3, [r7, #23]
+ 623:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 624:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* While index is greater than or equal to zero copy number
+ 625:.\Generated_Source\PSoC5/LCD_Char_1.c ****         * from temporary array to number[].
+ 626:.\Generated_Source\PSoC5/LCD_Char_1.c ****         */
+ 627:.\Generated_Source\PSoC5/LCD_Char_1.c ****         while (digIndex != 0u)
+ 1052              		.loc 1 627 0
+ 1053 00ac 12E0     		b	.L42
+ 1054              	.L43:
+ 628:.\Generated_Source\PSoC5/LCD_Char_1.c ****         {
+ 629:.\Generated_Source\PSoC5/LCD_Char_1.c ****             number[numDigits - digIndex] = temp[digIndex];
+ 1055              		.loc 1 629 0
+ 1056 00ae FA7D     		ldrb	r2, [r7, #23]	@ zero_extendqisi2
+ 1057 00b0 BB7D     		ldrb	r3, [r7, #22]	@ zero_extendqisi2
+ 1058 00b2 C3EB0203 		rsb	r3, r3, r2
+ 1059 00b6 BA7D     		ldrb	r2, [r7, #22]	@ zero_extendqisi2
+ 1060 00b8 07F11801 		add	r1, r7, #24
+ 1061 00bc 0A44     		add	r2, r1, r2
+ 1062 00be 12F8102C 		ldrb	r2, [r2, #-16]	@ zero_extendqisi2
+ 1063 00c2 07F11801 		add	r1, r7, #24
+ 1064 00c6 0B44     		add	r3, r1, r3
+ 1065 00c8 03F8082C 		strb	r2, [r3, #-8]
+ 630:.\Generated_Source\PSoC5/LCD_Char_1.c ****             digIndex--;
+ 1066              		.loc 1 630 0
+ 1067 00cc BB7D     		ldrb	r3, [r7, #22]
+ 1068 00ce 03F1FF33 		add	r3, r3, #-1
+ 1069 00d2 BB75     		strb	r3, [r7, #22]
+ 1070              	.L42:
+ 1071              		.loc 1 627 0
+ 1072 00d4 BB7D     		ldrb	r3, [r7, #22]	@ zero_extendqisi2
+ 1073 00d6 002B     		cmp	r3, #0
+ 1074 00d8 E9D1     		bne	.L43
+ 631:.\Generated_Source\PSoC5/LCD_Char_1.c ****         }
+ 632:.\Generated_Source\PSoC5/LCD_Char_1.c ****         
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 31
+
+
+ 633:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Copy last digit */
+ 634:.\Generated_Source\PSoC5/LCD_Char_1.c ****         number[numDigits] = temp[0u];
+ 1075              		.loc 1 634 0
+ 1076 00da FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 1077 00dc 3A7A     		ldrb	r2, [r7, #8]	@ zero_extendqisi2
+ 1078 00de 07F11801 		add	r1, r7, #24
+ 1079 00e2 0B44     		add	r3, r1, r3
+ 1080 00e4 03F8082C 		strb	r2, [r3, #-8]
+ 635:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 636:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Null Termination */
+ 637:.\Generated_Source\PSoC5/LCD_Char_1.c ****         number[numDigits + 1u] = (char8) '\0';
+ 1081              		.loc 1 637 0
+ 1082 00e8 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 1083 00ea 03F10103 		add	r3, r3, #1
+ 1084 00ee 07F11802 		add	r2, r7, #24
+ 1085 00f2 1344     		add	r3, r2, r3
+ 1086 00f4 4FF00002 		mov	r2, #0
+ 1087 00f8 03F8082C 		strb	r2, [r3, #-8]
+ 638:.\Generated_Source\PSoC5/LCD_Char_1.c **** 
+ 639:.\Generated_Source\PSoC5/LCD_Char_1.c ****         /* Print out number */
+ 640:.\Generated_Source\PSoC5/LCD_Char_1.c ****         LCD_Char_1_PrintString(&number[0u]);
+ 1088              		.loc 1 640 0
+ 1089 00fc 07F11003 		add	r3, r7, #16
+ 1090 0100 1846     		mov	r0, r3
+ 1091 0102 FFF7FEFF 		bl	LCD_Char_1_PrintString
+ 641:.\Generated_Source\PSoC5/LCD_Char_1.c ****     }
+ 1092              		.loc 1 641 0
+ 1093 0106 07F11807 		add	r7, r7, #24
+ 1094 010a BD46     		mov	sp, r7
+ 1095 010c 80BD     		pop	{r7, pc}
+ 1096              		.cfi_endproc
+ 1097              	.LFE14:
+ 1098              		.size	LCD_Char_1_PrintNumber, .-LCD_Char_1_PrintNumber
+ 1099 010e 00BF     		.section	.rodata
+ 1100              		.align	2
+ 1101              		.type	LCD_Char_1_hex.2143, %object
+ 1102              		.size	LCD_Char_1_hex.2143, 16
+ 1103              	LCD_Char_1_hex.2143:
+ 1104 0000 30313233 		.ascii	"0123456789ABCDEF"
+ 1104      34353637 
+ 1104      38394142 
+ 1104      43444546 
+ 1105              		.text
+ 1106              	.Letext0:
+ 1107              		.section	.debug_loc,"",%progbits
+ 1108              	.Ldebug_loc0:
+ 1109              	.LLST0:
+ 1110 0000 00000000 		.4byte	.LFB0
+ 1111 0004 02000000 		.4byte	.LCFI0
+ 1112 0008 0100     		.2byte	0x1
+ 1113 000a 5D       		.byte	0x5d
+ 1114 000b 02000000 		.4byte	.LCFI0
+ 1115 000f 04000000 		.4byte	.LCFI1
+ 1116 0013 0200     		.2byte	0x2
+ 1117 0015 7D       		.byte	0x7d
+ 1118 0016 08       		.sleb128 8
+ 1119 0017 04000000 		.4byte	.LCFI1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 32
+
+
+ 1120 001b 8E000000 		.4byte	.LFE0
+ 1121 001f 0200     		.2byte	0x2
+ 1122 0021 77       		.byte	0x77
+ 1123 0022 08       		.sleb128 8
+ 1124 0023 00000000 		.4byte	0x0
+ 1125 0027 00000000 		.4byte	0x0
+ 1126              	.LLST1:
+ 1127 002b 00000000 		.4byte	.LFB1
+ 1128 002f 02000000 		.4byte	.LCFI2
+ 1129 0033 0100     		.2byte	0x1
+ 1130 0035 5D       		.byte	0x5d
+ 1131 0036 02000000 		.4byte	.LCFI2
+ 1132 003a 04000000 		.4byte	.LCFI3
+ 1133 003e 0200     		.2byte	0x2
+ 1134 0040 7D       		.byte	0x7d
+ 1135 0041 08       		.sleb128 8
+ 1136 0042 04000000 		.4byte	.LCFI3
+ 1137 0046 1C000000 		.4byte	.LFE1
+ 1138 004a 0200     		.2byte	0x2
+ 1139 004c 77       		.byte	0x77
+ 1140 004d 08       		.sleb128 8
+ 1141 004e 00000000 		.4byte	0x0
+ 1142 0052 00000000 		.4byte	0x0
+ 1143              	.LLST2:
+ 1144 0056 00000000 		.4byte	.LFB2
+ 1145 005a 02000000 		.4byte	.LCFI4
+ 1146 005e 0100     		.2byte	0x1
+ 1147 0060 5D       		.byte	0x5d
+ 1148 0061 02000000 		.4byte	.LCFI4
+ 1149 0065 04000000 		.4byte	.LCFI5
+ 1150 0069 0200     		.2byte	0x2
+ 1151 006b 7D       		.byte	0x7d
+ 1152 006c 08       		.sleb128 8
+ 1153 006d 04000000 		.4byte	.LCFI5
+ 1154 0071 2A000000 		.4byte	.LFE2
+ 1155 0075 0200     		.2byte	0x2
+ 1156 0077 77       		.byte	0x77
+ 1157 0078 08       		.sleb128 8
+ 1158 0079 00000000 		.4byte	0x0
+ 1159 007d 00000000 		.4byte	0x0
+ 1160              	.LLST3:
+ 1161 0081 00000000 		.4byte	.LFB3
+ 1162 0085 02000000 		.4byte	.LCFI6
+ 1163 0089 0100     		.2byte	0x1
+ 1164 008b 5D       		.byte	0x5d
+ 1165 008c 02000000 		.4byte	.LCFI6
+ 1166 0090 04000000 		.4byte	.LCFI7
+ 1167 0094 0200     		.2byte	0x2
+ 1168 0096 7D       		.byte	0x7d
+ 1169 0097 08       		.sleb128 8
+ 1170 0098 04000000 		.4byte	.LCFI7
+ 1171 009c 1C000000 		.4byte	.LFE3
+ 1172 00a0 0200     		.2byte	0x2
+ 1173 00a2 77       		.byte	0x77
+ 1174 00a3 08       		.sleb128 8
+ 1175 00a4 00000000 		.4byte	0x0
+ 1176 00a8 00000000 		.4byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 33
+
+
+ 1177              	.LLST4:
+ 1178 00ac 00000000 		.4byte	.LFB4
+ 1179 00b0 02000000 		.4byte	.LCFI8
+ 1180 00b4 0100     		.2byte	0x1
+ 1181 00b6 5D       		.byte	0x5d
+ 1182 00b7 02000000 		.4byte	.LCFI8
+ 1183 00bb 04000000 		.4byte	.LCFI9
+ 1184 00bf 0200     		.2byte	0x2
+ 1185 00c1 7D       		.byte	0x7d
+ 1186 00c2 08       		.sleb128 8
+ 1187 00c3 04000000 		.4byte	.LCFI9
+ 1188 00c7 06000000 		.4byte	.LCFI10
+ 1189 00cb 0200     		.2byte	0x2
+ 1190 00cd 7D       		.byte	0x7d
+ 1191 00ce 10       		.sleb128 16
+ 1192 00cf 06000000 		.4byte	.LCFI10
+ 1193 00d3 72000000 		.4byte	.LFE4
+ 1194 00d7 0200     		.2byte	0x2
+ 1195 00d9 77       		.byte	0x77
+ 1196 00da 10       		.sleb128 16
+ 1197 00db 00000000 		.4byte	0x0
+ 1198 00df 00000000 		.4byte	0x0
+ 1199              	.LLST5:
+ 1200 00e3 00000000 		.4byte	.LFB5
+ 1201 00e7 02000000 		.4byte	.LCFI11
+ 1202 00eb 0100     		.2byte	0x1
+ 1203 00ed 5D       		.byte	0x5d
+ 1204 00ee 02000000 		.4byte	.LCFI11
+ 1205 00f2 04000000 		.4byte	.LCFI12
+ 1206 00f6 0200     		.2byte	0x2
+ 1207 00f8 7D       		.byte	0x7d
+ 1208 00f9 08       		.sleb128 8
+ 1209 00fa 04000000 		.4byte	.LCFI12
+ 1210 00fe 06000000 		.4byte	.LCFI13
+ 1211 0102 0200     		.2byte	0x2
+ 1212 0104 7D       		.byte	0x7d
+ 1213 0105 18       		.sleb128 24
+ 1214 0106 06000000 		.4byte	.LCFI13
+ 1215 010a 3E000000 		.4byte	.LFE5
+ 1216 010e 0200     		.2byte	0x2
+ 1217 0110 77       		.byte	0x77
+ 1218 0111 18       		.sleb128 24
+ 1219 0112 00000000 		.4byte	0x0
+ 1220 0116 00000000 		.4byte	0x0
+ 1221              	.LLST6:
+ 1222 011a 00000000 		.4byte	.LFB6
+ 1223 011e 02000000 		.4byte	.LCFI14
+ 1224 0122 0100     		.2byte	0x1
+ 1225 0124 5D       		.byte	0x5d
+ 1226 0125 02000000 		.4byte	.LCFI14
+ 1227 0129 04000000 		.4byte	.LCFI15
+ 1228 012d 0200     		.2byte	0x2
+ 1229 012f 7D       		.byte	0x7d
+ 1230 0130 08       		.sleb128 8
+ 1231 0131 04000000 		.4byte	.LCFI15
+ 1232 0135 06000000 		.4byte	.LCFI16
+ 1233 0139 0200     		.2byte	0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 34
+
+
+ 1234 013b 7D       		.byte	0x7d
+ 1235 013c 10       		.sleb128 16
+ 1236 013d 06000000 		.4byte	.LCFI16
+ 1237 0141 1A000000 		.4byte	.LFE6
+ 1238 0145 0200     		.2byte	0x2
+ 1239 0147 77       		.byte	0x77
+ 1240 0148 10       		.sleb128 16
+ 1241 0149 00000000 		.4byte	0x0
+ 1242 014d 00000000 		.4byte	0x0
+ 1243              	.LLST7:
+ 1244 0151 00000000 		.4byte	.LFB7
+ 1245 0155 02000000 		.4byte	.LCFI17
+ 1246 0159 0100     		.2byte	0x1
+ 1247 015b 5D       		.byte	0x5d
+ 1248 015c 02000000 		.4byte	.LCFI17
+ 1249 0160 04000000 		.4byte	.LCFI18
+ 1250 0164 0200     		.2byte	0x2
+ 1251 0166 7D       		.byte	0x7d
+ 1252 0167 08       		.sleb128 8
+ 1253 0168 04000000 		.4byte	.LCFI18
+ 1254 016c 06000000 		.4byte	.LCFI19
+ 1255 0170 0200     		.2byte	0x2
+ 1256 0172 7D       		.byte	0x7d
+ 1257 0173 18       		.sleb128 24
+ 1258 0174 06000000 		.4byte	.LCFI19
+ 1259 0178 36000000 		.4byte	.LFE7
+ 1260 017c 0200     		.2byte	0x2
+ 1261 017e 77       		.byte	0x77
+ 1262 017f 18       		.sleb128 24
+ 1263 0180 00000000 		.4byte	0x0
+ 1264 0184 00000000 		.4byte	0x0
+ 1265              	.LLST8:
+ 1266 0188 00000000 		.4byte	.LFB8
+ 1267 018c 02000000 		.4byte	.LCFI20
+ 1268 0190 0100     		.2byte	0x1
+ 1269 0192 5D       		.byte	0x5d
+ 1270 0193 02000000 		.4byte	.LCFI20
+ 1271 0197 04000000 		.4byte	.LCFI21
+ 1272 019b 0200     		.2byte	0x2
+ 1273 019d 7D       		.byte	0x7d
+ 1274 019e 08       		.sleb128 8
+ 1275 019f 04000000 		.4byte	.LCFI21
+ 1276 01a3 06000000 		.4byte	.LCFI22
+ 1277 01a7 0200     		.2byte	0x2
+ 1278 01a9 7D       		.byte	0x7d
+ 1279 01aa 18       		.sleb128 24
+ 1280 01ab 06000000 		.4byte	.LCFI22
+ 1281 01af 36000000 		.4byte	.LFE8
+ 1282 01b3 0200     		.2byte	0x2
+ 1283 01b5 77       		.byte	0x77
+ 1284 01b6 18       		.sleb128 24
+ 1285 01b7 00000000 		.4byte	0x0
+ 1286 01bb 00000000 		.4byte	0x0
+ 1287              	.LLST9:
+ 1288 01bf 00000000 		.4byte	.LFB9
+ 1289 01c3 02000000 		.4byte	.LCFI23
+ 1290 01c7 0100     		.2byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 35
+
+
+ 1291 01c9 5D       		.byte	0x5d
+ 1292 01ca 02000000 		.4byte	.LCFI23
+ 1293 01ce 04000000 		.4byte	.LCFI24
+ 1294 01d2 0200     		.2byte	0x2
+ 1295 01d4 7D       		.byte	0x7d
+ 1296 01d5 08       		.sleb128 8
+ 1297 01d6 04000000 		.4byte	.LCFI24
+ 1298 01da 06000000 		.4byte	.LCFI25
+ 1299 01de 0200     		.2byte	0x2
+ 1300 01e0 7D       		.byte	0x7d
+ 1301 01e1 10       		.sleb128 16
+ 1302 01e2 06000000 		.4byte	.LCFI25
+ 1303 01e6 FA010000 		.4byte	.LFE9
+ 1304 01ea 0200     		.2byte	0x2
+ 1305 01ec 77       		.byte	0x77
+ 1306 01ed 10       		.sleb128 16
+ 1307 01ee 00000000 		.4byte	0x0
+ 1308 01f2 00000000 		.4byte	0x0
+ 1309              	.LLST10:
+ 1310 01f6 00000000 		.4byte	.LFB10
+ 1311 01fa 02000000 		.4byte	.LCFI26
+ 1312 01fe 0100     		.2byte	0x1
+ 1313 0200 5D       		.byte	0x5d
+ 1314 0201 02000000 		.4byte	.LCFI26
+ 1315 0205 04000000 		.4byte	.LCFI27
+ 1316 0209 0200     		.2byte	0x2
+ 1317 020b 7D       		.byte	0x7d
+ 1318 020c 08       		.sleb128 8
+ 1319 020d 04000000 		.4byte	.LCFI27
+ 1320 0211 06000000 		.4byte	.LCFI28
+ 1321 0215 0200     		.2byte	0x2
+ 1322 0217 7D       		.byte	0x7d
+ 1323 0218 10       		.sleb128 16
+ 1324 0219 06000000 		.4byte	.LCFI28
+ 1325 021d AC000000 		.4byte	.LFE10
+ 1326 0221 0200     		.2byte	0x2
+ 1327 0223 77       		.byte	0x77
+ 1328 0224 10       		.sleb128 16
+ 1329 0225 00000000 		.4byte	0x0
+ 1330 0229 00000000 		.4byte	0x0
+ 1331              	.LLST11:
+ 1332 022d 00000000 		.4byte	.LFB11
+ 1333 0231 02000000 		.4byte	.LCFI29
+ 1334 0235 0100     		.2byte	0x1
+ 1335 0237 5D       		.byte	0x5d
+ 1336 0238 02000000 		.4byte	.LCFI29
+ 1337 023c 04000000 		.4byte	.LCFI30
+ 1338 0240 0200     		.2byte	0x2
+ 1339 0242 7D       		.byte	0x7d
+ 1340 0243 08       		.sleb128 8
+ 1341 0244 04000000 		.4byte	.LCFI30
+ 1342 0248 06000000 		.4byte	.LCFI31
+ 1343 024c 0200     		.2byte	0x2
+ 1344 024e 7D       		.byte	0x7d
+ 1345 024f 10       		.sleb128 16
+ 1346 0250 06000000 		.4byte	.LCFI31
+ 1347 0254 8C000000 		.4byte	.LFE11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 36
+
+
+ 1348 0258 0200     		.2byte	0x2
+ 1349 025a 77       		.byte	0x77
+ 1350 025b 10       		.sleb128 16
+ 1351 025c 00000000 		.4byte	0x0
+ 1352 0260 00000000 		.4byte	0x0
+ 1353              	.LLST12:
+ 1354 0264 00000000 		.4byte	.LFB12
+ 1355 0268 02000000 		.4byte	.LCFI32
+ 1356 026c 0100     		.2byte	0x1
+ 1357 026e 5D       		.byte	0x5d
+ 1358 026f 02000000 		.4byte	.LCFI32
+ 1359 0273 04000000 		.4byte	.LCFI33
+ 1360 0277 0200     		.2byte	0x2
+ 1361 0279 7D       		.byte	0x7d
+ 1362 027a 08       		.sleb128 8
+ 1363 027b 04000000 		.4byte	.LCFI33
+ 1364 027f 06000000 		.4byte	.LCFI34
+ 1365 0283 0200     		.2byte	0x2
+ 1366 0285 7D       		.byte	0x7d
+ 1367 0286 10       		.sleb128 16
+ 1368 0287 06000000 		.4byte	.LCFI34
+ 1369 028b 42000000 		.4byte	.LFE12
+ 1370 028f 0200     		.2byte	0x2
+ 1371 0291 77       		.byte	0x77
+ 1372 0292 10       		.sleb128 16
+ 1373 0293 00000000 		.4byte	0x0
+ 1374 0297 00000000 		.4byte	0x0
+ 1375              	.LLST13:
+ 1376 029b 00000000 		.4byte	.LFB13
+ 1377 029f 02000000 		.4byte	.LCFI35
+ 1378 02a3 0100     		.2byte	0x1
+ 1379 02a5 5D       		.byte	0x5d
+ 1380 02a6 02000000 		.4byte	.LCFI35
+ 1381 02aa 04000000 		.4byte	.LCFI36
+ 1382 02ae 0200     		.2byte	0x2
+ 1383 02b0 7D       		.byte	0x7d
+ 1384 02b1 08       		.sleb128 8
+ 1385 02b2 04000000 		.4byte	.LCFI36
+ 1386 02b6 06000000 		.4byte	.LCFI37
+ 1387 02ba 0200     		.2byte	0x2
+ 1388 02bc 7D       		.byte	0x7d
+ 1389 02bd 10       		.sleb128 16
+ 1390 02be 06000000 		.4byte	.LCFI37
+ 1391 02c2 2C000000 		.4byte	.LFE13
+ 1392 02c6 0200     		.2byte	0x2
+ 1393 02c8 77       		.byte	0x77
+ 1394 02c9 10       		.sleb128 16
+ 1395 02ca 00000000 		.4byte	0x0
+ 1396 02ce 00000000 		.4byte	0x0
+ 1397              	.LLST14:
+ 1398 02d2 00000000 		.4byte	.LFB14
+ 1399 02d6 02000000 		.4byte	.LCFI38
+ 1400 02da 0100     		.2byte	0x1
+ 1401 02dc 5D       		.byte	0x5d
+ 1402 02dd 02000000 		.4byte	.LCFI38
+ 1403 02e1 04000000 		.4byte	.LCFI39
+ 1404 02e5 0200     		.2byte	0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 37
+
+
+ 1405 02e7 7D       		.byte	0x7d
+ 1406 02e8 08       		.sleb128 8
+ 1407 02e9 04000000 		.4byte	.LCFI39
+ 1408 02ed 06000000 		.4byte	.LCFI40
+ 1409 02f1 0200     		.2byte	0x2
+ 1410 02f3 7D       		.byte	0x7d
+ 1411 02f4 20       		.sleb128 32
+ 1412 02f5 06000000 		.4byte	.LCFI40
+ 1413 02f9 0E010000 		.4byte	.LFE14
+ 1414 02fd 0200     		.2byte	0x2
+ 1415 02ff 77       		.byte	0x77
+ 1416 0300 20       		.sleb128 32
+ 1417 0301 00000000 		.4byte	0x0
+ 1418 0305 00000000 		.4byte	0x0
+ 1419              		.file 2 ".\\Generated_Source\\PSoC5\\/cytypes.h"
+ 1420              		.section	.debug_info
+ 1421 0000 AB030000 		.4byte	0x3ab
+ 1422 0004 0200     		.2byte	0x2
+ 1423 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1424 000a 04       		.byte	0x4
+ 1425 000b 01       		.uleb128 0x1
+ 1426 000c 42020000 		.4byte	.LASF46
+ 1427 0010 01       		.byte	0x1
+ 1428 0011 89020000 		.4byte	.LASF47
+ 1429 0015 A8010000 		.4byte	.LASF48
+ 1430 0019 00000000 		.4byte	0x0
+ 1431 001d 00000000 		.4byte	0x0
+ 1432 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 1433 0025 00000000 		.4byte	.Ldebug_line0
+ 1434 0029 02       		.uleb128 0x2
+ 1435 002a 01       		.byte	0x1
+ 1436 002b 06       		.byte	0x6
+ 1437 002c C6020000 		.4byte	.LASF0
+ 1438 0030 02       		.uleb128 0x2
+ 1439 0031 01       		.byte	0x1
+ 1440 0032 08       		.byte	0x8
+ 1441 0033 70010000 		.4byte	.LASF1
+ 1442 0037 02       		.uleb128 0x2
+ 1443 0038 02       		.byte	0x2
+ 1444 0039 05       		.byte	0x5
+ 1445 003a 77020000 		.4byte	.LASF2
+ 1446 003e 02       		.uleb128 0x2
+ 1447 003f 02       		.byte	0x2
+ 1448 0040 07       		.byte	0x7
+ 1449 0041 86000000 		.4byte	.LASF3
+ 1450 0045 03       		.uleb128 0x3
+ 1451 0046 04       		.byte	0x4
+ 1452 0047 05       		.byte	0x5
+ 1453 0048 696E7400 		.ascii	"int\000"
+ 1454 004c 02       		.uleb128 0x2
+ 1455 004d 04       		.byte	0x4
+ 1456 004e 07       		.byte	0x7
+ 1457 004f EC010000 		.4byte	.LASF4
+ 1458 0053 02       		.uleb128 0x2
+ 1459 0054 08       		.byte	0x8
+ 1460 0055 05       		.byte	0x5
+ 1461 0056 00000000 		.4byte	.LASF5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 38
+
+
+ 1462 005a 02       		.uleb128 0x2
+ 1463 005b 08       		.byte	0x8
+ 1464 005c 07       		.byte	0x7
+ 1465 005d 0E020000 		.4byte	.LASF6
+ 1466 0061 02       		.uleb128 0x2
+ 1467 0062 04       		.byte	0x4
+ 1468 0063 05       		.byte	0x5
+ 1469 0064 7D000000 		.4byte	.LASF7
+ 1470 0068 04       		.uleb128 0x4
+ 1471 0069 04       		.byte	0x4
+ 1472 006a 07       		.byte	0x7
+ 1473 006b 02       		.uleb128 0x2
+ 1474 006c 04       		.byte	0x4
+ 1475 006d 07       		.byte	0x7
+ 1476 006e 15010000 		.4byte	.LASF8
+ 1477 0072 02       		.uleb128 0x2
+ 1478 0073 01       		.byte	0x1
+ 1479 0074 08       		.byte	0x8
+ 1480 0075 4E020000 		.4byte	.LASF9
+ 1481 0079 05       		.uleb128 0x5
+ 1482 007a 2C010000 		.4byte	.LASF10
+ 1483 007e 02       		.byte	0x2
+ 1484 007f 4C       		.byte	0x4c
+ 1485 0080 30000000 		.4byte	0x30
+ 1486 0084 05       		.uleb128 0x5
+ 1487 0085 98010000 		.4byte	.LASF11
+ 1488 0089 02       		.byte	0x2
+ 1489 008a 4D       		.byte	0x4d
+ 1490 008b 3E000000 		.4byte	0x3e
+ 1491 008f 02       		.uleb128 0x2
+ 1492 0090 04       		.byte	0x4
+ 1493 0091 04       		.byte	0x4
+ 1494 0092 D7000000 		.4byte	.LASF12
+ 1495 0096 02       		.uleb128 0x2
+ 1496 0097 08       		.byte	0x8
+ 1497 0098 04       		.byte	0x4
+ 1498 0099 7E010000 		.4byte	.LASF13
+ 1499 009d 05       		.uleb128 0x5
+ 1500 009e 05010000 		.4byte	.LASF14
+ 1501 00a2 02       		.byte	0x2
+ 1502 00a3 5D       		.byte	0x5d
+ 1503 00a4 72000000 		.4byte	0x72
+ 1504 00a8 06       		.uleb128 0x6
+ 1505 00a9 01       		.byte	0x1
+ 1506 00aa 67020000 		.4byte	.LASF15
+ 1507 00ae 01       		.byte	0x1
+ 1508 00af 37       		.byte	0x37
+ 1509 00b0 01       		.byte	0x1
+ 1510 00b1 00000000 		.4byte	.LFB0
+ 1511 00b5 8E000000 		.4byte	.LFE0
+ 1512 00b9 00000000 		.4byte	.LLST0
+ 1513 00bd 06       		.uleb128 0x6
+ 1514 00be 01       		.byte	0x1
+ 1515 00bf 99000000 		.4byte	.LASF16
+ 1516 00c3 01       		.byte	0x1
+ 1517 00c4 68       		.byte	0x68
+ 1518 00c5 01       		.byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 39
+
+
+ 1519 00c6 00000000 		.4byte	.LFB1
+ 1520 00ca 1C000000 		.4byte	.LFE1
+ 1521 00ce 2B000000 		.4byte	.LLST1
+ 1522 00d2 06       		.uleb128 0x6
+ 1523 00d3 01       		.byte	0x1
+ 1524 00d4 DD000000 		.4byte	.LASF17
+ 1525 00d8 01       		.byte	0x1
+ 1526 00d9 89       		.byte	0x89
+ 1527 00da 01       		.byte	0x1
+ 1528 00db 00000000 		.4byte	.LFB2
+ 1529 00df 2A000000 		.4byte	.LFE2
+ 1530 00e3 56000000 		.4byte	.LLST2
+ 1531 00e7 06       		.uleb128 0x6
+ 1532 00e8 01       		.byte	0x1
+ 1533 00e9 6D000000 		.4byte	.LASF18
+ 1534 00ed 01       		.byte	0x1
+ 1535 00ee A8       		.byte	0xa8
+ 1536 00ef 01       		.byte	0x1
+ 1537 00f0 00000000 		.4byte	.LFB3
+ 1538 00f4 1C000000 		.4byte	.LFE3
+ 1539 00f8 81000000 		.4byte	.LLST3
+ 1540 00fc 07       		.uleb128 0x7
+ 1541 00fd 01       		.byte	0x1
+ 1542 00fe 53020000 		.4byte	.LASF20
+ 1543 0102 01       		.byte	0x1
+ 1544 0103 C4       		.byte	0xc4
+ 1545 0104 01       		.byte	0x1
+ 1546 0105 00000000 		.4byte	.LFB4
+ 1547 0109 72000000 		.4byte	.LFE4
+ 1548 010d AC000000 		.4byte	.LLST4
+ 1549 0111 32010000 		.4byte	0x132
+ 1550 0115 08       		.uleb128 0x8
+ 1551 0116 726F7700 		.ascii	"row\000"
+ 1552 011a 01       		.byte	0x1
+ 1553 011b C4       		.byte	0xc4
+ 1554 011c 79000000 		.4byte	0x79
+ 1555 0120 02       		.byte	0x2
+ 1556 0121 91       		.byte	0x91
+ 1557 0122 77       		.sleb128 -9
+ 1558 0123 09       		.uleb128 0x9
+ 1559 0124 D0000000 		.4byte	.LASF19
+ 1560 0128 01       		.byte	0x1
+ 1561 0129 C4       		.byte	0xc4
+ 1562 012a 79000000 		.4byte	0x79
+ 1563 012e 02       		.byte	0x2
+ 1564 012f 91       		.byte	0x91
+ 1565 0130 76       		.sleb128 -10
+ 1566 0131 00       		.byte	0x0
+ 1567 0132 07       		.uleb128 0x7
+ 1568 0133 01       		.byte	0x1
+ 1569 0134 EE000000 		.4byte	.LASF21
+ 1570 0138 01       		.byte	0x1
+ 1571 0139 E9       		.byte	0xe9
+ 1572 013a 01       		.byte	0x1
+ 1573 013b 00000000 		.4byte	.LFB5
+ 1574 013f 3E000000 		.4byte	.LFE5
+ 1575 0143 E3000000 		.4byte	.LLST5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 40
+
+
+ 1576 0147 76010000 		.4byte	0x176
+ 1577 014b 09       		.uleb128 0x9
+ 1578 014c C9000000 		.4byte	.LASF22
+ 1579 0150 01       		.byte	0x1
+ 1580 0151 E9       		.byte	0xe9
+ 1581 0152 76010000 		.4byte	0x176
+ 1582 0156 02       		.byte	0x2
+ 1583 0157 91       		.byte	0x91
+ 1584 0158 6C       		.sleb128 -20
+ 1585 0159 0A       		.uleb128 0xa
+ 1586 015a AB000000 		.4byte	.LASF23
+ 1587 015e 01       		.byte	0x1
+ 1588 015f EB       		.byte	0xeb
+ 1589 0160 79000000 		.4byte	0x79
+ 1590 0164 02       		.byte	0x2
+ 1591 0165 91       		.byte	0x91
+ 1592 0166 76       		.sleb128 -10
+ 1593 0167 0A       		.uleb128 0xa
+ 1594 0168 81020000 		.4byte	.LASF24
+ 1595 016c 01       		.byte	0x1
+ 1596 016d EC       		.byte	0xec
+ 1597 016e 9D000000 		.4byte	0x9d
+ 1598 0172 02       		.byte	0x2
+ 1599 0173 91       		.byte	0x91
+ 1600 0174 77       		.sleb128 -9
+ 1601 0175 00       		.byte	0x0
+ 1602 0176 0B       		.uleb128 0xb
+ 1603 0177 04       		.byte	0x4
+ 1604 0178 7C010000 		.4byte	0x17c
+ 1605 017c 0C       		.uleb128 0xc
+ 1606 017d 9D000000 		.4byte	0x9d
+ 1607 0181 0D       		.uleb128 0xd
+ 1608 0182 01       		.byte	0x1
+ 1609 0183 85010000 		.4byte	.LASF25
+ 1610 0187 01       		.byte	0x1
+ 1611 0188 0801     		.2byte	0x108
+ 1612 018a 01       		.byte	0x1
+ 1613 018b 00000000 		.4byte	.LFB6
+ 1614 018f 1A000000 		.4byte	.LFE6
+ 1615 0193 1A010000 		.4byte	.LLST6
+ 1616 0197 AB010000 		.4byte	0x1ab
+ 1617 019b 0E       		.uleb128 0xe
+ 1618 019c 4E000000 		.4byte	.LASF26
+ 1619 01a0 01       		.byte	0x1
+ 1620 01a1 0801     		.2byte	0x108
+ 1621 01a3 9D000000 		.4byte	0x9d
+ 1622 01a7 02       		.byte	0x2
+ 1623 01a8 91       		.byte	0x91
+ 1624 01a9 77       		.sleb128 -9
+ 1625 01aa 00       		.byte	0x0
+ 1626 01ab 0D       		.uleb128 0xd
+ 1627 01ac 01       		.byte	0x1
+ 1628 01ad F9010000 		.4byte	.LASF27
+ 1629 01b1 01       		.byte	0x1
+ 1630 01b2 1C01     		.2byte	0x11c
+ 1631 01b4 01       		.byte	0x1
+ 1632 01b5 00000000 		.4byte	.LFB7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 41
+
+
+ 1633 01b9 36000000 		.4byte	.LFE7
+ 1634 01bd 51010000 		.4byte	.LLST7
+ 1635 01c1 E4010000 		.4byte	0x1e4
+ 1636 01c5 0E       		.uleb128 0xe
+ 1637 01c6 D2020000 		.4byte	.LASF28
+ 1638 01ca 01       		.byte	0x1
+ 1639 01cb 1C01     		.2byte	0x11c
+ 1640 01cd 79000000 		.4byte	0x79
+ 1641 01d1 02       		.byte	0x2
+ 1642 01d2 91       		.byte	0x91
+ 1643 01d3 6F       		.sleb128 -17
+ 1644 01d4 0F       		.uleb128 0xf
+ 1645 01d5 DE020000 		.4byte	.LASF29
+ 1646 01d9 01       		.byte	0x1
+ 1647 01da 1E01     		.2byte	0x11e
+ 1648 01dc 79000000 		.4byte	0x79
+ 1649 01e0 02       		.byte	0x2
+ 1650 01e1 91       		.byte	0x91
+ 1651 01e2 77       		.sleb128 -9
+ 1652 01e3 00       		.byte	0x0
+ 1653 01e4 0D       		.uleb128 0xd
+ 1654 01e5 01       		.byte	0x1
+ 1655 01e6 0E000000 		.4byte	.LASF30
+ 1656 01ea 01       		.byte	0x1
+ 1657 01eb 3A01     		.2byte	0x13a
+ 1658 01ed 01       		.byte	0x1
+ 1659 01ee 00000000 		.4byte	.LFB8
+ 1660 01f2 36000000 		.4byte	.LFE8
+ 1661 01f6 88010000 		.4byte	.LLST8
+ 1662 01fa 1D020000 		.4byte	0x21d
+ 1663 01fe 0E       		.uleb128 0xe
+ 1664 01ff D8020000 		.4byte	.LASF31
+ 1665 0203 01       		.byte	0x1
+ 1666 0204 3A01     		.2byte	0x13a
+ 1667 0206 79000000 		.4byte	0x79
+ 1668 020a 02       		.byte	0x2
+ 1669 020b 91       		.byte	0x91
+ 1670 020c 6F       		.sleb128 -17
+ 1671 020d 0F       		.uleb128 0xf
+ 1672 020e DE020000 		.4byte	.LASF29
+ 1673 0212 01       		.byte	0x1
+ 1674 0213 3C01     		.2byte	0x13c
+ 1675 0215 79000000 		.4byte	0x79
+ 1676 0219 02       		.byte	0x2
+ 1677 021a 91       		.byte	0x91
+ 1678 021b 77       		.sleb128 -9
+ 1679 021c 00       		.byte	0x0
+ 1680 021d 0D       		.uleb128 0xd
+ 1681 021e 01       		.byte	0x1
+ 1682 021f 5D010000 		.4byte	.LASF32
+ 1683 0223 01       		.byte	0x1
+ 1684 0224 5C01     		.2byte	0x15c
+ 1685 0226 01       		.byte	0x1
+ 1686 0227 00000000 		.4byte	.LFB9
+ 1687 022b FA010000 		.4byte	.LFE9
+ 1688 022f BF010000 		.4byte	.LLST9
+ 1689 0233 47020000 		.4byte	0x247
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 42
+
+
+ 1690 0237 0F       		.uleb128 0xf
+ 1691 0238 67000000 		.4byte	.LASF33
+ 1692 023c 01       		.byte	0x1
+ 1693 023d 5E01     		.2byte	0x15e
+ 1694 023f 79000000 		.4byte	0x79
+ 1695 0243 02       		.byte	0x2
+ 1696 0244 91       		.byte	0x91
+ 1697 0245 77       		.sleb128 -9
+ 1698 0246 00       		.byte	0x0
+ 1699 0247 10       		.uleb128 0x10
+ 1700 0248 32010000 		.4byte	.LASF34
+ 1701 024c 01       		.byte	0x1
+ 1702 024d DD01     		.2byte	0x1dd
+ 1703 024f 01       		.byte	0x1
+ 1704 0250 00000000 		.4byte	.LFB10
+ 1705 0254 AC000000 		.4byte	.LFE10
+ 1706 0258 F6010000 		.4byte	.LLST10
+ 1707 025c 70020000 		.4byte	0x270
+ 1708 0260 0E       		.uleb128 0xe
+ 1709 0261 DE020000 		.4byte	.LASF29
+ 1710 0265 01       		.byte	0x1
+ 1711 0266 DD01     		.2byte	0x1dd
+ 1712 0268 79000000 		.4byte	0x79
+ 1713 026c 02       		.byte	0x2
+ 1714 026d 91       		.byte	0x91
+ 1715 026e 77       		.sleb128 -9
+ 1716 026f 00       		.byte	0x0
+ 1717 0270 10       		.uleb128 0x10
+ 1718 0271 2C020000 		.4byte	.LASF35
+ 1719 0275 01       		.byte	0x1
+ 1720 0276 0802     		.2byte	0x208
+ 1721 0278 01       		.byte	0x1
+ 1722 0279 00000000 		.4byte	.LFB11
+ 1723 027d 8C000000 		.4byte	.LFE11
+ 1724 0281 2D020000 		.4byte	.LLST11
+ 1725 0285 99020000 		.4byte	0x299
+ 1726 0289 0E       		.uleb128 0xe
+ 1727 028a DE020000 		.4byte	.LASF29
+ 1728 028e 01       		.byte	0x1
+ 1729 028f 0802     		.2byte	0x208
+ 1730 0291 79000000 		.4byte	0x79
+ 1731 0295 02       		.byte	0x2
+ 1732 0296 91       		.byte	0x91
+ 1733 0297 77       		.sleb128 -9
+ 1734 0298 00       		.byte	0x0
+ 1735 0299 0D       		.uleb128 0xd
+ 1736 029a 01       		.byte	0x1
+ 1737 029b 39000000 		.4byte	.LASF36
+ 1738 029f 01       		.byte	0x1
+ 1739 02a0 3002     		.2byte	0x230
+ 1740 02a2 01       		.byte	0x1
+ 1741 02a3 00000000 		.4byte	.LFB12
+ 1742 02a7 42000000 		.4byte	.LFE12
+ 1743 02ab 64020000 		.4byte	.LLST12
+ 1744 02af D5020000 		.4byte	0x2d5
+ 1745 02b3 0E       		.uleb128 0xe
+ 1746 02b4 67000000 		.4byte	.LASF33
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 43
+
+
+ 1747 02b8 01       		.byte	0x1
+ 1748 02b9 3002     		.2byte	0x230
+ 1749 02bb 79000000 		.4byte	0x79
+ 1750 02bf 02       		.byte	0x2
+ 1751 02c0 91       		.byte	0x91
+ 1752 02c1 77       		.sleb128 -9
+ 1753 02c2 0F       		.uleb128 0xf
+ 1754 02c3 58000000 		.4byte	.LASF37
+ 1755 02c7 01       		.byte	0x1
+ 1756 02c8 3202     		.2byte	0x232
+ 1757 02ca E5020000 		.4byte	0x2e5
+ 1758 02ce 05       		.byte	0x5
+ 1759 02cf 03       		.byte	0x3
+ 1760 02d0 00000000 		.4byte	LCD_Char_1_hex.2143
+ 1761 02d4 00       		.byte	0x0
+ 1762 02d5 11       		.uleb128 0x11
+ 1763 02d6 9D000000 		.4byte	0x9d
+ 1764 02da E5020000 		.4byte	0x2e5
+ 1765 02de 12       		.uleb128 0x12
+ 1766 02df 68000000 		.4byte	0x68
+ 1767 02e3 0F       		.byte	0xf
+ 1768 02e4 00       		.byte	0x0
+ 1769 02e5 0C       		.uleb128 0xc
+ 1770 02e6 D5020000 		.4byte	0x2d5
+ 1771 02ea 0D       		.uleb128 0xd
+ 1772 02eb 01       		.byte	0x1
+ 1773 02ec B3000000 		.4byte	.LASF38
+ 1774 02f0 01       		.byte	0x1
+ 1775 02f1 4702     		.2byte	0x247
+ 1776 02f3 01       		.byte	0x1
+ 1777 02f4 00000000 		.4byte	.LFB13
+ 1778 02f8 2C000000 		.4byte	.LFE13
+ 1779 02fc 9B020000 		.4byte	.LLST13
+ 1780 0300 14030000 		.4byte	0x314
+ 1781 0304 0E       		.uleb128 0xe
+ 1782 0305 67000000 		.4byte	.LASF33
+ 1783 0309 01       		.byte	0x1
+ 1784 030a 4702     		.2byte	0x247
+ 1785 030c 84000000 		.4byte	0x84
+ 1786 0310 02       		.byte	0x2
+ 1787 0311 91       		.byte	0x91
+ 1788 0312 76       		.sleb128 -10
+ 1789 0313 00       		.byte	0x0
+ 1790 0314 0D       		.uleb128 0xd
+ 1791 0315 01       		.byte	0x1
+ 1792 0316 AF020000 		.4byte	.LASF39
+ 1793 031a 01       		.byte	0x1
+ 1794 031b 5C02     		.2byte	0x25c
+ 1795 031d 01       		.byte	0x1
+ 1796 031e 00000000 		.4byte	.LFB14
+ 1797 0322 0E010000 		.4byte	.LFE14
+ 1798 0326 D2020000 		.4byte	.LLST14
+ 1799 032a 7A030000 		.4byte	0x37a
+ 1800 032e 0E       		.uleb128 0xe
+ 1801 032f 67000000 		.4byte	.LASF33
+ 1802 0333 01       		.byte	0x1
+ 1803 0334 5C02     		.2byte	0x25c
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 44
+
+
+ 1804 0336 84000000 		.4byte	0x84
+ 1805 033a 02       		.byte	0x2
+ 1806 033b 91       		.byte	0x91
+ 1807 033c 66       		.sleb128 -26
+ 1808 033d 0F       		.uleb128 0xf
+ 1809 033e 25020000 		.4byte	.LASF40
+ 1810 0342 01       		.byte	0x1
+ 1811 0343 5F02     		.2byte	0x25f
+ 1812 0345 7A030000 		.4byte	0x37a
+ 1813 0349 02       		.byte	0x2
+ 1814 034a 91       		.byte	0x91
+ 1815 034b 70       		.sleb128 -16
+ 1816 034c 0F       		.uleb128 0xf
+ 1817 034d 27010000 		.4byte	.LASF41
+ 1818 0351 01       		.byte	0x1
+ 1819 0352 6002     		.2byte	0x260
+ 1820 0354 7A030000 		.4byte	0x37a
+ 1821 0358 02       		.byte	0x2
+ 1822 0359 91       		.byte	0x91
+ 1823 035a 68       		.sleb128 -24
+ 1824 035b 0F       		.uleb128 0xf
+ 1825 035c 9F010000 		.4byte	.LASF42
+ 1826 0360 01       		.byte	0x1
+ 1827 0361 6202     		.2byte	0x262
+ 1828 0363 79000000 		.4byte	0x79
+ 1829 0367 02       		.byte	0x2
+ 1830 0368 91       		.byte	0x91
+ 1831 0369 76       		.sleb128 -10
+ 1832 036a 0F       		.uleb128 0xf
+ 1833 036b 0B010000 		.4byte	.LASF43
+ 1834 036f 01       		.byte	0x1
+ 1835 0370 6302     		.2byte	0x263
+ 1836 0372 79000000 		.4byte	0x79
+ 1837 0376 02       		.byte	0x2
+ 1838 0377 91       		.byte	0x91
+ 1839 0378 77       		.sleb128 -9
+ 1840 0379 00       		.byte	0x0
+ 1841 037a 11       		.uleb128 0x11
+ 1842 037b 9D000000 		.4byte	0x9d
+ 1843 037f 8A030000 		.4byte	0x38a
+ 1844 0383 12       		.uleb128 0x12
+ 1845 0384 68000000 		.4byte	0x68
+ 1846 0388 04       		.byte	0x4
+ 1847 0389 00       		.byte	0x0
+ 1848 038a 13       		.uleb128 0x13
+ 1849 038b 26000000 		.4byte	.LASF44
+ 1850 038f 01       		.byte	0x1
+ 1851 0390 1D       		.byte	0x1d
+ 1852 0391 79000000 		.4byte	0x79
+ 1853 0395 01       		.byte	0x1
+ 1854 0396 05       		.byte	0x5
+ 1855 0397 03       		.byte	0x3
+ 1856 0398 00000000 		.4byte	LCD_Char_1_initVar
+ 1857 039c 13       		.uleb128 0x13
+ 1858 039d 46010000 		.4byte	.LASF45
+ 1859 03a1 01       		.byte	0x1
+ 1860 03a2 1B       		.byte	0x1b
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 45
+
+
+ 1861 03a3 79000000 		.4byte	0x79
+ 1862 03a7 01       		.byte	0x1
+ 1863 03a8 05       		.byte	0x5
+ 1864 03a9 03       		.byte	0x3
+ 1865 03aa 00000000 		.4byte	LCD_Char_1_enableState
+ 1866 03ae 00       		.byte	0x0
+ 1867              		.section	.debug_abbrev
+ 1868 0000 01       		.uleb128 0x1
+ 1869 0001 11       		.uleb128 0x11
+ 1870 0002 01       		.byte	0x1
+ 1871 0003 25       		.uleb128 0x25
+ 1872 0004 0E       		.uleb128 0xe
+ 1873 0005 13       		.uleb128 0x13
+ 1874 0006 0B       		.uleb128 0xb
+ 1875 0007 03       		.uleb128 0x3
+ 1876 0008 0E       		.uleb128 0xe
+ 1877 0009 1B       		.uleb128 0x1b
+ 1878 000a 0E       		.uleb128 0xe
+ 1879 000b 11       		.uleb128 0x11
+ 1880 000c 01       		.uleb128 0x1
+ 1881 000d 52       		.uleb128 0x52
+ 1882 000e 01       		.uleb128 0x1
+ 1883 000f 55       		.uleb128 0x55
+ 1884 0010 06       		.uleb128 0x6
+ 1885 0011 10       		.uleb128 0x10
+ 1886 0012 06       		.uleb128 0x6
+ 1887 0013 00       		.byte	0x0
+ 1888 0014 00       		.byte	0x0
+ 1889 0015 02       		.uleb128 0x2
+ 1890 0016 24       		.uleb128 0x24
+ 1891 0017 00       		.byte	0x0
+ 1892 0018 0B       		.uleb128 0xb
+ 1893 0019 0B       		.uleb128 0xb
+ 1894 001a 3E       		.uleb128 0x3e
+ 1895 001b 0B       		.uleb128 0xb
+ 1896 001c 03       		.uleb128 0x3
+ 1897 001d 0E       		.uleb128 0xe
+ 1898 001e 00       		.byte	0x0
+ 1899 001f 00       		.byte	0x0
+ 1900 0020 03       		.uleb128 0x3
+ 1901 0021 24       		.uleb128 0x24
+ 1902 0022 00       		.byte	0x0
+ 1903 0023 0B       		.uleb128 0xb
+ 1904 0024 0B       		.uleb128 0xb
+ 1905 0025 3E       		.uleb128 0x3e
+ 1906 0026 0B       		.uleb128 0xb
+ 1907 0027 03       		.uleb128 0x3
+ 1908 0028 08       		.uleb128 0x8
+ 1909 0029 00       		.byte	0x0
+ 1910 002a 00       		.byte	0x0
+ 1911 002b 04       		.uleb128 0x4
+ 1912 002c 24       		.uleb128 0x24
+ 1913 002d 00       		.byte	0x0
+ 1914 002e 0B       		.uleb128 0xb
+ 1915 002f 0B       		.uleb128 0xb
+ 1916 0030 3E       		.uleb128 0x3e
+ 1917 0031 0B       		.uleb128 0xb
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 46
+
+
+ 1918 0032 00       		.byte	0x0
+ 1919 0033 00       		.byte	0x0
+ 1920 0034 05       		.uleb128 0x5
+ 1921 0035 16       		.uleb128 0x16
+ 1922 0036 00       		.byte	0x0
+ 1923 0037 03       		.uleb128 0x3
+ 1924 0038 0E       		.uleb128 0xe
+ 1925 0039 3A       		.uleb128 0x3a
+ 1926 003a 0B       		.uleb128 0xb
+ 1927 003b 3B       		.uleb128 0x3b
+ 1928 003c 0B       		.uleb128 0xb
+ 1929 003d 49       		.uleb128 0x49
+ 1930 003e 13       		.uleb128 0x13
+ 1931 003f 00       		.byte	0x0
+ 1932 0040 00       		.byte	0x0
+ 1933 0041 06       		.uleb128 0x6
+ 1934 0042 2E       		.uleb128 0x2e
+ 1935 0043 00       		.byte	0x0
+ 1936 0044 3F       		.uleb128 0x3f
+ 1937 0045 0C       		.uleb128 0xc
+ 1938 0046 03       		.uleb128 0x3
+ 1939 0047 0E       		.uleb128 0xe
+ 1940 0048 3A       		.uleb128 0x3a
+ 1941 0049 0B       		.uleb128 0xb
+ 1942 004a 3B       		.uleb128 0x3b
+ 1943 004b 0B       		.uleb128 0xb
+ 1944 004c 27       		.uleb128 0x27
+ 1945 004d 0C       		.uleb128 0xc
+ 1946 004e 11       		.uleb128 0x11
+ 1947 004f 01       		.uleb128 0x1
+ 1948 0050 12       		.uleb128 0x12
+ 1949 0051 01       		.uleb128 0x1
+ 1950 0052 40       		.uleb128 0x40
+ 1951 0053 06       		.uleb128 0x6
+ 1952 0054 00       		.byte	0x0
+ 1953 0055 00       		.byte	0x0
+ 1954 0056 07       		.uleb128 0x7
+ 1955 0057 2E       		.uleb128 0x2e
+ 1956 0058 01       		.byte	0x1
+ 1957 0059 3F       		.uleb128 0x3f
+ 1958 005a 0C       		.uleb128 0xc
+ 1959 005b 03       		.uleb128 0x3
+ 1960 005c 0E       		.uleb128 0xe
+ 1961 005d 3A       		.uleb128 0x3a
+ 1962 005e 0B       		.uleb128 0xb
+ 1963 005f 3B       		.uleb128 0x3b
+ 1964 0060 0B       		.uleb128 0xb
+ 1965 0061 27       		.uleb128 0x27
+ 1966 0062 0C       		.uleb128 0xc
+ 1967 0063 11       		.uleb128 0x11
+ 1968 0064 01       		.uleb128 0x1
+ 1969 0065 12       		.uleb128 0x12
+ 1970 0066 01       		.uleb128 0x1
+ 1971 0067 40       		.uleb128 0x40
+ 1972 0068 06       		.uleb128 0x6
+ 1973 0069 01       		.uleb128 0x1
+ 1974 006a 13       		.uleb128 0x13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 47
+
+
+ 1975 006b 00       		.byte	0x0
+ 1976 006c 00       		.byte	0x0
+ 1977 006d 08       		.uleb128 0x8
+ 1978 006e 05       		.uleb128 0x5
+ 1979 006f 00       		.byte	0x0
+ 1980 0070 03       		.uleb128 0x3
+ 1981 0071 08       		.uleb128 0x8
+ 1982 0072 3A       		.uleb128 0x3a
+ 1983 0073 0B       		.uleb128 0xb
+ 1984 0074 3B       		.uleb128 0x3b
+ 1985 0075 0B       		.uleb128 0xb
+ 1986 0076 49       		.uleb128 0x49
+ 1987 0077 13       		.uleb128 0x13
+ 1988 0078 02       		.uleb128 0x2
+ 1989 0079 0A       		.uleb128 0xa
+ 1990 007a 00       		.byte	0x0
+ 1991 007b 00       		.byte	0x0
+ 1992 007c 09       		.uleb128 0x9
+ 1993 007d 05       		.uleb128 0x5
+ 1994 007e 00       		.byte	0x0
+ 1995 007f 03       		.uleb128 0x3
+ 1996 0080 0E       		.uleb128 0xe
+ 1997 0081 3A       		.uleb128 0x3a
+ 1998 0082 0B       		.uleb128 0xb
+ 1999 0083 3B       		.uleb128 0x3b
+ 2000 0084 0B       		.uleb128 0xb
+ 2001 0085 49       		.uleb128 0x49
+ 2002 0086 13       		.uleb128 0x13
+ 2003 0087 02       		.uleb128 0x2
+ 2004 0088 0A       		.uleb128 0xa
+ 2005 0089 00       		.byte	0x0
+ 2006 008a 00       		.byte	0x0
+ 2007 008b 0A       		.uleb128 0xa
+ 2008 008c 34       		.uleb128 0x34
+ 2009 008d 00       		.byte	0x0
+ 2010 008e 03       		.uleb128 0x3
+ 2011 008f 0E       		.uleb128 0xe
+ 2012 0090 3A       		.uleb128 0x3a
+ 2013 0091 0B       		.uleb128 0xb
+ 2014 0092 3B       		.uleb128 0x3b
+ 2015 0093 0B       		.uleb128 0xb
+ 2016 0094 49       		.uleb128 0x49
+ 2017 0095 13       		.uleb128 0x13
+ 2018 0096 02       		.uleb128 0x2
+ 2019 0097 0A       		.uleb128 0xa
+ 2020 0098 00       		.byte	0x0
+ 2021 0099 00       		.byte	0x0
+ 2022 009a 0B       		.uleb128 0xb
+ 2023 009b 0F       		.uleb128 0xf
+ 2024 009c 00       		.byte	0x0
+ 2025 009d 0B       		.uleb128 0xb
+ 2026 009e 0B       		.uleb128 0xb
+ 2027 009f 49       		.uleb128 0x49
+ 2028 00a0 13       		.uleb128 0x13
+ 2029 00a1 00       		.byte	0x0
+ 2030 00a2 00       		.byte	0x0
+ 2031 00a3 0C       		.uleb128 0xc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 48
+
+
+ 2032 00a4 26       		.uleb128 0x26
+ 2033 00a5 00       		.byte	0x0
+ 2034 00a6 49       		.uleb128 0x49
+ 2035 00a7 13       		.uleb128 0x13
+ 2036 00a8 00       		.byte	0x0
+ 2037 00a9 00       		.byte	0x0
+ 2038 00aa 0D       		.uleb128 0xd
+ 2039 00ab 2E       		.uleb128 0x2e
+ 2040 00ac 01       		.byte	0x1
+ 2041 00ad 3F       		.uleb128 0x3f
+ 2042 00ae 0C       		.uleb128 0xc
+ 2043 00af 03       		.uleb128 0x3
+ 2044 00b0 0E       		.uleb128 0xe
+ 2045 00b1 3A       		.uleb128 0x3a
+ 2046 00b2 0B       		.uleb128 0xb
+ 2047 00b3 3B       		.uleb128 0x3b
+ 2048 00b4 05       		.uleb128 0x5
+ 2049 00b5 27       		.uleb128 0x27
+ 2050 00b6 0C       		.uleb128 0xc
+ 2051 00b7 11       		.uleb128 0x11
+ 2052 00b8 01       		.uleb128 0x1
+ 2053 00b9 12       		.uleb128 0x12
+ 2054 00ba 01       		.uleb128 0x1
+ 2055 00bb 40       		.uleb128 0x40
+ 2056 00bc 06       		.uleb128 0x6
+ 2057 00bd 01       		.uleb128 0x1
+ 2058 00be 13       		.uleb128 0x13
+ 2059 00bf 00       		.byte	0x0
+ 2060 00c0 00       		.byte	0x0
+ 2061 00c1 0E       		.uleb128 0xe
+ 2062 00c2 05       		.uleb128 0x5
+ 2063 00c3 00       		.byte	0x0
+ 2064 00c4 03       		.uleb128 0x3
+ 2065 00c5 0E       		.uleb128 0xe
+ 2066 00c6 3A       		.uleb128 0x3a
+ 2067 00c7 0B       		.uleb128 0xb
+ 2068 00c8 3B       		.uleb128 0x3b
+ 2069 00c9 05       		.uleb128 0x5
+ 2070 00ca 49       		.uleb128 0x49
+ 2071 00cb 13       		.uleb128 0x13
+ 2072 00cc 02       		.uleb128 0x2
+ 2073 00cd 0A       		.uleb128 0xa
+ 2074 00ce 00       		.byte	0x0
+ 2075 00cf 00       		.byte	0x0
+ 2076 00d0 0F       		.uleb128 0xf
+ 2077 00d1 34       		.uleb128 0x34
+ 2078 00d2 00       		.byte	0x0
+ 2079 00d3 03       		.uleb128 0x3
+ 2080 00d4 0E       		.uleb128 0xe
+ 2081 00d5 3A       		.uleb128 0x3a
+ 2082 00d6 0B       		.uleb128 0xb
+ 2083 00d7 3B       		.uleb128 0x3b
+ 2084 00d8 05       		.uleb128 0x5
+ 2085 00d9 49       		.uleb128 0x49
+ 2086 00da 13       		.uleb128 0x13
+ 2087 00db 02       		.uleb128 0x2
+ 2088 00dc 0A       		.uleb128 0xa
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 49
+
+
+ 2089 00dd 00       		.byte	0x0
+ 2090 00de 00       		.byte	0x0
+ 2091 00df 10       		.uleb128 0x10
+ 2092 00e0 2E       		.uleb128 0x2e
+ 2093 00e1 01       		.byte	0x1
+ 2094 00e2 03       		.uleb128 0x3
+ 2095 00e3 0E       		.uleb128 0xe
+ 2096 00e4 3A       		.uleb128 0x3a
+ 2097 00e5 0B       		.uleb128 0xb
+ 2098 00e6 3B       		.uleb128 0x3b
+ 2099 00e7 05       		.uleb128 0x5
+ 2100 00e8 27       		.uleb128 0x27
+ 2101 00e9 0C       		.uleb128 0xc
+ 2102 00ea 11       		.uleb128 0x11
+ 2103 00eb 01       		.uleb128 0x1
+ 2104 00ec 12       		.uleb128 0x12
+ 2105 00ed 01       		.uleb128 0x1
+ 2106 00ee 40       		.uleb128 0x40
+ 2107 00ef 06       		.uleb128 0x6
+ 2108 00f0 01       		.uleb128 0x1
+ 2109 00f1 13       		.uleb128 0x13
+ 2110 00f2 00       		.byte	0x0
+ 2111 00f3 00       		.byte	0x0
+ 2112 00f4 11       		.uleb128 0x11
+ 2113 00f5 01       		.uleb128 0x1
+ 2114 00f6 01       		.byte	0x1
+ 2115 00f7 49       		.uleb128 0x49
+ 2116 00f8 13       		.uleb128 0x13
+ 2117 00f9 01       		.uleb128 0x1
+ 2118 00fa 13       		.uleb128 0x13
+ 2119 00fb 00       		.byte	0x0
+ 2120 00fc 00       		.byte	0x0
+ 2121 00fd 12       		.uleb128 0x12
+ 2122 00fe 21       		.uleb128 0x21
+ 2123 00ff 00       		.byte	0x0
+ 2124 0100 49       		.uleb128 0x49
+ 2125 0101 13       		.uleb128 0x13
+ 2126 0102 2F       		.uleb128 0x2f
+ 2127 0103 0B       		.uleb128 0xb
+ 2128 0104 00       		.byte	0x0
+ 2129 0105 00       		.byte	0x0
+ 2130 0106 13       		.uleb128 0x13
+ 2131 0107 34       		.uleb128 0x34
+ 2132 0108 00       		.byte	0x0
+ 2133 0109 03       		.uleb128 0x3
+ 2134 010a 0E       		.uleb128 0xe
+ 2135 010b 3A       		.uleb128 0x3a
+ 2136 010c 0B       		.uleb128 0xb
+ 2137 010d 3B       		.uleb128 0x3b
+ 2138 010e 0B       		.uleb128 0xb
+ 2139 010f 49       		.uleb128 0x49
+ 2140 0110 13       		.uleb128 0x13
+ 2141 0111 3F       		.uleb128 0x3f
+ 2142 0112 0C       		.uleb128 0xc
+ 2143 0113 02       		.uleb128 0x2
+ 2144 0114 0A       		.uleb128 0xa
+ 2145 0115 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 50
+
+
+ 2146 0116 00       		.byte	0x0
+ 2147 0117 00       		.byte	0x0
+ 2148              		.section	.debug_pubnames,"",%progbits
+ 2149 0000 77010000 		.4byte	0x177
+ 2150 0004 0200     		.2byte	0x2
+ 2151 0006 00000000 		.4byte	.Ldebug_info0
+ 2152 000a AF030000 		.4byte	0x3af
+ 2153 000e A8000000 		.4byte	0xa8
+ 2154 0012 4C43445F 		.ascii	"LCD_Char_1_Init\000"
+ 2154      43686172 
+ 2154      5F315F49 
+ 2154      6E697400 
+ 2155 0022 BD000000 		.4byte	0xbd
+ 2156 0026 4C43445F 		.ascii	"LCD_Char_1_Enable\000"
+ 2156      43686172 
+ 2156      5F315F45 
+ 2156      6E61626C 
+ 2156      6500
+ 2157 0038 D2000000 		.4byte	0xd2
+ 2158 003c 4C43445F 		.ascii	"LCD_Char_1_Start\000"
+ 2158      43686172 
+ 2158      5F315F53 
+ 2158      74617274 
+ 2158      00
+ 2159 004d E7000000 		.4byte	0xe7
+ 2160 0051 4C43445F 		.ascii	"LCD_Char_1_Stop\000"
+ 2160      43686172 
+ 2160      5F315F53 
+ 2160      746F7000 
+ 2161 0061 FC000000 		.4byte	0xfc
+ 2162 0065 4C43445F 		.ascii	"LCD_Char_1_Position\000"
+ 2162      43686172 
+ 2162      5F315F50 
+ 2162      6F736974 
+ 2162      696F6E00 
+ 2163 0079 32010000 		.4byte	0x132
+ 2164 007d 4C43445F 		.ascii	"LCD_Char_1_PrintString\000"
+ 2164      43686172 
+ 2164      5F315F50 
+ 2164      72696E74 
+ 2164      53747269 
+ 2165 0094 81010000 		.4byte	0x181
+ 2166 0098 4C43445F 		.ascii	"LCD_Char_1_PutChar\000"
+ 2166      43686172 
+ 2166      5F315F50 
+ 2166      75744368 
+ 2166      617200
+ 2167 00ab AB010000 		.4byte	0x1ab
+ 2168 00af 4C43445F 		.ascii	"LCD_Char_1_WriteData\000"
+ 2168      43686172 
+ 2168      5F315F57 
+ 2168      72697465 
+ 2168      44617461 
+ 2169 00c4 E4010000 		.4byte	0x1e4
+ 2170 00c8 4C43445F 		.ascii	"LCD_Char_1_WriteControl\000"
+ 2170      43686172 
+ 2170      5F315F57 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 51
+
+
+ 2170      72697465 
+ 2170      436F6E74 
+ 2171 00e0 1D020000 		.4byte	0x21d
+ 2172 00e4 4C43445F 		.ascii	"LCD_Char_1_IsReady\000"
+ 2172      43686172 
+ 2172      5F315F49 
+ 2172      73526561 
+ 2172      647900
+ 2173 00f7 99020000 		.4byte	0x299
+ 2174 00fb 4C43445F 		.ascii	"LCD_Char_1_PrintInt8\000"
+ 2174      43686172 
+ 2174      5F315F50 
+ 2174      72696E74 
+ 2174      496E7438 
+ 2175 0110 EA020000 		.4byte	0x2ea
+ 2176 0114 4C43445F 		.ascii	"LCD_Char_1_PrintInt16\000"
+ 2176      43686172 
+ 2176      5F315F50 
+ 2176      72696E74 
+ 2176      496E7431 
+ 2177 012a 14030000 		.4byte	0x314
+ 2178 012e 4C43445F 		.ascii	"LCD_Char_1_PrintNumber\000"
+ 2178      43686172 
+ 2178      5F315F50 
+ 2178      72696E74 
+ 2178      4E756D62 
+ 2179 0145 8A030000 		.4byte	0x38a
+ 2180 0149 4C43445F 		.ascii	"LCD_Char_1_initVar\000"
+ 2180      43686172 
+ 2180      5F315F69 
+ 2180      6E697456 
+ 2180      617200
+ 2181 015c 9C030000 		.4byte	0x39c
+ 2182 0160 4C43445F 		.ascii	"LCD_Char_1_enableState\000"
+ 2182      43686172 
+ 2182      5F315F65 
+ 2182      6E61626C 
+ 2182      65537461 
+ 2183 0177 00000000 		.4byte	0x0
+ 2184              		.section	.debug_aranges,"",%progbits
+ 2185 0000 8C000000 		.4byte	0x8c
+ 2186 0004 0200     		.2byte	0x2
+ 2187 0006 00000000 		.4byte	.Ldebug_info0
+ 2188 000a 04       		.byte	0x4
+ 2189 000b 00       		.byte	0x0
+ 2190 000c 0000     		.2byte	0x0
+ 2191 000e 0000     		.2byte	0x0
+ 2192 0010 00000000 		.4byte	.LFB0
+ 2193 0014 8E000000 		.4byte	.LFE0-.LFB0
+ 2194 0018 00000000 		.4byte	.LFB1
+ 2195 001c 1C000000 		.4byte	.LFE1-.LFB1
+ 2196 0020 00000000 		.4byte	.LFB2
+ 2197 0024 2A000000 		.4byte	.LFE2-.LFB2
+ 2198 0028 00000000 		.4byte	.LFB3
+ 2199 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 2200 0030 00000000 		.4byte	.LFB4
+ 2201 0034 72000000 		.4byte	.LFE4-.LFB4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 52
+
+
+ 2202 0038 00000000 		.4byte	.LFB5
+ 2203 003c 3E000000 		.4byte	.LFE5-.LFB5
+ 2204 0040 00000000 		.4byte	.LFB6
+ 2205 0044 1A000000 		.4byte	.LFE6-.LFB6
+ 2206 0048 00000000 		.4byte	.LFB7
+ 2207 004c 36000000 		.4byte	.LFE7-.LFB7
+ 2208 0050 00000000 		.4byte	.LFB8
+ 2209 0054 36000000 		.4byte	.LFE8-.LFB8
+ 2210 0058 00000000 		.4byte	.LFB9
+ 2211 005c FA010000 		.4byte	.LFE9-.LFB9
+ 2212 0060 00000000 		.4byte	.LFB10
+ 2213 0064 AC000000 		.4byte	.LFE10-.LFB10
+ 2214 0068 00000000 		.4byte	.LFB11
+ 2215 006c 8C000000 		.4byte	.LFE11-.LFB11
+ 2216 0070 00000000 		.4byte	.LFB12
+ 2217 0074 42000000 		.4byte	.LFE12-.LFB12
+ 2218 0078 00000000 		.4byte	.LFB13
+ 2219 007c 2C000000 		.4byte	.LFE13-.LFB13
+ 2220 0080 00000000 		.4byte	.LFB14
+ 2221 0084 0E010000 		.4byte	.LFE14-.LFB14
+ 2222 0088 00000000 		.4byte	0x0
+ 2223 008c 00000000 		.4byte	0x0
+ 2224              		.section	.debug_ranges,"",%progbits
+ 2225              	.Ldebug_ranges0:
+ 2226 0000 00000000 		.4byte	.Ltext0
+ 2227 0004 00000000 		.4byte	.Letext0
+ 2228 0008 00000000 		.4byte	.LFB0
+ 2229 000c 8E000000 		.4byte	.LFE0
+ 2230 0010 00000000 		.4byte	.LFB1
+ 2231 0014 1C000000 		.4byte	.LFE1
+ 2232 0018 00000000 		.4byte	.LFB2
+ 2233 001c 2A000000 		.4byte	.LFE2
+ 2234 0020 00000000 		.4byte	.LFB3
+ 2235 0024 1C000000 		.4byte	.LFE3
+ 2236 0028 00000000 		.4byte	.LFB4
+ 2237 002c 72000000 		.4byte	.LFE4
+ 2238 0030 00000000 		.4byte	.LFB5
+ 2239 0034 3E000000 		.4byte	.LFE5
+ 2240 0038 00000000 		.4byte	.LFB6
+ 2241 003c 1A000000 		.4byte	.LFE6
+ 2242 0040 00000000 		.4byte	.LFB7
+ 2243 0044 36000000 		.4byte	.LFE7
+ 2244 0048 00000000 		.4byte	.LFB8
+ 2245 004c 36000000 		.4byte	.LFE8
+ 2246 0050 00000000 		.4byte	.LFB9
+ 2247 0054 FA010000 		.4byte	.LFE9
+ 2248 0058 00000000 		.4byte	.LFB10
+ 2249 005c AC000000 		.4byte	.LFE10
+ 2250 0060 00000000 		.4byte	.LFB11
+ 2251 0064 8C000000 		.4byte	.LFE11
+ 2252 0068 00000000 		.4byte	.LFB12
+ 2253 006c 42000000 		.4byte	.LFE12
+ 2254 0070 00000000 		.4byte	.LFB13
+ 2255 0074 2C000000 		.4byte	.LFE13
+ 2256 0078 00000000 		.4byte	.LFB14
+ 2257 007c 0E010000 		.4byte	.LFE14
+ 2258 0080 00000000 		.4byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 53
+
+
+ 2259 0084 00000000 		.4byte	0x0
+ 2260              		.section	.debug_str,"MS",%progbits,1
+ 2261              	.LASF5:
+ 2262 0000 6C6F6E67 		.ascii	"long long int\000"
+ 2262      206C6F6E 
+ 2262      6720696E 
+ 2262      7400
+ 2263              	.LASF30:
+ 2264 000e 4C43445F 		.ascii	"LCD_Char_1_WriteControl\000"
+ 2264      43686172 
+ 2264      5F315F57 
+ 2264      72697465 
+ 2264      436F6E74 
+ 2265              	.LASF44:
+ 2266 0026 4C43445F 		.ascii	"LCD_Char_1_initVar\000"
+ 2266      43686172 
+ 2266      5F315F69 
+ 2266      6E697456 
+ 2266      617200
+ 2267              	.LASF36:
+ 2268 0039 4C43445F 		.ascii	"LCD_Char_1_PrintInt8\000"
+ 2268      43686172 
+ 2268      5F315F50 
+ 2268      72696E74 
+ 2268      496E7438 
+ 2269              	.LASF26:
+ 2270 004e 63686172 		.ascii	"character\000"
+ 2270      61637465 
+ 2270      7200
+ 2271              	.LASF37:
+ 2272 0058 4C43445F 		.ascii	"LCD_Char_1_hex\000"
+ 2272      43686172 
+ 2272      5F315F68 
+ 2272      657800
+ 2273              	.LASF33:
+ 2274 0067 76616C75 		.ascii	"value\000"
+ 2274      6500
+ 2275              	.LASF18:
+ 2276 006d 4C43445F 		.ascii	"LCD_Char_1_Stop\000"
+ 2276      43686172 
+ 2276      5F315F53 
+ 2276      746F7000 
+ 2277              	.LASF7:
+ 2278 007d 6C6F6E67 		.ascii	"long int\000"
+ 2278      20696E74 
+ 2278      00
+ 2279              	.LASF3:
+ 2280 0086 73686F72 		.ascii	"short unsigned int\000"
+ 2280      7420756E 
+ 2280      7369676E 
+ 2280      65642069 
+ 2280      6E7400
+ 2281              	.LASF16:
+ 2282 0099 4C43445F 		.ascii	"LCD_Char_1_Enable\000"
+ 2282      43686172 
+ 2282      5F315F45 
+ 2282      6E61626C 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 54
+
+
+ 2282      6500
+ 2283              	.LASF23:
+ 2284 00ab 696E6465 		.ascii	"indexU8\000"
+ 2284      78553800 
+ 2285              	.LASF38:
+ 2286 00b3 4C43445F 		.ascii	"LCD_Char_1_PrintInt16\000"
+ 2286      43686172 
+ 2286      5F315F50 
+ 2286      72696E74 
+ 2286      496E7431 
+ 2287              	.LASF22:
+ 2288 00c9 73747269 		.ascii	"string\000"
+ 2288      6E6700
+ 2289              	.LASF19:
+ 2290 00d0 636F6C75 		.ascii	"column\000"
+ 2290      6D6E00
+ 2291              	.LASF12:
+ 2292 00d7 666C6F61 		.ascii	"float\000"
+ 2292      7400
+ 2293              	.LASF17:
+ 2294 00dd 4C43445F 		.ascii	"LCD_Char_1_Start\000"
+ 2294      43686172 
+ 2294      5F315F53 
+ 2294      74617274 
+ 2294      00
+ 2295              	.LASF21:
+ 2296 00ee 4C43445F 		.ascii	"LCD_Char_1_PrintString\000"
+ 2296      43686172 
+ 2296      5F315F50 
+ 2296      72696E74 
+ 2296      53747269 
+ 2297              	.LASF14:
+ 2298 0105 63686172 		.ascii	"char8\000"
+ 2298      3800
+ 2299              	.LASF43:
+ 2300 010b 6E756D44 		.ascii	"numDigits\000"
+ 2300      69676974 
+ 2300      7300
+ 2301              	.LASF8:
+ 2302 0115 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2302      20756E73 
+ 2302      69676E65 
+ 2302      6420696E 
+ 2302      7400
+ 2303              	.LASF41:
+ 2304 0127 74656D70 		.ascii	"temp\000"
+ 2304      00
+ 2305              	.LASF10:
+ 2306 012c 75696E74 		.ascii	"uint8\000"
+ 2306      3800
+ 2307              	.LASF34:
+ 2308 0132 4C43445F 		.ascii	"LCD_Char_1_WrDatNib\000"
+ 2308      43686172 
+ 2308      5F315F57 
+ 2308      72446174 
+ 2308      4E696200 
+ 2309              	.LASF45:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 55
+
+
+ 2310 0146 4C43445F 		.ascii	"LCD_Char_1_enableState\000"
+ 2310      43686172 
+ 2310      5F315F65 
+ 2310      6E61626C 
+ 2310      65537461 
+ 2311              	.LASF32:
+ 2312 015d 4C43445F 		.ascii	"LCD_Char_1_IsReady\000"
+ 2312      43686172 
+ 2312      5F315F49 
+ 2312      73526561 
+ 2312      647900
+ 2313              	.LASF1:
+ 2314 0170 756E7369 		.ascii	"unsigned char\000"
+ 2314      676E6564 
+ 2314      20636861 
+ 2314      7200
+ 2315              	.LASF13:
+ 2316 017e 646F7562 		.ascii	"double\000"
+ 2316      6C6500
+ 2317              	.LASF25:
+ 2318 0185 4C43445F 		.ascii	"LCD_Char_1_PutChar\000"
+ 2318      43686172 
+ 2318      5F315F50 
+ 2318      75744368 
+ 2318      617200
+ 2319              	.LASF11:
+ 2320 0198 75696E74 		.ascii	"uint16\000"
+ 2320      313600
+ 2321              	.LASF42:
+ 2322 019f 64696749 		.ascii	"digIndex\000"
+ 2322      6E646578 
+ 2322      00
+ 2323              	.LASF48:
+ 2324 01a8 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 2324      73657273 
+ 2324      5C686F61 
+ 2324      6E67705C 
+ 2324      446F6375 
+ 2325 01d5 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 2325      6E766572 
+ 2325      745C696E 
+ 2325      76657274 
+ 2325      2E637964 
+ 2326              	.LASF4:
+ 2327 01ec 756E7369 		.ascii	"unsigned int\000"
+ 2327      676E6564 
+ 2327      20696E74 
+ 2327      00
+ 2328              	.LASF27:
+ 2329 01f9 4C43445F 		.ascii	"LCD_Char_1_WriteData\000"
+ 2329      43686172 
+ 2329      5F315F57 
+ 2329      72697465 
+ 2329      44617461 
+ 2330              	.LASF6:
+ 2331 020e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2331      206C6F6E 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 56
+
+
+ 2331      6720756E 
+ 2331      7369676E 
+ 2331      65642069 
+ 2332              	.LASF40:
+ 2333 0225 6E756D62 		.ascii	"number\000"
+ 2333      657200
+ 2334              	.LASF35:
+ 2335 022c 4C43445F 		.ascii	"LCD_Char_1_WrCntrlNib\000"
+ 2335      43686172 
+ 2335      5F315F57 
+ 2335      72436E74 
+ 2335      726C4E69 
+ 2336              	.LASF46:
+ 2337 0242 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 2337      4320342E 
+ 2337      342E3100 
+ 2338              	.LASF9:
+ 2339 024e 63686172 		.ascii	"char\000"
+ 2339      00
+ 2340              	.LASF20:
+ 2341 0253 4C43445F 		.ascii	"LCD_Char_1_Position\000"
+ 2341      43686172 
+ 2341      5F315F50 
+ 2341      6F736974 
+ 2341      696F6E00 
+ 2342              	.LASF15:
+ 2343 0267 4C43445F 		.ascii	"LCD_Char_1_Init\000"
+ 2343      43686172 
+ 2343      5F315F49 
+ 2343      6E697400 
+ 2344              	.LASF2:
+ 2345 0277 73686F72 		.ascii	"short int\000"
+ 2345      7420696E 
+ 2345      7400
+ 2346              	.LASF24:
+ 2347 0281 63757272 		.ascii	"current\000"
+ 2347      656E7400 
+ 2348              	.LASF47:
+ 2349 0289 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\LCD_Char_1.c\000"
+ 2349      6E657261 
+ 2349      7465645F 
+ 2349      536F7572 
+ 2349      63655C50 
+ 2350              	.LASF39:
+ 2351 02af 4C43445F 		.ascii	"LCD_Char_1_PrintNumber\000"
+ 2351      43686172 
+ 2351      5F315F50 
+ 2351      72696E74 
+ 2351      4E756D62 
+ 2352              	.LASF0:
+ 2353 02c6 7369676E 		.ascii	"signed char\000"
+ 2353      65642063 
+ 2353      68617200 
+ 2354              	.LASF28:
+ 2355 02d2 64427974 		.ascii	"dByte\000"
+ 2355      6500
+ 2356              	.LASF31:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccFlnnQa.s 			page 57
+
+
+ 2357 02d8 63427974 		.ascii	"cByte\000"
+ 2357      6500
+ 2358              	.LASF29:
+ 2359 02de 6E696262 		.ascii	"nibble\000"
+ 2359      6C6500
+ 2360              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

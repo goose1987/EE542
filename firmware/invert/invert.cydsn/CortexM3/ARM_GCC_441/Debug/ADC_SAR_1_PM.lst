@@ -1,0 +1,889 @@
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"ADC_SAR_1_PM.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 C7000000 		.text
+  20      02007400 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.bss
+  24              		.align	2
+  25              	ADC_SAR_1_backup:
+  26 0000 00       		.space	1
+  27 0001 000000   		.section	.text.ADC_SAR_1_SaveConfig,"ax",%progbits
+  28              		.align	2
+  29              		.global	ADC_SAR_1_SaveConfig
+  30              		.thumb
+  31              		.thumb_func
+  32              		.type	ADC_SAR_1_SaveConfig, %function
+  33              	ADC_SAR_1_SaveConfig:
+  34              	.LFB0:
+  35              		.file 1 ".\\Generated_Source\\PSoC5\\ADC_SAR_1_PM.c"
+   1:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * File Name: ADC_SAR_1_PM.c
+   3:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Version 2.0
+   4:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+   5:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Description:
+   6:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  This file provides Sleep/WakeUp APIs functionality.
+   7:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+   8:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Note:
+   9:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  10:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  17:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** #include "ADC_SAR_1.h"
+  18:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 2
+
+
+  19:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  20:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** /***************************************
+  21:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Local data allocation
+  22:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** ***************************************/
+  23:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  24:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** static ADC_SAR_1_BACKUP_STRUCT  ADC_SAR_1_backup =
+  25:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** {
+  26:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     ADC_SAR_1_DISABLED
+  27:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** };
+  28:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  29:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  30:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** /*******************************************************************************
+  31:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Function Name: ADC_SAR_1_SaveConfig
+  32:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** ********************************************************************************
+  33:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  34:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Summary:
+  35:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  Saves the current user configuration.
+  36:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  37:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Parameters:
+  38:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+  39:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  40:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Return:
+  41:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+  42:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  43:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *******************************************************************************/
+  44:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** void ADC_SAR_1_SaveConfig(void)
+  45:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** {
+  36              		.loc 1 45 0
+  37              		.cfi_startproc
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 1, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 80B4     		push	{r7}
+  42              	.LCFI0:
+  43              		.cfi_def_cfa_offset 4
+  44 0002 00AF     		add	r7, sp, #0
+  45              		.cfi_offset 7, -4
+  46              	.LCFI1:
+  47              		.cfi_def_cfa_register 7
+  46:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     /* All configuration registers are marked as [reset_all_retention] */
+  47:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** }
+  48              		.loc 1 47 0
+  49 0004 BD46     		mov	sp, r7
+  50 0006 80BC     		pop	{r7}
+  51 0008 7047     		bx	lr
+  52              		.cfi_endproc
+  53              	.LFE0:
+  54              		.size	ADC_SAR_1_SaveConfig, .-ADC_SAR_1_SaveConfig
+  55 000a 00BF     		.section	.text.ADC_SAR_1_RestoreConfig,"ax",%progbits
+  56              		.align	2
+  57              		.global	ADC_SAR_1_RestoreConfig
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	ADC_SAR_1_RestoreConfig, %function
+  61              	ADC_SAR_1_RestoreConfig:
+  62              	.LFB1:
+  48:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 3
+
+
+  49:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  50:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** /*******************************************************************************
+  51:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Function Name: ADC_SAR_1_RestoreConfig
+  52:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** ********************************************************************************
+  53:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  54:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Summary:
+  55:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  Restores the current user configuration.
+  56:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  57:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Parameters:
+  58:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+  59:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  60:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Return:
+  61:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+  62:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  63:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *******************************************************************************/
+  64:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** void ADC_SAR_1_RestoreConfig(void)
+  65:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** {
+  63              		.loc 1 65 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 1, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+  68 0000 80B4     		push	{r7}
+  69              	.LCFI2:
+  70              		.cfi_def_cfa_offset 4
+  71 0002 00AF     		add	r7, sp, #0
+  72              		.cfi_offset 7, -4
+  73              	.LCFI3:
+  74              		.cfi_def_cfa_register 7
+  66:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     /* All congiguration registers are marked as [reset_all_retention] */
+  67:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** }
+  75              		.loc 1 67 0
+  76 0004 BD46     		mov	sp, r7
+  77 0006 80BC     		pop	{r7}
+  78 0008 7047     		bx	lr
+  79              		.cfi_endproc
+  80              	.LFE1:
+  81              		.size	ADC_SAR_1_RestoreConfig, .-ADC_SAR_1_RestoreConfig
+  82 000a 00BF     		.section	.text.ADC_SAR_1_Sleep,"ax",%progbits
+  83              		.align	2
+  84              		.global	ADC_SAR_1_Sleep
+  85              		.thumb
+  86              		.thumb_func
+  87              		.type	ADC_SAR_1_Sleep, %function
+  88              	ADC_SAR_1_Sleep:
+  89              	.LFB2:
+  68:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  69:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+  70:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** /*******************************************************************************
+  71:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Function Name: ADC_SAR_1_Sleep
+  72:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** ********************************************************************************
+  73:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  74:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Summary:
+  75:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  Stops and saves the user configuration
+  76:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  77:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Parameters:
+  78:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 4
+
+
+  79:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  80:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Return:
+  81:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+  82:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  83:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Global Variables:
+  84:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  ADC_SAR_1_backup - modified.
+  85:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+  86:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *******************************************************************************/
+  87:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** void ADC_SAR_1_Sleep(void)
+  88:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** {
+  90              		.loc 1 88 0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 1, uses_anonymous_args = 0
+  94 0000 80B5     		push	{r7, lr}
+  95              	.LCFI4:
+  96              		.cfi_def_cfa_offset 8
+  97 0002 00AF     		add	r7, sp, #0
+  98              		.cfi_offset 14, -4
+  99              		.cfi_offset 7, -8
+ 100              	.LCFI5:
+ 101              		.cfi_def_cfa_register 7
+  89:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     if((ADC_SAR_1_PWRMGR_SAR_REG  & ADC_SAR_1_ACT_PWR_SAR_EN) != 0u)
+ 102              		.loc 1 89 0
+ 103 0004 44F2AB33 		movw	r3, #:lower16:1073759147
+ 104 0008 C4F20003 		movt	r3, #:upper16:1073759147
+ 105 000c 1B78     		ldrb	r3, [r3, #0]
+ 106 000e DBB2     		uxtb	r3, r3
+ 107 0010 03F00203 		and	r3, r3, #2
+ 108 0014 002B     		cmp	r3, #0
+ 109 0016 1CD0     		beq	.L6
+  90:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     {
+  91:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         if((ADC_SAR_1_SAR_CSR0_REG & ADC_SAR_1_SAR_SOF_START_CONV) != 0u)
+ 110              		.loc 1 91 0
+ 111 0018 45F60813 		movw	r3, #:lower16:1073764616
+ 112 001c C4F20003 		movt	r3, #:upper16:1073764616
+ 113 0020 1B78     		ldrb	r3, [r3, #0]
+ 114 0022 DBB2     		uxtb	r3, r3
+ 115 0024 03F00103 		and	r3, r3, #1
+ 116 0028 DBB2     		uxtb	r3, r3
+ 117 002a 002B     		cmp	r3, #0
+ 118 002c 07D0     		beq	.L7
+  92:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         {
+  93:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****             ADC_SAR_1_backup.enableState = ADC_SAR_1_ENABLED | ADC_SAR_1_STARTED;
+ 119              		.loc 1 93 0
+ 120 002e 40F20003 		movw	r3, #:lower16:ADC_SAR_1_backup
+ 121 0032 C0F20003 		movt	r3, #:upper16:ADC_SAR_1_backup
+ 122 0036 4FF00302 		mov	r2, #3
+ 123 003a 1A70     		strb	r2, [r3, #0]
+ 124 003c 06E0     		b	.L8
+ 125              	.L7:
+  94:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         }
+  95:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         else
+  96:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         {
+  97:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****             ADC_SAR_1_backup.enableState = ADC_SAR_1_ENABLED;
+ 126              		.loc 1 97 0
+ 127 003e 40F20003 		movw	r3, #:lower16:ADC_SAR_1_backup
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 5
+
+
+ 128 0042 C0F20003 		movt	r3, #:upper16:ADC_SAR_1_backup
+ 129 0046 4FF00102 		mov	r2, #1
+ 130 004a 1A70     		strb	r2, [r3, #0]
+ 131              	.L8:
+  98:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         }
+  99:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         ADC_SAR_1_Stop();
+ 132              		.loc 1 99 0
+ 133 004c FFF7FEFF 		bl	ADC_SAR_1_Stop
+ 134 0050 06E0     		b	.L10
+ 135              	.L6:
+ 100:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     }
+ 101:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     else
+ 102:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     {
+ 103:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         ADC_SAR_1_backup.enableState = ADC_SAR_1_DISABLED;
+ 136              		.loc 1 103 0
+ 137 0052 40F20003 		movw	r3, #:lower16:ADC_SAR_1_backup
+ 138 0056 C0F20003 		movt	r3, #:upper16:ADC_SAR_1_backup
+ 139 005a 4FF00002 		mov	r2, #0
+ 140 005e 1A70     		strb	r2, [r3, #0]
+ 141              	.L10:
+ 104:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     }
+ 105:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     /*ADC_SAR_1_SaveConfig();*/
+ 106:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** }
+ 142              		.loc 1 106 0
+ 143 0060 80BD     		pop	{r7, pc}
+ 144              		.cfi_endproc
+ 145              	.LFE2:
+ 146              		.size	ADC_SAR_1_Sleep, .-ADC_SAR_1_Sleep
+ 147 0062 00BF     		.section	.text.ADC_SAR_1_Wakeup,"ax",%progbits
+ 148              		.align	2
+ 149              		.global	ADC_SAR_1_Wakeup
+ 150              		.thumb
+ 151              		.thumb_func
+ 152              		.type	ADC_SAR_1_Wakeup, %function
+ 153              	ADC_SAR_1_Wakeup:
+ 154              	.LFB3:
+ 107:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+ 108:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** 
+ 109:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** /*******************************************************************************
+ 110:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Function Name: ADC_SAR_1_Wakeup
+ 111:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** ********************************************************************************
+ 112:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+ 113:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Summary:
+ 114:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  Restores and enables the user configuration
+ 115:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+ 116:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Parameters:
+ 117:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+ 118:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+ 119:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Return:
+ 120:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  None.
+ 121:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+ 122:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** * Global Variables:
+ 123:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *  ADC_SAR_1_backup - used.
+ 124:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *
+ 125:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** *******************************************************************************/
+ 126:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** void ADC_SAR_1_Wakeup(void)
+ 127:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** {
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 6
+
+
+ 155              		.loc 1 127 0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 1, uses_anonymous_args = 0
+ 159 0000 80B5     		push	{r7, lr}
+ 160              	.LCFI6:
+ 161              		.cfi_def_cfa_offset 8
+ 162 0002 00AF     		add	r7, sp, #0
+ 163              		.cfi_offset 14, -4
+ 164              		.cfi_offset 7, -8
+ 165              	.LCFI7:
+ 166              		.cfi_def_cfa_register 7
+ 128:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     /*ADC_SAR_1_RestoreConfig();*/
+ 129:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     if(ADC_SAR_1_backup.enableState != ADC_SAR_1_DISABLED)
+ 167              		.loc 1 129 0
+ 168 0004 40F20003 		movw	r3, #:lower16:ADC_SAR_1_backup
+ 169 0008 C0F20003 		movt	r3, #:upper16:ADC_SAR_1_backup
+ 170 000c 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 171 000e 002B     		cmp	r3, #0
+ 172 0010 0CD0     		beq	.L13
+ 130:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     {
+ 131:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         ADC_SAR_1_Enable();
+ 173              		.loc 1 131 0
+ 174 0012 FFF7FEFF 		bl	ADC_SAR_1_Enable
+ 132:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         #if(ADC_SAR_1_DEFAULT_CONV_MODE != ADC_SAR_1__HARDWARE_TRIGGER)
+ 133:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****             if((ADC_SAR_1_backup.enableState & ADC_SAR_1_STARTED) != 0u)
+ 175              		.loc 1 133 0
+ 176 0016 40F20003 		movw	r3, #:lower16:ADC_SAR_1_backup
+ 177 001a C0F20003 		movt	r3, #:upper16:ADC_SAR_1_backup
+ 178 001e 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 179 0020 03F00203 		and	r3, r3, #2
+ 180 0024 002B     		cmp	r3, #0
+ 181 0026 01D0     		beq	.L13
+ 134:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****             {
+ 135:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****                 ADC_SAR_1_StartConvert();
+ 182              		.loc 1 135 0
+ 183 0028 FFF7FEFF 		bl	ADC_SAR_1_StartConvert
+ 184              	.L13:
+ 136:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****             }
+ 137:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         #endif /* End ADC_SAR_1_DEFAULT_CONV_MODE != ADC_SAR_1__HARDWARE_TRIGGER */
+ 138:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****         
+ 139:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c ****     }
+ 140:.\Generated_Source\PSoC5/ADC_SAR_1_PM.c **** }
+ 185              		.loc 1 140 0
+ 186 002c 80BD     		pop	{r7, pc}
+ 187              		.cfi_endproc
+ 188              	.LFE3:
+ 189              		.size	ADC_SAR_1_Wakeup, .-ADC_SAR_1_Wakeup
+ 190 002e 00BF     		.text
+ 191              	.Letext0:
+ 192              		.section	.debug_loc,"",%progbits
+ 193              	.Ldebug_loc0:
+ 194              	.LLST0:
+ 195 0000 00000000 		.4byte	.LFB0
+ 196 0004 02000000 		.4byte	.LCFI0
+ 197 0008 0100     		.2byte	0x1
+ 198 000a 5D       		.byte	0x5d
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 7
+
+
+ 199 000b 02000000 		.4byte	.LCFI0
+ 200 000f 04000000 		.4byte	.LCFI1
+ 201 0013 0200     		.2byte	0x2
+ 202 0015 7D       		.byte	0x7d
+ 203 0016 04       		.sleb128 4
+ 204 0017 04000000 		.4byte	.LCFI1
+ 205 001b 0A000000 		.4byte	.LFE0
+ 206 001f 0200     		.2byte	0x2
+ 207 0021 77       		.byte	0x77
+ 208 0022 04       		.sleb128 4
+ 209 0023 00000000 		.4byte	0x0
+ 210 0027 00000000 		.4byte	0x0
+ 211              	.LLST1:
+ 212 002b 00000000 		.4byte	.LFB1
+ 213 002f 02000000 		.4byte	.LCFI2
+ 214 0033 0100     		.2byte	0x1
+ 215 0035 5D       		.byte	0x5d
+ 216 0036 02000000 		.4byte	.LCFI2
+ 217 003a 04000000 		.4byte	.LCFI3
+ 218 003e 0200     		.2byte	0x2
+ 219 0040 7D       		.byte	0x7d
+ 220 0041 04       		.sleb128 4
+ 221 0042 04000000 		.4byte	.LCFI3
+ 222 0046 0A000000 		.4byte	.LFE1
+ 223 004a 0200     		.2byte	0x2
+ 224 004c 77       		.byte	0x77
+ 225 004d 04       		.sleb128 4
+ 226 004e 00000000 		.4byte	0x0
+ 227 0052 00000000 		.4byte	0x0
+ 228              	.LLST2:
+ 229 0056 00000000 		.4byte	.LFB2
+ 230 005a 02000000 		.4byte	.LCFI4
+ 231 005e 0100     		.2byte	0x1
+ 232 0060 5D       		.byte	0x5d
+ 233 0061 02000000 		.4byte	.LCFI4
+ 234 0065 04000000 		.4byte	.LCFI5
+ 235 0069 0200     		.2byte	0x2
+ 236 006b 7D       		.byte	0x7d
+ 237 006c 08       		.sleb128 8
+ 238 006d 04000000 		.4byte	.LCFI5
+ 239 0071 62000000 		.4byte	.LFE2
+ 240 0075 0200     		.2byte	0x2
+ 241 0077 77       		.byte	0x77
+ 242 0078 08       		.sleb128 8
+ 243 0079 00000000 		.4byte	0x0
+ 244 007d 00000000 		.4byte	0x0
+ 245              	.LLST3:
+ 246 0081 00000000 		.4byte	.LFB3
+ 247 0085 02000000 		.4byte	.LCFI6
+ 248 0089 0100     		.2byte	0x1
+ 249 008b 5D       		.byte	0x5d
+ 250 008c 02000000 		.4byte	.LCFI6
+ 251 0090 04000000 		.4byte	.LCFI7
+ 252 0094 0200     		.2byte	0x2
+ 253 0096 7D       		.byte	0x7d
+ 254 0097 08       		.sleb128 8
+ 255 0098 04000000 		.4byte	.LCFI7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 8
+
+
+ 256 009c 2E000000 		.4byte	.LFE3
+ 257 00a0 0200     		.2byte	0x2
+ 258 00a2 77       		.byte	0x77
+ 259 00a3 08       		.sleb128 8
+ 260 00a4 00000000 		.4byte	0x0
+ 261 00a8 00000000 		.4byte	0x0
+ 262              		.file 2 ".\\Generated_Source\\PSoC5\\/cytypes.h"
+ 263              		.file 3 ".\\Generated_Source\\PSoC5\\/ADC_SAR_1.h"
+ 264              		.section	.debug_info
+ 265 0000 13010000 		.4byte	0x113
+ 266 0004 0200     		.2byte	0x2
+ 267 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 268 000a 04       		.byte	0x4
+ 269 000b 01       		.uleb128 0x1
+ 270 000c 18010000 		.4byte	.LASF18
+ 271 0010 01       		.byte	0x1
+ 272 0011 48010000 		.4byte	.LASF19
+ 273 0015 A0000000 		.4byte	.LASF20
+ 274 0019 00000000 		.4byte	0x0
+ 275 001d 00000000 		.4byte	0x0
+ 276 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 277 0025 00000000 		.4byte	.Ldebug_line0
+ 278 0029 02       		.uleb128 0x2
+ 279 002a 01       		.byte	0x1
+ 280 002b 06       		.byte	0x6
+ 281 002c 8B010000 		.4byte	.LASF0
+ 282 0030 02       		.uleb128 0x2
+ 283 0031 01       		.byte	0x1
+ 284 0032 08       		.byte	0x8
+ 285 0033 3D000000 		.4byte	.LASF1
+ 286 0037 02       		.uleb128 0x2
+ 287 0038 02       		.byte	0x2
+ 288 0039 05       		.byte	0x5
+ 289 003a 3E010000 		.4byte	.LASF2
+ 290 003e 02       		.uleb128 0x2
+ 291 003f 02       		.byte	0x2
+ 292 0040 07       		.byte	0x7
+ 293 0041 75000000 		.4byte	.LASF3
+ 294 0045 02       		.uleb128 0x2
+ 295 0046 04       		.byte	0x4
+ 296 0047 05       		.byte	0x5
+ 297 0048 76010000 		.4byte	.LASF4
+ 298 004c 02       		.uleb128 0x2
+ 299 004d 04       		.byte	0x4
+ 300 004e 07       		.byte	0x7
+ 301 004f 63000000 		.4byte	.LASF5
+ 302 0053 02       		.uleb128 0x2
+ 303 0054 08       		.byte	0x8
+ 304 0055 05       		.byte	0x5
+ 305 0056 00000000 		.4byte	.LASF6
+ 306 005a 02       		.uleb128 0x2
+ 307 005b 08       		.byte	0x8
+ 308 005c 07       		.byte	0x7
+ 309 005d F1000000 		.4byte	.LASF7
+ 310 0061 03       		.uleb128 0x3
+ 311 0062 04       		.byte	0x4
+ 312 0063 05       		.byte	0x5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 9
+
+
+ 313 0064 696E7400 		.ascii	"int\000"
+ 314 0068 02       		.uleb128 0x2
+ 315 0069 04       		.byte	0x4
+ 316 006a 07       		.byte	0x7
+ 317 006b E4000000 		.4byte	.LASF8
+ 318 006f 04       		.uleb128 0x4
+ 319 0070 70010000 		.4byte	.LASF12
+ 320 0074 02       		.byte	0x2
+ 321 0075 4C       		.byte	0x4c
+ 322 0076 30000000 		.4byte	0x30
+ 323 007a 02       		.uleb128 0x2
+ 324 007b 04       		.byte	0x4
+ 325 007c 04       		.byte	0x4
+ 326 007d 37000000 		.4byte	.LASF9
+ 327 0081 02       		.uleb128 0x2
+ 328 0082 08       		.byte	0x8
+ 329 0083 04       		.byte	0x4
+ 330 0084 88000000 		.4byte	.LASF10
+ 331 0088 02       		.uleb128 0x2
+ 332 0089 01       		.byte	0x1
+ 333 008a 08       		.byte	0x8
+ 334 008b 24010000 		.4byte	.LASF11
+ 335 008f 05       		.uleb128 0x5
+ 336 0090 01       		.byte	0x1
+ 337 0091 03       		.byte	0x3
+ 338 0092 2C       		.byte	0x2c
+ 339 0093 A6000000 		.4byte	0xa6
+ 340 0097 06       		.uleb128 0x6
+ 341 0098 7F010000 		.4byte	.LASF21
+ 342 009c 03       		.byte	0x3
+ 343 009d 2D       		.byte	0x2d
+ 344 009e 6F000000 		.4byte	0x6f
+ 345 00a2 02       		.byte	0x2
+ 346 00a3 23       		.byte	0x23
+ 347 00a4 00       		.uleb128 0x0
+ 348 00a5 00       		.byte	0x0
+ 349 00a6 04       		.uleb128 0x4
+ 350 00a7 0E000000 		.4byte	.LASF13
+ 351 00ab 03       		.byte	0x3
+ 352 00ac 2E       		.byte	0x2e
+ 353 00ad 8F000000 		.4byte	0x8f
+ 354 00b1 07       		.uleb128 0x7
+ 355 00b2 01       		.byte	0x1
+ 356 00b3 29010000 		.4byte	.LASF14
+ 357 00b7 01       		.byte	0x1
+ 358 00b8 2C       		.byte	0x2c
+ 359 00b9 01       		.byte	0x1
+ 360 00ba 00000000 		.4byte	.LFB0
+ 361 00be 0A000000 		.4byte	.LFE0
+ 362 00c2 00000000 		.4byte	.LLST0
+ 363 00c6 07       		.uleb128 0x7
+ 364 00c7 01       		.byte	0x1
+ 365 00c8 4B000000 		.4byte	.LASF15
+ 366 00cc 01       		.byte	0x1
+ 367 00cd 40       		.byte	0x40
+ 368 00ce 01       		.byte	0x1
+ 369 00cf 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 10
+
+
+ 370 00d3 0A000000 		.4byte	.LFE1
+ 371 00d7 2B000000 		.4byte	.LLST1
+ 372 00db 07       		.uleb128 0x7
+ 373 00dc 01       		.byte	0x1
+ 374 00dd 08010000 		.4byte	.LASF16
+ 375 00e1 01       		.byte	0x1
+ 376 00e2 57       		.byte	0x57
+ 377 00e3 01       		.byte	0x1
+ 378 00e4 00000000 		.4byte	.LFB2
+ 379 00e8 62000000 		.4byte	.LFE2
+ 380 00ec 56000000 		.4byte	.LLST2
+ 381 00f0 07       		.uleb128 0x7
+ 382 00f1 01       		.byte	0x1
+ 383 00f2 26000000 		.4byte	.LASF17
+ 384 00f6 01       		.byte	0x1
+ 385 00f7 7E       		.byte	0x7e
+ 386 00f8 01       		.byte	0x1
+ 387 00f9 00000000 		.4byte	.LFB3
+ 388 00fd 2E000000 		.4byte	.LFE3
+ 389 0101 81000000 		.4byte	.LLST3
+ 390 0105 08       		.uleb128 0x8
+ 391 0106 8F000000 		.4byte	.LASF22
+ 392 010a 01       		.byte	0x1
+ 393 010b 18       		.byte	0x18
+ 394 010c A6000000 		.4byte	0xa6
+ 395 0110 05       		.byte	0x5
+ 396 0111 03       		.byte	0x3
+ 397 0112 00000000 		.4byte	ADC_SAR_1_backup
+ 398 0116 00       		.byte	0x0
+ 399              		.section	.debug_abbrev
+ 400 0000 01       		.uleb128 0x1
+ 401 0001 11       		.uleb128 0x11
+ 402 0002 01       		.byte	0x1
+ 403 0003 25       		.uleb128 0x25
+ 404 0004 0E       		.uleb128 0xe
+ 405 0005 13       		.uleb128 0x13
+ 406 0006 0B       		.uleb128 0xb
+ 407 0007 03       		.uleb128 0x3
+ 408 0008 0E       		.uleb128 0xe
+ 409 0009 1B       		.uleb128 0x1b
+ 410 000a 0E       		.uleb128 0xe
+ 411 000b 11       		.uleb128 0x11
+ 412 000c 01       		.uleb128 0x1
+ 413 000d 52       		.uleb128 0x52
+ 414 000e 01       		.uleb128 0x1
+ 415 000f 55       		.uleb128 0x55
+ 416 0010 06       		.uleb128 0x6
+ 417 0011 10       		.uleb128 0x10
+ 418 0012 06       		.uleb128 0x6
+ 419 0013 00       		.byte	0x0
+ 420 0014 00       		.byte	0x0
+ 421 0015 02       		.uleb128 0x2
+ 422 0016 24       		.uleb128 0x24
+ 423 0017 00       		.byte	0x0
+ 424 0018 0B       		.uleb128 0xb
+ 425 0019 0B       		.uleb128 0xb
+ 426 001a 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 11
+
+
+ 427 001b 0B       		.uleb128 0xb
+ 428 001c 03       		.uleb128 0x3
+ 429 001d 0E       		.uleb128 0xe
+ 430 001e 00       		.byte	0x0
+ 431 001f 00       		.byte	0x0
+ 432 0020 03       		.uleb128 0x3
+ 433 0021 24       		.uleb128 0x24
+ 434 0022 00       		.byte	0x0
+ 435 0023 0B       		.uleb128 0xb
+ 436 0024 0B       		.uleb128 0xb
+ 437 0025 3E       		.uleb128 0x3e
+ 438 0026 0B       		.uleb128 0xb
+ 439 0027 03       		.uleb128 0x3
+ 440 0028 08       		.uleb128 0x8
+ 441 0029 00       		.byte	0x0
+ 442 002a 00       		.byte	0x0
+ 443 002b 04       		.uleb128 0x4
+ 444 002c 16       		.uleb128 0x16
+ 445 002d 00       		.byte	0x0
+ 446 002e 03       		.uleb128 0x3
+ 447 002f 0E       		.uleb128 0xe
+ 448 0030 3A       		.uleb128 0x3a
+ 449 0031 0B       		.uleb128 0xb
+ 450 0032 3B       		.uleb128 0x3b
+ 451 0033 0B       		.uleb128 0xb
+ 452 0034 49       		.uleb128 0x49
+ 453 0035 13       		.uleb128 0x13
+ 454 0036 00       		.byte	0x0
+ 455 0037 00       		.byte	0x0
+ 456 0038 05       		.uleb128 0x5
+ 457 0039 13       		.uleb128 0x13
+ 458 003a 01       		.byte	0x1
+ 459 003b 0B       		.uleb128 0xb
+ 460 003c 0B       		.uleb128 0xb
+ 461 003d 3A       		.uleb128 0x3a
+ 462 003e 0B       		.uleb128 0xb
+ 463 003f 3B       		.uleb128 0x3b
+ 464 0040 0B       		.uleb128 0xb
+ 465 0041 01       		.uleb128 0x1
+ 466 0042 13       		.uleb128 0x13
+ 467 0043 00       		.byte	0x0
+ 468 0044 00       		.byte	0x0
+ 469 0045 06       		.uleb128 0x6
+ 470 0046 0D       		.uleb128 0xd
+ 471 0047 00       		.byte	0x0
+ 472 0048 03       		.uleb128 0x3
+ 473 0049 0E       		.uleb128 0xe
+ 474 004a 3A       		.uleb128 0x3a
+ 475 004b 0B       		.uleb128 0xb
+ 476 004c 3B       		.uleb128 0x3b
+ 477 004d 0B       		.uleb128 0xb
+ 478 004e 49       		.uleb128 0x49
+ 479 004f 13       		.uleb128 0x13
+ 480 0050 38       		.uleb128 0x38
+ 481 0051 0A       		.uleb128 0xa
+ 482 0052 00       		.byte	0x0
+ 483 0053 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 12
+
+
+ 484 0054 07       		.uleb128 0x7
+ 485 0055 2E       		.uleb128 0x2e
+ 486 0056 00       		.byte	0x0
+ 487 0057 3F       		.uleb128 0x3f
+ 488 0058 0C       		.uleb128 0xc
+ 489 0059 03       		.uleb128 0x3
+ 490 005a 0E       		.uleb128 0xe
+ 491 005b 3A       		.uleb128 0x3a
+ 492 005c 0B       		.uleb128 0xb
+ 493 005d 3B       		.uleb128 0x3b
+ 494 005e 0B       		.uleb128 0xb
+ 495 005f 27       		.uleb128 0x27
+ 496 0060 0C       		.uleb128 0xc
+ 497 0061 11       		.uleb128 0x11
+ 498 0062 01       		.uleb128 0x1
+ 499 0063 12       		.uleb128 0x12
+ 500 0064 01       		.uleb128 0x1
+ 501 0065 40       		.uleb128 0x40
+ 502 0066 06       		.uleb128 0x6
+ 503 0067 00       		.byte	0x0
+ 504 0068 00       		.byte	0x0
+ 505 0069 08       		.uleb128 0x8
+ 506 006a 34       		.uleb128 0x34
+ 507 006b 00       		.byte	0x0
+ 508 006c 03       		.uleb128 0x3
+ 509 006d 0E       		.uleb128 0xe
+ 510 006e 3A       		.uleb128 0x3a
+ 511 006f 0B       		.uleb128 0xb
+ 512 0070 3B       		.uleb128 0x3b
+ 513 0071 0B       		.uleb128 0xb
+ 514 0072 49       		.uleb128 0x49
+ 515 0073 13       		.uleb128 0x13
+ 516 0074 02       		.uleb128 0x2
+ 517 0075 0A       		.uleb128 0xa
+ 518 0076 00       		.byte	0x0
+ 519 0077 00       		.byte	0x0
+ 520 0078 00       		.byte	0x0
+ 521              		.section	.debug_pubnames,"",%progbits
+ 522 0000 6C000000 		.4byte	0x6c
+ 523 0004 0200     		.2byte	0x2
+ 524 0006 00000000 		.4byte	.Ldebug_info0
+ 525 000a 17010000 		.4byte	0x117
+ 526 000e B1000000 		.4byte	0xb1
+ 527 0012 4144435F 		.ascii	"ADC_SAR_1_SaveConfig\000"
+ 527      5341525F 
+ 527      315F5361 
+ 527      7665436F 
+ 527      6E666967 
+ 528 0027 C6000000 		.4byte	0xc6
+ 529 002b 4144435F 		.ascii	"ADC_SAR_1_RestoreConfig\000"
+ 529      5341525F 
+ 529      315F5265 
+ 529      73746F72 
+ 529      65436F6E 
+ 530 0043 DB000000 		.4byte	0xdb
+ 531 0047 4144435F 		.ascii	"ADC_SAR_1_Sleep\000"
+ 531      5341525F 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 13
+
+
+ 531      315F536C 
+ 531      65657000 
+ 532 0057 F0000000 		.4byte	0xf0
+ 533 005b 4144435F 		.ascii	"ADC_SAR_1_Wakeup\000"
+ 533      5341525F 
+ 533      315F5761 
+ 533      6B657570 
+ 533      00
+ 534 006c 00000000 		.4byte	0x0
+ 535              		.section	.debug_aranges,"",%progbits
+ 536 0000 34000000 		.4byte	0x34
+ 537 0004 0200     		.2byte	0x2
+ 538 0006 00000000 		.4byte	.Ldebug_info0
+ 539 000a 04       		.byte	0x4
+ 540 000b 00       		.byte	0x0
+ 541 000c 0000     		.2byte	0x0
+ 542 000e 0000     		.2byte	0x0
+ 543 0010 00000000 		.4byte	.LFB0
+ 544 0014 0A000000 		.4byte	.LFE0-.LFB0
+ 545 0018 00000000 		.4byte	.LFB1
+ 546 001c 0A000000 		.4byte	.LFE1-.LFB1
+ 547 0020 00000000 		.4byte	.LFB2
+ 548 0024 62000000 		.4byte	.LFE2-.LFB2
+ 549 0028 00000000 		.4byte	.LFB3
+ 550 002c 2E000000 		.4byte	.LFE3-.LFB3
+ 551 0030 00000000 		.4byte	0x0
+ 552 0034 00000000 		.4byte	0x0
+ 553              		.section	.debug_ranges,"",%progbits
+ 554              	.Ldebug_ranges0:
+ 555 0000 00000000 		.4byte	.Ltext0
+ 556 0004 00000000 		.4byte	.Letext0
+ 557 0008 00000000 		.4byte	.LFB0
+ 558 000c 0A000000 		.4byte	.LFE0
+ 559 0010 00000000 		.4byte	.LFB1
+ 560 0014 0A000000 		.4byte	.LFE1
+ 561 0018 00000000 		.4byte	.LFB2
+ 562 001c 62000000 		.4byte	.LFE2
+ 563 0020 00000000 		.4byte	.LFB3
+ 564 0024 2E000000 		.4byte	.LFE3
+ 565 0028 00000000 		.4byte	0x0
+ 566 002c 00000000 		.4byte	0x0
+ 567              		.section	.debug_str,"MS",%progbits,1
+ 568              	.LASF6:
+ 569 0000 6C6F6E67 		.ascii	"long long int\000"
+ 569      206C6F6E 
+ 569      6720696E 
+ 569      7400
+ 570              	.LASF13:
+ 571 000e 4144435F 		.ascii	"ADC_SAR_1_BACKUP_STRUCT\000"
+ 571      5341525F 
+ 571      315F4241 
+ 571      434B5550 
+ 571      5F535452 
+ 572              	.LASF17:
+ 573 0026 4144435F 		.ascii	"ADC_SAR_1_Wakeup\000"
+ 573      5341525F 
+ 573      315F5761 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 14
+
+
+ 573      6B657570 
+ 573      00
+ 574              	.LASF9:
+ 575 0037 666C6F61 		.ascii	"float\000"
+ 575      7400
+ 576              	.LASF1:
+ 577 003d 756E7369 		.ascii	"unsigned char\000"
+ 577      676E6564 
+ 577      20636861 
+ 577      7200
+ 578              	.LASF15:
+ 579 004b 4144435F 		.ascii	"ADC_SAR_1_RestoreConfig\000"
+ 579      5341525F 
+ 579      315F5265 
+ 579      73746F72 
+ 579      65436F6E 
+ 580              	.LASF5:
+ 581 0063 6C6F6E67 		.ascii	"long unsigned int\000"
+ 581      20756E73 
+ 581      69676E65 
+ 581      6420696E 
+ 581      7400
+ 582              	.LASF3:
+ 583 0075 73686F72 		.ascii	"short unsigned int\000"
+ 583      7420756E 
+ 583      7369676E 
+ 583      65642069 
+ 583      6E7400
+ 584              	.LASF10:
+ 585 0088 646F7562 		.ascii	"double\000"
+ 585      6C6500
+ 586              	.LASF22:
+ 587 008f 4144435F 		.ascii	"ADC_SAR_1_backup\000"
+ 587      5341525F 
+ 587      315F6261 
+ 587      636B7570 
+ 587      00
+ 588              	.LASF20:
+ 589 00a0 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 589      73657273 
+ 589      5C686F61 
+ 589      6E67705C 
+ 589      446F6375 
+ 590 00cd 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 590      6E766572 
+ 590      745C696E 
+ 590      76657274 
+ 590      2E637964 
+ 591              	.LASF8:
+ 592 00e4 756E7369 		.ascii	"unsigned int\000"
+ 592      676E6564 
+ 592      20696E74 
+ 592      00
+ 593              	.LASF7:
+ 594 00f1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 594      206C6F6E 
+ 594      6720756E 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKLAKuX.s 			page 15
+
+
+ 594      7369676E 
+ 594      65642069 
+ 595              	.LASF16:
+ 596 0108 4144435F 		.ascii	"ADC_SAR_1_Sleep\000"
+ 596      5341525F 
+ 596      315F536C 
+ 596      65657000 
+ 597              	.LASF18:
+ 598 0118 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 598      4320342E 
+ 598      342E3100 
+ 599              	.LASF11:
+ 600 0124 63686172 		.ascii	"char\000"
+ 600      00
+ 601              	.LASF14:
+ 602 0129 4144435F 		.ascii	"ADC_SAR_1_SaveConfig\000"
+ 602      5341525F 
+ 602      315F5361 
+ 602      7665436F 
+ 602      6E666967 
+ 603              	.LASF2:
+ 604 013e 73686F72 		.ascii	"short int\000"
+ 604      7420696E 
+ 604      7400
+ 605              	.LASF19:
+ 606 0148 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ADC_SAR_1_PM.c\000"
+ 606      6E657261 
+ 606      7465645F 
+ 606      536F7572 
+ 606      63655C50 
+ 607              	.LASF12:
+ 608 0170 75696E74 		.ascii	"uint8\000"
+ 608      3800
+ 609              	.LASF4:
+ 610 0176 6C6F6E67 		.ascii	"long int\000"
+ 610      20696E74 
+ 610      00
+ 611              	.LASF21:
+ 612 017f 656E6162 		.ascii	"enableState\000"
+ 612      6C655374 
+ 612      61746500 
+ 613              	.LASF0:
+ 614 018b 7369676E 		.ascii	"signed char\000"
+ 614      65642063 
+ 614      68617200 
+ 615              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
