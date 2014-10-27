@@ -15,7 +15,7 @@ void main()
 {
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     LCD_Char_1_Start();
-
+    LCD_Char_1_PrintString("Some basic message");
     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
     for(;;)
     {
