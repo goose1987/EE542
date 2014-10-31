@@ -242,8 +242,8 @@ void PWM_BUCK_RestoreConfig(void) ;
 /***************************************
 *         Initialization Values
 **************************************/
-#define PWM_BUCK_INIT_PERIOD_VALUE        1024u
-#define PWM_BUCK_INIT_COMPARE_VALUE1      128u
+#define PWM_BUCK_INIT_PERIOD_VALUE        512u
+#define PWM_BUCK_INIT_COMPARE_VALUE1      256u
 #define PWM_BUCK_INIT_COMPARE_VALUE2      20000u
 #define PWM_BUCK_INIT_INTERRUPTS_MODE     (uint8)(((uint8)(0u << PWM_BUCK_STATUS_TC_INT_EN_MASK_SHIFT)) | \
                                                   (uint8)((uint8)(0u << PWM_BUCK_STATUS_CMP2_INT_EN_MASK_SHIFT)) | \

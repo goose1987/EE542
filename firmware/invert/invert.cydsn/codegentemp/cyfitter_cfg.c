@@ -193,7 +193,7 @@ static void CyClockStartupError(uint8 errorCode)
 	#error Unsupported toolchain
 #endif
 
-#define CY_CFG_BASE_ADDR_COUNT 29u
+#define CY_CFG_BASE_ADDR_COUNT 27u
 typedef struct
 {
 	uint8 offset;
@@ -201,7 +201,7 @@ typedef struct
 } CYPACKED cy_cfg_addrvalue_t;
 
 #define cy_cfg_addr_table ((const uint32 CYFAR *)0x48000000u)
-#define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000074u)
+#define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x4800006Cu)
 
 /* IOPINS0_0 Address: CYREG_PRT0_DM0 Size (bytes): 8 */
 #define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x480005C8u)
@@ -212,8 +212,8 @@ typedef struct
 /* IOPINS0_2 Address: CYREG_PRT2_DM0 Size (bytes): 8 */
 #define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x480005D8u)
 
-/* IOPINS0_3 Address: CYREG_PRT3_DM0 Size (bytes): 8 */
-#define BS_IOPINS0_3_VAL ((const uint8 CYFAR *)0x480005E0u)
+/* IOPINS0_4 Address: CYREG_PRT4_DM0 Size (bytes): 8 */
+#define BS_IOPINS0_4_VAL ((const uint8 CYFAR *)0x480005E0u)
 
 /* IOPINS0_6 Address: CYREG_PRT6_DM0 Size (bytes): 8 */
 #define BS_IOPINS0_6_VAL ((const uint8 CYFAR *)0x480005E8u)
@@ -285,7 +285,7 @@ static void ClockSetup(void)
 	/* Configure Digital Clocks based on settings from Clock DWR */
 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_CLKDIST_DCFG0_CFG0), 0x0000u);
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DCFG0_CFG0 + 0x2u), 0x58u);
-	CY_SET_XTND_REG16((void CYFAR *)(CYREG_CLKDIST_DCFG1_CFG0), 0x0002u);
+	CY_SET_XTND_REG16((void CYFAR *)(CYREG_CLKDIST_DCFG1_CFG0), 0x0005u);
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DCFG1_CFG0 + 0x2u), 0x18u);
 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_CLKDIST_DCFG2_CFG0), 0x0017u);
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DCFG2_CFG0 + 0x2u), 0x18u);
@@ -345,8 +345,7 @@ static void AnalogSetDefault(void);
 static void AnalogSetDefault(void)
 {
 	CY_SET_XTND_REG16((void CYFAR *)CYREG_PM_ACT_CFG10, 0x0310u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_PRT0_AG, 0x60u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_PRT3_AG, 0x20u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_PRT4_AG, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_PRT6_AG, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC0_CR0, 0x1Eu);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC1_CR0, 0x1Eu);
@@ -356,11 +355,9 @@ static void AnalogSetDefault(void)
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_CSR3, 0x0Cu);
 	CY_SET_XTND_REG16((void CYFAR *)CYREG_SAR1_CSR0, 0x80C0u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR1_CSR3, 0x0Cu);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_DSM0_SW0, 0x40u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_DSM0_SW4, 0x20u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW0, 0x02u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_DSM0_SW0, 0x02u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW0, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW3, 0x20u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR1_SW0, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR1_SW3, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_PUMP_CR0, 0x44u);
 }
@@ -398,6 +395,63 @@ void SetAnalogRoutingPumps(uint8 enabled)
 }
 
 #define CY_AMUX_UNUSED CYREG_BOOST_SR
+/* This is an implementation detail of the AMux. Code that depends on it may be
+   incompatible with other versions of PSoC Creator. */
+uint8 CYXDATA * const CYCODE ADC_DelSig_V_AMux__addrTable[2] = {
+	(uint8 CYXDATA *)CYREG_DSM0_SW3, 
+	(uint8 CYXDATA *)CYREG_DSM0_SW3, 
+};
+
+/* This is an implementation detail of the AMux. Code that depends on it may be
+   incompatible with other versions of PSoC Creator. */
+const uint8 CYCODE ADC_DelSig_V_AMux__maskTable[2] = {
+	0x40u, 
+	0x40u, 
+};
+
+/*******************************************************************************
+* Function Name: ADC_DelSig_V_AMux_Set
+********************************************************************************
+* Summary:
+*  This function is used to set a particular channel as active on the AMux.
+*
+* Parameters:  
+*   channel - The mux channel input to set as active
+*
+* Return:
+*   void
+*
+*******************************************************************************/
+void ADC_DelSig_V_AMux_Set(uint8 channel)
+{
+	if (channel < 2)
+	{
+		*ADC_DelSig_V_AMux__addrTable[channel] |= ADC_DelSig_V_AMux__maskTable[channel];
+	}
+}
+
+/*******************************************************************************
+* Function Name: ADC_DelSig_V_AMux_Unset
+********************************************************************************
+* Summary:
+*  This function is used to clear a particular channel from being active on the
+*  AMux.
+*
+* Parameters:  
+*   channel - The mux channel input to mark inactive
+*
+* Return:
+*   void
+*
+*******************************************************************************/
+void ADC_DelSig_V_AMux_Unset(uint8 channel)
+{
+	if (channel < 2)
+	{
+		*ADC_DelSig_V_AMux__addrTable[channel] &= (uint8)~ADC_DelSig_V_AMux__maskTable[channel];
+	}
+}
+
 
 
 /*******************************************************************************
@@ -451,7 +505,8 @@ void cyfitter_cfg(void)
 
 		static const cfg_memset_t CYCODE cfg_memset_list [] = {
 			/* address, size */
-			{(void CYFAR *)(CYREG_PRT4_DR), 32u},
+			{(void CYFAR *)(CYREG_PRT3_DR), 16u},
+			{(void CYFAR *)(CYREG_PRT5_DR), 16u},
 			{(void CYFAR *)(CYREG_PRT12_DR), 16u},
 			{(void CYFAR *)(CYREG_PRT15_DR), 16u},
 			{(void CYFAR *)(CYDEV_UCFG_B0_P0_U0_BASE), 4096u},
@@ -495,7 +550,7 @@ void cyfitter_cfg(void)
 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT0_DM0), (const void CYFAR *)(BS_IOPINS0_0_VAL), 8u);
 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT1_DM0), (const void CYFAR *)(BS_IOPINS0_1_VAL), 8u);
 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT2_DM0), (const void CYFAR *)(BS_IOPINS0_2_VAL), 8u);
-	CYCONFIGCPY((void CYFAR *)(CYREG_PRT3_DM0), (const void CYFAR *)(BS_IOPINS0_3_VAL), 8u);
+	CYCONFIGCPY((void CYFAR *)(CYREG_PRT4_DM0), (const void CYFAR *)(BS_IOPINS0_4_VAL), 8u);
 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT6_DM0), (const void CYFAR *)(BS_IOPINS0_6_VAL), 8u);
 
 

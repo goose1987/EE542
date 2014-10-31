@@ -1,15 +1,16 @@
 -- Project:   invert
--- Generated: 10/28/2014 20:57:11
+-- Generated: 10/30/2014 21:24:37
 -- 
 
 ENTITY invert IS
     PORT(
         Pin_1(0)_PAD : OUT std_ulogic;
-        Pin_2(0)_PAD : OUT std_ulogic;
         Pin_3(0)_PAD : OUT std_ulogic;
         Pin_4(0)_PAD : OUT std_ulogic;
         Pin_5(0)_PAD : OUT std_ulogic;
         Pin_6(0)_PAD : OUT std_ulogic;
+        Pin_7(0)_PAD : INOUT std_ulogic;
+        Pin_8(0)_PAD : INOUT std_ulogic;
         \LCD_Char_1:LCDPort(0)_PAD\ : OUT std_ulogic;
         \LCD_Char_1:LCDPort(1)_PAD\ : OUT std_ulogic;
         \LCD_Char_1:LCDPort(2)_PAD\ : OUT std_ulogic;
@@ -43,8 +44,6 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL MODIN1_1 : bit;
     SIGNAL MODIN3_0 : bit;
     SIGNAL MODIN3_1 : bit;
-    SIGNAL Net_146 : bit;
-    SIGNAL Net_147 : bit;
     SIGNAL Net_148 : bit;
     SIGNAL Net_149 : bit;
     SIGNAL Net_150 : bit;
@@ -60,9 +59,9 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL Net_280 : bit;
     ATTRIBUTE global_signal OF Net_280 : SIGNAL IS true;
     SIGNAL Net_280_local : bit;
+    SIGNAL Net_307 : bit;
     SIGNAL Pin_1(0)__PA : bit;
     SIGNAL Pin_10(0)__PA : bit;
-    SIGNAL Pin_2(0)__PA : bit;
     SIGNAL Pin_3(0)__PA : bit;
     SIGNAL Pin_4(0)__PA : bit;
     SIGNAL Pin_5(0)__PA : bit;
@@ -70,28 +69,28 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL Pin_7(0)__PA : bit;
     SIGNAL Pin_8(0)__PA : bit;
     SIGNAL Pin_9(0)__PA : bit;
-    SIGNAL \ADC_DelSig_1:Net_40\ : bit;
-    ATTRIBUTE global_signal OF \ADC_DelSig_1:Net_40\ : SIGNAL IS true;
-    SIGNAL \ADC_DelSig_1:Net_40_adig\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_40_adig_local\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_40_local\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_487\ : bit;
-    ATTRIBUTE global_signal OF \ADC_DelSig_1:Net_487\ : SIGNAL IS true;
-    SIGNAL \ADC_DelSig_1:Net_487_local\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_0\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_1\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_2\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_3\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_4\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_5\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_6\ : bit;
-    SIGNAL \ADC_DelSig_1:Net_5_7\ : bit;
-    SIGNAL \ADC_DelSig_1:aclock\ : bit;
-    SIGNAL \ADC_DelSig_1:mod_dat_0\ : bit;
-    SIGNAL \ADC_DelSig_1:mod_dat_1\ : bit;
-    SIGNAL \ADC_DelSig_1:mod_dat_2\ : bit;
-    SIGNAL \ADC_DelSig_1:mod_dat_3\ : bit;
-    SIGNAL \ADC_DelSig_1:mod_reset\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_40\ : bit;
+    ATTRIBUTE global_signal OF \ADC_DelSig_V:Net_40\ : SIGNAL IS true;
+    SIGNAL \ADC_DelSig_V:Net_40_adig\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_40_adig_local\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_40_local\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_487\ : bit;
+    ATTRIBUTE global_signal OF \ADC_DelSig_V:Net_487\ : SIGNAL IS true;
+    SIGNAL \ADC_DelSig_V:Net_487_local\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_0\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_1\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_2\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_3\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_4\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_5\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_6\ : bit;
+    SIGNAL \ADC_DelSig_V:Net_5_7\ : bit;
+    SIGNAL \ADC_DelSig_V:aclock\ : bit;
+    SIGNAL \ADC_DelSig_V:mod_dat_0\ : bit;
+    SIGNAL \ADC_DelSig_V:mod_dat_1\ : bit;
+    SIGNAL \ADC_DelSig_V:mod_dat_2\ : bit;
+    SIGNAL \ADC_DelSig_V:mod_dat_3\ : bit;
+    SIGNAL \ADC_DelSig_V:mod_reset\ : bit;
     SIGNAL \\\ADC_SAR_2:Bypass(0)\\__PA\ : bit;
     SIGNAL \ADC_SAR_2:Net_207_0\ : bit;
     SIGNAL \ADC_SAR_2:Net_207_10\ : bit;
@@ -272,67 +271,68 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE lib_model OF MODIN1_1 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF MODIN3_0 : LABEL IS "macrocell3";
     ATTRIBUTE lib_model OF MODIN3_1 : LABEL IS "macrocell4";
-    ATTRIBUTE lib_model OF Net_146 : LABEL IS "macrocell5";
-    ATTRIBUTE lib_model OF Net_147 : LABEL IS "macrocell6";
-    ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell7";
-    ATTRIBUTE lib_model OF Net_149 : LABEL IS "macrocell8";
-    ATTRIBUTE lib_model OF Net_150 : LABEL IS "macrocell9";
-    ATTRIBUTE lib_model OF Net_151 : LABEL IS "macrocell10";
-    ATTRIBUTE lib_model OF Pin_10(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF Pin_10(0) : LABEL IS "P3[5]";
-    ATTRIBUTE lib_model OF Pin_7(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF Pin_7(0) : LABEL IS "P0[6]";
-    ATTRIBUTE lib_model OF Pin_8(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Pin_8(0) : LABEL IS "P0[5]";
-    ATTRIBUTE lib_model OF Pin_9(0) : LABEL IS "iocell4";
+    ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell5";
+    ATTRIBUTE lib_model OF Net_149 : LABEL IS "macrocell6";
+    ATTRIBUTE lib_model OF Net_150 : LABEL IS "macrocell7";
+    ATTRIBUTE lib_model OF Net_151 : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF Net_307 : LABEL IS "macrocell9";
+    ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell1";
+    ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P1[6]";
+    ATTRIBUTE lib_model OF Pin_10(0) : LABEL IS "iocell2";
+    ATTRIBUTE Location OF Pin_10(0) : LABEL IS "P4[5]";
+    ATTRIBUTE lib_model OF Pin_7(0) : LABEL IS "iocell3";
+    ATTRIBUTE Location OF Pin_7(0) : LABEL IS "P4[4]";
+    ATTRIBUTE lib_model OF Pin_8(0) : LABEL IS "iocell4";
+    ATTRIBUTE Location OF Pin_8(0) : LABEL IS "P1[2]";
+    ATTRIBUTE lib_model OF Pin_9(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF Pin_9(0) : LABEL IS "P6[5]";
-    ATTRIBUTE Location OF \ADC_DelSig_1:DSM2\ : LABEL IS "F(DSM,0)";
-    ATTRIBUTE Location OF \ADC_SAR_2:ADC_SAR\ : LABEL IS "F(SAR,1)";
-    ATTRIBUTE lib_model OF \ADC_SAR_2:Bypass(0)\ : LABEL IS "iocell5";
-    ATTRIBUTE Location OF \ADC_SAR_2:Bypass(0)\ : LABEL IS "P0[2]";
-    ATTRIBUTE Location OF \ADC_SAR_V:ADC_SAR\ : LABEL IS "F(SAR,0)";
-    ATTRIBUTE lib_model OF \ADC_SAR_V:Bypass(0)\ : LABEL IS "iocell6";
-    ATTRIBUTE Location OF \ADC_SAR_V:Bypass(0)\ : LABEL IS "P0[4]";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell11";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell12";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:final_kill_reg\ : LABEL IS "macrocell13";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:prevCompare1\ : LABEL IS "macrocell14";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell15";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:runmode_enable\ : LABEL IS "macrocell16";
+    ATTRIBUTE Location OF \ADC_DelSig_V:DSM2\ : LABEL IS "F(DSM,0)";
+    ATTRIBUTE Location OF \ADC_SAR_2:ADC_SAR\ : LABEL IS "F(SAR,0)";
+    ATTRIBUTE lib_model OF \ADC_SAR_2:Bypass(0)\ : LABEL IS "iocell6";
+    ATTRIBUTE Location OF \ADC_SAR_2:Bypass(0)\ : LABEL IS "P0[4]";
+    ATTRIBUTE Location OF \ADC_SAR_V:ADC_SAR\ : LABEL IS "F(SAR,1)";
+    ATTRIBUTE lib_model OF \ADC_SAR_V:Bypass(0)\ : LABEL IS "iocell7";
+    ATTRIBUTE Location OF \ADC_SAR_V:Bypass(0)\ : LABEL IS "P0[2]";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell10";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell11";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:final_kill_reg\ : LABEL IS "macrocell12";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:prevCompare1\ : LABEL IS "macrocell13";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell14";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:runmode_enable\ : LABEL IS "macrocell15";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sDB3:AsyncCtl:dbctrlreg\ : LABEL IS "controlcell2";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell1";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell2";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell1";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_0\ : LABEL IS "macrocell17";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_5\ : LABEL IS "macrocell18";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell19";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell20";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:final_kill_reg\ : LABEL IS "macrocell21";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:prevCompare1\ : LABEL IS "macrocell22";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell23";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:runmode_enable\ : LABEL IS "macrocell24";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_0\ : LABEL IS "macrocell16";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_5\ : LABEL IS "macrocell17";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell18";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell19";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:final_kill_reg\ : LABEL IS "macrocell20";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:prevCompare1\ : LABEL IS "macrocell21";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell22";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:runmode_enable\ : LABEL IS "macrocell23";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell3";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sDB3:AsyncCtl:dbctrlreg\ : LABEL IS "controlcell4";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell3";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell4";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell2";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:status_0\ : LABEL IS "macrocell25";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:status_5\ : LABEL IS "macrocell26";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_cnt_0\ : LABEL IS "macrocell27";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_cnt_1\ : LABEL IS "macrocell28";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell29";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell30";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:prevCompare1\ : LABEL IS "macrocell31";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell32";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:runmode_enable\ : LABEL IS "macrocell33";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:status_0\ : LABEL IS "macrocell24";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:status_5\ : LABEL IS "macrocell25";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_cnt_0\ : LABEL IS "macrocell26";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_cnt_1\ : LABEL IS "macrocell27";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell28";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell29";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:prevCompare1\ : LABEL IS "macrocell30";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell31";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:runmode_enable\ : LABEL IS "macrocell32";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell5";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sDB3:AsyncCtl:dbctrlreg\ : LABEL IS "controlcell6";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell5";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell6";
     ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell3";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:status_0\ : LABEL IS "macrocell34";
-    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell35";
+    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:status_0\ : LABEL IS "macrocell33";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell34";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -1283,14 +1283,14 @@ BEGIN
             aclk_1 => \ADC_SAR_V:Net_221_local\,
             clk_a_dig_glb_1 => \ADC_SAR_V:Net_221_adig\,
             clk_a_dig_1 => \ADC_SAR_V:Net_221_adig_local\,
-            dclk_glb_1 => \ADC_DelSig_1:Net_487\,
-            dclk_1 => \ADC_DelSig_1:Net_487_local\,
-            aclk_glb_2 => \ADC_DelSig_1:Net_40\,
-            aclk_2 => \ADC_DelSig_1:Net_40_local\,
-            clk_a_dig_glb_2 => \ADC_DelSig_1:Net_40_adig\,
-            clk_a_dig_2 => \ADC_DelSig_1:Net_40_adig_local\,
+            dclk_glb_1 => \ADC_DelSig_V:Net_487\,
+            dclk_1 => \ADC_DelSig_V:Net_487_local\,
             dclk_glb_2 => Net_280,
             dclk_2 => Net_280_local,
+            aclk_glb_2 => \ADC_DelSig_V:Net_40\,
+            aclk_2 => \ADC_DelSig_V:Net_40_local\,
+            clk_a_dig_glb_2 => \ADC_DelSig_V:Net_40_adig\,
+            clk_a_dig_2 => \ADC_DelSig_V:Net_40_adig_local\,
             aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\,
             aclk_glb_ff_1 => \ClockBlock.aclk_glb_ff_1__sig\,
             aclk_glb_ff_2 => \ClockBlock.aclk_glb_ff_2__sig\);
@@ -1359,26 +1359,6 @@ BEGIN
             main_6 => MODIN3_0,
             main_7 => \PWM_UNFOLD_A:PWMUDB:compare1\);
 
-    Net_146:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * !main_2 * main_3)")
-        PORT MAP(
-            q => Net_146,
-            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_BUCK:PWMUDB:compare1\);
-
-    Net_147:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2) + (!main_1 * !main_2 * !main_3)")
-        PORT MAP(
-            q => Net_147,
-            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
-            main_3 => \PWM_BUCK:PWMUDB:compare1\);
-
     Net_148:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1 * !main_2 * main_3)")
@@ -1418,6 +1398,16 @@ BEGIN
             main_1 => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
             main_2 => \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\,
             main_3 => \PWM_UNFOLD_B:PWMUDB:compare1\);
+
+    Net_307:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1 * !main_2 * main_3)")
+        PORT MAP(
+            q => Net_307,
+            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
+            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
+            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
+            main_3 => \PWM_BUCK:PWMUDB:compare1\);
 
     Pin_1:logicalport
         GENERIC MAP(
@@ -1496,7 +1486,7 @@ BEGIN
         PORT MAP(
             pa_out => Pin_1(0)__PA,
             oe => open,
-            pin_input => Net_146,
+            pin_input => Net_307,
             pad_out => Pin_1(0)_PAD,
             pad_in => Pin_1(0)_PAD,
             in_clock => open,
@@ -1583,93 +1573,6 @@ BEGIN
         PORT MAP(
             pa_out => Pin_10(0)__PA,
             oe => open,
-            in_clock => open,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
-
-    Pin_2:logicalport
-        GENERIC MAP(
-            drive_mode => "110",
-            ibuf_enabled => "1",
-            id => "da25746e-e48b-46f1-96ff-84c6ef6c203e",
-            init_dr_st => "0",
-            input_clk_en => 0,
-            input_sync => "1",
-            input_sync_mode => "0",
-            intr_mode => "00",
-            invert_in_clock => 0,
-            invert_in_clock_en => 0,
-            invert_in_reset => 0,
-            invert_out_clock => 0,
-            invert_out_clock_en => 0,
-            invert_out_reset => 0,
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            oe_reset => 0,
-            oe_sync => "0",
-            output_clk_en => 0,
-            output_clock_mode => "0",
-            output_conn => "1",
-            output_mode => "0",
-            output_reset => 0,
-            output_sync => "0",
-            pa_in_clock => -1,
-            pa_in_clock_en => -1,
-            pa_in_reset => -1,
-            pa_out_clock => -1,
-            pa_out_clock_en => -1,
-            pa_out_reset => -1,
-            pin_aliases => "",
-            pin_mode => "O",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1,
-            in_clk_inv => 0,
-            in_clken_inv => 0,
-            in_clken_mode => 1,
-            in_rst_inv => 0,
-            out_clk_inv => 0,
-            out_clken_inv => 0,
-            out_clken_mode => 1,
-            out_rst_inv => 0)
-        PORT MAP(
-            in_clock_en => open,
-            in_reset => open,
-            out_clock_en => open,
-            out_reset => open);
-
-    Pin_2(0):iocell
-        GENERIC MAP(
-            in_sync_mode => 0,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "Pin_2",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000100000000000000000000000000000000000000001")
-        PORT MAP(
-            pa_out => Pin_2(0)__PA,
-            oe => open,
-            pin_input => Net_147,
-            pad_out => Pin_2(0)_PAD,
-            pad_in => Pin_2(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -2102,6 +2005,7 @@ BEGIN
         PORT MAP(
             pa_out => Pin_7(0)__PA,
             oe => open,
+            pad_in => Pin_7(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -2186,6 +2090,7 @@ BEGIN
         PORT MAP(
             pa_out => Pin_8(0)__PA,
             oe => open,
+            pad_in => Pin_8(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -2277,44 +2182,44 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    \ADC_DelSig_1:DEC\:decimatorcell
+    \ADC_DelSig_V:DEC\:decimatorcell
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            aclock => \ADC_DelSig_1:aclock\,
-            mod_dat_3 => \ADC_DelSig_1:mod_dat_3\,
-            mod_dat_2 => \ADC_DelSig_1:mod_dat_2\,
-            mod_dat_1 => \ADC_DelSig_1:mod_dat_1\,
-            mod_dat_0 => \ADC_DelSig_1:mod_dat_0\,
+            aclock => \ADC_DelSig_V:aclock\,
+            mod_dat_3 => \ADC_DelSig_V:mod_dat_3\,
+            mod_dat_2 => \ADC_DelSig_V:mod_dat_2\,
+            mod_dat_1 => \ADC_DelSig_V:mod_dat_1\,
+            mod_dat_0 => \ADC_DelSig_V:mod_dat_0\,
             ext_start => __ONE__,
-            modrst => \ADC_DelSig_1:mod_reset\,
+            modrst => \ADC_DelSig_V:mod_reset\,
             interrupt => Net_186);
 
-    \ADC_DelSig_1:DSM2\:dsmodcell
+    \ADC_DelSig_V:DSM2\:dsmodcell
         GENERIC MAP(
             cy_registers => "",
-            resolution => 10)
+            resolution => 9)
         PORT MAP(
             aclock => \ClockBlock.aclk_glb_ff_2__sig\,
             modbitin_udb => open,
             reset_udb => open,
-            reset_dec => \ADC_DelSig_1:mod_reset\,
-            extclk_cp_udb => \ADC_DelSig_1:Net_487_local\,
-            dec_clock => \ADC_DelSig_1:aclock\,
-            mod_dat_3 => \ADC_DelSig_1:mod_dat_3\,
-            mod_dat_2 => \ADC_DelSig_1:mod_dat_2\,
-            mod_dat_1 => \ADC_DelSig_1:mod_dat_1\,
-            mod_dat_0 => \ADC_DelSig_1:mod_dat_0\,
-            dout_udb_7 => \ADC_DelSig_1:Net_5_7\,
-            dout_udb_6 => \ADC_DelSig_1:Net_5_6\,
-            dout_udb_5 => \ADC_DelSig_1:Net_5_5\,
-            dout_udb_4 => \ADC_DelSig_1:Net_5_4\,
-            dout_udb_3 => \ADC_DelSig_1:Net_5_3\,
-            dout_udb_2 => \ADC_DelSig_1:Net_5_2\,
-            dout_udb_1 => \ADC_DelSig_1:Net_5_1\,
-            dout_udb_0 => \ADC_DelSig_1:Net_5_0\);
+            reset_dec => \ADC_DelSig_V:mod_reset\,
+            extclk_cp_udb => \ADC_DelSig_V:Net_487_local\,
+            dec_clock => \ADC_DelSig_V:aclock\,
+            mod_dat_3 => \ADC_DelSig_V:mod_dat_3\,
+            mod_dat_2 => \ADC_DelSig_V:mod_dat_2\,
+            mod_dat_1 => \ADC_DelSig_V:mod_dat_1\,
+            mod_dat_0 => \ADC_DelSig_V:mod_dat_0\,
+            dout_udb_7 => \ADC_DelSig_V:Net_5_7\,
+            dout_udb_6 => \ADC_DelSig_V:Net_5_6\,
+            dout_udb_5 => \ADC_DelSig_V:Net_5_5\,
+            dout_udb_4 => \ADC_DelSig_V:Net_5_4\,
+            dout_udb_3 => \ADC_DelSig_V:Net_5_3\,
+            dout_udb_2 => \ADC_DelSig_V:Net_5_2\,
+            dout_udb_1 => \ADC_DelSig_V:Net_5_1\,
+            dout_udb_0 => \ADC_DelSig_V:Net_5_0\);
 
-    \ADC_DelSig_1:IRQ\:interrupt
+    \ADC_DelSig_V:IRQ\:interrupt
         GENERIC MAP(
             int_type => "10")
         PORT MAP(

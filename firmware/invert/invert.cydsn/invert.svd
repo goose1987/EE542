@@ -7,7 +7,7 @@
   <width>32</width>
   <peripherals>
     <peripheral>
-      <name>ADC_DelSig_1</name>
+      <name>ADC_DelSig_V</name>
       <description>No description available</description>
       <baseAddress>0x400043AA</baseAddress>
       <addressBlock>
@@ -17,7 +17,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>ADC_DelSig_1_DEC_PM_ACT_CFG</name>
+          <name>ADC_DelSig_V_DEC_PM_ACT_CFG</name>
           <description>Decimator Active mode Power Register</description>
           <addressOffset>0x0</addressOffset>
           <size>8</size>
@@ -47,7 +47,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_PM_STBY_CFG</name>
+          <name>ADC_DelSig_V_DEC_PM_STBY_CFG</name>
           <description>Decimator Standby mode Power Register</description>
           <addressOffset>0x10</addressOffset>
           <size>8</size>
@@ -77,7 +77,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_PM_ACT_CFG</name>
+          <name>ADC_DelSig_V_DSM_PM_ACT_CFG</name>
           <description>Delta Sigma Modulator Power Mode Available Register 0</description>
           <addressOffset>0x1B</addressOffset>
           <size>8</size>
@@ -95,7 +95,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_CR</name>
+          <name>ADC_DelSig_V_DEC_CR</name>
           <description>Decimator Control Register</description>
           <addressOffset>0xA56</addressOffset>
           <size>8</size>
@@ -249,7 +249,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_SR</name>
+          <name>ADC_DelSig_V_DEC_SR</name>
           <description>Decimator Status Register</description>
           <addressOffset>0xA57</addressOffset>
           <size>8</size>
@@ -374,7 +374,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_SHIFT1</name>
+          <name>ADC_DelSig_V_DEC_SHIFT1</name>
           <description>Decimator Shift Register</description>
           <addressOffset>0xA58</addressOffset>
           <size>8</size>
@@ -392,7 +392,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_SHIFT2</name>
+          <name>ADC_DelSig_V_DEC_SHIFT2</name>
           <description>Decimator Shift Register</description>
           <addressOffset>0xA59</addressOffset>
           <size>8</size>
@@ -410,7 +410,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_DR2</name>
+          <name>ADC_DelSig_V_DEC_DR2</name>
           <description>Decimator Decimation Rate (2) Register</description>
           <addressOffset>0xA5A</addressOffset>
           <size>8</size>
@@ -428,7 +428,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_DR2H</name>
+          <name>ADC_DelSig_V_DEC_DR2H</name>
           <description>Decimator Decimation Rate and Overflow Correction Register</description>
           <addressOffset>0xA5B</addressOffset>
           <size>8</size>
@@ -446,7 +446,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_DR1</name>
+          <name>ADC_DelSig_V_DEC_DR1</name>
           <description>Decimator Decimation Rate (1) Register</description>
           <addressOffset>0xA5C</addressOffset>
           <size>8</size>
@@ -464,7 +464,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_OCOR</name>
+          <name>ADC_DelSig_V_DEC_OCOR</name>
           <description>Decimator Offset Correction Coefficient (Low Byte) Register</description>
           <addressOffset>0xA5E</addressOffset>
           <size>8</size>
@@ -482,7 +482,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_OCORM</name>
+          <name>ADC_DelSig_V_DEC_OCORM</name>
           <description>Decimator Offset Correction Coefficient (Middle Byte) Register</description>
           <addressOffset>0xA5F</addressOffset>
           <size>8</size>
@@ -500,7 +500,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_OCORH</name>
+          <name>ADC_DelSig_V_DEC_OCORH</name>
           <description>Decimator Offset Correction Coefficient (High Byte) Register</description>
           <addressOffset>0xA60</addressOffset>
           <size>8</size>
@@ -518,7 +518,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_GCOR</name>
+          <name>ADC_DelSig_V_DEC_GCOR</name>
           <description>Decimator Gain Correction Coefficient (Low Byte) Register</description>
           <addressOffset>0xA62</addressOffset>
           <size>8</size>
@@ -536,7 +536,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_GCORH</name>
+          <name>ADC_DelSig_V_DEC_GCORH</name>
           <description>Decimator Gain Correction Coefficient (High Byte) Register</description>
           <addressOffset>0xA63</addressOffset>
           <size>8</size>
@@ -554,7 +554,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_GVAL</name>
+          <name>ADC_DelSig_V_DEC_GVAL</name>
           <description>Decimator Gain Correction Size Register</description>
           <addressOffset>0xA64</addressOffset>
           <size>8</size>
@@ -572,7 +572,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_OUTSAMP</name>
+          <name>ADC_DelSig_V_DEC_OUTSAMP</name>
           <description>Decimator Output Data Sample (Low Byte) Register</description>
           <addressOffset>0xA66</addressOffset>
           <size>8</size>
@@ -590,7 +590,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_OUTSAMPM</name>
+          <name>ADC_DelSig_V_DEC_OUTSAMPM</name>
           <description>Decimator Output Data Sample (Middle Byte) Register</description>
           <addressOffset>0xA67</addressOffset>
           <size>8</size>
@@ -608,7 +608,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_OUTSAMPH</name>
+          <name>ADC_DelSig_V_DEC_OUTSAMPH</name>
           <description>Decimator Output Data Sample (High Byte) Register</description>
           <addressOffset>0xA68</addressOffset>
           <size>8</size>
@@ -626,7 +626,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DEC_COHER</name>
+          <name>ADC_DelSig_V_DEC_COHER</name>
           <description>Decimator Coherency Register</description>
           <addressOffset>0xA6A</addressOffset>
           <size>8</size>
@@ -724,7 +724,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR0</name>
+          <name>ADC_DelSig_V_DSM_CR0</name>
           <description>Delta Sigma Modulator Control Register 0</description>
           <addressOffset>0x14D6</addressOffset>
           <size>8</size>
@@ -793,7 +793,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR1</name>
+          <name>ADC_DelSig_V_DSM_CR1</name>
           <description>Delta Sigma Modulator Control Register 1</description>
           <addressOffset>0x14D7</addressOffset>
           <size>8</size>
@@ -837,7 +837,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR2</name>
+          <name>ADC_DelSig_V_DSM_CR2</name>
           <description>Delta Sigma Modulator Control Register 2</description>
           <addressOffset>0x14D8</addressOffset>
           <size>8</size>
@@ -992,7 +992,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR3</name>
+          <name>ADC_DelSig_V_DSM_CR3</name>
           <description>Delta Sigma Modulator Control Register 3</description>
           <addressOffset>0x14D9</addressOffset>
           <size>8</size>
@@ -1133,7 +1133,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR4</name>
+          <name>ADC_DelSig_V_DSM_CR4</name>
           <description>Delta Sigma Modulator Control Register 4</description>
           <addressOffset>0x14DA</addressOffset>
           <size>8</size>
@@ -1217,7 +1217,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR5</name>
+          <name>ADC_DelSig_V_DSM_CR5</name>
           <description>Delta Sigma Modulator Control Register 5</description>
           <addressOffset>0x14DB</addressOffset>
           <size>8</size>
@@ -1301,7 +1301,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR6</name>
+          <name>ADC_DelSig_V_DSM_CR6</name>
           <description>Delta Sigma Modulator Control Register 6</description>
           <addressOffset>0x14DC</addressOffset>
           <size>8</size>
@@ -1370,7 +1370,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR7</name>
+          <name>ADC_DelSig_V_DSM_CR7</name>
           <description>Delta Sigma Modulator Control Register 7</description>
           <addressOffset>0x14DD</addressOffset>
           <size>8</size>
@@ -1471,7 +1471,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR8</name>
+          <name>ADC_DelSig_V_DSM_CR8</name>
           <description>Delta Sigma Modulator Control Register 8</description>
           <addressOffset>0x14DE</addressOffset>
           <size>8</size>
@@ -1639,7 +1639,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR9</name>
+          <name>ADC_DelSig_V_DSM_CR9</name>
           <description>Delta Sigma Modulator Control Register 9</description>
           <addressOffset>0x14DF</addressOffset>
           <size>8</size>
@@ -1807,7 +1807,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR10</name>
+          <name>ADC_DelSig_V_DSM_CR10</name>
           <description>Delta Sigma Modulator Control Register 10</description>
           <addressOffset>0x14E0</addressOffset>
           <size>8</size>
@@ -1954,7 +1954,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR11</name>
+          <name>ADC_DelSig_V_DSM_CR11</name>
           <description>Delta Sigma Modulator Control Register 11</description>
           <addressOffset>0x14E1</addressOffset>
           <size>8</size>
@@ -2122,7 +2122,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR12</name>
+          <name>ADC_DelSig_V_DSM_CR12</name>
           <description>Delta Sigma Modulator Control Register 12</description>
           <addressOffset>0x14E2</addressOffset>
           <size>8</size>
@@ -2340,7 +2340,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR13</name>
+          <name>ADC_DelSig_V_DSM_CR13</name>
           <description>Delta Sigma Modulator Control Register 13</description>
           <addressOffset>0x14E3</addressOffset>
           <size>8</size>
@@ -2349,7 +2349,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR14</name>
+          <name>ADC_DelSig_V_DSM_CR14</name>
           <description>Delta Sigma Modulator Control Register 14</description>
           <addressOffset>0x14E4</addressOffset>
           <size>8</size>
@@ -2498,7 +2498,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR15</name>
+          <name>ADC_DelSig_V_DSM_CR15</name>
           <description>Delta Sigma Modulator Control Register 15</description>
           <addressOffset>0x14E5</addressOffset>
           <size>8</size>
@@ -2587,7 +2587,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR16</name>
+          <name>ADC_DelSig_V_DSM_CR16</name>
           <description>Delta Sigma Modulator Control Register 16</description>
           <addressOffset>0x14E6</addressOffset>
           <size>8</size>
@@ -2715,7 +2715,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CR17</name>
+          <name>ADC_DelSig_V_DSM_CR17</name>
           <description>Delta Sigma Modulator Control Register 17</description>
           <addressOffset>0x14E7</addressOffset>
           <size>8</size>
@@ -2851,7 +2851,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_REF0</name>
+          <name>ADC_DelSig_V_DSM_REF0</name>
           <description>Delta Sigma Modulator Reference Register 0</description>
           <addressOffset>0x14E8</addressOffset>
           <size>8</size>
@@ -2985,7 +2985,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_REF1</name>
+          <name>ADC_DelSig_V_DSM_REF1</name>
           <description>Delta Sigma Modulator Reference Register 1</description>
           <addressOffset>0x14E9</addressOffset>
           <size>8</size>
@@ -2994,7 +2994,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_REF2</name>
+          <name>ADC_DelSig_V_DSM_REF2</name>
           <description>Delta Sigma Modulator Reference Register 2</description>
           <addressOffset>0x14EA</addressOffset>
           <size>8</size>
@@ -3061,7 +3061,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_REF3</name>
+          <name>ADC_DelSig_V_DSM_REF3</name>
           <description>Delta Sigma Modulator Reference Register 3</description>
           <addressOffset>0x14EB</addressOffset>
           <size>8</size>
@@ -3114,7 +3114,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_DEM0</name>
+          <name>ADC_DelSig_V_DSM_DEM0</name>
           <description>Delta Sigma Modulator Dynamic Element Matching Register 0</description>
           <addressOffset>0x14EC</addressOffset>
           <size>8</size>
@@ -3220,7 +3220,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_DEM1</name>
+          <name>ADC_DelSig_V_DSM_DEM1</name>
           <description>Delta Sigma Modulator Dynamic Element Matching Register 1</description>
           <addressOffset>0x14ED</addressOffset>
           <size>8</size>
@@ -3238,7 +3238,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_TST0</name>
+          <name>ADC_DelSig_V_DSM_TST0</name>
           <description>Delta Sigma Modulator Test Register 0</description>
           <addressOffset>0x14EE</addressOffset>
           <size>8</size>
@@ -3387,7 +3387,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_TST1</name>
+          <name>ADC_DelSig_V_DSM_TST1</name>
           <description>Delta Sigma Modulator Test Register 1</description>
           <addressOffset>0x14EF</addressOffset>
           <size>8</size>
@@ -3396,7 +3396,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_BUF0</name>
+          <name>ADC_DelSig_V_DSM_BUF0</name>
           <description>Delta Sigma Modulator Buffer Register 0</description>
           <addressOffset>0x14F0</addressOffset>
           <size>8</size>
@@ -3464,7 +3464,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_BUF1</name>
+          <name>ADC_DelSig_V_DSM_BUF1</name>
           <description>Delta Sigma Modulator Buffer Register 1</description>
           <addressOffset>0x14F1</addressOffset>
           <size>8</size>
@@ -3542,7 +3542,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_BUF2</name>
+          <name>ADC_DelSig_V_DSM_BUF2</name>
           <description>Delta Sigma Modulator Buffer Register 2</description>
           <addressOffset>0x14F2</addressOffset>
           <size>8</size>
@@ -3579,7 +3579,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_BUF3</name>
+          <name>ADC_DelSig_V_DSM_BUF3</name>
           <description>Delta Sigma Modulator Buffer Register 3</description>
           <addressOffset>0x14F3</addressOffset>
           <size>8</size>
@@ -3658,7 +3658,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_MISC</name>
+          <name>ADC_DelSig_V_DSM_MISC</name>
           <description>Delta Sigma Modulator Miscallaneous Register</description>
           <addressOffset>0x14F4</addressOffset>
           <size>8</size>
@@ -3688,7 +3688,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_CLK</name>
+          <name>ADC_DelSig_V_DSM_CLK</name>
           <description>Delta Sigma Modulator Clock Selection Register</description>
           <addressOffset>0x175D</addressOffset>
           <size>8</size>
@@ -3771,7 +3771,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_OUT0</name>
+          <name>ADC_DelSig_V_DSM_OUT0</name>
           <description>Delta Sigma Modulator Output Register 0</description>
           <addressOffset>0x17DE</addressOffset>
           <size>8</size>
@@ -3789,7 +3789,7 @@
           </fields>
         </register>
         <register>
-          <name>ADC_DelSig_1_DSM_OUT1</name>
+          <name>ADC_DelSig_V_DSM_OUT1</name>
           <description>Delta Sigma Modulator Output Register 1</description>
           <addressOffset>0x17DF</addressOffset>
           <size>8</size>
@@ -3918,153 +3918,6 @@
     </peripheral>
     <peripheral>
       <name>ADC_SAR_2</name>
-      <description>SAR ADC</description>
-      <baseAddress>0x40004616</baseAddress>
-      <addressBlock>
-        <offset>0</offset>
-        <size>0x158D</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>SAR_TR0</name>
-          <description>SAR trim register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CSR0</name>
-          <description>SAR status and control register 0</description>
-          <addressOffset>0x12F2</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CSR1</name>
-          <description>SAR status and control register 1</description>
-          <addressOffset>0x12F3</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CSR2</name>
-          <description>SAR status and control register 2</description>
-          <addressOffset>0x12F4</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CSR3</name>
-          <description>SAR status and control register 3</description>
-          <addressOffset>0x12F5</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CSR4</name>
-          <description>SAR status and control register 4</description>
-          <addressOffset>0x12F6</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CSR5</name>
-          <description>SAR status and control register 5</description>
-          <addressOffset>0x12F7</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CSR6</name>
-          <description>SAR status and control register 6</description>
-          <addressOffset>0x12F8</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_SW0</name>
-          <description>SAR Analog Routing Register 0</description>
-          <addressOffset>0x1512</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_SW2</name>
-          <description>SAR Analog Routing Register 2</description>
-          <addressOffset>0x1514</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_SW3</name>
-          <description>SAR Analog Routing Register 3</description>
-          <addressOffset>0x1515</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_SW4</name>
-          <description>SAR Analog Routing Register 4</description>
-          <addressOffset>0x1516</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_SW6</name>
-          <description>SAR Analog Routing Register 6</description>
-          <addressOffset>0x1518</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_CLK</name>
-          <description>SAR Clock Selection Register</description>
-          <addressOffset>0x1519</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SAR_WRK</name>
-          <description>SAR working register</description>
-          <addressOffset>0x158C</addressOffset>
-          <size>16</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
-      <name>ADC_SAR_V</name>
       <description>SAR ADC</description>
       <baseAddress>0x40004614</baseAddress>
       <addressBlock>
@@ -4211,358 +4064,156 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>PWM_UNFOLD_A</name>
-      <description>No description available</description>
-      <baseAddress>0x40006476</baseAddress>
+      <name>ADC_SAR_V</name>
+      <description>SAR ADC</description>
+      <baseAddress>0x40004616</baseAddress>
       <addressBlock>
         <offset>0</offset>
-        <size>0x122</size>
+        <size>0x158D</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
         <register>
-          <name>PWM_UNFOLD_A_Control_Reg</name>
-          <description>UDB Control Register - Assigned Control Register Value</description>
+          <name>SAR_TR0</name>
+          <description>SAR trim register</description>
           <addressOffset>0x0</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>CTRL_ENABLE</name>
-              <description>Enable the PWM</description>
-              <lsb>7</lsb>
-              <msb>7</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>CTRL_CMPMODE2</name>
-              <description>Compare mode 2</description>
-              <lsb>3</lsb>
-              <msb>5</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>CTRL_CMPMODE1</name>
-              <description>Compare mode 1</description>
-              <lsb>0</lsb>
-              <msb>2</msb>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PWM_UNFOLD_A_COMPARE_Reg</name>
-          <description>UDB.D0 - Assigned Compare Value</description>
-          <addressOffset>0xB0</addressOffset>
+          <name>SAR_CSR0</name>
+          <description>SAR status and control register 0</description>
+          <addressOffset>0x12F2</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_CSR1</name>
+          <description>SAR status and control register 1</description>
+          <addressOffset>0x12F3</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_CSR2</name>
+          <description>SAR status and control register 2</description>
+          <addressOffset>0x12F4</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_CSR3</name>
+          <description>SAR status and control register 3</description>
+          <addressOffset>0x12F5</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_CSR4</name>
+          <description>SAR status and control register 4</description>
+          <addressOffset>0x12F6</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_CSR5</name>
+          <description>SAR status and control register 5</description>
+          <addressOffset>0x12F7</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_CSR6</name>
+          <description>SAR status and control register 6</description>
+          <addressOffset>0x12F8</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_SW0</name>
+          <description>SAR Analog Routing Register 0</description>
+          <addressOffset>0x1512</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_SW2</name>
+          <description>SAR Analog Routing Register 2</description>
+          <addressOffset>0x1514</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_SW3</name>
+          <description>SAR Analog Routing Register 3</description>
+          <addressOffset>0x1515</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_SW4</name>
+          <description>SAR Analog Routing Register 4</description>
+          <addressOffset>0x1516</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_SW6</name>
+          <description>SAR Analog Routing Register 6</description>
+          <addressOffset>0x1518</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_CLK</name>
+          <description>SAR Clock Selection Register</description>
+          <addressOffset>0x1519</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>SAR_WRK</name>
+          <description>SAR working register</description>
+          <addressOffset>0x158C</addressOffset>
           <size>16</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>PWM_UNFOLD_A_STATUS_MASK</name>
-          <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x111</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>PWM_STS_CMP1</name>
-              <description>Enables the Interrupt on Compare 1</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_CMP2</name>
-              <description>Enables the Interrupt on Compare 2</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_TC</name>
-              <description>Enables the Interrupt on Terminal Count</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_FIFO_FULL</name>
-              <description>FIFO Full Status Mask </description>
-              <lsb>3</lsb>
-              <msb>3</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_KILL</name>
-              <description>Enables the Interrupt on Kill</description>
-              <lsb>5</lsb>
-              <msb>5</msb>
-              <access>read-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>PWM_UNFOLD_A_STATUS_AUX_CTRLDP0</name>
-          <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x120</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>FIFO0_CLR</name>
-              <description>FIFO0 clear</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_0</name>
-                  <description>Normal FIFO operation</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_1</name>
-                  <description>Clear FIFO state</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>FIFO1_CLR</name>
-              <description>FIFO1 clear</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_0</name>
-                  <description>Normal FIFO operation</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_1</name>
-                  <description>Clear FIFO state</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>FIFO0_LVL</name>
-              <description>FIFO level</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_0</name>
-                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_1</name>
-                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>FIFO1_LVL</name>
-              <description>FIFO level</description>
-              <lsb>3</lsb>
-              <msb>3</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_0</name>
-                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_1</name>
-                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>INT_EN</name>
-              <description>No description available</description>
-              <lsb>4</lsb>
-              <msb>4</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_INT_EN0</name>
-                  <description>Interrupt disabled</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_INT_EN1</name>
-                  <description>Interrupt enabled</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>CNT_START</name>
-              <description>FIFO0 clear</description>
-              <lsb>5</lsb>
-              <msb>5</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_CNT_START0</name>
-                  <description>Disable counter</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_CNT_START1</name>
-                  <description>Enable counter</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>PWM_UNFOLD_A_STATUS_AUX_CTRLDP1</name>
-          <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x121</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>FIFO0_CLR</name>
-              <description>FIFO0 clear</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_0</name>
-                  <description>Normal FIFO operation</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_1</name>
-                  <description>Clear FIFO state</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>FIFO1_CLR</name>
-              <description>FIFO1 clear</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_0</name>
-                  <description>Normal FIFO operation</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_CLR_1</name>
-                  <description>Clear FIFO state</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>FIFO0_LVL</name>
-              <description>FIFO level</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_0</name>
-                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_1</name>
-                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>FIFO1_LVL</name>
-              <description>FIFO level</description>
-              <lsb>3</lsb>
-              <msb>3</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_0</name>
-                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_FIFO_LVL_1</name>
-                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>INT_EN</name>
-              <description>No description available</description>
-              <lsb>4</lsb>
-              <msb>4</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_INT_EN0</name>
-                  <description>Interrupt disabled</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_INT_EN1</name>
-                  <description>Interrupt enabled</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>CNT_START</name>
-              <description>FIFO0 clear</description>
-              <lsb>5</lsb>
-              <msb>5</msb>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>E_CNT_START0</name>
-                  <description>Disable counter</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>E_CNT_START1</name>
-                  <description>Enable counter</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-          </fields>
         </register>
       </registers>
     </peripheral>
     <peripheral>
       <name>PWM_UNFOLD_B</name>
       <description>No description available</description>
-      <baseAddress>0x40006524</baseAddress>
+      <baseAddress>0x4000652A</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x72</size>
@@ -4581,7 +4232,7 @@
         <register>
           <name>PWM_UNFOLD_B_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x53</addressOffset>
+          <addressOffset>0x50</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4909,9 +4560,358 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>PWM_UNFOLD_A</name>
+      <description>No description available</description>
+      <baseAddress>0x40006428</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x162</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>PWM_UNFOLD_A_COMPARE_Reg</name>
+          <description>UDB.D0 - Assigned Compare Value</description>
+          <addressOffset>0x0</addressOffset>
+          <size>16</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>PWM_UNFOLD_A_STATUS_AUX_CTRLDP0</name>
+          <description>UDB Auxilliary Control Register</description>
+          <addressOffset>0x70</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>FIFO0_CLR</name>
+              <description>FIFO0 clear</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_0</name>
+                  <description>Normal FIFO operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_1</name>
+                  <description>Clear FIFO state</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO1_CLR</name>
+              <description>FIFO1 clear</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_0</name>
+                  <description>Normal FIFO operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_1</name>
+                  <description>Clear FIFO state</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO0_LVL</name>
+              <description>FIFO level</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_0</name>
+                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_1</name>
+                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO1_LVL</name>
+              <description>FIFO level</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_0</name>
+                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_1</name>
+                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>INT_EN</name>
+              <description>No description available</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_INT_EN0</name>
+                  <description>Interrupt disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_INT_EN1</name>
+                  <description>Interrupt enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CNT_START</name>
+              <description>FIFO0 clear</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_CNT_START0</name>
+                  <description>Disable counter</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_CNT_START1</name>
+                  <description>Enable counter</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PWM_UNFOLD_A_STATUS_AUX_CTRLDP1</name>
+          <description>UDB Auxilliary Control Register</description>
+          <addressOffset>0x71</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>FIFO0_CLR</name>
+              <description>FIFO0 clear</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_0</name>
+                  <description>Normal FIFO operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_1</name>
+                  <description>Clear FIFO state</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO1_CLR</name>
+              <description>FIFO1 clear</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_0</name>
+                  <description>Normal FIFO operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_CLR_1</name>
+                  <description>Clear FIFO state</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO0_LVL</name>
+              <description>FIFO level</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_0</name>
+                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_1</name>
+                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO1_LVL</name>
+              <description>FIFO level</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_0</name>
+                  <description>FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_FIFO_LVL_1</name>
+                  <description>FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>INT_EN</name>
+              <description>No description available</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_INT_EN0</name>
+                  <description>Interrupt disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_INT_EN1</name>
+                  <description>Interrupt enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CNT_START</name>
+              <description>FIFO0 clear</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_CNT_START0</name>
+                  <description>Disable counter</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_CNT_START1</name>
+                  <description>Enable counter</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PWM_UNFOLD_A_Control_Reg</name>
+          <description>UDB Control Register - Assigned Control Register Value</description>
+          <addressOffset>0x153</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>CTRL_ENABLE</name>
+              <description>Enable the PWM</description>
+              <lsb>7</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CTRL_CMPMODE2</name>
+              <description>Compare mode 2</description>
+              <lsb>3</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CTRL_CMPMODE1</name>
+              <description>Compare mode 1</description>
+              <lsb>0</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PWM_UNFOLD_A_STATUS_MASK</name>
+          <description>UDB Status bits Interrupt Mask Enable Register</description>
+          <addressOffset>0x161</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>PWM_STS_CMP1</name>
+              <description>Enables the Interrupt on Compare 1</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>PWM_STS_CMP2</name>
+              <description>Enables the Interrupt on Compare 2</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>PWM_STS_TC</name>
+              <description>Enables the Interrupt on Terminal Count</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>PWM_STS_FIFO_FULL</name>
+              <description>FIFO Full Status Mask </description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>PWM_STS_KILL</name>
+              <description>Enables the Interrupt on Kill</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
       <name>PWM_BUCK</name>
       <description>No description available</description>
-      <baseAddress>0x40006528</baseAddress>
+      <baseAddress>0x40006524</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x72</size>
@@ -4930,7 +4930,7 @@
         <register>
           <name>PWM_BUCK_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x50</addressOffset>
+          <addressOffset>0x54</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>

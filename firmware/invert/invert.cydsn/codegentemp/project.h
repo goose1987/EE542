@@ -24,8 +24,6 @@
 #include <PWM_UNFOLD_B.h>
 #include <Pin_1_aliases.h>
 #include <Pin_1.h>
-#include <Pin_2_aliases.h>
-#include <Pin_2.h>
 #include <Pin_3_aliases.h>
 #include <Pin_3.h>
 #include <Pin_4_aliases.h>
@@ -34,7 +32,7 @@
 #include <Pin_5.h>
 #include <Pin_6_aliases.h>
 #include <Pin_6.h>
-#include <ADC_DelSig_1.h>
+#include <ADC_DelSig_V.h>
 #include <ADC_SAR_2.h>
 #include <Pin_7_aliases.h>
 #include <Pin_7.h>
@@ -47,8 +45,9 @@
 #include <ADC_SAR_V.h>
 #include <LCD_Char_1.h>
 #include <Clock_2.h>
-#include <ADC_DelSig_1_theACLK.h>
-#include <ADC_DelSig_1_Ext_CP_Clk.h>
+#include <ADC_DelSig_V_theACLK.h>
+#include <ADC_DelSig_V_Ext_CP_Clk.h>
+#include <ADC_DelSig_V_AMux.h>
 #include <ADC_SAR_2_IRQ.h>
 #include <ADC_SAR_2_theACLK.h>
 #include <ADC_SAR_2_Bypass_aliases.h>

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
    9:.\Generated_Source\PSoC5/ADC_SAR_2.c **** * Note:
   10:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *
   11:.\Generated_Source\PSoC5/ADC_SAR_2.c **** ********************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 2
 
 
   12:.\Generated_Source\PSoC5/ADC_SAR_2.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
   66:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  zero and set to 1 the first time ADC_Start() is called. This allows for
   67:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  component Re-Start without re-initialization in all subsequent calls to the
   68:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  ADC_SAR_2_Start() routine.
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 3
 
 
   69:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  If re-initialization of the component is required the variable should be set
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
   80              		.thumb_func
   81              		.type	ADC_SAR_2_Init, %function
   82              	ADC_SAR_2_Init:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 4
 
 
   83              	.LFB1:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  104 0018 4FF00000 		mov	r0, #0
  105 001c 40F20001 		movw	r1, #:lower16:ADC_SAR_2_ISR
  106 0020 C0F20001 		movt	r1, #:upper16:ADC_SAR_2_ISR
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 5
 
 
  107 0024 FFF7FEFF 		bl	CyIntSetVector
@@ -247,10 +247,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  121:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Enable IRQ mode*/
  122:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     ADC_SAR_2_SAR_CSR1_REG |= ADC_SAR_2_SAR_IRQ_MASK_EN | ADC_SAR_2_SAR_IRQ_MODE_EDGE;
  108              		.loc 1 122 0
- 109 0028 45F60913 		movw	r3, #:lower16:1073764617
- 110 002c C4F20003 		movt	r3, #:upper16:1073764617
- 111 0030 45F60912 		movw	r2, #:lower16:1073764617
- 112 0034 C4F20002 		movt	r2, #:upper16:1073764617
+ 109 0028 45F60113 		movw	r3, #:lower16:1073764609
+ 110 002c C4F20003 		movt	r3, #:upper16:1073764609
+ 111 0030 45F60112 		movw	r2, #:lower16:1073764609
+ 112 0034 C4F20002 		movt	r2, #:upper16:1073764609
  113 0038 1278     		ldrb	r2, [r2, #0]
  114 003a D2B2     		uxtb	r2, r2
  115 003c 42F00602 		orr	r2, r2, #6
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  141:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  None.
  142:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *
  143:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *******************************************************************************/
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 6
 
 
  144:.\Generated_Source\PSoC5/ADC_SAR_2.c **** void ADC_SAR_2_Enable(void)
@@ -335,7 +335,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  162 001a C4F20002 		movt	r2, #:upper16:1073759147
  163 001e 1278     		ldrb	r2, [r2, #0]
  164 0020 D2B2     		uxtb	r2, r2
- 165 0022 42F00202 		orr	r2, r2, #2
+ 165 0022 42F00102 		orr	r2, r2, #1
  166 0026 D2B2     		uxtb	r2, r2
  167 0028 1A70     		strb	r2, [r3, #0]
  152:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
@@ -348,7 +348,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  172 0036 C4F20002 		movt	r2, #:upper16:1073759163
  173 003a 1278     		ldrb	r2, [r2, #0]
  174 003c D2B2     		uxtb	r2, r2
- 175 003e 42F00202 		orr	r2, r2, #2
+ 175 003e 42F00102 		orr	r2, r2, #1
  176 0042 D2B2     		uxtb	r2, r2
  177 0044 1A70     		strb	r2, [r3, #0]
  155:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  178              		.loc 1 158 0
  179 0046 44F2A133 		movw	r3, #:lower16:1073759137
  180 004a C4F20003 		movt	r3, #:upper16:1073759137
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 7
 
 
  181 004e 44F2A132 		movw	r2, #:lower16:1073759137
@@ -384,8 +384,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  162:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Enable VCM buffer and Enable Int Ref Amp */
  163:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     tmpReg = ADC_SAR_2_SAR_CSR3_REG;
  198              		.loc 1 163 0
- 199 007e 45F60B13 		movw	r3, #:lower16:1073764619
- 200 0082 C4F20003 		movt	r3, #:upper16:1073764619
+ 199 007e 45F60313 		movw	r3, #:lower16:1073764611
+ 200 0082 C4F20003 		movt	r3, #:upper16:1073764611
  201 0086 1B78     		ldrb	r3, [r3, #0]
  202 0088 BB71     		strb	r3, [r7, #6]
  164:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #if(CY_PSOC5A) /* Make sure that full power is applied for VREF buffer */
@@ -413,12 +413,12 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  174:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #endif /* ADC_SAR_2_DEFAULT_REFERENCE == ADC_SAR_2__EXT_REF */
  175:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     ADC_SAR_2_SAR_CSR3_REG = tmpReg;
  215              		.loc 1 175 0
- 216 00a2 45F60B13 		movw	r3, #:lower16:1073764619
- 217 00a6 C4F20003 		movt	r3, #:upper16:1073764619
+ 216 00a2 45F60313 		movw	r3, #:lower16:1073764611
+ 217 00a6 C4F20003 		movt	r3, #:upper16:1073764611
  218 00aa BA79     		ldrb	r2, [r7, #6]
  219 00ac 1A70     		strb	r2, [r3, #0]
  176:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 8
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 8
 
 
  177:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Set reference for ADC */
@@ -434,8 +434,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  187:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         #else /* INTREF Bypassed of External */
  188:.\Generated_Source\PSoC5/ADC_SAR_2.c ****             ADC_SAR_2_SAR_CSR6_REG = ADC_SAR_2_INT_BYPASS_EXT_VREF; /* S2 */
  220              		.loc 1 188 0
- 221 00ae 45F60E13 		movw	r3, #:lower16:1073764622
- 222 00b2 C4F20003 		movt	r3, #:upper16:1073764622
+ 221 00ae 45F60613 		movw	r3, #:lower16:1073764614
+ 222 00b2 C4F20003 		movt	r3, #:upper16:1073764614
  223 00b6 4FF00402 		mov	r2, #4
  224 00ba 1A70     		strb	r2, [r3, #0]
  189:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         #endif /* ADC_SAR_2_DEFAULT_REFERENCE == ADC_SAR_2__INT_REF_NOT_BYPASSED */
@@ -445,10 +445,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  193:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #if(ADC_SAR_2_HIGH_POWER_PULSE == 0u) /* MinPulseWidth <= 50 ns */
  194:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR5_REG &= (uint8)~ADC_SAR_2_SAR_DLY_INC;
  225              		.loc 1 194 0
- 226 00bc 45F60D13 		movw	r3, #:lower16:1073764621
- 227 00c0 C4F20003 		movt	r3, #:upper16:1073764621
- 228 00c4 45F60D12 		movw	r2, #:lower16:1073764621
- 229 00c8 C4F20002 		movt	r2, #:upper16:1073764621
+ 226 00bc 45F60513 		movw	r3, #:lower16:1073764613
+ 227 00c0 C4F20003 		movt	r3, #:upper16:1073764613
+ 228 00c4 45F60512 		movw	r2, #:lower16:1073764613
+ 229 00c8 C4F20002 		movt	r2, #:upper16:1073764613
  230 00cc 1278     		ldrb	r2, [r2, #0]
  231 00ce D2B2     		uxtb	r2, r2
  232 00d0 02F0BF02 		and	r2, r2, #191
@@ -461,10 +461,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  200:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #if(ADC_SAR_2_HIGH_POWER_PULSE == 0u) /* MinPulseWidth <= 50 ns */
  201:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR5_REG |= ADC_SAR_2_SAR_DCEN;
  234              		.loc 1 201 0
- 235 00d6 45F60D13 		movw	r3, #:lower16:1073764621
- 236 00da C4F20003 		movt	r3, #:upper16:1073764621
- 237 00de 45F60D12 		movw	r2, #:lower16:1073764621
- 238 00e2 C4F20002 		movt	r2, #:upper16:1073764621
+ 235 00d6 45F60513 		movw	r3, #:lower16:1073764613
+ 236 00da C4F20003 		movt	r3, #:upper16:1073764613
+ 237 00de 45F60512 		movw	r2, #:lower16:1073764613
+ 238 00e2 C4F20002 		movt	r2, #:upper16:1073764613
  239 00e6 1278     		ldrb	r2, [r2, #0]
  240 00e8 D2B2     		uxtb	r2, r2
  241 00ea 42F02002 		orr	r2, r2, #32
@@ -477,11 +477,11 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  206:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Set default power and other configurations for control register 0 in multiple lines */
  207:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     ADC_SAR_2_SAR_CSR0_REG = (uint8)((uint8)ADC_SAR_2_DEFAULT_POWER << ADC_SAR_2_SAR_POWER_SHIFT)
  244              		.loc 1 207 0
- 245 00f2 45F60813 		movw	r3, #:lower16:1073764616
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 9
+ 245 00f2 45F60013 		movw	r3, #:lower16:1073764608
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 9
 
 
- 246 00f6 C4F20003 		movt	r3, #:upper16:1073764616
+ 246 00f6 C4F20003 		movt	r3, #:upper16:1073764608
  247 00fa 4FF00802 		mov	r2, #8
  248 00fe 1A70     		strb	r2, [r3, #0]
  208:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* SAR_HIZ_CLEAR:   Should not be used for LP */
@@ -498,10 +498,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  219:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Enable clock for SAR ADC*/
  220:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     ADC_SAR_2_SAR_CLK_REG |= ADC_SAR_2_SAR_MX_CLK_EN;
  249              		.loc 1 220 0
- 250 0100 45F62F33 		movw	r3, #:lower16:1073765167
- 251 0104 C4F20003 		movt	r3, #:upper16:1073765167
- 252 0108 45F62F32 		movw	r2, #:lower16:1073765167
- 253 010c C4F20002 		movt	r2, #:upper16:1073765167
+ 250 0100 45F62733 		movw	r3, #:lower16:1073765159
+ 251 0104 C4F20003 		movt	r3, #:upper16:1073765159
+ 252 0108 45F62732 		movw	r2, #:lower16:1073765159
+ 253 010c C4F20002 		movt	r2, #:upper16:1073765159
  254 0110 1278     		ldrb	r2, [r2, #0]
  255 0112 D2B2     		uxtb	r2, r2
  256 0114 42F00802 		orr	r2, r2, #8
@@ -512,10 +512,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  223:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         /* Software Reset */
  224:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR0_REG |= ADC_SAR_2_SAR_RESET_SOFT_ACTIVE;
  259              		.loc 1 224 0
- 260 011c 45F60813 		movw	r3, #:lower16:1073764616
- 261 0120 C4F20003 		movt	r3, #:upper16:1073764616
- 262 0124 45F60812 		movw	r2, #:lower16:1073764616
- 263 0128 C4F20002 		movt	r2, #:upper16:1073764616
+ 260 011c 45F60013 		movw	r3, #:lower16:1073764608
+ 261 0120 C4F20003 		movt	r3, #:upper16:1073764608
+ 262 0124 45F60012 		movw	r2, #:lower16:1073764608
+ 263 0128 C4F20002 		movt	r2, #:upper16:1073764608
  264 012c 1278     		ldrb	r2, [r2, #0]
  265 012e D2B2     		uxtb	r2, r2
  266 0130 42F02002 		orr	r2, r2, #32
@@ -527,10 +527,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  271 013c FFF7FEFF 		bl	CyDelayUs
  226:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR0_REG &= (uint8)~ADC_SAR_2_SAR_RESET_SOFT_ACTIVE;
  272              		.loc 1 226 0
- 273 0140 45F60813 		movw	r3, #:lower16:1073764616
- 274 0144 C4F20003 		movt	r3, #:upper16:1073764616
- 275 0148 45F60812 		movw	r2, #:lower16:1073764616
- 276 014c C4F20002 		movt	r2, #:upper16:1073764616
+ 273 0140 45F60013 		movw	r3, #:lower16:1073764608
+ 274 0144 C4F20003 		movt	r3, #:upper16:1073764608
+ 275 0148 45F60012 		movw	r2, #:lower16:1073764608
+ 276 014c C4F20002 		movt	r2, #:upper16:1073764608
  277 0150 1278     		ldrb	r2, [r2, #0]
  278 0152 D2B2     		uxtb	r2, r2
  279 0154 02F0DF02 		and	r2, r2, #223
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  227:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #else
  228:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         CyDelayUs(10u); /* The block is ready to use 10 us after the enable signal is set high. */
  229:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #endif /* End CY_PSOC5A */
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 10
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 10
 
 
  230:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  309 0000 80B5     		push	{r7, lr}
  310              	.LCFI7:
  311              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 11
 
 
  312 0002 82B0     		sub	sp, sp, #8
@@ -619,10 +619,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  259:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Stop all conversions */
  260:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     ADC_SAR_2_SAR_CSR0_REG &= (uint8)~ADC_SAR_2_SAR_SOF_START_CONV;
  324              		.loc 1 260 0
- 325 000e 45F60813 		movw	r3, #:lower16:1073764616
- 326 0012 C4F20003 		movt	r3, #:upper16:1073764616
- 327 0016 45F60812 		movw	r2, #:lower16:1073764616
- 328 001a C4F20002 		movt	r2, #:upper16:1073764616
+ 325 000e 45F60013 		movw	r3, #:lower16:1073764608
+ 326 0012 C4F20003 		movt	r3, #:upper16:1073764608
+ 327 0016 45F60012 		movw	r2, #:lower16:1073764608
+ 328 001a C4F20002 		movt	r2, #:upper16:1073764608
  329 001e 1278     		ldrb	r2, [r2, #0]
  330 0020 D2B2     		uxtb	r2, r2
  331 0022 02F0FE02 		and	r2, r2, #254
@@ -632,10 +632,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  263:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         /* Leave the SAR block powered and reduce the power to the minimum */
  264:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR0_REG |= ADC_SAR_2_ICONT_LV_3;
  333              		.loc 1 264 0
- 334 0028 45F60813 		movw	r3, #:lower16:1073764616
- 335 002c C4F20003 		movt	r3, #:upper16:1073764616
- 336 0030 45F60812 		movw	r2, #:lower16:1073764616
- 337 0034 C4F20002 		movt	r2, #:upper16:1073764616
+ 334 0028 45F60013 		movw	r3, #:lower16:1073764608
+ 335 002c C4F20003 		movt	r3, #:upper16:1073764608
+ 336 0030 45F60012 		movw	r2, #:lower16:1073764608
+ 337 0034 C4F20002 		movt	r2, #:upper16:1073764608
  338 0038 1278     		ldrb	r2, [r2, #0]
  339 003a D2B2     		uxtb	r2, r2
  340 003c 6FEA8262 		mvn	r2, r2, lsl #26
@@ -645,10 +645,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  265:.\Generated_Source\PSoC5/ADC_SAR_2.c ****          /* Disconnect Bypass Cap */
  266:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR6_REG &= (uint8)~ADC_SAR_2_INT_BYPASS_EXT_VREF;
  344              		.loc 1 266 0
- 345 0048 45F60E13 		movw	r3, #:lower16:1073764622
- 346 004c C4F20003 		movt	r3, #:upper16:1073764622
- 347 0050 45F60E12 		movw	r2, #:lower16:1073764622
- 348 0054 C4F20002 		movt	r2, #:upper16:1073764622
+ 345 0048 45F60613 		movw	r3, #:lower16:1073764614
+ 346 004c C4F20003 		movt	r3, #:upper16:1073764614
+ 347 0050 45F60612 		movw	r2, #:lower16:1073764614
+ 348 0054 C4F20002 		movt	r2, #:upper16:1073764614
  349 0058 1278     		ldrb	r2, [r2, #0]
  350 005a D2B2     		uxtb	r2, r2
  351 005c 02F0FB02 		and	r2, r2, #251
@@ -656,23 +656,23 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  267:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         /* Disable reference buffer and reduce the reference power to the minimum */
  268:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR3_REG &= (uint8)~ADC_SAR_2_SAR_EN_BUF_VREF_EN; /*VCM buffer is absent in P
  353              		.loc 1 268 0
- 354 0062 45F60B13 		movw	r3, #:lower16:1073764619
- 355 0066 C4F20003 		movt	r3, #:upper16:1073764619
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 12
+ 354 0062 45F60313 		movw	r3, #:lower16:1073764611
+ 355 0066 C4F20003 		movt	r3, #:upper16:1073764611
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 12
 
 
- 356 006a 45F60B12 		movw	r2, #:lower16:1073764619
- 357 006e C4F20002 		movt	r2, #:upper16:1073764619
+ 356 006a 45F60312 		movw	r2, #:lower16:1073764611
+ 357 006e C4F20002 		movt	r2, #:upper16:1073764611
  358 0072 1278     		ldrb	r2, [r2, #0]
  359 0074 D2B2     		uxtb	r2, r2
  360 0076 02F0FE02 		and	r2, r2, #254
  361 007a 1A70     		strb	r2, [r3, #0]
  269:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR3_REG |= ADC_SAR_2_SAR_PWR_CTRL_VREF_DIV_BY4;
  362              		.loc 1 269 0
- 363 007c 45F60B13 		movw	r3, #:lower16:1073764619
- 364 0080 C4F20003 		movt	r3, #:upper16:1073764619
- 365 0084 45F60B12 		movw	r2, #:lower16:1073764619
- 366 0088 C4F20002 		movt	r2, #:upper16:1073764619
+ 363 007c 45F60313 		movw	r3, #:lower16:1073764611
+ 364 0080 C4F20003 		movt	r3, #:upper16:1073764611
+ 365 0084 45F60312 		movw	r2, #:lower16:1073764611
+ 366 0088 C4F20002 		movt	r2, #:upper16:1073764611
  367 008c 1278     		ldrb	r2, [r2, #0]
  368 008e D2B2     		uxtb	r2, r2
  369 0090 42F00C02 		orr	r2, r2, #12
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  285:.\Generated_Source\PSoC5/ADC_SAR_2.c **** }
  394              		.loc 1 285 0
  395 00d4 07F10807 		add	r7, r7, #8
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 13
 
 
  396 00d8 BD46     		mov	sp, r7
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  310:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* mask off invalid power settings */
  311:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     power &= ADC_SAR_2_SAR_API_POWER_MASK;
  426              		.loc 1 311 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 14
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 14
 
 
  427 000a FB79     		ldrb	r3, [r7, #7]
@@ -788,8 +788,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  313:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Set Power parameter  */
  314:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     tmpReg = ADC_SAR_2_SAR_CSR0_REG & (uint8)~ADC_SAR_2_SAR_POWER_MASK;
  430              		.loc 1 314 0
- 431 0012 45F60813 		movw	r3, #:lower16:1073764616
- 432 0016 C4F20003 		movt	r3, #:upper16:1073764616
+ 431 0012 45F60013 		movw	r3, #:lower16:1073764608
+ 432 0016 C4F20003 		movt	r3, #:upper16:1073764608
  433 001a 1B78     		ldrb	r3, [r3, #0]
  434 001c DBB2     		uxtb	r3, r3
  435 001e 03F03F03 		and	r3, r3, #63
@@ -804,8 +804,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  443 0032 FB73     		strb	r3, [r7, #15]
  316:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     ADC_SAR_2_SAR_CSR0_REG = tmpReg;
  444              		.loc 1 316 0
- 445 0034 45F60813 		movw	r3, #:lower16:1073764616
- 446 0038 C4F20003 		movt	r3, #:upper16:1073764616
+ 445 0034 45F60013 		movw	r3, #:lower16:1073764608
+ 446 0038 C4F20003 		movt	r3, #:upper16:1073764608
  447 003c FA7B     		ldrb	r2, [r7, #15]
  448 003e 1A70     		strb	r2, [r3, #0]
  317:.\Generated_Source\PSoC5/ADC_SAR_2.c **** }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  328:.\Generated_Source\PSoC5/ADC_SAR_2.c **** * Parameters:
  329:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  resolution:
  330:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  12 ->    RES12
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 15
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 15
 
 
  331:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *  10 ->    RES10
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  486 0014 1A70     		strb	r2, [r3, #0]
  364:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #endif /* End CY_PSOC5A */
  365:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 16
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 16
 
 
  366:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /* Set SAR ADC resolution and sample width: 18 conversion cycles at 12bits + 1 gap */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  516 003e 6FF03A03 		mvn	r3, #58
  517 0042 FB73     		strb	r3, [r7, #15]
  391:.\Generated_Source\PSoC5/ADC_SAR_2.c ****             /* Halt CPU in debug mode if resolution is out of valid range */
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 17
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 17
 
 
  392:.\Generated_Source\PSoC5/ADC_SAR_2.c ****             CYASSERT(0u != 0u);
@@ -970,8 +970,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  394:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     }
  395:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     ADC_SAR_2_SAR_CSR2_REG = tmpReg;
  522              		.loc 1 395 0
- 523 004c 45F60A13 		movw	r3, #:lower16:1073764618
- 524 0050 C4F20003 		movt	r3, #:upper16:1073764618
+ 523 004c 45F60213 		movw	r3, #:lower16:1073764610
+ 524 0050 C4F20003 		movt	r3, #:upper16:1073764610
  525 0054 FA7B     		ldrb	r2, [r7, #15]
  526 0056 1A70     		strb	r2, [r3, #0]
  396:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  418:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     *
  419:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     * Theory:
  420:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     *  Forces the ADC to initiate a conversion. In Free Running mode, the ADC will
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 18
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 18
 
 
  421:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     *  run continuously. In a software trigger mode the function also acts as a 
@@ -1051,10 +1051,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  436:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         /* Start the conversion */
  437:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR0_REG |= ADC_SAR_2_SAR_SOF_START_CONV;
  558              		.loc 1 437 0
- 559 0004 45F60813 		movw	r3, #:lower16:1073764616
- 560 0008 C4F20003 		movt	r3, #:upper16:1073764616
- 561 000c 45F60812 		movw	r2, #:lower16:1073764616
- 562 0010 C4F20002 		movt	r2, #:upper16:1073764616
+ 559 0004 45F60013 		movw	r3, #:lower16:1073764608
+ 560 0008 C4F20003 		movt	r3, #:upper16:1073764608
+ 561 000c 45F60012 		movw	r2, #:lower16:1073764608
+ 562 0010 C4F20002 		movt	r2, #:upper16:1073764608
  563 0014 1278     		ldrb	r2, [r2, #0]
  564 0016 D2B2     		uxtb	r2, r2
  565 0018 42F00102 		orr	r2, r2, #1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  582              	.LFB7:
  439:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
  440:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 19
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 19
 
 
  441:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     /*******************************************************************************
@@ -1121,10 +1121,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  466:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         /* Stop all conversions */
  467:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         ADC_SAR_2_SAR_CSR0_REG &= (uint8)~ADC_SAR_2_SAR_SOF_START_CONV;
  595              		.loc 1 467 0
- 596 0004 45F60813 		movw	r3, #:lower16:1073764616
- 597 0008 C4F20003 		movt	r3, #:upper16:1073764616
- 598 000c 45F60812 		movw	r2, #:lower16:1073764616
- 599 0010 C4F20002 		movt	r2, #:upper16:1073764616
+ 596 0004 45F60013 		movw	r3, #:lower16:1073764608
+ 597 0008 C4F20003 		movt	r3, #:upper16:1073764608
+ 598 000c 45F60012 		movw	r2, #:lower16:1073764608
+ 599 0010 C4F20002 		movt	r2, #:upper16:1073764608
  600 0014 1278     		ldrb	r2, [r2, #0]
  601 0016 D2B2     		uxtb	r2, r2
  602 0018 02F0FE02 		and	r2, r2, #254
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  474:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     }
  604              		.loc 1 474 0
  605 001e BD46     		mov	sp, r7
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 20
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 20
 
 
  606 0020 80BC     		pop	{r7}
@@ -1198,14 +1198,14 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  498:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     uint8 status;
  499:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
  500:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     do
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 21
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 21
 
 
  501:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     {
  502:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         status = ADC_SAR_2_SAR_CSR1_REG & ADC_SAR_2_SAR_EOF_1;
  637              		.loc 1 502 0
- 638 000a 45F60913 		movw	r3, #:lower16:1073764617
- 639 000e C4F20003 		movt	r3, #:upper16:1073764617
+ 638 000a 45F60113 		movw	r3, #:lower16:1073764609
+ 639 000e C4F20003 		movt	r3, #:upper16:1073764609
  640 0012 1B78     		ldrb	r3, [r3, #0]
  641 0014 DBB2     		uxtb	r3, r3
  642 0016 03F00103 		and	r3, r3, #1
@@ -1234,8 +1234,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  509:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         /* Do the unconditional read operation of the CSR1 register to make sure the EOC bit has be
  510:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         CY_GET_REG8(ADC_SAR_2_SAR_CSR1_PTR);
  659              		.loc 1 510 0
- 660 0036 45F60913 		movw	r3, #:lower16:1073764617
- 661 003a C4F20003 		movt	r3, #:upper16:1073764617
+ 660 0036 45F60113 		movw	r3, #:lower16:1073764609
+ 661 003a C4F20003 		movt	r3, #:upper16:1073764609
  662 003e 1B78     		ldrb	r3, [r3, #0]
  663              	.L27:
  511:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     }
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  677              		.thumb
  678              		.thumb_func
  679              		.type	ADC_SAR_2_GetResult8, %function
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 22
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 22
 
 
  680              	ADC_SAR_2_GetResult8:
@@ -1311,14 +1311,14 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  545:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
  546:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         res = CY_GET_REG16(ADC_SAR_2_SAR_WRK_PTR);
  697              		.loc 1 546 0
- 698 0006 45F6A233 		movw	r3, #:lower16:1073765282
- 699 000a C4F20003 		movt	r3, #:upper16:1073765282
+ 698 0006 45F6A033 		movw	r3, #:lower16:1073765280
+ 699 000a C4F20003 		movt	r3, #:upper16:1073765280
  700 000e 1B88     		ldrh	r3, [r3, #0]	@ movhi
  701 0010 FB80     		strh	r3, [r7, #6]	@ movhi
  547:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
  548:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         /* Use 12bits for PSoC5 production silicon and shift the results for lower resolution in th
  549:.\Generated_Source\PSoC5/ADC_SAR_2.c ****         switch (ADC_SAR_2_resolution)
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 23
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 23
 
 
  702              		.loc 1 549 0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  740              		.cfi_endproc
  741              	.LFE9:
  742              		.size	ADC_SAR_2_GetResult8, .-ADC_SAR_2_GetResult8
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 24
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 24
 
 
  743              		.section	.text.ADC_SAR_2_GetResult16,"ax",%progbits
@@ -1436,9 +1436,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  595:.\Generated_Source\PSoC5/ADC_SAR_2.c **** 
  596:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     res = CY_GET_REG16(ADC_SAR_2_SAR_WRK_PTR);
  766              		.loc 1 596 0
- 767 0006 45F6A233 		movw	r3, #:lower16:1073765282
- 768 000a C4F20003 		movt	r3, #:upper16:1073765282
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 25
+ 767 0006 45F6A033 		movw	r3, #:lower16:1073765280
+ 768 000a C4F20003 		movt	r3, #:upper16:1073765280
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 25
 
 
  769 000e 1B88     		ldrh	r3, [r3, #0]	@ movhi
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  805 0054 BD46     		mov	sp, r7
  806 0056 80BC     		pop	{r7}
  807 0058 7047     		bx	lr
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 26
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 26
 
 
  808              		.cfi_endproc
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  836              		.loc 1 640 0
  837 000a 40F20003 		movw	r3, #:lower16:ADC_SAR_2_offset
  838 000e C0F20003 		movt	r3, #:upper16:ADC_SAR_2_offset
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 27
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 27
 
 
  839 0012 FA88     		ldrh	r2, [r7, #6]	@ movhi
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  868              		.cfi_offset 7, -8
  869              	.LCFI34:
  870              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 28
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 28
 
 
  871 0006 0346     		mov	r3, r0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  693:.\Generated_Source\PSoC5/ADC_SAR_2.c ****             #if(!((ADC_SAR_2_DEFAULT_RANGE == ADC_SAR_2__VSS_TO_VREF) || \
  694:.\Generated_Source\PSoC5/ADC_SAR_2.c ****                  (ADC_SAR_2_DEFAULT_RANGE == ADC_SAR_2__VSSA_TO_VDDA) || \
  695:.\Generated_Source\PSoC5/ADC_SAR_2.c ****                  (ADC_SAR_2_DEFAULT_RANGE == ADC_SAR_2__VSSA_TO_VDAC)) )
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 29
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 29
 
 
  696:.\Generated_Source\PSoC5/ADC_SAR_2.c ****                 diff_zero = ADC_SAR_2_SAR_DIFF_SHIFT >> 4u;
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  718:.\Generated_Source\PSoC5/ADC_SAR_2.c ****     #endif /* End ADC_SAR_2_DEFAULT_RANGE */
  719:.\Generated_Source\PSoC5/ADC_SAR_2.c **** }
  930              		.loc 1 719 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 30
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 30
 
 
  931 007a 07F11007 		add	r7, r7, #16
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  962              		.loc 1 742 0
  963 000a 40F20003 		movw	r3, #:lower16:ADC_SAR_2_countsPerVolt
  964 000e C0F20003 		movt	r3, #:upper16:ADC_SAR_2_countsPerVolt
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 31
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 31
 
 
  965 0012 FA88     		ldrh	r2, [r7, #6]	@ movhi
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  996              	.LCFI40:
  997              		.cfi_def_cfa_register 7
  998 0006 0346     		mov	r3, r0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 32
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 32
 
 
  999 0008 FB80     		strh	r3, [r7, #6]	@ movhi
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  778:.\Generated_Source\PSoC5/ADC_SAR_2.c **** /*******************************************************************************
  779:.\Generated_Source\PSoC5/ADC_SAR_2.c **** * Function Name: ADC_SAR_2_CountsTo_uVolts
  780:.\Generated_Source\PSoC5/ADC_SAR_2.c **** ********************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 33
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 33
 
 
  781:.\Generated_Source\PSoC5/ADC_SAR_2.c **** *
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1068              		.loc 1 807 0
  1069 0022 B7F90620 		ldrsh	r2, [r7, #6]
  1070 0026 4AF22013 		movw	r3, #:lower16:500000
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 34
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 34
 
 
  1071 002a C0F20703 		movt	r3, #:upper16:500000
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  831:.\Generated_Source\PSoC5/ADC_SAR_2.c **** float32 ADC_SAR_2_CountsTo_Volts(int16 adcCounts)
  832:.\Generated_Source\PSoC5/ADC_SAR_2.c **** {
  1102              		.loc 1 832 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 35
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 35
 
 
  1103              		.cfi_startproc
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1149 0050 FB68     		ldr	r3, [r7, #12]	@ float
  841:.\Generated_Source\PSoC5/ADC_SAR_2.c **** }
  1150              		.loc 1 841 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 36
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 36
 
 
  1151 0052 1846     		mov	r0, r3
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1205 006c 08       		.sleb128 8
  1206 006d 04000000 		.4byte	.LCFI5
  1207 0071 06000000 		.4byte	.LCFI6
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 37
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 37
 
 
  1208 0075 0200     		.2byte	0x2
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1262              	.LLST5:
  1263 00fb 00000000 		.4byte	.LFB5
  1264 00ff 02000000 		.4byte	.LCFI13
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 38
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 38
 
 
  1265 0103 0100     		.2byte	0x1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1319 0188 00000000 		.4byte	.LFB8
  1320 018c 02000000 		.4byte	.LCFI20
  1321 0190 0100     		.2byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 39
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 39
 
 
  1322 0192 5D       		.byte	0x5d
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1376 0218 10       		.sleb128 16
  1377 0219 06000000 		.4byte	.LCFI28
  1378 021d 5A000000 		.4byte	.LFE10
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 40
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 40
 
 
  1379 0221 0200     		.2byte	0x2
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1433 02a6 02000000 		.4byte	.LCFI35
  1434 02aa 04000000 		.4byte	.LCFI36
  1435 02ae 0200     		.2byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 41
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 41
 
 
  1436 02b0 7D       		.byte	0x7d
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1490 0336 77       		.byte	0x77
  1491 0337 18       		.sleb128 24
  1492 0338 00000000 		.4byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 42
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 42
 
 
  1493 033c 00000000 		.4byte	0x0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1547 0045 03       		.uleb128 0x3
  1548 0046 04       		.byte	0x4
  1549 0047 05       		.byte	0x5
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 43
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 43
 
 
  1550 0048 696E7400 		.ascii	"int\000"
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1604 00b1 D9000000 		.4byte	.LASF15
  1605 00b5 02       		.byte	0x2
  1606 00b6 52       		.byte	0x52
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 44
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 44
 
 
  1607 00b7 BB000000 		.4byte	0xbb
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1661 0129 07       		.uleb128 0x7
  1662 012a 01       		.byte	0x1
  1663 012b 5F000000 		.4byte	.LASF23
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 45
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 45
 
 
  1664 012f 01       		.byte	0x1
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1718 01a6 1E030000 		.4byte	.LASF27
  1719 01aa 01       		.byte	0x1
  1720 01ab 6501     		.2byte	0x165
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 46
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 46
 
 
  1721 01ad 79000000 		.4byte	0x79
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1775 0225 79000000 		.4byte	0x79
  1776 0229 02       		.byte	0x2
  1777 022a 91       		.byte	0x91
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 47
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 47
 
 
  1778 022b 77       		.sleb128 -9
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1832 02a8 01       		.byte	0x1
  1833 02a9 7E02     		.2byte	0x27e
  1834 02ab 9A000000 		.4byte	0x9a
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 48
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 48
 
 
  1835 02af 02       		.byte	0x2
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1889 031e 01       		.byte	0x1
  1890 031f 9A000000 		.4byte	0x9a
  1891 0323 00000000 		.4byte	.LFB14
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 49
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 49
 
 
  1892 0327 52000000 		.4byte	.LFE14
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  1946 0399 B0000000 		.4byte	0xb0
  1947 039d 00000000 		.4byte	.LFB16
  1948 03a1 5C000000 		.4byte	.LFE16
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 50
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 50
 
 
  1949 03a5 40030000 		.4byte	.LLST16
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2003 0413 03       		.byte	0x3
  2004 0414 00000000 		.4byte	ADC_SAR_2_countsPerVolt
  2005 0418 10       		.uleb128 0x10
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 51
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 51
 
 
  2006 0419 30000000 		.4byte	.LASF51
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2060 002c 24       		.uleb128 0x24
  2061 002d 00       		.byte	0x0
  2062 002e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 52
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 52
 
 
  2063 002f 0B       		.uleb128 0xb
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2117 0065 12       		.uleb128 0x12
  2118 0066 01       		.uleb128 0x1
  2119 0067 40       		.uleb128 0x40
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 53
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 53
 
 
  2120 0068 06       		.uleb128 0x6
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2174 009e 01       		.uleb128 0x1
  2175 009f 13       		.uleb128 0x13
  2176 00a0 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 54
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 54
 
 
  2177 00a1 00       		.byte	0x0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2231 00d7 12       		.uleb128 0x12
  2232 00d8 01       		.uleb128 0x1
  2233 00d9 40       		.uleb128 0x40
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 55
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 55
 
 
  2234 00da 06       		.uleb128 0x6
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2288 0110 02       		.uleb128 0x2
  2289 0111 0A       		.uleb128 0xa
  2290 0112 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 56
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 56
 
 
  2291 0113 00       		.byte	0x0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2320 00af 4144435F 		.ascii	"ADC_SAR_2_StopConvert\000"
  2320      5341525F 
  2320      325F5374 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 57
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 57
 
 
  2320      6F70436F 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2338      69745661 
  2338      7200
  2339 01b3 EF030000 		.4byte	0x3ef
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 58
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 58
 
 
  2340 01b7 4144435F 		.ascii	"ADC_SAR_2_offset\000"
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2383 0084 52000000 		.4byte	.LFE14-.LFB14
  2384 0088 00000000 		.4byte	.LFB15
  2385 008c 58000000 		.4byte	.LFE15-.LFB15
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 59
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 59
 
 
  2386 0090 00000000 		.4byte	.LFB16
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2434      61727400 
  2435              	.LASF38:
  2436 001e 4144435F 		.ascii	"ADC_SAR_2_SetGain\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 60
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 60
 
 
  2436      5341525F 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2459      7400
  2460              	.LASF1:
  2461 00e7 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 61
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 61
 
 
  2461      676E6564 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2484              	.LASF11:
  2485 0196 75696E74 		.ascii	"uint16\000"
  2485      313600
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 62
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 62
 
 
  2486              	.LASF49:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2508              	.LASF48:
  2509 024e 4144435F 		.ascii	"ADC_SAR_2_initVar\000"
  2509      5341525F 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 63
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 63
 
 
  2509      325F696E 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 1
  2533      20696E74 
  2533      00
  2534              	.LASF28:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccm5yCqj.s 			page 64
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccE3JNaP.s 			page 64
 
 
  2535 02fb 4144435F 		.ascii	"ADC_SAR_2_StartConvert\000"
