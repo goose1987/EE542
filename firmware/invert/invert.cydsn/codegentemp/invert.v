@@ -1,6 +1,6 @@
 // ======================================================================
 // invert.v generated from TopDesign.cysch
-// 10/26/2014 at 19:50
+// 10/28/2014 at 20:57
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -788,7 +788,7 @@ module ADC_SAR_v2_0_4 (
 
 endmodule
 
-// ADC_SAR_v2_0(ADC_Clock=1, ADC_Clock_Frequency=12000001, ADC_Input_Range=0, ADC_Power=0, ADC_Reference=1, ADC_Resolution=12, ADC_Resolution_HW=12, ADC_SampleMode=0, Enable_next_out=false, Ref_Voltage=1.024, Ref_Voltage_mV=1024, rm_int=false, Sample_Precharge=7, Sample_Rate=631579, Sample_Rate_def=631579, CY_COMPONENT_NAME=ADC_SAR_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_SAR_1, CY_INSTANCE_SHORT_NAME=ADC_SAR_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_SAR_1, )
+// ADC_SAR_v2_0(ADC_Clock=1, ADC_Clock_Frequency=12000001, ADC_Input_Range=0, ADC_Power=0, ADC_Reference=1, ADC_Resolution=12, ADC_Resolution_HW=12, ADC_SampleMode=0, Enable_next_out=false, Ref_Voltage=1.024, Ref_Voltage_mV=1024, rm_int=false, Sample_Precharge=7, Sample_Rate=631579, Sample_Rate_def=631579, CY_COMPONENT_NAME=ADC_SAR_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_SAR_V, CY_INSTANCE_SHORT_NAME=ADC_SAR_V, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_SAR_V, )
 module ADC_SAR_v2_0_5 (
     vplus,
     vminus,
@@ -1083,6 +1083,7 @@ endmodule
 // top
 module top ;
 
+          wire  Net_285;
           wire  Net_199;
     electrical  Net_198;
           wire  Net_197;
@@ -1133,17 +1134,18 @@ module top ;
           wire  Net_37;
           wire  Net_36;
           wire  Net_35;
-    electrical  Net_200;
-    electrical  Net_193;
-    electrical  Net_153;
-    electrical  Net_152;
-          wire  Net_16;
           wire  Net_151;
           wire  Net_150;
           wire  Net_149;
           wire  Net_148;
-          wire  Net_147;
+          wire  Net_16;
           wire  Net_146;
+          wire  Net_147;
+    electrical  Net_200;
+    electrical  Net_193;
+    electrical  Net_153;
+    electrical  Net_152;
+          wire  Net_280;
 
     PWM_v2_40_0 PWM_BUCK (
         .reset(1'b0),
@@ -1176,7 +1178,7 @@ module top ;
 
     PWM_v2_40_1 PWM_UNFOLD_A (
         .reset(1'b0),
-        .clock(Net_16),
+        .clock(Net_280),
         .tc(Net_134),
         .pwm1(Net_135),
         .pwm2(Net_136),
@@ -1193,7 +1195,7 @@ module top ;
 
     PWM_v2_40_2 PWM_UNFOLD_B (
         .reset(1'b0),
-        .clock(Net_16),
+        .clock(Net_280),
         .tc(Net_120),
         .pwm1(Net_121),
         .pwm2(Net_122),
@@ -1919,7 +1921,7 @@ module top ;
 
 	assign tmpOE__Pin_10_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-    ADC_SAR_v2_0_5 ADC_SAR_1 (
+    ADC_SAR_v2_0_5 ADC_SAR_V (
         .vplus(Net_193),
         .vminus(Net_194),
         .soc(1'b0),
@@ -1929,6 +1931,18 @@ module top ;
         .eos(Net_199));
 
     CharLCD_v1_90_6 LCD_Char_1 ();
+
+
+	cy_clock_v1_0
+		#(.id("094feb3b-3726-43e2-bf57-5a00776a9905"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("1000000000"),
+		  .is_direct(0),
+		  .is_digital(1))
+		Clock_2
+		 (.clock_out(Net_280));
+
 
 
 

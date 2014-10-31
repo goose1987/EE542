@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
   20:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
   21:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** #if !(CY_PSOC5A &&\
   22:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** 	 ADC_SAR_1_Bypass__PORT == 15 && ((ADC_SAR_1_Bypass__MASK & 0xC0) != 0))
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 2
 
 
   23:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** 
@@ -102,23 +102,23 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
   51 000e C4F20003 		movt	r3, #:upper16:1073762560
   52 0012 1B78     		ldrb	r3, [r3, #0]
   53 0014 DBB2     		uxtb	r3, r3
-  54 0016 23F00403 		bic	r3, r3, #4
+  54 0016 23F01003 		bic	r3, r3, #16
   55 001a FB73     		strb	r3, [r7, #15]
   42:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c ****     ADC_SAR_1_Bypass_DR = staticBits | ((uint8)(value << ADC_SAR_1_Bypass_SHIFT) & ADC_SAR_1_Bypass
   56              		.loc 1 42 0
   57 001c 45F20013 		movw	r3, #:lower16:1073762560
   58 0020 C4F20003 		movt	r3, #:upper16:1073762560
   59 0024 FA79     		ldrb	r2, [r7, #7]
-  60 0026 4FEA8202 		lsl	r2, r2, #2
+  60 0026 4FEA0212 		lsl	r2, r2, #4
   61 002a D2B2     		uxtb	r2, r2
-  62 002c 02F00402 		and	r2, r2, #4
+  62 002c 02F01002 		and	r2, r2, #16
   63 0030 F97B     		ldrb	r1, [r7, #15]
   64 0032 42EA0102 		orr	r2, r2, r1
   65 0036 D2B2     		uxtb	r2, r2
   66 0038 1A70     		strb	r2, [r3, #0]
   43:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** }
   67              		.loc 1 43 0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 3
 
 
   68 003a 07F11407 		add	r7, r7, #20
@@ -173,12 +173,12 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
   99 0008 FB71     		strb	r3, [r7, #7]
   62:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** 	CyPins_SetPinDriveMode(ADC_SAR_1_Bypass_0, mode);
  100              		.loc 1 62 0
- 101 000a 45F20203 		movw	r3, #:lower16:1073762306
- 102 000e C4F20003 		movt	r3, #:upper16:1073762306
- 103 0012 45F20202 		movw	r2, #:lower16:1073762306
- 104 0016 C4F20002 		movt	r2, #:upper16:1073762306
+ 101 000a 45F20403 		movw	r3, #:lower16:1073762308
+ 102 000e C4F20003 		movt	r3, #:upper16:1073762308
+ 103 0012 45F20402 		movw	r2, #:lower16:1073762308
+ 104 0016 C4F20002 		movt	r2, #:upper16:1073762308
  105 001a 1278     		ldrb	r2, [r2, #0]
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 4
 
 
  106 001c D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  137 0000 80B4     		push	{r7}
  138              	.LCFI6:
  139              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 5
 
 
  140 0002 00AF     		add	r7, sp, #0
@@ -251,8 +251,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  146 0008 C4F20003 		movt	r3, #:upper16:1073762561
  147 000c 1B78     		ldrb	r3, [r3, #0]
  148 000e DBB2     		uxtb	r3, r3
- 149 0010 03F00403 		and	r3, r3, #4
- 150 0014 4FEA9303 		lsr	r3, r3, #2
+ 149 0010 03F01003 		and	r3, r3, #16
+ 150 0014 4FEA1313 		lsr	r3, r3, #4
  151 0018 DBB2     		uxtb	r3, r3
   87:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** }
  152              		.loc 1 87 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  174              	.LCFI8:
  175              		.cfi_def_cfa_offset 4
  176 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 6
 
 
  177              		.cfi_offset 7, -4
@@ -310,8 +310,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  182 0008 C4F20003 		movt	r3, #:upper16:1073762560
  183 000c 1B78     		ldrb	r3, [r3, #0]
  184 000e DBB2     		uxtb	r3, r3
- 185 0010 03F00403 		and	r3, r3, #4
- 186 0014 4FEA9303 		lsr	r3, r3, #2
+ 185 0010 03F01003 		and	r3, r3, #16
+ 186 0014 4FEA1313 		lsr	r3, r3, #4
  187 0018 DBB2     		uxtb	r3, r3
  107:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** }
  188              		.loc 1 107 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  229 004a 0200     		.2byte	0x2
  230 004c 7D       		.byte	0x7d
  231 004d 04       		.sleb128 4
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 7
 
 
  232 004e 04000000 		.4byte	.LCFI4
@@ -414,11 +414,11 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  282 0006 00000000 		.4byte	.Ldebug_abbrev0
  283 000a 04       		.byte	0x4
  284 000b 01       		.uleb128 0x1
- 285 000c 13010000 		.4byte	.LASF18
+ 285 000c 15010000 		.4byte	.LASF18
  286 0010 01       		.byte	0x1
  287 0011 3C000000 		.4byte	.LASF19
- 288 0015 CC000000 		.4byte	.LASF20
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 8
+ 288 0015 A8000000 		.4byte	.LASF20
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 8
 
 
  289 0019 00000000 		.4byte	0x0
@@ -428,7 +428,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  293 0029 02       		.uleb128 0x2
  294 002a 01       		.byte	0x1
  295 002b 06       		.byte	0x6
- 296 002c 72010000 		.4byte	.LASF0
+ 296 002c 74010000 		.4byte	.LASF0
  297 0030 02       		.uleb128 0x2
  298 0031 01       		.byte	0x1
  299 0032 08       		.byte	0x8
@@ -436,7 +436,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  301 0037 02       		.uleb128 0x2
  302 0038 02       		.byte	0x2
  303 0039 05       		.byte	0x5
- 304 003a 3B010000 		.4byte	.LASF2
+ 304 003a 3D010000 		.4byte	.LASF2
  305 003e 02       		.uleb128 0x2
  306 003f 02       		.byte	0x2
  307 0040 07       		.byte	0x7
@@ -444,7 +444,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  309 0045 02       		.uleb128 0x2
  310 0046 04       		.byte	0x4
  311 0047 05       		.byte	0x5
- 312 0048 4B010000 		.4byte	.LASF4
+ 312 0048 4D010000 		.4byte	.LASF4
  313 004c 02       		.uleb128 0x2
  314 004d 04       		.byte	0x4
  315 004e 07       		.byte	0x7
@@ -456,7 +456,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  321 005a 02       		.uleb128 0x2
  322 005b 08       		.byte	0x8
  323 005c 07       		.byte	0x7
- 324 005d B5000000 		.4byte	.LASF7
+ 324 005d F9000000 		.4byte	.LASF7
  325 0061 03       		.uleb128 0x3
  326 0062 04       		.byte	0x4
  327 0063 05       		.byte	0x5
@@ -464,9 +464,9 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  329 0068 02       		.uleb128 0x2
  330 0069 04       		.byte	0x4
  331 006a 07       		.byte	0x7
- 332 006b A8000000 		.4byte	.LASF8
+ 332 006b EC000000 		.4byte	.LASF8
  333 006f 04       		.uleb128 0x4
- 334 0070 45010000 		.4byte	.LASF21
+ 334 0070 47010000 		.4byte	.LASF21
  335 0074 02       		.byte	0x2
  336 0075 4C       		.byte	0x4c
  337 0076 30000000 		.4byte	0x30
@@ -478,16 +478,16 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  343 0082 08       		.byte	0x8
  344 0083 04       		.byte	0x4
  345 0084 A1000000 		.4byte	.LASF10
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 9
 
 
  346 0088 02       		.uleb128 0x2
  347 0089 01       		.byte	0x1
  348 008a 08       		.byte	0x8
- 349 008b 1F010000 		.4byte	.LASF11
+ 349 008b 21010000 		.4byte	.LASF11
  350 008f 05       		.uleb128 0x5
  351 0090 01       		.byte	0x1
- 352 0091 24010000 		.4byte	.LASF12
+ 352 0091 26010000 		.4byte	.LASF12
  353 0095 01       		.byte	0x1
  354 0096 27       		.byte	0x27
  355 0097 01       		.byte	0x1
@@ -514,7 +514,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  376 00c4 00       		.byte	0x0
  377 00c5 05       		.uleb128 0x5
  378 00c6 01       		.byte	0x1
- 379 00c7 54010000 		.4byte	.LASF13
+ 379 00c7 56010000 		.4byte	.LASF13
  380 00cb 01       		.byte	0x1
  381 00cc 3C       		.byte	0x3c
  382 00cd 01       		.byte	0x1
@@ -523,7 +523,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  385 00d6 37000000 		.4byte	.LLST1
  386 00da ED000000 		.4byte	0xed
  387 00de 06       		.uleb128 0x6
- 388 00df 0E010000 		.4byte	.LASF15
+ 388 00df 10010000 		.4byte	.LASF15
  389 00e3 01       		.byte	0x1
  390 00e4 3C       		.byte	0x3c
  391 00e5 6F000000 		.4byte	0x6f
@@ -533,12 +533,12 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  395 00ec 00       		.byte	0x0
  396 00ed 08       		.uleb128 0x8
  397 00ee 01       		.byte	0x1
- 398 00ef 7E010000 		.4byte	.LASF16
+ 398 00ef 80010000 		.4byte	.LASF16
  399 00f3 01       		.byte	0x1
  400 00f4 54       		.byte	0x54
  401 00f5 01       		.byte	0x1
  402 00f6 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 10
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 10
 
 
  403 00fa 00000000 		.4byte	.LFB2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  457 0027 03       		.uleb128 0x3
  458 0028 08       		.uleb128 0x8
  459 0029 00       		.byte	0x0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 11
 
 
  460 002a 00       		.byte	0x0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  514 0060 00       		.byte	0x0
  515 0061 03       		.uleb128 0x3
  516 0062 0E       		.uleb128 0xe
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 12
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 12
 
 
  517 0063 3A       		.uleb128 0x3a
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  561      315F4279 
  561      70617373 
  561      5F526561 
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 13
 
 
  562 0065 06010000 		.4byte	0x106
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  604              	.LASF22:
  605 0031 73746174 		.ascii	"staticBits\000"
  605      69634269 
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 14
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 14
 
 
  605      747300
@@ -811,70 +811,70 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 1
  616              	.LASF10:
  617 00a1 646F7562 		.ascii	"double\000"
  617      6C6500
- 618              	.LASF8:
- 619 00a8 756E7369 		.ascii	"unsigned int\000"
- 619      676E6564 
- 619      20696E74 
- 619      00
- 620              	.LASF7:
- 621 00b5 6C6F6E67 		.ascii	"long long unsigned int\000"
- 621      206C6F6E 
- 621      6720756E 
- 621      7369676E 
- 621      65642069 
- 622              	.LASF20:
- 623 00cc 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
- 623      73657273 
- 623      5C555345 
- 623      525C446F 
- 623      63756D65 
- 624 00f9 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
- 624      6572745C 
- 624      696E7665 
- 624      72742E63 
- 624      7964736E 
+ 618              	.LASF20:
+ 619 00a8 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 619      73657273 
+ 619      5C686F61 
+ 619      6E67705C 
+ 619      446F6375 
+ 620 00d5 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 620      6E766572 
+ 620      745C696E 
+ 620      76657274 
+ 620      2E637964 
+ 621              	.LASF8:
+ 622 00ec 756E7369 		.ascii	"unsigned int\000"
+ 622      676E6564 
+ 622      20696E74 
+ 622      00
+ 623              	.LASF7:
+ 624 00f9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 624      206C6F6E 
+ 624      6720756E 
+ 624      7369676E 
+ 624      65642069 
  625              	.LASF15:
- 626 010e 6D6F6465 		.ascii	"mode\000"
+ 626 0110 6D6F6465 		.ascii	"mode\000"
  626      00
  627              	.LASF18:
- 628 0113 474E5520 		.ascii	"GNU C 4.4.1\000"
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccteSTEF.s 			page 15
+ 628 0115 474E5520 		.ascii	"GNU C 4.4.1\000"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cchUvtQP.s 			page 15
 
 
  628      4320342E 
  628      342E3100 
  629              	.LASF11:
- 630 011f 63686172 		.ascii	"char\000"
+ 630 0121 63686172 		.ascii	"char\000"
  630      00
  631              	.LASF12:
- 632 0124 4144435F 		.ascii	"ADC_SAR_1_Bypass_Write\000"
+ 632 0126 4144435F 		.ascii	"ADC_SAR_1_Bypass_Write\000"
  632      5341525F 
  632      315F4279 
  632      70617373 
  632      5F577269 
  633              	.LASF2:
- 634 013b 73686F72 		.ascii	"short int\000"
+ 634 013d 73686F72 		.ascii	"short int\000"
  634      7420696E 
  634      7400
  635              	.LASF21:
- 636 0145 75696E74 		.ascii	"uint8\000"
+ 636 0147 75696E74 		.ascii	"uint8\000"
  636      3800
  637              	.LASF4:
- 638 014b 6C6F6E67 		.ascii	"long int\000"
+ 638 014d 6C6F6E67 		.ascii	"long int\000"
  638      20696E74 
  638      00
  639              	.LASF13:
- 640 0154 4144435F 		.ascii	"ADC_SAR_1_Bypass_SetDriveMode\000"
+ 640 0156 4144435F 		.ascii	"ADC_SAR_1_Bypass_SetDriveMode\000"
  640      5341525F 
  640      315F4279 
  640      70617373 
  640      5F536574 
  641              	.LASF0:
- 642 0172 7369676E 		.ascii	"signed char\000"
+ 642 0174 7369676E 		.ascii	"signed char\000"
  642      65642063 
  642      68617200 
  643              	.LASF16:
- 644 017e 4144435F 		.ascii	"ADC_SAR_1_Bypass_Read\000"
+ 644 0180 4144435F 		.ascii	"ADC_SAR_1_Bypass_Read\000"
  644      5341525F 
  644      315F4279 
  644      70617373 
