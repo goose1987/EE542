@@ -4213,7 +4213,7 @@
     <peripheral>
       <name>PWM_UNFOLD_B</name>
       <description>No description available</description>
-      <baseAddress>0x4000652A</baseAddress>
+      <baseAddress>0x40006528</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x72</size>
@@ -4232,7 +4232,7 @@
         <register>
           <name>PWM_UNFOLD_B_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x50</addressOffset>
+          <addressOffset>0x52</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4264,7 +4264,7 @@
         <register>
           <name>PWM_UNFOLD_B_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x61</addressOffset>
+          <addressOffset>0x60</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4831,7 +4831,7 @@
         <register>
           <name>PWM_UNFOLD_A_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x153</addressOffset>
+          <addressOffset>0x151</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4911,18 +4911,36 @@
     <peripheral>
       <name>PWM_BUCK</name>
       <description>No description available</description>
-      <baseAddress>0x40006524</baseAddress>
+      <baseAddress>0x4000650B</baseAddress>
       <addressBlock>
         <offset>0</offset>
-        <size>0x72</size>
+        <size>0x8B</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
         <register>
+          <name>PWM_BUCK_DeadBand_Counter</name>
+          <description>UDB DeadBand - DeadBand Counter Value</description>
+          <addressOffset>0x0</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
           <name>PWM_BUCK_COMPARE_Reg</name>
           <description>UDB.D0 - Assigned Compare Value</description>
-          <addressOffset>0x0</addressOffset>
+          <addressOffset>0x19</addressOffset>
           <size>16</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>PWM_BUCK_DeadBand_Count</name>
+          <description>UDB DeadBand - Assigned DeadBand Count Value</description>
+          <addressOffset>0x20</addressOffset>
+          <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
@@ -4930,7 +4948,7 @@
         <register>
           <name>PWM_BUCK_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x54</addressOffset>
+          <addressOffset>0x69</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4962,7 +4980,7 @@
         <register>
           <name>PWM_BUCK_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x61</addressOffset>
+          <addressOffset>0x7A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -5008,7 +5026,7 @@
         <register>
           <name>PWM_BUCK_STATUS_AUX_CTRLDP0</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x70</addressOffset>
+          <addressOffset>0x89</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -5133,7 +5151,7 @@
         <register>
           <name>PWM_BUCK_STATUS_AUX_CTRLDP1</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x71</addressOffset>
+          <addressOffset>0x8A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
