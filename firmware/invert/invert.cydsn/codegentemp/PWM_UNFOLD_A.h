@@ -28,7 +28,7 @@ extern uint8 PWM_UNFOLD_A_initVar;
 /***************************************
 * Conditional Compilation Parameters
 ***************************************/
-#define PWM_UNFOLD_A_Resolution 16u
+#define PWM_UNFOLD_A_Resolution 8u
 #define PWM_UNFOLD_A_UsingFixedFunction 0u
 #define PWM_UNFOLD_A_DeadBandMode 1u
 #define PWM_UNFOLD_A_KillModeMinTime 0u
@@ -108,16 +108,16 @@ typedef struct
        
     #if(!PWM_UNFOLD_A_UsingFixedFunction)
         #if (CY_UDB_V0)
-            uint16 PWMUdb;               /* PWM Current Counter value  */
-            uint16 PWMPeriod;            /* PWM Current Period value   */
+            uint8 PWMUdb;               /* PWM Current Counter value  */
+            uint8 PWMPeriod;            /* PWM Current Period value   */
             #if (PWM_UNFOLD_A_UseStatus)
                 uint8 InterruptMaskValue;   /* PWM Current Interrupt Mask */
             #endif /* (PWM_UNFOLD_A_UseStatus) */
             #if(PWM_UNFOLD_A_UseOneCompareMode)
-                uint16 PWMCompareValue;     /* PWM Current Compare value */
+                uint8 PWMCompareValue;     /* PWM Current Compare value */
             #else
-                uint16 PWMCompareValue1;     /* PWM Current Compare value1 */
-                uint16 PWMCompareValue2;     /* PWM Current Compare value2 */
+                uint8 PWMCompareValue1;     /* PWM Current Compare value1 */
+                uint8 PWMCompareValue2;     /* PWM Current Compare value2 */
             #endif /* (PWM_UNFOLD_A_UseOneCompareMode) */
             
             /* Backup for Deadband parameters */
@@ -134,9 +134,9 @@ typedef struct
         #endif /* (CY_UDB_V0) */
         
         #if (CY_UDB_V1)
-            uint16 PWMUdb;               /* PWM Current Counter value  */
+            uint8 PWMUdb;               /* PWM Current Counter value  */
             #if(!PWM_UNFOLD_A_PWMModeIsCenterAligned)
-                uint16 PWMPeriod;
+                uint8 PWMPeriod;
             #endif /* (!PWM_UNFOLD_A_PWMModeIsCenterAligned) */
             #if (PWM_UNFOLD_A_UseStatus)
                 uint8 InterruptMaskValue;   /* PWM Current Interrupt Mask */
@@ -197,27 +197,27 @@ void    PWM_UNFOLD_A_Stop(void) ;
 #endif /* (PWM_UNFOLD_A_UseOneCompareMode) */
 
 #if (!PWM_UNFOLD_A_UsingFixedFunction)
-    uint16   PWM_UNFOLD_A_ReadCounter(void) ;
-    uint16 PWM_UNFOLD_A_ReadCapture(void) ;
+    uint8   PWM_UNFOLD_A_ReadCounter(void) ;
+    uint8 PWM_UNFOLD_A_ReadCapture(void) ;
     
 	#if (PWM_UNFOLD_A_UseStatus)
 	        void PWM_UNFOLD_A_ClearFIFO(void) ;
 	#endif /* (PWM_UNFOLD_A_UseStatus) */
 
-    void    PWM_UNFOLD_A_WriteCounter(uint16 counter) ;
+    void    PWM_UNFOLD_A_WriteCounter(uint8 counter) ;
 #endif /* (!PWM_UNFOLD_A_UsingFixedFunction) */
 
-void    PWM_UNFOLD_A_WritePeriod(uint16 period) ;
-uint16 PWM_UNFOLD_A_ReadPeriod(void) ;
+void    PWM_UNFOLD_A_WritePeriod(uint8 period) ;
+uint8 PWM_UNFOLD_A_ReadPeriod(void) ;
 
 #if (PWM_UNFOLD_A_UseOneCompareMode)
-    void    PWM_UNFOLD_A_WriteCompare(uint16 compare) ;
-    uint16 PWM_UNFOLD_A_ReadCompare(void) ; 
+    void    PWM_UNFOLD_A_WriteCompare(uint8 compare) ;
+    uint8 PWM_UNFOLD_A_ReadCompare(void) ; 
 #else
-    void    PWM_UNFOLD_A_WriteCompare1(uint16 compare) ;
-    uint16 PWM_UNFOLD_A_ReadCompare1(void) ; 
-    void    PWM_UNFOLD_A_WriteCompare2(uint16 compare) ;
-    uint16 PWM_UNFOLD_A_ReadCompare2(void) ; 
+    void    PWM_UNFOLD_A_WriteCompare1(uint8 compare) ;
+    uint8 PWM_UNFOLD_A_ReadCompare1(void) ; 
+    void    PWM_UNFOLD_A_WriteCompare2(uint8 compare) ;
+    uint8 PWM_UNFOLD_A_ReadCompare2(void) ; 
 #endif /* (PWM_UNFOLD_A_UseOneCompareMode) */
 
 
@@ -242,7 +242,7 @@ void PWM_UNFOLD_A_RestoreConfig(void) ;
 /***************************************
 *         Initialization Values
 **************************************/
-#define PWM_UNFOLD_A_INIT_PERIOD_VALUE        1024u
+#define PWM_UNFOLD_A_INIT_PERIOD_VALUE        255u
 #define PWM_UNFOLD_A_INIT_COMPARE_VALUE1      128u
 #define PWM_UNFOLD_A_INIT_COMPARE_VALUE2      63u
 #define PWM_UNFOLD_A_INIT_INTERRUPTS_MODE     (uint8)(((uint8)(0u << PWM_UNFOLD_A_STATUS_TC_INT_EN_MASK_SHIFT)) | \
@@ -276,72 +276,72 @@ void PWM_UNFOLD_A_RestoreConfig(void) ;
    #if (PWM_UNFOLD_A_Resolution == 8u) /* 8bit - PWM */
 	   
 	   #if(PWM_UNFOLD_A_PWMModeIsCenterAligned)
-	       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
-	       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
+	       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
+	       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
 	   #else
-	       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F0_REG)
-	       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F0_REG)
+	       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F0_REG)
+	       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F0_REG)
 	   #endif /* (PWM_UNFOLD_A_PWMModeIsCenterAligned) */
 	   
-	   #define PWM_UNFOLD_A_COMPARE1_LSB    (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D0_REG)
-	   #define PWM_UNFOLD_A_COMPARE1_LSB_PTR ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D0_REG)
-	   #define PWM_UNFOLD_A_COMPARE2_LSB    (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
-	   #define PWM_UNFOLD_A_COMPARE2_LSB_PTR ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
-	   #define PWM_UNFOLD_A_COUNTERCAP_LSB   (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A1_REG)
-	   #define PWM_UNFOLD_A_COUNTERCAP_LSB_PTR ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A1_REG)
-	   #define PWM_UNFOLD_A_COUNTER_LSB     (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A0_REG)
-	   #define PWM_UNFOLD_A_COUNTER_LSB_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A0_REG)
-	   #define PWM_UNFOLD_A_CAPTURE_LSB     (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F1_REG)
-	   #define PWM_UNFOLD_A_CAPTURE_LSB_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F1_REG)
+	   #define PWM_UNFOLD_A_COMPARE1_LSB    (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D0_REG)
+	   #define PWM_UNFOLD_A_COMPARE1_LSB_PTR ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D0_REG)
+	   #define PWM_UNFOLD_A_COMPARE2_LSB    (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
+	   #define PWM_UNFOLD_A_COMPARE2_LSB_PTR ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
+	   #define PWM_UNFOLD_A_COUNTERCAP_LSB   (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A1_REG)
+	   #define PWM_UNFOLD_A_COUNTERCAP_LSB_PTR ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A1_REG)
+	   #define PWM_UNFOLD_A_COUNTER_LSB     (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A0_REG)
+	   #define PWM_UNFOLD_A_COUNTER_LSB_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A0_REG)
+	   #define PWM_UNFOLD_A_CAPTURE_LSB     (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F1_REG)
+	   #define PWM_UNFOLD_A_CAPTURE_LSB_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F1_REG)
    
    #else
    		#if(CY_PSOC3) /* 8-bit address space */	
 			#if(PWM_UNFOLD_A_PWMModeIsCenterAligned)
-		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
-		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
 		    #else
-		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F0_REG)
-		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F0_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F0_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F0_REG)
 		    #endif /* (PWM_UNFOLD_A_PWMModeIsCenterAligned) */
 		   
-		    #define PWM_UNFOLD_A_COMPARE1_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D0_REG)
-		    #define PWM_UNFOLD_A_COMPARE1_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D0_REG)
-		    #define PWM_UNFOLD_A_COMPARE2_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
-		    #define PWM_UNFOLD_A_COMPARE2_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__D1_REG)
-		    #define PWM_UNFOLD_A_COUNTERCAP_LSB   (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A1_REG)
-		    #define PWM_UNFOLD_A_COUNTERCAP_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A1_REG)
-		    #define PWM_UNFOLD_A_COUNTER_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A0_REG)
-		    #define PWM_UNFOLD_A_COUNTER_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__A0_REG)
-		    #define PWM_UNFOLD_A_CAPTURE_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F1_REG)
-		    #define PWM_UNFOLD_A_CAPTURE_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__F1_REG)
+		    #define PWM_UNFOLD_A_COMPARE1_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D0_REG)
+		    #define PWM_UNFOLD_A_COMPARE1_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D0_REG)
+		    #define PWM_UNFOLD_A_COMPARE2_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
+		    #define PWM_UNFOLD_A_COMPARE2_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__D1_REG)
+		    #define PWM_UNFOLD_A_COUNTERCAP_LSB   (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A1_REG)
+		    #define PWM_UNFOLD_A_COUNTERCAP_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A1_REG)
+		    #define PWM_UNFOLD_A_COUNTER_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A0_REG)
+		    #define PWM_UNFOLD_A_COUNTER_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__A0_REG)
+		    #define PWM_UNFOLD_A_CAPTURE_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F1_REG)
+		    #define PWM_UNFOLD_A_CAPTURE_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__F1_REG)
 		#else
 			#if(PWM_UNFOLD_A_PWMModeIsCenterAligned)
-		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_D1_REG)
-		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_D1_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_D1_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_D1_REG)
 		    #else
-		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_F0_REG)
-		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_F0_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB      (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_F0_REG)
+		       #define PWM_UNFOLD_A_PERIOD_LSB_PTR   ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_F0_REG)
 		    #endif /* (PWM_UNFOLD_A_PWMModeIsCenterAligned) */
 		   
-		    #define PWM_UNFOLD_A_COMPARE1_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_D0_REG)
-		    #define PWM_UNFOLD_A_COMPARE1_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_D0_REG)
-		    #define PWM_UNFOLD_A_COMPARE2_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_D1_REG)
-		    #define PWM_UNFOLD_A_COMPARE2_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_D1_REG)
-		    #define PWM_UNFOLD_A_COUNTERCAP_LSB   (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_A1_REG)
-		    #define PWM_UNFOLD_A_COUNTERCAP_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_A1_REG)
-		    #define PWM_UNFOLD_A_COUNTER_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_A0_REG)
-		    #define PWM_UNFOLD_A_COUNTER_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_A0_REG)
-		    #define PWM_UNFOLD_A_CAPTURE_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_F1_REG)
-		    #define PWM_UNFOLD_A_CAPTURE_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__16BIT_F1_REG)
+		    #define PWM_UNFOLD_A_COMPARE1_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_D0_REG)
+		    #define PWM_UNFOLD_A_COMPARE1_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_D0_REG)
+		    #define PWM_UNFOLD_A_COMPARE2_LSB    (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_D1_REG)
+		    #define PWM_UNFOLD_A_COMPARE2_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_D1_REG)
+		    #define PWM_UNFOLD_A_COUNTERCAP_LSB   (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_A1_REG)
+		    #define PWM_UNFOLD_A_COUNTERCAP_LSB_PTR ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_A1_REG)
+		    #define PWM_UNFOLD_A_COUNTER_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_A0_REG)
+		    #define PWM_UNFOLD_A_COUNTER_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_A0_REG)
+		    #define PWM_UNFOLD_A_CAPTURE_LSB     (*(reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_F1_REG)
+		    #define PWM_UNFOLD_A_CAPTURE_LSB_PTR  ((reg16 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__16BIT_F1_REG)
 		#endif
 		
-	   #define PWM_UNFOLD_A_AUX_CONTROLDP1    (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u1__DP_AUX_CTL_REG)
-       #define PWM_UNFOLD_A_AUX_CONTROLDP1_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u1__DP_AUX_CTL_REG)
+	   #define PWM_UNFOLD_A_AUX_CONTROLDP1    (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u1__DP_AUX_CTL_REG)
+       #define PWM_UNFOLD_A_AUX_CONTROLDP1_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u1__DP_AUX_CTL_REG)
 
    #endif /* (PWM_UNFOLD_A_Resolution == 8) */
    
-   #define PWM_UNFOLD_A_AUX_CONTROLDP0      (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__DP_AUX_CTL_REG)
-   #define PWM_UNFOLD_A_AUX_CONTROLDP0_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP16_pwmdp_u0__DP_AUX_CTL_REG)
+   #define PWM_UNFOLD_A_AUX_CONTROLDP0      (*(reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__DP_AUX_CTL_REG)
+   #define PWM_UNFOLD_A_AUX_CONTROLDP0_PTR  ((reg8 *) PWM_UNFOLD_A_PWMUDB_sP8_pwmdp_u0__DP_AUX_CTL_REG)
 
 #endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
    

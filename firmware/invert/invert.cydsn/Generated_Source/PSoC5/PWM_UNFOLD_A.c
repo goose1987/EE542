@@ -402,10 +402,10 @@ void PWM_UNFOLD_A_Stop(void)
     *  None
     *
     *******************************************************************************/
-    void PWM_UNFOLD_A_WriteCounter(uint16 counter) \
+    void PWM_UNFOLD_A_WriteCounter(uint8 counter) \
                                        
     {
-        CY_SET_REG16(PWM_UNFOLD_A_COUNTER_LSB_PTR, counter);
+        CY_SET_REG8(PWM_UNFOLD_A_COUNTER_LSB_PTR, counter);
     }
 
 
@@ -424,7 +424,7 @@ void PWM_UNFOLD_A_Stop(void)
     *  The current value of the counter.
     *
     *******************************************************************************/
-    uint16 PWM_UNFOLD_A_ReadCounter(void) 
+    uint8 PWM_UNFOLD_A_ReadCounter(void) 
     {
         /* Force capture by reading Accumulator */
         /* Must first do a software capture to be able to read the counter */
@@ -432,7 +432,7 @@ void PWM_UNFOLD_A_Stop(void)
         (void)PWM_UNFOLD_A_COUNTERCAP_LSB;
         
         /* Read the data from the FIFO (or capture register for Fixed Function)*/
-        return (CY_GET_REG16(PWM_UNFOLD_A_CAPTURE_LSB_PTR));
+        return (CY_GET_REG8(PWM_UNFOLD_A_CAPTURE_LSB_PTR));
     }
 
         #if (PWM_UNFOLD_A_UseStatus)
@@ -481,12 +481,12 @@ void PWM_UNFOLD_A_Stop(void)
 *  None
 *
 *******************************************************************************/
-void PWM_UNFOLD_A_WritePeriod(uint16 period) 
+void PWM_UNFOLD_A_WritePeriod(uint8 period) 
 {
     #if(PWM_UNFOLD_A_UsingFixedFunction)
         CY_SET_REG16(PWM_UNFOLD_A_PERIOD_LSB_PTR, (uint16)period);
     #else
-        CY_SET_REG16(PWM_UNFOLD_A_PERIOD_LSB_PTR, period);
+        CY_SET_REG8(PWM_UNFOLD_A_PERIOD_LSB_PTR, period);
     #endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
 }
 
@@ -515,20 +515,20 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
     *  Dither Mode, Center Aligned Mode or One Output Mode
     *
     *******************************************************************************/
-    void PWM_UNFOLD_A_WriteCompare(uint16 compare) \
+    void PWM_UNFOLD_A_WriteCompare(uint8 compare) \
                                        
     {	
 		#if(PWM_UNFOLD_A_UsingFixedFunction)
 			CY_SET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR, (uint16)compare);
 		#else
-	        CY_SET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR, compare);	
+	        CY_SET_REG8(PWM_UNFOLD_A_COMPARE1_LSB_PTR, compare);	
 		#endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
         
         #if (PWM_UNFOLD_A_PWMMode == PWM_UNFOLD_A__B_PWM__DITHER)
             #if(PWM_UNFOLD_A_UsingFixedFunction)
     			CY_SET_REG16(PWM_UNFOLD_A_COMPARE2_LSB_PTR, (uint16)(compare + 1u));
     		#else
-    	        CY_SET_REG16(PWM_UNFOLD_A_COMPARE2_LSB_PTR, (compare + 1u));	
+    	        CY_SET_REG8(PWM_UNFOLD_A_COMPARE2_LSB_PTR, (compare + 1u));	
     		#endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
         #endif /* (PWM_UNFOLD_A_PWMMode == PWM_UNFOLD_A__B_PWM__DITHER) */
     }
@@ -554,13 +554,13 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
     *  None
     *
     *******************************************************************************/
-    void PWM_UNFOLD_A_WriteCompare1(uint16 compare) \
+    void PWM_UNFOLD_A_WriteCompare1(uint8 compare) \
                                         
     {
         #if(PWM_UNFOLD_A_UsingFixedFunction)
             CY_SET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR, (uint16)compare);
         #else
-            CY_SET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR, compare);
+            CY_SET_REG8(PWM_UNFOLD_A_COMPARE1_LSB_PTR, compare);
         #endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
     }
 
@@ -583,13 +583,13 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
     *  None
     *
     *******************************************************************************/
-    void PWM_UNFOLD_A_WriteCompare2(uint16 compare) \
+    void PWM_UNFOLD_A_WriteCompare2(uint8 compare) \
                                         
     {
         #if(PWM_UNFOLD_A_UsingFixedFunction)
             CY_SET_REG16(PWM_UNFOLD_A_COMPARE2_LSB_PTR, compare);
         #else
-            CY_SET_REG16(PWM_UNFOLD_A_COMPARE2_LSB_PTR, compare);
+            CY_SET_REG8(PWM_UNFOLD_A_COMPARE2_LSB_PTR, compare);
         #endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
     }
 #endif /* UseOneCompareMode */
@@ -792,9 +792,9 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
     *  uint8/uint16: The current capture value
     *
     *******************************************************************************/  
-    uint16 PWM_UNFOLD_A_ReadCapture(void)  
+    uint8 PWM_UNFOLD_A_ReadCapture(void)  
     {
-    	return (CY_GET_REG16(PWM_UNFOLD_A_CAPTURE_LSB_PTR));
+    	return (CY_GET_REG8(PWM_UNFOLD_A_CAPTURE_LSB_PTR));
     }
 	
 #endif /* (!PWM_UNFOLD_A_UsingFixedFunction) */
@@ -818,12 +818,12 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
     *  uint8/uint16: Current compare value
     *
     *******************************************************************************/  
-    uint16 PWM_UNFOLD_A_ReadCompare(void)  
+    uint8 PWM_UNFOLD_A_ReadCompare(void)  
     {
 		#if(PWM_UNFOLD_A_UsingFixedFunction)
-            return ((uint16)CY_GET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR));
+            return ((uint8)CY_GET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR));
         #else
-            return (CY_GET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR));
+            return (CY_GET_REG8(PWM_UNFOLD_A_COMPARE1_LSB_PTR));
         #endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
     }
 
@@ -844,9 +844,9 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
     *  uint8/uint16: Current compare value.
     *
     *******************************************************************************/  
-    uint16 PWM_UNFOLD_A_ReadCompare1(void) 
+    uint8 PWM_UNFOLD_A_ReadCompare1(void) 
     {
-		return (CY_GET_REG16(PWM_UNFOLD_A_COMPARE1_LSB_PTR));
+		return (CY_GET_REG8(PWM_UNFOLD_A_COMPARE1_LSB_PTR));
     }
 
 
@@ -864,9 +864,9 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
     *  uint8/uint16: Current compare value.
     *
     *******************************************************************************/  
-    uint16 PWM_UNFOLD_A_ReadCompare2(void)  
+    uint8 PWM_UNFOLD_A_ReadCompare2(void)  
     {
-		return (CY_GET_REG16(PWM_UNFOLD_A_COMPARE2_LSB_PTR));
+		return (CY_GET_REG8(PWM_UNFOLD_A_COMPARE2_LSB_PTR));
     }
 
 #endif /* (PWM_UNFOLD_A_UseOneCompareMode) */
@@ -886,12 +886,12 @@ void PWM_UNFOLD_A_WritePeriod(uint16 period)
 *  uint8/16: Period value
 *
 *******************************************************************************/ 
-uint16 PWM_UNFOLD_A_ReadPeriod(void) 
+uint8 PWM_UNFOLD_A_ReadPeriod(void) 
 {
 	#if(PWM_UNFOLD_A_UsingFixedFunction)
-        return ((uint16)CY_GET_REG16(PWM_UNFOLD_A_PERIOD_LSB_PTR));
+        return ((uint8)CY_GET_REG16(PWM_UNFOLD_A_PERIOD_LSB_PTR));
     #else
-        return (CY_GET_REG16(PWM_UNFOLD_A_PERIOD_LSB_PTR));
+        return (CY_GET_REG8(PWM_UNFOLD_A_PERIOD_LSB_PTR));
     #endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
 }
 

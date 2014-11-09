@@ -24,7 +24,8 @@
 *   #START and #END tags
 *******************************************************************************/
 /* `#START ADC_SYS_VAR`  */
-
+extern int16 buffvolt;
+extern uint8 dataReady;
 /* `#END`  */
 
 
@@ -52,7 +53,7 @@ CY_ISR( ADC_DelSig_V_ISR1)
     *  - add user ISR code between the following #START and #END tags
     **************************************************************************/
     /* `#START MAIN_ADC_ISR1`  */
-
+    buffvolt=ADC_DelSig_V_GetResult16();
     /* `#END`  */
     
     /* Stop the conversion if conversion mode is single sample and resolution

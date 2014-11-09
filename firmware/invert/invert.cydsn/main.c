@@ -14,6 +14,9 @@
 int16 buffvolt=0;
 uint8 dataReady=0;
 
+int16 * sinptr;
+int16 sineLUTindex=0;
+
 int16 sineLUT[512]={0x100,0x103,0x106,0x109,0x10d,0x110,0x113,0x116,
                     0x119,0x11c,0x11f,0x122,0x126,0x129,0x12c,0x12f,
                     0x132,0x135,0x138,0x13b,0x13e,0x141,0x144,0x147,
@@ -82,8 +85,7 @@ int16 sineLUT[512]={0x100,0x103,0x106,0x109,0x10d,0x110,0x113,0x116,
 void main()
 {
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-    //CYGlobalIntEnable;
-    
+
     //clock
     Clock_1_Enable();
     
@@ -92,6 +94,7 @@ void main()
     LCD_Char_1_PrintString("Some basic message");
     
     //start voltage ADC
+    ADC_DelSig_V_IRQ_Enable();
     ADC_DelSig_V_Start();
     //ADC_SAR_V_IRQ_Enable();
     ADC_DelSig_V_StartConvert();
@@ -104,12 +107,16 @@ void main()
     //UART communication 
     UART_1_Start();
     
+    sinptr = sineLUT;
+   
     
-    /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
     for(;;)
     {
         /* Place your application code here. */
         //LCD_Char_1_PrintString("Hello world");
+        
+        /*
         if(ADC_DelSig_V_IsEndConversion(ADC_DelSig_V_RETURN_STATUS))
         {
             buffvolt = ADC_DelSig_V_GetResult16();
@@ -119,11 +126,22 @@ void main()
             LCD_Char_1_PrintInt16(buffvolt);
             UART_1_WriteTxData(buffvolt);
         }
+        */
+        
+        LCD_Char_1_Position(1u, 0u);
+        LCD_Char_1_PrintInt16(buffvolt);
+        
+        LCD_Char_1_Position(1u,8u);
+        LCD_Char_1_PrintInt16(sineLUT[sineLUTindex]);
+        sineLUTindex++;
+        if(sineLUTindex>511){
+            sineLUTindex=0;
+        };
         
         //UART_1_PutChar('q');
         //UART_1_WriteTxData('w');
         //UART_1_PutString("are you new?");
-        CyDelay(1000);//delay
+        CyDelay(200);//delay
     }
 }
 

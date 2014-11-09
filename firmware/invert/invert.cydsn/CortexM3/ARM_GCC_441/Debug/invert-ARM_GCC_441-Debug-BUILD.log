@@ -1,11 +1,49 @@
---------------- Build Started: 11/08/2014 16:32:35 Project: invert, Configuration: ARM GCC 4.4.1 Debug ---------------
-The code generation step is up to date.
+--------------- Build Started: 11/09/2014 11:37:46 Project: invert, Configuration: ARM GCC 4.4.1 Debug ---------------
+cydsfit.exe "-.appdatapath" "C:\Users\hoangp\AppData\Local\Cypress Semiconductor\PSoC Creator\2.2" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\invert.cyprj" "-d" "CY8C5568AXI-060" "-s" "C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\Generated_Source\PSoC5" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
+Elaborating Design...
+ADD: prj.M0246: information: PSoC 5LP provides many improvements over PSoC 5. Learn more about migrating to PSoC 5LP at www.cypress.com/go/PSoC5LP
+ * invert ()
+ADD: sdb.M0065: information: Analog terminal "ADC_SAR_V.vplus" on TopDesign is unconnected.
+ * C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\TopDesign\TopDesign.cysch (Signal: Net_303)
+ * C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\TopDesign\TopDesign.cysch (Shape_62.3)
+ADD: sdb.M0065: information: Analog terminal "Pin_8.analog_0" on TopDesign is unconnected.
+ * C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\TopDesign\TopDesign.cysch (Signal: Net_153)
+ * C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\TopDesign\TopDesign.cysch (Shape_55.1)
+ADD: sdb.M0065: information: Analog terminal "Pin_7.analog_0" on TopDesign is unconnected.
+ * C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\TopDesign\TopDesign.cysch (Signal: Net_302)
+ * C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\TopDesign\TopDesign.cysch (Shape_54.1)
+ADD: pft.M0028: warning: Clock Warning: (UART_1_IntClock's accuracy range '76.677 kHz ñ 5.000%, (72.843 kHz - 80.511 kHz)' is not within the specified tolerance range '76.800 kHz ñ 2.000%, (75.264 kHz - 78.336 kHz)'.).
+ * C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\UART_v2_30\UART_v2_30.cysch (Instance: IntClock)
+ * C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\invert.cydwr (UART_1_IntClock)
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 16 pin(s) will be assigned a location by the fitter: \ADC_SAR_2:Bypass(0)\, \ADC_SAR_V:Bypass(0)\, \LCD_Char_1:LCDPort(0)\, \LCD_Char_1:LCDPort(1)\, \LCD_Char_1:LCDPort(2)\, \LCD_Char_1:LCDPort(3)\, \LCD_Char_1:LCDPort(4)\, \LCD_Char_1:LCDPort(5)\, \LCD_Char_1:LCDPort(6)\, Pin_3(0), Pin_4(0), Pin_5(0), Pin_6(0), Pin_7(0), Pin_8(0), Pin_10(0)
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Analog Placement ...
+Info: apr.M0002: Analog signal "Net_303" is connected to one terminal only. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 41% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 63% done. (App=cydsfit)
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Info: plm.M0038: The pin named Pin_6(0) at location P0[3] prevents usage of special purposes: DSM:ExtVref. (App=cydsfit)
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM3\ARM_GCC_441\Debug\main.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_DelSig_V.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_DelSig_V_PM.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_DelSig_V_INT.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.o
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_441\Debug\invert.a .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK.o .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK_PM.o .\CortexM3\ARM_GCC_441\Debug\Clock_1.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_A.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_A_PM.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_B.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_B_PM.o .\CortexM3\ARM_GCC_441\Debug\core_cm3.o .\CortexM3\ARM_GCC_441\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_441\Debug\CyDmac.o .\CortexM3\ARM_GCC_441\Debug\CyFlash.o .\CortexM3\ARM_GCC_441\Debug\CyLib.o .\CortexM3\ARM_GCC_441\Debug\cyPm.o .\CortexM3\ARM_GCC_441\Debug\CySpc.o .\CortexM3\ARM_GCC_441\Debug\cyutils.o .\CortexM3\ARM_GCC_441\Debug\Pin_1.o .\CortexM3\ARM_GCC_441\Debug\Pin_3.o .\CortexM3\ARM_GCC_441\Debug\Pin_4.o .\CortexM3\ARM_GCC_441\Debug\Pin_5.o .\CortexM3\ARM_GCC_441\Debug\Pin_6.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_INT.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_PM.o .\CortexM3\ARM_GCC_441\Debug\Pin_7.o .\CortexM3\ARM_GCC_441\Debug\Pin_8.o .\CortexM3\ARM_GCC_441\Debug\Pin_9.o .\CortexM3\ARM_GCC_441\Debug\Pin_10.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_IRQ.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_theACLK.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_Bypass.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_PM.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_LCDPort.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_INT.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_PM.o .\CortexM3\ARM_GCC_441\Debug\Clock_2.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_IRQ.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_theACLK.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_Bypass.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_theACLK.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_Ext_CP_Clk.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_AMux.o .\CortexM3\ARM_GCC_441\Debug\UART_1.o .\CortexM3\ARM_GCC_441\Debug\UART_1_PM.o .\CortexM3\ARM_GCC_441\Debug\UART_1_INT.o .\CortexM3\ARM_GCC_441\Debug\UART_1_BOOT.o .\CortexM3\ARM_GCC_441\Debug\UART_1_IntClock.o .\CortexM3\ARM_GCC_441\Debug\cyfitter_cfg.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_441\Debug\invert.a
 arm-none-eabi-gcc.exe -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g -Wl,-Map,.\CortexM3\ARM_GCC_441\Debug\invert.map -Wl,--gc-sections -Wl,--start-group -o .\CortexM3\ARM_GCC_441\Debug\invert.elf .\CortexM3\ARM_GCC_441\Debug\main.o .\CortexM3\ARM_GCC_441\Debug\Cm3Start.o .\CortexM3\ARM_GCC_441\Debug\invert.a "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_441\Debug\CyComponentLibrary.a" -Wl,--end-group
 arm-none-eabi-objcopy.exe -O ihex .\CortexM3\ARM_GCC_441\Debug\invert.elf .\CortexM3\ARM_GCC_441\Debug\invert.ihx
 cyhextool -o .\CortexM3\ARM_GCC_441\Debug\invert.hex -f .\CortexM3\ARM_GCC_441\Debug\invert.ihx -prot .\Generated_Source\PSoC5\protect.hex -id E13C069 -a EEPROM=90200000:800,PROGRAM=00000000:40000,CONFIG=80000000:8000,PROTECT=90400000:100 -meta 0101 -cunv 00000006 -wonv BC90ACAF -ecc .\Generated_Source\PSoC5\config.hex
-Flash used: 10120 of 262144 bytes (3.9 %).
+Flash used: 9928 of 262144 bytes (3.8 %).
 SRAM used: 340 of 65536 bytes (0.5 %).
---------------- Build Succeeded: 11/08/2014 16:32:37 ---------------
+--------------- Build Succeeded: 11/09/2014 11:38:52 ---------------
