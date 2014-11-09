@@ -100,6 +100,11 @@ void main()
     
     PWM_BUCK_Start();
     
+    
+    //UART communication 
+    UART_1_Start();
+    
+    
     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
     for(;;)
     {
@@ -109,12 +114,16 @@ void main()
         {
             buffvolt = ADC_DelSig_V_GetResult16();
             PWM_BUCK_WriteCompare(buffvolt);
-            //LCD_Char_1_Position(1u, 0u);
-            //LCD_Char_1_PrintInt16(buffvolt);
+            
+            LCD_Char_1_Position(1u, 0u);
+            LCD_Char_1_PrintInt16(buffvolt);
+            UART_1_WriteTxData(buffvolt);
         }
         
-       
-        
+        //UART_1_PutChar('q');
+        //UART_1_WriteTxData('w');
+        //UART_1_PutString("are you new?");
+        CyDelay(1000);//delay
     }
 }
 

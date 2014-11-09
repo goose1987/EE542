@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 1
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 1
   16:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** 
   17:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** #include "ADC_SAR_2.h"
   18:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 2
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 2
 
 
   19:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 1
   61              	ADC_SAR_2_RestoreConfig:
   62              	.LFB1:
   48:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 3
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 3
 
 
   49:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 1
   76:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** *
   77:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** * Parameters:
   78:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** *  None.
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 4
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 4
 
 
   79:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** *
@@ -209,75 +209,74 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 1
  104 0008 C4F20003 		movt	r3, #:upper16:1073759147
  105 000c 1B78     		ldrb	r3, [r3, #0]
  106 000e DBB2     		uxtb	r3, r3
- 107 0010 03F00103 		and	r3, r3, #1
- 108 0014 DBB2     		uxtb	r3, r3
- 109 0016 002B     		cmp	r3, #0
- 110 0018 1CD0     		beq	.L6
+ 107 0010 03F00203 		and	r3, r3, #2
+ 108 0014 002B     		cmp	r3, #0
+ 109 0016 1CD0     		beq	.L6
   90:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     {
   91:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         if((ADC_SAR_2_SAR_CSR0_REG & ADC_SAR_2_SAR_SOF_START_CONV) != 0u)
- 111              		.loc 1 91 0
- 112 001a 45F60013 		movw	r3, #:lower16:1073764608
- 113 001e C4F20003 		movt	r3, #:upper16:1073764608
- 114 0022 1B78     		ldrb	r3, [r3, #0]
- 115 0024 DBB2     		uxtb	r3, r3
- 116 0026 03F00103 		and	r3, r3, #1
- 117 002a DBB2     		uxtb	r3, r3
- 118 002c 002B     		cmp	r3, #0
- 119 002e 07D0     		beq	.L7
+ 110              		.loc 1 91 0
+ 111 0018 45F60813 		movw	r3, #:lower16:1073764616
+ 112 001c C4F20003 		movt	r3, #:upper16:1073764616
+ 113 0020 1B78     		ldrb	r3, [r3, #0]
+ 114 0022 DBB2     		uxtb	r3, r3
+ 115 0024 03F00103 		and	r3, r3, #1
+ 116 0028 DBB2     		uxtb	r3, r3
+ 117 002a 002B     		cmp	r3, #0
+ 118 002c 07D0     		beq	.L7
   92:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         {
   93:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****             ADC_SAR_2_backup.enableState = ADC_SAR_2_ENABLED | ADC_SAR_2_STARTED;
- 120              		.loc 1 93 0
- 121 0030 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
- 122 0034 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
- 123 0038 4FF00302 		mov	r2, #3
- 124 003c 1A70     		strb	r2, [r3, #0]
- 125 003e 06E0     		b	.L8
- 126              	.L7:
+ 119              		.loc 1 93 0
+ 120 002e 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
+ 121 0032 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
+ 122 0036 4FF00302 		mov	r2, #3
+ 123 003a 1A70     		strb	r2, [r3, #0]
+ 124 003c 06E0     		b	.L8
+ 125              	.L7:
   94:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         }
   95:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         else
   96:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         {
   97:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****             ADC_SAR_2_backup.enableState = ADC_SAR_2_ENABLED;
- 127              		.loc 1 97 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 5
+ 126              		.loc 1 97 0
+ 127 003e 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 5
 
 
- 128 0040 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
- 129 0044 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
- 130 0048 4FF00102 		mov	r2, #1
- 131 004c 1A70     		strb	r2, [r3, #0]
- 132              	.L8:
+ 128 0042 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
+ 129 0046 4FF00102 		mov	r2, #1
+ 130 004a 1A70     		strb	r2, [r3, #0]
+ 131              	.L8:
   98:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         }
   99:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         ADC_SAR_2_Stop();
- 133              		.loc 1 99 0
- 134 004e FFF7FEFF 		bl	ADC_SAR_2_Stop
- 135 0052 06E0     		b	.L10
- 136              	.L6:
+ 132              		.loc 1 99 0
+ 133 004c FFF7FEFF 		bl	ADC_SAR_2_Stop
+ 134 0050 06E0     		b	.L10
+ 135              	.L6:
  100:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     }
  101:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     else
  102:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     {
  103:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         ADC_SAR_2_backup.enableState = ADC_SAR_2_DISABLED;
- 137              		.loc 1 103 0
- 138 0054 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
- 139 0058 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
- 140 005c 4FF00002 		mov	r2, #0
- 141 0060 1A70     		strb	r2, [r3, #0]
- 142              	.L10:
+ 136              		.loc 1 103 0
+ 137 0052 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
+ 138 0056 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
+ 139 005a 4FF00002 		mov	r2, #0
+ 140 005e 1A70     		strb	r2, [r3, #0]
+ 141              	.L10:
  104:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     }
  105:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     /*ADC_SAR_2_SaveConfig();*/
  106:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** }
- 143              		.loc 1 106 0
- 144 0062 80BD     		pop	{r7, pc}
- 145              		.cfi_endproc
- 146              	.LFE2:
- 147              		.size	ADC_SAR_2_Sleep, .-ADC_SAR_2_Sleep
- 148              		.section	.text.ADC_SAR_2_Wakeup,"ax",%progbits
- 149              		.align	2
- 150              		.global	ADC_SAR_2_Wakeup
- 151              		.thumb
- 152              		.thumb_func
- 153              		.type	ADC_SAR_2_Wakeup, %function
- 154              	ADC_SAR_2_Wakeup:
- 155              	.LFB3:
+ 142              		.loc 1 106 0
+ 143 0060 80BD     		pop	{r7, pc}
+ 144              		.cfi_endproc
+ 145              	.LFE2:
+ 146              		.size	ADC_SAR_2_Sleep, .-ADC_SAR_2_Sleep
+ 147 0062 00BF     		.section	.text.ADC_SAR_2_Wakeup,"ax",%progbits
+ 148              		.align	2
+ 149              		.global	ADC_SAR_2_Wakeup
+ 150              		.thumb
+ 151              		.thumb_func
+ 152              		.type	ADC_SAR_2_Wakeup, %function
+ 153              	ADC_SAR_2_Wakeup:
+ 154              	.LFB3:
  107:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** 
  108:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** 
  109:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** /*******************************************************************************
@@ -298,593 +297,593 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 1
  124:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** *
  125:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** *******************************************************************************/
  126:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** void ADC_SAR_2_Wakeup(void)
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 6
-
-
  127:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** {
- 156              		.loc 1 127 0
- 157              		.cfi_startproc
- 158              		@ args = 0, pretend = 0, frame = 0
- 159              		@ frame_needed = 1, uses_anonymous_args = 0
- 160 0000 80B5     		push	{r7, lr}
- 161              	.LCFI6:
- 162              		.cfi_def_cfa_offset 8
- 163 0002 00AF     		add	r7, sp, #0
- 164              		.cfi_offset 14, -4
- 165              		.cfi_offset 7, -8
- 166              	.LCFI7:
- 167              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 6
+
+
+ 155              		.loc 1 127 0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 1, uses_anonymous_args = 0
+ 159 0000 80B5     		push	{r7, lr}
+ 160              	.LCFI6:
+ 161              		.cfi_def_cfa_offset 8
+ 162 0002 00AF     		add	r7, sp, #0
+ 163              		.cfi_offset 14, -4
+ 164              		.cfi_offset 7, -8
+ 165              	.LCFI7:
+ 166              		.cfi_def_cfa_register 7
  128:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     /*ADC_SAR_2_RestoreConfig();*/
  129:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     if(ADC_SAR_2_backup.enableState != ADC_SAR_2_DISABLED)
- 168              		.loc 1 129 0
- 169 0004 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
- 170 0008 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
- 171 000c 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 172 000e 002B     		cmp	r3, #0
- 173 0010 0CD0     		beq	.L13
+ 167              		.loc 1 129 0
+ 168 0004 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
+ 169 0008 C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
+ 170 000c 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 171 000e 002B     		cmp	r3, #0
+ 172 0010 0CD0     		beq	.L13
  130:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     {
  131:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         ADC_SAR_2_Enable();
- 174              		.loc 1 131 0
- 175 0012 FFF7FEFF 		bl	ADC_SAR_2_Enable
+ 173              		.loc 1 131 0
+ 174 0012 FFF7FEFF 		bl	ADC_SAR_2_Enable
  132:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         #if(ADC_SAR_2_DEFAULT_CONV_MODE != ADC_SAR_2__HARDWARE_TRIGGER)
  133:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****             if((ADC_SAR_2_backup.enableState & ADC_SAR_2_STARTED) != 0u)
- 176              		.loc 1 133 0
- 177 0016 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
- 178 001a C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
- 179 001e 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 180 0020 03F00203 		and	r3, r3, #2
- 181 0024 002B     		cmp	r3, #0
- 182 0026 01D0     		beq	.L13
+ 175              		.loc 1 133 0
+ 176 0016 40F20003 		movw	r3, #:lower16:ADC_SAR_2_backup
+ 177 001a C0F20003 		movt	r3, #:upper16:ADC_SAR_2_backup
+ 178 001e 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 179 0020 03F00203 		and	r3, r3, #2
+ 180 0024 002B     		cmp	r3, #0
+ 181 0026 01D0     		beq	.L13
  134:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****             {
  135:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****                 ADC_SAR_2_StartConvert();
- 183              		.loc 1 135 0
- 184 0028 FFF7FEFF 		bl	ADC_SAR_2_StartConvert
- 185              	.L13:
+ 182              		.loc 1 135 0
+ 183 0028 FFF7FEFF 		bl	ADC_SAR_2_StartConvert
+ 184              	.L13:
  136:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****             }
  137:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         #endif /* End ADC_SAR_2_DEFAULT_CONV_MODE != ADC_SAR_2__HARDWARE_TRIGGER */
  138:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****         
  139:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c ****     }
  140:.\Generated_Source\PSoC5/ADC_SAR_2_PM.c **** }
- 186              		.loc 1 140 0
- 187 002c 80BD     		pop	{r7, pc}
- 188              		.cfi_endproc
- 189              	.LFE3:
- 190              		.size	ADC_SAR_2_Wakeup, .-ADC_SAR_2_Wakeup
- 191 002e 00BF     		.text
- 192              	.Letext0:
- 193              		.section	.debug_loc,"",%progbits
- 194              	.Ldebug_loc0:
- 195              	.LLST0:
- 196 0000 00000000 		.4byte	.LFB0
- 197 0004 02000000 		.4byte	.LCFI0
- 198 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 7
+ 185              		.loc 1 140 0
+ 186 002c 80BD     		pop	{r7, pc}
+ 187              		.cfi_endproc
+ 188              	.LFE3:
+ 189              		.size	ADC_SAR_2_Wakeup, .-ADC_SAR_2_Wakeup
+ 190 002e 00BF     		.text
+ 191              	.Letext0:
+ 192              		.section	.debug_loc,"",%progbits
+ 193              	.Ldebug_loc0:
+ 194              	.LLST0:
+ 195 0000 00000000 		.4byte	.LFB0
+ 196 0004 02000000 		.4byte	.LCFI0
+ 197 0008 0100     		.2byte	0x1
+ 198 000a 5D       		.byte	0x5d
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 7
 
 
- 199 000a 5D       		.byte	0x5d
- 200 000b 02000000 		.4byte	.LCFI0
- 201 000f 04000000 		.4byte	.LCFI1
- 202 0013 0200     		.2byte	0x2
- 203 0015 7D       		.byte	0x7d
- 204 0016 04       		.sleb128 4
- 205 0017 04000000 		.4byte	.LCFI1
- 206 001b 0A000000 		.4byte	.LFE0
- 207 001f 0200     		.2byte	0x2
- 208 0021 77       		.byte	0x77
- 209 0022 04       		.sleb128 4
- 210 0023 00000000 		.4byte	0x0
- 211 0027 00000000 		.4byte	0x0
- 212              	.LLST1:
- 213 002b 00000000 		.4byte	.LFB1
- 214 002f 02000000 		.4byte	.LCFI2
- 215 0033 0100     		.2byte	0x1
- 216 0035 5D       		.byte	0x5d
- 217 0036 02000000 		.4byte	.LCFI2
- 218 003a 04000000 		.4byte	.LCFI3
- 219 003e 0200     		.2byte	0x2
- 220 0040 7D       		.byte	0x7d
- 221 0041 04       		.sleb128 4
- 222 0042 04000000 		.4byte	.LCFI3
- 223 0046 0A000000 		.4byte	.LFE1
- 224 004a 0200     		.2byte	0x2
- 225 004c 77       		.byte	0x77
- 226 004d 04       		.sleb128 4
- 227 004e 00000000 		.4byte	0x0
- 228 0052 00000000 		.4byte	0x0
- 229              	.LLST2:
- 230 0056 00000000 		.4byte	.LFB2
- 231 005a 02000000 		.4byte	.LCFI4
- 232 005e 0100     		.2byte	0x1
- 233 0060 5D       		.byte	0x5d
- 234 0061 02000000 		.4byte	.LCFI4
- 235 0065 04000000 		.4byte	.LCFI5
- 236 0069 0200     		.2byte	0x2
- 237 006b 7D       		.byte	0x7d
- 238 006c 08       		.sleb128 8
- 239 006d 04000000 		.4byte	.LCFI5
- 240 0071 64000000 		.4byte	.LFE2
- 241 0075 0200     		.2byte	0x2
- 242 0077 77       		.byte	0x77
- 243 0078 08       		.sleb128 8
- 244 0079 00000000 		.4byte	0x0
- 245 007d 00000000 		.4byte	0x0
- 246              	.LLST3:
- 247 0081 00000000 		.4byte	.LFB3
- 248 0085 02000000 		.4byte	.LCFI6
- 249 0089 0100     		.2byte	0x1
- 250 008b 5D       		.byte	0x5d
- 251 008c 02000000 		.4byte	.LCFI6
- 252 0090 04000000 		.4byte	.LCFI7
- 253 0094 0200     		.2byte	0x2
- 254 0096 7D       		.byte	0x7d
- 255 0097 08       		.sleb128 8
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 8
+ 199 000b 02000000 		.4byte	.LCFI0
+ 200 000f 04000000 		.4byte	.LCFI1
+ 201 0013 0200     		.2byte	0x2
+ 202 0015 7D       		.byte	0x7d
+ 203 0016 04       		.sleb128 4
+ 204 0017 04000000 		.4byte	.LCFI1
+ 205 001b 0A000000 		.4byte	.LFE0
+ 206 001f 0200     		.2byte	0x2
+ 207 0021 77       		.byte	0x77
+ 208 0022 04       		.sleb128 4
+ 209 0023 00000000 		.4byte	0x0
+ 210 0027 00000000 		.4byte	0x0
+ 211              	.LLST1:
+ 212 002b 00000000 		.4byte	.LFB1
+ 213 002f 02000000 		.4byte	.LCFI2
+ 214 0033 0100     		.2byte	0x1
+ 215 0035 5D       		.byte	0x5d
+ 216 0036 02000000 		.4byte	.LCFI2
+ 217 003a 04000000 		.4byte	.LCFI3
+ 218 003e 0200     		.2byte	0x2
+ 219 0040 7D       		.byte	0x7d
+ 220 0041 04       		.sleb128 4
+ 221 0042 04000000 		.4byte	.LCFI3
+ 222 0046 0A000000 		.4byte	.LFE1
+ 223 004a 0200     		.2byte	0x2
+ 224 004c 77       		.byte	0x77
+ 225 004d 04       		.sleb128 4
+ 226 004e 00000000 		.4byte	0x0
+ 227 0052 00000000 		.4byte	0x0
+ 228              	.LLST2:
+ 229 0056 00000000 		.4byte	.LFB2
+ 230 005a 02000000 		.4byte	.LCFI4
+ 231 005e 0100     		.2byte	0x1
+ 232 0060 5D       		.byte	0x5d
+ 233 0061 02000000 		.4byte	.LCFI4
+ 234 0065 04000000 		.4byte	.LCFI5
+ 235 0069 0200     		.2byte	0x2
+ 236 006b 7D       		.byte	0x7d
+ 237 006c 08       		.sleb128 8
+ 238 006d 04000000 		.4byte	.LCFI5
+ 239 0071 62000000 		.4byte	.LFE2
+ 240 0075 0200     		.2byte	0x2
+ 241 0077 77       		.byte	0x77
+ 242 0078 08       		.sleb128 8
+ 243 0079 00000000 		.4byte	0x0
+ 244 007d 00000000 		.4byte	0x0
+ 245              	.LLST3:
+ 246 0081 00000000 		.4byte	.LFB3
+ 247 0085 02000000 		.4byte	.LCFI6
+ 248 0089 0100     		.2byte	0x1
+ 249 008b 5D       		.byte	0x5d
+ 250 008c 02000000 		.4byte	.LCFI6
+ 251 0090 04000000 		.4byte	.LCFI7
+ 252 0094 0200     		.2byte	0x2
+ 253 0096 7D       		.byte	0x7d
+ 254 0097 08       		.sleb128 8
+ 255 0098 04000000 		.4byte	.LCFI7
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 8
 
 
- 256 0098 04000000 		.4byte	.LCFI7
- 257 009c 2E000000 		.4byte	.LFE3
- 258 00a0 0200     		.2byte	0x2
- 259 00a2 77       		.byte	0x77
- 260 00a3 08       		.sleb128 8
- 261 00a4 00000000 		.4byte	0x0
- 262 00a8 00000000 		.4byte	0x0
- 263              		.file 2 ".\\Generated_Source\\PSoC5\\/cytypes.h"
- 264              		.file 3 ".\\Generated_Source\\PSoC5\\/ADC_SAR_2.h"
- 265              		.section	.debug_info
- 266 0000 13010000 		.4byte	0x113
- 267 0004 0200     		.2byte	0x2
- 268 0006 00000000 		.4byte	.Ldebug_abbrev0
- 269 000a 04       		.byte	0x4
- 270 000b 01       		.uleb128 0x1
- 271 000c 45010000 		.4byte	.LASF18
- 272 0010 01       		.byte	0x1
- 273 0011 26000000 		.4byte	.LASF19
- 274 0015 DD000000 		.4byte	.LASF20
- 275 0019 00000000 		.4byte	0x0
- 276 001d 00000000 		.4byte	0x0
- 277 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
- 278 0025 00000000 		.4byte	.Ldebug_line0
- 279 0029 02       		.uleb128 0x2
- 280 002a 01       		.byte	0x1
- 281 002b 06       		.byte	0x6
- 282 002c 8B010000 		.4byte	.LASF0
- 283 0030 02       		.uleb128 0x2
- 284 0031 01       		.byte	0x1
- 285 0032 08       		.byte	0x8
- 286 0033 7D000000 		.4byte	.LASF1
- 287 0037 02       		.uleb128 0x2
- 288 0038 02       		.byte	0x2
- 289 0039 05       		.byte	0x5
- 290 003a 56010000 		.4byte	.LASF2
- 291 003e 02       		.uleb128 0x2
- 292 003f 02       		.byte	0x2
- 293 0040 07       		.byte	0x7
- 294 0041 B2000000 		.4byte	.LASF3
- 295 0045 02       		.uleb128 0x2
- 296 0046 04       		.byte	0x4
- 297 0047 05       		.byte	0x5
- 298 0048 76010000 		.4byte	.LASF4
- 299 004c 02       		.uleb128 0x2
- 300 004d 04       		.byte	0x4
- 301 004e 07       		.byte	0x7
- 302 004f A0000000 		.4byte	.LASF5
- 303 0053 02       		.uleb128 0x2
- 304 0054 08       		.byte	0x8
- 305 0055 05       		.byte	0x5
- 306 0056 00000000 		.4byte	.LASF6
- 307 005a 02       		.uleb128 0x2
- 308 005b 08       		.byte	0x8
- 309 005c 07       		.byte	0x7
- 310 005d 2E010000 		.4byte	.LASF7
- 311 0061 03       		.uleb128 0x3
- 312 0062 04       		.byte	0x4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 9
+ 256 009c 2E000000 		.4byte	.LFE3
+ 257 00a0 0200     		.2byte	0x2
+ 258 00a2 77       		.byte	0x77
+ 259 00a3 08       		.sleb128 8
+ 260 00a4 00000000 		.4byte	0x0
+ 261 00a8 00000000 		.4byte	0x0
+ 262              		.file 2 ".\\Generated_Source\\PSoC5\\/cytypes.h"
+ 263              		.file 3 ".\\Generated_Source\\PSoC5\\/ADC_SAR_2.h"
+ 264              		.section	.debug_info
+ 265 0000 13010000 		.4byte	0x113
+ 266 0004 0200     		.2byte	0x2
+ 267 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 268 000a 04       		.byte	0x4
+ 269 000b 01       		.uleb128 0x1
+ 270 000c 43010000 		.4byte	.LASF18
+ 271 0010 01       		.byte	0x1
+ 272 0011 26000000 		.4byte	.LASF19
+ 273 0015 01010000 		.4byte	.LASF20
+ 274 0019 00000000 		.4byte	0x0
+ 275 001d 00000000 		.4byte	0x0
+ 276 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 277 0025 00000000 		.4byte	.Ldebug_line0
+ 278 0029 02       		.uleb128 0x2
+ 279 002a 01       		.byte	0x1
+ 280 002b 06       		.byte	0x6
+ 281 002c 89010000 		.4byte	.LASF0
+ 282 0030 02       		.uleb128 0x2
+ 283 0031 01       		.byte	0x1
+ 284 0032 08       		.byte	0x8
+ 285 0033 7D000000 		.4byte	.LASF1
+ 286 0037 02       		.uleb128 0x2
+ 287 0038 02       		.byte	0x2
+ 288 0039 05       		.byte	0x5
+ 289 003a 54010000 		.4byte	.LASF2
+ 290 003e 02       		.uleb128 0x2
+ 291 003f 02       		.byte	0x2
+ 292 0040 07       		.byte	0x7
+ 293 0041 B2000000 		.4byte	.LASF3
+ 294 0045 02       		.uleb128 0x2
+ 295 0046 04       		.byte	0x4
+ 296 0047 05       		.byte	0x5
+ 297 0048 74010000 		.4byte	.LASF4
+ 298 004c 02       		.uleb128 0x2
+ 299 004d 04       		.byte	0x4
+ 300 004e 07       		.byte	0x7
+ 301 004f A0000000 		.4byte	.LASF5
+ 302 0053 02       		.uleb128 0x2
+ 303 0054 08       		.byte	0x8
+ 304 0055 05       		.byte	0x5
+ 305 0056 00000000 		.4byte	.LASF6
+ 306 005a 02       		.uleb128 0x2
+ 307 005b 08       		.byte	0x8
+ 308 005c 07       		.byte	0x7
+ 309 005d EA000000 		.4byte	.LASF7
+ 310 0061 03       		.uleb128 0x3
+ 311 0062 04       		.byte	0x4
+ 312 0063 05       		.byte	0x5
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 9
 
 
- 313 0063 05       		.byte	0x5
- 314 0064 696E7400 		.ascii	"int\000"
- 315 0068 02       		.uleb128 0x2
- 316 0069 04       		.byte	0x4
- 317 006a 07       		.byte	0x7
- 318 006b 21010000 		.4byte	.LASF8
- 319 006f 04       		.uleb128 0x4
- 320 0070 70010000 		.4byte	.LASF12
- 321 0074 02       		.byte	0x2
- 322 0075 4C       		.byte	0x4c
- 323 0076 30000000 		.4byte	0x30
- 324 007a 02       		.uleb128 0x2
- 325 007b 04       		.byte	0x4
- 326 007c 04       		.byte	0x4
- 327 007d 77000000 		.4byte	.LASF9
- 328 0081 02       		.uleb128 0x2
- 329 0082 08       		.byte	0x8
- 330 0083 04       		.byte	0x4
- 331 0084 D6000000 		.4byte	.LASF10
- 332 0088 02       		.uleb128 0x2
- 333 0089 01       		.byte	0x1
- 334 008a 08       		.byte	0x8
- 335 008b 51010000 		.4byte	.LASF11
- 336 008f 05       		.uleb128 0x5
- 337 0090 01       		.byte	0x1
- 338 0091 03       		.byte	0x3
- 339 0092 2C       		.byte	0x2c
- 340 0093 A6000000 		.4byte	0xa6
- 341 0097 06       		.uleb128 0x6
- 342 0098 7F010000 		.4byte	.LASF21
- 343 009c 03       		.byte	0x3
- 344 009d 2D       		.byte	0x2d
- 345 009e 6F000000 		.4byte	0x6f
- 346 00a2 02       		.byte	0x2
- 347 00a3 23       		.byte	0x23
- 348 00a4 00       		.uleb128 0x0
- 349 00a5 00       		.byte	0x0
- 350 00a6 04       		.uleb128 0x4
- 351 00a7 5F000000 		.4byte	.LASF13
- 352 00ab 03       		.byte	0x3
- 353 00ac 2E       		.byte	0x2e
- 354 00ad 8F000000 		.4byte	0x8f
- 355 00b1 07       		.uleb128 0x7
- 356 00b2 01       		.byte	0x1
- 357 00b3 8B000000 		.4byte	.LASF14
- 358 00b7 01       		.byte	0x1
- 359 00b8 2C       		.byte	0x2c
- 360 00b9 01       		.byte	0x1
- 361 00ba 00000000 		.4byte	.LFB0
- 362 00be 0A000000 		.4byte	.LFE0
- 363 00c2 00000000 		.4byte	.LLST0
- 364 00c6 07       		.uleb128 0x7
- 365 00c7 01       		.byte	0x1
- 366 00c8 0E000000 		.4byte	.LASF15
- 367 00cc 01       		.byte	0x1
- 368 00cd 40       		.byte	0x40
- 369 00ce 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 10
+ 313 0064 696E7400 		.ascii	"int\000"
+ 314 0068 02       		.uleb128 0x2
+ 315 0069 04       		.byte	0x4
+ 316 006a 07       		.byte	0x7
+ 317 006b DD000000 		.4byte	.LASF8
+ 318 006f 04       		.uleb128 0x4
+ 319 0070 6E010000 		.4byte	.LASF12
+ 320 0074 02       		.byte	0x2
+ 321 0075 4C       		.byte	0x4c
+ 322 0076 30000000 		.4byte	0x30
+ 323 007a 02       		.uleb128 0x2
+ 324 007b 04       		.byte	0x4
+ 325 007c 04       		.byte	0x4
+ 326 007d 77000000 		.4byte	.LASF9
+ 327 0081 02       		.uleb128 0x2
+ 328 0082 08       		.byte	0x8
+ 329 0083 04       		.byte	0x4
+ 330 0084 D6000000 		.4byte	.LASF10
+ 331 0088 02       		.uleb128 0x2
+ 332 0089 01       		.byte	0x1
+ 333 008a 08       		.byte	0x8
+ 334 008b 4F010000 		.4byte	.LASF11
+ 335 008f 05       		.uleb128 0x5
+ 336 0090 01       		.byte	0x1
+ 337 0091 03       		.byte	0x3
+ 338 0092 2C       		.byte	0x2c
+ 339 0093 A6000000 		.4byte	0xa6
+ 340 0097 06       		.uleb128 0x6
+ 341 0098 7D010000 		.4byte	.LASF21
+ 342 009c 03       		.byte	0x3
+ 343 009d 2D       		.byte	0x2d
+ 344 009e 6F000000 		.4byte	0x6f
+ 345 00a2 02       		.byte	0x2
+ 346 00a3 23       		.byte	0x23
+ 347 00a4 00       		.uleb128 0x0
+ 348 00a5 00       		.byte	0x0
+ 349 00a6 04       		.uleb128 0x4
+ 350 00a7 5F000000 		.4byte	.LASF13
+ 351 00ab 03       		.byte	0x3
+ 352 00ac 2E       		.byte	0x2e
+ 353 00ad 8F000000 		.4byte	0x8f
+ 354 00b1 07       		.uleb128 0x7
+ 355 00b2 01       		.byte	0x1
+ 356 00b3 8B000000 		.4byte	.LASF14
+ 357 00b7 01       		.byte	0x1
+ 358 00b8 2C       		.byte	0x2c
+ 359 00b9 01       		.byte	0x1
+ 360 00ba 00000000 		.4byte	.LFB0
+ 361 00be 0A000000 		.4byte	.LFE0
+ 362 00c2 00000000 		.4byte	.LLST0
+ 363 00c6 07       		.uleb128 0x7
+ 364 00c7 01       		.byte	0x1
+ 365 00c8 0E000000 		.4byte	.LASF15
+ 366 00cc 01       		.byte	0x1
+ 367 00cd 40       		.byte	0x40
+ 368 00ce 01       		.byte	0x1
+ 369 00cf 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 10
 
 
- 370 00cf 00000000 		.4byte	.LFB1
- 371 00d3 0A000000 		.4byte	.LFE1
- 372 00d7 2B000000 		.4byte	.LLST1
- 373 00db 07       		.uleb128 0x7
- 374 00dc 01       		.byte	0x1
- 375 00dd 60010000 		.4byte	.LASF16
- 376 00e1 01       		.byte	0x1
- 377 00e2 57       		.byte	0x57
- 378 00e3 01       		.byte	0x1
- 379 00e4 00000000 		.4byte	.LFB2
- 380 00e8 64000000 		.4byte	.LFE2
- 381 00ec 56000000 		.4byte	.LLST2
- 382 00f0 07       		.uleb128 0x7
- 383 00f1 01       		.byte	0x1
- 384 00f2 C5000000 		.4byte	.LASF17
- 385 00f6 01       		.byte	0x1
- 386 00f7 7E       		.byte	0x7e
- 387 00f8 01       		.byte	0x1
- 388 00f9 00000000 		.4byte	.LFB3
- 389 00fd 2E000000 		.4byte	.LFE3
- 390 0101 81000000 		.4byte	.LLST3
- 391 0105 08       		.uleb128 0x8
- 392 0106 4E000000 		.4byte	.LASF22
- 393 010a 01       		.byte	0x1
- 394 010b 18       		.byte	0x18
- 395 010c A6000000 		.4byte	0xa6
- 396 0110 05       		.byte	0x5
- 397 0111 03       		.byte	0x3
- 398 0112 00000000 		.4byte	ADC_SAR_2_backup
- 399 0116 00       		.byte	0x0
- 400              		.section	.debug_abbrev
- 401 0000 01       		.uleb128 0x1
- 402 0001 11       		.uleb128 0x11
- 403 0002 01       		.byte	0x1
- 404 0003 25       		.uleb128 0x25
- 405 0004 0E       		.uleb128 0xe
- 406 0005 13       		.uleb128 0x13
- 407 0006 0B       		.uleb128 0xb
- 408 0007 03       		.uleb128 0x3
- 409 0008 0E       		.uleb128 0xe
- 410 0009 1B       		.uleb128 0x1b
- 411 000a 0E       		.uleb128 0xe
- 412 000b 11       		.uleb128 0x11
- 413 000c 01       		.uleb128 0x1
- 414 000d 52       		.uleb128 0x52
- 415 000e 01       		.uleb128 0x1
- 416 000f 55       		.uleb128 0x55
- 417 0010 06       		.uleb128 0x6
- 418 0011 10       		.uleb128 0x10
- 419 0012 06       		.uleb128 0x6
- 420 0013 00       		.byte	0x0
- 421 0014 00       		.byte	0x0
- 422 0015 02       		.uleb128 0x2
- 423 0016 24       		.uleb128 0x24
- 424 0017 00       		.byte	0x0
- 425 0018 0B       		.uleb128 0xb
- 426 0019 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 11
+ 370 00d3 0A000000 		.4byte	.LFE1
+ 371 00d7 2B000000 		.4byte	.LLST1
+ 372 00db 07       		.uleb128 0x7
+ 373 00dc 01       		.byte	0x1
+ 374 00dd 5E010000 		.4byte	.LASF16
+ 375 00e1 01       		.byte	0x1
+ 376 00e2 57       		.byte	0x57
+ 377 00e3 01       		.byte	0x1
+ 378 00e4 00000000 		.4byte	.LFB2
+ 379 00e8 62000000 		.4byte	.LFE2
+ 380 00ec 56000000 		.4byte	.LLST2
+ 381 00f0 07       		.uleb128 0x7
+ 382 00f1 01       		.byte	0x1
+ 383 00f2 C5000000 		.4byte	.LASF17
+ 384 00f6 01       		.byte	0x1
+ 385 00f7 7E       		.byte	0x7e
+ 386 00f8 01       		.byte	0x1
+ 387 00f9 00000000 		.4byte	.LFB3
+ 388 00fd 2E000000 		.4byte	.LFE3
+ 389 0101 81000000 		.4byte	.LLST3
+ 390 0105 08       		.uleb128 0x8
+ 391 0106 4E000000 		.4byte	.LASF22
+ 392 010a 01       		.byte	0x1
+ 393 010b 18       		.byte	0x18
+ 394 010c A6000000 		.4byte	0xa6
+ 395 0110 05       		.byte	0x5
+ 396 0111 03       		.byte	0x3
+ 397 0112 00000000 		.4byte	ADC_SAR_2_backup
+ 398 0116 00       		.byte	0x0
+ 399              		.section	.debug_abbrev
+ 400 0000 01       		.uleb128 0x1
+ 401 0001 11       		.uleb128 0x11
+ 402 0002 01       		.byte	0x1
+ 403 0003 25       		.uleb128 0x25
+ 404 0004 0E       		.uleb128 0xe
+ 405 0005 13       		.uleb128 0x13
+ 406 0006 0B       		.uleb128 0xb
+ 407 0007 03       		.uleb128 0x3
+ 408 0008 0E       		.uleb128 0xe
+ 409 0009 1B       		.uleb128 0x1b
+ 410 000a 0E       		.uleb128 0xe
+ 411 000b 11       		.uleb128 0x11
+ 412 000c 01       		.uleb128 0x1
+ 413 000d 52       		.uleb128 0x52
+ 414 000e 01       		.uleb128 0x1
+ 415 000f 55       		.uleb128 0x55
+ 416 0010 06       		.uleb128 0x6
+ 417 0011 10       		.uleb128 0x10
+ 418 0012 06       		.uleb128 0x6
+ 419 0013 00       		.byte	0x0
+ 420 0014 00       		.byte	0x0
+ 421 0015 02       		.uleb128 0x2
+ 422 0016 24       		.uleb128 0x24
+ 423 0017 00       		.byte	0x0
+ 424 0018 0B       		.uleb128 0xb
+ 425 0019 0B       		.uleb128 0xb
+ 426 001a 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 11
 
 
- 427 001a 3E       		.uleb128 0x3e
- 428 001b 0B       		.uleb128 0xb
- 429 001c 03       		.uleb128 0x3
- 430 001d 0E       		.uleb128 0xe
- 431 001e 00       		.byte	0x0
- 432 001f 00       		.byte	0x0
- 433 0020 03       		.uleb128 0x3
- 434 0021 24       		.uleb128 0x24
- 435 0022 00       		.byte	0x0
- 436 0023 0B       		.uleb128 0xb
- 437 0024 0B       		.uleb128 0xb
- 438 0025 3E       		.uleb128 0x3e
- 439 0026 0B       		.uleb128 0xb
- 440 0027 03       		.uleb128 0x3
- 441 0028 08       		.uleb128 0x8
- 442 0029 00       		.byte	0x0
- 443 002a 00       		.byte	0x0
- 444 002b 04       		.uleb128 0x4
- 445 002c 16       		.uleb128 0x16
- 446 002d 00       		.byte	0x0
- 447 002e 03       		.uleb128 0x3
- 448 002f 0E       		.uleb128 0xe
- 449 0030 3A       		.uleb128 0x3a
- 450 0031 0B       		.uleb128 0xb
- 451 0032 3B       		.uleb128 0x3b
- 452 0033 0B       		.uleb128 0xb
- 453 0034 49       		.uleb128 0x49
- 454 0035 13       		.uleb128 0x13
- 455 0036 00       		.byte	0x0
- 456 0037 00       		.byte	0x0
- 457 0038 05       		.uleb128 0x5
- 458 0039 13       		.uleb128 0x13
- 459 003a 01       		.byte	0x1
- 460 003b 0B       		.uleb128 0xb
- 461 003c 0B       		.uleb128 0xb
- 462 003d 3A       		.uleb128 0x3a
- 463 003e 0B       		.uleb128 0xb
- 464 003f 3B       		.uleb128 0x3b
- 465 0040 0B       		.uleb128 0xb
- 466 0041 01       		.uleb128 0x1
- 467 0042 13       		.uleb128 0x13
- 468 0043 00       		.byte	0x0
- 469 0044 00       		.byte	0x0
- 470 0045 06       		.uleb128 0x6
- 471 0046 0D       		.uleb128 0xd
- 472 0047 00       		.byte	0x0
- 473 0048 03       		.uleb128 0x3
- 474 0049 0E       		.uleb128 0xe
- 475 004a 3A       		.uleb128 0x3a
- 476 004b 0B       		.uleb128 0xb
- 477 004c 3B       		.uleb128 0x3b
- 478 004d 0B       		.uleb128 0xb
- 479 004e 49       		.uleb128 0x49
- 480 004f 13       		.uleb128 0x13
- 481 0050 38       		.uleb128 0x38
- 482 0051 0A       		.uleb128 0xa
- 483 0052 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 12
+ 427 001b 0B       		.uleb128 0xb
+ 428 001c 03       		.uleb128 0x3
+ 429 001d 0E       		.uleb128 0xe
+ 430 001e 00       		.byte	0x0
+ 431 001f 00       		.byte	0x0
+ 432 0020 03       		.uleb128 0x3
+ 433 0021 24       		.uleb128 0x24
+ 434 0022 00       		.byte	0x0
+ 435 0023 0B       		.uleb128 0xb
+ 436 0024 0B       		.uleb128 0xb
+ 437 0025 3E       		.uleb128 0x3e
+ 438 0026 0B       		.uleb128 0xb
+ 439 0027 03       		.uleb128 0x3
+ 440 0028 08       		.uleb128 0x8
+ 441 0029 00       		.byte	0x0
+ 442 002a 00       		.byte	0x0
+ 443 002b 04       		.uleb128 0x4
+ 444 002c 16       		.uleb128 0x16
+ 445 002d 00       		.byte	0x0
+ 446 002e 03       		.uleb128 0x3
+ 447 002f 0E       		.uleb128 0xe
+ 448 0030 3A       		.uleb128 0x3a
+ 449 0031 0B       		.uleb128 0xb
+ 450 0032 3B       		.uleb128 0x3b
+ 451 0033 0B       		.uleb128 0xb
+ 452 0034 49       		.uleb128 0x49
+ 453 0035 13       		.uleb128 0x13
+ 454 0036 00       		.byte	0x0
+ 455 0037 00       		.byte	0x0
+ 456 0038 05       		.uleb128 0x5
+ 457 0039 13       		.uleb128 0x13
+ 458 003a 01       		.byte	0x1
+ 459 003b 0B       		.uleb128 0xb
+ 460 003c 0B       		.uleb128 0xb
+ 461 003d 3A       		.uleb128 0x3a
+ 462 003e 0B       		.uleb128 0xb
+ 463 003f 3B       		.uleb128 0x3b
+ 464 0040 0B       		.uleb128 0xb
+ 465 0041 01       		.uleb128 0x1
+ 466 0042 13       		.uleb128 0x13
+ 467 0043 00       		.byte	0x0
+ 468 0044 00       		.byte	0x0
+ 469 0045 06       		.uleb128 0x6
+ 470 0046 0D       		.uleb128 0xd
+ 471 0047 00       		.byte	0x0
+ 472 0048 03       		.uleb128 0x3
+ 473 0049 0E       		.uleb128 0xe
+ 474 004a 3A       		.uleb128 0x3a
+ 475 004b 0B       		.uleb128 0xb
+ 476 004c 3B       		.uleb128 0x3b
+ 477 004d 0B       		.uleb128 0xb
+ 478 004e 49       		.uleb128 0x49
+ 479 004f 13       		.uleb128 0x13
+ 480 0050 38       		.uleb128 0x38
+ 481 0051 0A       		.uleb128 0xa
+ 482 0052 00       		.byte	0x0
+ 483 0053 00       		.byte	0x0
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 12
 
 
- 484 0053 00       		.byte	0x0
- 485 0054 07       		.uleb128 0x7
- 486 0055 2E       		.uleb128 0x2e
- 487 0056 00       		.byte	0x0
- 488 0057 3F       		.uleb128 0x3f
- 489 0058 0C       		.uleb128 0xc
- 490 0059 03       		.uleb128 0x3
- 491 005a 0E       		.uleb128 0xe
- 492 005b 3A       		.uleb128 0x3a
- 493 005c 0B       		.uleb128 0xb
- 494 005d 3B       		.uleb128 0x3b
- 495 005e 0B       		.uleb128 0xb
- 496 005f 27       		.uleb128 0x27
- 497 0060 0C       		.uleb128 0xc
- 498 0061 11       		.uleb128 0x11
- 499 0062 01       		.uleb128 0x1
- 500 0063 12       		.uleb128 0x12
- 501 0064 01       		.uleb128 0x1
- 502 0065 40       		.uleb128 0x40
- 503 0066 06       		.uleb128 0x6
- 504 0067 00       		.byte	0x0
- 505 0068 00       		.byte	0x0
- 506 0069 08       		.uleb128 0x8
- 507 006a 34       		.uleb128 0x34
- 508 006b 00       		.byte	0x0
- 509 006c 03       		.uleb128 0x3
- 510 006d 0E       		.uleb128 0xe
- 511 006e 3A       		.uleb128 0x3a
- 512 006f 0B       		.uleb128 0xb
- 513 0070 3B       		.uleb128 0x3b
- 514 0071 0B       		.uleb128 0xb
- 515 0072 49       		.uleb128 0x49
- 516 0073 13       		.uleb128 0x13
- 517 0074 02       		.uleb128 0x2
- 518 0075 0A       		.uleb128 0xa
- 519 0076 00       		.byte	0x0
- 520 0077 00       		.byte	0x0
- 521 0078 00       		.byte	0x0
- 522              		.section	.debug_pubnames,"",%progbits
- 523 0000 6C000000 		.4byte	0x6c
- 524 0004 0200     		.2byte	0x2
- 525 0006 00000000 		.4byte	.Ldebug_info0
- 526 000a 17010000 		.4byte	0x117
- 527 000e B1000000 		.4byte	0xb1
- 528 0012 4144435F 		.ascii	"ADC_SAR_2_SaveConfig\000"
- 528      5341525F 
- 528      325F5361 
- 528      7665436F 
- 528      6E666967 
- 529 0027 C6000000 		.4byte	0xc6
- 530 002b 4144435F 		.ascii	"ADC_SAR_2_RestoreConfig\000"
- 530      5341525F 
- 530      325F5265 
- 530      73746F72 
- 530      65436F6E 
- 531 0043 DB000000 		.4byte	0xdb
- 532 0047 4144435F 		.ascii	"ADC_SAR_2_Sleep\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 13
+ 484 0054 07       		.uleb128 0x7
+ 485 0055 2E       		.uleb128 0x2e
+ 486 0056 00       		.byte	0x0
+ 487 0057 3F       		.uleb128 0x3f
+ 488 0058 0C       		.uleb128 0xc
+ 489 0059 03       		.uleb128 0x3
+ 490 005a 0E       		.uleb128 0xe
+ 491 005b 3A       		.uleb128 0x3a
+ 492 005c 0B       		.uleb128 0xb
+ 493 005d 3B       		.uleb128 0x3b
+ 494 005e 0B       		.uleb128 0xb
+ 495 005f 27       		.uleb128 0x27
+ 496 0060 0C       		.uleb128 0xc
+ 497 0061 11       		.uleb128 0x11
+ 498 0062 01       		.uleb128 0x1
+ 499 0063 12       		.uleb128 0x12
+ 500 0064 01       		.uleb128 0x1
+ 501 0065 40       		.uleb128 0x40
+ 502 0066 06       		.uleb128 0x6
+ 503 0067 00       		.byte	0x0
+ 504 0068 00       		.byte	0x0
+ 505 0069 08       		.uleb128 0x8
+ 506 006a 34       		.uleb128 0x34
+ 507 006b 00       		.byte	0x0
+ 508 006c 03       		.uleb128 0x3
+ 509 006d 0E       		.uleb128 0xe
+ 510 006e 3A       		.uleb128 0x3a
+ 511 006f 0B       		.uleb128 0xb
+ 512 0070 3B       		.uleb128 0x3b
+ 513 0071 0B       		.uleb128 0xb
+ 514 0072 49       		.uleb128 0x49
+ 515 0073 13       		.uleb128 0x13
+ 516 0074 02       		.uleb128 0x2
+ 517 0075 0A       		.uleb128 0xa
+ 518 0076 00       		.byte	0x0
+ 519 0077 00       		.byte	0x0
+ 520 0078 00       		.byte	0x0
+ 521              		.section	.debug_pubnames,"",%progbits
+ 522 0000 6C000000 		.4byte	0x6c
+ 523 0004 0200     		.2byte	0x2
+ 524 0006 00000000 		.4byte	.Ldebug_info0
+ 525 000a 17010000 		.4byte	0x117
+ 526 000e B1000000 		.4byte	0xb1
+ 527 0012 4144435F 		.ascii	"ADC_SAR_2_SaveConfig\000"
+ 527      5341525F 
+ 527      325F5361 
+ 527      7665436F 
+ 527      6E666967 
+ 528 0027 C6000000 		.4byte	0xc6
+ 529 002b 4144435F 		.ascii	"ADC_SAR_2_RestoreConfig\000"
+ 529      5341525F 
+ 529      325F5265 
+ 529      73746F72 
+ 529      65436F6E 
+ 530 0043 DB000000 		.4byte	0xdb
+ 531 0047 4144435F 		.ascii	"ADC_SAR_2_Sleep\000"
+ 531      5341525F 
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 13
 
 
- 532      5341525F 
- 532      325F536C 
- 532      65657000 
- 533 0057 F0000000 		.4byte	0xf0
- 534 005b 4144435F 		.ascii	"ADC_SAR_2_Wakeup\000"
- 534      5341525F 
- 534      325F5761 
- 534      6B657570 
- 534      00
- 535 006c 00000000 		.4byte	0x0
- 536              		.section	.debug_aranges,"",%progbits
- 537 0000 34000000 		.4byte	0x34
- 538 0004 0200     		.2byte	0x2
- 539 0006 00000000 		.4byte	.Ldebug_info0
- 540 000a 04       		.byte	0x4
- 541 000b 00       		.byte	0x0
- 542 000c 0000     		.2byte	0x0
- 543 000e 0000     		.2byte	0x0
- 544 0010 00000000 		.4byte	.LFB0
- 545 0014 0A000000 		.4byte	.LFE0-.LFB0
- 546 0018 00000000 		.4byte	.LFB1
- 547 001c 0A000000 		.4byte	.LFE1-.LFB1
- 548 0020 00000000 		.4byte	.LFB2
- 549 0024 64000000 		.4byte	.LFE2-.LFB2
- 550 0028 00000000 		.4byte	.LFB3
- 551 002c 2E000000 		.4byte	.LFE3-.LFB3
- 552 0030 00000000 		.4byte	0x0
- 553 0034 00000000 		.4byte	0x0
- 554              		.section	.debug_ranges,"",%progbits
- 555              	.Ldebug_ranges0:
- 556 0000 00000000 		.4byte	.Ltext0
- 557 0004 00000000 		.4byte	.Letext0
- 558 0008 00000000 		.4byte	.LFB0
- 559 000c 0A000000 		.4byte	.LFE0
- 560 0010 00000000 		.4byte	.LFB1
- 561 0014 0A000000 		.4byte	.LFE1
- 562 0018 00000000 		.4byte	.LFB2
- 563 001c 64000000 		.4byte	.LFE2
- 564 0020 00000000 		.4byte	.LFB3
- 565 0024 2E000000 		.4byte	.LFE3
- 566 0028 00000000 		.4byte	0x0
- 567 002c 00000000 		.4byte	0x0
- 568              		.section	.debug_str,"MS",%progbits,1
- 569              	.LASF6:
- 570 0000 6C6F6E67 		.ascii	"long long int\000"
- 570      206C6F6E 
- 570      6720696E 
- 570      7400
- 571              	.LASF15:
- 572 000e 4144435F 		.ascii	"ADC_SAR_2_RestoreConfig\000"
- 572      5341525F 
- 572      325F5265 
- 572      73746F72 
- 572      65436F6E 
- 573              	.LASF19:
- 574 0026 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ADC_SAR_2_PM.c\000"
- 574      6E657261 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 14
+ 531      325F536C 
+ 531      65657000 
+ 532 0057 F0000000 		.4byte	0xf0
+ 533 005b 4144435F 		.ascii	"ADC_SAR_2_Wakeup\000"
+ 533      5341525F 
+ 533      325F5761 
+ 533      6B657570 
+ 533      00
+ 534 006c 00000000 		.4byte	0x0
+ 535              		.section	.debug_aranges,"",%progbits
+ 536 0000 34000000 		.4byte	0x34
+ 537 0004 0200     		.2byte	0x2
+ 538 0006 00000000 		.4byte	.Ldebug_info0
+ 539 000a 04       		.byte	0x4
+ 540 000b 00       		.byte	0x0
+ 541 000c 0000     		.2byte	0x0
+ 542 000e 0000     		.2byte	0x0
+ 543 0010 00000000 		.4byte	.LFB0
+ 544 0014 0A000000 		.4byte	.LFE0-.LFB0
+ 545 0018 00000000 		.4byte	.LFB1
+ 546 001c 0A000000 		.4byte	.LFE1-.LFB1
+ 547 0020 00000000 		.4byte	.LFB2
+ 548 0024 62000000 		.4byte	.LFE2-.LFB2
+ 549 0028 00000000 		.4byte	.LFB3
+ 550 002c 2E000000 		.4byte	.LFE3-.LFB3
+ 551 0030 00000000 		.4byte	0x0
+ 552 0034 00000000 		.4byte	0x0
+ 553              		.section	.debug_ranges,"",%progbits
+ 554              	.Ldebug_ranges0:
+ 555 0000 00000000 		.4byte	.Ltext0
+ 556 0004 00000000 		.4byte	.Letext0
+ 557 0008 00000000 		.4byte	.LFB0
+ 558 000c 0A000000 		.4byte	.LFE0
+ 559 0010 00000000 		.4byte	.LFB1
+ 560 0014 0A000000 		.4byte	.LFE1
+ 561 0018 00000000 		.4byte	.LFB2
+ 562 001c 62000000 		.4byte	.LFE2
+ 563 0020 00000000 		.4byte	.LFB3
+ 564 0024 2E000000 		.4byte	.LFE3
+ 565 0028 00000000 		.4byte	0x0
+ 566 002c 00000000 		.4byte	0x0
+ 567              		.section	.debug_str,"MS",%progbits,1
+ 568              	.LASF6:
+ 569 0000 6C6F6E67 		.ascii	"long long int\000"
+ 569      206C6F6E 
+ 569      6720696E 
+ 569      7400
+ 570              	.LASF15:
+ 571 000e 4144435F 		.ascii	"ADC_SAR_2_RestoreConfig\000"
+ 571      5341525F 
+ 571      325F5265 
+ 571      73746F72 
+ 571      65436F6E 
+ 572              	.LASF19:
+ 573 0026 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ADC_SAR_2_PM.c\000"
+ 573      6E657261 
+ 573      7465645F 
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 14
 
 
- 574      7465645F 
- 574      536F7572 
- 574      63655C50 
- 575              	.LASF22:
- 576 004e 4144435F 		.ascii	"ADC_SAR_2_backup\000"
- 576      5341525F 
- 576      325F6261 
- 576      636B7570 
- 576      00
- 577              	.LASF13:
- 578 005f 4144435F 		.ascii	"ADC_SAR_2_BACKUP_STRUCT\000"
- 578      5341525F 
- 578      325F4241 
- 578      434B5550 
- 578      5F535452 
- 579              	.LASF9:
- 580 0077 666C6F61 		.ascii	"float\000"
- 580      7400
- 581              	.LASF1:
- 582 007d 756E7369 		.ascii	"unsigned char\000"
- 582      676E6564 
- 582      20636861 
- 582      7200
- 583              	.LASF14:
- 584 008b 4144435F 		.ascii	"ADC_SAR_2_SaveConfig\000"
- 584      5341525F 
- 584      325F5361 
- 584      7665436F 
- 584      6E666967 
- 585              	.LASF5:
- 586 00a0 6C6F6E67 		.ascii	"long unsigned int\000"
- 586      20756E73 
- 586      69676E65 
- 586      6420696E 
- 586      7400
- 587              	.LASF3:
- 588 00b2 73686F72 		.ascii	"short unsigned int\000"
- 588      7420756E 
- 588      7369676E 
- 588      65642069 
- 588      6E7400
- 589              	.LASF17:
- 590 00c5 4144435F 		.ascii	"ADC_SAR_2_Wakeup\000"
- 590      5341525F 
- 590      325F5761 
- 590      6B657570 
- 590      00
- 591              	.LASF10:
- 592 00d6 646F7562 		.ascii	"double\000"
- 592      6C6500
- 593              	.LASF20:
- 594 00dd 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
- 594      73657273 
- 594      5C686F61 
- 594      6E67705C 
- 594      446F6375 
- 595 010a 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc519h2b.s 			page 15
+ 573      536F7572 
+ 573      63655C50 
+ 574              	.LASF22:
+ 575 004e 4144435F 		.ascii	"ADC_SAR_2_backup\000"
+ 575      5341525F 
+ 575      325F6261 
+ 575      636B7570 
+ 575      00
+ 576              	.LASF13:
+ 577 005f 4144435F 		.ascii	"ADC_SAR_2_BACKUP_STRUCT\000"
+ 577      5341525F 
+ 577      325F4241 
+ 577      434B5550 
+ 577      5F535452 
+ 578              	.LASF9:
+ 579 0077 666C6F61 		.ascii	"float\000"
+ 579      7400
+ 580              	.LASF1:
+ 581 007d 756E7369 		.ascii	"unsigned char\000"
+ 581      676E6564 
+ 581      20636861 
+ 581      7200
+ 582              	.LASF14:
+ 583 008b 4144435F 		.ascii	"ADC_SAR_2_SaveConfig\000"
+ 583      5341525F 
+ 583      325F5361 
+ 583      7665436F 
+ 583      6E666967 
+ 584              	.LASF5:
+ 585 00a0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 585      20756E73 
+ 585      69676E65 
+ 585      6420696E 
+ 585      7400
+ 586              	.LASF3:
+ 587 00b2 73686F72 		.ascii	"short unsigned int\000"
+ 587      7420756E 
+ 587      7369676E 
+ 587      65642069 
+ 587      6E7400
+ 588              	.LASF17:
+ 589 00c5 4144435F 		.ascii	"ADC_SAR_2_Wakeup\000"
+ 589      5341525F 
+ 589      325F5761 
+ 589      6B657570 
+ 589      00
+ 590              	.LASF10:
+ 591 00d6 646F7562 		.ascii	"double\000"
+ 591      6C6500
+ 592              	.LASF8:
+ 593 00dd 756E7369 		.ascii	"unsigned int\000"
+ 593      676E6564 
+ 593      20696E74 
+ 593      00
+ 594              	.LASF7:
+ 595 00ea 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 595      206C6F6E 
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccndLz1x.s 			page 15
 
 
- 595      6E766572 
- 595      745C696E 
- 595      76657274 
- 595      2E637964 
- 596              	.LASF8:
- 597 0121 756E7369 		.ascii	"unsigned int\000"
- 597      676E6564 
- 597      20696E74 
- 597      00
- 598              	.LASF7:
- 599 012e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 599      206C6F6E 
- 599      6720756E 
- 599      7369676E 
- 599      65642069 
- 600              	.LASF18:
- 601 0145 474E5520 		.ascii	"GNU C 4.4.1\000"
- 601      4320342E 
- 601      342E3100 
- 602              	.LASF11:
- 603 0151 63686172 		.ascii	"char\000"
- 603      00
- 604              	.LASF2:
- 605 0156 73686F72 		.ascii	"short int\000"
- 605      7420696E 
- 605      7400
- 606              	.LASF16:
- 607 0160 4144435F 		.ascii	"ADC_SAR_2_Sleep\000"
- 607      5341525F 
- 607      325F536C 
- 607      65657000 
- 608              	.LASF12:
- 609 0170 75696E74 		.ascii	"uint8\000"
- 609      3800
- 610              	.LASF4:
- 611 0176 6C6F6E67 		.ascii	"long int\000"
- 611      20696E74 
- 611      00
- 612              	.LASF21:
- 613 017f 656E6162 		.ascii	"enableState\000"
- 613      6C655374 
- 613      61746500 
- 614              	.LASF0:
- 615 018b 7369676E 		.ascii	"signed char\000"
- 615      65642063 
- 615      68617200 
- 616              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
+ 595      6720756E 
+ 595      7369676E 
+ 595      65642069 
+ 596              	.LASF20:
+ 597 0101 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
+ 597      73657273 
+ 597      5C555345 
+ 597      525C446F 
+ 597      63756D65 
+ 598 012e 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
+ 598      6572745C 
+ 598      696E7665 
+ 598      72742E63 
+ 598      7964736E 
+ 599              	.LASF18:
+ 600 0143 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 600      4320342E 
+ 600      342E3100 
+ 601              	.LASF11:
+ 602 014f 63686172 		.ascii	"char\000"
+ 602      00
+ 603              	.LASF2:
+ 604 0154 73686F72 		.ascii	"short int\000"
+ 604      7420696E 
+ 604      7400
+ 605              	.LASF16:
+ 606 015e 4144435F 		.ascii	"ADC_SAR_2_Sleep\000"
+ 606      5341525F 
+ 606      325F536C 
+ 606      65657000 
+ 607              	.LASF12:
+ 608 016e 75696E74 		.ascii	"uint8\000"
+ 608      3800
+ 609              	.LASF4:
+ 610 0174 6C6F6E67 		.ascii	"long int\000"
+ 610      20696E74 
+ 610      00
+ 611              	.LASF21:
+ 612 017d 656E6162 		.ascii	"enableState\000"
+ 612      6C655374 
+ 612      61746500 
+ 613              	.LASF0:
+ 614 0189 7369676E 		.ascii	"signed char\000"
+ 614      65642063 
+ 614      68617200 
+ 615              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
