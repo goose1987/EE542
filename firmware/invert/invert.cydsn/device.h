@@ -15,4 +15,7 @@
 #include <project.h>
 
 #endif
+
+double calcDuty(double U1, double U2, double U3, double E0, double E1, double E2, double E3);
+
 /* [] END OF FILE */

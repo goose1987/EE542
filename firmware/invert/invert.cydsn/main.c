@@ -19,6 +19,15 @@ int16 sineLUTindex=0;
 
 char recbyte=0;
 
+float A1=0.09305911;
+float A2=0.75486969;
+float A3=0.15207120;
+
+float B0=4.93296886;
+float B1=-1.63710219;
+float B2=-4.38245164;
+float B3=2.18761941;
+
 int16 sineLUT[512]={0x100,0x103,0x106,0x109,0x10d,0x110,0x113,0x116,
                     0x119,0x11c,0x11f,0x122,0x126,0x129,0x12c,0x12f,
                     0x132,0x135,0x138,0x13b,0x13e,0x141,0x144,0x147,
@@ -84,9 +93,25 @@ int16 sineLUT[512]={0x100,0x103,0x106,0x109,0x10d,0x110,0x113,0x116,
                     0xce,0xd1,0xd4,0xd7,0xda,0xde,0xe1,0xe4,
                     0xe7,0xea,0xed,0xf0,0xf3,0xf7,0xfa,0xfd};
 
+double calcDuty(double U1, double U2, double U3, double E0, double E1, double E2, double E3){
+    return A1*U1+A2*U2+A3*U3+B0*E0+B1*E1+B2*E2+B3*E3;
+}
+
+
 void main()
 {
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+
+    //Type III compensator variables
+
+    
+    //Output array
+    float U[4] ={0,0,0,0};
+    
+    //error array
+    float E[4]={0,0,0,0};
+    
+    char tstr[16];
 
     //clock
     Clock_1_Enable();
@@ -133,15 +158,28 @@ void main()
             UART_1_WriteTxData(buffvolt);
         }
         */
+        
+        U[3]=U[2];
+        U[2]=U[1];
+        U[1]=U[0];
+        
+        E[3]=E[2];
+        E[2]=E[1];
+        E[1]=E[0];
+        E[0] = sineLUT[0]-buffvolt; //placeholder to calculate current error
+        //need to multiply it with K factor
+        U[0]= calcDuty(U[1], U[2], U[3], E[0], E[1], E[2], E[3]);
+        //K factor is 7
         recbyte=UART_1_GetChar();
         if(recbyte=='V'){
             UART_1_PutChar((buffvolt>>8));
             UART_1_PutChar(buffvolt);
         }
         
-        
+        sprintf(tstr, "%+1.4f", B2);
         LCD_Char_1_Position(1u, 0u);
-        LCD_Char_1_PrintInt16(buffvolt);
+        //LCD_Char_1_PrintInt16(A1);
+        LCD_Char_1_PrintString(tstr);
         
         LCD_Char_1_Position(1u,8u);
         LCD_Char_1_PrintInt16(sineLUT[sineLUTindex]);

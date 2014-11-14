@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
   14:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** *
   15:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** * Note:
   16:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 2
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 2
 
 
   17:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** *******************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
   55 0010 08D1     		bne	.L2
   54:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     {
   55:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****         PWM_UNFOLD_A_Init();
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 3
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 3
 
 
   56              		.loc 1 55 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
   85              		.cfi_def_cfa_offset 8
   86 0002 82B0     		sub	sp, sp, #8
   87              	.LCFI3:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 4
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 4
 
 
   88              		.cfi_def_cfa_offset 16
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  102 0018 46F27643 		movw	r3, #:lower16:1073767542
  103 001c C4F20003 		movt	r3, #:upper16:1073767542
  104 0020 BA79     		ldrb	r2, [r7, #6]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 5
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 5
 
 
  105 0022 42F00902 		orr	r2, r2, #9
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  128 005e 4FF00300 		mov	r0, #3
  129 0062 FFF7FEFF 		bl	PWM_UNFOLD_A_WriteDeadTime
  152:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****         #endif /* (PWM_UNFOLD_A_DeadBandUsed) */
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 6
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 6
 
 
  153:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  156 00a4 80BD     		pop	{r7, pc}
  157              		.cfi_endproc
  158              	.LFE1:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 7
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 7
 
 
  159              		.size	PWM_UNFOLD_A_Init, .-PWM_UNFOLD_A_Init
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  183 000c 46F27642 		movw	r2, #:lower16:1073767542
  184 0010 C4F20002 		movt	r2, #:upper16:1073767542
  185 0014 1278     		ldrb	r2, [r2, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 8
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 8
 
 
  186 0016 D2B2     		uxtb	r2, r2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  215              		.cfi_offset 7, -4
  216              	.LCFI8:
  217              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 9
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 9
 
 
  236:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     #if (PWM_UNFOLD_A_UseControl || PWM_UNFOLD_A_UsingFixedFunction)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  266:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		*
  267:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		*******************************************************************************/
  268:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		void PWM_UNFOLD_A_SetCompareMode(uint8 comparemode) 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 10
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 10
 
 
  269:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		{
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  323:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		* Summary:
  324:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		*  This function writes the Compare Mode for the pwm or pwm1 output
  325:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		*
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 11
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 11
 
 
  326:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 		* Parameters:  
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  380:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****             PWM_UNFOLD_A_CONTROL |= comparemodemasked;
  381:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****         #endif /* (PWM_UNFOLD_A_UseControl) */
  382:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     }
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 12
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 12
 
 
  383:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     #endif /*PWM_UNFOLD_A_CompareMode2SW */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  269              		.cfi_endproc
  270              	.LFE4:
  271              		.size	PWM_UNFOLD_A_WriteCounter, .-PWM_UNFOLD_A_WriteCounter
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 13
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 13
 
 
  272              		.section	.text.PWM_UNFOLD_A_ReadCounter,"ax",%progbits
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  300 0018 DBB2     		uxtb	r3, r3
  436:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     }
  301              		.loc 1 436 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 14
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 14
 
 
  302 001a 1846     		mov	r0, r3
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  333 0006 FFF7FEFF 		bl	PWM_UNFOLD_A_ReadCapture
  334              	.L15:
  335              		.loc 1 457 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 15
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 15
 
 
  336 000a FFF7FEFF 		bl	PWM_UNFOLD_A_ReadStatusRegister
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  364              		.cfi_def_cfa_offset 16
  365 0004 00AF     		add	r7, sp, #0
  366              		.cfi_offset 7, -4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 16
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 16
 
 
  367              	.LCFI18:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  515:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     *  Dither Mode, Center Aligned Mode or One Output Mode
  516:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     *
  517:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     *******************************************************************************/
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 17
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 17
 
 
  518:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     void PWM_UNFOLD_A_WriteCompare(uint8 compare) \
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  429              	.LFB9:
  535:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 
  536:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 18
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 18
 
 
  537:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** #else
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  591:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****         #else
  592:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****             CY_SET_REG8(PWM_UNFOLD_A_COMPARE2_LSB_PTR, compare);
  593:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****         #endif /* (PWM_UNFOLD_A_UsingFixedFunction) */
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 19
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 19
 
 
  594:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  455 0022 1A70     		strb	r2, [r3, #0]
  623:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****             
  624:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****             /* Set new dead time */
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 20
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 20
 
 
  625:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****             #if(PWM_UNFOLD_A_DEADBAND_COUNT_SHIFT)        
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  648:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     *
  649:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     *******************************************************************************/
  650:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     uint8 PWM_UNFOLD_A_ReadDeadTime(void) 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 21
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 21
 
 
  651:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  671:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     /*******************************************************************************
  672:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     * Function Name: PWM_UNFOLD_A_SetInterruptMode
  673:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     ********************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 22
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 22
 
 
  674:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     * 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  690:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 
  691:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 
  692:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     /*******************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 23
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 23
 
 
  693:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     * Function Name: PWM_UNFOLD_A_ReadStatusRegister
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  586 001e 7047     		bx	lr
  587              		.cfi_endproc
  588              	.LFE12:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 24
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 24
 
 
  589              		.size	PWM_UNFOLD_A_ReadStatusRegister, .-PWM_UNFOLD_A_ReadStatusRegister
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  616 000e 1B78     		ldrb	r3, [r3, #0]
  617 0010 FB71     		strb	r3, [r7, #7]
  747:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     	return (result);
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 25
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 25
 
 
  618              		.loc 1 747 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  648 0004 00AF     		add	r7, sp, #0
  649              		.cfi_offset 7, -4
  650              	.LCFI38:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 26
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 26
 
 
  651              		.cfi_def_cfa_register 7
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  680 0000 80B4     		push	{r7}
  681              	.LCFI39:
  682              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 27
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 27
 
 
  683 0002 00AF     		add	r7, sp, #0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  711              		@ frame_needed = 1, uses_anonymous_args = 0
  712              		@ link register save eliminated.
  713 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 28
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 28
 
 
  714              	.LCFI41:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  850:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     }
  851:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 
  852:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 29
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 29
 
 
  853:.\Generated_Source\PSoC5/PWM_UNFOLD_A.c ****     /*******************************************************************************
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  753              		.loc 1 894 0
  754 0004 46F24443 		movw	r3, #:lower16:1073767492
  755 0008 C4F20003 		movt	r3, #:upper16:1073767492
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 30
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 30
 
 
  756 000c 1B78     		ldrb	r3, [r3, #0]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  808 005e 00000000 		.4byte	0x0
  809              	.LLST2:
  810 0062 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 31
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 31
 
 
  811 0066 02000000 		.4byte	.LCFI5
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  865              	.LLST5:
  866 00ef 00000000 		.4byte	.LFB5
  867 00f3 02000000 		.4byte	.LCFI12
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 32
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 32
 
 
  868 00f7 0100     		.2byte	0x1
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  922 017c 00000000 		.4byte	.LFB8
  923 0180 02000000 		.4byte	.LCFI19
  924 0184 0100     		.2byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 33
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 33
 
 
  925 0186 5D       		.byte	0x5d
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  979 020c 04       		.sleb128 4
  980 020d 00000000 		.4byte	0x0
  981 0211 00000000 		.4byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 34
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 34
 
 
  982              	.LLST11:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1036 029a 04000000 		.4byte	.LCFI34
  1037 029e 06000000 		.4byte	.LCFI35
  1038 02a2 0200     		.2byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 35
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 35
 
 
  1039 02a4 7D       		.byte	0x7d
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1093 032b 04000000 		.4byte	.LCFI42
  1094 032f 0200     		.2byte	0x2
  1095 0331 7D       		.byte	0x7d
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 36
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 36
 
 
  1096 0332 04       		.sleb128 4
@@ -2133,10 +2133,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1125 0006 00000000 		.4byte	.Ldebug_abbrev0
  1126 000a 04       		.byte	0x4
  1127 000b 01       		.uleb128 0x1
- 1128 000c 6F020000 		.4byte	.LASF39
+ 1128 000c 6D020000 		.4byte	.LASF39
  1129 0010 01       		.byte	0x1
- 1130 0011 C9020000 		.4byte	.LASF40
- 1131 0015 D2010000 		.4byte	.LASF41
+ 1130 0011 C7020000 		.4byte	.LASF40
+ 1131 0015 F6010000 		.4byte	.LASF41
  1132 0019 00000000 		.4byte	0x0
  1133 001d 00000000 		.4byte	0x0
  1134 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
@@ -2144,7 +2144,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1136 0029 02       		.uleb128 0x2
  1137 002a 01       		.byte	0x1
  1138 002b 06       		.byte	0x6
- 1139 002c 19030000 		.4byte	.LASF0
+ 1139 002c 17030000 		.4byte	.LASF0
  1140 0030 02       		.uleb128 0x2
  1141 0031 01       		.byte	0x1
  1142 0032 08       		.byte	0x8
@@ -2152,18 +2152,18 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1144 0037 02       		.uleb128 0x2
  1145 0038 02       		.byte	0x2
  1146 0039 05       		.byte	0x5
- 1147 003a BF020000 		.4byte	.LASF2
+ 1147 003a BD020000 		.4byte	.LASF2
  1148 003e 02       		.uleb128 0x2
  1149 003f 02       		.byte	0x2
  1150 0040 07       		.byte	0x7
  1151 0041 83000000 		.4byte	.LASF3
  1152 0045 02       		.uleb128 0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 37
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 37
 
 
  1153 0046 04       		.byte	0x4
  1154 0047 05       		.byte	0x5
- 1155 0048 F1020000 		.4byte	.LASF4
+ 1155 0048 EF020000 		.4byte	.LASF4
  1156 004c 02       		.uleb128 0x2
  1157 004d 04       		.byte	0x4
  1158 004e 07       		.byte	0x7
@@ -2175,7 +2175,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1164 005a 02       		.uleb128 0x2
  1165 005b 08       		.byte	0x8
  1166 005c 07       		.byte	0x7
- 1167 005d 23020000 		.4byte	.LASF7
+ 1167 005d DF010000 		.4byte	.LASF7
  1168 0061 03       		.uleb128 0x3
  1169 0062 04       		.byte	0x4
  1170 0063 05       		.byte	0x5
@@ -2183,7 +2183,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1172 0068 02       		.uleb128 0x2
  1173 0069 04       		.byte	0x4
  1174 006a 07       		.byte	0x7
- 1175 006b 16020000 		.4byte	.LASF8
+ 1175 006b D2010000 		.4byte	.LASF8
  1176 006f 04       		.uleb128 0x4
  1177 0070 38010000 		.4byte	.LASF42
  1178 0074 02       		.byte	0x2
@@ -2200,7 +2200,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1189 0088 02       		.uleb128 0x2
  1190 0089 01       		.byte	0x1
  1191 008a 08       		.byte	0x8
- 1192 008b FA020000 		.4byte	.LASF11
+ 1192 008b F8020000 		.4byte	.LASF11
  1193 008f 05       		.uleb128 0x5
  1194 0090 04       		.byte	0x4
  1195 0091 07       		.byte	0x7
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1207 00a9 71000000 		.4byte	.LASF17
  1208 00ad 01       		.byte	0x1
  1209 00ae 4F       		.byte	0x4f
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 38
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 38
 
 
  1210 00af 01       		.byte	0x1
@@ -2227,7 +2227,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1213 00b8 2B000000 		.4byte	.LLST1
  1214 00bc DD000000 		.4byte	0xdd
  1215 00c0 08       		.uleb128 0x8
- 1216 00c1 53020000 		.4byte	.LASF12
+ 1216 00c1 51020000 		.4byte	.LASF12
  1217 00c5 01       		.byte	0x1
  1218 00c6 52       		.byte	0x52
  1219 00c7 6F000000 		.4byte	0x6f
@@ -2245,7 +2245,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1231 00dc 00       		.byte	0x0
  1232 00dd 06       		.uleb128 0x6
  1233 00de 01       		.byte	0x1
- 1234 00df 89020000 		.4byte	.LASF15
+ 1234 00df 87020000 		.4byte	.LASF15
  1235 00e3 01       		.byte	0x1
  1236 00e4 C8       		.byte	0xc8
  1237 00e5 01       		.byte	0x1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1264 0129 6F000000 		.4byte	0x6f
  1265 012d 02       		.byte	0x2
  1266 012e 91       		.byte	0x91
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 39
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 39
 
 
  1267 012f 77       		.sleb128 -9
@@ -2295,7 +2295,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1278 0147 EF000000 		.4byte	.LLST5
  1279 014b 0C       		.uleb128 0xc
  1280 014c 01       		.byte	0x1
- 1281 014d 58020000 		.4byte	.LASF19
+ 1281 014d 56020000 		.4byte	.LASF19
  1282 0151 01       		.byte	0x1
  1283 0152 C701     		.2byte	0x1c7
  1284 0154 01       		.byte	0x1
@@ -2304,7 +2304,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1287 015d 1A010000 		.4byte	.LLST6
  1288 0161 09       		.uleb128 0x9
  1289 0162 01       		.byte	0x1
- 1290 0163 3A020000 		.4byte	.LASF20
+ 1290 0163 38020000 		.4byte	.LASF20
  1291 0167 01       		.byte	0x1
  1292 0168 E401     		.2byte	0x1e4
  1293 016a 01       		.byte	0x1
@@ -2323,7 +2323,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1306 018a 00       		.byte	0x0
  1307 018b 09       		.uleb128 0x9
  1308 018c 01       		.byte	0x1
- 1309 018d FF020000 		.4byte	.LASF23
+ 1309 018d FD020000 		.4byte	.LASF23
  1310 0191 01       		.byte	0x1
  1311 0192 0602     		.2byte	0x206
  1312 0194 01       		.byte	0x1
@@ -2332,13 +2332,13 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1315 019d 7C010000 		.4byte	.LLST8
  1316 01a1 B5010000 		.4byte	0x1b5
  1317 01a5 0A       		.uleb128 0xa
- 1318 01a6 25030000 		.4byte	.LASF24
+ 1318 01a6 23030000 		.4byte	.LASF24
  1319 01aa 01       		.byte	0x1
  1320 01ab 0602     		.2byte	0x206
  1321 01ad 6F000000 		.4byte	0x6f
  1322 01b1 02       		.byte	0x2
  1323 01b2 91       		.byte	0x91
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 40
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 40
 
 
  1324 01b3 77       		.sleb128 -9
@@ -2354,7 +2354,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1334 01c7 B3010000 		.4byte	.LLST9
  1335 01cb DF010000 		.4byte	0x1df
  1336 01cf 0A       		.uleb128 0xa
- 1337 01d0 2D030000 		.4byte	.LASF26
+ 1337 01d0 2B030000 		.4byte	.LASF26
  1338 01d4 01       		.byte	0x1
  1339 01d5 6602     		.2byte	0x266
  1340 01d7 6F000000 		.4byte	0x6f
@@ -2383,7 +2383,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1363 020b 15020000 		.4byte	.LLST11
  1364 020f 23020000 		.4byte	0x223
  1365 0213 0A       		.uleb128 0xa
- 1366 0214 7B020000 		.4byte	.LASF30
+ 1366 0214 79020000 		.4byte	.LASF30
  1367 0218 01       		.byte	0x1
  1368 0219 AE02     		.2byte	0x2ae
  1369 021b 6F000000 		.4byte	0x6f
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1378 022a C902     		.2byte	0x2c9
  1379 022c 01       		.byte	0x1
  1380 022d 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 41
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 41
 
 
  1381 0231 00000000 		.4byte	.LFB12
@@ -2436,7 +2436,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1413 027e 00       		.byte	0x0
  1414 027f 09       		.uleb128 0x9
  1415 0280 01       		.byte	0x1
- 1416 0281 9D020000 		.4byte	.LASF34
+ 1416 0281 9B020000 		.4byte	.LASF34
  1417 0285 01       		.byte	0x1
  1418 0286 0203     		.2byte	0x302
  1419 0288 01       		.byte	0x1
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1435 02ab 58000000 		.4byte	.LASF36
  1436 02af 01       		.byte	0x1
  1437 02b0 1B03     		.2byte	0x31b
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 42
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 42
 
 
  1438 02b2 01       		.byte	0x1
@@ -2468,7 +2468,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1442 02bf F1020000 		.4byte	.LLST15
  1443 02c3 0B       		.uleb128 0xb
  1444 02c4 01       		.byte	0x1
- 1445 02c5 36030000 		.4byte	.LASF37
+ 1445 02c5 34030000 		.4byte	.LASF37
  1446 02c9 01       		.byte	0x1
  1447 02ca 3503     		.2byte	0x335
  1448 02cc 01       		.byte	0x1
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1492 0012 06       		.uleb128 0x6
  1493 0013 00       		.byte	0x0
  1494 0014 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 43
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 43
 
 
  1495 0015 02       		.uleb128 0x2
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1549 004b 0B       		.uleb128 0xb
  1550 004c 27       		.uleb128 0x27
  1551 004d 0C       		.uleb128 0xc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 44
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 44
 
 
  1552 004e 11       		.uleb128 0x11
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1606 0084 0B       		.uleb128 0xb
  1607 0085 3B       		.uleb128 0x3b
  1608 0086 05       		.uleb128 0x5
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 45
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 45
 
 
  1609 0087 27       		.uleb128 0x27
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1663 00bd 0C       		.uleb128 0xc
  1664 00be 03       		.uleb128 0x3
  1665 00bf 0E       		.uleb128 0xe
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 46
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 46
 
 
  1666 00c0 3A       		.uleb128 0x3a
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1720 00f6 0F       		.uleb128 0xf
  1721 00f7 34       		.uleb128 0x34
  1722 00f8 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 47
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 47
 
 
  1723 00f9 03       		.uleb128 0x3
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1754      5F526561 
  1754      64436F75 
  1755 00a4 4B010000 		.4byte	0x14b
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 48
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 48
 
 
  1756 00a8 50574D5F 		.ascii	"PWM_UNFOLD_A_ClearFIFO\000"
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1774 01cc 50574D5F 		.ascii	"PWM_UNFOLD_A_ReadCapture\000"
  1774      554E464F 
  1774      4C445F41 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 49
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 49
 
 
  1774      5F526561 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1815 0074 20000000 		.4byte	.LFE12-.LFB12
  1816 0078 00000000 		.4byte	.LFB13
  1817 007c 20000000 		.4byte	.LFE13-.LFB13
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 50
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 50
 
 
  1818 0080 00000000 		.4byte	.LFB14
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1872 0000 6C6F6E67 		.ascii	"long long int\000"
  1872      206C6F6E 
  1872      6720696E 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 51
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 51
 
 
  1872      7400
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1892      7465436F 
  1893              	.LASF9:
  1894 00ec 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 52
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 52
 
 
  1894      7400
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1917              	.LASF16:
  1918 01a2 50574D5F 		.ascii	"PWM_UNFOLD_A_Stop\000"
  1918      554E464F 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 53
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 53
 
 
  1918      4C445F41 
@@ -3130,55 +3130,55 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1920      4C445F41 
  1920      5F536574 
  1920      496E7465 
- 1921              	.LASF41:
- 1922 01d2 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
- 1922      73657273 
- 1922      5C686F61 
- 1922      6E67705C 
- 1922      446F6375 
- 1923 01ff 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
- 1923      6E766572 
- 1923      745C696E 
- 1923      76657274 
- 1923      2E637964 
- 1924              	.LASF8:
- 1925 0216 756E7369 		.ascii	"unsigned int\000"
- 1925      676E6564 
- 1925      20696E74 
- 1925      00
- 1926              	.LASF7:
- 1927 0223 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1927      206C6F6E 
- 1927      6720756E 
- 1927      7369676E 
- 1927      65642069 
+ 1921              	.LASF8:
+ 1922 01d2 756E7369 		.ascii	"unsigned int\000"
+ 1922      676E6564 
+ 1922      20696E74 
+ 1922      00
+ 1923              	.LASF7:
+ 1924 01df 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1924      206C6F6E 
+ 1924      6720756E 
+ 1924      7369676E 
+ 1924      65642069 
+ 1925              	.LASF41:
+ 1926 01f6 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
+ 1926      73657273 
+ 1926      5C555345 
+ 1926      525C446F 
+ 1926      63756D65 
+ 1927 0223 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
+ 1927      6572745C 
+ 1927      696E7665 
+ 1927      72742E63 
+ 1927      7964736E 
  1928              	.LASF20:
- 1929 023a 50574D5F 		.ascii	"PWM_UNFOLD_A_WritePeriod\000"
+ 1929 0238 50574D5F 		.ascii	"PWM_UNFOLD_A_WritePeriod\000"
  1929      554E464F 
  1929      4C445F41 
  1929      5F577269 
  1929      74655065 
  1930              	.LASF12:
- 1931 0253 6374726C 		.ascii	"ctrl\000"
+ 1931 0251 6374726C 		.ascii	"ctrl\000"
  1931      00
  1932              	.LASF19:
- 1933 0258 50574D5F 		.ascii	"PWM_UNFOLD_A_ClearFIFO\000"
+ 1933 0256 50574D5F 		.ascii	"PWM_UNFOLD_A_ClearFIFO\000"
  1933      554E464F 
  1933      4C445F41 
  1933      5F436C65 
  1933      61724649 
  1934              	.LASF39:
- 1935 026f 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 1935 026d 474E5520 		.ascii	"GNU C 4.4.1\000"
  1935      4320342E 
  1935      342E3100 
  1936              	.LASF30:
- 1937 027b 696E7465 		.ascii	"interruptMode\000"
+ 1937 0279 696E7465 		.ascii	"interruptMode\000"
  1937      72727570 
  1937      744D6F64 
  1937      6500
  1938              	.LASF15:
- 1939 0289 50574D5F 		.ascii	"PWM_UNFOLD_A_Enable\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 54
+ 1939 0287 50574D5F 		.ascii	"PWM_UNFOLD_A_Enable\000"
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccXMgFrg.s 			page 54
 
 
  1939      554E464F 
@@ -3186,47 +3186,47 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEp0o14.s 			page 1
  1939      5F456E61 
  1939      626C6500 
  1940              	.LASF34:
- 1941 029d 50574D5F 		.ascii	"PWM_UNFOLD_A_WriteControlRegister\000"
+ 1941 029b 50574D5F 		.ascii	"PWM_UNFOLD_A_WriteControlRegister\000"
  1941      554E464F 
  1941      4C445F41 
  1941      5F577269 
  1941      7465436F 
  1942              	.LASF2:
- 1943 02bf 73686F72 		.ascii	"short int\000"
+ 1943 02bd 73686F72 		.ascii	"short int\000"
  1943      7420696E 
  1943      7400
  1944              	.LASF40:
- 1945 02c9 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\PWM_UNFOLD_A.c\000"
+ 1945 02c7 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\PWM_UNFOLD_A.c\000"
  1945      6E657261 
  1945      7465645F 
  1945      536F7572 
  1945      63655C50 
  1946              	.LASF4:
- 1947 02f1 6C6F6E67 		.ascii	"long int\000"
+ 1947 02ef 6C6F6E67 		.ascii	"long int\000"
  1947      20696E74 
  1947      00
  1948              	.LASF11:
- 1949 02fa 63686172 		.ascii	"char\000"
+ 1949 02f8 63686172 		.ascii	"char\000"
  1949      00
  1950              	.LASF23:
- 1951 02ff 50574D5F 		.ascii	"PWM_UNFOLD_A_WriteCompare\000"
+ 1951 02fd 50574D5F 		.ascii	"PWM_UNFOLD_A_WriteCompare\000"
  1951      554E464F 
  1951      4C445F41 
  1951      5F577269 
  1951      7465436F 
  1952              	.LASF0:
- 1953 0319 7369676E 		.ascii	"signed char\000"
+ 1953 0317 7369676E 		.ascii	"signed char\000"
  1953      65642063 
  1953      68617200 
  1954              	.LASF24:
- 1955 0325 636F6D70 		.ascii	"compare\000"
+ 1955 0323 636F6D70 		.ascii	"compare\000"
  1955      61726500 
  1956              	.LASF26:
- 1957 032d 64656164 		.ascii	"deadtime\000"
+ 1957 032b 64656164 		.ascii	"deadtime\000"
  1957      74696D65 
  1957      00
  1958              	.LASF37:
- 1959 0336 50574D5F 		.ascii	"PWM_UNFOLD_A_ReadCompare\000"
+ 1959 0334 50574D5F 		.ascii	"PWM_UNFOLD_A_ReadCompare\000"
  1959      554E464F 
  1959      4C445F41 
  1959      5F526561 
