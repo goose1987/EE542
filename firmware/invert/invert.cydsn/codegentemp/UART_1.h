@@ -28,7 +28,7 @@
 * Conditional Compilation Parameters
 ***************************************/
 
-#define UART_1_RX_ENABLED                     (0u)
+#define UART_1_RX_ENABLED                     (1u)
 #define UART_1_TX_ENABLED                     (1u)
 #define UART_1_HD_ENABLED                     (0u)
 #define UART_1_RX_INTERRUPT_ENABLED           (0u)

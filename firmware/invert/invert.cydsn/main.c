@@ -17,6 +17,8 @@ uint8 dataReady=0;
 int16 * sinptr;
 int16 sineLUTindex=0;
 
+char recbyte=0;
+
 int16 sineLUT[512]={0x100,0x103,0x106,0x109,0x10d,0x110,0x113,0x116,
                     0x119,0x11c,0x11f,0x122,0x126,0x129,0x12c,0x12f,
                     0x132,0x135,0x138,0x13b,0x13e,0x141,0x144,0x147,
@@ -88,6 +90,7 @@ void main()
 
     //clock
     Clock_1_Enable();
+    Clock_2_Enable();
     
     //start LCD
     LCD_Char_1_Start();
@@ -100,15 +103,18 @@ void main()
     ADC_DelSig_V_StartConvert();
     
     //start pwm
-    
     PWM_BUCK_Start();
     
+    PWM_UNFOLD_A_Start();
+    PWM_UNFOLD_B_Start();
     
     //UART communication 
     UART_1_Start();
     
     sinptr = sineLUT;
    
+    
+    CyDelay(5000);//delay
     
     CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
     for(;;)
@@ -127,21 +133,32 @@ void main()
             UART_1_WriteTxData(buffvolt);
         }
         */
+        recbyte=UART_1_GetChar();
+        if(recbyte=='V'){
+            UART_1_PutChar((buffvolt>>8));
+            UART_1_PutChar(buffvolt);
+        }
+        
         
         LCD_Char_1_Position(1u, 0u);
         LCD_Char_1_PrintInt16(buffvolt);
         
         LCD_Char_1_Position(1u,8u);
         LCD_Char_1_PrintInt16(sineLUT[sineLUTindex]);
+        
+        /*
+        PWM_BUCK_WriteCompare(sineLUT[sineLUTindex]); 
         sineLUTindex++;
         if(sineLUTindex>511){
             sineLUTindex=0;
         };
+        */
+        
         
         //UART_1_PutChar('q');
         //UART_1_WriteTxData('w');
         //UART_1_PutString("are you new?");
-        CyDelay(200);//delay
+        CyDelay(50);//delay
     }
 }
 

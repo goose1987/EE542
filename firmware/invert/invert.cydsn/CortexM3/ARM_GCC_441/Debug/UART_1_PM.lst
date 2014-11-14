@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 1
 
 
    1              		.syntax unified
@@ -20,7 +20,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
   17              	.Ldebug_info0:
   18              		.section	.debug_line,"",%progbits
   19              	.Ldebug_line0:
-  20 0000 D0000000 		.text
+  20 0000 D7000000 		.text
   20      02006E00 
   20      00000201 
   20      FB0E0D00 
@@ -30,8 +30,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
   23              		.bss
   24              		.align	2
   25              	UART_1_backup:
-  26 0000 00000000 		.space	4
-  27              		.section	.text.UART_1_SaveConfig,"ax",%progbits
+  26 0000 00000000 		.space	6
+  26      0000
+  27 0006 0000     		.section	.text.UART_1_SaveConfig,"ax",%progbits
   28              		.align	2
   29              		.global	UART_1_SaveConfig
   30              		.thumb
@@ -57,10 +58,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
   15:.\Generated_Source\PSoC5/UART_1_PM.c **** *******************************************************************************/
   16:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   17:.\Generated_Source\PSoC5/UART_1_PM.c **** #include "UART_1.h"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 2
+
+
   18:.\Generated_Source\PSoC5/UART_1_PM.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 2
-
-
   19:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   20:.\Generated_Source\PSoC5/UART_1_PM.c **** /***************************************
   21:.\Generated_Source\PSoC5/UART_1_PM.c **** * Local data allocation
@@ -116,11 +117,27 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
   59:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   60:.\Generated_Source\PSoC5/UART_1_PM.c ****         #if( (UART_1_RX_ENABLED) || (UART_1_HD_ENABLED) )
   61:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.rx_period = UART_1_RXBITCTR_PERIOD_REG;
+  48              		.loc 1 61 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 3
+
+
+  49 0004 46F28D43 		movw	r3, #:lower16:1073767565
+  50 0008 C4F20003 		movt	r3, #:upper16:1073767565
+  51 000c 1B78     		ldrb	r3, [r3, #0]
+  52 000e DAB2     		uxtb	r2, r3
+  53 0010 40F20003 		movw	r3, #:lower16:UART_1_backup
+  54 0014 C0F20003 		movt	r3, #:upper16:UART_1_backup
+  55 0018 5A70     		strb	r2, [r3, #1]
   62:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.rx_mask = UART_1_RXSTATUS_MASK_REG;
+  56              		.loc 1 62 0
+  57 001a 46F28B43 		movw	r3, #:lower16:1073767563
+  58 001e C4F20003 		movt	r3, #:upper16:1073767563
+  59 0022 1B78     		ldrb	r3, [r3, #0]
+  60 0024 DAB2     		uxtb	r2, r3
+  61 0026 40F20003 		movw	r3, #:lower16:UART_1_backup
+  62 002a C0F20003 		movt	r3, #:upper16:UART_1_backup
+  63 002e 9A70     		strb	r2, [r3, #2]
   63:.\Generated_Source\PSoC5/UART_1_PM.c ****             #if (UART_1_RXHW_ADDRESS_ENABLED)
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 3
-
-
   64:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.rx_addr1 = UART_1_RXADDRESS1_REG;
   65:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.rx_addr2 = UART_1_RXADDRESS2_REG;
   66:.\Generated_Source\PSoC5/UART_1_PM.c ****             #endif /* End UART_1_RXHW_ADDRESS_ENABLED */
@@ -129,38 +146,41 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
   69:.\Generated_Source\PSoC5/UART_1_PM.c ****         #if(UART_1_TX_ENABLED)
   70:.\Generated_Source\PSoC5/UART_1_PM.c ****             #if(UART_1_TXCLKGEN_DP)
   71:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.tx_clk_ctr = UART_1_TXBITCLKGEN_CTR_REG;
-  48              		.loc 1 71 0
-  49 0004 46F22853 		movw	r3, #:lower16:1073767720
-  50 0008 C4F20003 		movt	r3, #:upper16:1073767720
-  51 000c 1B78     		ldrb	r3, [r3, #0]
-  52 000e DAB2     		uxtb	r2, r3
-  53 0010 40F20003 		movw	r3, #:lower16:UART_1_backup
-  54 0014 C0F20003 		movt	r3, #:upper16:UART_1_backup
-  55 0018 5A70     		strb	r2, [r3, #1]
-  72:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.tx_clk_compl = UART_1_TXBITCLKTX_COMPLETE_REG;
-  56              		.loc 1 72 0
-  57 001a 46F23853 		movw	r3, #:lower16:1073767736
-  58 001e C4F20003 		movt	r3, #:upper16:1073767736
-  59 0022 1B78     		ldrb	r3, [r3, #0]
-  60 0024 DAB2     		uxtb	r2, r3
-  61 0026 40F20003 		movw	r3, #:lower16:UART_1_backup
-  62 002a C0F20003 		movt	r3, #:upper16:UART_1_backup
-  63 002e 9A70     		strb	r2, [r3, #2]
-  73:.\Generated_Source\PSoC5/UART_1_PM.c ****             #else
-  74:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.tx_period = UART_1_TXBITCTR_PERIOD_REG;
-  75:.\Generated_Source\PSoC5/UART_1_PM.c ****             #endif /*End UART_1_TXCLKGEN_DP */
-  76:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.tx_mask = UART_1_TXSTATUS_MASK_REG;
-  64              		.loc 1 76 0
-  65 0030 46F28753 		movw	r3, #:lower16:1073767815
-  66 0034 C4F20003 		movt	r3, #:upper16:1073767815
+  64              		.loc 1 71 0
+  65 0030 46F22343 		movw	r3, #:lower16:1073767459
+  66 0034 C4F20003 		movt	r3, #:upper16:1073767459
   67 0038 1B78     		ldrb	r3, [r3, #0]
   68 003a DAB2     		uxtb	r2, r3
   69 003c 40F20003 		movw	r3, #:lower16:UART_1_backup
   70 0040 C0F20003 		movt	r3, #:upper16:UART_1_backup
   71 0044 DA70     		strb	r2, [r3, #3]
+  72:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.tx_clk_compl = UART_1_TXBITCLKTX_COMPLETE_REG;
+  72              		.loc 1 72 0
+  73 0046 46F23343 		movw	r3, #:lower16:1073767475
+  74 004a C4F20003 		movt	r3, #:upper16:1073767475
+  75 004e 1B78     		ldrb	r3, [r3, #0]
+  76 0050 DAB2     		uxtb	r2, r3
+  77 0052 40F20003 		movw	r3, #:lower16:UART_1_backup
+  78 0056 C0F20003 		movt	r3, #:upper16:UART_1_backup
+  79 005a 1A71     		strb	r2, [r3, #4]
+  73:.\Generated_Source\PSoC5/UART_1_PM.c ****             #else
+  74:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.tx_period = UART_1_TXBITCTR_PERIOD_REG;
+  75:.\Generated_Source\PSoC5/UART_1_PM.c ****             #endif /*End UART_1_TXCLKGEN_DP */
+  76:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.tx_mask = UART_1_TXSTATUS_MASK_REG;
+  80              		.loc 1 76 0
+  81 005c 46F28F43 		movw	r3, #:lower16:1073767567
+  82 0060 C4F20003 		movt	r3, #:upper16:1073767567
+  83 0064 1B78     		ldrb	r3, [r3, #0]
+  84 0066 DAB2     		uxtb	r2, r3
+  85 0068 40F20003 		movw	r3, #:lower16:UART_1_backup
+  86 006c C0F20003 		movt	r3, #:upper16:UART_1_backup
+  87 0070 5A71     		strb	r2, [r3, #5]
   77:.\Generated_Source\PSoC5/UART_1_PM.c ****         #endif /*End UART_1_TX_ENABLED */
   78:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   79:.\Generated_Source\PSoC5/UART_1_PM.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 4
+
+
   80:.\Generated_Source\PSoC5/UART_1_PM.c ****     #else /* CY_UDB_V1 */
   81:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   82:.\Generated_Source\PSoC5/UART_1_PM.c ****         #if(UART_1_CONTROL_REG_REMOVED == 0u)
@@ -169,24 +189,21 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
   85:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   86:.\Generated_Source\PSoC5/UART_1_PM.c ****     #endif  /* End CY_UDB_V0 */
   87:.\Generated_Source\PSoC5/UART_1_PM.c **** }
-  72              		.loc 1 87 0
-  73 0046 BD46     		mov	sp, r7
-  74 0048 80BC     		pop	{r7}
-  75 004a 7047     		bx	lr
-  76              		.cfi_endproc
-  77              	.LFE0:
-  78              		.size	UART_1_SaveConfig, .-UART_1_SaveConfig
-  79              		.section	.text.UART_1_RestoreConfig,"ax",%progbits
-  80              		.align	2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 4
-
-
-  81              		.global	UART_1_RestoreConfig
-  82              		.thumb
-  83              		.thumb_func
-  84              		.type	UART_1_RestoreConfig, %function
-  85              	UART_1_RestoreConfig:
-  86              	.LFB1:
+  88              		.loc 1 87 0
+  89 0072 BD46     		mov	sp, r7
+  90 0074 80BC     		pop	{r7}
+  91 0076 7047     		bx	lr
+  92              		.cfi_endproc
+  93              	.LFE0:
+  94              		.size	UART_1_SaveConfig, .-UART_1_SaveConfig
+  95              		.section	.text.UART_1_RestoreConfig,"ax",%progbits
+  96              		.align	2
+  97              		.global	UART_1_RestoreConfig
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.type	UART_1_RestoreConfig, %function
+ 101              	UART_1_RestoreConfig:
+ 102              	.LFB1:
   88:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   89:.\Generated_Source\PSoC5/UART_1_PM.c **** 
   90:.\Generated_Source\PSoC5/UART_1_PM.c **** /*******************************************************************************
@@ -211,18 +228,21 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
  109:.\Generated_Source\PSoC5/UART_1_PM.c **** *******************************************************************************/
  110:.\Generated_Source\PSoC5/UART_1_PM.c **** void UART_1_RestoreConfig(void)
  111:.\Generated_Source\PSoC5/UART_1_PM.c **** {
-  87              		.loc 1 111 0
-  88              		.cfi_startproc
-  89              		@ args = 0, pretend = 0, frame = 0
-  90              		@ frame_needed = 1, uses_anonymous_args = 0
-  91              		@ link register save eliminated.
-  92 0000 80B4     		push	{r7}
-  93              	.LCFI2:
-  94              		.cfi_def_cfa_offset 4
-  95 0002 00AF     		add	r7, sp, #0
-  96              		.cfi_offset 7, -4
-  97              	.LCFI3:
-  98              		.cfi_def_cfa_register 7
+ 103              		.loc 1 111 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 1, uses_anonymous_args = 0
+ 107              		@ link register save eliminated.
+ 108 0000 80B4     		push	{r7}
+ 109              	.LCFI2:
+ 110              		.cfi_def_cfa_offset 4
+ 111 0002 00AF     		add	r7, sp, #0
+ 112              		.cfi_offset 7, -4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 5
+
+
+ 113              	.LCFI3:
+ 114              		.cfi_def_cfa_register 7
  112:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  113:.\Generated_Source\PSoC5/UART_1_PM.c ****     #if (CY_UDB_V0)
  114:.\Generated_Source\PSoC5/UART_1_PM.c **** 
@@ -232,45 +252,59 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
  118:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  119:.\Generated_Source\PSoC5/UART_1_PM.c ****         #if( (UART_1_RX_ENABLED) || (UART_1_HD_ENABLED) )
  120:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_RXBITCTR_PERIOD_REG = UART_1_backup.rx_period;
+ 115              		.loc 1 120 0
+ 116 0004 46F28D43 		movw	r3, #:lower16:1073767565
+ 117 0008 C4F20003 		movt	r3, #:upper16:1073767565
+ 118 000c 40F20002 		movw	r2, #:lower16:UART_1_backup
+ 119 0010 C0F20002 		movt	r2, #:upper16:UART_1_backup
+ 120 0014 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
+ 121 0016 1A70     		strb	r2, [r3, #0]
  121:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_RXSTATUS_MASK_REG = UART_1_backup.rx_mask;
+ 122              		.loc 1 121 0
+ 123 0018 46F28B43 		movw	r3, #:lower16:1073767563
+ 124 001c C4F20003 		movt	r3, #:upper16:1073767563
+ 125 0020 40F20002 		movw	r2, #:lower16:UART_1_backup
+ 126 0024 C0F20002 		movt	r2, #:upper16:UART_1_backup
+ 127 0028 9278     		ldrb	r2, [r2, #2]	@ zero_extendqisi2
+ 128 002a 1A70     		strb	r2, [r3, #0]
  122:.\Generated_Source\PSoC5/UART_1_PM.c ****             #if (UART_1_RXHW_ADDRESS_ENABLED)
  123:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_RXADDRESS1_REG = UART_1_backup.rx_addr1;
  124:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_RXADDRESS2_REG = UART_1_backup.rx_addr2;
  125:.\Generated_Source\PSoC5/UART_1_PM.c ****             #endif /* End UART_1_RXHW_ADDRESS_ENABLED */
  126:.\Generated_Source\PSoC5/UART_1_PM.c ****         #endif  /* End (UART_1_RX_ENABLED) || (UART_1_HD_ENABLED) */
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 5
-
-
  127:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  128:.\Generated_Source\PSoC5/UART_1_PM.c ****         #if(UART_1_TX_ENABLED)
  129:.\Generated_Source\PSoC5/UART_1_PM.c ****             #if(UART_1_TXCLKGEN_DP)
  130:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_TXBITCLKGEN_CTR_REG = UART_1_backup.tx_clk_ctr;
-  99              		.loc 1 130 0
- 100 0004 46F22853 		movw	r3, #:lower16:1073767720
- 101 0008 C4F20003 		movt	r3, #:upper16:1073767720
- 102 000c 40F20002 		movw	r2, #:lower16:UART_1_backup
- 103 0010 C0F20002 		movt	r2, #:upper16:UART_1_backup
- 104 0014 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
- 105 0016 1A70     		strb	r2, [r3, #0]
+ 129              		.loc 1 130 0
+ 130 002c 46F22343 		movw	r3, #:lower16:1073767459
+ 131 0030 C4F20003 		movt	r3, #:upper16:1073767459
+ 132 0034 40F20002 		movw	r2, #:lower16:UART_1_backup
+ 133 0038 C0F20002 		movt	r2, #:upper16:UART_1_backup
+ 134 003c D278     		ldrb	r2, [r2, #3]	@ zero_extendqisi2
+ 135 003e 1A70     		strb	r2, [r3, #0]
  131:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_TXBITCLKTX_COMPLETE_REG = UART_1_backup.tx_clk_compl;
- 106              		.loc 1 131 0
- 107 0018 46F23853 		movw	r3, #:lower16:1073767736
- 108 001c C4F20003 		movt	r3, #:upper16:1073767736
- 109 0020 40F20002 		movw	r2, #:lower16:UART_1_backup
- 110 0024 C0F20002 		movt	r2, #:upper16:UART_1_backup
- 111 0028 9278     		ldrb	r2, [r2, #2]	@ zero_extendqisi2
- 112 002a 1A70     		strb	r2, [r3, #0]
+ 136              		.loc 1 131 0
+ 137 0040 46F23343 		movw	r3, #:lower16:1073767475
+ 138 0044 C4F20003 		movt	r3, #:upper16:1073767475
+ 139 0048 40F20002 		movw	r2, #:lower16:UART_1_backup
+ 140 004c C0F20002 		movt	r2, #:upper16:UART_1_backup
+ 141 0050 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 142 0052 1A70     		strb	r2, [r3, #0]
  132:.\Generated_Source\PSoC5/UART_1_PM.c ****             #else
  133:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_TXBITCTR_PERIOD_REG = UART_1_backup.tx_period;
  134:.\Generated_Source\PSoC5/UART_1_PM.c ****             #endif /*End UART_1_TXCLKGEN_DP */
  135:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_TXSTATUS_MASK_REG = UART_1_backup.tx_mask;
- 113              		.loc 1 135 0
- 114 002c 46F28753 		movw	r3, #:lower16:1073767815
- 115 0030 C4F20003 		movt	r3, #:upper16:1073767815
- 116 0034 40F20002 		movw	r2, #:lower16:UART_1_backup
- 117 0038 C0F20002 		movt	r2, #:upper16:UART_1_backup
- 118 003c D278     		ldrb	r2, [r2, #3]	@ zero_extendqisi2
- 119 003e 1A70     		strb	r2, [r3, #0]
+ 143              		.loc 1 135 0
+ 144 0054 46F28F43 		movw	r3, #:lower16:1073767567
+ 145 0058 C4F20003 		movt	r3, #:upper16:1073767567
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 6
+
+
+ 146 005c 40F20002 		movw	r2, #:lower16:UART_1_backup
+ 147 0060 C0F20002 		movt	r2, #:upper16:UART_1_backup
+ 148 0064 5279     		ldrb	r2, [r2, #5]	@ zero_extendqisi2
+ 149 0066 1A70     		strb	r2, [r3, #0]
  136:.\Generated_Source\PSoC5/UART_1_PM.c ****         #endif /*End UART_1_TX_ENABLED */
  137:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  138:.\Generated_Source\PSoC5/UART_1_PM.c ****     #else /* CY_UDB_V1 */
@@ -281,26 +315,23 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
  143:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  144:.\Generated_Source\PSoC5/UART_1_PM.c ****     #endif  /* End CY_UDB_V0 */
  145:.\Generated_Source\PSoC5/UART_1_PM.c **** }
- 120              		.loc 1 145 0
- 121 0040 BD46     		mov	sp, r7
- 122 0042 80BC     		pop	{r7}
- 123 0044 7047     		bx	lr
- 124              		.cfi_endproc
- 125              	.LFE1:
- 126              		.size	UART_1_RestoreConfig, .-UART_1_RestoreConfig
- 127 0046 00BF     		.section	.text.UART_1_Sleep,"ax",%progbits
- 128              		.align	2
- 129              		.global	UART_1_Sleep
- 130              		.thumb
- 131              		.thumb_func
- 132              		.type	UART_1_Sleep, %function
- 133              	UART_1_Sleep:
- 134              	.LFB2:
+ 150              		.loc 1 145 0
+ 151 0068 BD46     		mov	sp, r7
+ 152 006a 80BC     		pop	{r7}
+ 153 006c 7047     		bx	lr
+ 154              		.cfi_endproc
+ 155              	.LFE1:
+ 156              		.size	UART_1_RestoreConfig, .-UART_1_RestoreConfig
+ 157 006e 00BF     		.section	.text.UART_1_Sleep,"ax",%progbits
+ 158              		.align	2
+ 159              		.global	UART_1_Sleep
+ 160              		.thumb
+ 161              		.thumb_func
+ 162              		.type	UART_1_Sleep, %function
+ 163              	UART_1_Sleep:
+ 164              	.LFB2:
  146:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  147:.\Generated_Source\PSoC5/UART_1_PM.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 6
-
-
  148:.\Generated_Source\PSoC5/UART_1_PM.c **** /*******************************************************************************
  149:.\Generated_Source\PSoC5/UART_1_PM.c **** * Function Name: UART_1_Sleep
  150:.\Generated_Source\PSoC5/UART_1_PM.c **** ********************************************************************************
@@ -325,83 +356,86 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
  169:.\Generated_Source\PSoC5/UART_1_PM.c **** *******************************************************************************/
  170:.\Generated_Source\PSoC5/UART_1_PM.c **** void UART_1_Sleep(void)
  171:.\Generated_Source\PSoC5/UART_1_PM.c **** {
- 135              		.loc 1 171 0
- 136              		.cfi_startproc
- 137              		@ args = 0, pretend = 0, frame = 0
- 138              		@ frame_needed = 1, uses_anonymous_args = 0
- 139 0000 80B5     		push	{r7, lr}
- 140              	.LCFI4:
- 141              		.cfi_def_cfa_offset 8
- 142 0002 00AF     		add	r7, sp, #0
- 143              		.cfi_offset 14, -4
- 144              		.cfi_offset 7, -8
- 145              	.LCFI5:
- 146              		.cfi_def_cfa_register 7
+ 165              		.loc 1 171 0
+ 166              		.cfi_startproc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 7
+
+
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 1, uses_anonymous_args = 0
+ 169 0000 80B5     		push	{r7, lr}
+ 170              	.LCFI4:
+ 171              		.cfi_def_cfa_offset 8
+ 172 0002 00AF     		add	r7, sp, #0
+ 173              		.cfi_offset 14, -4
+ 174              		.cfi_offset 7, -8
+ 175              	.LCFI5:
+ 176              		.cfi_def_cfa_register 7
  172:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  173:.\Generated_Source\PSoC5/UART_1_PM.c ****     #if(UART_1_RX_ENABLED || UART_1_HD_ENABLED)
  174:.\Generated_Source\PSoC5/UART_1_PM.c ****         if((UART_1_RXSTATUS_ACTL_REG  & UART_1_INT_ENABLE) != 0u)
+ 177              		.loc 1 174 0
+ 178 0004 46F29B43 		movw	r3, #:lower16:1073767579
+ 179 0008 C4F20003 		movt	r3, #:upper16:1073767579
+ 180 000c 1B78     		ldrb	r3, [r3, #0]
+ 181 000e DBB2     		uxtb	r3, r3
+ 182 0010 03F01003 		and	r3, r3, #16
+ 183 0014 002B     		cmp	r3, #0
+ 184 0016 07D0     		beq	.L6
  175:.\Generated_Source\PSoC5/UART_1_PM.c ****         {
  176:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.enableState = 1u;
+ 185              		.loc 1 176 0
+ 186 0018 40F20003 		movw	r3, #:lower16:UART_1_backup
+ 187 001c C0F20003 		movt	r3, #:upper16:UART_1_backup
+ 188 0020 4FF00102 		mov	r2, #1
+ 189 0024 1A70     		strb	r2, [r3, #0]
+ 190 0026 06E0     		b	.L7
+ 191              	.L6:
  177:.\Generated_Source\PSoC5/UART_1_PM.c ****         }
  178:.\Generated_Source\PSoC5/UART_1_PM.c ****         else
  179:.\Generated_Source\PSoC5/UART_1_PM.c ****         {
  180:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.enableState = 0u;
+ 192              		.loc 1 180 0
+ 193 0028 40F20003 		movw	r3, #:lower16:UART_1_backup
+ 194 002c C0F20003 		movt	r3, #:upper16:UART_1_backup
+ 195 0030 4FF00002 		mov	r2, #0
+ 196 0034 1A70     		strb	r2, [r3, #0]
+ 197              	.L7:
  181:.\Generated_Source\PSoC5/UART_1_PM.c ****         }
  182:.\Generated_Source\PSoC5/UART_1_PM.c ****     #else
  183:.\Generated_Source\PSoC5/UART_1_PM.c ****         if((UART_1_TXSTATUS_ACTL_REG  & UART_1_INT_ENABLE) !=0u)
- 147              		.loc 1 183 0
- 148 0004 46F29753 		movw	r3, #:lower16:1073767831
- 149 0008 C4F20003 		movt	r3, #:upper16:1073767831
- 150 000c 1B78     		ldrb	r3, [r3, #0]
- 151 000e DBB2     		uxtb	r3, r3
- 152 0010 03F01003 		and	r3, r3, #16
- 153 0014 002B     		cmp	r3, #0
- 154 0016 07D0     		beq	.L6
  184:.\Generated_Source\PSoC5/UART_1_PM.c ****         {
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 7
-
-
  185:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.enableState = 1u;
- 155              		.loc 1 185 0
- 156 0018 40F20003 		movw	r3, #:lower16:UART_1_backup
- 157 001c C0F20003 		movt	r3, #:upper16:UART_1_backup
- 158 0020 4FF00102 		mov	r2, #1
- 159 0024 1A70     		strb	r2, [r3, #0]
- 160 0026 06E0     		b	.L7
- 161              	.L6:
  186:.\Generated_Source\PSoC5/UART_1_PM.c ****         }
  187:.\Generated_Source\PSoC5/UART_1_PM.c ****         else
  188:.\Generated_Source\PSoC5/UART_1_PM.c ****         {
  189:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_backup.enableState = 0u;
- 162              		.loc 1 189 0
- 163 0028 40F20003 		movw	r3, #:lower16:UART_1_backup
- 164 002c C0F20003 		movt	r3, #:upper16:UART_1_backup
- 165 0030 4FF00002 		mov	r2, #0
- 166 0034 1A70     		strb	r2, [r3, #0]
- 167              	.L7:
  190:.\Generated_Source\PSoC5/UART_1_PM.c ****         }
  191:.\Generated_Source\PSoC5/UART_1_PM.c ****     #endif /* End UART_1_RX_ENABLED || UART_1_HD_ENABLED*/
  192:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  193:.\Generated_Source\PSoC5/UART_1_PM.c ****     UART_1_Stop();
- 168              		.loc 1 193 0
- 169 0036 FFF7FEFF 		bl	UART_1_Stop
+ 198              		.loc 1 193 0
+ 199 0036 FFF7FEFF 		bl	UART_1_Stop
  194:.\Generated_Source\PSoC5/UART_1_PM.c ****     UART_1_SaveConfig();
- 170              		.loc 1 194 0
- 171 003a FFF7FEFF 		bl	UART_1_SaveConfig
+ 200              		.loc 1 194 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 8
+
+
+ 201 003a FFF7FEFF 		bl	UART_1_SaveConfig
  195:.\Generated_Source\PSoC5/UART_1_PM.c **** }
- 172              		.loc 1 195 0
- 173 003e 80BD     		pop	{r7, pc}
- 174              		.cfi_endproc
- 175              	.LFE2:
- 176              		.size	UART_1_Sleep, .-UART_1_Sleep
- 177              		.section	.text.UART_1_Wakeup,"ax",%progbits
- 178              		.align	2
- 179              		.global	UART_1_Wakeup
- 180              		.thumb
- 181              		.thumb_func
- 182              		.type	UART_1_Wakeup, %function
- 183              	UART_1_Wakeup:
- 184              	.LFB3:
+ 202              		.loc 1 195 0
+ 203 003e 80BD     		pop	{r7, pc}
+ 204              		.cfi_endproc
+ 205              	.LFE2:
+ 206              		.size	UART_1_Sleep, .-UART_1_Sleep
+ 207              		.section	.text.UART_1_Wakeup,"ax",%progbits
+ 208              		.align	2
+ 209              		.global	UART_1_Wakeup
+ 210              		.thumb
+ 211              		.thumb_func
+ 212              		.type	UART_1_Wakeup, %function
+ 213              	UART_1_Wakeup:
+ 214              	.LFB3:
  196:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  197:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  198:.\Generated_Source\PSoC5/UART_1_PM.c **** /*******************************************************************************
@@ -418,9 +452,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
  209:.\Generated_Source\PSoC5/UART_1_PM.c **** * Return:
  210:.\Generated_Source\PSoC5/UART_1_PM.c **** *  None.
  211:.\Generated_Source\PSoC5/UART_1_PM.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 8
-
-
  212:.\Generated_Source\PSoC5/UART_1_PM.c **** * Global Variables:
  213:.\Generated_Source\PSoC5/UART_1_PM.c **** *  UART_1_backup - used when non-retention registers are restored.
  214:.\Generated_Source\PSoC5/UART_1_PM.c **** *
@@ -430,641 +461,669 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 1
  218:.\Generated_Source\PSoC5/UART_1_PM.c **** *******************************************************************************/
  219:.\Generated_Source\PSoC5/UART_1_PM.c **** void UART_1_Wakeup(void)
  220:.\Generated_Source\PSoC5/UART_1_PM.c **** {
- 185              		.loc 1 220 0
- 186              		.cfi_startproc
- 187              		@ args = 0, pretend = 0, frame = 0
- 188              		@ frame_needed = 1, uses_anonymous_args = 0
- 189 0000 80B5     		push	{r7, lr}
- 190              	.LCFI6:
- 191              		.cfi_def_cfa_offset 8
- 192 0002 00AF     		add	r7, sp, #0
- 193              		.cfi_offset 14, -4
- 194              		.cfi_offset 7, -8
- 195              	.LCFI7:
- 196              		.cfi_def_cfa_register 7
+ 215              		.loc 1 220 0
+ 216              		.cfi_startproc
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 1, uses_anonymous_args = 0
+ 219 0000 80B5     		push	{r7, lr}
+ 220              	.LCFI6:
+ 221              		.cfi_def_cfa_offset 8
+ 222 0002 00AF     		add	r7, sp, #0
+ 223              		.cfi_offset 14, -4
+ 224              		.cfi_offset 7, -8
+ 225              	.LCFI7:
+ 226              		.cfi_def_cfa_register 7
  221:.\Generated_Source\PSoC5/UART_1_PM.c ****     UART_1_RestoreConfig();
- 197              		.loc 1 221 0
- 198 0004 FFF7FEFF 		bl	UART_1_RestoreConfig
+ 227              		.loc 1 221 0
+ 228 0004 FFF7FEFF 		bl	UART_1_RestoreConfig
  222:.\Generated_Source\PSoC5/UART_1_PM.c ****     #if( (UART_1_RX_ENABLED) || (UART_1_HD_ENABLED) )
  223:.\Generated_Source\PSoC5/UART_1_PM.c ****         UART_1_ClearRxBuffer();
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 9
+
+
+ 229              		.loc 1 223 0
+ 230 0008 FFF7FEFF 		bl	UART_1_ClearRxBuffer
  224:.\Generated_Source\PSoC5/UART_1_PM.c ****     #endif /* End (UART_1_RX_ENABLED) || (UART_1_HD_ENABLED) */
  225:.\Generated_Source\PSoC5/UART_1_PM.c ****     #if(UART_1_TX_ENABLED || UART_1_HD_ENABLED)
  226:.\Generated_Source\PSoC5/UART_1_PM.c ****         UART_1_ClearTxBuffer();
- 199              		.loc 1 226 0
- 200 0008 FFF7FEFF 		bl	UART_1_ClearTxBuffer
+ 231              		.loc 1 226 0
+ 232 000c FFF7FEFF 		bl	UART_1_ClearTxBuffer
  227:.\Generated_Source\PSoC5/UART_1_PM.c ****     #endif /* End UART_1_TX_ENABLED || UART_1_HD_ENABLED */
  228:.\Generated_Source\PSoC5/UART_1_PM.c **** 
  229:.\Generated_Source\PSoC5/UART_1_PM.c ****     if(UART_1_backup.enableState != 0u)
- 201              		.loc 1 229 0
- 202 000c 40F20003 		movw	r3, #:lower16:UART_1_backup
- 203 0010 C0F20003 		movt	r3, #:upper16:UART_1_backup
- 204 0014 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 205 0016 002B     		cmp	r3, #0
- 206 0018 01D0     		beq	.L11
+ 233              		.loc 1 229 0
+ 234 0010 40F20003 		movw	r3, #:lower16:UART_1_backup
+ 235 0014 C0F20003 		movt	r3, #:upper16:UART_1_backup
+ 236 0018 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 237 001a 002B     		cmp	r3, #0
+ 238 001c 01D0     		beq	.L11
  230:.\Generated_Source\PSoC5/UART_1_PM.c ****     {
  231:.\Generated_Source\PSoC5/UART_1_PM.c ****         UART_1_Enable();
- 207              		.loc 1 231 0
- 208 001a FFF7FEFF 		bl	UART_1_Enable
- 209              	.L11:
+ 239              		.loc 1 231 0
+ 240 001e FFF7FEFF 		bl	UART_1_Enable
+ 241              	.L11:
  232:.\Generated_Source\PSoC5/UART_1_PM.c ****     }
  233:.\Generated_Source\PSoC5/UART_1_PM.c **** }
- 210              		.loc 1 233 0
- 211 001e 80BD     		pop	{r7, pc}
- 212              		.cfi_endproc
- 213              	.LFE3:
- 214              		.size	UART_1_Wakeup, .-UART_1_Wakeup
- 215              		.text
- 216              	.Letext0:
- 217              		.section	.debug_loc,"",%progbits
- 218              	.Ldebug_loc0:
- 219              	.LLST0:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 9
+ 242              		.loc 1 233 0
+ 243 0022 80BD     		pop	{r7, pc}
+ 244              		.cfi_endproc
+ 245              	.LFE3:
+ 246              		.size	UART_1_Wakeup, .-UART_1_Wakeup
+ 247              		.text
+ 248              	.Letext0:
+ 249              		.section	.debug_loc,"",%progbits
+ 250              	.Ldebug_loc0:
+ 251              	.LLST0:
+ 252 0000 00000000 		.4byte	.LFB0
+ 253 0004 02000000 		.4byte	.LCFI0
+ 254 0008 0100     		.2byte	0x1
+ 255 000a 5D       		.byte	0x5d
+ 256 000b 02000000 		.4byte	.LCFI0
+ 257 000f 04000000 		.4byte	.LCFI1
+ 258 0013 0200     		.2byte	0x2
+ 259 0015 7D       		.byte	0x7d
+ 260 0016 04       		.sleb128 4
+ 261 0017 04000000 		.4byte	.LCFI1
+ 262 001b 78000000 		.4byte	.LFE0
+ 263 001f 0200     		.2byte	0x2
+ 264 0021 77       		.byte	0x77
+ 265 0022 04       		.sleb128 4
+ 266 0023 00000000 		.4byte	0x0
+ 267 0027 00000000 		.4byte	0x0
+ 268              	.LLST1:
+ 269 002b 00000000 		.4byte	.LFB1
+ 270 002f 02000000 		.4byte	.LCFI2
+ 271 0033 0100     		.2byte	0x1
+ 272 0035 5D       		.byte	0x5d
+ 273 0036 02000000 		.4byte	.LCFI2
+ 274 003a 04000000 		.4byte	.LCFI3
+ 275 003e 0200     		.2byte	0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 10
 
 
- 220 0000 00000000 		.4byte	.LFB0
- 221 0004 02000000 		.4byte	.LCFI0
- 222 0008 0100     		.2byte	0x1
- 223 000a 5D       		.byte	0x5d
- 224 000b 02000000 		.4byte	.LCFI0
- 225 000f 04000000 		.4byte	.LCFI1
- 226 0013 0200     		.2byte	0x2
- 227 0015 7D       		.byte	0x7d
- 228 0016 04       		.sleb128 4
- 229 0017 04000000 		.4byte	.LCFI1
- 230 001b 4C000000 		.4byte	.LFE0
- 231 001f 0200     		.2byte	0x2
- 232 0021 77       		.byte	0x77
- 233 0022 04       		.sleb128 4
- 234 0023 00000000 		.4byte	0x0
- 235 0027 00000000 		.4byte	0x0
- 236              	.LLST1:
- 237 002b 00000000 		.4byte	.LFB1
- 238 002f 02000000 		.4byte	.LCFI2
- 239 0033 0100     		.2byte	0x1
- 240 0035 5D       		.byte	0x5d
- 241 0036 02000000 		.4byte	.LCFI2
- 242 003a 04000000 		.4byte	.LCFI3
- 243 003e 0200     		.2byte	0x2
- 244 0040 7D       		.byte	0x7d
- 245 0041 04       		.sleb128 4
- 246 0042 04000000 		.4byte	.LCFI3
- 247 0046 46000000 		.4byte	.LFE1
- 248 004a 0200     		.2byte	0x2
- 249 004c 77       		.byte	0x77
- 250 004d 04       		.sleb128 4
- 251 004e 00000000 		.4byte	0x0
- 252 0052 00000000 		.4byte	0x0
- 253              	.LLST2:
- 254 0056 00000000 		.4byte	.LFB2
- 255 005a 02000000 		.4byte	.LCFI4
- 256 005e 0100     		.2byte	0x1
- 257 0060 5D       		.byte	0x5d
- 258 0061 02000000 		.4byte	.LCFI4
- 259 0065 04000000 		.4byte	.LCFI5
- 260 0069 0200     		.2byte	0x2
- 261 006b 7D       		.byte	0x7d
- 262 006c 08       		.sleb128 8
- 263 006d 04000000 		.4byte	.LCFI5
- 264 0071 40000000 		.4byte	.LFE2
- 265 0075 0200     		.2byte	0x2
- 266 0077 77       		.byte	0x77
- 267 0078 08       		.sleb128 8
- 268 0079 00000000 		.4byte	0x0
- 269 007d 00000000 		.4byte	0x0
- 270              	.LLST3:
- 271 0081 00000000 		.4byte	.LFB3
- 272 0085 02000000 		.4byte	.LCFI6
- 273 0089 0100     		.2byte	0x1
- 274 008b 5D       		.byte	0x5d
- 275 008c 02000000 		.4byte	.LCFI6
- 276 0090 04000000 		.4byte	.LCFI7
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 10
+ 276 0040 7D       		.byte	0x7d
+ 277 0041 04       		.sleb128 4
+ 278 0042 04000000 		.4byte	.LCFI3
+ 279 0046 6E000000 		.4byte	.LFE1
+ 280 004a 0200     		.2byte	0x2
+ 281 004c 77       		.byte	0x77
+ 282 004d 04       		.sleb128 4
+ 283 004e 00000000 		.4byte	0x0
+ 284 0052 00000000 		.4byte	0x0
+ 285              	.LLST2:
+ 286 0056 00000000 		.4byte	.LFB2
+ 287 005a 02000000 		.4byte	.LCFI4
+ 288 005e 0100     		.2byte	0x1
+ 289 0060 5D       		.byte	0x5d
+ 290 0061 02000000 		.4byte	.LCFI4
+ 291 0065 04000000 		.4byte	.LCFI5
+ 292 0069 0200     		.2byte	0x2
+ 293 006b 7D       		.byte	0x7d
+ 294 006c 08       		.sleb128 8
+ 295 006d 04000000 		.4byte	.LCFI5
+ 296 0071 40000000 		.4byte	.LFE2
+ 297 0075 0200     		.2byte	0x2
+ 298 0077 77       		.byte	0x77
+ 299 0078 08       		.sleb128 8
+ 300 0079 00000000 		.4byte	0x0
+ 301 007d 00000000 		.4byte	0x0
+ 302              	.LLST3:
+ 303 0081 00000000 		.4byte	.LFB3
+ 304 0085 02000000 		.4byte	.LCFI6
+ 305 0089 0100     		.2byte	0x1
+ 306 008b 5D       		.byte	0x5d
+ 307 008c 02000000 		.4byte	.LCFI6
+ 308 0090 04000000 		.4byte	.LCFI7
+ 309 0094 0200     		.2byte	0x2
+ 310 0096 7D       		.byte	0x7d
+ 311 0097 08       		.sleb128 8
+ 312 0098 04000000 		.4byte	.LCFI7
+ 313 009c 24000000 		.4byte	.LFE3
+ 314 00a0 0200     		.2byte	0x2
+ 315 00a2 77       		.byte	0x77
+ 316 00a3 08       		.sleb128 8
+ 317 00a4 00000000 		.4byte	0x0
+ 318 00a8 00000000 		.4byte	0x0
+ 319              		.file 2 ".\\Generated_Source\\PSoC5\\/UART_1.h"
+ 320              		.file 3 ".\\Generated_Source\\PSoC5\\/cytypes.h"
+ 321              		.section	.debug_info
+ 322 0000 60010000 		.4byte	0x160
+ 323 0004 0200     		.2byte	0x2
+ 324 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 325 000a 04       		.byte	0x4
+ 326 000b 01       		.uleb128 0x1
+ 327 000c F5000000 		.4byte	.LASF24
+ 328 0010 01       		.byte	0x1
+ 329 0011 D0000000 		.4byte	.LASF25
+ 330 0015 4D010000 		.4byte	.LASF26
+ 331 0019 00000000 		.4byte	0x0
+ 332 001d 00000000 		.4byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 11
 
 
- 277 0094 0200     		.2byte	0x2
- 278 0096 7D       		.byte	0x7d
- 279 0097 08       		.sleb128 8
- 280 0098 04000000 		.4byte	.LCFI7
- 281 009c 20000000 		.4byte	.LFE3
- 282 00a0 0200     		.2byte	0x2
- 283 00a2 77       		.byte	0x77
- 284 00a3 08       		.sleb128 8
- 285 00a4 00000000 		.4byte	0x0
- 286 00a8 00000000 		.4byte	0x0
- 287              		.file 2 ".\\Generated_Source\\PSoC5\\/UART_1.h"
- 288              		.file 3 ".\\Generated_Source\\PSoC5\\/cytypes.h"
- 289              		.section	.debug_info
- 290 0000 44010000 		.4byte	0x144
- 291 0004 0200     		.2byte	0x2
- 292 0006 00000000 		.4byte	.Ldebug_abbrev0
- 293 000a 04       		.byte	0x4
- 294 000b 01       		.uleb128 0x1
- 295 000c EB000000 		.4byte	.LASF22
- 296 0010 01       		.byte	0x1
- 297 0011 C6000000 		.4byte	.LASF23
- 298 0015 3B010000 		.4byte	.LASF24
- 299 0019 00000000 		.4byte	0x0
- 300 001d 00000000 		.4byte	0x0
- 301 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
- 302 0025 00000000 		.4byte	.Ldebug_line0
- 303 0029 02       		.uleb128 0x2
- 304 002a 01       		.byte	0x1
- 305 002b 06       		.byte	0x6
- 306 002c 0A010000 		.4byte	.LASF0
- 307 0030 02       		.uleb128 0x2
- 308 0031 01       		.byte	0x1
- 309 0032 08       		.byte	0x8
- 310 0033 95000000 		.4byte	.LASF1
- 311 0037 02       		.uleb128 0x2
- 312 0038 02       		.byte	0x2
- 313 0039 05       		.byte	0x5
- 314 003a 31010000 		.4byte	.LASF2
- 315 003e 02       		.uleb128 0x2
- 316 003f 02       		.byte	0x2
- 317 0040 07       		.byte	0x7
- 318 0041 F7000000 		.4byte	.LASF3
- 319 0045 02       		.uleb128 0x2
- 320 0046 04       		.byte	0x4
- 321 0047 05       		.byte	0x5
- 322 0048 A8000000 		.4byte	.LASF4
- 323 004c 02       		.uleb128 0x2
- 324 004d 04       		.byte	0x4
- 325 004e 07       		.byte	0x7
- 326 004f 4D000000 		.4byte	.LASF5
- 327 0053 02       		.uleb128 0x2
- 328 0054 08       		.byte	0x8
- 329 0055 05       		.byte	0x5
- 330 0056 00000000 		.4byte	.LASF6
- 331 005a 02       		.uleb128 0x2
- 332 005b 08       		.byte	0x8
- 333 005c 07       		.byte	0x7
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 11
+ 333 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 334 0025 00000000 		.4byte	.Ldebug_line0
+ 335 0029 02       		.uleb128 0x2
+ 336 002a 01       		.byte	0x1
+ 337 002b 06       		.byte	0x6
+ 338 002c 14010000 		.4byte	.LASF0
+ 339 0030 02       		.uleb128 0x2
+ 340 0031 01       		.byte	0x1
+ 341 0032 08       		.byte	0x8
+ 342 0033 95000000 		.4byte	.LASF1
+ 343 0037 02       		.uleb128 0x2
+ 344 0038 02       		.byte	0x2
+ 345 0039 05       		.byte	0x5
+ 346 003a 43010000 		.4byte	.LASF2
+ 347 003e 02       		.uleb128 0x2
+ 348 003f 02       		.byte	0x2
+ 349 0040 07       		.byte	0x7
+ 350 0041 01010000 		.4byte	.LASF3
+ 351 0045 02       		.uleb128 0x2
+ 352 0046 04       		.byte	0x4
+ 353 0047 05       		.byte	0x5
+ 354 0048 A8000000 		.4byte	.LASF4
+ 355 004c 02       		.uleb128 0x2
+ 356 004d 04       		.byte	0x4
+ 357 004e 07       		.byte	0x7
+ 358 004f 4D000000 		.4byte	.LASF5
+ 359 0053 02       		.uleb128 0x2
+ 360 0054 08       		.byte	0x8
+ 361 0055 05       		.byte	0x5
+ 362 0056 00000000 		.4byte	.LASF6
+ 363 005a 02       		.uleb128 0x2
+ 364 005b 08       		.byte	0x8
+ 365 005c 07       		.byte	0x7
+ 366 005d 71000000 		.4byte	.LASF7
+ 367 0061 03       		.uleb128 0x3
+ 368 0062 04       		.byte	0x4
+ 369 0063 05       		.byte	0x5
+ 370 0064 696E7400 		.ascii	"int\000"
+ 371 0068 02       		.uleb128 0x2
+ 372 0069 04       		.byte	0x4
+ 373 006a 07       		.byte	0x7
+ 374 006b 1A000000 		.4byte	.LASF8
+ 375 006f 04       		.uleb128 0x4
+ 376 0070 47000000 		.4byte	.LASF18
+ 377 0074 03       		.byte	0x3
+ 378 0075 4C       		.byte	0x4c
+ 379 0076 30000000 		.4byte	0x30
+ 380 007a 02       		.uleb128 0x2
+ 381 007b 04       		.byte	0x4
+ 382 007c 04       		.byte	0x4
+ 383 007d 3D010000 		.4byte	.LASF9
+ 384 0081 02       		.uleb128 0x2
+ 385 0082 08       		.byte	0x8
+ 386 0083 04       		.byte	0x4
+ 387 0084 BB000000 		.4byte	.LASF10
+ 388 0088 02       		.uleb128 0x2
+ 389 0089 01       		.byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 12
 
 
- 334 005d 71000000 		.4byte	.LASF7
- 335 0061 03       		.uleb128 0x3
- 336 0062 04       		.byte	0x4
- 337 0063 05       		.byte	0x5
- 338 0064 696E7400 		.ascii	"int\000"
- 339 0068 02       		.uleb128 0x2
- 340 0069 04       		.byte	0x4
- 341 006a 07       		.byte	0x7
- 342 006b 1A000000 		.4byte	.LASF8
- 343 006f 04       		.uleb128 0x4
- 344 0070 47000000 		.4byte	.LASF16
- 345 0074 03       		.byte	0x3
- 346 0075 4C       		.byte	0x4c
- 347 0076 30000000 		.4byte	0x30
- 348 007a 02       		.uleb128 0x2
- 349 007b 04       		.byte	0x4
- 350 007c 04       		.byte	0x4
- 351 007d 2B010000 		.4byte	.LASF9
- 352 0081 02       		.uleb128 0x2
- 353 0082 08       		.byte	0x8
- 354 0083 04       		.byte	0x4
- 355 0084 B1000000 		.4byte	.LASF10
- 356 0088 02       		.uleb128 0x2
- 357 0089 01       		.byte	0x1
- 358 008a 08       		.byte	0x8
- 359 008b A3000000 		.4byte	.LASF11
- 360 008f 05       		.uleb128 0x5
- 361 0090 04       		.byte	0x4
- 362 0091 07       		.byte	0x7
- 363 0092 06       		.uleb128 0x6
- 364 0093 7F010000 		.4byte	.LASF25
- 365 0097 04       		.byte	0x4
- 366 0098 02       		.byte	0x2
- 367 0099 46       		.byte	0x46
- 368 009a D7000000 		.4byte	0xd7
- 369 009e 07       		.uleb128 0x7
- 370 009f 0E000000 		.4byte	.LASF12
- 371 00a3 02       		.byte	0x2
- 372 00a4 47       		.byte	0x47
- 373 00a5 6F000000 		.4byte	0x6f
- 374 00a9 02       		.byte	0x2
- 375 00aa 23       		.byte	0x23
- 376 00ab 00       		.uleb128 0x0
- 377 00ac 07       		.uleb128 0x7
- 378 00ad 34000000 		.4byte	.LASF13
- 379 00b1 02       		.byte	0x2
- 380 00b2 59       		.byte	0x59
- 381 00b3 6F000000 		.4byte	0x6f
- 382 00b7 02       		.byte	0x2
- 383 00b8 23       		.byte	0x23
- 384 00b9 01       		.uleb128 0x1
- 385 00ba 07       		.uleb128 0x7
- 386 00bb 88000000 		.4byte	.LASF14
- 387 00bf 02       		.byte	0x2
- 388 00c0 5B       		.byte	0x5b
- 389 00c1 6F000000 		.4byte	0x6f
- 390 00c5 02       		.byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 12
+ 390 008a 08       		.byte	0x8
+ 391 008b A3000000 		.4byte	.LASF11
+ 392 008f 05       		.uleb128 0x5
+ 393 0090 04       		.byte	0x4
+ 394 0091 07       		.byte	0x7
+ 395 0092 06       		.uleb128 0x6
+ 396 0093 91010000 		.4byte	.LASF27
+ 397 0097 06       		.byte	0x6
+ 398 0098 02       		.byte	0x2
+ 399 0099 46       		.byte	0x46
+ 400 009a F3000000 		.4byte	0xf3
+ 401 009e 07       		.uleb128 0x7
+ 402 009f 0E000000 		.4byte	.LASF12
+ 403 00a3 02       		.byte	0x2
+ 404 00a4 47       		.byte	0x47
+ 405 00a5 6F000000 		.4byte	0x6f
+ 406 00a9 02       		.byte	0x2
+ 407 00aa 23       		.byte	0x23
+ 408 00ab 00       		.uleb128 0x0
+ 409 00ac 07       		.uleb128 0x7
+ 410 00ad B1000000 		.4byte	.LASF13
+ 411 00b1 02       		.byte	0x2
+ 412 00b2 4D       		.byte	0x4d
+ 413 00b3 6F000000 		.4byte	0x6f
+ 414 00b7 02       		.byte	0x2
+ 415 00b8 23       		.byte	0x23
+ 416 00b9 01       		.uleb128 0x1
+ 417 00ba 07       		.uleb128 0x7
+ 418 00bb 20010000 		.4byte	.LASF14
+ 419 00bf 02       		.byte	0x2
+ 420 00c0 4F       		.byte	0x4f
+ 421 00c1 6F000000 		.4byte	0x6f
+ 422 00c5 02       		.byte	0x2
+ 423 00c6 23       		.byte	0x23
+ 424 00c7 02       		.uleb128 0x2
+ 425 00c8 07       		.uleb128 0x7
+ 426 00c9 34000000 		.4byte	.LASF15
+ 427 00cd 02       		.byte	0x2
+ 428 00ce 59       		.byte	0x59
+ 429 00cf 6F000000 		.4byte	0x6f
+ 430 00d3 02       		.byte	0x2
+ 431 00d4 23       		.byte	0x23
+ 432 00d5 03       		.uleb128 0x3
+ 433 00d6 07       		.uleb128 0x7
+ 434 00d7 88000000 		.4byte	.LASF16
+ 435 00db 02       		.byte	0x2
+ 436 00dc 5B       		.byte	0x5b
+ 437 00dd 6F000000 		.4byte	0x6f
+ 438 00e1 02       		.byte	0x2
+ 439 00e2 23       		.byte	0x23
+ 440 00e3 04       		.uleb128 0x4
+ 441 00e4 07       		.uleb128 0x7
+ 442 00e5 3F000000 		.4byte	.LASF17
+ 443 00e9 02       		.byte	0x2
+ 444 00ea 61       		.byte	0x61
+ 445 00eb 6F000000 		.4byte	0x6f
+ 446 00ef 02       		.byte	0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 13
 
 
- 391 00c6 23       		.byte	0x23
- 392 00c7 02       		.uleb128 0x2
- 393 00c8 07       		.uleb128 0x7
- 394 00c9 3F000000 		.4byte	.LASF15
- 395 00cd 02       		.byte	0x2
- 396 00ce 61       		.byte	0x61
- 397 00cf 6F000000 		.4byte	0x6f
- 398 00d3 02       		.byte	0x2
- 399 00d4 23       		.byte	0x23
- 400 00d5 03       		.uleb128 0x3
- 401 00d6 00       		.byte	0x0
- 402 00d7 04       		.uleb128 0x4
- 403 00d8 A2010000 		.4byte	.LASF17
- 404 00dc 02       		.byte	0x2
- 405 00dd 64       		.byte	0x64
- 406 00de 92000000 		.4byte	0x92
- 407 00e2 08       		.uleb128 0x8
- 408 00e3 01       		.byte	0x1
- 409 00e4 5F000000 		.4byte	.LASF18
- 410 00e8 01       		.byte	0x1
- 411 00e9 34       		.byte	0x34
- 412 00ea 01       		.byte	0x1
- 413 00eb 00000000 		.4byte	.LFB0
- 414 00ef 4C000000 		.4byte	.LFE0
- 415 00f3 00000000 		.4byte	.LLST0
- 416 00f7 08       		.uleb128 0x8
- 417 00f8 01       		.byte	0x1
- 418 00f9 16010000 		.4byte	.LASF19
- 419 00fd 01       		.byte	0x1
- 420 00fe 6E       		.byte	0x6e
- 421 00ff 01       		.byte	0x1
- 422 0100 00000000 		.4byte	.LFB1
- 423 0104 46000000 		.4byte	.LFE1
- 424 0108 2B000000 		.4byte	.LLST1
- 425 010c 08       		.uleb128 0x8
- 426 010d 01       		.byte	0x1
- 427 010e 27000000 		.4byte	.LASF20
- 428 0112 01       		.byte	0x1
- 429 0113 AA       		.byte	0xaa
- 430 0114 01       		.byte	0x1
- 431 0115 00000000 		.4byte	.LFB2
- 432 0119 40000000 		.4byte	.LFE2
- 433 011d 56000000 		.4byte	.LLST2
- 434 0121 08       		.uleb128 0x8
- 435 0122 01       		.byte	0x1
- 436 0123 94010000 		.4byte	.LASF21
- 437 0127 01       		.byte	0x1
- 438 0128 DB       		.byte	0xdb
- 439 0129 01       		.byte	0x1
- 440 012a 00000000 		.4byte	.LFB3
- 441 012e 20000000 		.4byte	.LFE3
- 442 0132 81000000 		.4byte	.LLST3
- 443 0136 09       		.uleb128 0x9
- 444 0137 B8000000 		.4byte	.LASF26
- 445 013b 01       		.byte	0x1
- 446 013c 18       		.byte	0x18
- 447 013d D7000000 		.4byte	0xd7
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 13
+ 447 00f0 23       		.byte	0x23
+ 448 00f1 05       		.uleb128 0x5
+ 449 00f2 00       		.byte	0x0
+ 450 00f3 04       		.uleb128 0x4
+ 451 00f4 B4010000 		.4byte	.LASF19
+ 452 00f8 02       		.byte	0x2
+ 453 00f9 64       		.byte	0x64
+ 454 00fa 92000000 		.4byte	0x92
+ 455 00fe 08       		.uleb128 0x8
+ 456 00ff 01       		.byte	0x1
+ 457 0100 5F000000 		.4byte	.LASF20
+ 458 0104 01       		.byte	0x1
+ 459 0105 34       		.byte	0x34
+ 460 0106 01       		.byte	0x1
+ 461 0107 00000000 		.4byte	.LFB0
+ 462 010b 78000000 		.4byte	.LFE0
+ 463 010f 00000000 		.4byte	.LLST0
+ 464 0113 08       		.uleb128 0x8
+ 465 0114 01       		.byte	0x1
+ 466 0115 28010000 		.4byte	.LASF21
+ 467 0119 01       		.byte	0x1
+ 468 011a 6E       		.byte	0x6e
+ 469 011b 01       		.byte	0x1
+ 470 011c 00000000 		.4byte	.LFB1
+ 471 0120 6E000000 		.4byte	.LFE1
+ 472 0124 2B000000 		.4byte	.LLST1
+ 473 0128 08       		.uleb128 0x8
+ 474 0129 01       		.byte	0x1
+ 475 012a 27000000 		.4byte	.LASF22
+ 476 012e 01       		.byte	0x1
+ 477 012f AA       		.byte	0xaa
+ 478 0130 01       		.byte	0x1
+ 479 0131 00000000 		.4byte	.LFB2
+ 480 0135 40000000 		.4byte	.LFE2
+ 481 0139 56000000 		.4byte	.LLST2
+ 482 013d 08       		.uleb128 0x8
+ 483 013e 01       		.byte	0x1
+ 484 013f A6010000 		.4byte	.LASF23
+ 485 0143 01       		.byte	0x1
+ 486 0144 DB       		.byte	0xdb
+ 487 0145 01       		.byte	0x1
+ 488 0146 00000000 		.4byte	.LFB3
+ 489 014a 24000000 		.4byte	.LFE3
+ 490 014e 81000000 		.4byte	.LLST3
+ 491 0152 09       		.uleb128 0x9
+ 492 0153 C2000000 		.4byte	.LASF28
+ 493 0157 01       		.byte	0x1
+ 494 0158 18       		.byte	0x18
+ 495 0159 F3000000 		.4byte	0xf3
+ 496 015d 05       		.byte	0x5
+ 497 015e 03       		.byte	0x3
+ 498 015f 00000000 		.4byte	UART_1_backup
+ 499 0163 00       		.byte	0x0
+ 500              		.section	.debug_abbrev
+ 501 0000 01       		.uleb128 0x1
+ 502 0001 11       		.uleb128 0x11
+ 503 0002 01       		.byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 14
 
 
- 448 0141 05       		.byte	0x5
- 449 0142 03       		.byte	0x3
- 450 0143 00000000 		.4byte	UART_1_backup
- 451 0147 00       		.byte	0x0
- 452              		.section	.debug_abbrev
- 453 0000 01       		.uleb128 0x1
- 454 0001 11       		.uleb128 0x11
- 455 0002 01       		.byte	0x1
- 456 0003 25       		.uleb128 0x25
- 457 0004 0E       		.uleb128 0xe
- 458 0005 13       		.uleb128 0x13
- 459 0006 0B       		.uleb128 0xb
- 460 0007 03       		.uleb128 0x3
- 461 0008 0E       		.uleb128 0xe
- 462 0009 1B       		.uleb128 0x1b
- 463 000a 0E       		.uleb128 0xe
- 464 000b 11       		.uleb128 0x11
- 465 000c 01       		.uleb128 0x1
- 466 000d 52       		.uleb128 0x52
- 467 000e 01       		.uleb128 0x1
- 468 000f 55       		.uleb128 0x55
- 469 0010 06       		.uleb128 0x6
- 470 0011 10       		.uleb128 0x10
- 471 0012 06       		.uleb128 0x6
- 472 0013 00       		.byte	0x0
- 473 0014 00       		.byte	0x0
- 474 0015 02       		.uleb128 0x2
- 475 0016 24       		.uleb128 0x24
- 476 0017 00       		.byte	0x0
- 477 0018 0B       		.uleb128 0xb
- 478 0019 0B       		.uleb128 0xb
- 479 001a 3E       		.uleb128 0x3e
- 480 001b 0B       		.uleb128 0xb
- 481 001c 03       		.uleb128 0x3
- 482 001d 0E       		.uleb128 0xe
- 483 001e 00       		.byte	0x0
- 484 001f 00       		.byte	0x0
- 485 0020 03       		.uleb128 0x3
- 486 0021 24       		.uleb128 0x24
- 487 0022 00       		.byte	0x0
- 488 0023 0B       		.uleb128 0xb
- 489 0024 0B       		.uleb128 0xb
- 490 0025 3E       		.uleb128 0x3e
- 491 0026 0B       		.uleb128 0xb
- 492 0027 03       		.uleb128 0x3
- 493 0028 08       		.uleb128 0x8
- 494 0029 00       		.byte	0x0
- 495 002a 00       		.byte	0x0
- 496 002b 04       		.uleb128 0x4
- 497 002c 16       		.uleb128 0x16
- 498 002d 00       		.byte	0x0
- 499 002e 03       		.uleb128 0x3
- 500 002f 0E       		.uleb128 0xe
- 501 0030 3A       		.uleb128 0x3a
- 502 0031 0B       		.uleb128 0xb
- 503 0032 3B       		.uleb128 0x3b
- 504 0033 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 14
+ 504 0003 25       		.uleb128 0x25
+ 505 0004 0E       		.uleb128 0xe
+ 506 0005 13       		.uleb128 0x13
+ 507 0006 0B       		.uleb128 0xb
+ 508 0007 03       		.uleb128 0x3
+ 509 0008 0E       		.uleb128 0xe
+ 510 0009 1B       		.uleb128 0x1b
+ 511 000a 0E       		.uleb128 0xe
+ 512 000b 11       		.uleb128 0x11
+ 513 000c 01       		.uleb128 0x1
+ 514 000d 52       		.uleb128 0x52
+ 515 000e 01       		.uleb128 0x1
+ 516 000f 55       		.uleb128 0x55
+ 517 0010 06       		.uleb128 0x6
+ 518 0011 10       		.uleb128 0x10
+ 519 0012 06       		.uleb128 0x6
+ 520 0013 00       		.byte	0x0
+ 521 0014 00       		.byte	0x0
+ 522 0015 02       		.uleb128 0x2
+ 523 0016 24       		.uleb128 0x24
+ 524 0017 00       		.byte	0x0
+ 525 0018 0B       		.uleb128 0xb
+ 526 0019 0B       		.uleb128 0xb
+ 527 001a 3E       		.uleb128 0x3e
+ 528 001b 0B       		.uleb128 0xb
+ 529 001c 03       		.uleb128 0x3
+ 530 001d 0E       		.uleb128 0xe
+ 531 001e 00       		.byte	0x0
+ 532 001f 00       		.byte	0x0
+ 533 0020 03       		.uleb128 0x3
+ 534 0021 24       		.uleb128 0x24
+ 535 0022 00       		.byte	0x0
+ 536 0023 0B       		.uleb128 0xb
+ 537 0024 0B       		.uleb128 0xb
+ 538 0025 3E       		.uleb128 0x3e
+ 539 0026 0B       		.uleb128 0xb
+ 540 0027 03       		.uleb128 0x3
+ 541 0028 08       		.uleb128 0x8
+ 542 0029 00       		.byte	0x0
+ 543 002a 00       		.byte	0x0
+ 544 002b 04       		.uleb128 0x4
+ 545 002c 16       		.uleb128 0x16
+ 546 002d 00       		.byte	0x0
+ 547 002e 03       		.uleb128 0x3
+ 548 002f 0E       		.uleb128 0xe
+ 549 0030 3A       		.uleb128 0x3a
+ 550 0031 0B       		.uleb128 0xb
+ 551 0032 3B       		.uleb128 0x3b
+ 552 0033 0B       		.uleb128 0xb
+ 553 0034 49       		.uleb128 0x49
+ 554 0035 13       		.uleb128 0x13
+ 555 0036 00       		.byte	0x0
+ 556 0037 00       		.byte	0x0
+ 557 0038 05       		.uleb128 0x5
+ 558 0039 24       		.uleb128 0x24
+ 559 003a 00       		.byte	0x0
+ 560 003b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 15
 
 
- 505 0034 49       		.uleb128 0x49
- 506 0035 13       		.uleb128 0x13
- 507 0036 00       		.byte	0x0
- 508 0037 00       		.byte	0x0
- 509 0038 05       		.uleb128 0x5
- 510 0039 24       		.uleb128 0x24
- 511 003a 00       		.byte	0x0
- 512 003b 0B       		.uleb128 0xb
- 513 003c 0B       		.uleb128 0xb
- 514 003d 3E       		.uleb128 0x3e
- 515 003e 0B       		.uleb128 0xb
- 516 003f 00       		.byte	0x0
- 517 0040 00       		.byte	0x0
- 518 0041 06       		.uleb128 0x6
- 519 0042 13       		.uleb128 0x13
- 520 0043 01       		.byte	0x1
- 521 0044 03       		.uleb128 0x3
- 522 0045 0E       		.uleb128 0xe
- 523 0046 0B       		.uleb128 0xb
- 524 0047 0B       		.uleb128 0xb
- 525 0048 3A       		.uleb128 0x3a
- 526 0049 0B       		.uleb128 0xb
- 527 004a 3B       		.uleb128 0x3b
- 528 004b 0B       		.uleb128 0xb
- 529 004c 01       		.uleb128 0x1
- 530 004d 13       		.uleb128 0x13
- 531 004e 00       		.byte	0x0
- 532 004f 00       		.byte	0x0
- 533 0050 07       		.uleb128 0x7
- 534 0051 0D       		.uleb128 0xd
- 535 0052 00       		.byte	0x0
- 536 0053 03       		.uleb128 0x3
- 537 0054 0E       		.uleb128 0xe
- 538 0055 3A       		.uleb128 0x3a
- 539 0056 0B       		.uleb128 0xb
- 540 0057 3B       		.uleb128 0x3b
- 541 0058 0B       		.uleb128 0xb
- 542 0059 49       		.uleb128 0x49
- 543 005a 13       		.uleb128 0x13
- 544 005b 38       		.uleb128 0x38
- 545 005c 0A       		.uleb128 0xa
- 546 005d 00       		.byte	0x0
- 547 005e 00       		.byte	0x0
- 548 005f 08       		.uleb128 0x8
- 549 0060 2E       		.uleb128 0x2e
- 550 0061 00       		.byte	0x0
- 551 0062 3F       		.uleb128 0x3f
- 552 0063 0C       		.uleb128 0xc
- 553 0064 03       		.uleb128 0x3
- 554 0065 0E       		.uleb128 0xe
- 555 0066 3A       		.uleb128 0x3a
- 556 0067 0B       		.uleb128 0xb
- 557 0068 3B       		.uleb128 0x3b
- 558 0069 0B       		.uleb128 0xb
- 559 006a 27       		.uleb128 0x27
- 560 006b 0C       		.uleb128 0xc
- 561 006c 11       		.uleb128 0x11
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 15
+ 561 003c 0B       		.uleb128 0xb
+ 562 003d 3E       		.uleb128 0x3e
+ 563 003e 0B       		.uleb128 0xb
+ 564 003f 00       		.byte	0x0
+ 565 0040 00       		.byte	0x0
+ 566 0041 06       		.uleb128 0x6
+ 567 0042 13       		.uleb128 0x13
+ 568 0043 01       		.byte	0x1
+ 569 0044 03       		.uleb128 0x3
+ 570 0045 0E       		.uleb128 0xe
+ 571 0046 0B       		.uleb128 0xb
+ 572 0047 0B       		.uleb128 0xb
+ 573 0048 3A       		.uleb128 0x3a
+ 574 0049 0B       		.uleb128 0xb
+ 575 004a 3B       		.uleb128 0x3b
+ 576 004b 0B       		.uleb128 0xb
+ 577 004c 01       		.uleb128 0x1
+ 578 004d 13       		.uleb128 0x13
+ 579 004e 00       		.byte	0x0
+ 580 004f 00       		.byte	0x0
+ 581 0050 07       		.uleb128 0x7
+ 582 0051 0D       		.uleb128 0xd
+ 583 0052 00       		.byte	0x0
+ 584 0053 03       		.uleb128 0x3
+ 585 0054 0E       		.uleb128 0xe
+ 586 0055 3A       		.uleb128 0x3a
+ 587 0056 0B       		.uleb128 0xb
+ 588 0057 3B       		.uleb128 0x3b
+ 589 0058 0B       		.uleb128 0xb
+ 590 0059 49       		.uleb128 0x49
+ 591 005a 13       		.uleb128 0x13
+ 592 005b 38       		.uleb128 0x38
+ 593 005c 0A       		.uleb128 0xa
+ 594 005d 00       		.byte	0x0
+ 595 005e 00       		.byte	0x0
+ 596 005f 08       		.uleb128 0x8
+ 597 0060 2E       		.uleb128 0x2e
+ 598 0061 00       		.byte	0x0
+ 599 0062 3F       		.uleb128 0x3f
+ 600 0063 0C       		.uleb128 0xc
+ 601 0064 03       		.uleb128 0x3
+ 602 0065 0E       		.uleb128 0xe
+ 603 0066 3A       		.uleb128 0x3a
+ 604 0067 0B       		.uleb128 0xb
+ 605 0068 3B       		.uleb128 0x3b
+ 606 0069 0B       		.uleb128 0xb
+ 607 006a 27       		.uleb128 0x27
+ 608 006b 0C       		.uleb128 0xc
+ 609 006c 11       		.uleb128 0x11
+ 610 006d 01       		.uleb128 0x1
+ 611 006e 12       		.uleb128 0x12
+ 612 006f 01       		.uleb128 0x1
+ 613 0070 40       		.uleb128 0x40
+ 614 0071 06       		.uleb128 0x6
+ 615 0072 00       		.byte	0x0
+ 616 0073 00       		.byte	0x0
+ 617 0074 09       		.uleb128 0x9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 16
 
 
- 562 006d 01       		.uleb128 0x1
- 563 006e 12       		.uleb128 0x12
- 564 006f 01       		.uleb128 0x1
- 565 0070 40       		.uleb128 0x40
- 566 0071 06       		.uleb128 0x6
- 567 0072 00       		.byte	0x0
- 568 0073 00       		.byte	0x0
- 569 0074 09       		.uleb128 0x9
- 570 0075 34       		.uleb128 0x34
- 571 0076 00       		.byte	0x0
- 572 0077 03       		.uleb128 0x3
- 573 0078 0E       		.uleb128 0xe
- 574 0079 3A       		.uleb128 0x3a
- 575 007a 0B       		.uleb128 0xb
- 576 007b 3B       		.uleb128 0x3b
- 577 007c 0B       		.uleb128 0xb
- 578 007d 49       		.uleb128 0x49
- 579 007e 13       		.uleb128 0x13
- 580 007f 02       		.uleb128 0x2
- 581 0080 0A       		.uleb128 0xa
- 582 0081 00       		.byte	0x0
- 583 0082 00       		.byte	0x0
- 584 0083 00       		.byte	0x0
- 585              		.section	.debug_pubnames,"",%progbits
- 586 0000 60000000 		.4byte	0x60
- 587 0004 0200     		.2byte	0x2
- 588 0006 00000000 		.4byte	.Ldebug_info0
- 589 000a 48010000 		.4byte	0x148
- 590 000e E2000000 		.4byte	0xe2
- 591 0012 55415254 		.ascii	"UART_1_SaveConfig\000"
- 591      5F315F53 
- 591      61766543 
- 591      6F6E6669 
- 591      6700
- 592 0024 F7000000 		.4byte	0xf7
- 593 0028 55415254 		.ascii	"UART_1_RestoreConfig\000"
- 593      5F315F52 
- 593      6573746F 
- 593      7265436F 
- 593      6E666967 
- 594 003d 0C010000 		.4byte	0x10c
- 595 0041 55415254 		.ascii	"UART_1_Sleep\000"
- 595      5F315F53 
- 595      6C656570 
- 595      00
- 596 004e 21010000 		.4byte	0x121
- 597 0052 55415254 		.ascii	"UART_1_Wakeup\000"
- 597      5F315F57 
- 597      616B6575 
- 597      7000
- 598 0060 00000000 		.4byte	0x0
- 599              		.section	.debug_aranges,"",%progbits
- 600 0000 34000000 		.4byte	0x34
- 601 0004 0200     		.2byte	0x2
- 602 0006 00000000 		.4byte	.Ldebug_info0
- 603 000a 04       		.byte	0x4
- 604 000b 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 16
-
-
- 605 000c 0000     		.2byte	0x0
- 606 000e 0000     		.2byte	0x0
- 607 0010 00000000 		.4byte	.LFB0
- 608 0014 4C000000 		.4byte	.LFE0-.LFB0
- 609 0018 00000000 		.4byte	.LFB1
- 610 001c 46000000 		.4byte	.LFE1-.LFB1
- 611 0020 00000000 		.4byte	.LFB2
- 612 0024 40000000 		.4byte	.LFE2-.LFB2
- 613 0028 00000000 		.4byte	.LFB3
- 614 002c 20000000 		.4byte	.LFE3-.LFB3
- 615 0030 00000000 		.4byte	0x0
- 616 0034 00000000 		.4byte	0x0
- 617              		.section	.debug_ranges,"",%progbits
- 618              	.Ldebug_ranges0:
- 619 0000 00000000 		.4byte	.Ltext0
- 620 0004 00000000 		.4byte	.Letext0
- 621 0008 00000000 		.4byte	.LFB0
- 622 000c 4C000000 		.4byte	.LFE0
- 623 0010 00000000 		.4byte	.LFB1
- 624 0014 46000000 		.4byte	.LFE1
- 625 0018 00000000 		.4byte	.LFB2
- 626 001c 40000000 		.4byte	.LFE2
- 627 0020 00000000 		.4byte	.LFB3
- 628 0024 20000000 		.4byte	.LFE3
- 629 0028 00000000 		.4byte	0x0
- 630 002c 00000000 		.4byte	0x0
- 631              		.section	.debug_str,"MS",%progbits,1
- 632              	.LASF6:
- 633 0000 6C6F6E67 		.ascii	"long long int\000"
- 633      206C6F6E 
- 633      6720696E 
- 633      7400
- 634              	.LASF12:
- 635 000e 656E6162 		.ascii	"enableState\000"
- 635      6C655374 
- 635      61746500 
- 636              	.LASF8:
- 637 001a 756E7369 		.ascii	"unsigned int\000"
- 637      676E6564 
- 637      20696E74 
- 637      00
- 638              	.LASF20:
- 639 0027 55415254 		.ascii	"UART_1_Sleep\000"
+ 618 0075 34       		.uleb128 0x34
+ 619 0076 00       		.byte	0x0
+ 620 0077 03       		.uleb128 0x3
+ 621 0078 0E       		.uleb128 0xe
+ 622 0079 3A       		.uleb128 0x3a
+ 623 007a 0B       		.uleb128 0xb
+ 624 007b 3B       		.uleb128 0x3b
+ 625 007c 0B       		.uleb128 0xb
+ 626 007d 49       		.uleb128 0x49
+ 627 007e 13       		.uleb128 0x13
+ 628 007f 02       		.uleb128 0x2
+ 629 0080 0A       		.uleb128 0xa
+ 630 0081 00       		.byte	0x0
+ 631 0082 00       		.byte	0x0
+ 632 0083 00       		.byte	0x0
+ 633              		.section	.debug_pubnames,"",%progbits
+ 634 0000 60000000 		.4byte	0x60
+ 635 0004 0200     		.2byte	0x2
+ 636 0006 00000000 		.4byte	.Ldebug_info0
+ 637 000a 64010000 		.4byte	0x164
+ 638 000e FE000000 		.4byte	0xfe
+ 639 0012 55415254 		.ascii	"UART_1_SaveConfig\000"
  639      5F315F53 
- 639      6C656570 
- 639      00
- 640              	.LASF13:
- 641 0034 74785F63 		.ascii	"tx_clk_ctr\000"
- 641      6C6B5F63 
- 641      747200
- 642              	.LASF15:
- 643 003f 74785F6D 		.ascii	"tx_mask\000"
- 643      61736B00 
- 644              	.LASF16:
- 645 0047 75696E74 		.ascii	"uint8\000"
- 645      3800
- 646              	.LASF5:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 17
+ 639      61766543 
+ 639      6F6E6669 
+ 639      6700
+ 640 0024 13010000 		.4byte	0x113
+ 641 0028 55415254 		.ascii	"UART_1_RestoreConfig\000"
+ 641      5F315F52 
+ 641      6573746F 
+ 641      7265436F 
+ 641      6E666967 
+ 642 003d 28010000 		.4byte	0x128
+ 643 0041 55415254 		.ascii	"UART_1_Sleep\000"
+ 643      5F315F53 
+ 643      6C656570 
+ 643      00
+ 644 004e 3D010000 		.4byte	0x13d
+ 645 0052 55415254 		.ascii	"UART_1_Wakeup\000"
+ 645      5F315F57 
+ 645      616B6575 
+ 645      7000
+ 646 0060 00000000 		.4byte	0x0
+ 647              		.section	.debug_aranges,"",%progbits
+ 648 0000 34000000 		.4byte	0x34
+ 649 0004 0200     		.2byte	0x2
+ 650 0006 00000000 		.4byte	.Ldebug_info0
+ 651 000a 04       		.byte	0x4
+ 652 000b 00       		.byte	0x0
+ 653 000c 0000     		.2byte	0x0
+ 654 000e 0000     		.2byte	0x0
+ 655 0010 00000000 		.4byte	.LFB0
+ 656 0014 78000000 		.4byte	.LFE0-.LFB0
+ 657 0018 00000000 		.4byte	.LFB1
+ 658 001c 6E000000 		.4byte	.LFE1-.LFB1
+ 659 0020 00000000 		.4byte	.LFB2
+ 660 0024 40000000 		.4byte	.LFE2-.LFB2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 17
 
 
- 647 004d 6C6F6E67 		.ascii	"long unsigned int\000"
- 647      20756E73 
- 647      69676E65 
- 647      6420696E 
- 647      7400
- 648              	.LASF18:
- 649 005f 55415254 		.ascii	"UART_1_SaveConfig\000"
- 649      5F315F53 
- 649      61766543 
- 649      6F6E6669 
- 649      6700
- 650              	.LASF7:
- 651 0071 6C6F6E67 		.ascii	"long long unsigned int\000"
- 651      206C6F6E 
- 651      6720756E 
- 651      7369676E 
- 651      65642069 
- 652              	.LASF14:
- 653 0088 74785F63 		.ascii	"tx_clk_compl\000"
- 653      6C6B5F63 
- 653      6F6D706C 
- 653      00
- 654              	.LASF1:
- 655 0095 756E7369 		.ascii	"unsigned char\000"
- 655      676E6564 
- 655      20636861 
- 655      7200
- 656              	.LASF11:
- 657 00a3 63686172 		.ascii	"char\000"
- 657      00
- 658              	.LASF4:
- 659 00a8 6C6F6E67 		.ascii	"long int\000"
- 659      20696E74 
- 659      00
- 660              	.LASF10:
- 661 00b1 646F7562 		.ascii	"double\000"
- 661      6C6500
- 662              	.LASF26:
- 663 00b8 55415254 		.ascii	"UART_1_backup\000"
- 663      5F315F62 
- 663      61636B75 
- 663      7000
- 664              	.LASF23:
- 665 00c6 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\UART_1_PM.c\000"
- 665      6E657261 
- 665      7465645F 
- 665      536F7572 
- 665      63655C50 
- 666              	.LASF22:
- 667 00eb 474E5520 		.ascii	"GNU C 4.4.1\000"
- 667      4320342E 
- 667      342E3100 
- 668              	.LASF3:
- 669 00f7 73686F72 		.ascii	"short unsigned int\000"
- 669      7420756E 
- 669      7369676E 
- 669      65642069 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgMP9IW.s 			page 18
+ 661 0028 00000000 		.4byte	.LFB3
+ 662 002c 24000000 		.4byte	.LFE3-.LFB3
+ 663 0030 00000000 		.4byte	0x0
+ 664 0034 00000000 		.4byte	0x0
+ 665              		.section	.debug_ranges,"",%progbits
+ 666              	.Ldebug_ranges0:
+ 667 0000 00000000 		.4byte	.Ltext0
+ 668 0004 00000000 		.4byte	.Letext0
+ 669 0008 00000000 		.4byte	.LFB0
+ 670 000c 78000000 		.4byte	.LFE0
+ 671 0010 00000000 		.4byte	.LFB1
+ 672 0014 6E000000 		.4byte	.LFE1
+ 673 0018 00000000 		.4byte	.LFB2
+ 674 001c 40000000 		.4byte	.LFE2
+ 675 0020 00000000 		.4byte	.LFB3
+ 676 0024 24000000 		.4byte	.LFE3
+ 677 0028 00000000 		.4byte	0x0
+ 678 002c 00000000 		.4byte	0x0
+ 679              		.section	.debug_str,"MS",%progbits,1
+ 680              	.LASF6:
+ 681 0000 6C6F6E67 		.ascii	"long long int\000"
+ 681      206C6F6E 
+ 681      6720696E 
+ 681      7400
+ 682              	.LASF12:
+ 683 000e 656E6162 		.ascii	"enableState\000"
+ 683      6C655374 
+ 683      61746500 
+ 684              	.LASF8:
+ 685 001a 756E7369 		.ascii	"unsigned int\000"
+ 685      676E6564 
+ 685      20696E74 
+ 685      00
+ 686              	.LASF22:
+ 687 0027 55415254 		.ascii	"UART_1_Sleep\000"
+ 687      5F315F53 
+ 687      6C656570 
+ 687      00
+ 688              	.LASF15:
+ 689 0034 74785F63 		.ascii	"tx_clk_ctr\000"
+ 689      6C6B5F63 
+ 689      747200
+ 690              	.LASF17:
+ 691 003f 74785F6D 		.ascii	"tx_mask\000"
+ 691      61736B00 
+ 692              	.LASF18:
+ 693 0047 75696E74 		.ascii	"uint8\000"
+ 693      3800
+ 694              	.LASF5:
+ 695 004d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 695      20756E73 
+ 695      69676E65 
+ 695      6420696E 
+ 695      7400
+ 696              	.LASF20:
+ 697 005f 55415254 		.ascii	"UART_1_SaveConfig\000"
+ 697      5F315F53 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 18
 
 
- 669      6E7400
- 670              	.LASF0:
- 671 010a 7369676E 		.ascii	"signed char\000"
- 671      65642063 
- 671      68617200 
- 672              	.LASF19:
- 673 0116 55415254 		.ascii	"UART_1_RestoreConfig\000"
- 673      5F315F52 
- 673      6573746F 
- 673      7265436F 
- 673      6E666967 
- 674              	.LASF9:
- 675 012b 666C6F61 		.ascii	"float\000"
- 675      7400
- 676              	.LASF2:
- 677 0131 73686F72 		.ascii	"short int\000"
- 677      7420696E 
- 677      7400
- 678              	.LASF24:
- 679 013b 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
- 679      73657273 
- 679      5C686F61 
- 679      6E67705C 
- 679      446F6375 
- 680 0168 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
- 680      6E766572 
- 680      745C696E 
- 680      76657274 
- 680      2E637964 
- 681              	.LASF25:
- 682 017f 55415254 		.ascii	"UART_1_backupStruct_\000"
- 682      5F315F62 
- 682      61636B75 
- 682      70537472 
- 682      7563745F 
- 683              	.LASF21:
- 684 0194 55415254 		.ascii	"UART_1_Wakeup\000"
- 684      5F315F57 
- 684      616B6575 
- 684      7000
- 685              	.LASF17:
- 686 01a2 55415254 		.ascii	"UART_1_BACKUP_STRUCT\000"
- 686      5F315F42 
- 686      41434B55 
- 686      505F5354 
- 686      52554354 
- 687              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
+ 697      61766543 
+ 697      6F6E6669 
+ 697      6700
+ 698              	.LASF7:
+ 699 0071 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 699      206C6F6E 
+ 699      6720756E 
+ 699      7369676E 
+ 699      65642069 
+ 700              	.LASF16:
+ 701 0088 74785F63 		.ascii	"tx_clk_compl\000"
+ 701      6C6B5F63 
+ 701      6F6D706C 
+ 701      00
+ 702              	.LASF1:
+ 703 0095 756E7369 		.ascii	"unsigned char\000"
+ 703      676E6564 
+ 703      20636861 
+ 703      7200
+ 704              	.LASF11:
+ 705 00a3 63686172 		.ascii	"char\000"
+ 705      00
+ 706              	.LASF4:
+ 707 00a8 6C6F6E67 		.ascii	"long int\000"
+ 707      20696E74 
+ 707      00
+ 708              	.LASF13:
+ 709 00b1 72785F70 		.ascii	"rx_period\000"
+ 709      6572696F 
+ 709      6400
+ 710              	.LASF10:
+ 711 00bb 646F7562 		.ascii	"double\000"
+ 711      6C6500
+ 712              	.LASF28:
+ 713 00c2 55415254 		.ascii	"UART_1_backup\000"
+ 713      5F315F62 
+ 713      61636B75 
+ 713      7000
+ 714              	.LASF25:
+ 715 00d0 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\UART_1_PM.c\000"
+ 715      6E657261 
+ 715      7465645F 
+ 715      536F7572 
+ 715      63655C50 
+ 716              	.LASF24:
+ 717 00f5 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 717      4320342E 
+ 717      342E3100 
+ 718              	.LASF3:
+ 719 0101 73686F72 		.ascii	"short unsigned int\000"
+ 719      7420756E 
+ 719      7369676E 
+ 719      65642069 
+ 719      6E7400
+ 720              	.LASF0:
+ 721 0114 7369676E 		.ascii	"signed char\000"
+ 721      65642063 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpI9HUN.s 			page 19
+
+
+ 721      68617200 
+ 722              	.LASF14:
+ 723 0120 72785F6D 		.ascii	"rx_mask\000"
+ 723      61736B00 
+ 724              	.LASF21:
+ 725 0128 55415254 		.ascii	"UART_1_RestoreConfig\000"
+ 725      5F315F52 
+ 725      6573746F 
+ 725      7265436F 
+ 725      6E666967 
+ 726              	.LASF9:
+ 727 013d 666C6F61 		.ascii	"float\000"
+ 727      7400
+ 728              	.LASF2:
+ 729 0143 73686F72 		.ascii	"short int\000"
+ 729      7420696E 
+ 729      7400
+ 730              	.LASF26:
+ 731 014d 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 731      73657273 
+ 731      5C686F61 
+ 731      6E67705C 
+ 731      446F6375 
+ 732 017a 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 732      6E766572 
+ 732      745C696E 
+ 732      76657274 
+ 732      2E637964 
+ 733              	.LASF27:
+ 734 0191 55415254 		.ascii	"UART_1_backupStruct_\000"
+ 734      5F315F62 
+ 734      61636B75 
+ 734      70537472 
+ 734      7563745F 
+ 735              	.LASF23:
+ 736 01a6 55415254 		.ascii	"UART_1_Wakeup\000"
+ 736      5F315F57 
+ 736      616B6575 
+ 736      7000
+ 737              	.LASF19:
+ 738 01b4 55415254 		.ascii	"UART_1_BACKUP_STRUCT\000"
+ 738      5F315F42 
+ 738      41434B55 
+ 738      505F5354 
+ 738      52554354 
+ 739              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

@@ -9,6 +9,8 @@ var spark = require('spark');
 
 var device;
 
+var currentdate=newDate();
+
 spark.on('login',function(){
 	var devicesPr = spark.listDevices();
 
@@ -29,6 +31,12 @@ spark.on('login',function(){
 
 	);
 	
+	var datetime = "Last Sync: " + currentdate.getDate() + "/"+(currentdate.getMonth()+1) 
+    + "/" + currentdate.getFullYear() + " @ " 
+    + currentdate.getHours() + ":" 
+    + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+
 
 	setInterval(function(){
 		device.callFunction('queryVolts','',function(err,data){
@@ -78,12 +86,7 @@ setInterval(function(){
 
 
 http.createServer(function (req, res){
-	/*
-	request.post("http://api.spark.io/v1/devices/badger_penguin/queryVolts?access_token=a2351163aa2217b904f08964cad63325ad944df8",function(response,body){
-	scratchtxt=body;
 
-});
-	*/
 
 	
 		res.writeHead(200, {'Content-Type':'text/plain'});

@@ -34,10 +34,8 @@
 #include <B_LS.h>
 #include <ADC_DelSig_V.h>
 #include <ADC_SAR_2.h>
-#include <Pin_7_aliases.h>
-#include <Pin_7.h>
-#include <Pin_8_aliases.h>
-#include <Pin_8.h>
+#include <Pin_1_aliases.h>
+#include <Pin_1.h>
 #include <V_SENSE_aliases.h>
 #include <V_SENSE.h>
 #include <Pin_10_aliases.h>
