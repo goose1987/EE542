@@ -1,5 +1,5 @@
 # invert
-# 2014-11-14 04:24:54Z
+# 2014-11-15 17:36:52Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -13,16 +13,10 @@ set_io "BUCK_HS(0)" iocell 5 5
 set_io "BUCK_LS(0)" iocell 5 6
 set_io "B_HS(0)" iocell 5 3
 set_io "B_LS(0)" iocell 5 4
-set_io "Pin_1(0)" iocell 4 1
-set_io "Pin_10(0)" iocell 3 3
-set_io "Rx_1(0)" iocell 0 1
-set_io "Tx_1(0)" iocell 0 0
+set_io "Rx_1(0)" iocell 0 0
+set_io "Tx_1(0)" iocell 0 1
 set_io "V_SENSE(0)" iocell 6 5
 set_location "\ADC_DelSig_V:DSM2\" dsmodcell -1 -1 0
-set_location "\ADC_SAR_2:ADC_SAR\" sarcell -1 -1 1
-set_io "\ADC_SAR_2:Bypass(0)\" iocell 0 2
-set_location "\ADC_SAR_V:ADC_SAR\" sarcell -1 -1 0
-set_io "\ADC_SAR_V:Bypass(0)\" iocell 0 4
 set_io "\LCD_Char_1:LCDPort(0)\" iocell 2 0
 set_io "\LCD_Char_1:LCDPort(1)\" iocell 2 1
 set_io "\LCD_Char_1:LCDPort(2)\" iocell 2 2

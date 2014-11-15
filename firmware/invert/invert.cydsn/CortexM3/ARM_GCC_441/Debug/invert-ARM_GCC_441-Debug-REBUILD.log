@@ -1,4 +1,4 @@
---------------- Rebuild Started: 11/09/2014 16:04:48 Project: invert, Configuration: ARM GCC 4.4.1 Debug ---------------
+--------------- Rebuild Started: 11/15/2014 09:30:26 Project: invert, Configuration: ARM GCC 4.4.1 Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\PWM_BUCK.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\PWM_BUCK_PM.o"
@@ -16,23 +16,10 @@ Deleting file ".\CortexM3\ARM_GCC_441\Debug\CyLib.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\cyPm.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\CySpc.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\cyutils.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_INT.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_PM.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\Pin_10.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_IRQ.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_theACLK.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_Bypass.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\LCD_Char_1.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_PM.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_LCDPort.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_INT.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_PM.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\Clock_2.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_IRQ.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_theACLK.o"
-Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_Bypass.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.o"
 Deleting file ".\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.o"
@@ -82,11 +69,9 @@ HDL Generation ...
 Synthesis ...
 Place and Route ...
 Tech mapping ...
-ADD: pft.M0040: information: The following 8 pin(s) will be assigned a location by the fitter: \ADC_SAR_2:Bypass(0)\, \ADC_SAR_V:Bypass(0)\, MISO(0), MOSI(0), Pin_1(0), Pin_10(0), SCLK(0), SS(0)
+ADD: pft.M0040: information: The following 4 pin(s) will be assigned a location by the fitter: MISO(0), MOSI(0), SCLK(0), SS(0)
 Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
 Analog Placement ...
-Log: apr.M0058: The analog placement iterative improvement is 35% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 76% done. (App=cydsfit)
 Analog Routing ...
 Analog Code Generation ...
 Digital Placement ...
@@ -98,6 +83,10 @@ API Generation ...
 Dependency Generation ...
 Clean Temporary Files ...
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM3\ARM_GCC_441\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:83: warning: unused variable 'tstr'
+.\main.c:81: warning: unused variable 'E'
+.\main.c:78: warning: unused variable 'U'
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\PWM_BUCK.lst -ffunction-sections -c .\Generated_Source\PSoC5\PWM_BUCK.c -o .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\PWM_BUCK_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\PWM_BUCK_PM.c -o .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK_PM.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\Clock_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\Clock_1.c -o .\CortexM3\ARM_GCC_441\Debug\Clock_1.o
@@ -114,24 +103,10 @@ arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\cyPm.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_441\Debug\cyPm.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\CySpc.lst -ffunction-sections -c .\Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_441\Debug\CySpc.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\cyutils.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_441\Debug\cyutils.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\Pin_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\Pin_1.c -o .\CortexM3\ARM_GCC_441\Debug\Pin_1.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_2.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_INT.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_2_INT.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_INT.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_2_PM.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_PM.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\Pin_10.lst -ffunction-sections -c .\Generated_Source\PSoC5\Pin_10.c -o .\CortexM3\ARM_GCC_441\Debug\Pin_10.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_IRQ.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_2_IRQ.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_IRQ.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_theACLK.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_2_theACLK.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_theACLK.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_Bypass.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_2_Bypass.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_Bypass.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\LCD_Char_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\LCD_Char_1.c -o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\LCD_Char_1_PM.c -o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_PM.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_LCDPort.lst -ffunction-sections -c .\Generated_Source\PSoC5\LCD_Char_1_LCDPort.c -o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_LCDPort.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_V.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_INT.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_V_INT.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_INT.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_V_PM.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_PM.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\Clock_2.lst -ffunction-sections -c .\Generated_Source\PSoC5\Clock_2.c -o .\CortexM3\ARM_GCC_441\Debug\Clock_2.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_IRQ.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_V_IRQ.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_IRQ.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_theACLK.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_V_theACLK.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_theACLK.o
-arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_Bypass.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_SAR_V_Bypass.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_Bypass.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_DelSig_V.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_DelSig_V_PM.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.lst -ffunction-sections -c .\Generated_Source\PSoC5\ADC_DelSig_V_INT.c -o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.o
@@ -160,11 +135,11 @@ arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\MISO.lst -ffunction-sections -c .\Generated_Source\PSoC5\MISO.c -o .\CortexM3\ARM_GCC_441\Debug\MISO.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\BUCK_HS.lst -ffunction-sections -c .\Generated_Source\PSoC5\BUCK_HS.c -o .\CortexM3\ARM_GCC_441\Debug\BUCK_HS.o
 arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_441\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_441\Debug\cyfitter_cfg.o
-arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_441\Debug\invert.a .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK.o .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK_PM.o .\CortexM3\ARM_GCC_441\Debug\Clock_1.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_A.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_A_PM.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_B.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_B_PM.o .\CortexM3\ARM_GCC_441\Debug\core_cm3.o .\CortexM3\ARM_GCC_441\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_441\Debug\CyDmac.o .\CortexM3\ARM_GCC_441\Debug\CyFlash.o .\CortexM3\ARM_GCC_441\Debug\CyLib.o .\CortexM3\ARM_GCC_441\Debug\cyPm.o .\CortexM3\ARM_GCC_441\Debug\CySpc.o .\CortexM3\ARM_GCC_441\Debug\cyutils.o .\CortexM3\ARM_GCC_441\Debug\Pin_1.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_INT.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_PM.o .\CortexM3\ARM_GCC_441\Debug\Pin_10.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_IRQ.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_theACLK.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_2_Bypass.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_PM.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_LCDPort.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_INT.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_PM.o .\CortexM3\ARM_GCC_441\Debug\Clock_2.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_IRQ.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_theACLK.o .\CortexM3\ARM_GCC_441\Debug\ADC_SAR_V_Bypass.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_theACLK.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_Ext_CP_Clk.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_AMux.o .\CortexM3\ARM_GCC_441\Debug\UART_1.o .\CortexM3\ARM_GCC_441\Debug\UART_1_PM.o .\CortexM3\ARM_GCC_441\Debug\UART_1_INT.o .\CortexM3\ARM_GCC_441\Debug\UART_1_BOOT.o .\CortexM3\ARM_GCC_441\Debug\UART_1_IntClock.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1_PM.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1_INT.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1_BOOT.o .\CortexM3\ARM_GCC_441\Debug\Clock_3.o .\CortexM3\ARM_GCC_441\Debug\BUCK_LS.o .\CortexM3\ARM_GCC_441\Debug\A_HS.o .\CortexM3\ARM_GCC_441\Debug\A_LS.o .\CortexM3\ARM_GCC_441\Debug\B_HS.o .\CortexM3\ARM_GCC_441\Debug\B_LS.o .\CortexM3\ARM_GCC_441\Debug\V_SENSE.o .\CortexM3\ARM_GCC_441\Debug\SS.o .\CortexM3\ARM_GCC_441\Debug\SCLK.o .\CortexM3\ARM_GCC_441\Debug\MOSI.o .\CortexM3\ARM_GCC_441\Debug\MISO.o .\CortexM3\ARM_GCC_441\Debug\BUCK_HS.o .\CortexM3\ARM_GCC_441\Debug\cyfitter_cfg.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_441\Debug\invert.a .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK.o .\CortexM3\ARM_GCC_441\Debug\PWM_BUCK_PM.o .\CortexM3\ARM_GCC_441\Debug\Clock_1.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_A.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_A_PM.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_B.o .\CortexM3\ARM_GCC_441\Debug\PWM_UNFOLD_B_PM.o .\CortexM3\ARM_GCC_441\Debug\core_cm3.o .\CortexM3\ARM_GCC_441\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_441\Debug\CyDmac.o .\CortexM3\ARM_GCC_441\Debug\CyFlash.o .\CortexM3\ARM_GCC_441\Debug\CyLib.o .\CortexM3\ARM_GCC_441\Debug\cyPm.o .\CortexM3\ARM_GCC_441\Debug\CySpc.o .\CortexM3\ARM_GCC_441\Debug\cyutils.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_PM.o .\CortexM3\ARM_GCC_441\Debug\LCD_Char_1_LCDPort.o .\CortexM3\ARM_GCC_441\Debug\Clock_2.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_PM.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_INT.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_theACLK.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_Ext_CP_Clk.o .\CortexM3\ARM_GCC_441\Debug\ADC_DelSig_V_AMux.o .\CortexM3\ARM_GCC_441\Debug\UART_1.o .\CortexM3\ARM_GCC_441\Debug\UART_1_PM.o .\CortexM3\ARM_GCC_441\Debug\UART_1_INT.o .\CortexM3\ARM_GCC_441\Debug\UART_1_BOOT.o .\CortexM3\ARM_GCC_441\Debug\UART_1_IntClock.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1_PM.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1_INT.o .\CortexM3\ARM_GCC_441\Debug\SPIS_1_BOOT.o .\CortexM3\ARM_GCC_441\Debug\Clock_3.o .\CortexM3\ARM_GCC_441\Debug\BUCK_LS.o .\CortexM3\ARM_GCC_441\Debug\A_HS.o .\CortexM3\ARM_GCC_441\Debug\A_LS.o .\CortexM3\ARM_GCC_441\Debug\B_HS.o .\CortexM3\ARM_GCC_441\Debug\B_LS.o .\CortexM3\ARM_GCC_441\Debug\V_SENSE.o .\CortexM3\ARM_GCC_441\Debug\SS.o .\CortexM3\ARM_GCC_441\Debug\SCLK.o .\CortexM3\ARM_GCC_441\Debug\MOSI.o .\CortexM3\ARM_GCC_441\Debug\MISO.o .\CortexM3\ARM_GCC_441\Debug\BUCK_HS.o .\CortexM3\ARM_GCC_441\Debug\cyfitter_cfg.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_441\Debug\invert.a
 arm-none-eabi-gcc.exe -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g -Wl,-Map,.\CortexM3\ARM_GCC_441\Debug\invert.map -Wl,--gc-sections -Wl,--start-group -o .\CortexM3\ARM_GCC_441\Debug\invert.elf .\CortexM3\ARM_GCC_441\Debug\main.o .\CortexM3\ARM_GCC_441\Debug\Cm3Start.o .\CortexM3\ARM_GCC_441\Debug\invert.a "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_441\Debug\CyComponentLibrary.a" -Wl,--end-group
 arm-none-eabi-objcopy.exe -O ihex .\CortexM3\ARM_GCC_441\Debug\invert.elf .\CortexM3\ARM_GCC_441\Debug\invert.ihx
 cyhextool -o .\CortexM3\ARM_GCC_441\Debug\invert.hex -f .\CortexM3\ARM_GCC_441\Debug\invert.ihx -prot .\Generated_Source\PSoC5\protect.hex -id E13C069 -a EEPROM=90200000:800,PROGRAM=00000000:40000,CONFIG=80000000:8000,PROTECT=90400000:100 -meta 0101 -cunv 00000006 -wonv BC90ACAF -ecc .\Generated_Source\PSoC5\config.hex
-Flash used: 12448 of 262144 bytes (4.7 %).
-SRAM used: 1372 of 65536 bytes (2.1 %).
---------------- Rebuild Succeeded: 11/09/2014 16:05:39 ---------------
+Flash used: 11992 of 262144 bytes (4.6 %).
+SRAM used: 1396 of 65536 bytes (2.1 %).
+--------------- Rebuild Succeeded: 11/15/2014 09:31:04 ---------------

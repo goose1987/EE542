@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
   20:.\Generated_Source\PSoC5/V_SENSE.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
   21:.\Generated_Source\PSoC5/V_SENSE.c **** #if !(CY_PSOC5A &&\
   22:.\Generated_Source\PSoC5/V_SENSE.c **** 	 V_SENSE__PORT == 15 && ((V_SENSE__MASK & 0xC0) != 0))
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 2
 
 
   23:.\Generated_Source\PSoC5/V_SENSE.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
   66 0038 1A70     		strb	r2, [r3, #0]
   43:.\Generated_Source\PSoC5/V_SENSE.c **** }
   67              		.loc 1 43 0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 3
 
 
   68 003a 07F11407 		add	r7, r7, #20
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  103 0012 45F23502 		movw	r2, #:lower16:1073762357
  104 0016 C4F20002 		movt	r2, #:upper16:1073762357
  105 001a 1278     		ldrb	r2, [r2, #0]
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 4
 
 
  106 001c D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  137 0000 80B4     		push	{r7}
  138              	.LCFI6:
  139              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 5
 
 
  140 0002 00AF     		add	r7, sp, #0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  174              	.LCFI8:
  175              		.cfi_def_cfa_offset 4
  176 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 6
 
 
  177              		.cfi_offset 7, -4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  229 004a 0200     		.2byte	0x2
  230 004c 7D       		.byte	0x7d
  231 004d 04       		.sleb128 4
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 7
 
 
  232 004e 04000000 		.4byte	.LCFI4
@@ -414,11 +414,11 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  282 0006 00000000 		.4byte	.Ldebug_abbrev0
  283 000a 04       		.byte	0x4
  284 000b 01       		.uleb128 0x1
- 285 000c 31010000 		.4byte	.LASF18
+ 285 000c 33010000 		.4byte	.LASF18
  286 0010 01       		.byte	0x1
  287 0011 7A000000 		.4byte	.LASF19
- 288 0015 D6000000 		.4byte	.LASF20
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 8
+ 288 0015 B2000000 		.4byte	.LASF20
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 8
 
 
  289 0019 00000000 		.4byte	0x0
@@ -428,7 +428,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  293 0029 02       		.uleb128 0x2
  294 002a 01       		.byte	0x1
  295 002b 06       		.byte	0x6
- 296 002c 5B010000 		.4byte	.LASF0
+ 296 002c 5D010000 		.4byte	.LASF0
  297 0030 02       		.uleb128 0x2
  298 0031 01       		.byte	0x1
  299 0032 08       		.byte	0x8
@@ -436,7 +436,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  301 0037 02       		.uleb128 0x2
  302 0038 02       		.byte	0x2
  303 0039 05       		.byte	0x5
- 304 003a 42010000 		.4byte	.LASF2
+ 304 003a 44010000 		.4byte	.LASF2
  305 003e 02       		.uleb128 0x2
  306 003f 02       		.byte	0x2
  307 0040 07       		.byte	0x7
@@ -444,7 +444,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  309 0045 02       		.uleb128 0x2
  310 0046 04       		.byte	0x4
  311 0047 05       		.byte	0x5
- 312 0048 52010000 		.4byte	.LASF4
+ 312 0048 54010000 		.4byte	.LASF4
  313 004c 02       		.uleb128 0x2
  314 004d 04       		.byte	0x4
  315 004e 07       		.byte	0x7
@@ -456,7 +456,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  321 005a 02       		.uleb128 0x2
  322 005b 08       		.byte	0x8
  323 005c 07       		.byte	0x7
- 324 005d BF000000 		.4byte	.LASF7
+ 324 005d 03010000 		.4byte	.LASF7
  325 0061 03       		.uleb128 0x3
  326 0062 04       		.byte	0x4
  327 0063 05       		.byte	0x5
@@ -464,9 +464,9 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  329 0068 02       		.uleb128 0x2
  330 0069 04       		.byte	0x4
  331 006a 07       		.byte	0x7
- 332 006b B2000000 		.4byte	.LASF8
+ 332 006b F6000000 		.4byte	.LASF8
  333 006f 04       		.uleb128 0x4
- 334 0070 4C010000 		.4byte	.LASF21
+ 334 0070 4E010000 		.4byte	.LASF21
  335 0074 02       		.byte	0x2
  336 0075 4C       		.byte	0x4c
  337 0076 30000000 		.4byte	0x30
@@ -478,13 +478,13 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  343 0082 08       		.byte	0x8
  344 0083 04       		.byte	0x4
  345 0084 9D000000 		.4byte	.LASF10
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 9
 
 
  346 0088 02       		.uleb128 0x2
  347 0089 01       		.byte	0x1
  348 008a 08       		.byte	0x8
- 349 008b 3D010000 		.4byte	.LASF11
+ 349 008b 3F010000 		.4byte	.LASF11
  350 008f 05       		.uleb128 0x5
  351 0090 01       		.byte	0x1
  352 0091 A4000000 		.4byte	.LASF12
@@ -523,7 +523,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  385 00d6 37000000 		.4byte	.LLST1
  386 00da ED000000 		.4byte	0xed
  387 00de 06       		.uleb128 0x6
- 388 00df 18010000 		.4byte	.LASF15
+ 388 00df 1A010000 		.4byte	.LASF15
  389 00e3 01       		.byte	0x1
  390 00e4 3C       		.byte	0x3c
  391 00e5 6F000000 		.4byte	0x6f
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  400 00f4 54       		.byte	0x54
  401 00f5 01       		.byte	0x1
  402 00f6 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 10
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 10
 
 
  403 00fa 00000000 		.4byte	.LFB2
@@ -546,7 +546,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  405 0102 6E000000 		.4byte	.LLST2
  406 0106 08       		.uleb128 0x8
  407 0107 01       		.byte	0x1
- 408 0108 1D010000 		.4byte	.LASF17
+ 408 0108 1F010000 		.4byte	.LASF17
  409 010c 01       		.byte	0x1
  410 010d 68       		.byte	0x68
  411 010e 01       		.byte	0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  457 0027 03       		.uleb128 0x3
  458 0028 08       		.uleb128 0x8
  459 0029 00       		.byte	0x0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 11
 
 
  460 002a 00       		.byte	0x0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  514 0060 00       		.byte	0x0
  515 0061 03       		.uleb128 0x3
  516 0062 0E       		.uleb128 0xe
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 12
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 12
 
 
  517 0063 3A       		.uleb128 0x3a
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  561      00
  562 004a 06010000 		.4byte	0x106
  563 004e 565F5345 		.ascii	"V_SENSE_ReadDataReg\000"
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 13
 
 
  563      4E53455F 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  605      72697665 
  605      4D6F6465 
  606              	.LASF9:
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 14
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 14
 
 
  607 0034 666C6F61 		.ascii	"float\000"
@@ -819,60 +819,60 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 1
  621      4E53455F 
  621      57726974 
  621      6500
- 622              	.LASF8:
- 623 00b2 756E7369 		.ascii	"unsigned int\000"
- 623      676E6564 
- 623      20696E74 
- 623      00
- 624              	.LASF7:
- 625 00bf 6C6F6E67 		.ascii	"long long unsigned int\000"
- 625      206C6F6E 
- 625      6720756E 
- 625      7369676E 
- 625      65642069 
- 626              	.LASF20:
- 627 00d6 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
- 627      73657273 
- 627      5C555345 
- 627      525C446F 
- 627      63756D65 
- 628 0103 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
- 628      6572745C 
-ARM GAS  C:\Users\USER\AppData\Local\Temp\cc9kgnBD.s 			page 15
+ 622              	.LASF20:
+ 623 00b2 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 623      73657273 
+ 623      5C686F61 
+ 623      6E67705C 
+ 623      446F6375 
+ 624 00df 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 624      6E766572 
+ 624      745C696E 
+ 624      76657274 
+ 624      2E637964 
+ 625              	.LASF8:
+ 626 00f6 756E7369 		.ascii	"unsigned int\000"
+ 626      676E6564 
+ 626      20696E74 
+ 626      00
+ 627              	.LASF7:
+ 628 0103 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 628      206C6F6E 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc9sNhRi.s 			page 15
 
 
- 628      696E7665 
- 628      72742E63 
- 628      7964736E 
+ 628      6720756E 
+ 628      7369676E 
+ 628      65642069 
  629              	.LASF15:
- 630 0118 6D6F6465 		.ascii	"mode\000"
+ 630 011a 6D6F6465 		.ascii	"mode\000"
  630      00
  631              	.LASF17:
- 632 011d 565F5345 		.ascii	"V_SENSE_ReadDataReg\000"
+ 632 011f 565F5345 		.ascii	"V_SENSE_ReadDataReg\000"
  632      4E53455F 
  632      52656164 
  632      44617461 
  632      52656700 
  633              	.LASF18:
- 634 0131 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 634 0133 474E5520 		.ascii	"GNU C 4.4.1\000"
  634      4320342E 
  634      342E3100 
  635              	.LASF11:
- 636 013d 63686172 		.ascii	"char\000"
+ 636 013f 63686172 		.ascii	"char\000"
  636      00
  637              	.LASF2:
- 638 0142 73686F72 		.ascii	"short int\000"
+ 638 0144 73686F72 		.ascii	"short int\000"
  638      7420696E 
  638      7400
  639              	.LASF21:
- 640 014c 75696E74 		.ascii	"uint8\000"
+ 640 014e 75696E74 		.ascii	"uint8\000"
  640      3800
  641              	.LASF4:
- 642 0152 6C6F6E67 		.ascii	"long int\000"
+ 642 0154 6C6F6E67 		.ascii	"long int\000"
  642      20696E74 
  642      00
  643              	.LASF0:
- 644 015b 7369676E 		.ascii	"signed char\000"
+ 644 015d 7369676E 		.ascii	"signed char\000"
  644      65642063 
  644      68617200 
  645              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
