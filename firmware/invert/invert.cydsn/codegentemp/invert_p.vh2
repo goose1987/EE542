@@ -1,5 +1,5 @@
 -- Project:   invert
--- Generated: 11/15/2014 09:36:52
+-- Generated: 11/15/2014 13:07:49
 -- 
 
 ENTITY invert IS
@@ -52,23 +52,10 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL ClockBlock_XTAL : bit;
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
     SIGNAL MISO(0)__PA : bit;
-    SIGNAL MODIN1_0 : bit;
-    SIGNAL MODIN1_1 : bit;
-    SIGNAL MODIN3_0 : bit;
-    SIGNAL MODIN3_1 : bit;
     SIGNAL MOSI(0)__PA : bit;
     SIGNAL Net_147 : bit;
     SIGNAL Net_148 : bit;
-    SIGNAL Net_149 : bit;
-    SIGNAL Net_150 : bit;
-    SIGNAL Net_151 : bit;
-    SIGNAL Net_16 : bit;
-    ATTRIBUTE global_signal OF Net_16 : SIGNAL IS true;
-    SIGNAL Net_16_local : bit;
     SIGNAL Net_186 : bit;
-    SIGNAL Net_280 : bit;
-    ATTRIBUTE global_signal OF Net_280 : SIGNAL IS true;
-    SIGNAL Net_280_local : bit;
     SIGNAL Net_307 : bit;
     SIGNAL Net_309 : bit;
     SIGNAL Net_314 : bit;
@@ -79,6 +66,15 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE global_signal OF Net_374 : SIGNAL IS true;
     SIGNAL Net_374_local : bit;
     SIGNAL Net_380 : bit;
+    SIGNAL Net_427 : bit;
+    ATTRIBUTE global_signal OF Net_427 : SIGNAL IS true;
+    SIGNAL Net_427_local : bit;
+    SIGNAL Net_459 : bit;
+    SIGNAL Net_475 : bit;
+    SIGNAL Net_491 : bit;
+    ATTRIBUTE global_signal OF Net_491 : SIGNAL IS true;
+    SIGNAL Net_491_local : bit;
+    SIGNAL Net_507 : bit;
     SIGNAL Rx_1(0)__PA : bit;
     SIGNAL SCLK(0)__PA : bit;
     SIGNAL SS(0)__PA : bit;
@@ -106,6 +102,13 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL \ADC_DelSig_V:mod_dat_2\ : bit;
     SIGNAL \ADC_DelSig_V:mod_dat_3\ : bit;
     SIGNAL \ADC_DelSig_V:mod_reset\ : bit;
+    SIGNAL \Control_Reg_1:control_1\ : bit;
+    SIGNAL \Control_Reg_1:control_2\ : bit;
+    SIGNAL \Control_Reg_1:control_3\ : bit;
+    SIGNAL \Control_Reg_1:control_4\ : bit;
+    SIGNAL \Control_Reg_1:control_5\ : bit;
+    SIGNAL \Control_Reg_1:control_6\ : bit;
+    SIGNAL \Control_Reg_1:control_7\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(0)\\__PA\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(1)\\__PA\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(2)\\__PA\ : bit;
@@ -122,6 +125,8 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL \PWM_BUCK:PWMUDB:control_5\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:control_6\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:ctrl_enable\ : bit;
+    SIGNAL \PWM_BUCK:PWMUDB:db_cnt_0\ : bit;
+    SIGNAL \PWM_BUCK:PWMUDB:db_cnt_1\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:db_cnt_load_0\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:db_cnt_load_1\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:db_ph1_run_temp\ : bit;
@@ -140,60 +145,6 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL \PWM_BUCK:PWMUDB:status_3\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:status_5\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:tc_i\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:compare1\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:control_0\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:control_1\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:control_2\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:control_3\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:control_4\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:control_5\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:control_6\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:ctrl_enable\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:db_cnt_load_0\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:db_cnt_load_1\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:dbcontrol_2\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:dbcontrol_3\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:dbcontrol_4\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:dbcontrol_5\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:dbcontrol_6\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:dbcontrol_7\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:final_kill_reg\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:prevCompare1\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:runmode_enable\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:status_0\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:status_3\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:status_5\ : bit;
-    SIGNAL \PWM_UNFOLD_A:PWMUDB:tc_i\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:compare1\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:control_0\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:control_1\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:control_2\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:control_3\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:control_4\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:control_5\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:control_6\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:ctrl_enable\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:db_cnt_0\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:db_cnt_1\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:db_cnt_load_0\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:db_cnt_load_1\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:dbcontrol_2\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:dbcontrol_3\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:dbcontrol_4\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:dbcontrol_5\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:dbcontrol_6\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:dbcontrol_7\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:prevCompare1\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:runmode_enable\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:status_0\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:status_3\ : bit;
-    SIGNAL \PWM_UNFOLD_B:PWMUDB:tc_i\ : bit;
     SIGNAL \SPIS_1:BSPIS:es2:SPISlave:byte_complete\ : bit;
     SIGNAL \SPIS_1:BSPIS:es2:SPISlave:count_0\ : bit;
     SIGNAL \SPIS_1:BSPIS:es2:SPISlave:count_1\ : bit;
@@ -263,6 +214,7 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
+    SIGNAL cydff_2 : bit;
     SIGNAL one : bit;
     ATTRIBUTE POWER OF one : SIGNAL IS true;
     SIGNAL zero : bit;
@@ -293,19 +245,14 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE Location OF B_HS(0) : LABEL IS "P5[3]";
     ATTRIBUTE lib_model OF B_LS(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF B_LS(0) : LABEL IS "P5[4]";
-    ATTRIBUTE lib_model OF MODIN1_0 : LABEL IS "macrocell1";
-    ATTRIBUTE lib_model OF MODIN1_1 : LABEL IS "macrocell2";
-    ATTRIBUTE lib_model OF MODIN3_0 : LABEL IS "macrocell3";
-    ATTRIBUTE lib_model OF MODIN3_1 : LABEL IS "macrocell4";
     ATTRIBUTE lib_model OF MOSI(0) : LABEL IS "iocell_ireg";
-    ATTRIBUTE lib_model OF Net_147 : LABEL IS "macrocell5";
-    ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell6";
-    ATTRIBUTE lib_model OF Net_149 : LABEL IS "macrocell7";
-    ATTRIBUTE lib_model OF Net_150 : LABEL IS "macrocell8";
-    ATTRIBUTE lib_model OF Net_151 : LABEL IS "macrocell9";
-    ATTRIBUTE lib_model OF Net_307 : LABEL IS "macrocell10";
-    ATTRIBUTE lib_model OF Net_309 : LABEL IS "macrocell11";
-    ATTRIBUTE lib_model OF Net_380 : LABEL IS "macrocell12";
+    ATTRIBUTE lib_model OF Net_147 : LABEL IS "macrocell1";
+    ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell2";
+    ATTRIBUTE lib_model OF Net_307 : LABEL IS "macrocell3";
+    ATTRIBUTE lib_model OF Net_309 : LABEL IS "macrocell4";
+    ATTRIBUTE lib_model OF Net_380 : LABEL IS "macrocell5";
+    ATTRIBUTE lib_model OF Net_459 : LABEL IS "macrocell6";
+    ATTRIBUTE lib_model OF Net_475 : LABEL IS "macrocell7";
     ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Rx_1(0) : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF SCLK(0) : LABEL IS "iocell_ireg";
@@ -313,8 +260,9 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF V_SENSE(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P6[5]";
+    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P1[2]";
     ATTRIBUTE Location OF \ADC_DelSig_V:DSM2\ : LABEL IS "F(DSM,0)";
+    ATTRIBUTE lib_model OF \Control_Reg_1:Async:ctrl_reg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \LCD_Char_1:LCDPort(0)\ : LABEL IS "iocell10";
     ATTRIBUTE Location OF \LCD_Char_1:LCDPort(0)\ : LABEL IS "P2[0]";
     ATTRIBUTE lib_model OF \LCD_Char_1:LCDPort(1)\ : LABEL IS "iocell11";
@@ -329,85 +277,64 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE Location OF \LCD_Char_1:LCDPort(5)\ : LABEL IS "P2[5]";
     ATTRIBUTE lib_model OF \LCD_Char_1:LCDPort(6)\ : LABEL IS "iocell16";
     ATTRIBUTE Location OF \LCD_Char_1:LCDPort(6)\ : LABEL IS "P2[6]";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell13";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell14";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:final_kill_reg\ : LABEL IS "macrocell15";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:prevCompare1\ : LABEL IS "macrocell16";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell17";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:runmode_enable\ : LABEL IS "macrocell18";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell1";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sDB3:AsyncCtl:dbctrlreg\ : LABEL IS "controlcell2";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_cnt_0\ : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_cnt_1\ : LABEL IS "macrocell9";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell10";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell11";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:final_kill_reg\ : LABEL IS "macrocell12";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:prevCompare1\ : LABEL IS "macrocell13";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell14";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:runmode_enable\ : LABEL IS "macrocell15";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell2";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sDB3:AsyncCtl:dbctrlreg\ : LABEL IS "controlcell3";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell1";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell2";
     ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell1";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_0\ : LABEL IS "macrocell19";
-    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_5\ : LABEL IS "macrocell20";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell21";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell22";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:final_kill_reg\ : LABEL IS "macrocell23";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:prevCompare1\ : LABEL IS "macrocell24";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell25";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:runmode_enable\ : LABEL IS "macrocell26";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell3";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sDB3:AsyncCtl:dbctrlreg\ : LABEL IS "controlcell4";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sP8:pwmdp:u0\ : LABEL IS "datapathcell3";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell2";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:status_0\ : LABEL IS "macrocell27";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_A:PWMUDB:status_5\ : LABEL IS "macrocell28";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_cnt_0\ : LABEL IS "macrocell29";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_cnt_1\ : LABEL IS "macrocell30";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\ : LABEL IS "macrocell31";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\ : LABEL IS "macrocell32";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:prevCompare1\ : LABEL IS "macrocell33";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\ : LABEL IS "macrocell34";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:runmode_enable\ : LABEL IS "macrocell35";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell5";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sDB3:AsyncCtl:dbctrlreg\ : LABEL IS "controlcell6";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sP8:pwmdp:u0\ : LABEL IS "datapathcell4";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell3";
-    ATTRIBUTE lib_model OF \PWM_UNFOLD_B:PWMUDB:status_0\ : LABEL IS "macrocell36";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:RxStsReg\ : LABEL IS "statusicell4";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:TxStsReg\ : LABEL IS "statusicell5";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:byte_complete\ : LABEL IS "macrocell37";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:dpcounter_one\ : LABEL IS "macrocell38";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_reg\ : LABEL IS "macrocell39";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:dpcounter_zero\ : LABEL IS "macrocell40";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:inv_ss\ : LABEL IS "macrocell41";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:mosi_rx_empty\ : LABEL IS "macrocell42";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:rx_status_5\ : LABEL IS "macrocell43";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:sR8:DpMISO:u0\ : LABEL IS "datapathcell5";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:sR8:DpMOSI:u0\ : LABEL IS "datapathcell6";
-    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:tx_status_0\ : LABEL IS "macrocell44";
-    ATTRIBUTE lib_model OF \UART_1:BUART:counter_load_not\ : LABEL IS "macrocell45";
-    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_0\ : LABEL IS "macrocell46";
-    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_1\ : LABEL IS "macrocell47";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_address_detected\ : LABEL IS "macrocell48";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_bitclk_enable\ : LABEL IS "macrocell49";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_counter_load\ : LABEL IS "macrocell50";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_last\ : LABEL IS "macrocell51";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_load_fifo\ : LABEL IS "macrocell52";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_postpoll\ : LABEL IS "macrocell53";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_0\ : LABEL IS "macrocell54";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_2\ : LABEL IS "macrocell55";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_3\ : LABEL IS "macrocell56";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell57";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_3\ : LABEL IS "macrocell58";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_4\ : LABEL IS "macrocell59";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_5\ : LABEL IS "macrocell60";
-    ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell7";
-    ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxSts\ : LABEL IS "statusicell6";
-    ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell8";
-    ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxSts\ : LABEL IS "statusicell7";
-    ATTRIBUTE lib_model OF \UART_1:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell9";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_bitclk\ : LABEL IS "macrocell61";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_bitclk_enable_pre\ : LABEL IS "macrocell62";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_0\ : LABEL IS "macrocell63";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_1\ : LABEL IS "macrocell64";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_2\ : LABEL IS "macrocell65";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_0\ : LABEL IS "macrocell66";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_2\ : LABEL IS "macrocell67";
-    ATTRIBUTE lib_model OF \UART_1:BUART:txn\ : LABEL IS "macrocell68";
-    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell69";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_0\ : LABEL IS "macrocell16";
+    ATTRIBUTE lib_model OF \PWM_BUCK:PWMUDB:status_5\ : LABEL IS "macrocell17";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:RxStsReg\ : LABEL IS "statusicell2";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:TxStsReg\ : LABEL IS "statusicell3";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:byte_complete\ : LABEL IS "macrocell18";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:dpcounter_one\ : LABEL IS "macrocell19";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_reg\ : LABEL IS "macrocell20";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:dpcounter_zero\ : LABEL IS "macrocell21";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:inv_ss\ : LABEL IS "macrocell22";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:mosi_rx_empty\ : LABEL IS "macrocell23";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:rx_status_5\ : LABEL IS "macrocell24";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:sR8:DpMISO:u0\ : LABEL IS "datapathcell3";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:sR8:DpMOSI:u0\ : LABEL IS "datapathcell4";
+    ATTRIBUTE lib_model OF \SPIS_1:BSPIS:es2:SPISlave:tx_status_0\ : LABEL IS "macrocell25";
+    ATTRIBUTE lib_model OF \UART_1:BUART:counter_load_not\ : LABEL IS "macrocell26";
+    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_0\ : LABEL IS "macrocell27";
+    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_1\ : LABEL IS "macrocell28";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_address_detected\ : LABEL IS "macrocell29";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_bitclk_enable\ : LABEL IS "macrocell30";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_counter_load\ : LABEL IS "macrocell31";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_last\ : LABEL IS "macrocell32";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_load_fifo\ : LABEL IS "macrocell33";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_postpoll\ : LABEL IS "macrocell34";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_0\ : LABEL IS "macrocell35";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_2\ : LABEL IS "macrocell36";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_3\ : LABEL IS "macrocell37";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell38";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_3\ : LABEL IS "macrocell39";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_4\ : LABEL IS "macrocell40";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_5\ : LABEL IS "macrocell41";
+    ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell5";
+    ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxSts\ : LABEL IS "statusicell4";
+    ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell6";
+    ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxSts\ : LABEL IS "statusicell5";
+    ATTRIBUTE lib_model OF \UART_1:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell7";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_bitclk\ : LABEL IS "macrocell42";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_bitclk_enable_pre\ : LABEL IS "macrocell43";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_0\ : LABEL IS "macrocell44";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_1\ : LABEL IS "macrocell45";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_2\ : LABEL IS "macrocell46";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_0\ : LABEL IS "macrocell47";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_2\ : LABEL IS "macrocell48";
+    ATTRIBUTE lib_model OF \UART_1:BUART:txn\ : LABEL IS "macrocell49";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell50";
+    ATTRIBUTE lib_model OF cydff_2 : LABEL IS "macrocell51";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -1497,7 +1424,7 @@ BEGIN
         PORT MAP(
             pa_out => A_LS(0)__PA,
             oe => open,
-            pin_input => Net_149,
+            pin_input => Net_459,
             pad_out => A_LS(0)_PAD,
             pad_in => A_LS(0)_PAD,
             in_clock => open,
@@ -1758,7 +1685,7 @@ BEGIN
         PORT MAP(
             pa_out => B_HS(0)__PA,
             oe => open,
-            pin_input => Net_150,
+            pin_input => Net_459,
             pad_out => B_HS(0)_PAD,
             pad_in => B_HS(0)_PAD,
             in_clock => open,
@@ -1845,7 +1772,7 @@ BEGIN
         PORT MAP(
             pa_out => B_LS(0)__PA,
             oe => open,
-            pin_input => Net_151,
+            pin_input => Net_148,
             pad_out => B_LS(0)_PAD,
             pad_in => B_LS(0)_PAD,
             in_clock => open,
@@ -1870,20 +1797,20 @@ BEGIN
             imo => ClockBlock_IMO,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => Net_16,
-            dclk_0 => Net_16_local,
-            dclk_glb_1 => \ADC_DelSig_V:Net_487\,
-            dclk_1 => \ADC_DelSig_V:Net_487_local\,
-            dclk_glb_2 => Net_374,
-            dclk_2 => Net_374_local,
+            dclk_glb_0 => Net_427,
+            dclk_0 => Net_427_local,
+            dclk_glb_1 => Net_491,
+            dclk_1 => Net_491_local,
+            dclk_glb_2 => \ADC_DelSig_V:Net_487\,
+            dclk_2 => \ADC_DelSig_V:Net_487_local\,
+            dclk_glb_3 => Net_374,
+            dclk_3 => Net_374_local,
             aclk_glb_0 => \ADC_DelSig_V:Net_40\,
             aclk_0 => \ADC_DelSig_V:Net_40_local\,
             clk_a_dig_glb_0 => \ADC_DelSig_V:Net_40_adig\,
             clk_a_dig_0 => \ADC_DelSig_V:Net_40_adig_local\,
-            dclk_glb_3 => \UART_1:Net_9\,
-            dclk_3 => \UART_1:Net_9_local\,
-            dclk_glb_4 => Net_280,
-            dclk_4 => Net_280_local,
+            dclk_glb_4 => \UART_1:Net_9\,
+            dclk_4 => \UART_1:Net_9_local\,
             aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
 
     MISO:logicalport
@@ -1972,70 +1899,6 @@ BEGIN
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
-
-    MODIN1_0:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (!main_0 * !main_1 * !main_2 * !main_3 * main_6) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (main_0 * main_1 * !main_2 * !main_3 * main_6 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (!main_1 * !main_2 * !main_3 * main_6 * !main_7) + (!main_4 * !main_5 * !main_6)",
-            clk_inv => '0')
-        PORT MAP(
-            q => MODIN1_0,
-            clock_0 => Net_16,
-            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
-            main_4 => \PWM_BUCK:PWMUDB:db_cnt_load_0\,
-            main_5 => MODIN1_1,
-            main_6 => MODIN1_0,
-            main_7 => \PWM_BUCK:PWMUDB:compare1\);
-
-    MODIN1_1:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (main_4 * !main_5 * !main_6) + (main_5 * main_6)",
-            clk_inv => '0')
-        PORT MAP(
-            q => MODIN1_1,
-            clock_0 => Net_16,
-            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
-            main_4 => \PWM_BUCK:PWMUDB:db_cnt_load_1\,
-            main_5 => MODIN1_1,
-            main_6 => MODIN1_0,
-            main_7 => \PWM_BUCK:PWMUDB:compare1\);
-
-    MODIN3_0:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (!main_0 * !main_1 * !main_2 * !main_3 * main_6) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (main_0 * main_1 * !main_2 * !main_3 * main_6 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (!main_1 * !main_2 * !main_3 * main_6 * !main_7) + (!main_4 * !main_5 * !main_6)",
-            clk_inv => '0')
-        PORT MAP(
-            q => MODIN3_0,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\,
-            main_4 => \PWM_UNFOLD_A:PWMUDB:db_cnt_load_0\,
-            main_5 => MODIN3_1,
-            main_6 => MODIN3_0,
-            main_7 => \PWM_UNFOLD_A:PWMUDB:compare1\);
-
-    MODIN3_1:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (main_4 * !main_5 * !main_6) + (main_5 * main_6)",
-            clk_inv => '0')
-        PORT MAP(
-            q => MODIN3_1,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\,
-            main_4 => \PWM_UNFOLD_A:PWMUDB:db_cnt_load_1\,
-            main_5 => MODIN3_1,
-            main_6 => MODIN3_0,
-            main_7 => \PWM_UNFOLD_A:PWMUDB:compare1\);
 
     MOSI:logicalport
         GENERIC MAP(
@@ -2136,43 +1999,11 @@ BEGIN
 
     Net_148:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * !main_2 * main_3)")
+            eqn_main => "(!main_0 * !main_1)")
         PORT MAP(
             q => Net_148,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_UNFOLD_A:PWMUDB:compare1\);
-
-    Net_149:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2) + (!main_1 * !main_2 * !main_3)")
-        PORT MAP(
-            q => Net_149,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\,
-            main_3 => \PWM_UNFOLD_A:PWMUDB:compare1\);
-
-    Net_150:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * !main_2 * main_3)")
-        PORT MAP(
-            q => Net_150,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_UNFOLD_B:PWMUDB:compare1\);
-
-    Net_151:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2) + (!main_1 * !main_2 * !main_3)")
-        PORT MAP(
-            q => Net_151,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\,
-            main_3 => \PWM_UNFOLD_B:PWMUDB:compare1\);
+            main_0 => cydff_2,
+            main_1 => Net_475);
 
     Net_307:macrocell
         GENERIC MAP(
@@ -2198,6 +2029,23 @@ BEGIN
             q => Net_380,
             main_0 => Net_372,
             main_1 => \SPIS_1:BSPIS:es2:SPISlave:miso_from_dp\);
+
+    Net_459:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1)")
+        PORT MAP(
+            q => Net_459,
+            main_0 => cydff_2,
+            main_1 => Net_475);
+
+    Net_475:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clk_inv => '0')
+        PORT MAP(
+            q => Net_475,
+            main_0 => Net_507,
+            clock_0 => Net_491);
 
     Rx_1:logicalport
         GENERIC MAP(
@@ -2675,6 +2523,24 @@ BEGIN
             interrupt => Net_186,
             clock => ClockBlock_BUS_CLK);
 
+    \Control_Reg_1:Async:ctrl_reg\:controlcell
+        GENERIC MAP(
+            cy_ctrl_mode_0 => "00000000",
+            cy_ctrl_mode_1 => "00000000",
+            cy_ext_reset => 0,
+            cy_force_order => 1,
+            cy_init_value => "00000000")
+        PORT MAP(
+            control_7 => \Control_Reg_1:control_7\,
+            control_6 => \Control_Reg_1:control_6\,
+            control_5 => \Control_Reg_1:control_5\,
+            control_4 => \Control_Reg_1:control_4\,
+            control_3 => \Control_Reg_1:control_3\,
+            control_2 => \Control_Reg_1:control_2\,
+            control_1 => \Control_Reg_1:control_1\,
+            control_0 => Net_507,
+            busclk => ClockBlock_BUS_CLK);
+
     \LCD_Char_1:LCDPort(0)\:iocell
         GENERIC MAP(
             in_sync_mode => 0,
@@ -2874,18 +2740,50 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
+    \PWM_BUCK:PWMUDB:db_cnt_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (!main_0 * !main_1 * !main_2 * !main_3 * main_6) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (main_0 * main_1 * !main_2 * !main_3 * main_6 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (!main_1 * !main_2 * !main_3 * main_6 * !main_7) + (!main_4 * !main_5 * !main_6)",
+            clk_inv => '0')
+        PORT MAP(
+            q => \PWM_BUCK:PWMUDB:db_cnt_0\,
+            clock_0 => Net_427,
+            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
+            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
+            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
+            main_3 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
+            main_4 => \PWM_BUCK:PWMUDB:db_cnt_load_0\,
+            main_5 => \PWM_BUCK:PWMUDB:db_cnt_1\,
+            main_6 => \PWM_BUCK:PWMUDB:db_cnt_0\,
+            main_7 => \PWM_BUCK:PWMUDB:compare1\);
+
+    \PWM_BUCK:PWMUDB:db_cnt_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (main_4 * !main_5 * !main_6) + (main_5 * main_6)",
+            clk_inv => '0')
+        PORT MAP(
+            q => \PWM_BUCK:PWMUDB:db_cnt_1\,
+            clock_0 => Net_427,
+            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
+            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
+            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
+            main_3 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
+            main_4 => \PWM_BUCK:PWMUDB:db_cnt_load_1\,
+            main_5 => \PWM_BUCK:PWMUDB:db_cnt_1\,
+            main_6 => \PWM_BUCK:PWMUDB:db_cnt_0\,
+            main_7 => \PWM_BUCK:PWMUDB:compare1\);
+
     \PWM_BUCK:PWMUDB:db_ph1_run_temp\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * !main_1 * main_5) + (main_2 * main_3) + (main_2 * main_4)",
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
-            clock_0 => Net_16,
+            clock_0 => Net_427,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
             main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
-            main_3 => MODIN1_1,
-            main_4 => MODIN1_0,
+            main_3 => \PWM_BUCK:PWMUDB:db_cnt_1\,
+            main_4 => \PWM_BUCK:PWMUDB:db_cnt_0\,
             main_5 => \PWM_BUCK:PWMUDB:compare1\);
 
     \PWM_BUCK:PWMUDB:db_ph2_run_temp\:macrocell
@@ -2894,12 +2792,12 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
-            clock_0 => Net_16,
+            clock_0 => Net_427,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
             main_2 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
-            main_3 => MODIN1_1,
-            main_4 => MODIN1_0,
+            main_3 => \PWM_BUCK:PWMUDB:db_cnt_1\,
+            main_4 => \PWM_BUCK:PWMUDB:db_cnt_0\,
             main_5 => \PWM_BUCK:PWMUDB:compare1\);
 
     \PWM_BUCK:PWMUDB:final_kill_reg\:macrocell
@@ -2908,7 +2806,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:final_kill_reg\,
-            clock_0 => Net_16);
+            clock_0 => Net_427);
 
     \PWM_BUCK:PWMUDB:prevCompare1\:macrocell
         GENERIC MAP(
@@ -2917,7 +2815,7 @@ BEGIN
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:prevCompare1\,
             main_0 => \PWM_BUCK:PWMUDB:compare1\,
-            clock_0 => Net_16);
+            clock_0 => Net_427);
 
     \PWM_BUCK:PWMUDB:pwm_db_reg\:macrocell
         GENERIC MAP(
@@ -2925,7 +2823,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            clock_0 => Net_16,
+            clock_0 => Net_427,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:compare1\);
 
@@ -2936,7 +2834,7 @@ BEGIN
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:runmode_enable\,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            clock_0 => Net_16);
+            clock_0 => Net_427);
 
     \PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:controlcell
         GENERIC MAP(
@@ -3001,7 +2899,7 @@ BEGIN
             uses_p_out => '0',
             clk_inv => '0')
         PORT MAP(
-            clock => Net_16,
+            clock => Net_427,
             cs_addr_2 => \PWM_BUCK:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_BUCK:PWMUDB:runmode_enable\,
             busclk => ClockBlock_BUS_CLK,
@@ -3046,7 +2944,7 @@ BEGIN
             uses_p_out => '0',
             clk_inv => '0')
         PORT MAP(
-            clock => Net_16,
+            clock => Net_427,
             cs_addr_2 => \PWM_BUCK:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_BUCK:PWMUDB:runmode_enable\,
             cl0_comb => \PWM_BUCK:PWMUDB:compare1\,
@@ -3074,7 +2972,7 @@ BEGIN
             cy_md_select => "0100111",
             clk_inv => '0')
         PORT MAP(
-            clock => Net_16,
+            clock => Net_427,
             status_6 => open,
             status_5 => \PWM_BUCK:PWMUDB:status_5\,
             status_4 => open,
@@ -3089,7 +2987,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:status_0\,
-            clock_0 => Net_16,
+            clock_0 => Net_427,
             main_0 => \PWM_BUCK:PWMUDB:compare1\,
             main_1 => \PWM_BUCK:PWMUDB:prevCompare1\);
 
@@ -3099,359 +2997,6 @@ BEGIN
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:status_5\,
             main_0 => \PWM_BUCK:PWMUDB:final_kill_reg\);
-
-    \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * !main_1 * main_5) + (main_2 * main_3) + (main_2 * main_4)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_A:PWMUDB:db_ph1_run_temp\,
-            main_3 => MODIN3_1,
-            main_4 => MODIN3_0,
-            main_5 => \PWM_UNFOLD_A:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * main_1) + (main_1 * !main_5) + (main_2 * main_3) + (main_2 * main_4)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_A:PWMUDB:db_ph2_run_temp\,
-            main_3 => MODIN3_1,
-            main_4 => MODIN3_0,
-            main_5 => \PWM_UNFOLD_A:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_A:PWMUDB:final_kill_reg\:macrocell
-        GENERIC MAP(
-            eqn_main => "1'b0",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:final_kill_reg\,
-            clock_0 => Net_280);
-
-    \PWM_UNFOLD_A:PWMUDB:prevCompare1\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:prevCompare1\,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:compare1\,
-            clock_0 => Net_280);
-
-    \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * main_1)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:pwm_db_reg\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_A:PWMUDB:runmode_enable\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:runmode_enable\,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            clock_0 => Net_280);
-
-    \PWM_UNFOLD_A:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:controlcell
-        GENERIC MAP(
-            cy_ctrl_mode_0 => "00000000",
-            cy_ctrl_mode_1 => "00000000",
-            cy_ext_reset => 0,
-            cy_force_order => 1,
-            cy_init_value => "00000000")
-        PORT MAP(
-            control_7 => \PWM_UNFOLD_A:PWMUDB:ctrl_enable\,
-            control_6 => \PWM_UNFOLD_A:PWMUDB:control_6\,
-            control_5 => \PWM_UNFOLD_A:PWMUDB:control_5\,
-            control_4 => \PWM_UNFOLD_A:PWMUDB:control_4\,
-            control_3 => \PWM_UNFOLD_A:PWMUDB:control_3\,
-            control_2 => \PWM_UNFOLD_A:PWMUDB:control_2\,
-            control_1 => \PWM_UNFOLD_A:PWMUDB:control_1\,
-            control_0 => \PWM_UNFOLD_A:PWMUDB:control_0\,
-            busclk => ClockBlock_BUS_CLK);
-
-    \PWM_UNFOLD_A:PWMUDB:sDB3:AsyncCtl:dbctrlreg\:controlcell
-        GENERIC MAP(
-            cy_ctrl_mode_0 => "00000000",
-            cy_ctrl_mode_1 => "00000000",
-            cy_ext_reset => 0,
-            cy_force_order => 1,
-            cy_init_value => "00000000")
-        PORT MAP(
-            control_7 => \PWM_UNFOLD_A:PWMUDB:dbcontrol_7\,
-            control_6 => \PWM_UNFOLD_A:PWMUDB:dbcontrol_6\,
-            control_5 => \PWM_UNFOLD_A:PWMUDB:dbcontrol_5\,
-            control_4 => \PWM_UNFOLD_A:PWMUDB:dbcontrol_4\,
-            control_3 => \PWM_UNFOLD_A:PWMUDB:dbcontrol_3\,
-            control_2 => \PWM_UNFOLD_A:PWMUDB:dbcontrol_2\,
-            control_1 => \PWM_UNFOLD_A:PWMUDB:db_cnt_load_1\,
-            control_0 => \PWM_UNFOLD_A:PWMUDB:db_cnt_load_0\,
-            busclk => ClockBlock_BUS_CLK);
-
-    \PWM_UNFOLD_A:PWMUDB:sP8:pwmdp:u0\:datapathcell
-        GENERIC MAP(
-            a0_init => "00000000",
-            a1_init => "00000000",
-            ce0_sync => 1,
-            ce1_sync => 1,
-            cl0_sync => 1,
-            cl1_sync => 1,
-            cmsb_sync => 1,
-            co_msb_sync => 1,
-            cy_dpconfig => "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101000000000000000000100000000000000000000011000",
-            d0_init => "00000000",
-            d1_init => "00000000",
-            f0_blk_sync => 1,
-            f0_bus_sync => 1,
-            f1_blk_sync => 1,
-            f1_bus_sync => 1,
-            ff0_sync => 1,
-            ff1_sync => 1,
-            ov_msb_sync => 1,
-            so_sync => 1,
-            z0_sync => 1,
-            z1_sync => 1,
-            uses_p_in => '0',
-            uses_p_out => '0',
-            clk_inv => '0')
-        PORT MAP(
-            clock => Net_280,
-            cs_addr_2 => \PWM_UNFOLD_A:PWMUDB:tc_i\,
-            cs_addr_1 => \PWM_UNFOLD_A:PWMUDB:runmode_enable\,
-            cl0_comb => \PWM_UNFOLD_A:PWMUDB:compare1\,
-            z0_comb => \PWM_UNFOLD_A:PWMUDB:tc_i\,
-            f1_blk_stat_comb => \PWM_UNFOLD_A:PWMUDB:status_3\,
-            busclk => ClockBlock_BUS_CLK);
-
-    \PWM_UNFOLD_A:PWMUDB:sSTSReg:nrstSts:stsreg\:statusicell
-        GENERIC MAP(
-            cy_force_order => 1,
-            cy_int_mask => "1111111",
-            cy_md_select => "0100111",
-            clk_inv => '0')
-        PORT MAP(
-            clock => Net_280,
-            status_6 => open,
-            status_5 => \PWM_UNFOLD_A:PWMUDB:status_5\,
-            status_4 => open,
-            status_3 => \PWM_UNFOLD_A:PWMUDB:status_3\,
-            status_2 => \PWM_UNFOLD_A:PWMUDB:tc_i\,
-            status_1 => open,
-            status_0 => \PWM_UNFOLD_A:PWMUDB:status_0\);
-
-    \PWM_UNFOLD_A:PWMUDB:status_0\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * !main_1)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:status_0\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:compare1\,
-            main_1 => \PWM_UNFOLD_A:PWMUDB:prevCompare1\);
-
-    \PWM_UNFOLD_A:PWMUDB:status_5\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0)")
-        PORT MAP(
-            q => \PWM_UNFOLD_A:PWMUDB:status_5\,
-            main_0 => \PWM_UNFOLD_A:PWMUDB:final_kill_reg\);
-
-    \PWM_UNFOLD_B:PWMUDB:db_cnt_0\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (!main_0 * !main_1 * !main_2 * !main_3 * main_6) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (main_0 * main_1 * !main_2 * !main_3 * main_6 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (!main_1 * !main_2 * !main_3 * main_6 * !main_7) + (!main_4 * !main_5 * !main_6)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:db_cnt_0\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\,
-            main_4 => \PWM_UNFOLD_B:PWMUDB:db_cnt_load_0\,
-            main_5 => \PWM_UNFOLD_B:PWMUDB:db_cnt_1\,
-            main_6 => \PWM_UNFOLD_B:PWMUDB:db_cnt_0\,
-            main_7 => \PWM_UNFOLD_B:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_B:PWMUDB:db_cnt_1\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_5) + (main_0 * main_1 * !main_2 * !main_3 * main_5 * main_7) + (!main_1 * !main_2 * !main_3 * main_5 * !main_7) + (main_4 * !main_5 * !main_6) + (main_5 * main_6)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:db_cnt_1\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\,
-            main_4 => \PWM_UNFOLD_B:PWMUDB:db_cnt_load_1\,
-            main_5 => \PWM_UNFOLD_B:PWMUDB:db_cnt_1\,
-            main_6 => \PWM_UNFOLD_B:PWMUDB:db_cnt_0\,
-            main_7 => \PWM_UNFOLD_B:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * !main_1 * main_5) + (main_2 * main_3) + (main_2 * main_4)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_B:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_UNFOLD_B:PWMUDB:db_cnt_1\,
-            main_4 => \PWM_UNFOLD_B:PWMUDB:db_cnt_0\,
-            main_5 => \PWM_UNFOLD_B:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * main_1) + (main_1 * !main_5) + (main_2 * main_3) + (main_2 * main_4)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_UNFOLD_B:PWMUDB:db_ph2_run_temp\,
-            main_3 => \PWM_UNFOLD_B:PWMUDB:db_cnt_1\,
-            main_4 => \PWM_UNFOLD_B:PWMUDB:db_cnt_0\,
-            main_5 => \PWM_UNFOLD_B:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_B:PWMUDB:prevCompare1\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:prevCompare1\,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:compare1\,
-            clock_0 => Net_280);
-
-    \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * main_1)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:pwm_db_reg\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:compare1\);
-
-    \PWM_UNFOLD_B:PWMUDB:runmode_enable\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:runmode_enable\,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            clock_0 => Net_280);
-
-    \PWM_UNFOLD_B:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:controlcell
-        GENERIC MAP(
-            cy_ctrl_mode_0 => "00000000",
-            cy_ctrl_mode_1 => "00000000",
-            cy_ext_reset => 0,
-            cy_force_order => 1,
-            cy_init_value => "00000000")
-        PORT MAP(
-            control_7 => \PWM_UNFOLD_B:PWMUDB:ctrl_enable\,
-            control_6 => \PWM_UNFOLD_B:PWMUDB:control_6\,
-            control_5 => \PWM_UNFOLD_B:PWMUDB:control_5\,
-            control_4 => \PWM_UNFOLD_B:PWMUDB:control_4\,
-            control_3 => \PWM_UNFOLD_B:PWMUDB:control_3\,
-            control_2 => \PWM_UNFOLD_B:PWMUDB:control_2\,
-            control_1 => \PWM_UNFOLD_B:PWMUDB:control_1\,
-            control_0 => \PWM_UNFOLD_B:PWMUDB:control_0\,
-            busclk => ClockBlock_BUS_CLK);
-
-    \PWM_UNFOLD_B:PWMUDB:sDB3:AsyncCtl:dbctrlreg\:controlcell
-        GENERIC MAP(
-            cy_ctrl_mode_0 => "00000000",
-            cy_ctrl_mode_1 => "00000000",
-            cy_ext_reset => 0,
-            cy_force_order => 1,
-            cy_init_value => "00000000")
-        PORT MAP(
-            control_7 => \PWM_UNFOLD_B:PWMUDB:dbcontrol_7\,
-            control_6 => \PWM_UNFOLD_B:PWMUDB:dbcontrol_6\,
-            control_5 => \PWM_UNFOLD_B:PWMUDB:dbcontrol_5\,
-            control_4 => \PWM_UNFOLD_B:PWMUDB:dbcontrol_4\,
-            control_3 => \PWM_UNFOLD_B:PWMUDB:dbcontrol_3\,
-            control_2 => \PWM_UNFOLD_B:PWMUDB:dbcontrol_2\,
-            control_1 => \PWM_UNFOLD_B:PWMUDB:db_cnt_load_1\,
-            control_0 => \PWM_UNFOLD_B:PWMUDB:db_cnt_load_0\,
-            busclk => ClockBlock_BUS_CLK);
-
-    \PWM_UNFOLD_B:PWMUDB:sP8:pwmdp:u0\:datapathcell
-        GENERIC MAP(
-            a0_init => "00000000",
-            a1_init => "00000000",
-            ce0_sync => 1,
-            ce1_sync => 1,
-            cl0_sync => 1,
-            cl1_sync => 1,
-            cmsb_sync => 1,
-            co_msb_sync => 1,
-            cy_dpconfig => "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101000000000000000000100000000000000000000011000",
-            d0_init => "00000000",
-            d1_init => "00000000",
-            f0_blk_sync => 1,
-            f0_bus_sync => 1,
-            f1_blk_sync => 1,
-            f1_bus_sync => 1,
-            ff0_sync => 1,
-            ff1_sync => 1,
-            ov_msb_sync => 1,
-            so_sync => 1,
-            z0_sync => 1,
-            z1_sync => 1,
-            uses_p_in => '0',
-            uses_p_out => '0',
-            clk_inv => '0')
-        PORT MAP(
-            clock => Net_280,
-            cs_addr_2 => \PWM_UNFOLD_B:PWMUDB:tc_i\,
-            cs_addr_1 => \PWM_UNFOLD_B:PWMUDB:runmode_enable\,
-            cl0_comb => \PWM_UNFOLD_B:PWMUDB:compare1\,
-            z0_comb => \PWM_UNFOLD_B:PWMUDB:tc_i\,
-            f1_blk_stat_comb => \PWM_UNFOLD_B:PWMUDB:status_3\,
-            busclk => ClockBlock_BUS_CLK);
-
-    \PWM_UNFOLD_B:PWMUDB:sSTSReg:nrstSts:stsreg\:statusicell
-        GENERIC MAP(
-            cy_force_order => 1,
-            cy_int_mask => "1111111",
-            cy_md_select => "0100111",
-            clk_inv => '0')
-        PORT MAP(
-            clock => Net_280,
-            status_6 => open,
-            status_5 => \PWM_UNFOLD_A:PWMUDB:status_5\,
-            status_4 => open,
-            status_3 => \PWM_UNFOLD_B:PWMUDB:status_3\,
-            status_2 => \PWM_UNFOLD_B:PWMUDB:tc_i\,
-            status_1 => open,
-            status_0 => \PWM_UNFOLD_B:PWMUDB:status_0\);
-
-    \PWM_UNFOLD_B:PWMUDB:status_0\:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * !main_1)",
-            clk_inv => '0')
-        PORT MAP(
-            q => \PWM_UNFOLD_B:PWMUDB:status_0\,
-            clock_0 => Net_280,
-            main_0 => \PWM_UNFOLD_B:PWMUDB:compare1\,
-            main_1 => \PWM_UNFOLD_B:PWMUDB:prevCompare1\);
 
     \SPIS_1:BSPIS:es2:SPISlave:BitCounter\:count7cell
         GENERIC MAP(
@@ -4117,5 +3662,14 @@ BEGIN
             eqn_main => "1'b0")
         PORT MAP(
             q => __ONE__);
+
+    cydff_2:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clk_inv => '0')
+        PORT MAP(
+            q => cydff_2,
+            main_0 => Net_475,
+            clock_0 => Net_491);
 
 END __DEFAULT__;

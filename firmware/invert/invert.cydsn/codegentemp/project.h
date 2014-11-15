@@ -20,8 +20,6 @@
 #include <cyfitter.h>
 #include <PWM_BUCK.h>
 #include <Clock_1.h>
-#include <PWM_UNFOLD_A.h>
-#include <PWM_UNFOLD_B.h>
 #include <BUCK_LS_aliases.h>
 #include <BUCK_LS.h>
 #include <A_HS_aliases.h>
@@ -33,10 +31,11 @@
 #include <B_LS_aliases.h>
 #include <B_LS.h>
 #include <ADC_DelSig_V.h>
+#include <Clock_2.h>
 #include <V_SENSE_aliases.h>
 #include <V_SENSE.h>
 #include <LCD_Char_1.h>
-#include <Clock_2.h>
+#include <Control_Reg_1.h>
 #include <UART_1.h>
 #include <SS_aliases.h>
 #include <SS.h>

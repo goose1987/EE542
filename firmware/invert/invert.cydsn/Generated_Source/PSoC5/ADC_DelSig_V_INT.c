@@ -25,7 +25,10 @@
 *******************************************************************************/
 /* `#START ADC_SYS_VAR`  */
 extern int16 buffvolt;
-extern uint8 dataReady;
+//extern uint8 dataReady;
+extern int16 sineLUT[256];
+extern int16 sineLUTindex;
+
 /* `#END`  */
 
 
@@ -54,6 +57,14 @@ CY_ISR( ADC_DelSig_V_ISR1)
     **************************************************************************/
     /* `#START MAIN_ADC_ISR1`  */
     buffvolt=ADC_DelSig_V_GetResult16();
+    PWM_BUCK_WriteCompare(sineLUT[sineLUTindex]-350);
+    
+    sineLUTindex++;
+    if(sineLUTindex>=256){
+        sineLUTindex=0;
+        Control_Reg_1_Write(~Control_Reg_1_Read());
+    }
+    
     /* `#END`  */
     
     /* Stop the conversion if conversion mode is single sample and resolution

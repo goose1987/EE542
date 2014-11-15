@@ -1,4 +1,4 @@
-update=10/1/2014 5:35:19 PM
+update=11/15/2014 12:25:47 PM
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -52,10 +52,10 @@ LibName31=custom
 version=1
 LastNetListRead=powertrain.net
 UseCmpFile=1
-PadDrill=0.600000000000
-PadDrillOvalY=0.600000000000
-PadSizeH=1.500000000000
-PadSizeV=1.500000000000
+PadDrill=0.000000000000
+PadDrillOvalY=0.000000000000
+PadSizeH=6.000000000000
+PadSizeV=16.000000000000
 PcbTextSizeV=1.500000000000
 PcbTextSizeH=1.500000000000
 PcbTextThickness=0.300000000000
@@ -86,3 +86,4 @@ LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
 LibName17=smd_mag
+LibName18=smd_fet
