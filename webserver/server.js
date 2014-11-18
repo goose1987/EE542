@@ -24,87 +24,49 @@ spark.on('login',function(){
 			}
 
 	);
-	/*
-	setInterval(
-		function(){
-			if(device){
-				device.callFunction(
-					'queryVolts',
-					'',
-					function(err,data){
-						console.log('result:',data.return_value);
-						scratchtxt=JSON.stringify(data);
-					});
-			}
-		},1000);
-	*/
+	
+	
+	
 
 });
 
 
 spark.login({username:'phamh1987@gmail.com',password:'Swellpt1'});
 
+setInterval(
+		function(){
+			request.post(
+				'https://api.spark.io/v1/devices/'+'badger_penguin'+'/'+'queryVolts',
+				{
+					form:{
+						access_token:'a2351163aa2217b904f08964cad63325ad944df8',
+						args: ''
+					}
+				},
+				function (error,response, body){
+					if(!error&&response.statusCode==200){
+						var now = new Date();
+						var json = JSON.parse(body);
+						console.log(now.toString()+':'+json.return_value);
+					}
 
-request.post(
-	'https://api.spark.io/v1/devices/'+'badger_penguin'+'/'+'queryVolts',
-	{
-		form:{
-			access_token:'a2351163aa2217b904f08964cad63325ad944df8',
-			args: ''
-		}
-	},
-	function (error,response, body){
-		if(!error&&response.statusCode==200){
-			console.log(body)
-		}
-
-	});
-
-
-
-var myJson={
-
-	key:"myvalue"
-
-};
-
-var now = new Date()
-
-fs.appendFile("scratch.json",
-		now.toString(),
-		"utf8",
-		function(){});
-
-/*
-myJson=require("./filename.json");
-
-*/
-
-/*
-setInterval(function(){
-
-	request("http://api.spark.io/v1/devices/badger_penguin/result?access_token=a2351163aa2217b904f08964cad63325ad944df8",function(error,response,body){
-
-	scratchtxt=body;
-
-});
+				});
+		},1000);
 
 
-},1000);
 
-*/
+
+
+
+
+
 
 var plotly = require('plotly')('hoang.pham','fxyuq3d36u');
 
 
 
 http.createServer(function (req, res){
-	/*
-	request.post("http://api.spark.io/v1/devices/badger_penguin/queryVolts?access_token=a2351163aa2217b904f08964cad63325ad944df8",function(response,body){
-	scratchtxt=body;
-
-});
-	*/
+	
 		var url='';
 
 		var plotly = require('plotly')('hoang.pham','fxyuq3d36u');
@@ -135,23 +97,7 @@ http.createServer(function (req, res){
 
 	}).listen(8124,"127.0.0.1");
 
-$(document).ready(function() {
-  $.simpleWeather({
-	location: 'Seatle, WA',
-	woeid: '',
-	unit: 'f',
-	success: function(weather) {
-	  html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-	  html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-	  html += '<li class="currently">'+weather.currently+'</li>';
-  
-	  $("#weather").html(html);
-	},
-	error: function(error) {
-	  $("#weather").html('<p>'+error+'</p>');
-	}
-  });
-});
+
 
 		
 
