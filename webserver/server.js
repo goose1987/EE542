@@ -132,11 +132,28 @@ http.createServer(function (req, res){
 		//res.end('Hello World and proton is a mark\n');
 		});
 		
-		
-		
+
 	}).listen(8124,"127.0.0.1");
 
+$(document).ready(function() {
+  $.simpleWeather({
+	location: 'Seatle, WA',
+	woeid: '',
+	unit: 'f',
+	success: function(weather) {
+	  html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+	  html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+	  html += '<li class="currently">'+weather.currently+'</li>';
+  
+	  $("#weather").html(html);
+	},
+	error: function(error) {
+	  $("#weather").html('<p>'+error+'</p>');
+	}
+  });
+});
 
+		
 
 
 
