@@ -57,7 +57,8 @@ CY_ISR( ADC_DelSig_V_ISR1)
     **************************************************************************/
     /* `#START MAIN_ADC_ISR1`  */
     buffvolt=ADC_DelSig_V_GetResult16();
-    PWM_BUCK_WriteCompare(sineLUT[sineLUTindex]-350);
+    
+    PWM_BUCK_WriteCompare(sineLUT[sineLUTindex]-370);
     
     sineLUTindex++;
     if(sineLUTindex>=256){

@@ -1,5 +1,5 @@
 -- Project:   invert
--- Generated: 11/15/2014 13:07:49
+-- Generated: 11/17/2014 21:07:15
 -- 
 
 ENTITY invert IS
@@ -53,10 +53,8 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
     SIGNAL MISO(0)__PA : bit;
     SIGNAL MOSI(0)__PA : bit;
-    SIGNAL Net_147 : bit;
     SIGNAL Net_148 : bit;
     SIGNAL Net_186 : bit;
-    SIGNAL Net_307 : bit;
     SIGNAL Net_309 : bit;
     SIGNAL Net_314 : bit;
     SIGNAL Net_370 : bit;
@@ -75,6 +73,8 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE global_signal OF Net_491 : SIGNAL IS true;
     SIGNAL Net_491_local : bit;
     SIGNAL Net_507 : bit;
+    SIGNAL Net_517 : bit;
+    SIGNAL Net_518 : bit;
     SIGNAL Rx_1(0)__PA : bit;
     SIGNAL SCLK(0)__PA : bit;
     SIGNAL SS(0)__PA : bit;
@@ -246,13 +246,13 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE lib_model OF B_LS(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF B_LS(0) : LABEL IS "P5[4]";
     ATTRIBUTE lib_model OF MOSI(0) : LABEL IS "iocell_ireg";
-    ATTRIBUTE lib_model OF Net_147 : LABEL IS "macrocell1";
-    ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell2";
-    ATTRIBUTE lib_model OF Net_307 : LABEL IS "macrocell3";
-    ATTRIBUTE lib_model OF Net_309 : LABEL IS "macrocell4";
-    ATTRIBUTE lib_model OF Net_380 : LABEL IS "macrocell5";
-    ATTRIBUTE lib_model OF Net_459 : LABEL IS "macrocell6";
-    ATTRIBUTE lib_model OF Net_475 : LABEL IS "macrocell7";
+    ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell1";
+    ATTRIBUTE lib_model OF Net_309 : LABEL IS "macrocell2";
+    ATTRIBUTE lib_model OF Net_380 : LABEL IS "macrocell3";
+    ATTRIBUTE lib_model OF Net_459 : LABEL IS "macrocell4";
+    ATTRIBUTE lib_model OF Net_475 : LABEL IS "macrocell5";
+    ATTRIBUTE lib_model OF Net_517 : LABEL IS "macrocell6";
+    ATTRIBUTE lib_model OF Net_518 : LABEL IS "macrocell7";
     ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Rx_1(0) : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF SCLK(0) : LABEL IS "iocell_ireg";
@@ -260,7 +260,7 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF V_SENSE(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P1[2]";
+    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P6[5]";
     ATTRIBUTE Location OF \ADC_DelSig_V:DSM2\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE lib_model OF \Control_Reg_1:Async:ctrl_reg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \LCD_Char_1:LCDPort(0)\ : LABEL IS "iocell10";
@@ -1511,7 +1511,7 @@ BEGIN
         PORT MAP(
             pa_out => BUCK_HS(0)__PA,
             oe => open,
-            pin_input => Net_147,
+            pin_input => Net_518,
             pad_out => BUCK_HS(0)_PAD,
             pad_in => BUCK_HS(0)_PAD,
             in_clock => open,
@@ -1598,7 +1598,7 @@ BEGIN
         PORT MAP(
             pa_out => BUCK_LS(0)__PA,
             oe => open,
-            pin_input => Net_307,
+            pin_input => Net_517,
             pad_out => BUCK_LS(0)_PAD,
             pad_in => BUCK_LS(0)_PAD,
             in_clock => open,
@@ -1987,16 +1987,6 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    Net_147:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2) + (!main_1 * !main_2 * !main_3)")
-        PORT MAP(
-            q => Net_147,
-            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
-            main_3 => \PWM_BUCK:PWMUDB:compare1\);
-
     Net_148:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0 * !main_1)")
@@ -2004,16 +1994,6 @@ BEGIN
             q => Net_148,
             main_0 => cydff_2,
             main_1 => Net_475);
-
-    Net_307:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * !main_2 * main_3)")
-        PORT MAP(
-            q => Net_307,
-            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
-            main_3 => \PWM_BUCK:PWMUDB:compare1\);
 
     Net_309:macrocell
         GENERIC MAP(
@@ -2046,6 +2026,26 @@ BEGIN
             q => Net_475,
             main_0 => Net_507,
             clock_0 => Net_491);
+
+    Net_517:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2) + (!main_1 * !main_2 * !main_3)")
+        PORT MAP(
+            q => Net_517,
+            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
+            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
+            main_2 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
+            main_3 => \PWM_BUCK:PWMUDB:compare1\);
+
+    Net_518:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1 * !main_2 * main_3)")
+        PORT MAP(
+            q => Net_518,
+            main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
+            main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
+            main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
+            main_3 => \PWM_BUCK:PWMUDB:compare1\);
 
     Rx_1:logicalport
         GENERIC MAP(

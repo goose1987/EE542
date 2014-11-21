@@ -251,7 +251,7 @@ void PWM_BUCK_RestoreConfig(void) ;
                                                   (uint8)((uint8)(0u << PWM_BUCK_STATUS_KILL_INT_EN_MASK_SHIFT )))
 #define PWM_BUCK_DEFAULT_COMPARE2_MODE    (uint8)((uint8)3u << PWM_BUCK_CTRL_CMPMODE2_SHIFT)
 #define PWM_BUCK_DEFAULT_COMPARE1_MODE    (uint8)((uint8)1u << PWM_BUCK_CTRL_CMPMODE1_SHIFT)
-#define PWM_BUCK_INIT_DEAD_TIME           3u
+#define PWM_BUCK_INIT_DEAD_TIME           1u
 
 
 /********************************

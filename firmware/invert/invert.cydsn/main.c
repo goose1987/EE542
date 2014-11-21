@@ -114,19 +114,7 @@ void main()
     for(;;)
     {
         /* Place your application code here. */
-        //LCD_Char_1_PrintString("Hello world");
-        
-        /*
-        if(ADC_DelSig_V_IsEndConversion(ADC_DelSig_V_RETURN_STATUS))
-        {
-            buffvolt = ADC_DelSig_V_GetResult16();
-            PWM_BUCK_WriteCompare(buffvolt);
-            
-            LCD_Char_1_Position(1u, 0u);
-            LCD_Char_1_PrintInt16(buffvolt);
-            UART_1_WriteTxData(buffvolt);
-        }
-        */
+    
         
         
         /*
@@ -141,12 +129,13 @@ void main()
         //need to multiply it with K factor
         U[0]= calcDuty(U[1], U[2], U[3], E[0], E[1], E[2], E[3]);
         //K factor is 7
+        */
         recbyte=UART_1_GetChar();
         if(recbyte=='V'){
             UART_1_PutChar((buffvolt>>8));
             UART_1_PutChar(buffvolt);
         }
-        
+        /*
         sprintf(tstr, "%+1.4f", B2);
         LCD_Char_1_Position(1u, 0u);
         //LCD_Char_1_PrintInt16(A1);
@@ -154,21 +143,11 @@ void main()
         
         LCD_Char_1_Position(1u,8u);
         LCD_Char_1_PrintInt16(sineLUT[sineLUTindex]);
+        
         */
+      
         
-        
-        /*
-        PWM_BUCK_WriteCompare(sineLUT[sineLUTindex]); 
-        sineLUTindex++;
-        if(sineLUTindex>511){
-            sineLUTindex=0;
-        };
-        */
-        
-        
-        //UART_1_PutChar('q');
-        //UART_1_WriteTxData('w');
-        //UART_1_PutString("are you new?");
+ 
         //CyDelay(50);//delay
     }
 }
