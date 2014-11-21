@@ -28,6 +28,8 @@ float B1=-1.63710219;
 float B2=-4.38245164;
 float B3=2.18761941;
 
+float K = 7; //K factor
+
 int16 sineLUT[256]={384,389,393,398,403,408,412,417,
                     422,426,431,436,440,445,450,454,
                     459,464,468,473,477,482,486,491,
@@ -60,9 +62,10 @@ int16 sineLUT[256]={384,389,393,398,403,408,412,417,
                     495,491,486,482,477,473,468,464,
                     459,454,450,445,440,436,431,426,
                     422,417,412,408,403,398,393,389};
-
+                    
+//calculate the duty cycle by multiplying the transfer function with the K factor 
 double calcDuty(double U1, double U2, double U3, double E0, double E1, double E2, double E3){
-    return A1*U1+A2*U2+A3*U3+B0*E0+B1*E1+B2*E2+B3*E3;
+    return K*(A1*U1+A2*U2+A3*U3+B0*E0+B1*E1+B2*E2+B3*E3);
 }
 
 
@@ -125,11 +128,13 @@ void main()
         E[3]=E[2];
         E[2]=E[1];
         E[1]=E[0];
-        E[0] = sineLUT[0]-buffvolt; //placeholder to calculate current error
-        //need to multiply it with K factor
+        E[0] = sineLUT[sineLUTindex]-buffvolt; //placeholder to calculate current error
+
         U[0]= calcDuty(U[1], U[2], U[3], E[0], E[1], E[2], E[3]);
+
         //K factor is 7
         */
+
         recbyte=UART_1_GetChar();
         if(recbyte=='V'){
             UART_1_PutChar((buffvolt>>8));
