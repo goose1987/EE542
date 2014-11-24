@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "6 oct 2014"
+Date "17 nov 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1097,4 +1097,10 @@ Text Label 10500 2400 0    60   ~ 0
 A
 Text Label 10500 4100 0    60   ~ 0
 B
+Text Notes 3350 5300 0    60   ~ 0
+BUCK_LS TST P3-P5[6]\nBUCK_HS TST P4-P5[5]
+Text Notes 3250 5700 0    60   ~ 0
+A_LS TST P5-P5[2]\nA_HS TST P6-P5[1]
+Text Notes 3350 7000 0    60   ~ 0
+B_LS TST P7-P5[4]\nB_HS TST P8-P5[3]
 $EndSCHEMATC

@@ -1,6 +1,6 @@
 // ======================================================================
 // invert.v generated from TopDesign.cysch
-// 11/15/2014 at 13:07
+// 11/17/2014 at 21:07
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -99,7 +99,7 @@
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v"
 `endif
 
-// PWM_v2_40(CaptureMode=0, Compare1_16=true, Compare1_8=false, Compare2_16=false, Compare2_8=false, CompareStatusEdgeSense=true, CompareType1=1, CompareType1Software=0, CompareType2=3, CompareType2Software=0, CompareValue1=256, CompareValue2=20000, CONTROL3=0, ControlReg=true, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeadBand=1, DeadBand2_4=1, DeadBand256=0, DeadBandUsed=1, DeadTime=3, DitherOffset=0, EnableMode=0, FF16=false, FF8=false, FixedFunction=false, FixedFunctionUsed=0, InterruptOnCMP1=false, InterruptOnCMP2=false, InterruptOnKill=false, InterruptOnTC=false, IntOnCMP1=0, IntOnCMP2=0, IntOnKill=0, IntOnTC=0, KillMode=0, KillModeMinTime=0, MinimumKillTime=1, OneCompare=true, Period=512, PWMMode=0, PWMModeCenterAligned=0, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, Status=true, TriggerMode=0, UDB16=true, UDB8=false, UseControl=true, UseInterrupt=true, UseStatus=true, VerilogSectionReplacementString=sP16, CY_COMPONENT_NAME=PWM_v2_40, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=PWM_BUCK, CY_INSTANCE_SHORT_NAME=PWM_BUCK, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=40, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=PWM_BUCK, )
+// PWM_v2_40(CaptureMode=0, Compare1_16=true, Compare1_8=false, Compare2_16=false, Compare2_8=false, CompareStatusEdgeSense=true, CompareType1=1, CompareType1Software=0, CompareType2=3, CompareType2Software=0, CompareValue1=256, CompareValue2=20000, CONTROL3=0, ControlReg=true, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeadBand=1, DeadBand2_4=1, DeadBand256=0, DeadBandUsed=1, DeadTime=1, DitherOffset=0, EnableMode=0, FF16=false, FF8=false, FixedFunction=false, FixedFunctionUsed=0, InterruptOnCMP1=false, InterruptOnCMP2=false, InterruptOnKill=false, InterruptOnTC=false, IntOnCMP1=0, IntOnCMP2=0, IntOnKill=0, IntOnTC=0, KillMode=0, KillModeMinTime=0, MinimumKillTime=1, OneCompare=true, Period=512, PWMMode=0, PWMModeCenterAligned=0, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, Status=true, TriggerMode=0, UDB16=true, UDB8=false, UseControl=true, UseInterrupt=true, UseStatus=true, VerilogSectionReplacementString=sP16, CY_COMPONENT_NAME=PWM_v2_40, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=PWM_BUCK, CY_INSTANCE_SHORT_NAME=PWM_BUCK, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=40, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=PWM_BUCK, )
 module PWM_v2_40_0 (
     pwm2,
     tc,
@@ -841,7 +841,7 @@ module top ;
           wire  Net_483;
           wire  Net_482;
           wire  Net_481;
-          wire  Net_516;
+          wire  Net_525;
     electrical  Net_188;
           wire  Net_187;
           wire  Net_186;
@@ -849,8 +849,6 @@ module top ;
     electrical  Net_306;
     electrical  Net_152;
           wire  Net_298;
-          wire  Net_147;
-          wire  Net_307;
           wire  Net_295;
           wire  Net_44;
           wire  Net_43;
@@ -861,13 +859,15 @@ module top ;
           wire  Net_38;
           wire  Net_37;
           wire  Net_36;
-          wire  Net_515;
           wire  Net_491;
-          wire  Net_507;
+          wire  Net_517;
+          wire  Net_518;
+          wire  Net_515;
           wire  Net_150;
-          wire  Net_427;
           wire  Net_459;
           wire  Net_148;
+          wire  Net_507;
+          wire  Net_427;
           wire  Net_463;
           wire  Net_475;
           wire  Net_429;
@@ -892,8 +892,8 @@ module top ;
         .trigger(1'b0),
         .cmp_sel(1'b0),
         .pwm(Net_295),
-        .ph1(Net_307),
-        .ph2(Net_147));
+        .ph1(Net_518),
+        .ph2(Net_517));
     defparam PWM_BUCK.Resolution = 16;
 
 
@@ -981,7 +981,7 @@ module top ;
 		  .width(1))
 		BUCK_LS
 		 (.oe(tmpOE__BUCK_LS_net),
-		  .y({Net_307}),
+		  .y({Net_517}),
 		  .fb({tmpFB_0__BUCK_LS_net[0:0]}),
 		  .io({tmpIO_0__BUCK_LS_net[0:0]}),
 		  .siovref(tmpSIOVREF__BUCK_LS_net),
@@ -1286,7 +1286,7 @@ module top ;
 		#(.id("d897923f-2d95-4f5a-94f9-e3f945a62e2e"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("250000000"),
+		  .period("100000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_2
@@ -1920,7 +1920,7 @@ module top ;
 		  .width(1))
 		BUCK_HS
 		 (.oe(tmpOE__BUCK_HS_net),
-		  .y({Net_147}),
+		  .y({Net_518}),
 		  .fb({tmpFB_0__BUCK_HS_net[0:0]}),
 		  .io({tmpIO_0__BUCK_HS_net[0:0]}),
 		  .siovref(tmpSIOVREF__BUCK_HS_net),

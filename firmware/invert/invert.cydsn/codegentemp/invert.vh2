@@ -2,7 +2,7 @@
 --	Conversion of invert.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sat Nov 15 13:07:48 2014
+--	Mon Nov 17 21:07:14 2014
 --
 
 USE cypress.cypress.all;
@@ -78,8 +78,8 @@ SIGNAL \PWM_BUCK:PWMUDB:ph1_i\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:ph2_i\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:ph1_reg_i\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:ph2_reg_i\ : bit;
-SIGNAL Net_307 : bit;
-SIGNAL Net_147 : bit;
+SIGNAL Net_518 : bit;
+SIGNAL Net_517 : bit;
 SIGNAL \PWM_BUCK:PWMUDB:db_csaddr_2\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:db_csaddr_1\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:db_csaddr_0\ : bit;
@@ -1446,9 +1446,9 @@ zero <=  ('0') ;
 	OR (\PWM_BUCK:PWMUDB:db_ph2_run_temp\ and \PWM_BUCK:PWMUDB:db_cnt_1\)
 	OR (not \PWM_BUCK:PWMUDB:ctrl_enable\ and \PWM_BUCK:PWMUDB:pwm_db_reg\));
 
-Net_307 <= ((not \PWM_BUCK:PWMUDB:db_ph1_run_temp\ and \PWM_BUCK:PWMUDB:ctrl_enable\ and \PWM_BUCK:PWMUDB:pwm_db_reg\ and \PWM_BUCK:PWMUDB:compare1\));
+Net_518 <= ((not \PWM_BUCK:PWMUDB:db_ph1_run_temp\ and \PWM_BUCK:PWMUDB:ctrl_enable\ and \PWM_BUCK:PWMUDB:pwm_db_reg\ and \PWM_BUCK:PWMUDB:compare1\));
 
-Net_147 <= ((not \PWM_BUCK:PWMUDB:pwm_db_reg\ and not \PWM_BUCK:PWMUDB:db_ph2_run_temp\ and not \PWM_BUCK:PWMUDB:compare1\)
+Net_517 <= ((not \PWM_BUCK:PWMUDB:pwm_db_reg\ and not \PWM_BUCK:PWMUDB:db_ph2_run_temp\ and not \PWM_BUCK:PWMUDB:compare1\)
 	OR (not \PWM_BUCK:PWMUDB:ctrl_enable\ and not \PWM_BUCK:PWMUDB:pwm_db_reg\ and not \PWM_BUCK:PWMUDB:db_ph2_run_temp\));
 
 \PWM_BUCK:PWMUDB:db_cnt_1\\D\ <= ((not \PWM_BUCK:PWMUDB:db_ph1_run_temp\ and not \PWM_BUCK:PWMUDB:db_ph2_run_temp\ and \PWM_BUCK:PWMUDB:ctrl_enable\ and \PWM_BUCK:PWMUDB:pwm_db_reg\ and \PWM_BUCK:PWMUDB:db_cnt_1\ and \PWM_BUCK:PWMUDB:compare1\)
@@ -1892,7 +1892,7 @@ BUCK_LS:cy_psoc3_pins_v1_10
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1)
 	PORT MAP(oe=>(one),
-		y=>Net_307,
+		y=>Net_517,
 		fb=>(tmpFB_0__BUCK_LS_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__BUCK_LS_net_0),
@@ -2273,7 +2273,7 @@ Clock_2:cy_clock_v1_0
 		id=>"d897923f-2d95-4f5a-94f9-e3f945a62e2e",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"250000000",
+		period=>"100000000",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_491,
@@ -3416,7 +3416,7 @@ BUCK_HS:cy_psoc3_pins_v1_10
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1)
 	PORT MAP(oe=>(one),
-		y=>Net_147,
+		y=>Net_518,
 		fb=>(tmpFB_0__BUCK_HS_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__BUCK_HS_net_0),
