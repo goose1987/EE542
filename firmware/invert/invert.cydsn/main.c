@@ -153,7 +153,7 @@ void main()
       
         
  
-        //CyDelay(50);//delay
+        //CyDelay(5);//delay
     }
 }
 
