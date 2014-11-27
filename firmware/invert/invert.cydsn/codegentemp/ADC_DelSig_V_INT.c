@@ -25,9 +25,8 @@
 *******************************************************************************/
 /* `#START ADC_SYS_VAR`  */
 extern int16 buffvolt;
-//extern uint8 dataReady;
-extern int16 sineLUT[256];
-extern int16 sineLUTindex;
+
+
 
 /* `#END`  */
 
@@ -56,15 +55,9 @@ CY_ISR( ADC_DelSig_V_ISR1)
     *  - add user ISR code between the following #START and #END tags
     **************************************************************************/
     /* `#START MAIN_ADC_ISR1`  */
+    
+    
     buffvolt=ADC_DelSig_V_GetResult16();
-    
-    PWM_BUCK_WriteCompare(sineLUT[sineLUTindex]-370);
-    
-    sineLUTindex++;
-    if(sineLUTindex>=256){
-        sineLUTindex=0;
-        Control_Reg_1_Write(~Control_Reg_1_Read());
-    }
     
     /* `#END`  */
     

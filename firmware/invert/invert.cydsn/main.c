@@ -19,6 +19,17 @@ int16 sineLUTindex=0;
 
 char recbyte=0;
 
+
+float U0=0;
+float U1=0;
+float U2=0;
+float U3=0;
+
+float E0=0;
+float E1=0;
+float E2=0;
+float E3=0;
+
 float A1=0.09305911;
 float A2=0.75486969;
 float A3=0.15207120;
@@ -28,7 +39,7 @@ float B1=-1.63710219;
 float B2=-4.38245164;
 float B3=2.18761941;
 
-float K = 7; //K factor
+float K = 33; //K factor
 
 int16 sineLUT[256]={384,389,393,398,403,408,412,417,
                     422,426,431,436,440,445,450,454,
@@ -77,16 +88,18 @@ void main()
 
     
     //Output array
-    float U[4] ={0,0,0,0};
+    //float U[4] ={0,0,0,0};
     
     //error array
-    float E[4]={0,0,0,0};
+    //float E[4]={0,0,0,0};
     
-    char tstr[16];
+    //char tstr[16];
+    
+    //counter
+    Counter_1_Start();
 
     //clock
-    Clock_1_Enable();
-    Clock_2_Enable();
+    Clock_UNFOLDER_Enable();
     
     //start LCD
     LCD_Char_1_Start();
@@ -109,7 +122,7 @@ void main()
     
     sinptr = sineLUT;
    
-    
+   
     
     //CyDelay(5000);//delay
     
@@ -117,43 +130,15 @@ void main()
     for(;;)
     {
         /* Place your application code here. */
-    
+  
         
-        
-        /*
-        U[3]=U[2];
-        U[2]=U[1];
-        U[1]=U[0];
-        
-        E[3]=E[2];
-        E[2]=E[1];
-        E[1]=E[0];
-        E[0] = sineLUT[sineLUTindex]-buffvolt; //placeholder to calculate current error
-
-        U[0]= calcDuty(U[1], U[2], U[3], E[0], E[1], E[2], E[3]);
-
-        //K factor is 7
-        */
-
         recbyte=UART_1_GetChar();
         if(recbyte=='V'){
             UART_1_PutChar((buffvolt>>8));
             UART_1_PutChar(buffvolt);
         }
-        /*
-        sprintf(tstr, "%+1.4f", B2);
-        LCD_Char_1_Position(1u, 0u);
-        //LCD_Char_1_PrintInt16(A1);
-        LCD_Char_1_PrintString(tstr);
         
-        LCD_Char_1_Position(1u,8u);
-        LCD_Char_1_PrintInt16(sineLUT[sineLUTindex]);
         
-        */
-      
-        
- 
-        //CyDelay(5);//delay
     }
 }
 

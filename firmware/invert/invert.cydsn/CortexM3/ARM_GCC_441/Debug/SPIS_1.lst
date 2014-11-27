@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
   14:.\Generated_Source\PSoC5/SPIS_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
   15:.\Generated_Source\PSoC5/SPIS_1.c **** * the software package with which this file was provided.
   16:.\Generated_Source\PSoC5/SPIS_1.c **** *******************************************************************************/
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 2
 
 
   17:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
   39              		.cfi_startproc
   40              		@ args = 0, pretend = 0, frame = 0
   41              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 3
 
 
   42 0000 80B5     		push	{r7, lr}
@@ -132,8 +132,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
   70:.\Generated_Source\PSoC5/SPIS_1.c ****     /*Initialize the Bit counter */
   71:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_COUNTER_PERIOD_REG = SPIS_1_BITCTR_INIT;
   50              		.loc 1 71 0
-  51 0004 46F28A43 		movw	r3, #:lower16:1073767562
-  52 0008 C4F20003 		movt	r3, #:upper16:1073767562
+  51 0004 46F28C43 		movw	r3, #:lower16:1073767564
+  52 0008 C4F20003 		movt	r3, #:upper16:1073767564
   53 000c 4FF00702 		mov	r2, #7
   54 0010 1A70     		strb	r2, [r3, #0]
   72:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  109:.\Generated_Source\PSoC5/SPIS_1.c **** 
  110:.\Generated_Source\PSoC5/SPIS_1.c ****         SPIS_1_txBufferRead = 0u;
  111:.\Generated_Source\PSoC5/SPIS_1.c ****         SPIS_1_txBufferWrite = 0u;
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 4
 
 
  112:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -199,16 +199,16 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  123:.\Generated_Source\PSoC5/SPIS_1.c ****     #else /* SPIS_1_TXBUFFERSIZE < 4u */
  124:.\Generated_Source\PSoC5/SPIS_1.c ****         SPIS_1_TX_STATUS_MASK_REG  = SPIS_1_TX_INIT_INTERRUPTS_MASK;
   61              		.loc 1 124 0
-  62 001e 46F28643 		movw	r3, #:lower16:1073767558
-  63 0022 C4F20003 		movt	r3, #:upper16:1073767558
+  62 001e 46F28753 		movw	r3, #:lower16:1073767815
+  63 0022 C4F20003 		movt	r3, #:upper16:1073767815
   64 0026 4FF00002 		mov	r2, #0
   65 002a 1A70     		strb	r2, [r3, #0]
  125:.\Generated_Source\PSoC5/SPIS_1.c ****     #endif /* SPIS_1_TXBUFFERSIZE > 4u */
  126:.\Generated_Source\PSoC5/SPIS_1.c **** 
  127:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_RX_STATUS_MASK_REG  = SPIS_1_RX_INIT_INTERRUPTS_MASK;
   66              		.loc 1 127 0
-  67 002c 46F28C43 		movw	r3, #:lower16:1073767564
-  68 0030 C4F20003 		movt	r3, #:upper16:1073767564
+  67 002c 46F28F43 		movw	r3, #:lower16:1073767567
+  68 0030 C4F20003 		movt	r3, #:upper16:1073767567
   69 0034 4FF00002 		mov	r2, #0
   70 0038 1A70     		strb	r2, [r3, #0]
  128:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  139:.\Generated_Source\PSoC5/SPIS_1.c **** * Parameters:
  140:.\Generated_Source\PSoC5/SPIS_1.c **** *  None.
  141:.\Generated_Source\PSoC5/SPIS_1.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 5
 
 
  142:.\Generated_Source\PSoC5/SPIS_1.c **** * Return:
@@ -275,10 +275,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  151:.\Generated_Source\PSoC5/SPIS_1.c **** 
  152:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_COUNTER_CONTROL_REG |= SPIS_1_CNTR_ENABLE;
  106              		.loc 1 152 0
- 107 0014 46F29A43 		movw	r3, #:lower16:1073767578
- 108 0018 C4F20003 		movt	r3, #:upper16:1073767578
- 109 001c 46F29A42 		movw	r2, #:lower16:1073767578
- 110 0020 C4F20002 		movt	r2, #:upper16:1073767578
+ 107 0014 46F29C43 		movw	r3, #:lower16:1073767580
+ 108 0018 C4F20003 		movt	r3, #:upper16:1073767580
+ 109 001c 46F29C42 		movw	r2, #:lower16:1073767580
+ 110 0020 C4F20002 		movt	r2, #:upper16:1073767580
  111 0024 1278     		ldrb	r2, [r2, #0]
  112 0026 D2B2     		uxtb	r2, r2
  113 0028 42F02002 		orr	r2, r2, #32
@@ -286,10 +286,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  115 002e 1A70     		strb	r2, [r3, #0]
  153:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_TX_STATUS_ACTL_REG |= SPIS_1_INT_ENABLE;
  116              		.loc 1 153 0
- 117 0030 46F29643 		movw	r3, #:lower16:1073767574
- 118 0034 C4F20003 		movt	r3, #:upper16:1073767574
- 119 0038 46F29642 		movw	r2, #:lower16:1073767574
- 120 003c C4F20002 		movt	r2, #:upper16:1073767574
+ 117 0030 46F29753 		movw	r3, #:lower16:1073767831
+ 118 0034 C4F20003 		movt	r3, #:upper16:1073767831
+ 119 0038 46F29752 		movw	r2, #:lower16:1073767831
+ 120 003c C4F20002 		movt	r2, #:upper16:1073767831
  121 0040 1278     		ldrb	r2, [r2, #0]
  122 0042 D2B2     		uxtb	r2, r2
  123 0044 42F01002 		orr	r2, r2, #16
@@ -297,13 +297,13 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  125 004a 1A70     		strb	r2, [r3, #0]
  154:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_RX_STATUS_ACTL_REG |= SPIS_1_INT_ENABLE;
  126              		.loc 1 154 0
- 127 004c 46F29C43 		movw	r3, #:lower16:1073767580
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 6
+ 127 004c 46F29F43 		movw	r3, #:lower16:1073767583
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 6
 
 
- 128 0050 C4F20003 		movt	r3, #:upper16:1073767580
- 129 0054 46F29C42 		movw	r2, #:lower16:1073767580
- 130 0058 C4F20002 		movt	r2, #:upper16:1073767580
+ 128 0050 C4F20003 		movt	r3, #:upper16:1073767583
+ 129 0054 46F29F42 		movw	r2, #:lower16:1073767583
+ 130 0058 C4F20002 		movt	r2, #:upper16:1073767583
  131 005c 1278     		ldrb	r2, [r2, #0]
  132 005e D2B2     		uxtb	r2, r2
  133 0060 42F01002 		orr	r2, r2, #16
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  182:.\Generated_Source\PSoC5/SPIS_1.c **** *  SPIS_1_initVar - used to check initial configuration, modified on
  183:.\Generated_Source\PSoC5/SPIS_1.c **** *  first function call.
  184:.\Generated_Source\PSoC5/SPIS_1.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 7
 
 
  185:.\Generated_Source\PSoC5/SPIS_1.c **** * Theory:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  192              		.thumb_func
  193              		.type	SPIS_1_Stop, %function
  194              	SPIS_1_Stop:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 8
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 8
 
 
  195              	.LFB3:
@@ -471,23 +471,23 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  226:.\Generated_Source\PSoC5/SPIS_1.c **** 
  227:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_TX_STATUS_ACTL_REG &= ~SPIS_1_INT_ENABLE;
  218              		.loc 1 227 0
- 219 0014 46F29643 		movw	r3, #:lower16:1073767574
- 220 0018 C4F20003 		movt	r3, #:upper16:1073767574
- 221 001c 46F29642 		movw	r2, #:lower16:1073767574
- 222 0020 C4F20002 		movt	r2, #:upper16:1073767574
+ 219 0014 46F29753 		movw	r3, #:lower16:1073767831
+ 220 0018 C4F20003 		movt	r3, #:upper16:1073767831
+ 221 001c 46F29752 		movw	r2, #:lower16:1073767831
+ 222 0020 C4F20002 		movt	r2, #:upper16:1073767831
  223 0024 1278     		ldrb	r2, [r2, #0]
  224 0026 D2B2     		uxtb	r2, r2
  225 0028 02F0EF02 		and	r2, r2, #239
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 9
 
 
  226 002c 1A70     		strb	r2, [r3, #0]
  228:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_RX_STATUS_ACTL_REG &= ~SPIS_1_INT_ENABLE;
  227              		.loc 1 228 0
- 228 002e 46F29C43 		movw	r3, #:lower16:1073767580
- 229 0032 C4F20003 		movt	r3, #:upper16:1073767580
- 230 0036 46F29C42 		movw	r2, #:lower16:1073767580
- 231 003a C4F20002 		movt	r2, #:upper16:1073767580
+ 228 002e 46F29F43 		movw	r3, #:lower16:1073767583
+ 229 0032 C4F20003 		movt	r3, #:upper16:1073767583
+ 230 0036 46F29F42 		movw	r2, #:lower16:1073767583
+ 231 003a C4F20002 		movt	r2, #:upper16:1073767583
  232 003e 1278     		ldrb	r2, [r2, #0]
  233 0040 D2B2     		uxtb	r2, r2
  234 0042 02F0EF02 		and	r2, r2, #239
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  253:.\Generated_Source\PSoC5/SPIS_1.c **** *  None.
  254:.\Generated_Source\PSoC5/SPIS_1.c **** *
  255:.\Generated_Source\PSoC5/SPIS_1.c **** * Theory:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 10
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 10
 
 
  256:.\Generated_Source\PSoC5/SPIS_1.c **** *  Enable the internal Tx interrupt output -or- the interrupt component itself.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  283:.\Generated_Source\PSoC5/SPIS_1.c **** *******************************************************************************/
  284:.\Generated_Source\PSoC5/SPIS_1.c **** void SPIS_1_EnableRxInt(void) 
  285:.\Generated_Source\PSoC5/SPIS_1.c **** {
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 11
 
 
  282              		.loc 1 285 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  311              		@ args = 0, pretend = 0, frame = 0
  312              		@ frame_needed = 1, uses_anonymous_args = 0
  313              		@ link register save eliminated.
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 12
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 12
 
 
  314 0000 80B4     		push	{r7}
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  343              		.cfi_def_cfa_offset 4
  344 0002 00AF     		add	r7, sp, #0
  345              		.cfi_offset 7, -4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 13
 
 
  346              	.LCFI17:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  374 0004 00AF     		add	r7, sp, #0
  375              		.cfi_offset 7, -4
  376              	.LCFI20:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 14
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 14
 
 
  377              		.cfi_def_cfa_register 7
@@ -786,8 +786,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  379 0008 FB71     		strb	r3, [r7, #7]
  362:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_TX_STATUS_MASK_REG  = intSrc;
  380              		.loc 1 362 0
- 381 000a 46F28643 		movw	r3, #:lower16:1073767558
- 382 000e C4F20003 		movt	r3, #:upper16:1073767558
+ 381 000a 46F28753 		movw	r3, #:lower16:1073767815
+ 382 000e C4F20003 		movt	r3, #:upper16:1073767815
  383 0012 FA79     		ldrb	r2, [r7, #7]
  384 0014 1A70     		strb	r2, [r3, #0]
  363:.\Generated_Source\PSoC5/SPIS_1.c **** }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  407              	.LCFI21:
  408              		.cfi_def_cfa_offset 4
  409 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 15
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 15
 
 
  410              	.LCFI22:
@@ -851,8 +851,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  417 0008 FB71     		strb	r3, [r7, #7]
  386:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_RX_STATUS_MASK_REG  = intSrc;
  418              		.loc 1 386 0
- 419 000a 46F28C43 		movw	r3, #:lower16:1073767564
- 420 000e C4F20003 		movt	r3, #:upper16:1073767564
+ 419 000a 46F28F43 		movw	r3, #:lower16:1073767567
+ 420 000e C4F20003 		movt	r3, #:upper16:1073767567
  421 0012 FA79     		ldrb	r2, [r7, #7]
  422 0014 1A70     		strb	r2, [r3, #0]
  387:.\Generated_Source\PSoC5/SPIS_1.c **** }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  411:.\Generated_Source\PSoC5/SPIS_1.c **** * Side Effects:
  412:.\Generated_Source\PSoC5/SPIS_1.c **** *  Clear Tx status register of the component.
  413:.\Generated_Source\PSoC5/SPIS_1.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 16
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 16
 
 
  414:.\Generated_Source\PSoC5/SPIS_1.c **** * Reentrant:
@@ -942,8 +942,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  434:.\Generated_Source\PSoC5/SPIS_1.c **** 
  435:.\Generated_Source\PSoC5/SPIS_1.c ****         tmpStatus = SPIS_1_TX_STATUS_REG;
  457              		.loc 1 435 0
- 458 000c 46F26643 		movw	r3, #:lower16:1073767526
- 459 0010 C4F20003 		movt	r3, #:upper16:1073767526
+ 458 000c 46F26753 		movw	r3, #:lower16:1073767783
+ 459 0010 C4F20003 		movt	r3, #:upper16:1073767783
  460 0014 1B78     		ldrb	r3, [r3, #0]
  461 0016 FB71     		strb	r3, [r7, #7]
  436:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  466 001c 07F10C07 		add	r7, r7, #12
  467 0020 BD46     		mov	sp, r7
  468 0022 80BC     		pop	{r7}
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 17
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 17
 
 
  469 0024 7047     		bx	lr
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  491              		.cfi_def_cfa_offset 16
  492 0004 00AF     		add	r7, sp, #0
  493              		.cfi_offset 7, -4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 18
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 18
 
 
  494              	.LCFI29:
@@ -1043,8 +1043,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  487:.\Generated_Source\PSoC5/SPIS_1.c **** 
  488:.\Generated_Source\PSoC5/SPIS_1.c ****         tmpStatus = SPIS_1_RX_STATUS_REG;
  499              		.loc 1 488 0
- 500 000c 46F26C43 		movw	r3, #:lower16:1073767532
- 501 0010 C4F20003 		movt	r3, #:upper16:1073767532
+ 500 000c 46F26F43 		movw	r3, #:lower16:1073767535
+ 501 0010 C4F20003 		movt	r3, #:upper16:1073767535
  502 0014 1B78     		ldrb	r3, [r3, #0]
  503 0016 FB71     		strb	r3, [r7, #7]
  489:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  498:.\Generated_Source\PSoC5/SPIS_1.c **** ********************************************************************************
  499:.\Generated_Source\PSoC5/SPIS_1.c **** *
  500:.\Generated_Source\PSoC5/SPIS_1.c **** * Summary:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 19
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 19
 
 
  501:.\Generated_Source\PSoC5/SPIS_1.c **** *  Write a byte of data to be sent across the SPI.
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  537:.\Generated_Source\PSoC5/SPIS_1.c ****         do
  538:.\Generated_Source\PSoC5/SPIS_1.c ****         {
  539:.\Generated_Source\PSoC5/SPIS_1.c ****             tmpTxBufferRead = SPIS_1_txBufferRead - 1u;
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 20
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 20
 
 
  540:.\Generated_Source\PSoC5/SPIS_1.c ****             if (tmpTxBufferRead < 0u)
@@ -1190,15 +1190,15 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  586:.\Generated_Source\PSoC5/SPIS_1.c ****         /* Block while FIFO is full */
  587:.\Generated_Source\PSoC5/SPIS_1.c ****         while((SPIS_1_TX_STATUS_REG & SPIS_1_STS_TX_FIFO_NOT_FULL) == 0u);
  541              		.loc 1 587 0
- 542 000a 46F26643 		movw	r3, #:lower16:1073767526
- 543 000e C4F20003 		movt	r3, #:upper16:1073767526
+ 542 000a 46F26753 		movw	r3, #:lower16:1073767783
+ 543 000e C4F20003 		movt	r3, #:upper16:1073767783
  544 0012 1B78     		ldrb	r3, [r3, #0]
  545 0014 DBB2     		uxtb	r3, r3
  546 0016 03F00203 		and	r3, r3, #2
  547 001a 002B     		cmp	r3, #0
  548 001c F5D0     		beq	.L27
  588:.\Generated_Source\PSoC5/SPIS_1.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 21
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 21
 
 
  589:.\Generated_Source\PSoC5/SPIS_1.c ****         /* Then write the byte */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  573              		@ frame_needed = 1, uses_anonymous_args = 0
  574              		@ link register save eliminated.
  575 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 22
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 22
 
 
  576              	.LCFI33:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  641:.\Generated_Source\PSoC5/SPIS_1.c **** *  SPIS_1_rxBufferRead - used for the account of the bytes which
  642:.\Generated_Source\PSoC5/SPIS_1.c **** *  have been read from the RX software buffer, modified every function
  643:.\Generated_Source\PSoC5/SPIS_1.c **** *  call if RX Software Buffer is used.
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 23
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 23
 
 
  644:.\Generated_Source\PSoC5/SPIS_1.c **** *  SPIS_1_RXBUFFER[SPIS_1_RXBUFFERSIZE] - used to store
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  680:.\Generated_Source\PSoC5/SPIS_1.c ****             }
  681:.\Generated_Source\PSoC5/SPIS_1.c ****         }
  682:.\Generated_Source\PSoC5/SPIS_1.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 24
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 24
 
 
  683:.\Generated_Source\PSoC5/SPIS_1.c ****         rxData = SPIS_1_RXBUFFER[SPIS_1_rxBufferRead];
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  713:.\Generated_Source\PSoC5/SPIS_1.c **** *
  714:.\Generated_Source\PSoC5/SPIS_1.c **** * Global variables:
  715:.\Generated_Source\PSoC5/SPIS_1.c **** *  SPIS_1_rxBufferWrite - used for the account of the bytes which
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 25
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 25
 
 
  716:.\Generated_Source\PSoC5/SPIS_1.c **** *  have been written down in the RX software buffer.
@@ -1497,11 +1497,11 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  751:.\Generated_Source\PSoC5/SPIS_1.c ****         /* We can only know if there is data in the fifo. */
  752:.\Generated_Source\PSoC5/SPIS_1.c ****         size = ((SPIS_1_RX_STATUS_REG & SPIS_1_STS_RX_FIFO_NOT_EMPTY) == 
  668              		.loc 1 752 0
- 669 000c 46F26C43 		movw	r3, #:lower16:1073767532
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 26
+ 669 000c 46F26F43 		movw	r3, #:lower16:1073767535
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 26
 
 
- 670 0010 C4F20003 		movt	r3, #:upper16:1073767532
+ 670 0010 C4F20003 		movt	r3, #:upper16:1073767535
  671 0014 1B78     		ldrb	r3, [r3, #0]
  672 0016 DBB2     		uxtb	r3, r3
  673 0018 03F00803 		and	r3, r3, #8
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  776:.\Generated_Source\PSoC5/SPIS_1.c **** *
  777:.\Generated_Source\PSoC5/SPIS_1.c **** * Global variables:
  778:.\Generated_Source\PSoC5/SPIS_1.c **** *  SPIS_1_txBufferWrite - used for the account of the bytes which
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 27
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 27
 
 
  779:.\Generated_Source\PSoC5/SPIS_1.c **** *  have been written down in the TX software buffer.
@@ -1618,12 +1618,12 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  815:.\Generated_Source\PSoC5/SPIS_1.c ****     #else /* SPIS_1_TXBUFFERSIZE <= 4u */
  816:.\Generated_Source\PSoC5/SPIS_1.c **** 
  817:.\Generated_Source\PSoC5/SPIS_1.c ****         size = SPIS_1_TX_STATUS_REG;
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 28
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 28
 
 
  719              		.loc 1 817 0
- 720 000c 46F26643 		movw	r3, #:lower16:1073767526
- 721 0010 C4F20003 		movt	r3, #:upper16:1073767526
+ 720 000c 46F26753 		movw	r3, #:lower16:1073767783
+ 721 0010 C4F20003 		movt	r3, #:upper16:1073767783
  722 0014 1B78     		ldrb	r3, [r3, #0]
  723 0016 FB71     		strb	r3, [r7, #7]
  818:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  754 004c 80BC     		pop	{r7}
  755 004e 7047     		bx	lr
  756              		.cfi_endproc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 29
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 29
 
 
  757              	.LFE16:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  774              		.cfi_def_cfa_offset 4
  775 0002 00AF     		add	r7, sp, #0
  776              		.cfi_offset 7, -4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 30
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 30
 
 
  777              	.LCFI46:
@@ -1756,8 +1756,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  785 000e 1B78     		ldrb	r3, [r3, #0]
  786              	.L43:
  787              		.loc 1 875 0
- 788 0010 46F26C43 		movw	r3, #:lower16:1073767532
- 789 0014 C4F20003 		movt	r3, #:upper16:1073767532
+ 788 0010 46F26F43 		movw	r3, #:lower16:1073767535
+ 789 0014 C4F20003 		movt	r3, #:upper16:1073767535
  790 0018 1B78     		ldrb	r3, [r3, #0]
  791 001a DBB2     		uxtb	r3, r3
  792 001c 03F00803 		and	r3, r3, #8
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  895:.\Generated_Source\PSoC5/SPIS_1.c **** /*******************************************************************************
  896:.\Generated_Source\PSoC5/SPIS_1.c **** * Function Name: SPIS_1_ClearTxBuffer
  897:.\Generated_Source\PSoC5/SPIS_1.c **** ********************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 31
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 31
 
 
  898:.\Generated_Source\PSoC5/SPIS_1.c **** *
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  934:.\Generated_Source\PSoC5/SPIS_1.c ****     enableInterrupts = CyEnterCriticalSection();
  828              		.loc 1 934 0
  829 000c FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 32
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 32
 
 
  830 0010 0346     		mov	r3, r0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  964:.\Generated_Source\PSoC5/SPIS_1.c **** 
  965:.\Generated_Source\PSoC5/SPIS_1.c ****         /* Enable Interrupt. */
  966:.\Generated_Source\PSoC5/SPIS_1.c ****         SPIS_1_EnableTxInt();
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 33
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 33
 
 
  967:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
 1006:.\Generated_Source\PSoC5/SPIS_1.c ****     * Return:
 1007:.\Generated_Source\PSoC5/SPIS_1.c ****     *  None.
 1008:.\Generated_Source\PSoC5/SPIS_1.c ****     *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 34
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 34
 
 
 1009:.\Generated_Source\PSoC5/SPIS_1.c ****     *******************************************************************************/
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  887 000a FB70     		strb	r3, [r7, #3]
 1046:.\Generated_Source\PSoC5/SPIS_1.c ****     while(byteCount > 0u)
  888              		.loc 1 1046 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 35
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 35
 
 
  889 000c 0CE0     		b	.L49
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
 1067:.\Generated_Source\PSoC5/SPIS_1.c **** * Side Effects:
 1068:.\Generated_Source\PSoC5/SPIS_1.c **** *  Clear status register of the component.
 1069:.\Generated_Source\PSoC5/SPIS_1.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 36
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 36
 
 
 1070:.\Generated_Source\PSoC5/SPIS_1.c **** *******************************************************************************/
@@ -2136,8 +2136,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  947 0016 1B78     		ldrb	r3, [r3, #0]
  948              	.L53:
  949              		.loc 1 1075 0
- 950 0018 46F26C43 		movw	r3, #:lower16:1073767532
- 951 001c C4F20003 		movt	r3, #:upper16:1073767532
+ 950 0018 46F26F43 		movw	r3, #:lower16:1073767535
+ 951 001c C4F20003 		movt	r3, #:upper16:1073767535
  952 0020 1B78     		ldrb	r3, [r3, #0]
  953 0022 DBB2     		uxtb	r3, r3
  954 0024 03F00803 		and	r3, r3, #8
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  961              		.loc 1 1085 0
  962 0034 46F29743 		movw	r3, #:lower16:1073767575
  963 0038 C4F20003 		movt	r3, #:upper16:1073767575
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 37
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 37
 
 
  964 003c 46F29742 		movw	r2, #:lower16:1073767575
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
 1105:.\Generated_Source\PSoC5/SPIS_1.c **** 
 1106:.\Generated_Source\PSoC5/SPIS_1.c **** /*******************************************************************************
 1107:.\Generated_Source\PSoC5/SPIS_1.c **** * Function Name: SPIS_1_EnableInt
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 38
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 38
 
 
 1108:.\Generated_Source\PSoC5/SPIS_1.c **** ********************************************************************************
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
 1135:.\Generated_Source\PSoC5/SPIS_1.c **** /*******************************************************************************
 1136:.\Generated_Source\PSoC5/SPIS_1.c **** * Function Name: SPIS_1_DisableInt
 1137:.\Generated_Source\PSoC5/SPIS_1.c **** ********************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 39
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 39
 
 
 1138:.\Generated_Source\PSoC5/SPIS_1.c **** *
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
 1165:.\Generated_Source\PSoC5/SPIS_1.c **** * Function Name: SPIS_1_SetInterruptMode
 1166:.\Generated_Source\PSoC5/SPIS_1.c **** ********************************************************************************
 1167:.\Generated_Source\PSoC5/SPIS_1.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 40
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 40
 
 
 1168:.\Generated_Source\PSoC5/SPIS_1.c **** * Summary:
@@ -2376,14 +2376,14 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1069 0008 FB71     		strb	r3, [r7, #7]
 1184:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_TX_STATUS_MASK_REG  = intSrc;
  1070              		.loc 1 1184 0
- 1071 000a 46F28643 		movw	r3, #:lower16:1073767558
- 1072 000e C4F20003 		movt	r3, #:upper16:1073767558
+ 1071 000a 46F28753 		movw	r3, #:lower16:1073767815
+ 1072 000e C4F20003 		movt	r3, #:upper16:1073767815
  1073 0012 FA79     		ldrb	r2, [r7, #7]
  1074 0014 1A70     		strb	r2, [r3, #0]
 1185:.\Generated_Source\PSoC5/SPIS_1.c ****     SPIS_1_RX_STATUS_MASK_REG  = intSrc;
  1075              		.loc 1 1185 0
- 1076 0016 46F28C43 		movw	r3, #:lower16:1073767564
- 1077 001a C4F20003 		movt	r3, #:upper16:1073767564
+ 1076 0016 46F28F43 		movw	r3, #:lower16:1073767567
+ 1077 001a C4F20003 		movt	r3, #:upper16:1073767567
  1078 001e FA79     		ldrb	r2, [r7, #7]
  1079 0020 1A70     		strb	r2, [r3, #0]
 1186:.\Generated_Source\PSoC5/SPIS_1.c **** }
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1088              		.section	.text.SPIS_1_ReadStatus,"ax",%progbits
  1089              		.align	2
  1090              		.global	SPIS_1_ReadStatus
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 41
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 41
 
 
  1091              		.thumb
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
 1221:.\Generated_Source\PSoC5/SPIS_1.c ****     #if ((SPIS_1_TXBUFFERSIZE > 4u) || (SPIS_1_RXBUFFERSIZE > 4u))
 1222:.\Generated_Source\PSoC5/SPIS_1.c **** 
 1223:.\Generated_Source\PSoC5/SPIS_1.c ****         SPIS_1_DisableInt();
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 42
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 42
 
 
 1224:.\Generated_Source\PSoC5/SPIS_1.c **** 
@@ -2475,12 +2475,12 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
 1235:.\Generated_Source\PSoC5/SPIS_1.c **** 
 1236:.\Generated_Source\PSoC5/SPIS_1.c ****         tmpStatus = SPIS_1_TX_STATUS_REG | (SPIS_1_RX_STATUS_REG &
  1111              		.loc 1 1236 0
- 1112 0006 46F26643 		movw	r3, #:lower16:1073767526
- 1113 000a C4F20003 		movt	r3, #:upper16:1073767526
+ 1112 0006 46F26753 		movw	r3, #:lower16:1073767783
+ 1113 000a C4F20003 		movt	r3, #:upper16:1073767783
  1114 000e 1B78     		ldrb	r3, [r3, #0]
  1115 0010 DAB2     		uxtb	r2, r3
- 1116 0012 46F26C43 		movw	r3, #:lower16:1073767532
- 1117 0016 C4F20003 		movt	r3, #:upper16:1073767532
+ 1116 0012 46F26F43 		movw	r3, #:lower16:1073767535
+ 1117 0016 C4F20003 		movt	r3, #:upper16:1073767535
  1118 001a 1B78     		ldrb	r3, [r3, #0]
  1119 001c DBB2     		uxtb	r3, r3
  1120 001e 03F0BF03 		and	r3, r3, #191
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1146 0015 7D       		.byte	0x7d
  1147 0016 08       		.sleb128 8
  1148 0017 04000000 		.4byte	.LCFI1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 43
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 43
 
 
  1149 001b 3C000000 		.4byte	.LFE0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1203 00a3 08       		.sleb128 8
  1204 00a4 04000000 		.4byte	.LCFI8
  1205 00a8 06000000 		.4byte	.LCFI9
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 44
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 44
 
 
  1206 00ac 0200     		.2byte	0x2
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1260 0131 04000000 		.4byte	.LCFI15
  1261 0135 0A000000 		.4byte	.LFE6
  1262 0139 0200     		.2byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 45
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 45
 
 
  1263 013b 77       		.byte	0x77
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1317 01c2 06000000 		.4byte	.LCFI23
  1318 01c6 0200     		.2byte	0x2
  1319 01c8 7D       		.byte	0x7d
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 46
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 46
 
 
  1320 01c9 10       		.sleb128 16
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1374 0250 02000000 		.4byte	.LCFI30
  1375 0254 0100     		.2byte	0x1
  1376 0256 5D       		.byte	0x5d
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 47
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 47
 
 
  1377 0257 02000000 		.4byte	.LCFI30
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1431 02dd 06000000 		.4byte	.LCFI38
  1432 02e1 26000000 		.4byte	.LFE14
  1433 02e5 0200     		.2byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 48
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 48
 
 
  1434 02e7 77       		.byte	0x77
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1488 036e 04000000 		.4byte	.LCFI46
  1489 0372 0200     		.2byte	0x2
  1490 0374 7D       		.byte	0x7d
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 49
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 49
 
 
  1491 0375 04       		.sleb128 4
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1545 03fc 02000000 		.4byte	.LCFI53
  1546 0400 0100     		.2byte	0x1
  1547 0402 5D       		.byte	0x5d
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 50
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 50
 
 
  1548 0403 02000000 		.4byte	.LCFI53
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1602 048d 0100     		.2byte	0x1
  1603 048f 5D       		.byte	0x5d
  1604 0490 02000000 		.4byte	.LCFI60
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 51
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 51
 
 
  1605 0494 04000000 		.4byte	.LCFI61
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1659 002a 01       		.byte	0x1
  1660 002b 06       		.byte	0x6
  1661 002c 01030000 		.4byte	.LASF0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 52
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 52
 
 
  1662 0030 02       		.uleb128 0x2
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1716 008d 04       		.byte	0x4
  1717 008e 73010000 		.4byte	.LASF11
  1718 0092 06       		.uleb128 0x6
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 53
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 53
 
 
  1719 0093 01       		.byte	0x1
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1773 010b 00       		.byte	0x0
  1774 010c 09       		.uleb128 0x9
  1775 010d 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 54
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 54
 
 
  1776 010e 61000000 		.4byte	.LASF17
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1830 018f 01       		.byte	0x1
  1831 0190 B3000000 		.4byte	.LASF22
  1832 0194 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 55
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 55
 
 
  1833 0195 8001     		.2byte	0x180
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1887 0213 00       		.byte	0x0
  1888 0214 0A       		.uleb128 0xa
  1889 0215 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 56
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 56
 
 
  1890 0216 14030000 		.4byte	.LASF27
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  1944 0294 77       		.sleb128 -9
  1945 0295 00       		.byte	0x0
  1946 0296 0C       		.uleb128 0xc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 57
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 57
 
 
  1947 0297 01       		.byte	0x1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2001 0312 00000000 		.4byte	.LFB18
  2002 0316 5A000000 		.4byte	.LFE18
  2003 031a 8A030000 		.4byte	.LLST18
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 58
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 58
 
 
  2004 031e 32030000 		.4byte	0x332
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2058 0393 79000000 		.4byte	0x79
  2059 0397 02       		.byte	0x2
  2060 0398 91       		.byte	0x91
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 59
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 59
 
 
  2061 0399 77       		.sleb128 -9
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2115 0417 79000000 		.4byte	0x79
  2116 041b 02       		.byte	0x2
  2117 041c 91       		.byte	0x91
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 60
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 60
 
 
  2118 041d 77       		.sleb128 -9
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2172 0029 00       		.byte	0x0
  2173 002a 00       		.byte	0x0
  2174 002b 04       		.uleb128 0x4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 61
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 61
 
 
  2175 002c 24       		.uleb128 0x24
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2229 0062 0C       		.uleb128 0xc
  2230 0063 11       		.uleb128 0x11
  2231 0064 01       		.uleb128 0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 62
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 62
 
 
  2232 0065 12       		.uleb128 0x12
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2286 009b 05       		.uleb128 0x5
  2287 009c 27       		.uleb128 0x27
  2288 009d 0C       		.uleb128 0xc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 63
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 63
 
 
  2289 009e 11       		.uleb128 0x11
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2343 00d4 0E       		.uleb128 0xe
  2344 00d5 3A       		.uleb128 0x3a
  2345 00d6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 64
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 64
 
 
  2346 00d7 3B       		.uleb128 0x3b
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2392 0041 E4000000 		.4byte	0xe4
  2393 0045 53504953 		.ascii	"SPIS_1_Stop\000"
  2393      5F315F53 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 65
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 65
 
 
  2393      746F7000 
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2411      746100
  2412 0132 3E020000 		.4byte	0x23e
  2413 0136 53504953 		.ascii	"SPIS_1_WriteTxDataZero\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 66
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 66
 
 
  2413      5F315F57 
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2431      69736162 
  2431      6C65496E 
  2431      7400
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 67
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 67
 
 
  2432 021f C7030000 		.4byte	0x3c7
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2475 0080 00000000 		.4byte	.LFB14
  2476 0084 26000000 		.4byte	.LFE14-.LFB14
  2477 0088 00000000 		.4byte	.LFB15
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 68
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 68
 
 
  2478 008c 3A000000 		.4byte	.LFE15-.LFB15
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2532 007c 26000000 		.4byte	.LFE14
  2533 0080 00000000 		.4byte	.LFB15
  2534 0084 3A000000 		.4byte	.LFE15
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 69
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 69
 
 
  2535 0088 00000000 		.4byte	.LFB16
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2570              	.LASF17:
  2571 0061 53504953 		.ascii	"SPIS_1_EnableTxInt\000"
  2571      5F315F45 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 70
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 70
 
 
  2571      6E61626C 
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2595 0123 53504953 		.ascii	"SPIS_1_Start\000"
  2595      5F315F53 
  2595      74617274 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 71
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 71
 
 
  2595      00
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2614      496E7400 
  2615              	.LASF4:
  2616 01fb 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 72
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 72
 
 
  2616      676E6564 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 1
  2636 02ae 53504953 		.ascii	"SPIS_1_ClearRxBuffer\000"
  2636      5F315F43 
  2636      6C656172 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc0MO4gb.s 			page 73
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccubtNn8.s 			page 73
 
 
  2636      52784275 
