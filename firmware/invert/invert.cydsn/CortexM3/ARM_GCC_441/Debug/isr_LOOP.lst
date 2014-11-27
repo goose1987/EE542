@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
   20:.\Generated_Source\PSoC5/isr_LOOP.c **** #include <CYLIB.H>
   21:.\Generated_Source\PSoC5/isr_LOOP.c **** #include <isr_LOOP.H>
   22:.\Generated_Source\PSoC5/isr_LOOP.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 2
 
 
   23:.\Generated_Source\PSoC5/isr_LOOP.c **** #if !defined(isr_LOOP__REMOVED) /* Check for removal by optimization */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
   63:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the ISR to point to the isr_LOOP Interrupt. */
   64:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetVector(&isr_LOOP_Interrupt);
   46              		.loc 1 64 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 3
 
 
   47 0008 40F20000 		movw	r0, #:lower16:isr_LOOP_Interrupt
@@ -128,7 +128,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
   66:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the priority. */
   67:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetPriority((uint8)isr_LOOP_INTC_PRIOR_NUMBER);
   50              		.loc 1 67 0
-  51 0014 4FF00700 		mov	r0, #7
+  51 0014 4FF00100 		mov	r0, #1
   52 0018 FFF7FEFF 		bl	isr_LOOP_SetPriority
   68:.\Generated_Source\PSoC5/isr_LOOP.c **** 
   69:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Enable it. */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
   76              	.LCFI3:
   77              		.cfi_def_cfa_offset 16
   78 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 4
 
 
   79              		.cfi_offset 14, -4
@@ -200,7 +200,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
   96:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the priority. */
   97:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetPriority((uint8)isr_LOOP_INTC_PRIOR_NUMBER);
   89              		.loc 1 97 0
-  90 0012 4FF00700 		mov	r0, #7
+  90 0012 4FF00100 		mov	r0, #1
   91 0016 FFF7FEFF 		bl	isr_LOOP_SetPriority
   98:.\Generated_Source\PSoC5/isr_LOOP.c **** 
   99:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Enable it. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  114:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
  115:.\Generated_Source\PSoC5/isr_LOOP.c **** *
  116:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 5
 
 
  117:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_Stop(void)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  140:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
  141:.\Generated_Source\PSoC5/isr_LOOP.c **** *
  142:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 6
 
 
  143:.\Generated_Source\PSoC5/isr_LOOP.c **** CY_ISR(isr_LOOP_Interrupt)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  161:.\Generated_Source\PSoC5/isr_LOOP.c **** *
  162:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
  163:.\Generated_Source\PSoC5/isr_LOOP.c **** *   address: Address of the ISR to set in the interrupt vector table.
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 7
 
 
  164:.\Generated_Source\PSoC5/isr_LOOP.c **** *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  217              	.LFB5:
  177:.\Generated_Source\PSoC5/isr_LOOP.c **** 
  178:.\Generated_Source\PSoC5/isr_LOOP.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 8
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 8
 
 
  179:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  250              		.size	isr_LOOP_GetVector, .-isr_LOOP_GetVector
  251 0026 00BF     		.section	.text.isr_LOOP_SetPriority,"ax",%progbits
  252              		.align	2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 9
 
 
  253              		.global	isr_LOOP_SetPriority
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  283              		.loc 1 224 0
  284 001c 07F10C07 		add	r7, r7, #12
  285 0020 BD46     		mov	sp, r7
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 10
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 10
 
 
  286 0022 80BC     		pop	{r7}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  318 0010 DBB2     		uxtb	r3, r3
  319 0012 4FEA5313 		lsr	r3, r3, #5
  320 0016 FB71     		strb	r3, [r7, #7]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 11
 
 
  247:.\Generated_Source\PSoC5/isr_LOOP.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  352              		.loc 1 269 0
  353 0004 4EF20013 		movw	r3, #:lower16:-536813312
  354 0008 CEF20003 		movt	r3, #:upper16:-536813312
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 12
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 12
 
 
  355 000c 4FF00102 		mov	r2, #1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  388 000e 03F00103 		and	r3, r3, #1
  389 0012 DBB2     		uxtb	r3, r3
  390 0014 002B     		cmp	r3, #0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 13
 
 
  391 0016 02D0     		beq	.L20
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  311:.\Generated_Source\PSoC5/isr_LOOP.c ****     *isr_LOOP_INTC_CLR_EN = isr_LOOP__INTC_MASK;
  425              		.loc 1 311 0
  426 0004 4EF28013 		movw	r3, #:lower16:-536813184
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 14
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 14
 
 
  427 0008 CEF20003 		movt	r3, #:upper16:-536813184
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  460 000c 4FF00102 		mov	r2, #1
  461 0010 1A60     		str	r2, [r3, #0]
  333:.\Generated_Source\PSoC5/isr_LOOP.c **** }
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 15
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 15
 
 
  462              		.loc 1 333 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  496 0014 80BC     		pop	{r7}
  497 0016 7047     		bx	lr
  498              		.cfi_endproc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 16
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 16
 
 
  499              	.LFE12:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  553 0078 08       		.sleb128 8
  554 0079 04000000 		.4byte	.LCFI6
  555 007d 16000000 		.4byte	.LFE2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 17
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 17
 
 
  556 0081 0200     		.2byte	0x2
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  610 0106 04000000 		.4byte	.LCFI13
  611 010a 06000000 		.4byte	.LCFI14
  612 010e 0200     		.2byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 18
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 18
 
 
  613 0110 7D       		.byte	0x7d
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  667 0194 00000000 		.4byte	.LFB8
  668 0198 02000000 		.4byte	.LCFI21
  669 019c 0100     		.2byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 19
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 19
 
 
  670 019e 5D       		.byte	0x5d
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  724 0228 0200     		.2byte	0x2
  725 022a 7D       		.byte	0x7d
  726 022b 04       		.sleb128 4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 20
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 20
 
 
  727 022c 04000000 		.4byte	.LCFI28
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  781 0041 36000000 		.4byte	.LASF3
  782 0045 03       		.uleb128 0x3
  783 0046 04       		.byte	0x4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 21
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 21
 
 
  784 0047 05       		.byte	0x5
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  838 00aa 02       		.byte	0x2
  839 00ab EB       		.byte	0xeb
  840 00ac 74000000 		.4byte	0x74
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 22
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 22
 
 
  841 00b0 08       		.uleb128 0x8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  895 0128 B8000000 		.4byte	.LLST4
  896 012c 4D010000 		.4byte	0x14d
  897 0130 0A       		.uleb128 0xa
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 23
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 23
 
 
  898 0131 B8010000 		.4byte	.LASF20
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  952 01a3 02       		.byte	0x2
  953 01a4 91       		.byte	0x91
  954 01a5 77       		.sleb128 -9
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 24
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 24
 
 
  955 01a6 00       		.byte	0x0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1009 0222 01       		.byte	0x1
  1010 0223 00000000 		.4byte	.LFB11
  1011 0227 18000000 		.4byte	.LFE11
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 25
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 25
 
 
  1012 022b 15020000 		.4byte	.LLST11
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1066 0015 02       		.uleb128 0x2
  1067 0016 24       		.uleb128 0x24
  1068 0017 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 26
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 26
 
 
  1069 0018 0B       		.uleb128 0xb
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1123 004e 13       		.uleb128 0x13
  1124 004f 00       		.byte	0x0
  1125 0050 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 27
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 27
 
 
  1126 0051 08       		.uleb128 0x8
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1180 0087 13       		.uleb128 0x13
  1181 0088 02       		.uleb128 0x2
  1182 0089 0A       		.uleb128 0xa
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 28
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 28
 
 
  1183 008a 00       		.byte	0x0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1237 00c0 0C       		.uleb128 0xc
  1238 00c1 11       		.uleb128 0x11
  1239 00c2 01       		.uleb128 0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 29
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 29
 
 
  1240 00c3 12       		.uleb128 0x12
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1294 00f9 3B       		.uleb128 0x3b
  1295 00fa 0B       		.uleb128 0xb
  1296 00fb 49       		.uleb128 0x49
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 30
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 30
 
 
  1297 00fc 13       		.uleb128 0x13
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1325 00aa 6973725F 		.ascii	"isr_LOOP_GetPriority\000"
  1325      4C4F4F50 
  1325      5F476574 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 31
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 31
 
 
  1325      5072696F 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1359 0048 00000000 		.4byte	.LFB7
  1360 004c 26000000 		.4byte	.LFE7-.LFB7
  1361 0050 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 32
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 32
 
 
  1362 0054 18000000 		.4byte	.LFE8-.LFB8
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1409      6F7200
  1410              	.LASF25:
  1411 0021 6973725F 		.ascii	"isr_LOOP_GetPriority\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 33
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 33
 
 
  1411      4C4F4F50 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1431      727400
  1432              	.LASF10:
  1433 00df 75696E74 		.ascii	"uint8\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 34
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 34
 
 
  1433      3800
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 1
  1453              	.LASF4:
  1454 01ab 756E7369 		.ascii	"unsigned int\000"
  1454      676E6564 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccy8Ta6x.s 			page 35
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 35
 
 
  1454      20696E74 

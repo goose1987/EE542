@@ -122,7 +122,10 @@ void main()
     
     sinptr = sineLUT;
    
-   
+    //setup and start interrupts
+    isr_LOOP_Start();
+    
+    isr_LUT_Start();
     
     //CyDelay(5000);//delay
     
