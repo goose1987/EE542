@@ -1,5 +1,5 @@
 # invert
-# 2014-11-24 03:42:25Z
+# 2014-12-05 06:39:05Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -15,7 +15,7 @@ set_io "B_HS(0)" iocell 5 3
 set_io "B_LS(0)" iocell 5 4
 set_io "Rx_1(0)" iocell 0 0
 set_io "Tx_1(0)" iocell 0 1
-set_io "V_SENSE(0)" iocell 6 5
+set_io "V_SENSE(0)" iocell 1 2
 set_location "\ADC_DelSig_V:DSM2\" dsmodcell -1 -1 0
 set_io "\LCD_Char_1:LCDPort(0)\" iocell 2 0
 set_io "\LCD_Char_1:LCDPort(1)\" iocell 2 1

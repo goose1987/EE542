@@ -1,5 +1,5 @@
 -- Project:   invert
--- Generated: 11/23/2014 19:42:25
+-- Generated: 12/04/2014 22:39:05
 -- 
 
 ENTITY invert IS
@@ -54,7 +54,6 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL MISO(0)__PA : bit;
     SIGNAL MOSI(0)__PA : bit;
     SIGNAL Net_148 : bit;
-    SIGNAL Net_186 : bit;
     SIGNAL Net_309 : bit;
     SIGNAL Net_314 : bit;
     SIGNAL Net_370 : bit;
@@ -64,9 +63,6 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE global_signal OF Net_374 : SIGNAL IS true;
     SIGNAL Net_374_local : bit;
     SIGNAL Net_380 : bit;
-    SIGNAL Net_427 : bit;
-    ATTRIBUTE global_signal OF Net_427 : SIGNAL IS true;
-    SIGNAL Net_427_local : bit;
     SIGNAL Net_459 : bit;
     SIGNAL Net_475 : bit;
     SIGNAL Net_491 : bit;
@@ -75,6 +71,11 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL Net_507 : bit;
     SIGNAL Net_517 : bit;
     SIGNAL Net_518 : bit;
+    SIGNAL Net_529 : bit;
+    SIGNAL Net_552 : bit;
+    SIGNAL Net_608 : bit;
+    ATTRIBUTE global_signal OF Net_608 : SIGNAL IS true;
+    SIGNAL Net_608_local : bit;
     SIGNAL Rx_1(0)__PA : bit;
     SIGNAL SCLK(0)__PA : bit;
     SIGNAL SS(0)__PA : bit;
@@ -109,6 +110,8 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL \Control_Reg_1:control_5\ : bit;
     SIGNAL \Control_Reg_1:control_6\ : bit;
     SIGNAL \Control_Reg_1:control_7\ : bit;
+    SIGNAL \Counter_1:Net_42\ : bit;
+    SIGNAL \Counter_1:Net_47\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(0)\\__PA\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(1)\\__PA\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(2)\\__PA\ : bit;
@@ -219,6 +222,7 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE POWER OF one : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
+    SIGNAL \ClockBlock.clk_bus_glb_ff__sig\ : bit;
     SIGNAL \ClockBlock.aclk_glb_ff_0__sig\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:sP16:pwmdp:u0.ce0__sig\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:sP16:pwmdp:u0.cl0__sig\ : bit;
@@ -260,7 +264,7 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF V_SENSE(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P6[5]";
+    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P1[2]";
     ATTRIBUTE Location OF \ADC_DelSig_V:DSM2\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE lib_model OF \Control_Reg_1:Async:ctrl_reg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \LCD_Char_1:LCDPort(0)\ : LABEL IS "iocell10";
@@ -1797,20 +1801,21 @@ BEGIN
             imo => ClockBlock_IMO,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => Net_427,
-            dclk_0 => Net_427_local,
-            dclk_glb_1 => Net_491,
-            dclk_1 => Net_491_local,
-            dclk_glb_2 => \ADC_DelSig_V:Net_487\,
-            dclk_2 => \ADC_DelSig_V:Net_487_local\,
-            dclk_glb_3 => Net_374,
-            dclk_3 => Net_374_local,
+            dclk_glb_0 => Net_491,
+            dclk_0 => Net_491_local,
+            dclk_glb_1 => \ADC_DelSig_V:Net_487\,
+            dclk_1 => \ADC_DelSig_V:Net_487_local\,
             aclk_glb_0 => \ADC_DelSig_V:Net_40\,
             aclk_0 => \ADC_DelSig_V:Net_40_local\,
             clk_a_dig_glb_0 => \ADC_DelSig_V:Net_40_adig\,
             clk_a_dig_0 => \ADC_DelSig_V:Net_40_adig_local\,
+            dclk_glb_2 => Net_374,
+            dclk_2 => Net_374_local,
+            dclk_glb_3 => Net_608,
+            dclk_3 => Net_608_local,
             dclk_glb_4 => \UART_1:Net_9\,
             dclk_4 => \UART_1:Net_9_local\,
+            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\,
             aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
 
     MISO:logicalport
@@ -2490,7 +2495,7 @@ BEGIN
             mod_dat_0 => \ADC_DelSig_V:mod_dat_0\,
             ext_start => __ONE__,
             modrst => \ADC_DelSig_V:mod_reset\,
-            interrupt => Net_186);
+            interrupt => Net_529);
 
     \ADC_DelSig_V:DSM2\:dsmodcell
         GENERIC MAP(
@@ -2520,7 +2525,7 @@ BEGIN
         GENERIC MAP(
             int_type => "10")
         PORT MAP(
-            interrupt => Net_186,
+            interrupt => Net_529,
             clock => ClockBlock_BUS_CLK);
 
     \Control_Reg_1:Async:ctrl_reg\:controlcell
@@ -2540,6 +2545,19 @@ BEGIN
             control_1 => \Control_Reg_1:control_1\,
             control_0 => Net_507,
             busclk => ClockBlock_BUS_CLK);
+
+    \Counter_1:CounterHW\:timercell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => \ClockBlock.clk_bus_glb_ff__sig\,
+            kill => open,
+            enable => open,
+            capture => open,
+            timer_reset => open,
+            tc => Net_552,
+            cmp => \Counter_1:Net_47\,
+            irq => \Counter_1:Net_42\);
 
     \LCD_Char_1:LCDPort(0)\:iocell
         GENERIC MAP(
@@ -2746,7 +2764,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:db_cnt_0\,
-            clock_0 => Net_427,
+            clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
             main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
@@ -2762,7 +2780,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:db_cnt_1\,
-            clock_0 => Net_427,
+            clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
             main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
@@ -2778,7 +2796,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
-            clock_0 => Net_427,
+            clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
             main_2 => \PWM_BUCK:PWMUDB:db_ph1_run_temp\,
@@ -2792,7 +2810,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
-            clock_0 => Net_427,
+            clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:pwm_db_reg\,
             main_2 => \PWM_BUCK:PWMUDB:db_ph2_run_temp\,
@@ -2806,7 +2824,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:final_kill_reg\,
-            clock_0 => Net_427);
+            clock_0 => ClockBlock_BUS_CLK);
 
     \PWM_BUCK:PWMUDB:prevCompare1\:macrocell
         GENERIC MAP(
@@ -2815,7 +2833,7 @@ BEGIN
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:prevCompare1\,
             main_0 => \PWM_BUCK:PWMUDB:compare1\,
-            clock_0 => Net_427);
+            clock_0 => ClockBlock_BUS_CLK);
 
     \PWM_BUCK:PWMUDB:pwm_db_reg\:macrocell
         GENERIC MAP(
@@ -2823,7 +2841,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:pwm_db_reg\,
-            clock_0 => Net_427,
+            clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
             main_1 => \PWM_BUCK:PWMUDB:compare1\);
 
@@ -2834,7 +2852,7 @@ BEGIN
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:runmode_enable\,
             main_0 => \PWM_BUCK:PWMUDB:ctrl_enable\,
-            clock_0 => Net_427);
+            clock_0 => ClockBlock_BUS_CLK);
 
     \PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:controlcell
         GENERIC MAP(
@@ -2899,7 +2917,7 @@ BEGIN
             uses_p_out => '0',
             clk_inv => '0')
         PORT MAP(
-            clock => Net_427,
+            clock => ClockBlock_BUS_CLK,
             cs_addr_2 => \PWM_BUCK:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_BUCK:PWMUDB:runmode_enable\,
             busclk => ClockBlock_BUS_CLK,
@@ -2944,7 +2962,7 @@ BEGIN
             uses_p_out => '0',
             clk_inv => '0')
         PORT MAP(
-            clock => Net_427,
+            clock => ClockBlock_BUS_CLK,
             cs_addr_2 => \PWM_BUCK:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_BUCK:PWMUDB:runmode_enable\,
             cl0_comb => \PWM_BUCK:PWMUDB:compare1\,
@@ -2972,7 +2990,7 @@ BEGIN
             cy_md_select => "0100111",
             clk_inv => '0')
         PORT MAP(
-            clock => Net_427,
+            clock => ClockBlock_BUS_CLK,
             status_6 => open,
             status_5 => \PWM_BUCK:PWMUDB:status_5\,
             status_4 => open,
@@ -2987,7 +3005,7 @@ BEGIN
             clk_inv => '0')
         PORT MAP(
             q => \PWM_BUCK:PWMUDB:status_0\,
-            clock_0 => Net_427,
+            clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM_BUCK:PWMUDB:compare1\,
             main_1 => \PWM_BUCK:PWMUDB:prevCompare1\);
 
@@ -3671,5 +3689,12 @@ BEGIN
             q => cydff_2,
             main_0 => Net_475,
             clock_0 => Net_491);
+
+    isr_LUT:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => Net_552,
+            clock => ClockBlock_BUS_CLK);
 
 END __DEFAULT__;

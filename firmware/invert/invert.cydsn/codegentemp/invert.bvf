@@ -11,12 +11,14 @@ Verifying bitstream.
 
 ---------Processing bitstream.---------
 
+Utilized "udb_hv_a@[UDB Pair=(0,0)]"
 Utilized "udb_hv_b@[UDB Pair=(0,1)]"
 Utilized "udb_hv_a@[UDB Pair=(0,2)]"
 Utilized "udb_hv_b@[UDB Pair=(0,3)]"
 Utilized "udb_hc@[UDB Pair=(0,3)]"
 Utilized "udb_hv_a@[UDB Pair=(0,4)]"
 Utilized "udb_hc@[UDB Pair=(0,4)]"
+Utilized "udb_hv_b@[UDB Pair=(0,5)]"
 Utilized "udb_hc@[UDB Pair=(0,5)]"
 Utilized "udb_hv_b@[UDB Pair=(1,0)]"
 Utilized "udb_hv_a@[UDB Pair=(1,1)]"
@@ -24,241 +26,295 @@ Utilized "udb_hv_b@[UDB Pair=(1,2)]"
 Utilized "udb_hc@[UDB Pair=(1,2)]"
 Utilized "udb_hv_a@[UDB Pair=(1,3)]"
 Utilized "udb_hc@[UDB Pair=(1,3)]"
-Utilized "udb_hv_b@[UDB Pair=(1,4)]"
-Utilized "udb_hc@[UDB Pair=(1,5)]"
+Utilized "udb_hc@[UDB Pair=(1,4)]"
+Utilized "udb_hv_a@[UDB Pair=(1,5)]"
+Utilized "dsi_hv_b@[DSI=(0,0)][side=top]"
 Utilized "dsi_hv_a@[DSI=(1,0)][side=bottom]"
-Utilized "dsi_hv_a@[DSI=(0,1)][side=top]"
+Utilized "dsi_hc@[DSI=(0,1)][side=top]"
 Utilized "dsi_hc@[DSI=(1,1)][side=bottom]"
-Utilized "dsi_hv_b@[DSI=(1,1)][side=bottom]"
 Utilized "dsi_hc@[DSI=(0,2)][side=top]"
-Utilized "dsi_hv_b@[DSI=(0,2)][side=top]"
+Utilized "dsi_hc@[DSI=(1,2)][side=bottom]"
+Utilized "dsi_hv_a@[DSI=(1,2)][side=bottom]"
 Utilized "dsi_hv_a@[DSI=(0,3)][side=top]"
 Utilized "dsi_hv_b@[DSI=(1,3)][side=bottom]"
-Utilized "dsi_hc@[DSI=(0,4)][side=top]"
 Utilized "dsi_hv_b@[DSI=(0,4)][side=top]"
 Utilized "dsi_hc@[DSI=(1,4)][side=bottom]"
-Utilized "dsi_hv_a@[DSI=(1,4)][side=bottom]"
 Utilized "dsi_hc@[DSI=(0,5)][side=top]"
+Utilized "dsi_hv_a@[DSI=(0,5)][side=top]"
+Utilized "dsi_hc@[DSI=(1,5)][side=bottom]"
 
 ---------Propagating signals.---------
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_zero\" on jack "pld0:out0[UDB=(0,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "dp:in4[UDB=(2,2)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:inv_ss\" on jack "pld0:out1[UDB=(0,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:inout2[UDB=(0,3)]"
-    
-    
-
-Found signal "\UART_1:BUART:rx_status_5\" on jack "pld0:out2[UDB=(0,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:inout1[UDB=(0,4)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one\" on jack "pld0:out3[UDB=(0,3)]".
+Found signal "\PWM_BUCK:PWMUDB:runmode_enable\" on jack "pld0:out2[UDB=(0,3)]".
 Number of connected bvjacks: 2.
 
-    1. Connected jack name: "dp:in5[UDB=(3,2)]"
+    1. Connected jack name: "dp:in2[UDB=(2,2)]"
     
-    2. Connected jack name: "statctrl:in1[UDB=(3,3)]"
+    2. Connected jack name: "dp:in2[UDB=(3,2)]"
     
     
 
-Found signal "Net_309" on jack "pld1:out3[UDB=(0,3)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:inv_ss\" on jack "pld1:out2[UDB=(0,3)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "io_ijack_1[IOP=(0)]"
+    1. Connected jack name: "statctrl:inout1[UDB=(1,3)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_0\" on jack "statctrl:out0[UDB=(0,3)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_full\" on jack "dp:out2[UDB=(0,3)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld0:in3[UDB=(0,3)]"
+    1. Connected jack name: "statctrl:in0[UDB=(0,3)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_1\" on jack "statctrl:out1[UDB=(0,3)]".
-Number of connected bvjacks: 1.
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:dp8MOSI_f0_not_empty\" on jack "dp:out4[UDB=(0,3)]".
+Number of connected bvjacks: 2.
 
-    1. Connected jack name: "pld0:in1[UDB=(0,3)]"
+    1. Connected jack name: "statctrl:in3[UDB=(2,3)]"
     
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_2\" on jack "statctrl:out2[UDB=(0,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "pld0:in9[UDB=(0,3)]"
+    2. Connected jack name: "pld0:in10[UDB=(2,3)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_3\" on jack "statctrl:out3[UDB=(0,3)]".
-Number of connected bvjacks: 1.
+Found signal "\PWM_BUCK:PWMUDB:ctrl_enable\" on jack "statctrl:out7[UDB=(0,3)]".
+Number of connected bvjacks: 6.
 
-    1. Connected jack name: "pld0:in8[UDB=(0,3)]"
+    1. Connected jack name: "pld0:in4[UDB=(0,3)]"
     
+    2. Connected jack name: "pld1:in9[UDB=(3,2)]"
     
-
-Found signal "\UART_1:BUART:tx_status_0\" on jack "pld0:out0[UDB=(1,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:in0[UDB=(1,3)]"
+    3. Connected jack name: "pld0:in6[UDB=(3,3)]"
     
+    4. Connected jack name: "pld1:in9[UDB=(3,3)]"
     
-
-Found signal "\UART_1:BUART:tx_bitclk\" on jack "pld0:out1[UDB=(1,3)]".
-Number of connected bvjacks: 4.
-
-    1. Connected jack name: "pld1:in2[UDB=(1,4)]"
+    5. Connected jack name: "pld1:in6[UDB=(2,3)]"
     
-    2. Connected jack name: "pld0:in5[UDB=(1,4)]"
-    
-    3. Connected jack name: "pld0:in5[UDB=(1,3)]"
-    
-    4. Connected jack name: "pld1:in10[UDB=(1,3)]"
+    6. Connected jack name: "pld0:in3[UDB=(2,3)]"
     
     
 
-Found signal "\UART_1:BUART:counter_load_not\" on jack "pld0:out2[UDB=(1,3)]".
-Number of connected bvjacks: 1.
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_full_dbl_reg\" on jack "statctrl:inout0[UDB=(0,3)]".
+Number of connected bvjacks: 2.
 
-    1. Connected jack name: "dp:in1[UDB=(1,3)]"
+    1. Connected jack name: "statctrl:inout2[UDB=(2,3)]"
+    
+    2. Connected jack name: "pld0:in7[UDB=(1,5)]"
     
     
 
-Found signal "Net_517" on jack "pld1:out1[UDB=(1,3)]".
-Number of connected bvjacks: 1.
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one\" on jack "pld0:out1[UDB=(1,3)]".
+Number of connected bvjacks: 2.
 
-    1. Connected jack name: "io_ijack_6[IOP=(5)]"
+    1. Connected jack name: "statctrl:in0[UDB=(3,3)]"
+    
+    2. Connected jack name: "dp:in2[UDB=(0,3)]"
     
     
 
-Found signal "\UART_1:BUART:tx_status_2\" on jack "pld1:out2[UDB=(1,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:in2[UDB=(1,3)]"
-    
-    
-
-Found signal "\UART_1:BUART:tx_state_0\" on jack "pld1:out3[UDB=(1,3)]".
+Found signal "\UART_1:BUART:tx_state_1\" on jack "pld0:out2[UDB=(1,3)]".
 Number of connected bvjacks: 5.
 
-    1. Connected jack name: "pld0:in8[UDB=(1,4)]"
+    1. Connected jack name: "pld1:in6[UDB=(1,4)]"
     
-    2. Connected jack name: "pld1:in4[UDB=(1,4)]"
+    2. Connected jack name: "pld0:in2[UDB=(1,3)]"
     
-    3. Connected jack name: "dp:in3[UDB=(1,4)]"
+    3. Connected jack name: "pld0:in1[UDB=(2,2)]"
     
-    4. Connected jack name: "pld0:in3[UDB=(1,3)]"
+    4. Connected jack name: "pld1:in9[UDB=(2,2)]"
     
-    5. Connected jack name: "pld1:in4[UDB=(1,3)]"
+    5. Connected jack name: "dp:in1[UDB=(2,3)]"
     
     
 
-Found signal "\UART_1:BUART:tx_counter_dp\" on jack "dp:out0[UDB=(1,3)]".
-Number of connected bvjacks: 2.
+Found signal "\UART_1:BUART:tx_bitclk_enable_pre\" on jack "pld0:out3[UDB=(1,3)]".
+Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld0:in9[UDB=(1,4)]"
+    1. Connected jack name: "dp:in5[UDB=(2,3)]"
     
-    2. Connected jack name: "pld1:in1[UDB=(1,4)]"
+    
+
+Found signal "\UART_1:BUART:tx_bitclk\" on jack "pld1:out0[UDB=(1,3)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld1:in4[UDB=(1,4)]"
+    
+    2. Connected jack name: "pld0:in8[UDB=(2,2)]"
+    
+    3. Connected jack name: "pld1:in1[UDB=(2,2)]"
+    
+    4. Connected jack name: "pld0:in0[UDB=(1,3)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:byte_complete\" on jack "pld1:out1[UDB=(1,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout2[UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_zero\" on jack "pld1:out2[UDB=(1,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in2[UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:tx_status_0\" on jack "pld1:out3[UDB=(1,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in0[UDB=(1,4)]"
     
     
 
 Found signal "\UART_1:BUART:tx_bitclk_dp\" on jack "dp:out2[UDB=(1,3)]".
 Number of connected bvjacks: 2.
 
-    1. Connected jack name: "pld0:in0[UDB=(1,3)]"
+    1. Connected jack name: "pld0:in4[UDB=(1,3)]"
     
-    2. Connected jack name: "pld1:in8[UDB=(1,4)]"
-    
-    
-
-Found signal "\UART_1:BUART:rx_bitclk_enable\" on jack "pld0:out3[UDB=(0,4)]".
-Number of connected bvjacks: 3.
-
-    1. Connected jack name: "dp:in4[UDB=(0,4)]"
-    
-    2. Connected jack name: "pld1:in3[UDB=(0,5)]"
-    
-    3. Connected jack name: "pld0:in7[UDB=(0,5)]"
+    2. Connected jack name: "pld1:in3[UDB=(1,3)]"
     
     
 
-Found signal "\UART_1:BUART:pollcount_1\" on jack "pld1:out1[UDB=(0,4)]".
+Found signal "\UART_1:BUART:tx_counter_dp\" on jack "dp:out3[UDB=(1,3)]".
 Number of connected bvjacks: 2.
 
-    1. Connected jack name: "pld1:in5[UDB=(0,5)]"
+    1. Connected jack name: "pld1:in10[UDB=(1,4)]"
     
-    2. Connected jack name: "pld1:in5[UDB=(0,4)]"
+    2. Connected jack name: "pld0:in5[UDB=(1,3)]"
     
     
 
-Found signal "\UART_1:BUART:pollcount_0\" on jack "pld1:out2[UDB=(0,4)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_0\" on jack "statctrl:out0[UDB=(1,3)]".
 Number of connected bvjacks: 2.
 
-    1. Connected jack name: "pld1:in1[UDB=(0,4)]"
+    1. Connected jack name: "pld0:in3[UDB=(1,3)]"
     
-    2. Connected jack name: "pld1:in10[UDB=(0,5)]"
+    2. Connected jack name: "pld1:in4[UDB=(1,3)]"
     
     
 
-Found signal "\UART_1:BUART:rx_postpoll\" on jack "pld1:out3[UDB=(0,4)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_1\" on jack "statctrl:out1[UDB=(1,3)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in9[UDB=(1,3)]"
+    
+    2. Connected jack name: "pld1:in5[UDB=(1,3)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_2\" on jack "statctrl:out2[UDB=(1,3)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld1:in1[UDB=(1,3)]"
+    
+    2. Connected jack name: "pld0:in10[UDB=(1,3)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:count_3\" on jack "statctrl:out3[UDB=(1,3)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in7[UDB=(1,3)]"
+    
+    2. Connected jack name: "pld1:in8[UDB=(1,3)]"
+    
+    
+
+Found signal "\UART_1:BUART:pollcount_1\" on jack "pld0:out0[UDB=(0,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in4[UDB=(0,5)]"
+    
+    2. Connected jack name: "pld0:in4[UDB=(0,4)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_last\" on jack "pld0:out1[UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in9[UDB=(0,5)]"
+    
+    
+
+Found signal "\UART_1:BUART:pollcount_0\" on jack "pld0:out2[UDB=(0,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in1[UDB=(0,5)]"
+    
+    2. Connected jack name: "pld0:in1[UDB=(0,4)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_postpoll\" on jack "pld0:out3[UDB=(0,4)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "dp:in0[UDB=(0,4)]"
     
     
 
+Found signal "\UART_1:BUART:rx_state_stop1_reg\" on jack "pld1:out1[UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in2[UDB=(0,4)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_status_5\" on jack "pld1:out2[UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout1[UDB=(1,5)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_address_detected\" on jack "pld1:out3[UDB=(0,4)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in0[UDB=(0,5)]"
+    
+    2. Connected jack name: "pld1:in7[UDB=(0,5)]"
+    
+    3. Connected jack name: "dp:in5[UDB=(0,4)]"
+    
+    4. Connected jack name: "pld1:in7[UDB=(0,4)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_fifonotempty\" on jack "dp:out0[UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in1[UDB=(0,4)]"
+    
+    
+
 Found signal "\UART_1:BUART:rx_fifofull\" on jack "dp:out1[UDB=(0,4)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld0:in3[UDB=(0,5)]"
+    1. Connected jack name: "pld1:in4[UDB=(0,5)]"
     
     
 
-Found signal "\UART_1:BUART:rx_fifonotempty\" on jack "dp:out4[UDB=(0,4)]".
+Found signal "Net_380" on jack "pld0:out0[UDB=(1,4)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld0:in6[UDB=(0,3)]"
+    1. Connected jack name: "io_ijack_5[IOP=(15)]"
     
     
 
-Found signal "\UART_1:BUART:txn\" on jack "pld0:out2[UDB=(1,4)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_reg\" on jack "pld0:out1[UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in6[UDB=(1,3)]"
+    
+    
+
+Found signal "\UART_1:BUART:txn\" on jack "pld1:out1[UDB=(1,4)]".
 Number of connected bvjacks: 2.
 
-    1. Connected jack name: "pld0:in6[UDB=(1,4)]"
+    1. Connected jack name: "pld0:in2[UDB=(1,5)]"
     
-    2. Connected jack name: "pld1:in2[UDB=(0,3)]"
-    
-    
-
-Found signal "\UART_1:BUART:tx_bitclk_enable_pre\" on jack "pld1:out0[UDB=(1,4)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "dp:in4[UDB=(1,4)]"
-    
-    
-
-Found signal "\UART_1:BUART:tx_state_1\" on jack "pld1:out1[UDB=(1,4)]".
-Number of connected bvjacks: 5.
-
-    1. Connected jack name: "pld0:in10[UDB=(1,3)]"
-    
-    2. Connected jack name: "pld1:in6[UDB=(1,3)]"
-    
-    3. Connected jack name: "pld0:in10[UDB=(1,4)]"
-    
-    4. Connected jack name: "pld1:in6[UDB=(1,4)]"
-    
-    5. Connected jack name: "dp:in1[UDB=(1,4)]"
+    2. Connected jack name: "pld1:in2[UDB=(1,4)]"
     
     
 
@@ -267,117 +323,104 @@ Number of connected bvjacks: 4.
 
     1. Connected jack name: "pld0:in1[UDB=(1,3)]"
     
-    2. Connected jack name: "pld1:in2[UDB=(1,3)]"
+    2. Connected jack name: "pld0:in4[UDB=(2,2)]"
     
-    3. Connected jack name: "pld0:in1[UDB=(1,4)]"
+    3. Connected jack name: "pld1:in11[UDB=(2,2)]"
     
     4. Connected jack name: "pld1:in5[UDB=(1,4)]"
     
     
 
-Found signal "\UART_1:BUART:tx_fifo_notfull\" on jack "dp:out1[UDB=(1,4)]".
-Number of connected bvjacks: 2.
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:miso_from_dp\" on jack "dp:out0[UDB=(1,4)]".
+Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld1:in8[UDB=(1,3)]"
-    
-    2. Connected jack name: "statctrl:in3[UDB=(1,3)]"
+    1. Connected jack name: "pld0:in6[UDB=(1,4)]"
     
     
 
-Found signal "\UART_1:BUART:tx_fifo_empty\" on jack "dp:out4[UDB=(1,4)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:miso_tx_empty\" on jack "dp:out1[UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in1[UDB=(3,3)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:dp8MISO_f0_not_full\" on jack "dp:out4[UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in1[UDB=(1,4)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_status_3\" on jack "pld0:out0[UDB=(0,5)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in3[UDB=(1,5)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_state_0\" on jack "pld0:out2[UDB=(0,5)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in6[UDB=(0,5)]"
+    
+    2. Connected jack name: "pld1:in9[UDB=(0,4)]"
+    
+    3. Connected jack name: "dp:in1[UDB=(0,4)]"
+    
+    4. Connected jack name: "pld1:in6[UDB=(0,5)]"
+    
+    
+
+Found signal "\UART_1:BUART:rx_state_3\" on jack "pld0:out3[UDB=(0,5)]".
 Number of connected bvjacks: 3.
 
-    1. Connected jack name: "pld0:in2[UDB=(1,3)]"
+    1. Connected jack name: "pld1:in8[UDB=(0,4)]"
     
-    2. Connected jack name: "statctrl:in1[UDB=(1,3)]"
+    2. Connected jack name: "pld1:in8[UDB=(0,5)]"
     
-    3. Connected jack name: "pld1:in1[UDB=(1,3)]"
-    
-    
-
-Found signal "\UART_1:BUART:tx_shift_out\" on jack "dp:out5[UDB=(1,4)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "pld0:in4[UDB=(1,4)]"
+    3. Connected jack name: "pld0:in3[UDB=(0,5)]"
     
     
 
-Found signal "\UART_1:BUART:rx_status_4\" on jack "pld0:out0[UDB=(0,5)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:inout0[UDB=(0,4)]"
-    
-    
-
-Found signal "\UART_1:BUART:rx_last\" on jack "pld0:out1[UDB=(0,5)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "pld0:in2[UDB=(0,5)]"
-    
-    
-
-Found signal "\UART_1:BUART:rx_load_fifo\" on jack "pld0:out2[UDB=(0,5)]".
+Found signal "\UART_1:BUART:rx_load_fifo\" on jack "pld1:out0[UDB=(0,5)]".
 Number of connected bvjacks: 2.
 
-    1. Connected jack name: "pld0:in1[UDB=(0,5)]"
+    1. Connected jack name: "dp:in4[UDB=(0,4)]"
     
-    2. Connected jack name: "dp:in5[UDB=(0,4)]"
+    2. Connected jack name: "pld1:in3[UDB=(0,5)]"
     
     
 
-Found signal "\UART_1:BUART:rx_state_2\" on jack "pld0:out3[UDB=(0,5)]".
+Found signal "\UART_1:BUART:rx_state_2\" on jack "pld1:out1[UDB=(0,5)]".
 Number of connected bvjacks: 3.
 
-    1. Connected jack name: "pld1:in8[UDB=(0,5)]"
+    1. Connected jack name: "pld1:in5[UDB=(0,4)]"
     
-    2. Connected jack name: "pld0:in11[UDB=(0,5)]"
+    2. Connected jack name: "pld0:in2[UDB=(0,5)]"
     
-    3. Connected jack name: "pld0:in11[UDB=(1,5)]"
-    
-    
-
-Found signal "\UART_1:BUART:rx_status_3\" on jack "pld1:out0[UDB=(0,5)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:in3[UDB=(0,4)]"
+    3. Connected jack name: "pld1:in5[UDB=(0,5)]"
     
     
 
-Found signal "\UART_1:BUART:rx_counter_load\" on jack "pld1:out1[UDB=(0,5)]".
+Found signal "\UART_1:BUART:rx_counter_load\" on jack "pld1:out2[UDB=(0,5)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "statctrl:in1[UDB=(0,5)]"
     
     
 
-Found signal "\UART_1:BUART:rx_state_0\" on jack "pld1:out2[UDB=(0,5)]".
-Number of connected bvjacks: 4.
+Found signal "\UART_1:BUART:rx_status_4\" on jack "pld1:out3[UDB=(0,5)]".
+Number of connected bvjacks: 1.
 
-    1. Connected jack name: "dp:in1[UDB=(0,4)]"
-    
-    2. Connected jack name: "pld0:in6[UDB=(0,5)]"
-    
-    3. Connected jack name: "pld0:in6[UDB=(1,5)]"
-    
-    4. Connected jack name: "pld1:in6[UDB=(0,5)]"
-    
-    
-
-Found signal "\UART_1:BUART:rx_state_3\" on jack "pld1:out3[UDB=(0,5)]".
-Number of connected bvjacks: 3.
-
-    1. Connected jack name: "pld1:in7[UDB=(0,5)]"
-    
-    2. Connected jack name: "pld0:in0[UDB=(0,5)]"
-    
-    3. Connected jack name: "pld0:in3[UDB=(1,5)]"
+    1. Connected jack name: "statctrl:inout0[UDB=(1,5)]"
     
     
 
 Found signal "\UART_1:BUART:rx_count_0\" on jack "statctrl:out0[UDB=(0,5)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld0:in11[UDB=(0,4)]"
+    1. Connected jack name: "pld0:in11[UDB=(1,5)]"
     
     
 
@@ -386,7 +429,7 @@ Number of connected bvjacks: 2.
 
     1. Connected jack name: "pld0:in10[UDB=(0,4)]"
     
-    2. Connected jack name: "pld1:in2[UDB=(0,4)]"
+    2. Connected jack name: "pld0:in9[UDB=(1,5)]"
     
     
 
@@ -395,7 +438,7 @@ Number of connected bvjacks: 2.
 
     1. Connected jack name: "pld0:in9[UDB=(0,4)]"
     
-    2. Connected jack name: "pld1:in6[UDB=(0,4)]"
+    2. Connected jack name: "pld0:in10[UDB=(1,5)]"
     
     
 
@@ -426,146 +469,129 @@ Number of connected bvjacks: 2.
     
     
 
-Found signal "\UART_1:BUART:rx_address_detected\" on jack "pld0:out0[UDB=(1,5)]".
-Number of connected bvjacks: 4.
+Found signal "\UART_1:BUART:rx_bitclk_enable\" on jack "pld0:out0[UDB=(1,5)]".
+Number of connected bvjacks: 3.
 
-    1. Connected jack name: "pld0:in4[UDB=(0,5)]"
+    1. Connected jack name: "pld0:in7[UDB=(0,5)]"
     
-    2. Connected jack name: "pld0:in4[UDB=(1,5)]"
+    2. Connected jack name: "dp:in3[UDB=(0,4)]"
     
-    3. Connected jack name: "dp:in3[UDB=(0,4)]"
-    
-    4. Connected jack name: "pld1:in11[UDB=(0,5)]"
+    3. Connected jack name: "pld1:in11[UDB=(0,5)]"
     
     
 
-Found signal "\UART_1:BUART:rx_state_stop1_reg\" on jack "pld0:out1[UDB=(1,5)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:rx_status_5\" on jack "pld0:out1[UDB=(1,5)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld0:in5[UDB=(0,3)]"
+    1. Connected jack name: "statctrl:inout1[UDB=(2,3)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_empty\" on jack "pld1:out0[UDB=(1,5)]".
+Found signal "Net_309" on jack "pld0:out3[UDB=(1,5)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "statctrl:inout0[UDB=(1,4)]"
+    1. Connected jack name: "io_ijack_1[IOP=(0)]"
     
     
 
-Found signal "Net_380" on jack "pld1:out1[UDB=(1,5)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "io_ijack_2[IOP=(0)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:prevCompare1\" on jack "pld0:out0[UDB=(2,2)]".
+Found signal "\PWM_BUCK:PWMUDB:final_kill_reg\" on jack "pld0:out0[UDB=(2,2)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "pld1:in8[UDB=(2,2)]"
     
     
 
-Found signal "\PWM_BUCK:PWMUDB:pwm_db_reg\" on jack "pld0:out2[UDB=(2,2)]".
+Found signal "\UART_1:BUART:tx_status_2\" on jack "pld0:out2[UDB=(2,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in2[UDB=(2,2)]"
+    
+    
+
+Found signal "\UART_1:BUART:counter_load_not\" on jack "pld0:out3[UDB=(2,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in5[UDB=(1,3)]"
+    
+    
+
+Found signal "\UART_1:BUART:tx_state_0\" on jack "pld1:out0[UDB=(2,2)]".
 Number of connected bvjacks: 5.
 
-    1. Connected jack name: "pld1:in9[UDB=(1,3)]"
+    1. Connected jack name: "pld1:in3[UDB=(1,4)]"
     
-    2. Connected jack name: "pld0:in2[UDB=(3,3)]"
+    2. Connected jack name: "pld0:in8[UDB=(1,3)]"
     
-    3. Connected jack name: "pld1:in10[UDB=(2,3)]"
+    3. Connected jack name: "pld0:in3[UDB=(2,2)]"
     
-    4. Connected jack name: "pld0:in9[UDB=(2,3)]"
+    4. Connected jack name: "dp:in3[UDB=(2,3)]"
     
-    5. Connected jack name: "pld1:in10[UDB=(2,2)]"
+    5. Connected jack name: "pld1:in4[UDB=(2,2)]"
     
     
 
-Found signal "\PWM_BUCK:PWMUDB:status_0\" on jack "pld1:out0[UDB=(2,2)]".
+Found signal "\PWM_BUCK:PWMUDB:status_5\" on jack "pld1:out1[UDB=(2,2)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "statctrl:in0[UDB=(2,3)]"
+    1. Connected jack name: "statctrl:inout1[UDB=(3,2)]"
     
     
 
-Found signal "\PWM_BUCK:PWMUDB:db_cnt_1\" on jack "pld1:out2[UDB=(2,2)]".
-Number of connected bvjacks: 3.
-
-    1. Connected jack name: "pld1:in2[UDB=(2,3)]"
-    
-    2. Connected jack name: "pld0:in2[UDB=(2,3)]"
-    
-    3. Connected jack name: "pld1:in2[UDB=(2,2)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:dp8MISO_f0_not_full\" on jack "dp:out0[UDB=(2,2)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:in1[UDB=(3,2)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:miso_tx_empty\" on jack "dp:out1[UDB=(2,2)]".
+Found signal "\UART_1:BUART:tx_status_0\" on jack "pld1:out3[UDB=(2,2)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "statctrl:in0[UDB=(2,2)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:miso_from_dp\" on jack "dp:out4[UDB=(2,2)]".
+Found signal "\PWM_BUCK:PWMUDB:status_3\" on jack "dp:out1[UDB=(2,2)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld1:in2[UDB=(1,5)]"
+    1. Connected jack name: "statctrl:in3[UDB=(3,2)]"
     
     
 
-Found signal "\PWM_BUCK:PWMUDB:db_cnt_load_0\" on jack "statctrl:out0[UDB=(2,2)]".
+Found signal "\PWM_BUCK:PWMUDB:tc_i\" on jack "dp:out3[UDB=(2,2)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "dp:in1[UDB=(2,2)]"
+    
+    2. Connected jack name: "statctrl:in2[UDB=(3,2)]"
+    
+    3. Connected jack name: "dp:in1[UDB=(3,2)]"
+    
+    
+
+Found signal "\PWM_BUCK:PWMUDB:compare1\" on jack "dp:out4[UDB=(2,2)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld0:in5[UDB=(3,3)]"
+    
+    2. Connected jack name: "pld0:in2[UDB=(2,3)]"
+    
+    3. Connected jack name: "pld1:in10[UDB=(3,3)]"
+    
+    4. Connected jack name: "pld1:in5[UDB=(2,3)]"
+    
+    5. Connected jack name: "pld1:in10[UDB=(3,2)]"
+    
+    
+
+Found signal "cydff_2" on jack "pld0:out0[UDB=(3,2)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "pld1:in3[UDB=(2,3)]"
+    1. Connected jack name: "pld0:in4[UDB=(3,2)]"
     
     
 
-Found signal "\PWM_BUCK:PWMUDB:db_cnt_load_1\" on jack "statctrl:out1[UDB=(2,2)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "pld1:in5[UDB=(2,2)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:miso_tx_empty_reg_fin\" on jack "statctrl:inout0[UDB=(2,2)]".
-Number of connected bvjacks: 2.
-
-    1. Connected jack name: "statctrl:in2[UDB=(3,2)]"
-    
-    2. Connected jack name: "pld0:in7[UDB=(3,2)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_reg\" on jack "pld0:out1[UDB=(3,2)]".
+Found signal "Net_475" on jack "pld0:out1[UDB=(3,2)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "pld0:in5[UDB=(3,2)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:byte_complete\" on jack "pld0:out2[UDB=(3,2)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:inout2[UDB=(3,2)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:tx_status_0\" on jack "pld0:out3[UDB=(3,2)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:in0[UDB=(3,2)]"
-    
-    
-
-Found signal "Net_459" on jack "pld1:out1[UDB=(3,2)]".
+Found signal "Net_459" on jack "pld0:out2[UDB=(3,2)]".
 Number of connected bvjacks: 2.
 
     1. Connected jack name: "io_ijack_2[IOP=(5)]"
@@ -574,7 +600,7 @@ Number of connected bvjacks: 2.
     
     
 
-Found signal "Net_148" on jack "pld1:out2[UDB=(3,2)]".
+Found signal "Net_148" on jack "pld0:out3[UDB=(3,2)]".
 Number of connected bvjacks: 2.
 
     1. Connected jack name: "io_ijack_1[IOP=(5)]"
@@ -583,188 +609,169 @@ Number of connected bvjacks: 2.
     
     
 
-Found signal "cydff_2" on jack "pld1:out3[UDB=(3,2)]".
+Found signal "\PWM_BUCK:PWMUDB:status_0\" on jack "pld1:out0[UDB=(3,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in0[UDB=(3,2)]"
+    
+    
+
+Found signal "\PWM_BUCK:PWMUDB:db_ph2_run_temp\" on jack "pld1:out1[UDB=(3,2)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld0:in10[UDB=(3,3)]"
+    
+    2. Connected jack name: "pld1:in6[UDB=(3,3)]"
+    
+    3. Connected jack name: "pld1:in6[UDB=(3,2)]"
+    
+    
+
+Found signal "\PWM_BUCK:PWMUDB:prevCompare1\" on jack "pld1:out3[UDB=(3,2)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "pld1:in3[UDB=(3,2)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_full\" on jack "dp:out1[UDB=(3,2)]".
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_empty\" on jack "pld0:out0[UDB=(2,3)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "statctrl:in0[UDB=(3,3)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:dp8MOSI_f0_not_empty\" on jack "dp:out4[UDB=(3,2)]".
-Number of connected bvjacks: 2.
-
-    1. Connected jack name: "pld1:in4[UDB=(1,5)]"
-    
-    2. Connected jack name: "statctrl:in3[UDB=(1,4)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:db_ph2_run_temp\" on jack "pld0:out0[UDB=(2,3)]".
-Number of connected bvjacks: 4.
-
-    1. Connected jack name: "pld1:in3[UDB=(2,2)]"
-    
-    2. Connected jack name: "pld1:in0[UDB=(1,3)]"
-    
-    3. Connected jack name: "pld0:in3[UDB=(2,3)]"
-    
-    4. Connected jack name: "pld1:in7[UDB=(2,3)]"
+    1. Connected jack name: "statctrl:inout0[UDB=(2,3)]"
     
     
 
 Found signal "\PWM_BUCK:PWMUDB:db_ph1_run_temp\" on jack "pld0:out1[UDB=(2,3)]".
-Number of connected bvjacks: 4.
-
-    1. Connected jack name: "pld1:in6[UDB=(2,2)]"
-    
-    2. Connected jack name: "pld0:in5[UDB=(2,3)]"
-    
-    3. Connected jack name: "pld1:in6[UDB=(2,3)]"
-    
-    4. Connected jack name: "pld0:in6[UDB=(3,3)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:runmode_enable\" on jack "pld0:out2[UDB=(2,3)]".
-Number of connected bvjacks: 2.
-
-    1. Connected jack name: "dp:in1[UDB=(2,3)]"
-    
-    2. Connected jack name: "dp:in5[UDB=(3,3)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:final_kill_reg\" on jack "pld1:out1[UDB=(2,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "pld1:in5[UDB=(2,3)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:status_5\" on jack "pld1:out2[UDB=(2,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:inout1[UDB=(2,3)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:db_cnt_0\" on jack "pld1:out3[UDB=(2,3)]".
 Number of connected bvjacks: 3.
 
-    1. Connected jack name: "pld1:in7[UDB=(2,2)]"
+    1. Connected jack name: "pld0:in2[UDB=(3,3)]"
     
-    2. Connected jack name: "pld0:in8[UDB=(2,3)]"
+    2. Connected jack name: "pld1:in2[UDB=(3,3)]"
     
-    3. Connected jack name: "pld1:in8[UDB=(2,3)]"
+    3. Connected jack name: "pld0:in5[UDB=(2,3)]"
     
     
 
-Found signal "\PWM_BUCK:PWMUDB:ctrl_enable\" on jack "statctrl:out7[UDB=(2,3)]".
-Number of connected bvjacks: 6.
+Found signal "\PWM_BUCK:PWMUDB:pwm_db_reg\" on jack "pld1:out2[UDB=(2,3)]".
+Number of connected bvjacks: 4.
 
-    1. Connected jack name: "pld1:in11[UDB=(2,2)]"
+    1. Connected jack name: "pld1:in1[UDB=(3,2)]"
     
-    2. Connected jack name: "pld0:in11[UDB=(2,2)]"
+    2. Connected jack name: "pld0:in1[UDB=(2,3)]"
+    
+    3. Connected jack name: "pld0:in1[UDB=(3,3)]"
+    
+    4. Connected jack name: "pld1:in1[UDB=(3,3)]"
+    
+    
+
+Found signal "\UART_1:BUART:tx_shift_out\" on jack "dp:out0[UDB=(2,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in8[UDB=(1,4)]"
+    
+    
+
+Found signal "\UART_1:BUART:tx_fifo_notfull\" on jack "dp:out1[UDB=(2,3)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:in3[UDB=(2,2)]"
+    
+    2. Connected jack name: "pld0:in7[UDB=(2,2)]"
+    
+    
+
+Found signal "\UART_1:BUART:tx_fifo_empty\" on jack "dp:out4[UDB=(2,3)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:in1[UDB=(2,2)]"
+    
+    2. Connected jack name: "pld1:in5[UDB=(2,2)]"
+    
+    
+
+Found signal "Net_507" on jack "statctrl:out0[UDB=(2,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in11[UDB=(3,2)]"
+    
+    
+
+Found signal "\PWM_BUCK:PWMUDB:db_cnt_1\" on jack "pld0:out0[UDB=(3,3)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in4[UDB=(2,3)]"
+    
+    2. Connected jack name: "pld1:in3[UDB=(3,3)]"
+    
+    3. Connected jack name: "pld0:in4[UDB=(3,3)]"
+    
+    4. Connected jack name: "pld1:in11[UDB=(3,2)]"
+    
+    
+
+Found signal "Net_517" on jack "pld0:out1[UDB=(3,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_6[IOP=(5)]"
+    
+    
+
+Found signal "\PWM_BUCK:PWMUDB:db_cnt_0\" on jack "pld1:out0[UDB=(3,3)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld1:in4[UDB=(3,2)]"
+    
+    2. Connected jack name: "pld0:in0[UDB=(2,3)]"
     
     3. Connected jack name: "pld0:in0[UDB=(3,3)]"
     
-    4. Connected jack name: "pld1:in11[UDB=(2,3)]"
-    
-    5. Connected jack name: "pld1:in7[UDB=(1,3)]"
-    
-    6. Connected jack name: "pld0:in11[UDB=(2,3)]"
+    4. Connected jack name: "pld1:in7[UDB=(3,3)]"
     
     
 
-Found signal "Net_518" on jack "pld0:out1[UDB=(3,3)]".
+Found signal "Net_518" on jack "pld1:out1[UDB=(3,3)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "io_ijack_5[IOP=(5)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:rx_status_5\" on jack "pld0:out2[UDB=(3,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:inout1[UDB=(1,4)]"
-    
-    
-
-Found signal "Net_475" on jack "pld1:out3[UDB=(3,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "pld1:in4[UDB=(3,2)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:status_3\" on jack "dp:out1[UDB=(3,3)]".
-Number of connected bvjacks: 1.
-
-    1. Connected jack name: "statctrl:in3[UDB=(2,3)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:compare1\" on jack "dp:out4[UDB=(3,3)]".
-Number of connected bvjacks: 6.
-
-    1. Connected jack name: "pld0:in10[UDB=(2,2)]"
-    
-    2. Connected jack name: "pld1:in1[UDB=(2,2)]"
-    
-    3. Connected jack name: "pld1:in5[UDB=(1,3)]"
-    
-    4. Connected jack name: "pld0:in10[UDB=(2,3)]"
-    
-    5. Connected jack name: "pld0:in10[UDB=(3,3)]"
-    
-    6. Connected jack name: "pld1:in1[UDB=(2,3)]"
-    
-    
-
-Found signal "\PWM_BUCK:PWMUDB:tc_i\" on jack "dp:out5[UDB=(3,3)]".
-Number of connected bvjacks: 3.
-
-    1. Connected jack name: "dp:in3[UDB=(3,3)]"
-    
-    2. Connected jack name: "statctrl:in2[UDB=(2,3)]"
-    
-    3. Connected jack name: "dp:in3[UDB=(2,3)]"
-    
-    
-
-Found signal "Net_507" on jack "statctrl:out0[UDB=(3,3)]".
+Found signal "\PWM_BUCK:PWMUDB:db_cnt_load_0\" on jack "statctrl:out0[UDB=(3,3)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "pld1:in4[UDB=(3,3)]"
     
     
 
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_full_dbl_reg\" on jack "statctrl:inout0[UDB=(3,3)]".
+Found signal "\PWM_BUCK:PWMUDB:db_cnt_load_1\" on jack "statctrl:out1[UDB=(3,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in9[UDB=(3,3)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_fin\" on jack "statctrl:inout0[UDB=(3,3)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld1:in9[UDB=(1,3)]"
+    
+    2. Connected jack name: "pld0:in1[UDB=(1,5)]"
+    
+    3. Connected jack name: "pld0:in9[UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIS_1:BSPIS:es2:SPISlave:miso_tx_empty_reg_fin\" on jack "statctrl:inout1[UDB=(3,3)]".
 Number of connected bvjacks: 2.
 
-    1. Connected jack name: "statctrl:inout2[UDB=(1,4)]"
+    1. Connected jack name: "statctrl:in2[UDB=(1,4)]"
     
-    2. Connected jack name: "pld0:in11[UDB=(3,3)]"
-    
-    
-
-Found signal "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_fin\" on jack "statctrl:inout1[UDB=(3,3)]".
-Number of connected bvjacks: 2.
-
-    1. Connected jack name: "pld0:in9[UDB=(3,2)]"
-    
-    2. Connected jack name: "pld0:in9[UDB=(3,3)]"
+    2. Connected jack name: "pld1:in7[UDB=(1,3)]"
     
     
 
-Found signal "__ONE__" on jack "pld0:out2[UDB=(2,5)]".
+Found signal "__ONE__" on jack "pld1:out0[UDB=(3,4)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "ext_start[FFB(Decimator,0)]"
@@ -774,58 +781,65 @@ Number of connected bvjacks: 1.
 Found signal "Net_314" on jack "io_ojack_0[IOP=(0)]".
 Number of connected bvjacks: 3.
 
-    1. Connected jack name: "pld1:in0[UDB=(0,4)]"
+    1. Connected jack name: "pld0:in11[UDB=(0,4)]"
     
-    2. Connected jack name: "pld1:in9[UDB=(0,5)]"
+    2. Connected jack name: "pld0:in11[UDB=(0,5)]"
     
-    3. Connected jack name: "pld0:in5[UDB=(0,5)]"
-    
-    
-
-Found signal "Net_372" on jack "io_ojack_3[IOP=(0)]".
-Number of connected bvjacks: 5.
-
-    1. Connected jack name: "pld0:in4[UDB=(0,3)]"
-    
-    2. Connected jack name: "dp:in5[UDB=(2,2)]"
-    
-    3. Connected jack name: "dp:in3[UDB=(3,2)]"
-    
-    4. Connected jack name: "clkrst:in2[UDB=(0,3)]"
-    
-    5. Connected jack name: "pld1:in0[UDB=(1,5)]"
+    3. Connected jack name: "pld1:in10[UDB=(0,5)]"
     
     
 
-Found signal "Net_371" on jack "io_ojack_4[IOP=(4)]".
+Found signal "Net_371" on jack "io_ojack_4[IOP=(0)]".
 Number of connected bvjacks: 3.
 
-    1. Connected jack name: "clkrst:in2[UDB=(2,2)]"
+    1. Connected jack name: "clkrst:in0[UDB=(0,3)]"
     
-    2. Connected jack name: "clkrst:in2[UDB=(3,2)]"
+    2. Connected jack name: "clkrst:in0[UDB=(1,3)]"
     
-    3. Connected jack name: "clkrst:in3[UDB=(0,3)]"
+    3. Connected jack name: "clkrst:in0[UDB=(1,4)]"
     
     
 
-Found signal "Net_370" on jack "io_ojack_5[IOP=(15)]".
+Found signal "Net_372" on jack "io_ojack_6[IOP=(0)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld1:in0[UDB=(0,3)]"
+    
+    2. Connected jack name: "dp:in0[UDB=(0,3)]"
+    
+    3. Connected jack name: "clkrst:in3[UDB=(1,3)]"
+    
+    4. Connected jack name: "pld0:in2[UDB=(1,4)]"
+    
+    5. Connected jack name: "dp:in5[UDB=(1,4)]"
+    
+    
+
+Found signal "Net_370" on jack "io_ojack_5[IOP=(6)]".
 Number of connected bvjacks: 1.
 
-    1. Connected jack name: "dp:in0[UDB=(3,2)]"
+    1. Connected jack name: "dp:in5[UDB=(0,3)]"
     
     
 
-Found signal "\ADC_DelSig_V:Net_487_local\" on jack "dclk[2][FFB(Clock,0)]".
+Found signal "\ADC_DelSig_V:Net_487_local\" on jack "dclk[1][FFB(Clock,0)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "extclk_cp_udb[FFB(DSM,0)]"
     
     
 
-Found signal "Net_186" on jack "interrupt[FFB(Decimator,0)]".
+Found signal "Net_529" on jack "interrupt[FFB(Decimator,0)]".
 Number of connected bvjacks: 1.
 
     1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(29)]"
+    
+    
+
+Found signal "Net_552" on jack "tc[FFB(Timer,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(0)]"
     
     
 

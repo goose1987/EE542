@@ -19,7 +19,6 @@
 #include <cydevice_trm.h>
 #include <cyfitter.h>
 #include <PWM_BUCK.h>
-#include <Clock_1.h>
 #include <BUCK_LS_aliases.h>
 #include <BUCK_LS.h>
 #include <A_HS_aliases.h>
@@ -49,6 +48,9 @@
 #include <Clock_3.h>
 #include <BUCK_HS_aliases.h>
 #include <BUCK_HS.h>
+#include <Counter_1.h>
+#include <isr_LUT.h>
+#include <Clock_4.h>
 #include <ADC_DelSig_V_theACLK.h>
 #include <ADC_DelSig_V_Ext_CP_Clk.h>
 #include <ADC_DelSig_V_AMux.h>

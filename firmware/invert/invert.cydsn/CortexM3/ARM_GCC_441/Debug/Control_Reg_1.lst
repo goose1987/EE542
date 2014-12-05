@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
   20:.\Generated_Source\PSoC5/Control_Reg_1.c **** 
   21:.\Generated_Source\PSoC5/Control_Reg_1.c **** /*******************************************************************************
   22:.\Generated_Source\PSoC5/Control_Reg_1.c **** * Function Name: Control_Reg_1_Write
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 2
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 2
 
 
   23:.\Generated_Source\PSoC5/Control_Reg_1.c **** ********************************************************************************
@@ -94,8 +94,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
   48 0008 FB71     		strb	r3, [r7, #7]
   37:.\Generated_Source\PSoC5/Control_Reg_1.c ****     Control_Reg_1_Control = control;
   49              		.loc 1 37 0
-  50 000a 46F27543 		movw	r3, #:lower16:1073767541
-  51 000e C4F20003 		movt	r3, #:upper16:1073767541
+  50 000a 46F27443 		movw	r3, #:lower16:1073767540
+  51 000e C4F20003 		movt	r3, #:upper16:1073767540
   52 0012 FA79     		ldrb	r2, [r7, #7]
   53 0014 1A70     		strb	r2, [r3, #0]
   38:.\Generated_Source\PSoC5/Control_Reg_1.c **** }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
   39:.\Generated_Source\PSoC5/Control_Reg_1.c **** 
   40:.\Generated_Source\PSoC5/Control_Reg_1.c **** 
   41:.\Generated_Source\PSoC5/Control_Reg_1.c **** /*******************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 3
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 3
 
 
   42:.\Generated_Source\PSoC5/Control_Reg_1.c **** * Function Name: Control_Reg_1_Read
@@ -150,8 +150,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
   81              		.cfi_def_cfa_register 7
   57:.\Generated_Source\PSoC5/Control_Reg_1.c ****     return Control_Reg_1_Control;
   82              		.loc 1 57 0
-  83 0004 46F27543 		movw	r3, #:lower16:1073767541
-  84 0008 C4F20003 		movt	r3, #:upper16:1073767541
+  83 0004 46F27443 		movw	r3, #:lower16:1073767540
+  84 0008 C4F20003 		movt	r3, #:upper16:1073767540
   85 000c 1B78     		ldrb	r3, [r3, #0]
   86 000e DBB2     		uxtb	r3, r3
   58:.\Generated_Source\PSoC5/Control_Reg_1.c **** }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  107 0015 7D       		.byte	0x7d
  108 0016 04       		.sleb128 4
  109 0017 04000000 		.4byte	.LCFI1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 4
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 4
 
 
  110 001b 06000000 		.4byte	.LCFI2
@@ -216,10 +216,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
  143 000a 04       		.byte	0x4
  144 000b 01       		.uleb128 0x1
- 145 000c E5000000 		.4byte	.LASF12
+ 145 000c E3000000 		.4byte	.LASF12
  146 0010 01       		.byte	0x1
- 147 0011 1B010000 		.4byte	.LASF13
- 148 0015 69000000 		.4byte	.LASF14
+ 147 0011 19010000 		.4byte	.LASF13
+ 148 0015 A1000000 		.4byte	.LASF14
  149 0019 00000000 		.4byte	0x0
  150 001d 00000000 		.4byte	0x0
  151 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
@@ -227,7 +227,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  153 0029 02       		.uleb128 0x2
  154 002a 01       		.byte	0x1
  155 002b 06       		.byte	0x6
- 156 002c 0F010000 		.4byte	.LASF0
+ 156 002c 0D010000 		.4byte	.LASF0
  157 0030 02       		.uleb128 0x2
  158 0031 01       		.byte	0x1
  159 0032 08       		.byte	0x8
@@ -235,10 +235,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  161 0037 02       		.uleb128 0x2
  162 0038 02       		.byte	0x2
  163 0039 05       		.byte	0x5
- 164 003a F6000000 		.4byte	.LASF2
+ 164 003a F4000000 		.4byte	.LASF2
  165 003e 02       		.uleb128 0x2
  166 003f 02       		.byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 5
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 5
 
 
  167 0040 07       		.byte	0x7
@@ -246,7 +246,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  169 0045 02       		.uleb128 0x2
  170 0046 04       		.byte	0x4
  171 0047 05       		.byte	0x5
- 172 0048 06010000 		.4byte	.LASF4
+ 172 0048 04010000 		.4byte	.LASF4
  173 004c 02       		.uleb128 0x2
  174 004d 04       		.byte	0x4
  175 004e 07       		.byte	0x7
@@ -258,7 +258,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  181 005a 02       		.uleb128 0x2
  182 005b 08       		.byte	0x8
  183 005c 07       		.byte	0x7
- 184 005d BA000000 		.4byte	.LASF7
+ 184 005d 76000000 		.4byte	.LASF7
  185 0061 03       		.uleb128 0x3
  186 0062 04       		.byte	0x4
  187 0063 05       		.byte	0x5
@@ -266,9 +266,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  189 0068 02       		.uleb128 0x2
  190 0069 04       		.byte	0x4
  191 006a 07       		.byte	0x7
- 192 006b AD000000 		.4byte	.LASF8
+ 192 006b 69000000 		.4byte	.LASF8
  193 006f 04       		.uleb128 0x4
- 194 0070 00010000 		.4byte	.LASF15
+ 194 0070 FE000000 		.4byte	.LASF15
  195 0074 02       		.byte	0x2
  196 0075 4C       		.byte	0x4c
  197 0076 30000000 		.4byte	0x30
@@ -283,10 +283,10 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  206 0088 02       		.uleb128 0x2
  207 0089 01       		.byte	0x1
  208 008a 08       		.byte	0x8
- 209 008b F1000000 		.4byte	.LASF11
+ 209 008b EF000000 		.4byte	.LASF11
  210 008f 05       		.uleb128 0x5
  211 0090 01       		.byte	0x1
- 212 0091 D1000000 		.4byte	.LASF16
+ 212 0091 8D000000 		.4byte	.LASF16
  213 0095 01       		.byte	0x1
  214 0096 23       		.byte	0x23
  215 0097 01       		.byte	0x1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  221 00a9 5A000000 		.4byte	.LASF17
  222 00ad 01       		.byte	0x1
  223 00ae 23       		.byte	0x23
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 6
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 6
 
 
  224 00af 6F000000 		.4byte	0x6f
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  278 0025 3E       		.uleb128 0x3e
  279 0026 0B       		.uleb128 0xb
  280 0027 03       		.uleb128 0x3
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 7
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 7
 
 
  281 0028 08       		.uleb128 0x8
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  335 005e 07       		.uleb128 0x7
  336 005f 2E       		.uleb128 0x2e
  337 0060 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 8
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 8
 
 
  338 0061 3F       		.uleb128 0x3f
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  384              	.Ldebug_ranges0:
  385 0000 00000000 		.4byte	.Ltext0
  386 0004 00000000 		.4byte	.Letext0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 9
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 9
 
 
  387 0008 00000000 		.4byte	.LFB0
@@ -525,61 +525,61 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 1
  408              	.LASF10:
  409 0062 646F7562 		.ascii	"double\000"
  409      6C6500
- 410              	.LASF14:
- 411 0069 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
- 411      73657273 
- 411      5C686F61 
- 411      6E67705C 
- 411      446F6375 
- 412 0096 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
- 412      6E766572 
- 412      745C696E 
- 412      76657274 
- 412      2E637964 
- 413              	.LASF8:
- 414 00ad 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccpr2iWy.s 			page 10
+ 410              	.LASF8:
+ 411 0069 756E7369 		.ascii	"unsigned int\000"
+ 411      676E6564 
+ 411      20696E74 
+ 411      00
+ 412              	.LASF7:
+ 413 0076 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 413      206C6F6E 
+ 413      6720756E 
+ 413      7369676E 
+ 413      65642069 
+ 414              	.LASF16:
+ 415 008d 436F6E74 		.ascii	"Control_Reg_1_Write\000"
+ARM GAS  C:\Users\USER\AppData\Local\Temp\cc0rkQWg.s 			page 10
 
 
- 414      676E6564 
- 414      20696E74 
- 414      00
- 415              	.LASF7:
- 416 00ba 6C6F6E67 		.ascii	"long long unsigned int\000"
- 416      206C6F6E 
- 416      6720756E 
- 416      7369676E 
- 416      65642069 
- 417              	.LASF16:
- 418 00d1 436F6E74 		.ascii	"Control_Reg_1_Write\000"
- 418      726F6C5F 
- 418      5265675F 
- 418      315F5772 
- 418      69746500 
+ 415      726F6C5F 
+ 415      5265675F 
+ 415      315F5772 
+ 415      69746500 
+ 416              	.LASF14:
+ 417 00a1 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
+ 417      73657273 
+ 417      5C555345 
+ 417      525C446F 
+ 417      63756D65 
+ 418 00ce 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
+ 418      6572745C 
+ 418      696E7665 
+ 418      72742E63 
+ 418      7964736E 
  419              	.LASF12:
- 420 00e5 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 420 00e3 474E5520 		.ascii	"GNU C 4.4.1\000"
  420      4320342E 
  420      342E3100 
  421              	.LASF11:
- 422 00f1 63686172 		.ascii	"char\000"
+ 422 00ef 63686172 		.ascii	"char\000"
  422      00
  423              	.LASF2:
- 424 00f6 73686F72 		.ascii	"short int\000"
+ 424 00f4 73686F72 		.ascii	"short int\000"
  424      7420696E 
  424      7400
  425              	.LASF15:
- 426 0100 75696E74 		.ascii	"uint8\000"
+ 426 00fe 75696E74 		.ascii	"uint8\000"
  426      3800
  427              	.LASF4:
- 428 0106 6C6F6E67 		.ascii	"long int\000"
+ 428 0104 6C6F6E67 		.ascii	"long int\000"
  428      20696E74 
  428      00
  429              	.LASF0:
- 430 010f 7369676E 		.ascii	"signed char\000"
+ 430 010d 7369676E 		.ascii	"signed char\000"
  430      65642063 
  430      68617200 
  431              	.LASF13:
- 432 011b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Control_Reg_1.c\000"
+ 432 0119 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Control_Reg_1.c\000"
  432      6E657261 
  432      7465645F 
  432      536F7572 

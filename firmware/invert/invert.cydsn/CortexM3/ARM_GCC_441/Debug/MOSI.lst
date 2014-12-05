@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
   20:.\Generated_Source\PSoC5/MOSI.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
   21:.\Generated_Source\PSoC5/MOSI.c **** #if !(CY_PSOC5A &&\
   22:.\Generated_Source\PSoC5/MOSI.c **** 	 MOSI__PORT == 15 && ((MOSI__MASK & 0xC0) != 0))
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 2
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 2
 
 
   23:.\Generated_Source\PSoC5/MOSI.c **** 
@@ -98,16 +98,16 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
   48 0008 FB71     		strb	r3, [r7, #7]
   41:.\Generated_Source\PSoC5/MOSI.c ****     uint8 staticBits = (MOSI_DR & (uint8)(~MOSI_MASK));
   49              		.loc 1 41 0
-  50 000a 45F2F013 		movw	r3, #:lower16:1073762800
-  51 000e C4F20003 		movt	r3, #:upper16:1073762800
+  50 000a 45F26013 		movw	r3, #:lower16:1073762656
+  51 000e C4F20003 		movt	r3, #:upper16:1073762656
   52 0012 1B78     		ldrb	r3, [r3, #0]
   53 0014 DBB2     		uxtb	r3, r3
   54 0016 23F02003 		bic	r3, r3, #32
   55 001a FB73     		strb	r3, [r7, #15]
   42:.\Generated_Source\PSoC5/MOSI.c ****     MOSI_DR = staticBits | ((uint8)(value << MOSI_SHIFT) & MOSI_MASK);
   56              		.loc 1 42 0
-  57 001c 45F2F013 		movw	r3, #:lower16:1073762800
-  58 0020 C4F20003 		movt	r3, #:upper16:1073762800
+  57 001c 45F26013 		movw	r3, #:lower16:1073762656
+  58 0020 C4F20003 		movt	r3, #:upper16:1073762656
   59 0024 FA79     		ldrb	r2, [r7, #7]
   60 0026 4FEA4212 		lsl	r2, r2, #5
   61 002a D2B2     		uxtb	r2, r2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
   66 0038 1A70     		strb	r2, [r3, #0]
   43:.\Generated_Source\PSoC5/MOSI.c **** }
   67              		.loc 1 43 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 3
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 3
 
 
   68 003a 07F11407 		add	r7, r7, #20
@@ -173,12 +173,12 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
   99 0008 FB71     		strb	r3, [r7, #7]
   62:.\Generated_Source\PSoC5/MOSI.c **** 	CyPins_SetPinDriveMode(MOSI_0, mode);
  100              		.loc 1 62 0
- 101 000a 45F27D03 		movw	r3, #:lower16:1073762429
- 102 000e C4F20003 		movt	r3, #:upper16:1073762429
- 103 0012 45F27D02 		movw	r2, #:lower16:1073762429
- 104 0016 C4F20002 		movt	r2, #:upper16:1073762429
+ 101 000a 45F23503 		movw	r3, #:lower16:1073762357
+ 102 000e C4F20003 		movt	r3, #:upper16:1073762357
+ 103 0012 45F23502 		movw	r2, #:lower16:1073762357
+ 104 0016 C4F20002 		movt	r2, #:upper16:1073762357
  105 001a 1278     		ldrb	r2, [r2, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 4
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 4
 
 
  106 001c D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  137 0000 80B4     		push	{r7}
  138              	.LCFI6:
  139              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 5
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 5
 
 
  140 0002 00AF     		add	r7, sp, #0
@@ -247,8 +247,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  143              		.cfi_def_cfa_register 7
   86:.\Generated_Source\PSoC5/MOSI.c ****     return (MOSI_PS & MOSI_MASK) >> MOSI_SHIFT;
  144              		.loc 1 86 0
- 145 0004 45F2F113 		movw	r3, #:lower16:1073762801
- 146 0008 C4F20003 		movt	r3, #:upper16:1073762801
+ 145 0004 45F26113 		movw	r3, #:lower16:1073762657
+ 146 0008 C4F20003 		movt	r3, #:upper16:1073762657
  147 000c 1B78     		ldrb	r3, [r3, #0]
  148 000e DBB2     		uxtb	r3, r3
  149 0010 03F02003 		and	r3, r3, #32
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  174              	.LCFI8:
  175              		.cfi_def_cfa_offset 4
  176 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 6
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 6
 
 
  177              		.cfi_offset 7, -4
@@ -306,8 +306,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  179              		.cfi_def_cfa_register 7
  106:.\Generated_Source\PSoC5/MOSI.c ****     return (MOSI_DR & MOSI_MASK) >> MOSI_SHIFT;
  180              		.loc 1 106 0
- 181 0004 45F2F013 		movw	r3, #:lower16:1073762800
- 182 0008 C4F20003 		movt	r3, #:upper16:1073762800
+ 181 0004 45F26013 		movw	r3, #:lower16:1073762656
+ 182 0008 C4F20003 		movt	r3, #:upper16:1073762656
  183 000c 1B78     		ldrb	r3, [r3, #0]
  184 000e DBB2     		uxtb	r3, r3
  185 0010 03F02003 		and	r3, r3, #32
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  229 004a 0200     		.2byte	0x2
  230 004c 7D       		.byte	0x7d
  231 004d 04       		.sleb128 4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 7
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 7
 
 
  232 004e 04000000 		.4byte	.LCFI4
@@ -414,11 +414,11 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  282 0006 00000000 		.4byte	.Ldebug_abbrev0
  283 000a 04       		.byte	0x4
  284 000b 01       		.uleb128 0x1
- 285 000c 13010000 		.4byte	.LASF18
+ 285 000c 11010000 		.4byte	.LASF18
  286 0010 01       		.byte	0x1
- 287 0011 E4000000 		.4byte	.LASF19
- 288 0015 6A000000 		.4byte	.LASF20
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 8
+ 287 0011 A0000000 		.4byte	.LASF19
+ 288 0015 C0000000 		.4byte	.LASF20
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 8
 
 
  289 0019 00000000 		.4byte	0x0
@@ -428,7 +428,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  293 0029 02       		.uleb128 0x2
  294 002a 01       		.byte	0x1
  295 002b 06       		.byte	0x6
- 296 002c 4E010000 		.4byte	.LASF0
+ 296 002c 4C010000 		.4byte	.LASF0
  297 0030 02       		.uleb128 0x2
  298 0031 01       		.byte	0x1
  299 0032 08       		.byte	0x8
@@ -436,7 +436,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  301 0037 02       		.uleb128 0x2
  302 0038 02       		.byte	0x2
  303 0039 05       		.byte	0x5
- 304 003a 24010000 		.4byte	.LASF2
+ 304 003a 22010000 		.4byte	.LASF2
  305 003e 02       		.uleb128 0x2
  306 003f 02       		.byte	0x2
  307 0040 07       		.byte	0x7
@@ -444,7 +444,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  309 0045 02       		.uleb128 0x2
  310 0046 04       		.byte	0x4
  311 0047 05       		.byte	0x5
- 312 0048 34010000 		.4byte	.LASF4
+ 312 0048 32010000 		.4byte	.LASF4
  313 004c 02       		.uleb128 0x2
  314 004d 04       		.byte	0x4
  315 004e 07       		.byte	0x7
@@ -456,7 +456,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  321 005a 02       		.uleb128 0x2
  322 005b 08       		.byte	0x8
  323 005c 07       		.byte	0x7
- 324 005d CD000000 		.4byte	.LASF7
+ 324 005d 89000000 		.4byte	.LASF7
  325 0061 03       		.uleb128 0x3
  326 0062 04       		.byte	0x4
  327 0063 05       		.byte	0x5
@@ -464,9 +464,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  329 0068 02       		.uleb128 0x2
  330 0069 04       		.byte	0x4
  331 006a 07       		.byte	0x7
- 332 006b AE000000 		.4byte	.LASF8
+ 332 006b 6A000000 		.4byte	.LASF8
  333 006f 04       		.uleb128 0x4
- 334 0070 2E010000 		.4byte	.LASF21
+ 334 0070 2C010000 		.4byte	.LASF21
  335 0074 02       		.byte	0x2
  336 0075 4C       		.byte	0x4c
  337 0076 30000000 		.4byte	0x30
@@ -478,13 +478,13 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  343 0082 08       		.byte	0x8
  344 0083 04       		.byte	0x4
  345 0084 63000000 		.4byte	.LASF10
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 9
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 9
 
 
  346 0088 02       		.uleb128 0x2
  347 0089 01       		.byte	0x1
  348 008a 08       		.byte	0x8
- 349 008b 1F010000 		.4byte	.LASF11
+ 349 008b 1D010000 		.4byte	.LASF11
  350 008f 05       		.uleb128 0x5
  351 0090 01       		.byte	0x1
  352 0091 0E000000 		.4byte	.LASF12
@@ -514,7 +514,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  376 00c4 00       		.byte	0x0
  377 00c5 05       		.uleb128 0x5
  378 00c6 01       		.byte	0x1
- 379 00c7 BB000000 		.4byte	.LASF13
+ 379 00c7 77000000 		.4byte	.LASF13
  380 00cb 01       		.byte	0x1
  381 00cc 3C       		.byte	0x3c
  382 00cd 01       		.byte	0x1
@@ -523,7 +523,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  385 00d6 37000000 		.4byte	.LLST1
  386 00da ED000000 		.4byte	0xed
  387 00de 06       		.uleb128 0x6
- 388 00df 04010000 		.4byte	.LASF15
+ 388 00df 02010000 		.4byte	.LASF15
  389 00e3 01       		.byte	0x1
  390 00e4 3C       		.byte	0x3c
  391 00e5 6F000000 		.4byte	0x6f
@@ -533,12 +533,12 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  395 00ec 00       		.byte	0x0
  396 00ed 08       		.uleb128 0x8
  397 00ee 01       		.byte	0x1
- 398 00ef 09010000 		.4byte	.LASF16
+ 398 00ef 07010000 		.4byte	.LASF16
  399 00f3 01       		.byte	0x1
  400 00f4 54       		.byte	0x54
  401 00f5 01       		.byte	0x1
  402 00f6 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 10
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 10
 
 
  403 00fa 00000000 		.4byte	.LFB2
@@ -546,7 +546,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  405 0102 6E000000 		.4byte	.LLST2
  406 0106 08       		.uleb128 0x8
  407 0107 01       		.byte	0x1
- 408 0108 3D010000 		.4byte	.LASF17
+ 408 0108 3B010000 		.4byte	.LASF17
  409 010c 01       		.byte	0x1
  410 010d 68       		.byte	0x68
  411 010e 01       		.byte	0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  457 0027 03       		.uleb128 0x3
  458 0028 08       		.uleb128 0x8
  459 0029 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 11
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 11
 
 
  460 002a 00       		.byte	0x0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  514 0060 00       		.byte	0x0
  515 0061 03       		.uleb128 0x3
  516 0062 0E       		.uleb128 0xe
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 12
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 12
 
 
  517 0063 3A       		.uleb128 0x3a
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  563 0045 4D4F5349 		.ascii	"MOSI_ReadDataReg\000"
  563      5F526561 
  563      64446174 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 13
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 13
 
 
  563      61526567 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  607      7400
  608              	.LASF1:
  609 0030 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 14
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 14
 
 
  609      676E6564 
@@ -799,76 +799,76 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 1
  614              	.LASF10:
  615 0063 646F7562 		.ascii	"double\000"
  615      6C6500
- 616              	.LASF20:
- 617 006a 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
- 617      73657273 
- 617      5C686F61 
- 617      6E67705C 
- 617      446F6375 
- 618 0097 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
- 618      6E766572 
- 618      745C696E 
- 618      76657274 
- 618      2E637964 
- 619              	.LASF8:
- 620 00ae 756E7369 		.ascii	"unsigned int\000"
- 620      676E6564 
- 620      20696E74 
- 620      00
- 621              	.LASF13:
- 622 00bb 4D4F5349 		.ascii	"MOSI_SetDriveMode\000"
- 622      5F536574 
- 622      44726976 
- 622      654D6F64 
- 622      6500
- 623              	.LASF7:
- 624 00cd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 624      206C6F6E 
- 624      6720756E 
- 624      7369676E 
- 624      65642069 
- 625              	.LASF19:
- 626 00e4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\MOSI.c\000"
- 626      6E657261 
- 626      7465645F 
- 626      536F7572 
- 626      63655C50 
+ 616              	.LASF8:
+ 617 006a 756E7369 		.ascii	"unsigned int\000"
+ 617      676E6564 
+ 617      20696E74 
+ 617      00
+ 618              	.LASF13:
+ 619 0077 4D4F5349 		.ascii	"MOSI_SetDriveMode\000"
+ 619      5F536574 
+ 619      44726976 
+ 619      654D6F64 
+ 619      6500
+ 620              	.LASF7:
+ 621 0089 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 621      206C6F6E 
+ 621      6720756E 
+ 621      7369676E 
+ 621      65642069 
+ 622              	.LASF19:
+ 623 00a0 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\MOSI.c\000"
+ 623      6E657261 
+ 623      7465645F 
+ 623      536F7572 
+ 623      63655C50 
+ 624              	.LASF20:
+ 625 00c0 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
+ 625      73657273 
+ 625      5C555345 
+ 625      525C446F 
+ 625      63756D65 
+ 626 00ed 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
+ 626      6572745C 
+ 626      696E7665 
+ 626      72742E63 
+ 626      7964736E 
  627              	.LASF15:
- 628 0104 6D6F6465 		.ascii	"mode\000"
+ 628 0102 6D6F6465 		.ascii	"mode\000"
  628      00
  629              	.LASF16:
- 630 0109 4D4F5349 		.ascii	"MOSI_Read\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccorS4jD.s 			page 15
+ 630 0107 4D4F5349 		.ascii	"MOSI_Read\000"
+ARM GAS  C:\Users\USER\AppData\Local\Temp\ccbCZRzf.s 			page 15
 
 
  630      5F526561 
  630      6400
  631              	.LASF18:
- 632 0113 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 632 0111 474E5520 		.ascii	"GNU C 4.4.1\000"
  632      4320342E 
  632      342E3100 
  633              	.LASF11:
- 634 011f 63686172 		.ascii	"char\000"
+ 634 011d 63686172 		.ascii	"char\000"
  634      00
  635              	.LASF2:
- 636 0124 73686F72 		.ascii	"short int\000"
+ 636 0122 73686F72 		.ascii	"short int\000"
  636      7420696E 
  636      7400
  637              	.LASF21:
- 638 012e 75696E74 		.ascii	"uint8\000"
+ 638 012c 75696E74 		.ascii	"uint8\000"
  638      3800
  639              	.LASF4:
- 640 0134 6C6F6E67 		.ascii	"long int\000"
+ 640 0132 6C6F6E67 		.ascii	"long int\000"
  640      20696E74 
  640      00
  641              	.LASF17:
- 642 013d 4D4F5349 		.ascii	"MOSI_ReadDataReg\000"
+ 642 013b 4D4F5349 		.ascii	"MOSI_ReadDataReg\000"
  642      5F526561 
  642      64446174 
  642      61526567 
  642      00
  643              	.LASF0:
- 644 014e 7369676E 		.ascii	"signed char\000"
+ 644 014c 7369676E 		.ascii	"signed char\000"
  644      65642063 
  644      68617200 
  645              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

@@ -1,6 +1,6 @@
 // ======================================================================
 // invert.v generated from TopDesign.cysch
-// 11/23/2014 at 19:42
+// 12/04/2014 at 22:39
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -300,7 +300,7 @@ module ADC_Vssa_v1_20_2 (
 
 endmodule
 
-// ADC_DelSig_v2_30(ADC_Charge_Pump_Clock=true, ADC_Clock=1, ADC_CLOCK_FREQUENCY=302000, ADC_Input_Mode=1, ADC_Input_Range=2, ADC_Input_Range_Config2=0, ADC_Input_Range_Config3=0, ADC_Input_Range_Config4=0, ADC_Power=1, ADC_Reference=5, ADC_Reference_Config2=0, ADC_Reference_Config3=0, ADC_Reference_Config4=0, ADC_Resolution=9, ADC_Resolution_Config2=16, ADC_Resolution_Config3=16, ADC_Resolution_Config4=16, Clock_Frequency=64000, Comment_Config1=Default Config, Comment_Config2=Second Config, Comment_Config3=Third Config, Comment_Config4=Fourth Config, Config1_Name=CFG1, Config2_Name=CFG2, Config3_Name=CFG3, Config4_Name=CFG4, Configs=4, Conversion_Mode=2, Conversion_Mode_Config2=2, Conversion_Mode_Config3=2, Conversion_Mode_Config4=2, Debug=false, DsmName=DSM2, Enable_Vref_Vss=false, Input_Buffer_Gain=1, Input_Buffer_Gain_Config2=1, Input_Buffer_Gain_Config3=1, Input_Buffer_Gain_Config4=1, Input_Buffer_Mode=1, Input_Buffer_Mode_Config2=1, Input_Buffer_Mode_Config3=1, Input_Buffer_Mode_Config4=1, PSOC5A=true, Ref_Voltage=1.25, Ref_Voltage_Config2=1.024, Ref_Voltage_Config3=1.024, Ref_Voltage_Config4=1.024, Sample_Rate=15100, Sample_Rate_Config2=10000, Sample_Rate_Config3=10000, Sample_Rate_Config4=10000, sRate_Err=false, Start_of_Conversion=0, Vdda_Value=5, CY_COMPONENT_NAME=ADC_DelSig_v2_30, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_DelSig_V, CY_INSTANCE_SHORT_NAME=ADC_DelSig_V, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=30, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_DelSig_V, )
+// ADC_DelSig_v2_30(ADC_Charge_Pump_Clock=true, ADC_Clock=1, ADC_CLOCK_FREQUENCY=2200000, ADC_Input_Mode=1, ADC_Input_Range=2, ADC_Input_Range_Config2=0, ADC_Input_Range_Config3=0, ADC_Input_Range_Config4=0, ADC_Power=1, ADC_Reference=5, ADC_Reference_Config2=0, ADC_Reference_Config3=0, ADC_Reference_Config4=0, ADC_Resolution=9, ADC_Resolution_Config2=16, ADC_Resolution_Config3=16, ADC_Resolution_Config4=16, Clock_Frequency=64000, Comment_Config1=Default Config, Comment_Config2=Second Config, Comment_Config3=Third Config, Comment_Config4=Fourth Config, Config1_Name=CFG1, Config2_Name=CFG2, Config3_Name=CFG3, Config4_Name=CFG4, Configs=4, Conversion_Mode=2, Conversion_Mode_Config2=2, Conversion_Mode_Config3=2, Conversion_Mode_Config4=2, Debug=false, DsmName=DSM2, Enable_Vref_Vss=false, Input_Buffer_Gain=1, Input_Buffer_Gain_Config2=1, Input_Buffer_Gain_Config3=1, Input_Buffer_Gain_Config4=1, Input_Buffer_Mode=1, Input_Buffer_Mode_Config2=1, Input_Buffer_Mode_Config3=1, Input_Buffer_Mode_Config4=1, PSOC5A=true, Ref_Voltage=1.25, Ref_Voltage_Config2=1.024, Ref_Voltage_Config3=1.024, Ref_Voltage_Config4=1.024, Sample_Rate=110000, Sample_Rate_Config2=10000, Sample_Rate_Config3=10000, Sample_Rate_Config4=10000, sRate_Err=false, Start_of_Conversion=0, Vdda_Value=5, CY_COMPONENT_NAME=ADC_DelSig_v2_30, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_DelSig_V, CY_INSTANCE_SHORT_NAME=ADC_DelSig_V, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=30, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_DelSig_V, )
 module ADC_DelSig_v2_30_3 (
     vplus,
     vminus,
@@ -374,7 +374,7 @@ module ADC_DelSig_v2_30_3 (
 		#(.id("f0264033-fa13-4600-a2f9-aa3a3e26f52f/edd15f43-b66b-457b-be3a-5342345270c8"),
 		  .source_clock_id("61737EF6-3B74-48f9-8B91-F7473A442AE7"),
 		  .divisor(0),
-		  .period("3311258278.1457"),
+		  .period("454545454.545455"),
 		  .is_direct(0),
 		  .is_digital(0))
 		theACLK
@@ -414,7 +414,7 @@ module ADC_DelSig_v2_30_3 (
 		#(.id("f0264033-fa13-4600-a2f9-aa3a3e26f52f/b7604721-db56-4477-98c2-8fae77869066"),
 		  .source_clock_id("61737EF6-3B74-48f9-8B91-F7473A442AE7"),
 		  .divisor(0),
-		  .period("827814569.536424"),
+		  .period("113636363.636364"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Ext_CP_Clk
@@ -812,9 +812,102 @@ module SPI_Slave_v2_50_6 (
 
 endmodule
 
+// Counter_v2_40(CaptureMode=0, CaptureModeSoftware=0, ClockMode=3, CompareMode=1, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=1, CONTROL3=0, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, EnableMode=0, FF16=true, FF8=false, FixedFunction=true, FixedFunctionUsed=1, InitCounterValue=1500, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=1500, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UseInterrupt=true, VerilogSectionReplacementString=sC16, CY_COMPONENT_NAME=Counter_v2_40, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Counter_1, CY_INSTANCE_SHORT_NAME=Counter_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=40, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Counter_1, )
+module Counter_v2_40_7 (
+    clock,
+    comp,
+    tc,
+    reset,
+    interrupt,
+    enable,
+    capture,
+    upCnt,
+    downCnt,
+    up_ndown,
+    count);
+    input       clock;
+    output      comp;
+    output      tc;
+    input       reset;
+    output      interrupt;
+    input       enable;
+    input       capture;
+    input       upCnt;
+    input       downCnt;
+    input       up_ndown;
+    input       count;
+
+    parameter CaptureMode = 0;
+    parameter ClockMode = 3;
+    parameter CompareMode = 1;
+    parameter CompareStatusEdgeSense = 1;
+    parameter EnableMode = 0;
+    parameter ReloadOnCapture = 0;
+    parameter ReloadOnCompare = 0;
+    parameter ReloadOnOverUnder = 1;
+    parameter ReloadOnReset = 1;
+    parameter Resolution = 16;
+    parameter RunMode = 0;
+    parameter UseInterrupt = 1;
+
+          wire  Net_47;
+          wire  Net_102;
+          wire  Net_95;
+          wire  Net_82;
+          wire  Net_91;
+          wire  Net_89;
+          wire  Net_49;
+          wire  Net_48;
+          wire  Net_42;
+          wire  Net_43;
+
+    cy_psoc3_timer_v1_0 CounterHW (
+        .timer_reset(reset),
+        .capture(capture),
+        .enable(Net_91),
+        .kill(Net_82),
+        .clock(clock),
+        .tc(Net_48),
+        .compare(Net_47),
+        .interrupt(Net_42));
+
+	// int_vm (cy_virtualmux_v1_0)
+	assign interrupt = Net_42;
+
+	// TC_vm (cy_virtualmux_v1_0)
+	assign tc = Net_48;
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(Net_82));
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_89 = Net_95;
+
+    ZeroTerminal ZeroTerminal_2 (
+        .z(Net_95));
+
+	// vmEnableMode (cy_virtualmux_v1_0)
+	assign Net_91 = enable;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_102));
+
+
+
+endmodule
+
 // top
 module top ;
 
+          wire  Net_583;
+          wire  Net_648;
+          wire  Net_647;
+          wire  Net_646;
+          wire  Net_645;
+          wire  Net_644;
+          wire  Net_643;
+          wire  Net_642;
+          wire  Net_641;
           wire  Net_388;
           wire  Net_378;
           wire  Net_377;
@@ -842,11 +935,11 @@ module top ;
           wire  Net_482;
           wire  Net_481;
           wire  Net_525;
-    electrical  Net_188;
-          wire  Net_187;
-          wire  Net_186;
-          wire  Net_185;
-    electrical  Net_306;
+    electrical  Net_531;
+          wire  Net_530;
+          wire  Net_529;
+          wire  Net_528;
+    electrical  Net_527;
     electrical  Net_152;
           wire  Net_298;
           wire  Net_295;
@@ -859,6 +952,10 @@ module top ;
           wire  Net_38;
           wire  Net_37;
           wire  Net_36;
+          wire  Net_608;
+          wire  Net_552;
+          wire  Net_548;
+          wire  Net_582;
           wire  Net_491;
           wire  Net_517;
           wire  Net_518;
@@ -867,7 +964,6 @@ module top ;
           wire  Net_459;
           wire  Net_148;
           wire  Net_507;
-          wire  Net_427;
           wire  Net_463;
           wire  Net_475;
           wire  Net_429;
@@ -881,7 +977,7 @@ module top ;
 
     PWM_v2_40_0 PWM_BUCK (
         .reset(Net_429),
-        .clock(Net_427),
+        .clock(Net_582),
         .tc(Net_36),
         .pwm1(Net_37),
         .pwm2(Net_38),
@@ -899,13 +995,13 @@ module top ;
 
 	cy_clock_v1_0
 		#(.id("3abc5841-605e-4aaa-953c-1f5814d5db61"),
-		  .source_clock_id(""),
+		  .source_clock_id("75C2148C-3656-4d8a-846D-0CAE99AB6FF7"),
 		  .divisor(0),
-		  .period("41666666.6666667"),
-		  .is_direct(0),
+		  .period("0"),
+		  .is_direct(1),
 		  .is_digital(1))
 		Clock_1
-		 (.clock_out(Net_427));
+		 (.clock_out(Net_582));
 
 
     // -- DFF Start --
@@ -1275,11 +1371,11 @@ module top ;
 
     ADC_DelSig_v2_30_3 ADC_DelSig_V (
         .vplus(Net_152),
-        .vminus(Net_306),
+        .vminus(Net_527),
         .soc(1'b1),
-        .eoc(Net_186),
+        .eoc(Net_529),
         .aclk(1'b0),
-        .nVref(Net_188));
+        .nVref(Net_531));
 
 
 	cy_clock_v1_0
@@ -1936,6 +2032,52 @@ module top ;
 
 
     assign Net_459 = Net_463 & Net_475;
+
+    Counter_v2_40_7 Counter_1 (
+        .reset(Net_548),
+        .tc(Net_552),
+        .comp(Net_641),
+        .clock(Net_582),
+        .interrupt(Net_642),
+        .enable(1'b0),
+        .capture(1'b0),
+        .upCnt(1'b0),
+        .downCnt(1'b0),
+        .up_ndown(1'b1),
+        .count(1'b0));
+    defparam Counter_1.CaptureMode = 0;
+    defparam Counter_1.ClockMode = 3;
+    defparam Counter_1.CompareMode = 1;
+    defparam Counter_1.CompareStatusEdgeSense = 1;
+    defparam Counter_1.EnableMode = 0;
+    defparam Counter_1.ReloadOnCapture = 0;
+    defparam Counter_1.ReloadOnCompare = 0;
+    defparam Counter_1.ReloadOnOverUnder = 1;
+    defparam Counter_1.ReloadOnReset = 1;
+    defparam Counter_1.Resolution = 16;
+    defparam Counter_1.RunMode = 0;
+    defparam Counter_1.UseInterrupt = 1;
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		isr_LUT
+		 (.int_signal(Net_552));
+
+
+    assign Net_548 = 1'h0;
+
+
+	cy_clock_v1_0
+		#(.id("ffff4376-fb38-4695-a941-654cb1e5bd78"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("1000000000"),
+		  .is_direct(0),
+		  .is_digital(1))
+		Clock_4
+		 (.clock_out(Net_608));
+
 
 
 

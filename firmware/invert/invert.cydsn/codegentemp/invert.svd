@@ -12,7 +12,7 @@
       <baseAddress>0x4000642D</baseAddress>
       <addressBlock>
         <offset>0</offset>
-        <size>0x41</size>
+        <size>0x43</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -37,7 +37,7 @@
         <register>
           <name>TX_UART_1_TX_DATA</name>
           <description>TX Data Register</description>
-          <addressOffset>0x1F</addressOffset>
+          <addressOffset>0x17</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -55,7 +55,7 @@
         <register>
           <name>TX_UART_1_TX_STATUS</name>
           <description>TX status register</description>
-          <addressOffset>0x3E</addressOffset>
+          <addressOffset>0x3A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -94,7 +94,7 @@
         <register>
           <name>RX_UART_1_RX_STATUS</name>
           <description>RX status register</description>
-          <addressOffset>0x40</addressOffset>
+          <addressOffset>0x42</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -154,20 +154,196 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>Control_Reg_1</name>
+      <name>Counter_1</name>
       <description>No description available</description>
-      <baseAddress>0x40006475</baseAddress>
+      <baseAddress>0x400043A3</baseAddress>
       <addressBlock>
         <offset>0</offset>
-        <size>0x1</size>
+        <size>0xB62</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
         <register>
-          <name>Control_Reg_1_CONTROL_REG</name>
-          <description>No description available</description>
+          <name>Counter_1_GLOBAL_ENABLE</name>
+          <description>PM.ACT.CFG</description>
           <addressOffset>0x0</addressOffset>
           <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>en_timer</name>
+              <description>Enable timer/counters.</description>
+              <lsb>0</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>Counter_1_CONTROL</name>
+          <description>TMRx.CFG0</description>
+          <addressOffset>0xB5D</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>EN</name>
+              <description>Enables timer/comparator.</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MODE</name>
+              <description>Mode. (0 = Timer; 1 = Comparator)</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Timer</name>
+                  <description>Timer mode. CNT/CMP register holds timer count value.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Comparator</name>
+                  <description>Comparator mode. CNT/CMP register holds comparator threshold value.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ONESHOT</name>
+              <description>Timer stops upon reaching stop condition defined by TMR_CFG bits. Can be restarted by asserting TIMER RESET or disabling and re-enabling block.</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CMP_BUFF</name>
+              <description>Buffer compare register. Compare register updates only on timer terminal count.</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>INV</name>
+              <description>Invert sense of TIMEREN signal</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DB</name>
+              <description>Deadband mode--Deadband phases phi1 and phi2 are outputted on CMP and TC output pins respectively.</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Timer</name>
+                  <description>CMP and TC are output.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deadband</name>
+                  <description>PHI1 (instead of CMP) and PHI2 (instead of TC) are output.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DEADBAND_PERIOD</name>
+              <description>Deadband Period</description>
+              <lsb>6</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>Counter_1_CONTROL2</name>
+          <description>TMRx.CFG1</description>
+          <addressOffset>0xB5E</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>IRQ_SEL</name>
+              <description>Irq selection. (0 = raw interrupts; 1 = status register interrupts)</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FTC</name>
+              <description>First Terminal Count (FTC). Setting this bit forces a single pulse on the TC pin when first enabled.</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable_FTC</name>
+                  <description>Disable the single cycle pulse, which signifies the timer is starting.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable_FTC</name>
+                  <description>Enable the single cycle pulse, which signifies the timer is starting.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DCOR</name>
+              <description>Disable Clear on Read (DCOR) of Status Register SR0.</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DBMODE</name>
+              <description>Deadband mode (asynchronous/synchronous). CMP output pin is also affected when not in deadband mode (CFG0.DEADBAND).</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CLK_BUS_EN_SEL</name>
+              <description>Digital Global Clock selection.</description>
+              <lsb>4</lsb>
+              <msb>6</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BUS_CLK_SEL</name>
+              <description>Bus Clock selection.</description>
+              <lsb>7</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>Counter_1_PERIOD</name>
+          <description>TMRx.PER0 - Assigned Period</description>
+          <addressOffset>0xB5F</addressOffset>
+          <size>16</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>Counter_1_COUNTER</name>
+          <description>TMRx.CNT_CMP0 - Current Down Counter Value</description>
+          <addressOffset>0xB61</addressOffset>
+          <size>16</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
@@ -177,10 +353,10 @@
     <peripheral>
       <name>SPIS_1</name>
       <description>No description available</description>
-      <baseAddress>0x40006406</baseAddress>
+      <baseAddress>0x4000640A</baseAddress>
       <addressBlock>
         <offset>0</offset>
-        <size>0x67</size>
+        <size>0x63</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -196,62 +372,16 @@
         <register>
           <name>SPIS_1_TX_DATA</name>
           <description>SPIS TX Data</description>
-          <addressOffset>0x1</addressOffset>
+          <addressOffset>0x2</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>SPIS_1_TXSTATUS</name>
-          <description>SPIS TX Status Register</description>
-          <addressOffset>0x60</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>SPI_Done</name>
-              <description>Set when all of the data in the transmit FIFO has been sent. Set when Byte/Word Complete                                has been set and TX Data FIFO is empty</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>TX_FIFO_Not_Full</name>
-              <description>Set when the TX Data FIFO is not full</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>TX_FIFO_Empty</name>
-              <description>Set when the TX Data FIFO is empty</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>Byte_Word_Complete</name>
-              <description>Set when a byte/word transmit has completed</description>
-              <lsb>6</lsb>
-              <msb>6</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>Interrupt</name>
-              <description>Set when interrupt occurs</description>
-              <lsb>7</lsb>
-              <msb>7</msb>
-              <access>read-only</access>
-            </field>
-          </fields>
         </register>
         <register>
           <name>SPIS_1_RXSTATUS</name>
           <description>SPIS RX Status Register</description>
-          <addressOffset>0x66</addressOffset>
+          <addressOffset>0x5A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -294,12 +424,79 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>SPIS_1_TXSTATUS</name>
+          <description>SPIS TX Status Register</description>
+          <addressOffset>0x62</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>SPI_Done</name>
+              <description>Set when all of the data in the transmit FIFO has been sent. Set when Byte/Word Complete                                has been set and TX Data FIFO is empty</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>TX_FIFO_Not_Full</name>
+              <description>Set when the TX Data FIFO is not full</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>TX_FIFO_Empty</name>
+              <description>Set when the TX Data FIFO is empty</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>Byte_Word_Complete</name>
+              <description>Set when a byte/word transmit has completed</description>
+              <lsb>6</lsb>
+              <msb>6</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>Interrupt</name>
+              <description>Set when interrupt occurs</description>
+              <lsb>7</lsb>
+              <msb>7</msb>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>Control_Reg_1</name>
+      <description>No description available</description>
+      <baseAddress>0x40006474</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>Control_Reg_1_CONTROL_REG</name>
+          <description>No description available</description>
+          <addressOffset>0x0</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
       </registers>
     </peripheral>
     <peripheral>
       <name>PWM_BUCK</name>
       <description>No description available</description>
-      <baseAddress>0x40006424</baseAddress>
+      <baseAddress>0x40006426</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x72</size>
@@ -318,7 +515,7 @@
         <register>
           <name>PWM_BUCK_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x50</addressOffset>
+          <addressOffset>0x54</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
