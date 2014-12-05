@@ -568,51 +568,6 @@
               <FilePath>.\Generated_Source\PSoC5\UART_1_BOOT.c</FilePath>
             </File>
             <File>
-              <FileName>UART_1_IntClock.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.c</FilePath>
-            </File>
-            <File>
-              <FileName>UART_1_IntClock.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.h</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1.c</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1.h</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1_PM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1_PM.c</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1_INT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1_INT.c</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1_BOOT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1_BOOT.c</FilePath>
-            </File>
-            <File>
-              <FileName>Clock_3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_3.c</FilePath>
-            </File>
-            <File>
-              <FileName>Clock_3.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_3.h</FilePath>
-            </File>
-            <File>
               <FileName>BUCK_LS_aliases.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Generated_Source\PSoC5\BUCK_LS_aliases.h</FilePath>
@@ -703,66 +658,6 @@
               <FilePath>.\Generated_Source\PSoC5\V_SENSE.h</FilePath>
             </File>
             <File>
-              <FileName>SS_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SS_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>SS.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SS.c</FilePath>
-            </File>
-            <File>
-              <FileName>SS.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SS.h</FilePath>
-            </File>
-            <File>
-              <FileName>SCLK_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SCLK_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>SCLK.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SCLK.c</FilePath>
-            </File>
-            <File>
-              <FileName>SCLK.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SCLK.h</FilePath>
-            </File>
-            <File>
-              <FileName>MOSI_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MOSI_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>MOSI.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MOSI.c</FilePath>
-            </File>
-            <File>
-              <FileName>MOSI.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MOSI.h</FilePath>
-            </File>
-            <File>
-              <FileName>MISO_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MISO_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>MISO.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MISO.c</FilePath>
-            </File>
-            <File>
-              <FileName>MISO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MISO.h</FilePath>
-            </File>
-            <File>
               <FileName>BUCK_HS_aliases.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Generated_Source\PSoC5\BUCK_HS_aliases.h</FilePath>
@@ -788,14 +683,59 @@
               <FilePath>.\Generated_Source\PSoC5\Control_Reg_1.h</FilePath>
             </File>
             <File>
-              <FileName>Clock_2.c</FileName>
+              <FileName>isr_LOOP.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_2.c</FilePath>
+              <FilePath>.\Generated_Source\PSoC5\isr_LOOP.c</FilePath>
             </File>
             <File>
-              <FileName>Clock_2.h</FileName>
+              <FileName>isr_LOOP.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_2.h</FilePath>
+              <FilePath>.\Generated_Source\PSoC5\isr_LOOP.h</FilePath>
+            </File>
+            <File>
+              <FileName>Counter_1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Counter_1.c</FilePath>
+            </File>
+            <File>
+              <FileName>Counter_1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Counter_1.h</FilePath>
+            </File>
+            <File>
+              <FileName>Counter_1_PM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Counter_1_PM.c</FilePath>
+            </File>
+            <File>
+              <FileName>isr_LUT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\isr_LUT.c</FilePath>
+            </File>
+            <File>
+              <FileName>isr_LUT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\isr_LUT.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_1_IntClock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART_1_IntClock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.h</FilePath>
+            </File>
+            <File>
+              <FileName>Clock_UNFOLDER.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Clock_UNFOLDER.c</FilePath>
+            </File>
+            <File>
+              <FileName>Clock_UNFOLDER.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Clock_UNFOLDER.h</FilePath>
             </File>
             <File>
               <FileName>Counter_1.c</FileName>
@@ -1402,51 +1342,6 @@
               <FilePath>.\Generated_Source\PSoC5\UART_1_BOOT.c</FilePath>
             </File>
             <File>
-              <FileName>UART_1_IntClock.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.c</FilePath>
-            </File>
-            <File>
-              <FileName>UART_1_IntClock.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.h</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1.c</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1.h</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1_PM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1_PM.c</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1_INT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1_INT.c</FilePath>
-            </File>
-            <File>
-              <FileName>SPIS_1_BOOT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SPIS_1_BOOT.c</FilePath>
-            </File>
-            <File>
-              <FileName>Clock_3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_3.c</FilePath>
-            </File>
-            <File>
-              <FileName>Clock_3.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_3.h</FilePath>
-            </File>
-            <File>
               <FileName>BUCK_LS_aliases.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Generated_Source\PSoC5\BUCK_LS_aliases.h</FilePath>
@@ -1537,66 +1432,6 @@
               <FilePath>.\Generated_Source\PSoC5\V_SENSE.h</FilePath>
             </File>
             <File>
-              <FileName>SS_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SS_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>SS.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SS.c</FilePath>
-            </File>
-            <File>
-              <FileName>SS.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SS.h</FilePath>
-            </File>
-            <File>
-              <FileName>SCLK_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SCLK_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>SCLK.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SCLK.c</FilePath>
-            </File>
-            <File>
-              <FileName>SCLK.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\SCLK.h</FilePath>
-            </File>
-            <File>
-              <FileName>MOSI_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MOSI_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>MOSI.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MOSI.c</FilePath>
-            </File>
-            <File>
-              <FileName>MOSI.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MOSI.h</FilePath>
-            </File>
-            <File>
-              <FileName>MISO_aliases.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MISO_aliases.h</FilePath>
-            </File>
-            <File>
-              <FileName>MISO.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MISO.c</FilePath>
-            </File>
-            <File>
-              <FileName>MISO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\MISO.h</FilePath>
-            </File>
-            <File>
               <FileName>BUCK_HS_aliases.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Generated_Source\PSoC5\BUCK_HS_aliases.h</FilePath>
@@ -1622,14 +1457,59 @@
               <FilePath>.\Generated_Source\PSoC5\Control_Reg_1.h</FilePath>
             </File>
             <File>
-              <FileName>Clock_2.c</FileName>
+              <FileName>isr_LOOP.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_2.c</FilePath>
+              <FilePath>.\Generated_Source\PSoC5\isr_LOOP.c</FilePath>
             </File>
             <File>
-              <FileName>Clock_2.h</FileName>
+              <FileName>isr_LOOP.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Generated_Source\PSoC5\Clock_2.h</FilePath>
+              <FilePath>.\Generated_Source\PSoC5\isr_LOOP.h</FilePath>
+            </File>
+            <File>
+              <FileName>Counter_1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Counter_1.c</FilePath>
+            </File>
+            <File>
+              <FileName>Counter_1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Counter_1.h</FilePath>
+            </File>
+            <File>
+              <FileName>Counter_1_PM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Counter_1_PM.c</FilePath>
+            </File>
+            <File>
+              <FileName>isr_LUT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\isr_LUT.c</FilePath>
+            </File>
+            <File>
+              <FileName>isr_LUT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\isr_LUT.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_1_IntClock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART_1_IntClock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\UART_1_IntClock.h</FilePath>
+            </File>
+            <File>
+              <FileName>Clock_UNFOLDER.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Clock_UNFOLDER.c</FilePath>
+            </File>
+            <File>
+              <FileName>Clock_UNFOLDER.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Generated_Source\PSoC5\Clock_UNFOLDER.h</FilePath>
             </File>
             <File>
               <FileName>Counter_1.c</FileName>

@@ -121,8 +121,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc6Tjzqg.s 			page 1
 ARM GAS  C:\Users\USER\AppData\Local\Temp\cc6Tjzqg.s 			page 3
 
 
-  49 0004 46F28E43 		movw	r3, #:lower16:1073767566
-  50 0008 C4F20003 		movt	r3, #:upper16:1073767566
+  49 0004 46F28D43 		movw	r3, #:lower16:1073767565
+  50 0008 C4F20003 		movt	r3, #:upper16:1073767565
   51 000c 1B78     		ldrb	r3, [r3, #0]
   52 000e DAB2     		uxtb	r2, r3
   53 0010 40F20003 		movw	r3, #:lower16:UART_1_backup
@@ -147,8 +147,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc6Tjzqg.s 			page 1
   70:.\Generated_Source\PSoC5/UART_1_PM.c ****             #if(UART_1_TXCLKGEN_DP)
   71:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.tx_clk_ctr = UART_1_TXBITCLKGEN_CTR_REG;
   64              		.loc 1 71 0
-  65 0030 46F22B43 		movw	r3, #:lower16:1073767467
-  66 0034 C4F20003 		movt	r3, #:upper16:1073767467
+  65 0030 46F22653 		movw	r3, #:lower16:1073767718
+  66 0034 C4F20003 		movt	r3, #:upper16:1073767718
   67 0038 1B78     		ldrb	r3, [r3, #0]
   68 003a DAB2     		uxtb	r2, r3
   69 003c 40F20003 		movw	r3, #:lower16:UART_1_backup
@@ -156,8 +156,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc6Tjzqg.s 			page 1
   71 0044 DA70     		strb	r2, [r3, #3]
   72:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_backup.tx_clk_compl = UART_1_TXBITCLKTX_COMPLETE_REG;
   72              		.loc 1 72 0
-  73 0046 46F23B43 		movw	r3, #:lower16:1073767483
-  74 004a C4F20003 		movt	r3, #:upper16:1073767483
+  73 0046 46F23653 		movw	r3, #:lower16:1073767734
+  74 004a C4F20003 		movt	r3, #:upper16:1073767734
   75 004e 1B78     		ldrb	r3, [r3, #0]
   76 0050 DAB2     		uxtb	r2, r3
   77 0052 40F20003 		movw	r3, #:lower16:UART_1_backup
@@ -253,8 +253,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc6Tjzqg.s 			page 1
  119:.\Generated_Source\PSoC5/UART_1_PM.c ****         #if( (UART_1_RX_ENABLED) || (UART_1_HD_ENABLED) )
  120:.\Generated_Source\PSoC5/UART_1_PM.c ****             UART_1_RXBITCTR_PERIOD_REG = UART_1_backup.rx_period;
  115              		.loc 1 120 0
- 116 0004 46F28E43 		movw	r3, #:lower16:1073767566
- 117 0008 C4F20003 		movt	r3, #:upper16:1073767566
+ 116 0004 46F28D43 		movw	r3, #:lower16:1073767565
+ 117 0008 C4F20003 		movt	r3, #:upper16:1073767565
  118 000c 40F20002 		movw	r2, #:lower16:UART_1_backup
  119 0010 C0F20002 		movt	r2, #:upper16:UART_1_backup
  120 0014 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
@@ -277,16 +277,16 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\cc6Tjzqg.s 			page 1
  129:.\Generated_Source\PSoC5/UART_1_PM.c ****             #if(UART_1_TXCLKGEN_DP)
  130:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_TXBITCLKGEN_CTR_REG = UART_1_backup.tx_clk_ctr;
  129              		.loc 1 130 0
- 130 002c 46F22B43 		movw	r3, #:lower16:1073767467
- 131 0030 C4F20003 		movt	r3, #:upper16:1073767467
+ 130 002c 46F22653 		movw	r3, #:lower16:1073767718
+ 131 0030 C4F20003 		movt	r3, #:upper16:1073767718
  132 0034 40F20002 		movw	r2, #:lower16:UART_1_backup
  133 0038 C0F20002 		movt	r2, #:upper16:UART_1_backup
  134 003c D278     		ldrb	r2, [r2, #3]	@ zero_extendqisi2
  135 003e 1A70     		strb	r2, [r3, #0]
  131:.\Generated_Source\PSoC5/UART_1_PM.c ****                 UART_1_TXBITCLKTX_COMPLETE_REG = UART_1_backup.tx_clk_compl;
  136              		.loc 1 131 0
- 137 0040 46F23B43 		movw	r3, #:lower16:1073767483
- 138 0044 C4F20003 		movt	r3, #:upper16:1073767483
+ 137 0040 46F23653 		movw	r3, #:lower16:1073767734
+ 138 0044 C4F20003 		movt	r3, #:upper16:1073767734
  139 0048 40F20002 		movw	r2, #:lower16:UART_1_backup
  140 004c C0F20002 		movt	r2, #:upper16:UART_1_backup
  141 0050 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2

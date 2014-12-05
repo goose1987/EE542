@@ -1,0 +1,2098 @@
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"isr_LOOP.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 59010000 		.text
+  20      02006000 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.section	.text.isr_LOOP_Start,"ax",%progbits
+  24              		.align	2
+  25              		.global	isr_LOOP_Start
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	isr_LOOP_Start, %function
+  29              	isr_LOOP_Start:
+  30              	.LFB0:
+  31              		.file 1 ".\\Generated_Source\\PSoC5\\isr_LOOP.c"
+   1:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/isr_LOOP.c **** * File Name: isr_LOOP.c  
+   3:.\Generated_Source\PSoC5/isr_LOOP.c **** * Version 1.70
+   4:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+   5:.\Generated_Source\PSoC5/isr_LOOP.c **** *  Description:
+   6:.\Generated_Source\PSoC5/isr_LOOP.c **** *   API for controlling the state of an interrupt.
+   7:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+   8:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+   9:.\Generated_Source\PSoC5/isr_LOOP.c **** *  Note:
+  10:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  11:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/isr_LOOP.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/isr_LOOP.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC5/isr_LOOP.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC5/isr_LOOP.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  18:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  19:.\Generated_Source\PSoC5/isr_LOOP.c **** #include <CYDEVICE_TRM.H>
+  20:.\Generated_Source\PSoC5/isr_LOOP.c **** #include <CYLIB.H>
+  21:.\Generated_Source\PSoC5/isr_LOOP.c **** #include <isr_LOOP.H>
+  22:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 2
+
+
+  23:.\Generated_Source\PSoC5/isr_LOOP.c **** #if !defined(isr_LOOP__REMOVED) /* Check for removal by optimization */
+  24:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  25:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+  26:.\Generated_Source\PSoC5/isr_LOOP.c **** *  Place your includes, defines and code here 
+  27:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************/
+  28:.\Generated_Source\PSoC5/isr_LOOP.c **** /* `#START isr_LOOP_intc` */
+  29:.\Generated_Source\PSoC5/isr_LOOP.c **** extern int16 sineLUT[256];
+  30:.\Generated_Source\PSoC5/isr_LOOP.c **** extern int16 sineLUTindex;
+  31:.\Generated_Source\PSoC5/isr_LOOP.c **** /* `#END` */
+  32:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  33:.\Generated_Source\PSoC5/isr_LOOP.c **** #ifndef CYINT_IRQ_BASE
+  34:.\Generated_Source\PSoC5/isr_LOOP.c **** #define CYINT_IRQ_BASE      16
+  35:.\Generated_Source\PSoC5/isr_LOOP.c **** #endif /* CYINT_IRQ_BASE */
+  36:.\Generated_Source\PSoC5/isr_LOOP.c **** #ifndef CYINT_VECT_TABLE
+  37:.\Generated_Source\PSoC5/isr_LOOP.c **** #define CYINT_VECT_TABLE    ((cyisraddress **) CYREG_NVIC_VECT_OFFSET)
+  38:.\Generated_Source\PSoC5/isr_LOOP.c **** #endif /* CYINT_VECT_TABLE */
+  39:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  40:.\Generated_Source\PSoC5/isr_LOOP.c **** /* Declared in startup, used to set unused interrupts to. */
+  41:.\Generated_Source\PSoC5/isr_LOOP.c **** CY_ISR_PROTO(IntDefaultHandler);
+  42:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  43:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  44:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+  45:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_Start
+  46:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+  47:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  48:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+  49:.\Generated_Source\PSoC5/isr_LOOP.c **** *  Set up the interrupt and enable it.
+  50:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  51:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:  
+  52:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+  53:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  54:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+  55:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+  56:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  57:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+  58:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_Start(void)
+  59:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+  32              		.loc 1 59 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 1, uses_anonymous_args = 0
+  36 0000 80B5     		push	{r7, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 8
+  39 0002 00AF     		add	r7, sp, #0
+  40              		.cfi_offset 14, -4
+  41              		.cfi_offset 7, -8
+  42              	.LCFI1:
+  43              		.cfi_def_cfa_register 7
+  60:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* For all we know the interrupt is active. */
+  61:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_Disable();
+  44              		.loc 1 61 0
+  45 0004 FFF7FEFF 		bl	isr_LOOP_Disable
+  62:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  63:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the ISR to point to the isr_LOOP Interrupt. */
+  64:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetVector(&isr_LOOP_Interrupt);
+  46              		.loc 1 64 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 3
+
+
+  47 0008 40F20000 		movw	r0, #:lower16:isr_LOOP_Interrupt
+  48 000c C0F20000 		movt	r0, #:upper16:isr_LOOP_Interrupt
+  49 0010 FFF7FEFF 		bl	isr_LOOP_SetVector
+  65:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  66:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the priority. */
+  67:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetPriority((uint8)isr_LOOP_INTC_PRIOR_NUMBER);
+  50              		.loc 1 67 0
+  51 0014 4FF00100 		mov	r0, #1
+  52 0018 FFF7FEFF 		bl	isr_LOOP_SetPriority
+  68:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  69:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Enable it. */
+  70:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_Enable();
+  53              		.loc 1 70 0
+  54 001c FFF7FEFF 		bl	isr_LOOP_Enable
+  71:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+  55              		.loc 1 71 0
+  56 0020 80BD     		pop	{r7, pc}
+  57              		.cfi_endproc
+  58              	.LFE0:
+  59              		.size	isr_LOOP_Start, .-isr_LOOP_Start
+  60 0022 00BF     		.section	.text.isr_LOOP_StartEx,"ax",%progbits
+  61              		.align	2
+  62              		.global	isr_LOOP_StartEx
+  63              		.thumb
+  64              		.thumb_func
+  65              		.type	isr_LOOP_StartEx, %function
+  66              	isr_LOOP_StartEx:
+  67              	.LFB1:
+  72:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  73:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  74:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+  75:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_StartEx
+  76:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+  77:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  78:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+  79:.\Generated_Source\PSoC5/isr_LOOP.c **** *  Set up the interrupt and enable it.
+  80:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  81:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:  
+  82:.\Generated_Source\PSoC5/isr_LOOP.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  83:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  84:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+  85:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+  86:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+  87:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+  88:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_StartEx(cyisraddress address)
+  89:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+  68              		.loc 1 89 0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 8
+  71              		@ frame_needed = 1, uses_anonymous_args = 0
+  72 0000 80B5     		push	{r7, lr}
+  73              	.LCFI2:
+  74              		.cfi_def_cfa_offset 8
+  75 0002 82B0     		sub	sp, sp, #8
+  76              	.LCFI3:
+  77              		.cfi_def_cfa_offset 16
+  78 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 4
+
+
+  79              		.cfi_offset 14, -4
+  80              		.cfi_offset 7, -8
+  81              	.LCFI4:
+  82              		.cfi_def_cfa_register 7
+  83 0006 7860     		str	r0, [r7, #4]
+  90:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* For all we know the interrupt is active. */
+  91:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_Disable();
+  84              		.loc 1 91 0
+  85 0008 FFF7FEFF 		bl	isr_LOOP_Disable
+  92:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  93:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the ISR to point to the isr_LOOP Interrupt. */
+  94:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetVector(address);
+  86              		.loc 1 94 0
+  87 000c 7868     		ldr	r0, [r7, #4]
+  88 000e FFF7FEFF 		bl	isr_LOOP_SetVector
+  95:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  96:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the priority. */
+  97:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetPriority((uint8)isr_LOOP_INTC_PRIOR_NUMBER);
+  89              		.loc 1 97 0
+  90 0012 4FF00100 		mov	r0, #1
+  91 0016 FFF7FEFF 		bl	isr_LOOP_SetPriority
+  98:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+  99:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Enable it. */
+ 100:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_Enable();
+  92              		.loc 1 100 0
+  93 001a FFF7FEFF 		bl	isr_LOOP_Enable
+ 101:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+  94              		.loc 1 101 0
+  95 001e 07F10807 		add	r7, r7, #8
+  96 0022 BD46     		mov	sp, r7
+  97 0024 80BD     		pop	{r7, pc}
+  98              		.cfi_endproc
+  99              	.LFE1:
+ 100              		.size	isr_LOOP_StartEx, .-isr_LOOP_StartEx
+ 101 0026 00BF     		.section	.text.isr_LOOP_Stop,"ax",%progbits
+ 102              		.align	2
+ 103              		.global	isr_LOOP_Stop
+ 104              		.thumb
+ 105              		.thumb_func
+ 106              		.type	isr_LOOP_Stop, %function
+ 107              	isr_LOOP_Stop:
+ 108              	.LFB2:
+ 102:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 103:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 104:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 105:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_Stop
+ 106:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 107:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 108:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 109:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Disables and removes the interrupt.
+ 110:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 111:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:  
+ 112:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 113:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 114:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 115:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 116:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 5
+
+
+ 117:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_Stop(void)
+ 118:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 109              		.loc 1 118 0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 1, uses_anonymous_args = 0
+ 113 0000 80B5     		push	{r7, lr}
+ 114              	.LCFI5:
+ 115              		.cfi_def_cfa_offset 8
+ 116 0002 00AF     		add	r7, sp, #0
+ 117              		.cfi_offset 14, -4
+ 118              		.cfi_offset 7, -8
+ 119              	.LCFI6:
+ 120              		.cfi_def_cfa_register 7
+ 119:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Disable this interrupt. */
+ 120:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_Disable();
+ 121              		.loc 1 120 0
+ 122 0004 FFF7FEFF 		bl	isr_LOOP_Disable
+ 121:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 122:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Set the ISR to point to the passive one. */
+ 123:.\Generated_Source\PSoC5/isr_LOOP.c ****     isr_LOOP_SetVector(&IntDefaultHandler);
+ 123              		.loc 1 123 0
+ 124 0008 40F20000 		movw	r0, #:lower16:IntDefaultHandler
+ 125 000c C0F20000 		movt	r0, #:upper16:IntDefaultHandler
+ 126 0010 FFF7FEFF 		bl	isr_LOOP_SetVector
+ 124:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 127              		.loc 1 124 0
+ 128 0014 80BD     		pop	{r7, pc}
+ 129              		.cfi_endproc
+ 130              	.LFE2:
+ 131              		.size	isr_LOOP_Stop, .-isr_LOOP_Stop
+ 132 0016 00BF     		.section	.text.isr_LOOP_Interrupt,"ax",%progbits
+ 133              		.align	2
+ 134              		.global	isr_LOOP_Interrupt
+ 135              		.thumb
+ 136              		.thumb_func
+ 137              		.type	isr_LOOP_Interrupt, %function
+ 138              	isr_LOOP_Interrupt:
+ 139              	.LFB3:
+ 125:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 126:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 127:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 128:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_Interrupt
+ 129:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 130:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 131:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 132:.\Generated_Source\PSoC5/isr_LOOP.c **** *   The default Interrupt Service Routine for isr_LOOP.
+ 133:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 134:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Add custom code between the coments to keep the next version of this file
+ 135:.\Generated_Source\PSoC5/isr_LOOP.c **** *   from over writting your code.
+ 136:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 137:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:  
+ 138:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 139:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 140:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 141:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 142:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 6
+
+
+ 143:.\Generated_Source\PSoC5/isr_LOOP.c **** CY_ISR(isr_LOOP_Interrupt)
+ 144:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 140              		.loc 1 144 0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 1, uses_anonymous_args = 0
+ 144 0000 80B5     		push	{r7, lr}
+ 145              	.LCFI7:
+ 146              		.cfi_def_cfa_offset 8
+ 147 0002 00AF     		add	r7, sp, #0
+ 148              		.cfi_offset 14, -4
+ 149              		.cfi_offset 7, -8
+ 150              	.LCFI8:
+ 151              		.cfi_def_cfa_register 7
+ 145:.\Generated_Source\PSoC5/isr_LOOP.c ****     /*  Place your Interrupt code here. */
+ 146:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* `#START isr_LOOP_Interrupt` */
+ 147:.\Generated_Source\PSoC5/isr_LOOP.c ****     PWM_BUCK_WriteCompare(sineLUT[sineLUTindex]);
+ 152              		.loc 1 147 0
+ 153 0004 40F20003 		movw	r3, #:lower16:sineLUTindex
+ 154 0008 C0F20003 		movt	r3, #:upper16:sineLUTindex
+ 155 000c 1B88     		ldrh	r3, [r3, #0]
+ 156 000e 1AB2     		sxth	r2, r3
+ 157 0010 40F20003 		movw	r3, #:lower16:sineLUT
+ 158 0014 C0F20003 		movt	r3, #:upper16:sineLUT
+ 159 0018 33F81230 		ldrh	r3, [r3, r2, lsl #1]
+ 160 001c 1BB2     		sxth	r3, r3
+ 161 001e 1846     		mov	r0, r3
+ 162 0020 FFF7FEFF 		bl	PWM_BUCK_WriteCompare
+ 148:.\Generated_Source\PSoC5/isr_LOOP.c ****     
+ 149:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* `#END` */
+ 150:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 163              		.loc 1 150 0
+ 164 0024 80BD     		pop	{r7, pc}
+ 165              		.cfi_endproc
+ 166              	.LFE3:
+ 167              		.size	isr_LOOP_Interrupt, .-isr_LOOP_Interrupt
+ 168 0026 00BF     		.section	.text.isr_LOOP_SetVector,"ax",%progbits
+ 169              		.align	2
+ 170              		.global	isr_LOOP_SetVector
+ 171              		.thumb
+ 172              		.thumb_func
+ 173              		.type	isr_LOOP_SetVector, %function
+ 174              	isr_LOOP_SetVector:
+ 175              	.LFB4:
+ 151:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 152:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 153:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 154:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_SetVector
+ 155:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 156:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 157:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 158:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Change the ISR vector for the Interrupt. Note calling isr_LOOP_Start
+ 159:.\Generated_Source\PSoC5/isr_LOOP.c **** *   will override any effect this method would have had. To set the vector 
+ 160:.\Generated_Source\PSoC5/isr_LOOP.c **** *   before the component has been started use isr_LOOP_StartEx instead.
+ 161:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 162:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 163:.\Generated_Source\PSoC5/isr_LOOP.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 7
+
+
+ 164:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 165:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 166:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 167:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 168:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 169:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_SetVector(cyisraddress address)
+ 170:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 176              		.loc 1 170 0
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 16
+ 179              		@ frame_needed = 1, uses_anonymous_args = 0
+ 180              		@ link register save eliminated.
+ 181 0000 80B4     		push	{r7}
+ 182              	.LCFI9:
+ 183              		.cfi_def_cfa_offset 4
+ 184 0002 85B0     		sub	sp, sp, #20
+ 185              	.LCFI10:
+ 186              		.cfi_def_cfa_offset 24
+ 187 0004 00AF     		add	r7, sp, #0
+ 188              		.cfi_offset 7, -4
+ 189              	.LCFI11:
+ 190              		.cfi_def_cfa_register 7
+ 191 0006 7860     		str	r0, [r7, #4]
+ 171:.\Generated_Source\PSoC5/isr_LOOP.c ****     cyisraddress * ramVectorTable;
+ 172:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 173:.\Generated_Source\PSoC5/isr_LOOP.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+ 192              		.loc 1 173 0
+ 193 0008 4EF60853 		movw	r3, #:lower16:-536810232
+ 194 000c CEF20003 		movt	r3, #:upper16:-536810232
+ 195 0010 1B68     		ldr	r3, [r3, #0]
+ 196 0012 FB60     		str	r3, [r7, #12]
+ 174:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 175:.\Generated_Source\PSoC5/isr_LOOP.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_LOOP__INTC_NUMBER] = address;
+ 197              		.loc 1 175 0
+ 198 0014 FB68     		ldr	r3, [r7, #12]
+ 199 0016 03F14003 		add	r3, r3, #64
+ 200 001a 7A68     		ldr	r2, [r7, #4]
+ 201 001c 1A60     		str	r2, [r3, #0]
+ 176:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 202              		.loc 1 176 0
+ 203 001e 07F11407 		add	r7, r7, #20
+ 204 0022 BD46     		mov	sp, r7
+ 205 0024 80BC     		pop	{r7}
+ 206 0026 7047     		bx	lr
+ 207              		.cfi_endproc
+ 208              	.LFE4:
+ 209              		.size	isr_LOOP_SetVector, .-isr_LOOP_SetVector
+ 210              		.section	.text.isr_LOOP_GetVector,"ax",%progbits
+ 211              		.align	2
+ 212              		.global	isr_LOOP_GetVector
+ 213              		.thumb
+ 214              		.thumb_func
+ 215              		.type	isr_LOOP_GetVector, %function
+ 216              	isr_LOOP_GetVector:
+ 217              	.LFB5:
+ 177:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 178:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 8
+
+
+ 179:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 180:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_GetVector
+ 181:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 182:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 183:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 184:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 185:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 186:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 187:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 188:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 189:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 190:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Address of the ISR in the interrupt vector table.
+ 191:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 192:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 193:.\Generated_Source\PSoC5/isr_LOOP.c **** cyisraddress isr_LOOP_GetVector(void)
+ 194:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 218              		.loc 1 194 0
+ 219              		.cfi_startproc
+ 220              		@ args = 0, pretend = 0, frame = 8
+ 221              		@ frame_needed = 1, uses_anonymous_args = 0
+ 222              		@ link register save eliminated.
+ 223 0000 80B4     		push	{r7}
+ 224              	.LCFI12:
+ 225              		.cfi_def_cfa_offset 4
+ 226 0002 83B0     		sub	sp, sp, #12
+ 227              	.LCFI13:
+ 228              		.cfi_def_cfa_offset 16
+ 229 0004 00AF     		add	r7, sp, #0
+ 230              		.cfi_offset 7, -4
+ 231              	.LCFI14:
+ 232              		.cfi_def_cfa_register 7
+ 195:.\Generated_Source\PSoC5/isr_LOOP.c ****     cyisraddress * ramVectorTable;
+ 196:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 197:.\Generated_Source\PSoC5/isr_LOOP.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+ 233              		.loc 1 197 0
+ 234 0006 4EF60853 		movw	r3, #:lower16:-536810232
+ 235 000a CEF20003 		movt	r3, #:upper16:-536810232
+ 236 000e 1B68     		ldr	r3, [r3, #0]
+ 237 0010 7B60     		str	r3, [r7, #4]
+ 198:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 199:.\Generated_Source\PSoC5/isr_LOOP.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_LOOP__INTC_NUMBER];
+ 238              		.loc 1 199 0
+ 239 0012 7B68     		ldr	r3, [r7, #4]
+ 240 0014 03F14003 		add	r3, r3, #64
+ 241 0018 1B68     		ldr	r3, [r3, #0]
+ 200:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 242              		.loc 1 200 0
+ 243 001a 1846     		mov	r0, r3
+ 244 001c 07F10C07 		add	r7, r7, #12
+ 245 0020 BD46     		mov	sp, r7
+ 246 0022 80BC     		pop	{r7}
+ 247 0024 7047     		bx	lr
+ 248              		.cfi_endproc
+ 249              	.LFE5:
+ 250              		.size	isr_LOOP_GetVector, .-isr_LOOP_GetVector
+ 251 0026 00BF     		.section	.text.isr_LOOP_SetPriority,"ax",%progbits
+ 252              		.align	2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 9
+
+
+ 253              		.global	isr_LOOP_SetPriority
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.type	isr_LOOP_SetPriority, %function
+ 257              	isr_LOOP_SetPriority:
+ 258              	.LFB6:
+ 201:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 202:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 203:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 204:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_SetPriority
+ 205:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 206:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 207:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 208:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Sets the Priority of the Interrupt. Note calling isr_LOOP_Start
+ 209:.\Generated_Source\PSoC5/isr_LOOP.c **** *   or isr_LOOP_StartEx will override any effect this method 
+ 210:.\Generated_Source\PSoC5/isr_LOOP.c **** *   would have had. This method should only be called after 
+ 211:.\Generated_Source\PSoC5/isr_LOOP.c **** *   isr_LOOP_Start or isr_LOOP_StartEx has been called. To set 
+ 212:.\Generated_Source\PSoC5/isr_LOOP.c **** *   the initial priority for the component use the cydwr file in the tool.
+ 213:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 214:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 215:.\Generated_Source\PSoC5/isr_LOOP.c **** *   priority: Priority of the interrupt. 0 - 7, 0 being the highest.
+ 216:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 217:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 218:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 219:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 220:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 221:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_SetPriority(uint8 priority)
+ 222:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 259              		.loc 1 222 0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 8
+ 262              		@ frame_needed = 1, uses_anonymous_args = 0
+ 263              		@ link register save eliminated.
+ 264 0000 80B4     		push	{r7}
+ 265              	.LCFI15:
+ 266              		.cfi_def_cfa_offset 4
+ 267 0002 83B0     		sub	sp, sp, #12
+ 268              	.LCFI16:
+ 269              		.cfi_def_cfa_offset 16
+ 270 0004 00AF     		add	r7, sp, #0
+ 271              		.cfi_offset 7, -4
+ 272              	.LCFI17:
+ 273              		.cfi_def_cfa_register 7
+ 274 0006 0346     		mov	r3, r0
+ 275 0008 FB71     		strb	r3, [r7, #7]
+ 223:.\Generated_Source\PSoC5/isr_LOOP.c ****     *isr_LOOP_INTC_PRIOR = priority << 5;
+ 276              		.loc 1 223 0
+ 277 000a 4EF20043 		movw	r3, #:lower16:-536812544
+ 278 000e CEF20003 		movt	r3, #:upper16:-536812544
+ 279 0012 FA79     		ldrb	r2, [r7, #7]
+ 280 0014 4FEA4212 		lsl	r2, r2, #5
+ 281 0018 D2B2     		uxtb	r2, r2
+ 282 001a 1A70     		strb	r2, [r3, #0]
+ 224:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 283              		.loc 1 224 0
+ 284 001c 07F10C07 		add	r7, r7, #12
+ 285 0020 BD46     		mov	sp, r7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 10
+
+
+ 286 0022 80BC     		pop	{r7}
+ 287 0024 7047     		bx	lr
+ 288              		.cfi_endproc
+ 289              	.LFE6:
+ 290              		.size	isr_LOOP_SetPriority, .-isr_LOOP_SetPriority
+ 291 0026 00BF     		.section	.text.isr_LOOP_GetPriority,"ax",%progbits
+ 292              		.align	2
+ 293              		.global	isr_LOOP_GetPriority
+ 294              		.thumb
+ 295              		.thumb_func
+ 296              		.type	isr_LOOP_GetPriority, %function
+ 297              	isr_LOOP_GetPriority:
+ 298              	.LFB7:
+ 225:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 226:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 227:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 228:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_GetPriority
+ 229:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 230:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 231:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 232:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Gets the Priority of the Interrupt.
+ 233:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 234:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 235:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 236:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 237:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 238:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Priority of the interrupt. 0 - 7, 0 being the highest.
+ 239:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 240:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 241:.\Generated_Source\PSoC5/isr_LOOP.c **** uint8 isr_LOOP_GetPriority(void)
+ 242:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 299              		.loc 1 242 0
+ 300              		.cfi_startproc
+ 301              		@ args = 0, pretend = 0, frame = 8
+ 302              		@ frame_needed = 1, uses_anonymous_args = 0
+ 303              		@ link register save eliminated.
+ 304 0000 80B4     		push	{r7}
+ 305              	.LCFI18:
+ 306              		.cfi_def_cfa_offset 4
+ 307 0002 83B0     		sub	sp, sp, #12
+ 308              	.LCFI19:
+ 309              		.cfi_def_cfa_offset 16
+ 310 0004 00AF     		add	r7, sp, #0
+ 311              		.cfi_offset 7, -4
+ 312              	.LCFI20:
+ 313              		.cfi_def_cfa_register 7
+ 243:.\Generated_Source\PSoC5/isr_LOOP.c ****     uint8 priority;
+ 244:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 245:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 246:.\Generated_Source\PSoC5/isr_LOOP.c ****     priority = *isr_LOOP_INTC_PRIOR >> 5;
+ 314              		.loc 1 246 0
+ 315 0006 4EF20043 		movw	r3, #:lower16:-536812544
+ 316 000a CEF20003 		movt	r3, #:upper16:-536812544
+ 317 000e 1B78     		ldrb	r3, [r3, #0]
+ 318 0010 DBB2     		uxtb	r3, r3
+ 319 0012 4FEA5313 		lsr	r3, r3, #5
+ 320 0016 FB71     		strb	r3, [r7, #7]
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 11
+
+
+ 247:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 248:.\Generated_Source\PSoC5/isr_LOOP.c ****     return priority;
+ 321              		.loc 1 248 0
+ 322 0018 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 249:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 323              		.loc 1 249 0
+ 324 001a 1846     		mov	r0, r3
+ 325 001c 07F10C07 		add	r7, r7, #12
+ 326 0020 BD46     		mov	sp, r7
+ 327 0022 80BC     		pop	{r7}
+ 328 0024 7047     		bx	lr
+ 329              		.cfi_endproc
+ 330              	.LFE7:
+ 331              		.size	isr_LOOP_GetPriority, .-isr_LOOP_GetPriority
+ 332 0026 00BF     		.section	.text.isr_LOOP_Enable,"ax",%progbits
+ 333              		.align	2
+ 334              		.global	isr_LOOP_Enable
+ 335              		.thumb
+ 336              		.thumb_func
+ 337              		.type	isr_LOOP_Enable, %function
+ 338              	isr_LOOP_Enable:
+ 339              	.LFB8:
+ 250:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 251:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 252:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 253:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_Enable
+ 254:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 255:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 256:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 257:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Enables the interrupt.
+ 258:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 259:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 260:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 261:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 262:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 263:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 264:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 265:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 266:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_Enable(void)
+ 267:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 340              		.loc 1 267 0
+ 341              		.cfi_startproc
+ 342              		@ args = 0, pretend = 0, frame = 0
+ 343              		@ frame_needed = 1, uses_anonymous_args = 0
+ 344              		@ link register save eliminated.
+ 345 0000 80B4     		push	{r7}
+ 346              	.LCFI21:
+ 347              		.cfi_def_cfa_offset 4
+ 348 0002 00AF     		add	r7, sp, #0
+ 349              		.cfi_offset 7, -4
+ 350              	.LCFI22:
+ 351              		.cfi_def_cfa_register 7
+ 268:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Enable the general interrupt. */
+ 269:.\Generated_Source\PSoC5/isr_LOOP.c ****     *isr_LOOP_INTC_SET_EN = isr_LOOP__INTC_MASK;
+ 352              		.loc 1 269 0
+ 353 0004 4EF20013 		movw	r3, #:lower16:-536813312
+ 354 0008 CEF20003 		movt	r3, #:upper16:-536813312
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 12
+
+
+ 355 000c 4FF00102 		mov	r2, #1
+ 356 0010 1A60     		str	r2, [r3, #0]
+ 270:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 357              		.loc 1 270 0
+ 358 0012 BD46     		mov	sp, r7
+ 359 0014 80BC     		pop	{r7}
+ 360 0016 7047     		bx	lr
+ 361              		.cfi_endproc
+ 362              	.LFE8:
+ 363              		.size	isr_LOOP_Enable, .-isr_LOOP_Enable
+ 364              		.section	.text.isr_LOOP_GetState,"ax",%progbits
+ 365              		.align	2
+ 366              		.global	isr_LOOP_GetState
+ 367              		.thumb
+ 368              		.thumb_func
+ 369              		.type	isr_LOOP_GetState, %function
+ 370              	isr_LOOP_GetState:
+ 371              	.LFB9:
+ 271:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 272:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 273:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 274:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_GetState
+ 275:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 276:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 277:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 278:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 279:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 280:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 281:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 282:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 283:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 284:.\Generated_Source\PSoC5/isr_LOOP.c **** *   1 if enabled, 0 if disabled.
+ 285:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 286:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 287:.\Generated_Source\PSoC5/isr_LOOP.c **** uint8 isr_LOOP_GetState(void)
+ 288:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 372              		.loc 1 288 0
+ 373              		.cfi_startproc
+ 374              		@ args = 0, pretend = 0, frame = 0
+ 375              		@ frame_needed = 1, uses_anonymous_args = 0
+ 376              		@ link register save eliminated.
+ 377 0000 80B4     		push	{r7}
+ 378              	.LCFI23:
+ 379              		.cfi_def_cfa_offset 4
+ 380 0002 00AF     		add	r7, sp, #0
+ 381              		.cfi_offset 7, -4
+ 382              	.LCFI24:
+ 383              		.cfi_def_cfa_register 7
+ 289:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Get the state of the general interrupt. */
+ 290:.\Generated_Source\PSoC5/isr_LOOP.c ****     return ((*isr_LOOP_INTC_SET_EN & (uint32)isr_LOOP__INTC_MASK) != 0u) ? 1u:0u;
+ 384              		.loc 1 290 0
+ 385 0004 4EF20013 		movw	r3, #:lower16:-536813312
+ 386 0008 CEF20003 		movt	r3, #:upper16:-536813312
+ 387 000c 1B68     		ldr	r3, [r3, #0]
+ 388 000e 03F00103 		and	r3, r3, #1
+ 389 0012 DBB2     		uxtb	r3, r3
+ 390 0014 002B     		cmp	r3, #0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 13
+
+
+ 391 0016 02D0     		beq	.L20
+ 392 0018 4FF00103 		mov	r3, #1
+ 393 001c 01E0     		b	.L21
+ 394              	.L20:
+ 395 001e 4FF00003 		mov	r3, #0
+ 396              	.L21:
+ 291:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 397              		.loc 1 291 0
+ 398 0022 1846     		mov	r0, r3
+ 399 0024 BD46     		mov	sp, r7
+ 400 0026 80BC     		pop	{r7}
+ 401 0028 7047     		bx	lr
+ 402              		.cfi_endproc
+ 403              	.LFE9:
+ 404              		.size	isr_LOOP_GetState, .-isr_LOOP_GetState
+ 405 002a 00BF     		.section	.text.isr_LOOP_Disable,"ax",%progbits
+ 406              		.align	2
+ 407              		.global	isr_LOOP_Disable
+ 408              		.thumb
+ 409              		.thumb_func
+ 410              		.type	isr_LOOP_Disable, %function
+ 411              	isr_LOOP_Disable:
+ 412              	.LFB10:
+ 292:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 293:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 294:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 295:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_Disable
+ 296:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 297:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 298:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 299:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Disables the Interrupt.
+ 300:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 301:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 302:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 303:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 304:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 305:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 306:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 307:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 308:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_Disable(void)
+ 309:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 413              		.loc 1 309 0
+ 414              		.cfi_startproc
+ 415              		@ args = 0, pretend = 0, frame = 0
+ 416              		@ frame_needed = 1, uses_anonymous_args = 0
+ 417              		@ link register save eliminated.
+ 418 0000 80B4     		push	{r7}
+ 419              	.LCFI25:
+ 420              		.cfi_def_cfa_offset 4
+ 421 0002 00AF     		add	r7, sp, #0
+ 422              		.cfi_offset 7, -4
+ 423              	.LCFI26:
+ 424              		.cfi_def_cfa_register 7
+ 310:.\Generated_Source\PSoC5/isr_LOOP.c ****     /* Disable the general interrupt. */
+ 311:.\Generated_Source\PSoC5/isr_LOOP.c ****     *isr_LOOP_INTC_CLR_EN = isr_LOOP__INTC_MASK;
+ 425              		.loc 1 311 0
+ 426 0004 4EF28013 		movw	r3, #:lower16:-536813184
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 14
+
+
+ 427 0008 CEF20003 		movt	r3, #:upper16:-536813184
+ 428 000c 4FF00102 		mov	r2, #1
+ 429 0010 1A60     		str	r2, [r3, #0]
+ 312:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 430              		.loc 1 312 0
+ 431 0012 BD46     		mov	sp, r7
+ 432 0014 80BC     		pop	{r7}
+ 433 0016 7047     		bx	lr
+ 434              		.cfi_endproc
+ 435              	.LFE10:
+ 436              		.size	isr_LOOP_Disable, .-isr_LOOP_Disable
+ 437              		.section	.text.isr_LOOP_SetPending,"ax",%progbits
+ 438              		.align	2
+ 439              		.global	isr_LOOP_SetPending
+ 440              		.thumb
+ 441              		.thumb_func
+ 442              		.type	isr_LOOP_SetPending, %function
+ 443              	isr_LOOP_SetPending:
+ 444              	.LFB11:
+ 313:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 314:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 315:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 316:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_SetPending
+ 317:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 318:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 319:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 320:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 321:.\Generated_Source\PSoC5/isr_LOOP.c **** *   generating the interrupt.
+ 322:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 323:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 324:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 325:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 326:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 327:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 328:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 329:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 330:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_SetPending(void)
+ 331:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 445              		.loc 1 331 0
+ 446              		.cfi_startproc
+ 447              		@ args = 0, pretend = 0, frame = 0
+ 448              		@ frame_needed = 1, uses_anonymous_args = 0
+ 449              		@ link register save eliminated.
+ 450 0000 80B4     		push	{r7}
+ 451              	.LCFI27:
+ 452              		.cfi_def_cfa_offset 4
+ 453 0002 00AF     		add	r7, sp, #0
+ 454              		.cfi_offset 7, -4
+ 455              	.LCFI28:
+ 456              		.cfi_def_cfa_register 7
+ 332:.\Generated_Source\PSoC5/isr_LOOP.c ****     *isr_LOOP_INTC_SET_PD = isr_LOOP__INTC_MASK;
+ 457              		.loc 1 332 0
+ 458 0004 4EF20023 		movw	r3, #:lower16:-536813056
+ 459 0008 CEF20003 		movt	r3, #:upper16:-536813056
+ 460 000c 4FF00102 		mov	r2, #1
+ 461 0010 1A60     		str	r2, [r3, #0]
+ 333:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 15
+
+
+ 462              		.loc 1 333 0
+ 463 0012 BD46     		mov	sp, r7
+ 464 0014 80BC     		pop	{r7}
+ 465 0016 7047     		bx	lr
+ 466              		.cfi_endproc
+ 467              	.LFE11:
+ 468              		.size	isr_LOOP_SetPending, .-isr_LOOP_SetPending
+ 469              		.section	.text.isr_LOOP_ClearPending,"ax",%progbits
+ 470              		.align	2
+ 471              		.global	isr_LOOP_ClearPending
+ 472              		.thumb
+ 473              		.thumb_func
+ 474              		.type	isr_LOOP_ClearPending, %function
+ 475              	isr_LOOP_ClearPending:
+ 476              	.LFB12:
+ 334:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 335:.\Generated_Source\PSoC5/isr_LOOP.c **** 
+ 336:.\Generated_Source\PSoC5/isr_LOOP.c **** /*******************************************************************************
+ 337:.\Generated_Source\PSoC5/isr_LOOP.c **** * Function Name: isr_LOOP_ClearPending
+ 338:.\Generated_Source\PSoC5/isr_LOOP.c **** ********************************************************************************
+ 339:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 340:.\Generated_Source\PSoC5/isr_LOOP.c **** * Summary:
+ 341:.\Generated_Source\PSoC5/isr_LOOP.c **** *   Clears a pending interrupt.
+ 342:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 343:.\Generated_Source\PSoC5/isr_LOOP.c **** * Parameters:
+ 344:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 345:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 346:.\Generated_Source\PSoC5/isr_LOOP.c **** * Return:
+ 347:.\Generated_Source\PSoC5/isr_LOOP.c **** *   None
+ 348:.\Generated_Source\PSoC5/isr_LOOP.c **** *
+ 349:.\Generated_Source\PSoC5/isr_LOOP.c **** *******************************************************************************/
+ 350:.\Generated_Source\PSoC5/isr_LOOP.c **** void isr_LOOP_ClearPending(void)
+ 351:.\Generated_Source\PSoC5/isr_LOOP.c **** {
+ 477              		.loc 1 351 0
+ 478              		.cfi_startproc
+ 479              		@ args = 0, pretend = 0, frame = 0
+ 480              		@ frame_needed = 1, uses_anonymous_args = 0
+ 481              		@ link register save eliminated.
+ 482 0000 80B4     		push	{r7}
+ 483              	.LCFI29:
+ 484              		.cfi_def_cfa_offset 4
+ 485 0002 00AF     		add	r7, sp, #0
+ 486              		.cfi_offset 7, -4
+ 487              	.LCFI30:
+ 488              		.cfi_def_cfa_register 7
+ 352:.\Generated_Source\PSoC5/isr_LOOP.c ****     *isr_LOOP_INTC_CLR_PD = isr_LOOP__INTC_MASK;
+ 489              		.loc 1 352 0
+ 490 0004 4EF28023 		movw	r3, #:lower16:-536812928
+ 491 0008 CEF20003 		movt	r3, #:upper16:-536812928
+ 492 000c 4FF00102 		mov	r2, #1
+ 493 0010 1A60     		str	r2, [r3, #0]
+ 353:.\Generated_Source\PSoC5/isr_LOOP.c **** }
+ 494              		.loc 1 353 0
+ 495 0012 BD46     		mov	sp, r7
+ 496 0014 80BC     		pop	{r7}
+ 497 0016 7047     		bx	lr
+ 498              		.cfi_endproc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 16
+
+
+ 499              	.LFE12:
+ 500              		.size	isr_LOOP_ClearPending, .-isr_LOOP_ClearPending
+ 501              		.text
+ 502              	.Letext0:
+ 503              		.section	.debug_loc,"",%progbits
+ 504              	.Ldebug_loc0:
+ 505              	.LLST0:
+ 506 0000 00000000 		.4byte	.LFB0
+ 507 0004 02000000 		.4byte	.LCFI0
+ 508 0008 0100     		.2byte	0x1
+ 509 000a 5D       		.byte	0x5d
+ 510 000b 02000000 		.4byte	.LCFI0
+ 511 000f 04000000 		.4byte	.LCFI1
+ 512 0013 0200     		.2byte	0x2
+ 513 0015 7D       		.byte	0x7d
+ 514 0016 08       		.sleb128 8
+ 515 0017 04000000 		.4byte	.LCFI1
+ 516 001b 22000000 		.4byte	.LFE0
+ 517 001f 0200     		.2byte	0x2
+ 518 0021 77       		.byte	0x77
+ 519 0022 08       		.sleb128 8
+ 520 0023 00000000 		.4byte	0x0
+ 521 0027 00000000 		.4byte	0x0
+ 522              	.LLST1:
+ 523 002b 00000000 		.4byte	.LFB1
+ 524 002f 02000000 		.4byte	.LCFI2
+ 525 0033 0100     		.2byte	0x1
+ 526 0035 5D       		.byte	0x5d
+ 527 0036 02000000 		.4byte	.LCFI2
+ 528 003a 04000000 		.4byte	.LCFI3
+ 529 003e 0200     		.2byte	0x2
+ 530 0040 7D       		.byte	0x7d
+ 531 0041 08       		.sleb128 8
+ 532 0042 04000000 		.4byte	.LCFI3
+ 533 0046 06000000 		.4byte	.LCFI4
+ 534 004a 0200     		.2byte	0x2
+ 535 004c 7D       		.byte	0x7d
+ 536 004d 10       		.sleb128 16
+ 537 004e 06000000 		.4byte	.LCFI4
+ 538 0052 26000000 		.4byte	.LFE1
+ 539 0056 0200     		.2byte	0x2
+ 540 0058 77       		.byte	0x77
+ 541 0059 10       		.sleb128 16
+ 542 005a 00000000 		.4byte	0x0
+ 543 005e 00000000 		.4byte	0x0
+ 544              	.LLST2:
+ 545 0062 00000000 		.4byte	.LFB2
+ 546 0066 02000000 		.4byte	.LCFI5
+ 547 006a 0100     		.2byte	0x1
+ 548 006c 5D       		.byte	0x5d
+ 549 006d 02000000 		.4byte	.LCFI5
+ 550 0071 04000000 		.4byte	.LCFI6
+ 551 0075 0200     		.2byte	0x2
+ 552 0077 7D       		.byte	0x7d
+ 553 0078 08       		.sleb128 8
+ 554 0079 04000000 		.4byte	.LCFI6
+ 555 007d 16000000 		.4byte	.LFE2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 17
+
+
+ 556 0081 0200     		.2byte	0x2
+ 557 0083 77       		.byte	0x77
+ 558 0084 08       		.sleb128 8
+ 559 0085 00000000 		.4byte	0x0
+ 560 0089 00000000 		.4byte	0x0
+ 561              	.LLST3:
+ 562 008d 00000000 		.4byte	.LFB3
+ 563 0091 02000000 		.4byte	.LCFI7
+ 564 0095 0100     		.2byte	0x1
+ 565 0097 5D       		.byte	0x5d
+ 566 0098 02000000 		.4byte	.LCFI7
+ 567 009c 04000000 		.4byte	.LCFI8
+ 568 00a0 0200     		.2byte	0x2
+ 569 00a2 7D       		.byte	0x7d
+ 570 00a3 08       		.sleb128 8
+ 571 00a4 04000000 		.4byte	.LCFI8
+ 572 00a8 26000000 		.4byte	.LFE3
+ 573 00ac 0200     		.2byte	0x2
+ 574 00ae 77       		.byte	0x77
+ 575 00af 08       		.sleb128 8
+ 576 00b0 00000000 		.4byte	0x0
+ 577 00b4 00000000 		.4byte	0x0
+ 578              	.LLST4:
+ 579 00b8 00000000 		.4byte	.LFB4
+ 580 00bc 02000000 		.4byte	.LCFI9
+ 581 00c0 0100     		.2byte	0x1
+ 582 00c2 5D       		.byte	0x5d
+ 583 00c3 02000000 		.4byte	.LCFI9
+ 584 00c7 04000000 		.4byte	.LCFI10
+ 585 00cb 0200     		.2byte	0x2
+ 586 00cd 7D       		.byte	0x7d
+ 587 00ce 04       		.sleb128 4
+ 588 00cf 04000000 		.4byte	.LCFI10
+ 589 00d3 06000000 		.4byte	.LCFI11
+ 590 00d7 0200     		.2byte	0x2
+ 591 00d9 7D       		.byte	0x7d
+ 592 00da 18       		.sleb128 24
+ 593 00db 06000000 		.4byte	.LCFI11
+ 594 00df 28000000 		.4byte	.LFE4
+ 595 00e3 0200     		.2byte	0x2
+ 596 00e5 77       		.byte	0x77
+ 597 00e6 18       		.sleb128 24
+ 598 00e7 00000000 		.4byte	0x0
+ 599 00eb 00000000 		.4byte	0x0
+ 600              	.LLST5:
+ 601 00ef 00000000 		.4byte	.LFB5
+ 602 00f3 02000000 		.4byte	.LCFI12
+ 603 00f7 0100     		.2byte	0x1
+ 604 00f9 5D       		.byte	0x5d
+ 605 00fa 02000000 		.4byte	.LCFI12
+ 606 00fe 04000000 		.4byte	.LCFI13
+ 607 0102 0200     		.2byte	0x2
+ 608 0104 7D       		.byte	0x7d
+ 609 0105 04       		.sleb128 4
+ 610 0106 04000000 		.4byte	.LCFI13
+ 611 010a 06000000 		.4byte	.LCFI14
+ 612 010e 0200     		.2byte	0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 18
+
+
+ 613 0110 7D       		.byte	0x7d
+ 614 0111 10       		.sleb128 16
+ 615 0112 06000000 		.4byte	.LCFI14
+ 616 0116 26000000 		.4byte	.LFE5
+ 617 011a 0200     		.2byte	0x2
+ 618 011c 77       		.byte	0x77
+ 619 011d 10       		.sleb128 16
+ 620 011e 00000000 		.4byte	0x0
+ 621 0122 00000000 		.4byte	0x0
+ 622              	.LLST6:
+ 623 0126 00000000 		.4byte	.LFB6
+ 624 012a 02000000 		.4byte	.LCFI15
+ 625 012e 0100     		.2byte	0x1
+ 626 0130 5D       		.byte	0x5d
+ 627 0131 02000000 		.4byte	.LCFI15
+ 628 0135 04000000 		.4byte	.LCFI16
+ 629 0139 0200     		.2byte	0x2
+ 630 013b 7D       		.byte	0x7d
+ 631 013c 04       		.sleb128 4
+ 632 013d 04000000 		.4byte	.LCFI16
+ 633 0141 06000000 		.4byte	.LCFI17
+ 634 0145 0200     		.2byte	0x2
+ 635 0147 7D       		.byte	0x7d
+ 636 0148 10       		.sleb128 16
+ 637 0149 06000000 		.4byte	.LCFI17
+ 638 014d 26000000 		.4byte	.LFE6
+ 639 0151 0200     		.2byte	0x2
+ 640 0153 77       		.byte	0x77
+ 641 0154 10       		.sleb128 16
+ 642 0155 00000000 		.4byte	0x0
+ 643 0159 00000000 		.4byte	0x0
+ 644              	.LLST7:
+ 645 015d 00000000 		.4byte	.LFB7
+ 646 0161 02000000 		.4byte	.LCFI18
+ 647 0165 0100     		.2byte	0x1
+ 648 0167 5D       		.byte	0x5d
+ 649 0168 02000000 		.4byte	.LCFI18
+ 650 016c 04000000 		.4byte	.LCFI19
+ 651 0170 0200     		.2byte	0x2
+ 652 0172 7D       		.byte	0x7d
+ 653 0173 04       		.sleb128 4
+ 654 0174 04000000 		.4byte	.LCFI19
+ 655 0178 06000000 		.4byte	.LCFI20
+ 656 017c 0200     		.2byte	0x2
+ 657 017e 7D       		.byte	0x7d
+ 658 017f 10       		.sleb128 16
+ 659 0180 06000000 		.4byte	.LCFI20
+ 660 0184 26000000 		.4byte	.LFE7
+ 661 0188 0200     		.2byte	0x2
+ 662 018a 77       		.byte	0x77
+ 663 018b 10       		.sleb128 16
+ 664 018c 00000000 		.4byte	0x0
+ 665 0190 00000000 		.4byte	0x0
+ 666              	.LLST8:
+ 667 0194 00000000 		.4byte	.LFB8
+ 668 0198 02000000 		.4byte	.LCFI21
+ 669 019c 0100     		.2byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 19
+
+
+ 670 019e 5D       		.byte	0x5d
+ 671 019f 02000000 		.4byte	.LCFI21
+ 672 01a3 04000000 		.4byte	.LCFI22
+ 673 01a7 0200     		.2byte	0x2
+ 674 01a9 7D       		.byte	0x7d
+ 675 01aa 04       		.sleb128 4
+ 676 01ab 04000000 		.4byte	.LCFI22
+ 677 01af 18000000 		.4byte	.LFE8
+ 678 01b3 0200     		.2byte	0x2
+ 679 01b5 77       		.byte	0x77
+ 680 01b6 04       		.sleb128 4
+ 681 01b7 00000000 		.4byte	0x0
+ 682 01bb 00000000 		.4byte	0x0
+ 683              	.LLST9:
+ 684 01bf 00000000 		.4byte	.LFB9
+ 685 01c3 02000000 		.4byte	.LCFI23
+ 686 01c7 0100     		.2byte	0x1
+ 687 01c9 5D       		.byte	0x5d
+ 688 01ca 02000000 		.4byte	.LCFI23
+ 689 01ce 04000000 		.4byte	.LCFI24
+ 690 01d2 0200     		.2byte	0x2
+ 691 01d4 7D       		.byte	0x7d
+ 692 01d5 04       		.sleb128 4
+ 693 01d6 04000000 		.4byte	.LCFI24
+ 694 01da 2A000000 		.4byte	.LFE9
+ 695 01de 0200     		.2byte	0x2
+ 696 01e0 77       		.byte	0x77
+ 697 01e1 04       		.sleb128 4
+ 698 01e2 00000000 		.4byte	0x0
+ 699 01e6 00000000 		.4byte	0x0
+ 700              	.LLST10:
+ 701 01ea 00000000 		.4byte	.LFB10
+ 702 01ee 02000000 		.4byte	.LCFI25
+ 703 01f2 0100     		.2byte	0x1
+ 704 01f4 5D       		.byte	0x5d
+ 705 01f5 02000000 		.4byte	.LCFI25
+ 706 01f9 04000000 		.4byte	.LCFI26
+ 707 01fd 0200     		.2byte	0x2
+ 708 01ff 7D       		.byte	0x7d
+ 709 0200 04       		.sleb128 4
+ 710 0201 04000000 		.4byte	.LCFI26
+ 711 0205 18000000 		.4byte	.LFE10
+ 712 0209 0200     		.2byte	0x2
+ 713 020b 77       		.byte	0x77
+ 714 020c 04       		.sleb128 4
+ 715 020d 00000000 		.4byte	0x0
+ 716 0211 00000000 		.4byte	0x0
+ 717              	.LLST11:
+ 718 0215 00000000 		.4byte	.LFB11
+ 719 0219 02000000 		.4byte	.LCFI27
+ 720 021d 0100     		.2byte	0x1
+ 721 021f 5D       		.byte	0x5d
+ 722 0220 02000000 		.4byte	.LCFI27
+ 723 0224 04000000 		.4byte	.LCFI28
+ 724 0228 0200     		.2byte	0x2
+ 725 022a 7D       		.byte	0x7d
+ 726 022b 04       		.sleb128 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 20
+
+
+ 727 022c 04000000 		.4byte	.LCFI28
+ 728 0230 18000000 		.4byte	.LFE11
+ 729 0234 0200     		.2byte	0x2
+ 730 0236 77       		.byte	0x77
+ 731 0237 04       		.sleb128 4
+ 732 0238 00000000 		.4byte	0x0
+ 733 023c 00000000 		.4byte	0x0
+ 734              	.LLST12:
+ 735 0240 00000000 		.4byte	.LFB12
+ 736 0244 02000000 		.4byte	.LCFI29
+ 737 0248 0100     		.2byte	0x1
+ 738 024a 5D       		.byte	0x5d
+ 739 024b 02000000 		.4byte	.LCFI29
+ 740 024f 04000000 		.4byte	.LCFI30
+ 741 0253 0200     		.2byte	0x2
+ 742 0255 7D       		.byte	0x7d
+ 743 0256 04       		.sleb128 4
+ 744 0257 04000000 		.4byte	.LCFI30
+ 745 025b 18000000 		.4byte	.LFE12
+ 746 025f 0200     		.2byte	0x2
+ 747 0261 77       		.byte	0x77
+ 748 0262 04       		.sleb128 4
+ 749 0263 00000000 		.4byte	0x0
+ 750 0267 00000000 		.4byte	0x0
+ 751              		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 752              		.section	.debug_info
+ 753 0000 6C020000 		.4byte	0x26c
+ 754 0004 0200     		.2byte	0x2
+ 755 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 756 000a 04       		.byte	0x4
+ 757 000b 01       		.uleb128 0x1
+ 758 000c F4010000 		.4byte	.LASF32
+ 759 0010 01       		.byte	0x1
+ 760 0011 69000000 		.4byte	.LASF33
+ 761 0015 57010000 		.4byte	.LASF34
+ 762 0019 00000000 		.4byte	0x0
+ 763 001d 00000000 		.4byte	0x0
+ 764 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 765 0025 00000000 		.4byte	.Ldebug_line0
+ 766 0029 02       		.uleb128 0x2
+ 767 002a 01       		.byte	0x1
+ 768 002b 06       		.byte	0x6
+ 769 002c 3A020000 		.4byte	.LASF0
+ 770 0030 02       		.uleb128 0x2
+ 771 0031 01       		.byte	0x1
+ 772 0032 08       		.byte	0x8
+ 773 0033 AA000000 		.4byte	.LASF1
+ 774 0037 02       		.uleb128 0x2
+ 775 0038 02       		.byte	0x2
+ 776 0039 05       		.byte	0x5
+ 777 003a 27020000 		.4byte	.LASF2
+ 778 003e 02       		.uleb128 0x2
+ 779 003f 02       		.byte	0x2
+ 780 0040 07       		.byte	0x7
+ 781 0041 36000000 		.4byte	.LASF3
+ 782 0045 03       		.uleb128 0x3
+ 783 0046 04       		.byte	0x4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 21
+
+
+ 784 0047 05       		.byte	0x5
+ 785 0048 696E7400 		.ascii	"int\000"
+ 786 004c 02       		.uleb128 0x2
+ 787 004d 04       		.byte	0x4
+ 788 004e 07       		.byte	0x7
+ 789 004f AB010000 		.4byte	.LASF4
+ 790 0053 02       		.uleb128 0x2
+ 791 0054 08       		.byte	0x8
+ 792 0055 05       		.byte	0x5
+ 793 0056 00000000 		.4byte	.LASF5
+ 794 005a 02       		.uleb128 0x2
+ 795 005b 08       		.byte	0x8
+ 796 005c 07       		.byte	0x7
+ 797 005d 93000000 		.4byte	.LASF6
+ 798 0061 02       		.uleb128 0x2
+ 799 0062 04       		.byte	0x4
+ 800 0063 05       		.byte	0x5
+ 801 0064 31020000 		.4byte	.LASF7
+ 802 0068 04       		.uleb128 0x4
+ 803 0069 04       		.byte	0x4
+ 804 006a 07       		.byte	0x7
+ 805 006b 02       		.uleb128 0x2
+ 806 006c 04       		.byte	0x4
+ 807 006d 07       		.byte	0x7
+ 808 006e BE000000 		.4byte	.LASF8
+ 809 0072 05       		.uleb128 0x5
+ 810 0073 01       		.byte	0x1
+ 811 0074 06       		.uleb128 0x6
+ 812 0075 04       		.byte	0x4
+ 813 0076 72000000 		.4byte	0x72
+ 814 007a 02       		.uleb128 0x2
+ 815 007b 01       		.byte	0x1
+ 816 007c 08       		.byte	0x8
+ 817 007d 13020000 		.4byte	.LASF9
+ 818 0081 07       		.uleb128 0x7
+ 819 0082 DF000000 		.4byte	.LASF10
+ 820 0086 02       		.byte	0x2
+ 821 0087 4C       		.byte	0x4c
+ 822 0088 30000000 		.4byte	0x30
+ 823 008c 07       		.uleb128 0x7
+ 824 008d B8000000 		.4byte	.LASF11
+ 825 0091 02       		.byte	0x2
+ 826 0092 50       		.byte	0x50
+ 827 0093 37000000 		.4byte	0x37
+ 828 0097 02       		.uleb128 0x2
+ 829 0098 04       		.byte	0x4
+ 830 0099 04       		.byte	0x4
+ 831 009a 8D000000 		.4byte	.LASF12
+ 832 009e 02       		.uleb128 0x2
+ 833 009f 08       		.byte	0x8
+ 834 00a0 04       		.byte	0x4
+ 835 00a1 29010000 		.4byte	.LASF13
+ 836 00a5 07       		.uleb128 0x7
+ 837 00a6 D1010000 		.4byte	.LASF14
+ 838 00aa 02       		.byte	0x2
+ 839 00ab EB       		.byte	0xeb
+ 840 00ac 74000000 		.4byte	0x74
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 22
+
+
+ 841 00b0 08       		.uleb128 0x8
+ 842 00b1 01       		.byte	0x1
+ 843 00b2 D0000000 		.4byte	.LASF15
+ 844 00b6 01       		.byte	0x1
+ 845 00b7 3A       		.byte	0x3a
+ 846 00b8 01       		.byte	0x1
+ 847 00b9 00000000 		.4byte	.LFB0
+ 848 00bd 22000000 		.4byte	.LFE0
+ 849 00c1 00000000 		.4byte	.LLST0
+ 850 00c5 09       		.uleb128 0x9
+ 851 00c6 01       		.byte	0x1
+ 852 00c7 18010000 		.4byte	.LASF18
+ 853 00cb 01       		.byte	0x1
+ 854 00cc 58       		.byte	0x58
+ 855 00cd 01       		.byte	0x1
+ 856 00ce 00000000 		.4byte	.LFB1
+ 857 00d2 26000000 		.4byte	.LFE1
+ 858 00d6 2B000000 		.4byte	.LLST1
+ 859 00da ED000000 		.4byte	0xed
+ 860 00de 0A       		.uleb128 0xa
+ 861 00df B8010000 		.4byte	.LASF20
+ 862 00e3 01       		.byte	0x1
+ 863 00e4 58       		.byte	0x58
+ 864 00e5 A5000000 		.4byte	0xa5
+ 865 00e9 02       		.byte	0x2
+ 866 00ea 91       		.byte	0x91
+ 867 00eb 74       		.sleb128 -12
+ 868 00ec 00       		.byte	0x0
+ 869 00ed 08       		.uleb128 0x8
+ 870 00ee 01       		.byte	0x1
+ 871 00ef E6010000 		.4byte	.LASF16
+ 872 00f3 01       		.byte	0x1
+ 873 00f4 75       		.byte	0x75
+ 874 00f5 01       		.byte	0x1
+ 875 00f6 00000000 		.4byte	.LFB2
+ 876 00fa 16000000 		.4byte	.LFE2
+ 877 00fe 62000000 		.4byte	.LLST2
+ 878 0102 08       		.uleb128 0x8
+ 879 0103 01       		.byte	0x1
+ 880 0104 56000000 		.4byte	.LASF17
+ 881 0108 01       		.byte	0x1
+ 882 0109 8F       		.byte	0x8f
+ 883 010a 01       		.byte	0x1
+ 884 010b 00000000 		.4byte	.LFB3
+ 885 010f 26000000 		.4byte	.LFE3
+ 886 0113 8D000000 		.4byte	.LLST3
+ 887 0117 09       		.uleb128 0x9
+ 888 0118 01       		.byte	0x1
+ 889 0119 00020000 		.4byte	.LASF19
+ 890 011d 01       		.byte	0x1
+ 891 011e A9       		.byte	0xa9
+ 892 011f 01       		.byte	0x1
+ 893 0120 00000000 		.4byte	.LFB4
+ 894 0124 28000000 		.4byte	.LFE4
+ 895 0128 B8000000 		.4byte	.LLST4
+ 896 012c 4D010000 		.4byte	0x14d
+ 897 0130 0A       		.uleb128 0xa
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 23
+
+
+ 898 0131 B8010000 		.4byte	.LASF20
+ 899 0135 01       		.byte	0x1
+ 900 0136 A9       		.byte	0xa9
+ 901 0137 A5000000 		.4byte	0xa5
+ 902 013b 02       		.byte	0x2
+ 903 013c 91       		.byte	0x91
+ 904 013d 6C       		.sleb128 -20
+ 905 013e 0B       		.uleb128 0xb
+ 906 013f 18020000 		.4byte	.LASF21
+ 907 0143 01       		.byte	0x1
+ 908 0144 AB       		.byte	0xab
+ 909 0145 4D010000 		.4byte	0x14d
+ 910 0149 02       		.byte	0x2
+ 911 014a 91       		.byte	0x91
+ 912 014b 74       		.sleb128 -12
+ 913 014c 00       		.byte	0x0
+ 914 014d 06       		.uleb128 0x6
+ 915 014e 04       		.byte	0x4
+ 916 014f A5000000 		.4byte	0xa5
+ 917 0153 0C       		.uleb128 0xc
+ 918 0154 01       		.byte	0x1
+ 919 0155 0E000000 		.4byte	.LASF24
+ 920 0159 01       		.byte	0x1
+ 921 015a C1       		.byte	0xc1
+ 922 015b 01       		.byte	0x1
+ 923 015c A5000000 		.4byte	0xa5
+ 924 0160 00000000 		.4byte	.LFB5
+ 925 0164 26000000 		.4byte	.LFE5
+ 926 0168 EF000000 		.4byte	.LLST5
+ 927 016c 7F010000 		.4byte	0x17f
+ 928 0170 0B       		.uleb128 0xb
+ 929 0171 18020000 		.4byte	.LASF21
+ 930 0175 01       		.byte	0x1
+ 931 0176 C3       		.byte	0xc3
+ 932 0177 4D010000 		.4byte	0x14d
+ 933 017b 02       		.byte	0x2
+ 934 017c 91       		.byte	0x91
+ 935 017d 74       		.sleb128 -12
+ 936 017e 00       		.byte	0x0
+ 937 017f 09       		.uleb128 0x9
+ 938 0180 01       		.byte	0x1
+ 939 0181 42010000 		.4byte	.LASF22
+ 940 0185 01       		.byte	0x1
+ 941 0186 DD       		.byte	0xdd
+ 942 0187 01       		.byte	0x1
+ 943 0188 00000000 		.4byte	.LFB6
+ 944 018c 26000000 		.4byte	.LFE6
+ 945 0190 26010000 		.4byte	.LLST6
+ 946 0194 A7010000 		.4byte	0x1a7
+ 947 0198 0A       		.uleb128 0xa
+ 948 0199 F9000000 		.4byte	.LASF23
+ 949 019d 01       		.byte	0x1
+ 950 019e DD       		.byte	0xdd
+ 951 019f 81000000 		.4byte	0x81
+ 952 01a3 02       		.byte	0x2
+ 953 01a4 91       		.byte	0x91
+ 954 01a5 77       		.sleb128 -9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 24
+
+
+ 955 01a6 00       		.byte	0x0
+ 956 01a7 0C       		.uleb128 0xc
+ 957 01a8 01       		.byte	0x1
+ 958 01a9 21000000 		.4byte	.LASF25
+ 959 01ad 01       		.byte	0x1
+ 960 01ae F1       		.byte	0xf1
+ 961 01af 01       		.byte	0x1
+ 962 01b0 81000000 		.4byte	0x81
+ 963 01b4 00000000 		.4byte	.LFB7
+ 964 01b8 26000000 		.4byte	.LFE7
+ 965 01bc 5D010000 		.4byte	.LLST7
+ 966 01c0 D3010000 		.4byte	0x1d3
+ 967 01c4 0B       		.uleb128 0xb
+ 968 01c5 F9000000 		.4byte	.LASF23
+ 969 01c9 01       		.byte	0x1
+ 970 01ca F3       		.byte	0xf3
+ 971 01cb 81000000 		.4byte	0x81
+ 972 01cf 02       		.byte	0x2
+ 973 01d0 91       		.byte	0x91
+ 974 01d1 77       		.sleb128 -9
+ 975 01d2 00       		.byte	0x0
+ 976 01d3 0D       		.uleb128 0xd
+ 977 01d4 01       		.byte	0x1
+ 978 01d5 9B010000 		.4byte	.LASF26
+ 979 01d9 01       		.byte	0x1
+ 980 01da 0A01     		.2byte	0x10a
+ 981 01dc 01       		.byte	0x1
+ 982 01dd 00000000 		.4byte	.LFB8
+ 983 01e1 18000000 		.4byte	.LFE8
+ 984 01e5 94010000 		.4byte	.LLST8
+ 985 01e9 0E       		.uleb128 0xe
+ 986 01ea 01       		.byte	0x1
+ 987 01eb 30010000 		.4byte	.LASF35
+ 988 01ef 01       		.byte	0x1
+ 989 01f0 1F01     		.2byte	0x11f
+ 990 01f2 01       		.byte	0x1
+ 991 01f3 81000000 		.4byte	0x81
+ 992 01f7 00000000 		.4byte	.LFB9
+ 993 01fb 2A000000 		.4byte	.LFE9
+ 994 01ff BF010000 		.4byte	.LLST9
+ 995 0203 0D       		.uleb128 0xd
+ 996 0204 01       		.byte	0x1
+ 997 0205 C0010000 		.4byte	.LASF27
+ 998 0209 01       		.byte	0x1
+ 999 020a 3401     		.2byte	0x134
+ 1000 020c 01       		.byte	0x1
+ 1001 020d 00000000 		.4byte	.LFB10
+ 1002 0211 18000000 		.4byte	.LFE10
+ 1003 0215 EA010000 		.4byte	.LLST10
+ 1004 0219 0D       		.uleb128 0xd
+ 1005 021a 01       		.byte	0x1
+ 1006 021b E5000000 		.4byte	.LASF28
+ 1007 021f 01       		.byte	0x1
+ 1008 0220 4A01     		.2byte	0x14a
+ 1009 0222 01       		.byte	0x1
+ 1010 0223 00000000 		.4byte	.LFB11
+ 1011 0227 18000000 		.4byte	.LFE11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 25
+
+
+ 1012 022b 15020000 		.4byte	.LLST11
+ 1013 022f 0D       		.uleb128 0xd
+ 1014 0230 01       		.byte	0x1
+ 1015 0231 02010000 		.4byte	.LASF29
+ 1016 0235 01       		.byte	0x1
+ 1017 0236 5E01     		.2byte	0x15e
+ 1018 0238 01       		.byte	0x1
+ 1019 0239 00000000 		.4byte	.LFB12
+ 1020 023d 18000000 		.4byte	.LFE12
+ 1021 0241 40020000 		.4byte	.LLST12
+ 1022 0245 0F       		.uleb128 0xf
+ 1023 0246 8C000000 		.4byte	0x8c
+ 1024 024a 55020000 		.4byte	0x255
+ 1025 024e 10       		.uleb128 0x10
+ 1026 024f 68000000 		.4byte	0x68
+ 1027 0253 FF       		.byte	0xff
+ 1028 0254 00       		.byte	0x0
+ 1029 0255 11       		.uleb128 0x11
+ 1030 0256 DE010000 		.4byte	.LASF30
+ 1031 025a 01       		.byte	0x1
+ 1032 025b 1D       		.byte	0x1d
+ 1033 025c 45020000 		.4byte	0x245
+ 1034 0260 01       		.byte	0x1
+ 1035 0261 01       		.byte	0x1
+ 1036 0262 11       		.uleb128 0x11
+ 1037 0263 49000000 		.4byte	.LASF31
+ 1038 0267 01       		.byte	0x1
+ 1039 0268 1E       		.byte	0x1e
+ 1040 0269 8C000000 		.4byte	0x8c
+ 1041 026d 01       		.byte	0x1
+ 1042 026e 01       		.byte	0x1
+ 1043 026f 00       		.byte	0x0
+ 1044              		.section	.debug_abbrev
+ 1045 0000 01       		.uleb128 0x1
+ 1046 0001 11       		.uleb128 0x11
+ 1047 0002 01       		.byte	0x1
+ 1048 0003 25       		.uleb128 0x25
+ 1049 0004 0E       		.uleb128 0xe
+ 1050 0005 13       		.uleb128 0x13
+ 1051 0006 0B       		.uleb128 0xb
+ 1052 0007 03       		.uleb128 0x3
+ 1053 0008 0E       		.uleb128 0xe
+ 1054 0009 1B       		.uleb128 0x1b
+ 1055 000a 0E       		.uleb128 0xe
+ 1056 000b 11       		.uleb128 0x11
+ 1057 000c 01       		.uleb128 0x1
+ 1058 000d 52       		.uleb128 0x52
+ 1059 000e 01       		.uleb128 0x1
+ 1060 000f 55       		.uleb128 0x55
+ 1061 0010 06       		.uleb128 0x6
+ 1062 0011 10       		.uleb128 0x10
+ 1063 0012 06       		.uleb128 0x6
+ 1064 0013 00       		.byte	0x0
+ 1065 0014 00       		.byte	0x0
+ 1066 0015 02       		.uleb128 0x2
+ 1067 0016 24       		.uleb128 0x24
+ 1068 0017 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 26
+
+
+ 1069 0018 0B       		.uleb128 0xb
+ 1070 0019 0B       		.uleb128 0xb
+ 1071 001a 3E       		.uleb128 0x3e
+ 1072 001b 0B       		.uleb128 0xb
+ 1073 001c 03       		.uleb128 0x3
+ 1074 001d 0E       		.uleb128 0xe
+ 1075 001e 00       		.byte	0x0
+ 1076 001f 00       		.byte	0x0
+ 1077 0020 03       		.uleb128 0x3
+ 1078 0021 24       		.uleb128 0x24
+ 1079 0022 00       		.byte	0x0
+ 1080 0023 0B       		.uleb128 0xb
+ 1081 0024 0B       		.uleb128 0xb
+ 1082 0025 3E       		.uleb128 0x3e
+ 1083 0026 0B       		.uleb128 0xb
+ 1084 0027 03       		.uleb128 0x3
+ 1085 0028 08       		.uleb128 0x8
+ 1086 0029 00       		.byte	0x0
+ 1087 002a 00       		.byte	0x0
+ 1088 002b 04       		.uleb128 0x4
+ 1089 002c 24       		.uleb128 0x24
+ 1090 002d 00       		.byte	0x0
+ 1091 002e 0B       		.uleb128 0xb
+ 1092 002f 0B       		.uleb128 0xb
+ 1093 0030 3E       		.uleb128 0x3e
+ 1094 0031 0B       		.uleb128 0xb
+ 1095 0032 00       		.byte	0x0
+ 1096 0033 00       		.byte	0x0
+ 1097 0034 05       		.uleb128 0x5
+ 1098 0035 15       		.uleb128 0x15
+ 1099 0036 00       		.byte	0x0
+ 1100 0037 27       		.uleb128 0x27
+ 1101 0038 0C       		.uleb128 0xc
+ 1102 0039 00       		.byte	0x0
+ 1103 003a 00       		.byte	0x0
+ 1104 003b 06       		.uleb128 0x6
+ 1105 003c 0F       		.uleb128 0xf
+ 1106 003d 00       		.byte	0x0
+ 1107 003e 0B       		.uleb128 0xb
+ 1108 003f 0B       		.uleb128 0xb
+ 1109 0040 49       		.uleb128 0x49
+ 1110 0041 13       		.uleb128 0x13
+ 1111 0042 00       		.byte	0x0
+ 1112 0043 00       		.byte	0x0
+ 1113 0044 07       		.uleb128 0x7
+ 1114 0045 16       		.uleb128 0x16
+ 1115 0046 00       		.byte	0x0
+ 1116 0047 03       		.uleb128 0x3
+ 1117 0048 0E       		.uleb128 0xe
+ 1118 0049 3A       		.uleb128 0x3a
+ 1119 004a 0B       		.uleb128 0xb
+ 1120 004b 3B       		.uleb128 0x3b
+ 1121 004c 0B       		.uleb128 0xb
+ 1122 004d 49       		.uleb128 0x49
+ 1123 004e 13       		.uleb128 0x13
+ 1124 004f 00       		.byte	0x0
+ 1125 0050 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 27
+
+
+ 1126 0051 08       		.uleb128 0x8
+ 1127 0052 2E       		.uleb128 0x2e
+ 1128 0053 00       		.byte	0x0
+ 1129 0054 3F       		.uleb128 0x3f
+ 1130 0055 0C       		.uleb128 0xc
+ 1131 0056 03       		.uleb128 0x3
+ 1132 0057 0E       		.uleb128 0xe
+ 1133 0058 3A       		.uleb128 0x3a
+ 1134 0059 0B       		.uleb128 0xb
+ 1135 005a 3B       		.uleb128 0x3b
+ 1136 005b 0B       		.uleb128 0xb
+ 1137 005c 27       		.uleb128 0x27
+ 1138 005d 0C       		.uleb128 0xc
+ 1139 005e 11       		.uleb128 0x11
+ 1140 005f 01       		.uleb128 0x1
+ 1141 0060 12       		.uleb128 0x12
+ 1142 0061 01       		.uleb128 0x1
+ 1143 0062 40       		.uleb128 0x40
+ 1144 0063 06       		.uleb128 0x6
+ 1145 0064 00       		.byte	0x0
+ 1146 0065 00       		.byte	0x0
+ 1147 0066 09       		.uleb128 0x9
+ 1148 0067 2E       		.uleb128 0x2e
+ 1149 0068 01       		.byte	0x1
+ 1150 0069 3F       		.uleb128 0x3f
+ 1151 006a 0C       		.uleb128 0xc
+ 1152 006b 03       		.uleb128 0x3
+ 1153 006c 0E       		.uleb128 0xe
+ 1154 006d 3A       		.uleb128 0x3a
+ 1155 006e 0B       		.uleb128 0xb
+ 1156 006f 3B       		.uleb128 0x3b
+ 1157 0070 0B       		.uleb128 0xb
+ 1158 0071 27       		.uleb128 0x27
+ 1159 0072 0C       		.uleb128 0xc
+ 1160 0073 11       		.uleb128 0x11
+ 1161 0074 01       		.uleb128 0x1
+ 1162 0075 12       		.uleb128 0x12
+ 1163 0076 01       		.uleb128 0x1
+ 1164 0077 40       		.uleb128 0x40
+ 1165 0078 06       		.uleb128 0x6
+ 1166 0079 01       		.uleb128 0x1
+ 1167 007a 13       		.uleb128 0x13
+ 1168 007b 00       		.byte	0x0
+ 1169 007c 00       		.byte	0x0
+ 1170 007d 0A       		.uleb128 0xa
+ 1171 007e 05       		.uleb128 0x5
+ 1172 007f 00       		.byte	0x0
+ 1173 0080 03       		.uleb128 0x3
+ 1174 0081 0E       		.uleb128 0xe
+ 1175 0082 3A       		.uleb128 0x3a
+ 1176 0083 0B       		.uleb128 0xb
+ 1177 0084 3B       		.uleb128 0x3b
+ 1178 0085 0B       		.uleb128 0xb
+ 1179 0086 49       		.uleb128 0x49
+ 1180 0087 13       		.uleb128 0x13
+ 1181 0088 02       		.uleb128 0x2
+ 1182 0089 0A       		.uleb128 0xa
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 28
+
+
+ 1183 008a 00       		.byte	0x0
+ 1184 008b 00       		.byte	0x0
+ 1185 008c 0B       		.uleb128 0xb
+ 1186 008d 34       		.uleb128 0x34
+ 1187 008e 00       		.byte	0x0
+ 1188 008f 03       		.uleb128 0x3
+ 1189 0090 0E       		.uleb128 0xe
+ 1190 0091 3A       		.uleb128 0x3a
+ 1191 0092 0B       		.uleb128 0xb
+ 1192 0093 3B       		.uleb128 0x3b
+ 1193 0094 0B       		.uleb128 0xb
+ 1194 0095 49       		.uleb128 0x49
+ 1195 0096 13       		.uleb128 0x13
+ 1196 0097 02       		.uleb128 0x2
+ 1197 0098 0A       		.uleb128 0xa
+ 1198 0099 00       		.byte	0x0
+ 1199 009a 00       		.byte	0x0
+ 1200 009b 0C       		.uleb128 0xc
+ 1201 009c 2E       		.uleb128 0x2e
+ 1202 009d 01       		.byte	0x1
+ 1203 009e 3F       		.uleb128 0x3f
+ 1204 009f 0C       		.uleb128 0xc
+ 1205 00a0 03       		.uleb128 0x3
+ 1206 00a1 0E       		.uleb128 0xe
+ 1207 00a2 3A       		.uleb128 0x3a
+ 1208 00a3 0B       		.uleb128 0xb
+ 1209 00a4 3B       		.uleb128 0x3b
+ 1210 00a5 0B       		.uleb128 0xb
+ 1211 00a6 27       		.uleb128 0x27
+ 1212 00a7 0C       		.uleb128 0xc
+ 1213 00a8 49       		.uleb128 0x49
+ 1214 00a9 13       		.uleb128 0x13
+ 1215 00aa 11       		.uleb128 0x11
+ 1216 00ab 01       		.uleb128 0x1
+ 1217 00ac 12       		.uleb128 0x12
+ 1218 00ad 01       		.uleb128 0x1
+ 1219 00ae 40       		.uleb128 0x40
+ 1220 00af 06       		.uleb128 0x6
+ 1221 00b0 01       		.uleb128 0x1
+ 1222 00b1 13       		.uleb128 0x13
+ 1223 00b2 00       		.byte	0x0
+ 1224 00b3 00       		.byte	0x0
+ 1225 00b4 0D       		.uleb128 0xd
+ 1226 00b5 2E       		.uleb128 0x2e
+ 1227 00b6 00       		.byte	0x0
+ 1228 00b7 3F       		.uleb128 0x3f
+ 1229 00b8 0C       		.uleb128 0xc
+ 1230 00b9 03       		.uleb128 0x3
+ 1231 00ba 0E       		.uleb128 0xe
+ 1232 00bb 3A       		.uleb128 0x3a
+ 1233 00bc 0B       		.uleb128 0xb
+ 1234 00bd 3B       		.uleb128 0x3b
+ 1235 00be 05       		.uleb128 0x5
+ 1236 00bf 27       		.uleb128 0x27
+ 1237 00c0 0C       		.uleb128 0xc
+ 1238 00c1 11       		.uleb128 0x11
+ 1239 00c2 01       		.uleb128 0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 29
+
+
+ 1240 00c3 12       		.uleb128 0x12
+ 1241 00c4 01       		.uleb128 0x1
+ 1242 00c5 40       		.uleb128 0x40
+ 1243 00c6 06       		.uleb128 0x6
+ 1244 00c7 00       		.byte	0x0
+ 1245 00c8 00       		.byte	0x0
+ 1246 00c9 0E       		.uleb128 0xe
+ 1247 00ca 2E       		.uleb128 0x2e
+ 1248 00cb 00       		.byte	0x0
+ 1249 00cc 3F       		.uleb128 0x3f
+ 1250 00cd 0C       		.uleb128 0xc
+ 1251 00ce 03       		.uleb128 0x3
+ 1252 00cf 0E       		.uleb128 0xe
+ 1253 00d0 3A       		.uleb128 0x3a
+ 1254 00d1 0B       		.uleb128 0xb
+ 1255 00d2 3B       		.uleb128 0x3b
+ 1256 00d3 05       		.uleb128 0x5
+ 1257 00d4 27       		.uleb128 0x27
+ 1258 00d5 0C       		.uleb128 0xc
+ 1259 00d6 49       		.uleb128 0x49
+ 1260 00d7 13       		.uleb128 0x13
+ 1261 00d8 11       		.uleb128 0x11
+ 1262 00d9 01       		.uleb128 0x1
+ 1263 00da 12       		.uleb128 0x12
+ 1264 00db 01       		.uleb128 0x1
+ 1265 00dc 40       		.uleb128 0x40
+ 1266 00dd 06       		.uleb128 0x6
+ 1267 00de 00       		.byte	0x0
+ 1268 00df 00       		.byte	0x0
+ 1269 00e0 0F       		.uleb128 0xf
+ 1270 00e1 01       		.uleb128 0x1
+ 1271 00e2 01       		.byte	0x1
+ 1272 00e3 49       		.uleb128 0x49
+ 1273 00e4 13       		.uleb128 0x13
+ 1274 00e5 01       		.uleb128 0x1
+ 1275 00e6 13       		.uleb128 0x13
+ 1276 00e7 00       		.byte	0x0
+ 1277 00e8 00       		.byte	0x0
+ 1278 00e9 10       		.uleb128 0x10
+ 1279 00ea 21       		.uleb128 0x21
+ 1280 00eb 00       		.byte	0x0
+ 1281 00ec 49       		.uleb128 0x49
+ 1282 00ed 13       		.uleb128 0x13
+ 1283 00ee 2F       		.uleb128 0x2f
+ 1284 00ef 0B       		.uleb128 0xb
+ 1285 00f0 00       		.byte	0x0
+ 1286 00f1 00       		.byte	0x0
+ 1287 00f2 11       		.uleb128 0x11
+ 1288 00f3 34       		.uleb128 0x34
+ 1289 00f4 00       		.byte	0x0
+ 1290 00f5 03       		.uleb128 0x3
+ 1291 00f6 0E       		.uleb128 0xe
+ 1292 00f7 3A       		.uleb128 0x3a
+ 1293 00f8 0B       		.uleb128 0xb
+ 1294 00f9 3B       		.uleb128 0x3b
+ 1295 00fa 0B       		.uleb128 0xb
+ 1296 00fb 49       		.uleb128 0x49
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 30
+
+
+ 1297 00fc 13       		.uleb128 0x13
+ 1298 00fd 3F       		.uleb128 0x3f
+ 1299 00fe 0C       		.uleb128 0xc
+ 1300 00ff 3C       		.uleb128 0x3c
+ 1301 0100 0C       		.uleb128 0xc
+ 1302 0101 00       		.byte	0x0
+ 1303 0102 00       		.byte	0x0
+ 1304 0103 00       		.byte	0x0
+ 1305              		.section	.debug_pubnames,"",%progbits
+ 1306 0000 30010000 		.4byte	0x130
+ 1307 0004 0200     		.2byte	0x2
+ 1308 0006 00000000 		.4byte	.Ldebug_info0
+ 1309 000a 70020000 		.4byte	0x270
+ 1310 000e B0000000 		.4byte	0xb0
+ 1311 0012 6973725F 		.ascii	"isr_LOOP_Start\000"
+ 1311      4C4F4F50 
+ 1311      5F537461 
+ 1311      727400
+ 1312 0021 C5000000 		.4byte	0xc5
+ 1313 0025 6973725F 		.ascii	"isr_LOOP_StartEx\000"
+ 1313      4C4F4F50 
+ 1313      5F537461 
+ 1313      72744578 
+ 1313      00
+ 1314 0036 ED000000 		.4byte	0xed
+ 1315 003a 6973725F 		.ascii	"isr_LOOP_Stop\000"
+ 1315      4C4F4F50 
+ 1315      5F53746F 
+ 1315      7000
+ 1316 0048 02010000 		.4byte	0x102
+ 1317 004c 6973725F 		.ascii	"isr_LOOP_Interrupt\000"
+ 1317      4C4F4F50 
+ 1317      5F496E74 
+ 1317      65727275 
+ 1317      707400
+ 1318 005f 17010000 		.4byte	0x117
+ 1319 0063 6973725F 		.ascii	"isr_LOOP_SetVector\000"
+ 1319      4C4F4F50 
+ 1319      5F536574 
+ 1319      56656374 
+ 1319      6F7200
+ 1320 0076 53010000 		.4byte	0x153
+ 1321 007a 6973725F 		.ascii	"isr_LOOP_GetVector\000"
+ 1321      4C4F4F50 
+ 1321      5F476574 
+ 1321      56656374 
+ 1321      6F7200
+ 1322 008d 7F010000 		.4byte	0x17f
+ 1323 0091 6973725F 		.ascii	"isr_LOOP_SetPriority\000"
+ 1323      4C4F4F50 
+ 1323      5F536574 
+ 1323      5072696F 
+ 1323      72697479 
+ 1324 00a6 A7010000 		.4byte	0x1a7
+ 1325 00aa 6973725F 		.ascii	"isr_LOOP_GetPriority\000"
+ 1325      4C4F4F50 
+ 1325      5F476574 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 31
+
+
+ 1325      5072696F 
+ 1325      72697479 
+ 1326 00bf D3010000 		.4byte	0x1d3
+ 1327 00c3 6973725F 		.ascii	"isr_LOOP_Enable\000"
+ 1327      4C4F4F50 
+ 1327      5F456E61 
+ 1327      626C6500 
+ 1328 00d3 E9010000 		.4byte	0x1e9
+ 1329 00d7 6973725F 		.ascii	"isr_LOOP_GetState\000"
+ 1329      4C4F4F50 
+ 1329      5F476574 
+ 1329      53746174 
+ 1329      6500
+ 1330 00e9 03020000 		.4byte	0x203
+ 1331 00ed 6973725F 		.ascii	"isr_LOOP_Disable\000"
+ 1331      4C4F4F50 
+ 1331      5F446973 
+ 1331      61626C65 
+ 1331      00
+ 1332 00fe 19020000 		.4byte	0x219
+ 1333 0102 6973725F 		.ascii	"isr_LOOP_SetPending\000"
+ 1333      4C4F4F50 
+ 1333      5F536574 
+ 1333      50656E64 
+ 1333      696E6700 
+ 1334 0116 2F020000 		.4byte	0x22f
+ 1335 011a 6973725F 		.ascii	"isr_LOOP_ClearPending\000"
+ 1335      4C4F4F50 
+ 1335      5F436C65 
+ 1335      61725065 
+ 1335      6E64696E 
+ 1336 0130 00000000 		.4byte	0x0
+ 1337              		.section	.debug_aranges,"",%progbits
+ 1338 0000 7C000000 		.4byte	0x7c
+ 1339 0004 0200     		.2byte	0x2
+ 1340 0006 00000000 		.4byte	.Ldebug_info0
+ 1341 000a 04       		.byte	0x4
+ 1342 000b 00       		.byte	0x0
+ 1343 000c 0000     		.2byte	0x0
+ 1344 000e 0000     		.2byte	0x0
+ 1345 0010 00000000 		.4byte	.LFB0
+ 1346 0014 22000000 		.4byte	.LFE0-.LFB0
+ 1347 0018 00000000 		.4byte	.LFB1
+ 1348 001c 26000000 		.4byte	.LFE1-.LFB1
+ 1349 0020 00000000 		.4byte	.LFB2
+ 1350 0024 16000000 		.4byte	.LFE2-.LFB2
+ 1351 0028 00000000 		.4byte	.LFB3
+ 1352 002c 26000000 		.4byte	.LFE3-.LFB3
+ 1353 0030 00000000 		.4byte	.LFB4
+ 1354 0034 28000000 		.4byte	.LFE4-.LFB4
+ 1355 0038 00000000 		.4byte	.LFB5
+ 1356 003c 26000000 		.4byte	.LFE5-.LFB5
+ 1357 0040 00000000 		.4byte	.LFB6
+ 1358 0044 26000000 		.4byte	.LFE6-.LFB6
+ 1359 0048 00000000 		.4byte	.LFB7
+ 1360 004c 26000000 		.4byte	.LFE7-.LFB7
+ 1361 0050 00000000 		.4byte	.LFB8
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 32
+
+
+ 1362 0054 18000000 		.4byte	.LFE8-.LFB8
+ 1363 0058 00000000 		.4byte	.LFB9
+ 1364 005c 2A000000 		.4byte	.LFE9-.LFB9
+ 1365 0060 00000000 		.4byte	.LFB10
+ 1366 0064 18000000 		.4byte	.LFE10-.LFB10
+ 1367 0068 00000000 		.4byte	.LFB11
+ 1368 006c 18000000 		.4byte	.LFE11-.LFB11
+ 1369 0070 00000000 		.4byte	.LFB12
+ 1370 0074 18000000 		.4byte	.LFE12-.LFB12
+ 1371 0078 00000000 		.4byte	0x0
+ 1372 007c 00000000 		.4byte	0x0
+ 1373              		.section	.debug_ranges,"",%progbits
+ 1374              	.Ldebug_ranges0:
+ 1375 0000 00000000 		.4byte	.Ltext0
+ 1376 0004 00000000 		.4byte	.Letext0
+ 1377 0008 00000000 		.4byte	.LFB0
+ 1378 000c 22000000 		.4byte	.LFE0
+ 1379 0010 00000000 		.4byte	.LFB1
+ 1380 0014 26000000 		.4byte	.LFE1
+ 1381 0018 00000000 		.4byte	.LFB2
+ 1382 001c 16000000 		.4byte	.LFE2
+ 1383 0020 00000000 		.4byte	.LFB3
+ 1384 0024 26000000 		.4byte	.LFE3
+ 1385 0028 00000000 		.4byte	.LFB4
+ 1386 002c 28000000 		.4byte	.LFE4
+ 1387 0030 00000000 		.4byte	.LFB5
+ 1388 0034 26000000 		.4byte	.LFE5
+ 1389 0038 00000000 		.4byte	.LFB6
+ 1390 003c 26000000 		.4byte	.LFE6
+ 1391 0040 00000000 		.4byte	.LFB7
+ 1392 0044 26000000 		.4byte	.LFE7
+ 1393 0048 00000000 		.4byte	.LFB8
+ 1394 004c 18000000 		.4byte	.LFE8
+ 1395 0050 00000000 		.4byte	.LFB9
+ 1396 0054 2A000000 		.4byte	.LFE9
+ 1397 0058 00000000 		.4byte	.LFB10
+ 1398 005c 18000000 		.4byte	.LFE10
+ 1399 0060 00000000 		.4byte	.LFB11
+ 1400 0064 18000000 		.4byte	.LFE11
+ 1401 0068 00000000 		.4byte	.LFB12
+ 1402 006c 18000000 		.4byte	.LFE12
+ 1403 0070 00000000 		.4byte	0x0
+ 1404 0074 00000000 		.4byte	0x0
+ 1405              		.section	.debug_str,"MS",%progbits,1
+ 1406              	.LASF5:
+ 1407 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1407      206C6F6E 
+ 1407      6720696E 
+ 1407      7400
+ 1408              	.LASF24:
+ 1409 000e 6973725F 		.ascii	"isr_LOOP_GetVector\000"
+ 1409      4C4F4F50 
+ 1409      5F476574 
+ 1409      56656374 
+ 1409      6F7200
+ 1410              	.LASF25:
+ 1411 0021 6973725F 		.ascii	"isr_LOOP_GetPriority\000"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 33
+
+
+ 1411      4C4F4F50 
+ 1411      5F476574 
+ 1411      5072696F 
+ 1411      72697479 
+ 1412              	.LASF3:
+ 1413 0036 73686F72 		.ascii	"short unsigned int\000"
+ 1413      7420756E 
+ 1413      7369676E 
+ 1413      65642069 
+ 1413      6E7400
+ 1414              	.LASF31:
+ 1415 0049 73696E65 		.ascii	"sineLUTindex\000"
+ 1415      4C555469 
+ 1415      6E646578 
+ 1415      00
+ 1416              	.LASF17:
+ 1417 0056 6973725F 		.ascii	"isr_LOOP_Interrupt\000"
+ 1417      4C4F4F50 
+ 1417      5F496E74 
+ 1417      65727275 
+ 1417      707400
+ 1418              	.LASF33:
+ 1419 0069 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\isr_LOOP.c\000"
+ 1419      6E657261 
+ 1419      7465645F 
+ 1419      536F7572 
+ 1419      63655C50 
+ 1420              	.LASF12:
+ 1421 008d 666C6F61 		.ascii	"float\000"
+ 1421      7400
+ 1422              	.LASF6:
+ 1423 0093 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1423      206C6F6E 
+ 1423      6720756E 
+ 1423      7369676E 
+ 1423      65642069 
+ 1424              	.LASF1:
+ 1425 00aa 756E7369 		.ascii	"unsigned char\000"
+ 1425      676E6564 
+ 1425      20636861 
+ 1425      7200
+ 1426              	.LASF11:
+ 1427 00b8 696E7431 		.ascii	"int16\000"
+ 1427      3600
+ 1428              	.LASF8:
+ 1429 00be 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1429      20756E73 
+ 1429      69676E65 
+ 1429      6420696E 
+ 1429      7400
+ 1430              	.LASF15:
+ 1431 00d0 6973725F 		.ascii	"isr_LOOP_Start\000"
+ 1431      4C4F4F50 
+ 1431      5F537461 
+ 1431      727400
+ 1432              	.LASF10:
+ 1433 00df 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 34
+
+
+ 1433      3800
+ 1434              	.LASF28:
+ 1435 00e5 6973725F 		.ascii	"isr_LOOP_SetPending\000"
+ 1435      4C4F4F50 
+ 1435      5F536574 
+ 1435      50656E64 
+ 1435      696E6700 
+ 1436              	.LASF23:
+ 1437 00f9 7072696F 		.ascii	"priority\000"
+ 1437      72697479 
+ 1437      00
+ 1438              	.LASF29:
+ 1439 0102 6973725F 		.ascii	"isr_LOOP_ClearPending\000"
+ 1439      4C4F4F50 
+ 1439      5F436C65 
+ 1439      61725065 
+ 1439      6E64696E 
+ 1440              	.LASF18:
+ 1441 0118 6973725F 		.ascii	"isr_LOOP_StartEx\000"
+ 1441      4C4F4F50 
+ 1441      5F537461 
+ 1441      72744578 
+ 1441      00
+ 1442              	.LASF13:
+ 1443 0129 646F7562 		.ascii	"double\000"
+ 1443      6C6500
+ 1444              	.LASF35:
+ 1445 0130 6973725F 		.ascii	"isr_LOOP_GetState\000"
+ 1445      4C4F4F50 
+ 1445      5F476574 
+ 1445      53746174 
+ 1445      6500
+ 1446              	.LASF22:
+ 1447 0142 6973725F 		.ascii	"isr_LOOP_SetPriority\000"
+ 1447      4C4F4F50 
+ 1447      5F536574 
+ 1447      5072696F 
+ 1447      72697479 
+ 1448              	.LASF34:
+ 1449 0157 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 1449      73657273 
+ 1449      5C686F61 
+ 1449      6E67705C 
+ 1449      446F6375 
+ 1450 0184 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 1450      6E766572 
+ 1450      745C696E 
+ 1450      76657274 
+ 1450      2E637964 
+ 1451              	.LASF26:
+ 1452 019b 6973725F 		.ascii	"isr_LOOP_Enable\000"
+ 1452      4C4F4F50 
+ 1452      5F456E61 
+ 1452      626C6500 
+ 1453              	.LASF4:
+ 1454 01ab 756E7369 		.ascii	"unsigned int\000"
+ 1454      676E6564 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccAWsUyA.s 			page 35
+
+
+ 1454      20696E74 
+ 1454      00
+ 1455              	.LASF20:
+ 1456 01b8 61646472 		.ascii	"address\000"
+ 1456      65737300 
+ 1457              	.LASF27:
+ 1458 01c0 6973725F 		.ascii	"isr_LOOP_Disable\000"
+ 1458      4C4F4F50 
+ 1458      5F446973 
+ 1458      61626C65 
+ 1458      00
+ 1459              	.LASF14:
+ 1460 01d1 63796973 		.ascii	"cyisraddress\000"
+ 1460      72616464 
+ 1460      72657373 
+ 1460      00
+ 1461              	.LASF30:
+ 1462 01de 73696E65 		.ascii	"sineLUT\000"
+ 1462      4C555400 
+ 1463              	.LASF16:
+ 1464 01e6 6973725F 		.ascii	"isr_LOOP_Stop\000"
+ 1464      4C4F4F50 
+ 1464      5F53746F 
+ 1464      7000
+ 1465              	.LASF32:
+ 1466 01f4 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 1466      4320342E 
+ 1466      342E3100 
+ 1467              	.LASF19:
+ 1468 0200 6973725F 		.ascii	"isr_LOOP_SetVector\000"
+ 1468      4C4F4F50 
+ 1468      5F536574 
+ 1468      56656374 
+ 1468      6F7200
+ 1469              	.LASF9:
+ 1470 0213 63686172 		.ascii	"char\000"
+ 1470      00
+ 1471              	.LASF21:
+ 1472 0218 72616D56 		.ascii	"ramVectorTable\000"
+ 1472      6563746F 
+ 1472      72546162 
+ 1472      6C6500
+ 1473              	.LASF2:
+ 1474 0227 73686F72 		.ascii	"short int\000"
+ 1474      7420696E 
+ 1474      7400
+ 1475              	.LASF7:
+ 1476 0231 6C6F6E67 		.ascii	"long int\000"
+ 1476      20696E74 
+ 1476      00
+ 1477              	.LASF0:
+ 1478 023a 7369676E 		.ascii	"signed char\000"
+ 1478      65642063 
+ 1478      68617200 
+ 1479              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

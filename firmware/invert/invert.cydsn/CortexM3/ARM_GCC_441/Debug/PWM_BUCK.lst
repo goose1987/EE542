@@ -315,7 +315,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBqP0Yf.s 			page 1
  154:.\Generated_Source\PSoC5/PWM_BUCK.c ****     #if (PWM_BUCK_UseStatus || PWM_BUCK_UsingFixedFunction)
  155:.\Generated_Source\PSoC5/PWM_BUCK.c ****         PWM_BUCK_SetInterruptMode(PWM_BUCK_INIT_INTERRUPTS_MODE);
  140              		.loc 1 155 0
- 141 0082 4FF00000 		mov	r0, #0
+ 141 0082 4FF00400 		mov	r0, #4
  142 0086 FFF7FEFF 		bl	PWM_BUCK_SetInterruptMode
  156:.\Generated_Source\PSoC5/PWM_BUCK.c ****     #endif /* (PWM_BUCK_UseStatus || PWM_BUCK_UsingFixedFunction) */
  157:.\Generated_Source\PSoC5/PWM_BUCK.c ****         

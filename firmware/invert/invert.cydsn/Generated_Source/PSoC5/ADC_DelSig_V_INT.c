@@ -25,9 +25,8 @@
 *******************************************************************************/
 /* `#START ADC_SYS_VAR`  */
 extern int16 buffvolt;
-//extern uint8 dataReady;
-extern int16 sineLUT[256];
-extern int16 sineLUTindex;
+
+
 
 /*
 extern float A1;

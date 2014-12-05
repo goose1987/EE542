@@ -9,7 +9,7 @@
     <peripheral>
       <name>UART_1</name>
       <description>UART</description>
-      <baseAddress>0x4000642D</baseAddress>
+      <baseAddress>0x4000642F</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x43</size>
@@ -62,45 +62,6 @@
           <resetMask>0</resetMask>
           <fields>
             <field>
-              <name>UART_1_TX_STS_COMPLETE</name>
-              <description>No description available</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>UART_1_TX_STS_FIFO_EMPTY</name>
-              <description>No description available</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>UART_1_TX_STS_FIFO_FULL</name>
-              <description>No description available</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>UART_1_TX_STS_FIFO_NOT_FULL</name>
-              <description>No description available</description>
-              <lsb>3</lsb>
-              <msb>3</msb>
-              <access>read-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RX_UART_1_RX_STATUS</name>
-          <description>RX status register</description>
-          <addressOffset>0x42</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
               <name>UART_1_RX_STS_MRKSPC</name>
               <description>No description available</description>
               <lsb>0</lsb>
@@ -147,6 +108,45 @@
               <description>No description available</description>
               <lsb>6</lsb>
               <msb>6</msb>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>RX_UART_1_RX_STATUS</name>
+          <description>RX status register</description>
+          <addressOffset>0x42</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>UART_1_TX_STS_COMPLETE</name>
+              <description>No description available</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_1_TX_STS_FIFO_EMPTY</name>
+              <description>No description available</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_1_TX_STS_FIFO_FULL</name>
+              <description>No description available</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_1_TX_STS_FIFO_NOT_FULL</name>
+              <description>No description available</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
               <access>read-only</access>
             </field>
           </fields>
@@ -351,7 +351,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>SPIS_1</name>
+      <name>Counter_1</name>
       <description>No description available</description>
       <baseAddress>0x4000640A</baseAddress>
       <addressBlock>
@@ -361,13 +361,22 @@
       </addressBlock>
       <registers>
         <register>
-          <name>SPIS_1_RX_DATA</name>
-          <description>SPIS RX Data</description>
+          <name>Counter_1_GLOBAL_ENABLE</name>
+          <description>PM.ACT.CFG</description>
           <addressOffset>0x0</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>en_timer</name>
+              <description>Enable timer/counters.</description>
+              <lsb>0</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPIS_1_TX_DATA</name>
@@ -416,11 +425,37 @@
               <access>read-only</access>
             </field>
             <field>
-              <name>Interrupt</name>
-              <description>Set when interrupt occurs</description>
-              <lsb>7</lsb>
+              <name>INV</name>
+              <description>Invert sense of TIMEREN signal</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DB</name>
+              <description>Deadband mode--Deadband phases phi1 and phi2 are outputted on CMP and TC output pins respectively.</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Timer</name>
+                  <description>CMP and TC are output.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deadband</name>
+                  <description>PHI1 (instead of CMP) and PHI2 (instead of TC) are output.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DEADBAND_PERIOD</name>
+              <description>Deadband Period</description>
+              <lsb>6</lsb>
               <msb>7</msb>
-              <access>read-only</access>
+              <access>read-write</access>
             </field>
           </fields>
         </register>
@@ -459,16 +494,34 @@
               <description>Set when a byte/word transmit has completed</description>
               <lsb>6</lsb>
               <msb>6</msb>
-              <access>read-only</access>
+              <access>read-write</access>
             </field>
             <field>
-              <name>Interrupt</name>
-              <description>Set when interrupt occurs</description>
+              <name>BUS_CLK_SEL</name>
+              <description>Bus Clock selection.</description>
               <lsb>7</lsb>
               <msb>7</msb>
-              <access>read-only</access>
+              <access>read-write</access>
             </field>
           </fields>
+        </register>
+        <register>
+          <name>Counter_1_PERIOD</name>
+          <description>TMRx.PER0 - Assigned Period</description>
+          <addressOffset>0xB5F</addressOffset>
+          <size>16</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>Counter_1_COUNTER</name>
+          <description>TMRx.CNT_CMP0 - Current Down Counter Value</description>
+          <addressOffset>0xB61</addressOffset>
+          <size>16</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -547,7 +600,7 @@
         <register>
           <name>PWM_BUCK_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x60</addressOffset>
+          <addressOffset>0x66</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>

@@ -124,7 +124,10 @@ void main()
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
 
     
-    char tstr[16];
+    //char tstr[16];
+    
+    //counter
+    Counter_1_Start();
 
     //clock
 

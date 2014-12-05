@@ -106,7 +106,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
   48 0010 C4F20002 		movt	r2, #:upper16:1073759138
   49 0014 1278     		ldrb	r2, [r2, #0]
   50 0016 D2B2     		uxtb	r2, r2
-  51 0018 42F01002 		orr	r2, r2, #16
+  51 0018 42F00402 		orr	r2, r2, #4
   52 001c D2B2     		uxtb	r2, r2
   53 001e 1A70     		strb	r2, [r3, #0]
   49:.\Generated_Source\PSoC5/UART_1_IntClock.c **** 	UART_1_IntClock_CLKSTBY |= UART_1_IntClock_CLKSTBY_MASK;
@@ -185,7 +185,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
   95 0010 C4F20002 		movt	r2, #:upper16:1073759138
   96 0014 1278     		ldrb	r2, [r2, #0]
   97 0016 D2B2     		uxtb	r2, r2
-  98 0018 02F0EF02 		and	r2, r2, #239
+  98 0018 02F0FB02 		and	r2, r2, #251
   99 001c 1A70     		strb	r2, [r3, #0]
   75:.\Generated_Source\PSoC5/UART_1_IntClock.c **** 	UART_1_IntClock_CLKSTBY &= (uint8)(~UART_1_IntClock_CLKSTBY_MASK);
  100              		.loc 1 75 0
@@ -195,7 +195,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  104 002a C4F20002 		movt	r2, #:upper16:1073759154
  105 002e 1278     		ldrb	r2, [r2, #0]
  106 0030 D2B2     		uxtb	r2, r2
- 107 0032 02F0EF02 		and	r2, r2, #239
+ 107 0032 02F0FB02 		and	r2, r2, #251
  108 0036 1A70     		strb	r2, [r3, #0]
   76:.\Generated_Source\PSoC5/UART_1_IntClock.c **** }
  109              		.loc 1 76 0
@@ -332,7 +332,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  149 001c C4F20002 		movt	r2, #:upper16:1073759154
  150 0020 1278     		ldrb	r2, [r2, #0]
  151 0022 D2B2     		uxtb	r2, r2
- 152 0024 02F0EF02 		and	r2, r2, #239
+ 152 0024 02F0FB02 		and	r2, r2, #251
  153 0028 1A70     		strb	r2, [r3, #0]
  154 002a 0DE0     		b	.L8
  155              	.L6:
@@ -347,7 +347,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  160 0038 C4F20002 		movt	r2, #:upper16:1073759154
  161 003c 1278     		ldrb	r2, [r2, #0]
  162 003e D2B2     		uxtb	r2, r2
- 163 0040 42F01002 		orr	r2, r2, #16
+ 163 0040 42F00402 		orr	r2, r2, #4
  164 0044 D2B2     		uxtb	r2, r2
  165 0046 1A70     		strb	r2, [r3, #0]
  166              	.L8:
@@ -448,7 +448,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  217 002c C4F20003 		movt	r3, #:upper16:1073759138
  218 0030 1B78     		ldrb	r3, [r3, #0]
  219 0032 DBB2     		uxtb	r3, r3
- 220 0034 03F01003 		and	r3, r3, #16
+ 220 0034 03F00403 		and	r3, r3, #4
  221 0038 3B73     		strb	r3, [r7, #12]
  204:.\Generated_Source\PSoC5/UART_1_IntClock.c **** 
  205:.\Generated_Source\PSoC5/UART_1_IntClock.c ****         if ((currSrc == (uint8)CYCLK_SRC_SEL_CLK_SYNC_D) && ((oldDivider == 0u) || (clkDivider == 0
@@ -485,10 +485,10 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  241 005c 1A80     		strh	r2, [r3, #0]	@ movhi
  214:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 UART_1_IntClock_MOD_SRC &= (uint8)(~CYCLK_SSS);
  242              		.loc 1 214 0
- 243 005e 44F29203 		movw	r3, #:lower16:1073758354
- 244 0062 C4F20003 		movt	r3, #:upper16:1073758354
- 245 0066 44F29202 		movw	r2, #:lower16:1073758354
- 246 006a C4F20002 		movt	r2, #:upper16:1073758354
+ 243 005e 44F28A03 		movw	r3, #:lower16:1073758346
+ 244 0062 C4F20003 		movt	r3, #:upper16:1073758346
+ 245 0066 44F28A02 		movw	r2, #:lower16:1073758346
+ 246 006a C4F20002 		movt	r2, #:upper16:1073758346
  247 006e 1278     		ldrb	r2, [r2, #0]
  248 0070 D2B2     		uxtb	r2, r2
  249 0072 02F0BF02 		and	r2, r2, #191
@@ -503,10 +503,10 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  219:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 /* it without bothering with the shadow load.                               */
  220:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 UART_1_IntClock_MOD_SRC |= CYCLK_SSS;
  254              		.loc 1 220 0
- 255 007a 44F29203 		movw	r3, #:lower16:1073758354
- 256 007e C4F20003 		movt	r3, #:upper16:1073758354
- 257 0082 44F29202 		movw	r2, #:lower16:1073758354
- 258 0086 C4F20002 		movt	r2, #:upper16:1073758354
+ 255 007a 44F28A03 		movw	r3, #:lower16:1073758346
+ 256 007e C4F20003 		movt	r3, #:upper16:1073758346
+ 257 0082 44F28A02 		movw	r2, #:lower16:1073758346
+ 258 0086 C4F20002 		movt	r2, #:upper16:1073758346
  259 008a 1278     		ldrb	r2, [r2, #0]
  260 008c D2B2     		uxtb	r2, r2
  261 008e 42F04002 		orr	r2, r2, #64
@@ -514,8 +514,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  263 0094 1A70     		strb	r2, [r3, #0]
  221:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 CY_SET_REG16(UART_1_IntClock_DIV_PTR, clkDivider);
  264              		.loc 1 221 0
- 265 0096 44F29003 		movw	r3, #:lower16:1073758352
- 266 009a C4F20003 		movt	r3, #:upper16:1073758352
+ 265 0096 44F28803 		movw	r3, #:lower16:1073758344
+ 266 009a C4F20003 		movt	r3, #:upper16:1073758344
  267 009e FA88     		ldrh	r2, [r7, #6]	@ movhi
  268 00a0 1A80     		strh	r2, [r3, #0]	@ movhi
  269              		.loc 1 205 0
@@ -551,7 +551,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  281              		.loc 1 236 0
  282 00b8 44F21003 		movw	r3, #:lower16:1073758224
  283 00bc C4F20003 		movt	r3, #:upper16:1073758224
- 284 00c0 4FF01002 		mov	r2, #16
+ 284 00c0 4FF00402 		mov	r2, #4
  285 00c4 1A70     		strb	r2, [r3, #0]
  237:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 CLK_DIST_AMASK = 0x00u;
  286              		.loc 1 237 0
@@ -575,8 +575,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  242:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 /* If clock is currently enabled, disable it if async or going from N-to-1*/
  243:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 if (((UART_1_IntClock_MOD_SRC & CYCLK_SYNC) == 0u) || (clkDivider == 0u))
  300              		.loc 1 243 0
- 301 00ee 44F29203 		movw	r3, #:lower16:1073758354
- 302 00f2 C4F20003 		movt	r3, #:upper16:1073758354
+ 301 00ee 44F28A03 		movw	r3, #:lower16:1073758346
+ 302 00f2 C4F20003 		movt	r3, #:upper16:1073758346
  303 00f6 1B78     		ldrb	r3, [r3, #0]
  304 00f8 DBB2     		uxtb	r3, r3
  305 00fa 03F00803 		and	r3, r3, #8
@@ -606,7 +606,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  316 0114 C4F20002 		movt	r2, #:upper16:1073759138
  317 0118 1278     		ldrb	r2, [r2, #0]
  318 011a D2B2     		uxtb	r2, r2
- 319 011c 02F0EF02 		and	r2, r2, #239
+ 319 011c 02F0FB02 		and	r2, r2, #251
  320 0120 1A70     		strb	r2, [r3, #0]
  321              	.L15:
  254:.\Generated_Source\PSoC5/UART_1_IntClock.c **** 
@@ -624,7 +624,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  324 0126 C4F20003 		movt	r3, #:upper16:1073759138
  325 012a 1B78     		ldrb	r3, [r3, #0]
  326 012c DBB2     		uxtb	r3, r3
- 327 012e 03F01003 		and	r3, r3, #16
+ 327 012e 03F00403 		and	r3, r3, #4
  328 0132 002B     		cmp	r3, #0
  329 0134 1ED0     		beq	.L17
  264:.\Generated_Source\PSoC5/UART_1_IntClock.c ****             {
@@ -671,8 +671,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  273:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 /* If the clock is disabled, set the divider directly */
  274:.\Generated_Source\PSoC5/UART_1_IntClock.c ****                 CY_SET_REG16(UART_1_IntClock_DIV_PTR, clkDivider);
  359              		.loc 1 274 0
- 360 0174 44F29003 		movw	r3, #:lower16:1073758352
- 361 0178 C4F20003 		movt	r3, #:upper16:1073758352
+ 360 0174 44F28803 		movw	r3, #:lower16:1073758344
+ 361 0178 C4F20003 		movt	r3, #:upper16:1073758344
  362 017c FA88     		ldrh	r2, [r7, #6]	@ movhi
  363 017e 1A80     		strh	r2, [r3, #0]	@ movhi
  275:.\Generated_Source\PSoC5/UART_1_IntClock.c **** 				UART_1_IntClock_CLKEN |= enabled;
@@ -743,8 +743,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  402              		.cfi_def_cfa_register 7
  299:.\Generated_Source\PSoC5/UART_1_IntClock.c ****     return CY_GET_REG16(UART_1_IntClock_DIV_PTR);
  403              		.loc 1 299 0
- 404 0004 44F29003 		movw	r3, #:lower16:1073758352
- 405 0008 C4F20003 		movt	r3, #:upper16:1073758352
+ 404 0004 44F28803 		movw	r3, #:lower16:1073758344
+ 405 0008 C4F20003 		movt	r3, #:upper16:1073758344
  406 000c 1B88     		ldrh	r3, [r3, #0]	@ movhi
  407 000e 9BB2     		uxth	r3, r3
  300:.\Generated_Source\PSoC5/UART_1_IntClock.c **** }
@@ -819,10 +819,10 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  440 0008 FB71     		strb	r3, [r7, #7]
  334:.\Generated_Source\PSoC5/UART_1_IntClock.c ****     UART_1_IntClock_MOD_SRC |= modeBitMask & (uint8)UART_1_IntClock_MODE_MASK;
  441              		.loc 1 334 0
- 442 000a 44F29203 		movw	r3, #:lower16:1073758354
- 443 000e C4F20003 		movt	r3, #:upper16:1073758354
- 444 0012 44F29202 		movw	r2, #:lower16:1073758354
- 445 0016 C4F20002 		movt	r2, #:upper16:1073758354
+ 442 000a 44F28A03 		movw	r3, #:lower16:1073758346
+ 443 000e C4F20003 		movt	r3, #:upper16:1073758346
+ 444 0012 44F28A02 		movw	r2, #:lower16:1073758346
+ 445 0016 C4F20002 		movt	r2, #:upper16:1073758346
  446 001a 1278     		ldrb	r2, [r2, #0]
  447 001c D2B2     		uxtb	r2, r2
  448 001e 1146     		mov	r1, r2
@@ -908,10 +908,10 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  488 0008 FB71     		strb	r3, [r7, #7]
  369:.\Generated_Source\PSoC5/UART_1_IntClock.c ****     UART_1_IntClock_MOD_SRC &= (uint8)(~modeBitMask) | (uint8)(~(uint8)(UART_1_IntClock_MODE_MASK))
  489              		.loc 1 369 0
- 490 000a 44F29203 		movw	r3, #:lower16:1073758354
- 491 000e C4F20003 		movt	r3, #:upper16:1073758354
- 492 0012 44F29202 		movw	r2, #:lower16:1073758354
- 493 0016 C4F20002 		movt	r2, #:upper16:1073758354
+ 490 000a 44F28A03 		movw	r3, #:lower16:1073758346
+ 491 000e C4F20003 		movt	r3, #:upper16:1073758346
+ 492 0012 44F28A02 		movw	r2, #:lower16:1073758346
+ 493 0016 C4F20002 		movt	r2, #:upper16:1073758346
  494 001a 1278     		ldrb	r2, [r2, #0]
  495 001c D1B2     		uxtb	r1, r2
  496 001e FA79     		ldrb	r2, [r7, #7]
@@ -975,8 +975,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  531              		.cfi_def_cfa_register 7
  390:.\Generated_Source\PSoC5/UART_1_IntClock.c ****     return UART_1_IntClock_MOD_SRC & (uint8)(UART_1_IntClock_MODE_MASK);
  532              		.loc 1 390 0
- 533 0004 44F29203 		movw	r3, #:lower16:1073758354
- 534 0008 C4F20003 		movt	r3, #:upper16:1073758354
+ 533 0004 44F28A03 		movw	r3, #:lower16:1073758346
+ 534 0008 C4F20003 		movt	r3, #:upper16:1073758346
  535 000c 1B78     		ldrb	r3, [r3, #0]
  536 000e DBB2     		uxtb	r3, r3
  537 0010 03F0F803 		and	r3, r3, #248
@@ -1088,12 +1088,12 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  598 0046 1A70     		strb	r2, [r3, #0]
  430:.\Generated_Source\PSoC5/UART_1_IntClock.c ****         UART_1_IntClock_MOD_SRC =
  599              		.loc 1 430 0
- 600 0048 44F29203 		movw	r3, #:lower16:1073758354
- 601 004c C4F20003 		movt	r3, #:upper16:1073758354
+ 600 0048 44F28A03 		movw	r3, #:lower16:1073758346
+ 601 004c C4F20003 		movt	r3, #:upper16:1073758346
  431:.\Generated_Source\PSoC5/UART_1_IntClock.c ****             (UART_1_IntClock_MOD_SRC & (uint8)(~UART_1_IntClock_SRC_SEL_MSK)) | clkSource;
  602              		.loc 1 431 0
- 603 0050 44F29202 		movw	r2, #:lower16:1073758354
- 604 0054 C4F20002 		movt	r2, #:upper16:1073758354
+ 603 0050 44F28A02 		movw	r2, #:lower16:1073758346
+ 604 0054 C4F20002 		movt	r2, #:upper16:1073758346
  605 0058 1278     		ldrb	r2, [r2, #0]
  606 005a D2B2     		uxtb	r2, r2
  607              		.loc 1 430 0
@@ -1127,12 +1127,12 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  437:.\Generated_Source\PSoC5/UART_1_IntClock.c ****         /* lock when we clear SSS.                                                  */
  438:.\Generated_Source\PSoC5/UART_1_IntClock.c ****         UART_1_IntClock_MOD_SRC =
  630              		.loc 1 438 0
- 631 0086 44F29203 		movw	r3, #:lower16:1073758354
- 632 008a C4F20003 		movt	r3, #:upper16:1073758354
+ 631 0086 44F28A03 		movw	r3, #:lower16:1073758346
+ 632 008a C4F20003 		movt	r3, #:upper16:1073758346
  439:.\Generated_Source\PSoC5/UART_1_IntClock.c ****             (UART_1_IntClock_MOD_SRC & (uint8)(~UART_1_IntClock_SRC_SEL_MSK)) | clkSource;
  633              		.loc 1 439 0
- 634 008e 44F29202 		movw	r2, #:lower16:1073758354
- 635 0092 C4F20002 		movt	r2, #:upper16:1073758354
+ 634 008e 44F28A02 		movw	r2, #:lower16:1073758346
+ 635 0092 C4F20002 		movt	r2, #:upper16:1073758346
  636 0096 1278     		ldrb	r2, [r2, #0]
  637 0098 D2B2     		uxtb	r2, r2
  638              		.loc 1 438 0
@@ -1150,10 +1150,10 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  647 00ae 1A70     		strb	r2, [r3, #0]
  440:.\Generated_Source\PSoC5/UART_1_IntClock.c ****         UART_1_IntClock_MOD_SRC &= (uint8)(~CYCLK_SSS);
  648              		.loc 1 440 0
- 649 00b0 44F29203 		movw	r3, #:lower16:1073758354
- 650 00b4 C4F20003 		movt	r3, #:upper16:1073758354
- 651 00b8 44F29202 		movw	r2, #:lower16:1073758354
- 652 00bc C4F20002 		movt	r2, #:upper16:1073758354
+ 649 00b0 44F28A03 		movw	r3, #:lower16:1073758346
+ 650 00b4 C4F20003 		movt	r3, #:upper16:1073758346
+ 651 00b8 44F28A02 		movw	r2, #:lower16:1073758346
+ 652 00bc C4F20002 		movt	r2, #:upper16:1073758346
  653 00c0 1278     		ldrb	r2, [r2, #0]
  654 00c2 D2B2     		uxtb	r2, r2
  655 00c4 02F0BF02 		and	r2, r2, #191
@@ -1166,12 +1166,12 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  443:.\Generated_Source\PSoC5/UART_1_IntClock.c ****     {
  444:.\Generated_Source\PSoC5/UART_1_IntClock.c ****         UART_1_IntClock_MOD_SRC =
  660              		.loc 1 444 0
- 661 00cc 44F29203 		movw	r3, #:lower16:1073758354
- 662 00d0 C4F20003 		movt	r3, #:upper16:1073758354
+ 661 00cc 44F28A03 		movw	r3, #:lower16:1073758346
+ 662 00d0 C4F20003 		movt	r3, #:upper16:1073758346
  445:.\Generated_Source\PSoC5/UART_1_IntClock.c ****             (UART_1_IntClock_MOD_SRC & (uint8)(~UART_1_IntClock_SRC_SEL_MSK)) | clkSource;
  663              		.loc 1 445 0
- 664 00d4 44F29202 		movw	r2, #:lower16:1073758354
- 665 00d8 C4F20002 		movt	r2, #:upper16:1073758354
+ 664 00d4 44F28A02 		movw	r2, #:lower16:1073758346
+ 665 00d8 C4F20002 		movt	r2, #:upper16:1073758346
  666 00dc 1278     		ldrb	r2, [r2, #0]
  667 00de D2B2     		uxtb	r2, r2
  668              		.loc 1 444 0
@@ -1237,8 +1237,8 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccZvKWil.s 			page 1
  705              		.cfi_def_cfa_register 7
  466:.\Generated_Source\PSoC5/UART_1_IntClock.c ****     return UART_1_IntClock_MOD_SRC & UART_1_IntClock_SRC_SEL_MSK;
  706              		.loc 1 466 0
- 707 0004 44F29203 		movw	r3, #:lower16:1073758354
- 708 0008 C4F20003 		movt	r3, #:upper16:1073758354
+ 707 0004 44F28A03 		movw	r3, #:lower16:1073758346
+ 708 0008 C4F20003 		movt	r3, #:upper16:1073758346
  709 000c 1B78     		ldrb	r3, [r3, #0]
  710 000e DBB2     		uxtb	r3, r3
  711 0010 03F00703 		and	r3, r3, #7
