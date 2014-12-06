@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
   14:.\Generated_Source\PSoC5/Counter_1_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
   15:.\Generated_Source\PSoC5/Counter_1_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
   16:.\Generated_Source\PSoC5/Counter_1_PM.c **** * the software package with which this file was provided.
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 2
 
 
   17:.\Generated_Source\PSoC5/Counter_1_PM.c **** ********************************************************************************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
   59:.\Generated_Source\PSoC5/Counter_1_PM.c **** }
   48              		.loc 1 59 0
   49 0004 BD46     		mov	sp, r7
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 3
 
 
   50 0006 80BC     		pop	{r7}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
   89:.\Generated_Source\PSoC5/Counter_1_PM.c **** 
   90:.\Generated_Source\PSoC5/Counter_1_PM.c ****         #if (CY_UDB_V0)
   91:.\Generated_Source\PSoC5/Counter_1_PM.c ****             Counter_1_WritePeriod(Counter_1_backup.CounterPeriod);
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 4
 
 
   92:.\Generated_Source\PSoC5/Counter_1_PM.c ****             Counter_1_WriteCompare(Counter_1_backup.CompareValue);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
   93              		@ frame_needed = 1, uses_anonymous_args = 0
   94 0000 80B5     		push	{r7, lr}
   95              	.LCFI4:
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 5
 
 
   96              		.cfi_def_cfa_offset 8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  150:.\Generated_Source\PSoC5/Counter_1_PM.c **** }
  128              		.loc 1 150 0
  129 0040 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 6
 
 
  130              		.cfi_endproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  159 0012 012B     		cmp	r3, #1
  160 0014 01D1     		bne	.L11
  176:.\Generated_Source\PSoC5/Counter_1_PM.c ****         {
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 7
 
 
  177:.\Generated_Source\PSoC5/Counter_1_PM.c ****             /* Enable Counter's operation */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  209 005a 02000000 		.4byte	.LCFI4
  210 005e 0100     		.2byte	0x1
  211 0060 5D       		.byte	0x5d
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 8
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 8
 
 
  212 0061 02000000 		.4byte	.LCFI4
@@ -461,7 +461,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  249 000c BB000000 		.4byte	.LASF25
  250 0010 01       		.byte	0x1
  251 0011 28000000 		.4byte	.LASF26
- 252 0015 4D010000 		.4byte	.LASF27
+ 252 0015 7D010000 		.4byte	.LASF27
  253 0019 00000000 		.4byte	0x0
  254 001d 00000000 		.4byte	0x0
  255 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  257 0029 02       		.uleb128 0x2
  258 002a 01       		.byte	0x1
  259 002b 06       		.byte	0x6
- 260 002c A2010000 		.4byte	.LASF0
+ 260 002c 60010000 		.4byte	.LASF0
  261 0030 02       		.uleb128 0x2
  262 0031 01       		.byte	0x1
  263 0032 08       		.byte	0x8
@@ -477,14 +477,14 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  265 0037 02       		.uleb128 0x2
  266 0038 02       		.byte	0x2
  267 0039 05       		.byte	0x5
- 268 003a D6010000 		.4byte	.LASF2
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 9
+ 268 003a D8010000 		.4byte	.LASF2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 9
 
 
  269 003e 02       		.uleb128 0x2
  270 003f 02       		.byte	0x2
  271 0040 07       		.byte	0x7
- 272 0041 8F010000 		.4byte	.LASF3
+ 272 0041 4D010000 		.4byte	.LASF3
  273 0045 02       		.uleb128 0x2
  274 0046 04       		.byte	0x4
  275 0047 05       		.byte	0x5
@@ -515,7 +515,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  300 0075 4C       		.byte	0x4c
  301 0076 30000000 		.4byte	0x30
  302 007a 04       		.uleb128 0x4
- 303 007b E0010000 		.4byte	.LASF10
+ 303 007b E2010000 		.4byte	.LASF10
  304 007f 02       		.byte	0x2
  305 0080 4D       		.byte	0x4d
  306 0081 3E000000 		.4byte	0x3e
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  323 009e 0A       		.byte	0xa
  324 009f 03       		.byte	0x3
  325 00a0 39       		.byte	0x39
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 10
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 10
 
 
  326 00a1 FA000000 		.4byte	0xfa
@@ -551,7 +551,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  333 00b1 23       		.byte	0x23
  334 00b2 00       		.uleb128 0x0
  335 00b3 07       		.uleb128 0x7
- 336 00b4 E7010000 		.4byte	.LASF15
+ 336 00b4 E9010000 		.4byte	.LASF15
  337 00b8 03       		.byte	0x3
  338 00b9 3B       		.byte	0x3b
  339 00ba 7A000000 		.4byte	0x7a
@@ -583,7 +583,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  365 00e9 23       		.byte	0x23
  366 00ea 08       		.uleb128 0x8
  367 00eb 07       		.uleb128 0x7
- 368 00ec BF010000 		.4byte	.LASF19
+ 368 00ec C1010000 		.4byte	.LASF19
  369 00f0 03       		.byte	0x3
  370 00f1 44       		.byte	0x44
  371 00f2 6F000000 		.4byte	0x6f
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  380 0101 9D000000 		.4byte	0x9d
  381 0105 08       		.uleb128 0x8
  382 0106 01       		.byte	0x1
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 11
 
 
  383 0107 61000000 		.4byte	.LASF21
@@ -636,7 +636,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  415 0151 1C000000 		.4byte	.LFE3
  416 0155 81000000 		.4byte	.LLST3
  417 0159 09       		.uleb128 0x9
- 418 015a AE010000 		.4byte	.LASF28
+ 418 015a 6C010000 		.4byte	.LASF28
  419 015e 01       		.byte	0x1
  420 015f 15       		.byte	0x15
  421 0160 FA000000 		.4byte	0xfa
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  437 000a 0E       		.uleb128 0xe
  438 000b 11       		.uleb128 0x11
  439 000c 01       		.uleb128 0x1
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 12
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 12
 
 
  440 000d 52       		.uleb128 0x52
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  494 0043 01       		.byte	0x1
  495 0044 0B       		.uleb128 0xb
  496 0045 0B       		.uleb128 0xb
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 13
 
 
  497 0046 3A       		.uleb128 0x3a
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  551 007c 13       		.uleb128 0x13
  552 007d 02       		.uleb128 0x2
  553 007e 0A       		.uleb128 0xa
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 14
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 14
 
 
  554 007f 00       		.byte	0x0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  593 0008 00000000 		.4byte	.LFB0
  594 000c 0A000000 		.4byte	.LFE0
  595 0010 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 15
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 15
 
 
  596 0014 0A000000 		.4byte	.LFE1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  621      7400
  622              	.LASF7:
  623 009e 6C6F6E67 		.ascii	"long long unsigned int\000"
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 16
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 16
 
 
  623      206C6F6E 
@@ -956,51 +956,51 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 1
  645      315F6261 
  645      636B7570 
  645      53747275 
- 646              	.LASF27:
- 647 014d 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccBBY7Bp.s 			page 17
+ 646              	.LASF3:
+ 647 014d 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cckYfwve.s 			page 17
 
 
- 647      73657273 
- 647      5C555345 
- 647      525C446F 
- 647      63756D65 
- 648 017a 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
- 648      6572745C 
- 648      696E7665 
- 648      72742E63 
- 648      7964736E 
- 649              	.LASF3:
- 650 018f 73686F72 		.ascii	"short unsigned int\000"
- 650      7420756E 
- 650      7369676E 
- 650      65642069 
- 650      6E7400
- 651              	.LASF0:
- 652 01a2 7369676E 		.ascii	"signed char\000"
- 652      65642063 
- 652      68617200 
- 653              	.LASF28:
- 654 01ae 436F756E 		.ascii	"Counter_1_backup\000"
- 654      7465725F 
- 654      315F6261 
- 654      636B7570 
- 654      00
+ 647      7420756E 
+ 647      7369676E 
+ 647      65642069 
+ 647      6E7400
+ 648              	.LASF0:
+ 649 0160 7369676E 		.ascii	"signed char\000"
+ 649      65642063 
+ 649      68617200 
+ 650              	.LASF28:
+ 651 016c 436F756E 		.ascii	"Counter_1_backup\000"
+ 651      7465725F 
+ 651      315F6261 
+ 651      636B7570 
+ 651      00
+ 652              	.LASF27:
+ 653 017d 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 653      73657273 
+ 653      5C686F61 
+ 653      6E67705C 
+ 653      446F6375 
+ 654 01aa 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 654      6E766572 
+ 654      745C696E 
+ 654      76657274 
+ 654      2E637964 
  655              	.LASF19:
- 656 01bf 436F756E 		.ascii	"CounterControlRegister\000"
+ 656 01c1 436F756E 		.ascii	"CounterControlRegister\000"
  656      74657243 
  656      6F6E7472 
  656      6F6C5265 
  656      67697374 
  657              	.LASF2:
- 658 01d6 73686F72 		.ascii	"short int\000"
+ 658 01d8 73686F72 		.ascii	"short int\000"
  658      7420696E 
  658      7400
  659              	.LASF10:
- 660 01e0 75696E74 		.ascii	"uint16\000"
+ 660 01e2 75696E74 		.ascii	"uint16\000"
  660      313600
  661              	.LASF15:
- 662 01e7 436F756E 		.ascii	"CounterUdb\000"
+ 662 01e9 436F756E 		.ascii	"CounterUdb\000"
  662      74657255 
  662      646200
  663              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

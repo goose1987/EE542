@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 1
 
 
    1              		.syntax unified
@@ -20,7 +20,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
   17              	.Ldebug_info0:
   18              		.section	.debug_line,"",%progbits
   19              	.Ldebug_line0:
-  20 0000 5D010000 		.text
+  20 0000 5C010000 		.text
   20      02005F00 
   20      00000201 
   20      FB0E0D00 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
   13:.\Generated_Source\PSoC5/isr_LUT.c **** * You may use this file only in accordance with the license, terms, conditions, 
   14:.\Generated_Source\PSoC5/isr_LUT.c **** * disclaimers, and limitations in the end user license agreement accompanying 
   15:.\Generated_Source\PSoC5/isr_LUT.c **** * the software package with which this file was provided.
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 2
 
 
   16:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
   49              	.LCFI1:
   50              		.cfi_def_cfa_register 7
   60:.\Generated_Source\PSoC5/isr_LUT.c ****     /* For all we know the interrupt is active. */
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 3
 
 
   61:.\Generated_Source\PSoC5/isr_LUT.c ****     isr_LUT_Disable();
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
   76              		.cfi_startproc
   77              		@ args = 0, pretend = 0, frame = 8
   78              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 4
 
 
   79 0000 80B5     		push	{r7, lr}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  107:.\Generated_Source\PSoC5/isr_LUT.c **** *
  108:.\Generated_Source\PSoC5/isr_LUT.c **** * Summary:
  109:.\Generated_Source\PSoC5/isr_LUT.c **** *   Disables and removes the interrupt.
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 5
 
 
  110:.\Generated_Source\PSoC5/isr_LUT.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  133:.\Generated_Source\PSoC5/isr_LUT.c **** *
  134:.\Generated_Source\PSoC5/isr_LUT.c **** *   Add custom code between the coments to keep the next version of this file
  135:.\Generated_Source\PSoC5/isr_LUT.c **** *   from over writting your code.
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 6
 
 
  136:.\Generated_Source\PSoC5/isr_LUT.c **** *
@@ -314,12 +314,12 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  148              		.cfi_startproc
  149              		@ args = 0, pretend = 0, frame = 0
  150              		@ frame_needed = 1, uses_anonymous_args = 0
- 151 0000 80B5     		push	{r7, lr}
- 152              	.LCFI7:
- 153              		.cfi_def_cfa_offset 8
- 154 0002 00AF     		add	r7, sp, #0
- 155              		.cfi_offset 14, -4
- 156              		.cfi_offset 7, -8
+ 151              		@ link register save eliminated.
+ 152 0000 80B4     		push	{r7}
+ 153              	.LCFI7:
+ 154              		.cfi_def_cfa_offset 4
+ 155 0002 00AF     		add	r7, sp, #0
+ 156              		.cfi_offset 7, -4
  157              	.LCFI8:
  158              		.cfi_def_cfa_register 7
  145:.\Generated_Source\PSoC5/isr_LUT.c ****     /*  Place your Interrupt code here. */
@@ -352,41 +352,37 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  171 0026 1B88     		ldrh	r3, [r3, #0]
  172 0028 1BB2     		sxth	r3, r3
  173 002a FF2B     		cmp	r3, #255
- 174 002c 0EDD     		ble	.L9
+ 174 002c 06DD     		ble	.L9
  160:.\Generated_Source\PSoC5/isr_LUT.c ****         sineLUTindex=0;
  175              		.loc 1 160 0
  176 002e 40F20003 		movw	r3, #:lower16:sineLUTindex
  177 0032 C0F20003 		movt	r3, #:upper16:sineLUTindex
  178 0036 4FF00002 		mov	r2, #0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 7
 
 
  179 003a 1A80     		strh	r2, [r3, #0]	@ movhi
- 161:.\Generated_Source\PSoC5/isr_LUT.c ****         Control_Reg_1_Write(~Control_Reg_1_Read());
- 180              		.loc 1 161 0
- 181 003c FFF7FEFF 		bl	Control_Reg_1_Read
- 182 0040 0346     		mov	r3, r0
- 183 0042 6FEA0303 		mvn	r3, r3
- 184 0046 1846     		mov	r0, r3
- 185 0048 FFF7FEFF 		bl	Control_Reg_1_Write
- 186              	.L9:
+ 180              	.L9:
+ 161:.\Generated_Source\PSoC5/isr_LUT.c ****         //Control_Reg_1_Write(~Control_Reg_1_Read());
  162:.\Generated_Source\PSoC5/isr_LUT.c ****     }
  163:.\Generated_Source\PSoC5/isr_LUT.c ****     
  164:.\Generated_Source\PSoC5/isr_LUT.c ****     /* `#END` */
  165:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 187              		.loc 1 165 0
- 188 004c 80BD     		pop	{r7, pc}
- 189              		.cfi_endproc
- 190              	.LFE3:
- 191              		.size	isr_LUT_Interrupt, .-isr_LUT_Interrupt
- 192 004e 00BF     		.section	.text.isr_LUT_SetVector,"ax",%progbits
- 193              		.align	2
- 194              		.global	isr_LUT_SetVector
- 195              		.thumb
- 196              		.thumb_func
- 197              		.type	isr_LUT_SetVector, %function
- 198              	isr_LUT_SetVector:
- 199              	.LFB4:
+ 181              		.loc 1 165 0
+ 182 003c BD46     		mov	sp, r7
+ 183 003e 80BC     		pop	{r7}
+ 184 0040 7047     		bx	lr
+ 185              		.cfi_endproc
+ 186              	.LFE3:
+ 187              		.size	isr_LUT_Interrupt, .-isr_LUT_Interrupt
+ 188 0042 00BF     		.section	.text.isr_LUT_SetVector,"ax",%progbits
+ 189              		.align	2
+ 190              		.global	isr_LUT_SetVector
+ 191              		.thumb
+ 192              		.thumb_func
+ 193              		.type	isr_LUT_SetVector, %function
+ 194              	isr_LUT_SetVector:
+ 195              	.LFB4:
  166:.\Generated_Source\PSoC5/isr_LUT.c **** 
  167:.\Generated_Source\PSoC5/isr_LUT.c **** 
  168:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
@@ -407,57 +403,57 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  183:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  184:.\Generated_Source\PSoC5/isr_LUT.c **** void isr_LUT_SetVector(cyisraddress address)
  185:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 200              		.loc 1 185 0
- 201              		.cfi_startproc
- 202              		@ args = 0, pretend = 0, frame = 16
- 203              		@ frame_needed = 1, uses_anonymous_args = 0
- 204              		@ link register save eliminated.
- 205 0000 80B4     		push	{r7}
- 206              	.LCFI9:
- 207              		.cfi_def_cfa_offset 4
- 208 0002 85B0     		sub	sp, sp, #20
- 209              	.LCFI10:
- 210              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 8
+ 196              		.loc 1 185 0
+ 197              		.cfi_startproc
+ 198              		@ args = 0, pretend = 0, frame = 16
+ 199              		@ frame_needed = 1, uses_anonymous_args = 0
+ 200              		@ link register save eliminated.
+ 201 0000 80B4     		push	{r7}
+ 202              	.LCFI9:
+ 203              		.cfi_def_cfa_offset 4
+ 204 0002 85B0     		sub	sp, sp, #20
+ 205              	.LCFI10:
+ 206              		.cfi_def_cfa_offset 24
+ 207 0004 00AF     		add	r7, sp, #0
+ 208              		.cfi_offset 7, -4
+ 209              	.LCFI11:
+ 210              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 8
 
 
- 211 0004 00AF     		add	r7, sp, #0
- 212              		.cfi_offset 7, -4
- 213              	.LCFI11:
- 214              		.cfi_def_cfa_register 7
- 215 0006 7860     		str	r0, [r7, #4]
+ 211 0006 7860     		str	r0, [r7, #4]
  186:.\Generated_Source\PSoC5/isr_LUT.c ****     cyisraddress * ramVectorTable;
  187:.\Generated_Source\PSoC5/isr_LUT.c **** 
  188:.\Generated_Source\PSoC5/isr_LUT.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
- 216              		.loc 1 188 0
- 217 0008 4EF60853 		movw	r3, #:lower16:-536810232
- 218 000c CEF20003 		movt	r3, #:upper16:-536810232
- 219 0010 1B68     		ldr	r3, [r3, #0]
- 220 0012 FB60     		str	r3, [r7, #12]
+ 212              		.loc 1 188 0
+ 213 0008 4EF60853 		movw	r3, #:lower16:-536810232
+ 214 000c CEF20003 		movt	r3, #:upper16:-536810232
+ 215 0010 1B68     		ldr	r3, [r3, #0]
+ 216 0012 FB60     		str	r3, [r7, #12]
  189:.\Generated_Source\PSoC5/isr_LUT.c **** 
  190:.\Generated_Source\PSoC5/isr_LUT.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_LUT__INTC_NUMBER] = address;
- 221              		.loc 1 190 0
- 222 0014 FB68     		ldr	r3, [r7, #12]
- 223 0016 03F14003 		add	r3, r3, #64
- 224 001a 7A68     		ldr	r2, [r7, #4]
- 225 001c 1A60     		str	r2, [r3, #0]
+ 217              		.loc 1 190 0
+ 218 0014 FB68     		ldr	r3, [r7, #12]
+ 219 0016 03F14003 		add	r3, r3, #64
+ 220 001a 7A68     		ldr	r2, [r7, #4]
+ 221 001c 1A60     		str	r2, [r3, #0]
  191:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 226              		.loc 1 191 0
- 227 001e 07F11407 		add	r7, r7, #20
- 228 0022 BD46     		mov	sp, r7
- 229 0024 80BC     		pop	{r7}
- 230 0026 7047     		bx	lr
- 231              		.cfi_endproc
- 232              	.LFE4:
- 233              		.size	isr_LUT_SetVector, .-isr_LUT_SetVector
- 234              		.section	.text.isr_LUT_GetVector,"ax",%progbits
- 235              		.align	2
- 236              		.global	isr_LUT_GetVector
- 237              		.thumb
- 238              		.thumb_func
- 239              		.type	isr_LUT_GetVector, %function
- 240              	isr_LUT_GetVector:
- 241              	.LFB5:
+ 222              		.loc 1 191 0
+ 223 001e 07F11407 		add	r7, r7, #20
+ 224 0022 BD46     		mov	sp, r7
+ 225 0024 80BC     		pop	{r7}
+ 226 0026 7047     		bx	lr
+ 227              		.cfi_endproc
+ 228              	.LFE4:
+ 229              		.size	isr_LUT_SetVector, .-isr_LUT_SetVector
+ 230              		.section	.text.isr_LUT_GetVector,"ax",%progbits
+ 231              		.align	2
+ 232              		.global	isr_LUT_GetVector
+ 233              		.thumb
+ 234              		.thumb_func
+ 235              		.type	isr_LUT_GetVector, %function
+ 236              	isr_LUT_GetVector:
+ 237              	.LFB5:
  192:.\Generated_Source\PSoC5/isr_LUT.c **** 
  193:.\Generated_Source\PSoC5/isr_LUT.c **** 
  194:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
@@ -476,56 +472,56 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  207:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  208:.\Generated_Source\PSoC5/isr_LUT.c **** cyisraddress isr_LUT_GetVector(void)
  209:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 242              		.loc 1 209 0
- 243              		.cfi_startproc
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 9
+ 238              		.loc 1 209 0
+ 239              		.cfi_startproc
+ 240              		@ args = 0, pretend = 0, frame = 8
+ 241              		@ frame_needed = 1, uses_anonymous_args = 0
+ 242              		@ link register save eliminated.
+ 243 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 9
 
 
- 244              		@ args = 0, pretend = 0, frame = 8
- 245              		@ frame_needed = 1, uses_anonymous_args = 0
- 246              		@ link register save eliminated.
- 247 0000 80B4     		push	{r7}
- 248              	.LCFI12:
- 249              		.cfi_def_cfa_offset 4
- 250 0002 83B0     		sub	sp, sp, #12
- 251              	.LCFI13:
- 252              		.cfi_def_cfa_offset 16
- 253 0004 00AF     		add	r7, sp, #0
- 254              		.cfi_offset 7, -4
- 255              	.LCFI14:
- 256              		.cfi_def_cfa_register 7
+ 244              	.LCFI12:
+ 245              		.cfi_def_cfa_offset 4
+ 246 0002 83B0     		sub	sp, sp, #12
+ 247              	.LCFI13:
+ 248              		.cfi_def_cfa_offset 16
+ 249 0004 00AF     		add	r7, sp, #0
+ 250              		.cfi_offset 7, -4
+ 251              	.LCFI14:
+ 252              		.cfi_def_cfa_register 7
  210:.\Generated_Source\PSoC5/isr_LUT.c ****     cyisraddress * ramVectorTable;
  211:.\Generated_Source\PSoC5/isr_LUT.c **** 
  212:.\Generated_Source\PSoC5/isr_LUT.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
- 257              		.loc 1 212 0
- 258 0006 4EF60853 		movw	r3, #:lower16:-536810232
- 259 000a CEF20003 		movt	r3, #:upper16:-536810232
- 260 000e 1B68     		ldr	r3, [r3, #0]
- 261 0010 7B60     		str	r3, [r7, #4]
+ 253              		.loc 1 212 0
+ 254 0006 4EF60853 		movw	r3, #:lower16:-536810232
+ 255 000a CEF20003 		movt	r3, #:upper16:-536810232
+ 256 000e 1B68     		ldr	r3, [r3, #0]
+ 257 0010 7B60     		str	r3, [r7, #4]
  213:.\Generated_Source\PSoC5/isr_LUT.c **** 
  214:.\Generated_Source\PSoC5/isr_LUT.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_LUT__INTC_NUMBER];
- 262              		.loc 1 214 0
- 263 0012 7B68     		ldr	r3, [r7, #4]
- 264 0014 03F14003 		add	r3, r3, #64
- 265 0018 1B68     		ldr	r3, [r3, #0]
+ 258              		.loc 1 214 0
+ 259 0012 7B68     		ldr	r3, [r7, #4]
+ 260 0014 03F14003 		add	r3, r3, #64
+ 261 0018 1B68     		ldr	r3, [r3, #0]
  215:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 266              		.loc 1 215 0
- 267 001a 1846     		mov	r0, r3
- 268 001c 07F10C07 		add	r7, r7, #12
- 269 0020 BD46     		mov	sp, r7
- 270 0022 80BC     		pop	{r7}
- 271 0024 7047     		bx	lr
- 272              		.cfi_endproc
- 273              	.LFE5:
- 274              		.size	isr_LUT_GetVector, .-isr_LUT_GetVector
- 275 0026 00BF     		.section	.text.isr_LUT_SetPriority,"ax",%progbits
- 276              		.align	2
- 277              		.global	isr_LUT_SetPriority
- 278              		.thumb
- 279              		.thumb_func
- 280              		.type	isr_LUT_SetPriority, %function
- 281              	isr_LUT_SetPriority:
- 282              	.LFB6:
+ 262              		.loc 1 215 0
+ 263 001a 1846     		mov	r0, r3
+ 264 001c 07F10C07 		add	r7, r7, #12
+ 265 0020 BD46     		mov	sp, r7
+ 266 0022 80BC     		pop	{r7}
+ 267 0024 7047     		bx	lr
+ 268              		.cfi_endproc
+ 269              	.LFE5:
+ 270              		.size	isr_LUT_GetVector, .-isr_LUT_GetVector
+ 271 0026 00BF     		.section	.text.isr_LUT_SetPriority,"ax",%progbits
+ 272              		.align	2
+ 273              		.global	isr_LUT_SetPriority
+ 274              		.thumb
+ 275              		.thumb_func
+ 276              		.type	isr_LUT_SetPriority, %function
+ 277              	isr_LUT_SetPriority:
+ 278              	.LFB6:
  216:.\Generated_Source\PSoC5/isr_LUT.c **** 
  217:.\Generated_Source\PSoC5/isr_LUT.c **** 
  218:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
@@ -538,73 +534,73 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  225:.\Generated_Source\PSoC5/isr_LUT.c **** *   would have had. This method should only be called after 
  226:.\Generated_Source\PSoC5/isr_LUT.c **** *   isr_LUT_Start or isr_LUT_StartEx has been called. To set 
  227:.\Generated_Source\PSoC5/isr_LUT.c **** *   the initial priority for the component use the cydwr file in the tool.
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 10
-
-
  228:.\Generated_Source\PSoC5/isr_LUT.c **** *
  229:.\Generated_Source\PSoC5/isr_LUT.c **** * Parameters:
  230:.\Generated_Source\PSoC5/isr_LUT.c **** *   priority: Priority of the interrupt. 0 - 7, 0 being the highest.
  231:.\Generated_Source\PSoC5/isr_LUT.c **** *
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 10
+
+
  232:.\Generated_Source\PSoC5/isr_LUT.c **** * Return:
  233:.\Generated_Source\PSoC5/isr_LUT.c **** *   None
  234:.\Generated_Source\PSoC5/isr_LUT.c **** *
  235:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  236:.\Generated_Source\PSoC5/isr_LUT.c **** void isr_LUT_SetPriority(uint8 priority)
  237:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 283              		.loc 1 237 0
- 284              		.cfi_startproc
- 285              		@ args = 0, pretend = 0, frame = 8
- 286              		@ frame_needed = 1, uses_anonymous_args = 0
- 287              		@ link register save eliminated.
- 288 0000 80B4     		push	{r7}
- 289              	.LCFI15:
- 290              		.cfi_def_cfa_offset 4
- 291 0002 83B0     		sub	sp, sp, #12
- 292              	.LCFI16:
- 293              		.cfi_def_cfa_offset 16
- 294 0004 00AF     		add	r7, sp, #0
- 295              		.cfi_offset 7, -4
- 296              	.LCFI17:
- 297              		.cfi_def_cfa_register 7
- 298 0006 0346     		mov	r3, r0
- 299 0008 FB71     		strb	r3, [r7, #7]
+ 279              		.loc 1 237 0
+ 280              		.cfi_startproc
+ 281              		@ args = 0, pretend = 0, frame = 8
+ 282              		@ frame_needed = 1, uses_anonymous_args = 0
+ 283              		@ link register save eliminated.
+ 284 0000 80B4     		push	{r7}
+ 285              	.LCFI15:
+ 286              		.cfi_def_cfa_offset 4
+ 287 0002 83B0     		sub	sp, sp, #12
+ 288              	.LCFI16:
+ 289              		.cfi_def_cfa_offset 16
+ 290 0004 00AF     		add	r7, sp, #0
+ 291              		.cfi_offset 7, -4
+ 292              	.LCFI17:
+ 293              		.cfi_def_cfa_register 7
+ 294 0006 0346     		mov	r3, r0
+ 295 0008 FB71     		strb	r3, [r7, #7]
  238:.\Generated_Source\PSoC5/isr_LUT.c ****     *isr_LUT_INTC_PRIOR = priority << 5;
- 300              		.loc 1 238 0
- 301 000a 4EF20043 		movw	r3, #:lower16:-536812544
- 302 000e CEF20003 		movt	r3, #:upper16:-536812544
- 303 0012 FA79     		ldrb	r2, [r7, #7]
- 304 0014 4FEA4212 		lsl	r2, r2, #5
- 305 0018 D2B2     		uxtb	r2, r2
- 306 001a 1A70     		strb	r2, [r3, #0]
+ 296              		.loc 1 238 0
+ 297 000a 4EF20043 		movw	r3, #:lower16:-536812544
+ 298 000e CEF20003 		movt	r3, #:upper16:-536812544
+ 299 0012 FA79     		ldrb	r2, [r7, #7]
+ 300 0014 4FEA4212 		lsl	r2, r2, #5
+ 301 0018 D2B2     		uxtb	r2, r2
+ 302 001a 1A70     		strb	r2, [r3, #0]
  239:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 307              		.loc 1 239 0
- 308 001c 07F10C07 		add	r7, r7, #12
- 309 0020 BD46     		mov	sp, r7
- 310 0022 80BC     		pop	{r7}
- 311 0024 7047     		bx	lr
- 312              		.cfi_endproc
- 313              	.LFE6:
- 314              		.size	isr_LUT_SetPriority, .-isr_LUT_SetPriority
- 315 0026 00BF     		.section	.text.isr_LUT_GetPriority,"ax",%progbits
- 316              		.align	2
- 317              		.global	isr_LUT_GetPriority
- 318              		.thumb
- 319              		.thumb_func
- 320              		.type	isr_LUT_GetPriority, %function
- 321              	isr_LUT_GetPriority:
- 322              	.LFB7:
+ 303              		.loc 1 239 0
+ 304 001c 07F10C07 		add	r7, r7, #12
+ 305 0020 BD46     		mov	sp, r7
+ 306 0022 80BC     		pop	{r7}
+ 307 0024 7047     		bx	lr
+ 308              		.cfi_endproc
+ 309              	.LFE6:
+ 310              		.size	isr_LUT_SetPriority, .-isr_LUT_SetPriority
+ 311 0026 00BF     		.section	.text.isr_LUT_GetPriority,"ax",%progbits
+ 312              		.align	2
+ 313              		.global	isr_LUT_GetPriority
+ 314              		.thumb
+ 315              		.thumb_func
+ 316              		.type	isr_LUT_GetPriority, %function
+ 317              	isr_LUT_GetPriority:
+ 318              	.LFB7:
  240:.\Generated_Source\PSoC5/isr_LUT.c **** 
  241:.\Generated_Source\PSoC5/isr_LUT.c **** 
  242:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
  243:.\Generated_Source\PSoC5/isr_LUT.c **** * Function Name: isr_LUT_GetPriority
  244:.\Generated_Source\PSoC5/isr_LUT.c **** ********************************************************************************
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 11
-
-
  245:.\Generated_Source\PSoC5/isr_LUT.c **** *
  246:.\Generated_Source\PSoC5/isr_LUT.c **** * Summary:
  247:.\Generated_Source\PSoC5/isr_LUT.c **** *   Gets the Priority of the Interrupt.
  248:.\Generated_Source\PSoC5/isr_LUT.c **** *
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 11
+
+
  249:.\Generated_Source\PSoC5/isr_LUT.c **** * Parameters:
  250:.\Generated_Source\PSoC5/isr_LUT.c **** *   None
  251:.\Generated_Source\PSoC5/isr_LUT.c **** *
@@ -614,57 +610,57 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  255:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  256:.\Generated_Source\PSoC5/isr_LUT.c **** uint8 isr_LUT_GetPriority(void)
  257:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 323              		.loc 1 257 0
- 324              		.cfi_startproc
- 325              		@ args = 0, pretend = 0, frame = 8
- 326              		@ frame_needed = 1, uses_anonymous_args = 0
- 327              		@ link register save eliminated.
- 328 0000 80B4     		push	{r7}
- 329              	.LCFI18:
- 330              		.cfi_def_cfa_offset 4
- 331 0002 83B0     		sub	sp, sp, #12
- 332              	.LCFI19:
- 333              		.cfi_def_cfa_offset 16
- 334 0004 00AF     		add	r7, sp, #0
- 335              		.cfi_offset 7, -4
- 336              	.LCFI20:
- 337              		.cfi_def_cfa_register 7
+ 319              		.loc 1 257 0
+ 320              		.cfi_startproc
+ 321              		@ args = 0, pretend = 0, frame = 8
+ 322              		@ frame_needed = 1, uses_anonymous_args = 0
+ 323              		@ link register save eliminated.
+ 324 0000 80B4     		push	{r7}
+ 325              	.LCFI18:
+ 326              		.cfi_def_cfa_offset 4
+ 327 0002 83B0     		sub	sp, sp, #12
+ 328              	.LCFI19:
+ 329              		.cfi_def_cfa_offset 16
+ 330 0004 00AF     		add	r7, sp, #0
+ 331              		.cfi_offset 7, -4
+ 332              	.LCFI20:
+ 333              		.cfi_def_cfa_register 7
  258:.\Generated_Source\PSoC5/isr_LUT.c ****     uint8 priority;
  259:.\Generated_Source\PSoC5/isr_LUT.c **** 
  260:.\Generated_Source\PSoC5/isr_LUT.c **** 
  261:.\Generated_Source\PSoC5/isr_LUT.c ****     priority = *isr_LUT_INTC_PRIOR >> 5;
- 338              		.loc 1 261 0
- 339 0006 4EF20043 		movw	r3, #:lower16:-536812544
- 340 000a CEF20003 		movt	r3, #:upper16:-536812544
- 341 000e 1B78     		ldrb	r3, [r3, #0]
- 342 0010 DBB2     		uxtb	r3, r3
- 343 0012 4FEA5313 		lsr	r3, r3, #5
- 344 0016 FB71     		strb	r3, [r7, #7]
+ 334              		.loc 1 261 0
+ 335 0006 4EF20043 		movw	r3, #:lower16:-536812544
+ 336 000a CEF20003 		movt	r3, #:upper16:-536812544
+ 337 000e 1B78     		ldrb	r3, [r3, #0]
+ 338 0010 DBB2     		uxtb	r3, r3
+ 339 0012 4FEA5313 		lsr	r3, r3, #5
+ 340 0016 FB71     		strb	r3, [r7, #7]
  262:.\Generated_Source\PSoC5/isr_LUT.c **** 
  263:.\Generated_Source\PSoC5/isr_LUT.c ****     return priority;
- 345              		.loc 1 263 0
- 346 0018 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 341              		.loc 1 263 0
+ 342 0018 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  264:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 347              		.loc 1 264 0
- 348 001a 1846     		mov	r0, r3
- 349 001c 07F10C07 		add	r7, r7, #12
- 350 0020 BD46     		mov	sp, r7
- 351 0022 80BC     		pop	{r7}
- 352 0024 7047     		bx	lr
- 353              		.cfi_endproc
- 354              	.LFE7:
- 355              		.size	isr_LUT_GetPriority, .-isr_LUT_GetPriority
- 356 0026 00BF     		.section	.text.isr_LUT_Enable,"ax",%progbits
- 357              		.align	2
- 358              		.global	isr_LUT_Enable
- 359              		.thumb
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 12
+ 343              		.loc 1 264 0
+ 344 001a 1846     		mov	r0, r3
+ 345 001c 07F10C07 		add	r7, r7, #12
+ 346 0020 BD46     		mov	sp, r7
+ 347 0022 80BC     		pop	{r7}
+ 348 0024 7047     		bx	lr
+ 349              		.cfi_endproc
+ 350              	.LFE7:
+ 351              		.size	isr_LUT_GetPriority, .-isr_LUT_GetPriority
+ 352 0026 00BF     		.section	.text.isr_LUT_Enable,"ax",%progbits
+ 353              		.align	2
+ 354              		.global	isr_LUT_Enable
+ 355              		.thumb
+ 356              		.thumb_func
+ 357              		.type	isr_LUT_Enable, %function
+ 358              	isr_LUT_Enable:
+ 359              	.LFB8:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 12
 
 
- 360              		.thumb_func
- 361              		.type	isr_LUT_Enable, %function
- 362              	isr_LUT_Enable:
- 363              	.LFB8:
  265:.\Generated_Source\PSoC5/isr_LUT.c **** 
  266:.\Generated_Source\PSoC5/isr_LUT.c **** 
  267:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
@@ -683,48 +679,48 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  280:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  281:.\Generated_Source\PSoC5/isr_LUT.c **** void isr_LUT_Enable(void)
  282:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 364              		.loc 1 282 0
- 365              		.cfi_startproc
- 366              		@ args = 0, pretend = 0, frame = 0
- 367              		@ frame_needed = 1, uses_anonymous_args = 0
- 368              		@ link register save eliminated.
- 369 0000 80B4     		push	{r7}
- 370              	.LCFI21:
- 371              		.cfi_def_cfa_offset 4
- 372 0002 00AF     		add	r7, sp, #0
- 373              		.cfi_offset 7, -4
- 374              	.LCFI22:
- 375              		.cfi_def_cfa_register 7
+ 360              		.loc 1 282 0
+ 361              		.cfi_startproc
+ 362              		@ args = 0, pretend = 0, frame = 0
+ 363              		@ frame_needed = 1, uses_anonymous_args = 0
+ 364              		@ link register save eliminated.
+ 365 0000 80B4     		push	{r7}
+ 366              	.LCFI21:
+ 367              		.cfi_def_cfa_offset 4
+ 368 0002 00AF     		add	r7, sp, #0
+ 369              		.cfi_offset 7, -4
+ 370              	.LCFI22:
+ 371              		.cfi_def_cfa_register 7
  283:.\Generated_Source\PSoC5/isr_LUT.c ****     /* Enable the general interrupt. */
  284:.\Generated_Source\PSoC5/isr_LUT.c ****     *isr_LUT_INTC_SET_EN = isr_LUT__INTC_MASK;
- 376              		.loc 1 284 0
- 377 0004 4EF20013 		movw	r3, #:lower16:-536813312
- 378 0008 CEF20003 		movt	r3, #:upper16:-536813312
- 379 000c 4FF00102 		mov	r2, #1
- 380 0010 1A60     		str	r2, [r3, #0]
+ 372              		.loc 1 284 0
+ 373 0004 4EF20013 		movw	r3, #:lower16:-536813312
+ 374 0008 CEF20003 		movt	r3, #:upper16:-536813312
+ 375 000c 4FF00102 		mov	r2, #1
+ 376 0010 1A60     		str	r2, [r3, #0]
  285:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 381              		.loc 1 285 0
- 382 0012 BD46     		mov	sp, r7
- 383 0014 80BC     		pop	{r7}
- 384 0016 7047     		bx	lr
- 385              		.cfi_endproc
- 386              	.LFE8:
- 387              		.size	isr_LUT_Enable, .-isr_LUT_Enable
- 388              		.section	.text.isr_LUT_GetState,"ax",%progbits
- 389              		.align	2
- 390              		.global	isr_LUT_GetState
- 391              		.thumb
- 392              		.thumb_func
- 393              		.type	isr_LUT_GetState, %function
- 394              	isr_LUT_GetState:
- 395              	.LFB9:
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 13
-
-
+ 377              		.loc 1 285 0
+ 378 0012 BD46     		mov	sp, r7
+ 379 0014 80BC     		pop	{r7}
+ 380 0016 7047     		bx	lr
+ 381              		.cfi_endproc
+ 382              	.LFE8:
+ 383              		.size	isr_LUT_Enable, .-isr_LUT_Enable
+ 384              		.section	.text.isr_LUT_GetState,"ax",%progbits
+ 385              		.align	2
+ 386              		.global	isr_LUT_GetState
+ 387              		.thumb
+ 388              		.thumb_func
+ 389              		.type	isr_LUT_GetState, %function
+ 390              	isr_LUT_GetState:
+ 391              	.LFB9:
  286:.\Generated_Source\PSoC5/isr_LUT.c **** 
  287:.\Generated_Source\PSoC5/isr_LUT.c **** 
  288:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
  289:.\Generated_Source\PSoC5/isr_LUT.c **** * Function Name: isr_LUT_GetState
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 13
+
+
  290:.\Generated_Source\PSoC5/isr_LUT.c **** ********************************************************************************
  291:.\Generated_Source\PSoC5/isr_LUT.c **** *
  292:.\Generated_Source\PSoC5/isr_LUT.c **** * Summary:
@@ -739,53 +735,53 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  301:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  302:.\Generated_Source\PSoC5/isr_LUT.c **** uint8 isr_LUT_GetState(void)
  303:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 396              		.loc 1 303 0
- 397              		.cfi_startproc
- 398              		@ args = 0, pretend = 0, frame = 0
- 399              		@ frame_needed = 1, uses_anonymous_args = 0
- 400              		@ link register save eliminated.
- 401 0000 80B4     		push	{r7}
- 402              	.LCFI23:
- 403              		.cfi_def_cfa_offset 4
- 404 0002 00AF     		add	r7, sp, #0
- 405              		.cfi_offset 7, -4
- 406              	.LCFI24:
- 407              		.cfi_def_cfa_register 7
+ 392              		.loc 1 303 0
+ 393              		.cfi_startproc
+ 394              		@ args = 0, pretend = 0, frame = 0
+ 395              		@ frame_needed = 1, uses_anonymous_args = 0
+ 396              		@ link register save eliminated.
+ 397 0000 80B4     		push	{r7}
+ 398              	.LCFI23:
+ 399              		.cfi_def_cfa_offset 4
+ 400 0002 00AF     		add	r7, sp, #0
+ 401              		.cfi_offset 7, -4
+ 402              	.LCFI24:
+ 403              		.cfi_def_cfa_register 7
  304:.\Generated_Source\PSoC5/isr_LUT.c ****     /* Get the state of the general interrupt. */
  305:.\Generated_Source\PSoC5/isr_LUT.c ****     return ((*isr_LUT_INTC_SET_EN & (uint32)isr_LUT__INTC_MASK) != 0u) ? 1u:0u;
- 408              		.loc 1 305 0
- 409 0004 4EF20013 		movw	r3, #:lower16:-536813312
- 410 0008 CEF20003 		movt	r3, #:upper16:-536813312
- 411 000c 1B68     		ldr	r3, [r3, #0]
- 412 000e 03F00103 		and	r3, r3, #1
- 413 0012 DBB2     		uxtb	r3, r3
- 414 0014 002B     		cmp	r3, #0
- 415 0016 02D0     		beq	.L21
- 416 0018 4FF00103 		mov	r3, #1
- 417 001c 01E0     		b	.L22
- 418              	.L21:
- 419 001e 4FF00003 		mov	r3, #0
- 420              	.L22:
+ 404              		.loc 1 305 0
+ 405 0004 4EF20013 		movw	r3, #:lower16:-536813312
+ 406 0008 CEF20003 		movt	r3, #:upper16:-536813312
+ 407 000c 1B68     		ldr	r3, [r3, #0]
+ 408 000e 03F00103 		and	r3, r3, #1
+ 409 0012 DBB2     		uxtb	r3, r3
+ 410 0014 002B     		cmp	r3, #0
+ 411 0016 02D0     		beq	.L21
+ 412 0018 4FF00103 		mov	r3, #1
+ 413 001c 01E0     		b	.L22
+ 414              	.L21:
+ 415 001e 4FF00003 		mov	r3, #0
+ 416              	.L22:
  306:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 421              		.loc 1 306 0
- 422 0022 1846     		mov	r0, r3
- 423 0024 BD46     		mov	sp, r7
- 424 0026 80BC     		pop	{r7}
- 425 0028 7047     		bx	lr
- 426              		.cfi_endproc
- 427              	.LFE9:
- 428              		.size	isr_LUT_GetState, .-isr_LUT_GetState
- 429 002a 00BF     		.section	.text.isr_LUT_Disable,"ax",%progbits
- 430              		.align	2
- 431              		.global	isr_LUT_Disable
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 14
+ 417              		.loc 1 306 0
+ 418 0022 1846     		mov	r0, r3
+ 419 0024 BD46     		mov	sp, r7
+ 420 0026 80BC     		pop	{r7}
+ 421 0028 7047     		bx	lr
+ 422              		.cfi_endproc
+ 423              	.LFE9:
+ 424              		.size	isr_LUT_GetState, .-isr_LUT_GetState
+ 425 002a 00BF     		.section	.text.isr_LUT_Disable,"ax",%progbits
+ 426              		.align	2
+ 427              		.global	isr_LUT_Disable
+ 428              		.thumb
+ 429              		.thumb_func
+ 430              		.type	isr_LUT_Disable, %function
+ 431              	isr_LUT_Disable:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 14
 
 
- 432              		.thumb
- 433              		.thumb_func
- 434              		.type	isr_LUT_Disable, %function
- 435              	isr_LUT_Disable:
- 436              	.LFB10:
+ 432              	.LFB10:
  307:.\Generated_Source\PSoC5/isr_LUT.c **** 
  308:.\Generated_Source\PSoC5/isr_LUT.c **** 
  309:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
@@ -804,47 +800,47 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  322:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  323:.\Generated_Source\PSoC5/isr_LUT.c **** void isr_LUT_Disable(void)
  324:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 437              		.loc 1 324 0
- 438              		.cfi_startproc
- 439              		@ args = 0, pretend = 0, frame = 0
- 440              		@ frame_needed = 1, uses_anonymous_args = 0
- 441              		@ link register save eliminated.
- 442 0000 80B4     		push	{r7}
- 443              	.LCFI25:
- 444              		.cfi_def_cfa_offset 4
- 445 0002 00AF     		add	r7, sp, #0
- 446              		.cfi_offset 7, -4
- 447              	.LCFI26:
- 448              		.cfi_def_cfa_register 7
+ 433              		.loc 1 324 0
+ 434              		.cfi_startproc
+ 435              		@ args = 0, pretend = 0, frame = 0
+ 436              		@ frame_needed = 1, uses_anonymous_args = 0
+ 437              		@ link register save eliminated.
+ 438 0000 80B4     		push	{r7}
+ 439              	.LCFI25:
+ 440              		.cfi_def_cfa_offset 4
+ 441 0002 00AF     		add	r7, sp, #0
+ 442              		.cfi_offset 7, -4
+ 443              	.LCFI26:
+ 444              		.cfi_def_cfa_register 7
  325:.\Generated_Source\PSoC5/isr_LUT.c ****     /* Disable the general interrupt. */
  326:.\Generated_Source\PSoC5/isr_LUT.c ****     *isr_LUT_INTC_CLR_EN = isr_LUT__INTC_MASK;
- 449              		.loc 1 326 0
- 450 0004 4EF28013 		movw	r3, #:lower16:-536813184
- 451 0008 CEF20003 		movt	r3, #:upper16:-536813184
- 452 000c 4FF00102 		mov	r2, #1
- 453 0010 1A60     		str	r2, [r3, #0]
+ 445              		.loc 1 326 0
+ 446 0004 4EF28013 		movw	r3, #:lower16:-536813184
+ 447 0008 CEF20003 		movt	r3, #:upper16:-536813184
+ 448 000c 4FF00102 		mov	r2, #1
+ 449 0010 1A60     		str	r2, [r3, #0]
  327:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 454              		.loc 1 327 0
- 455 0012 BD46     		mov	sp, r7
- 456 0014 80BC     		pop	{r7}
- 457 0016 7047     		bx	lr
- 458              		.cfi_endproc
- 459              	.LFE10:
- 460              		.size	isr_LUT_Disable, .-isr_LUT_Disable
- 461              		.section	.text.isr_LUT_SetPending,"ax",%progbits
- 462              		.align	2
- 463              		.global	isr_LUT_SetPending
- 464              		.thumb
- 465              		.thumb_func
- 466              		.type	isr_LUT_SetPending, %function
- 467              	isr_LUT_SetPending:
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 15
-
-
- 468              	.LFB11:
+ 450              		.loc 1 327 0
+ 451 0012 BD46     		mov	sp, r7
+ 452 0014 80BC     		pop	{r7}
+ 453 0016 7047     		bx	lr
+ 454              		.cfi_endproc
+ 455              	.LFE10:
+ 456              		.size	isr_LUT_Disable, .-isr_LUT_Disable
+ 457              		.section	.text.isr_LUT_SetPending,"ax",%progbits
+ 458              		.align	2
+ 459              		.global	isr_LUT_SetPending
+ 460              		.thumb
+ 461              		.thumb_func
+ 462              		.type	isr_LUT_SetPending, %function
+ 463              	isr_LUT_SetPending:
+ 464              	.LFB11:
  328:.\Generated_Source\PSoC5/isr_LUT.c **** 
  329:.\Generated_Source\PSoC5/isr_LUT.c **** 
  330:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 15
+
+
  331:.\Generated_Source\PSoC5/isr_LUT.c **** * Function Name: isr_LUT_SetPending
  332:.\Generated_Source\PSoC5/isr_LUT.c **** ********************************************************************************
  333:.\Generated_Source\PSoC5/isr_LUT.c **** *
@@ -861,50 +857,50 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  344:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  345:.\Generated_Source\PSoC5/isr_LUT.c **** void isr_LUT_SetPending(void)
  346:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 469              		.loc 1 346 0
- 470              		.cfi_startproc
- 471              		@ args = 0, pretend = 0, frame = 0
- 472              		@ frame_needed = 1, uses_anonymous_args = 0
- 473              		@ link register save eliminated.
- 474 0000 80B4     		push	{r7}
- 475              	.LCFI27:
- 476              		.cfi_def_cfa_offset 4
- 477 0002 00AF     		add	r7, sp, #0
- 478              		.cfi_offset 7, -4
- 479              	.LCFI28:
- 480              		.cfi_def_cfa_register 7
+ 465              		.loc 1 346 0
+ 466              		.cfi_startproc
+ 467              		@ args = 0, pretend = 0, frame = 0
+ 468              		@ frame_needed = 1, uses_anonymous_args = 0
+ 469              		@ link register save eliminated.
+ 470 0000 80B4     		push	{r7}
+ 471              	.LCFI27:
+ 472              		.cfi_def_cfa_offset 4
+ 473 0002 00AF     		add	r7, sp, #0
+ 474              		.cfi_offset 7, -4
+ 475              	.LCFI28:
+ 476              		.cfi_def_cfa_register 7
  347:.\Generated_Source\PSoC5/isr_LUT.c ****     *isr_LUT_INTC_SET_PD = isr_LUT__INTC_MASK;
- 481              		.loc 1 347 0
- 482 0004 4EF20023 		movw	r3, #:lower16:-536813056
- 483 0008 CEF20003 		movt	r3, #:upper16:-536813056
- 484 000c 4FF00102 		mov	r2, #1
- 485 0010 1A60     		str	r2, [r3, #0]
+ 477              		.loc 1 347 0
+ 478 0004 4EF20023 		movw	r3, #:lower16:-536813056
+ 479 0008 CEF20003 		movt	r3, #:upper16:-536813056
+ 480 000c 4FF00102 		mov	r2, #1
+ 481 0010 1A60     		str	r2, [r3, #0]
  348:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 486              		.loc 1 348 0
- 487 0012 BD46     		mov	sp, r7
- 488 0014 80BC     		pop	{r7}
- 489 0016 7047     		bx	lr
- 490              		.cfi_endproc
- 491              	.LFE11:
- 492              		.size	isr_LUT_SetPending, .-isr_LUT_SetPending
- 493              		.section	.text.isr_LUT_ClearPending,"ax",%progbits
- 494              		.align	2
- 495              		.global	isr_LUT_ClearPending
- 496              		.thumb
- 497              		.thumb_func
- 498              		.type	isr_LUT_ClearPending, %function
- 499              	isr_LUT_ClearPending:
- 500              	.LFB12:
+ 482              		.loc 1 348 0
+ 483 0012 BD46     		mov	sp, r7
+ 484 0014 80BC     		pop	{r7}
+ 485 0016 7047     		bx	lr
+ 486              		.cfi_endproc
+ 487              	.LFE11:
+ 488              		.size	isr_LUT_SetPending, .-isr_LUT_SetPending
+ 489              		.section	.text.isr_LUT_ClearPending,"ax",%progbits
+ 490              		.align	2
+ 491              		.global	isr_LUT_ClearPending
+ 492              		.thumb
+ 493              		.thumb_func
+ 494              		.type	isr_LUT_ClearPending, %function
+ 495              	isr_LUT_ClearPending:
+ 496              	.LFB12:
  349:.\Generated_Source\PSoC5/isr_LUT.c **** 
  350:.\Generated_Source\PSoC5/isr_LUT.c **** 
  351:.\Generated_Source\PSoC5/isr_LUT.c **** /*******************************************************************************
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 16
-
-
  352:.\Generated_Source\PSoC5/isr_LUT.c **** * Function Name: isr_LUT_ClearPending
  353:.\Generated_Source\PSoC5/isr_LUT.c **** ********************************************************************************
  354:.\Generated_Source\PSoC5/isr_LUT.c **** *
  355:.\Generated_Source\PSoC5/isr_LUT.c **** * Summary:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 16
+
+
  356:.\Generated_Source\PSoC5/isr_LUT.c **** *   Clears a pending interrupt.
  357:.\Generated_Source\PSoC5/isr_LUT.c **** *
  358:.\Generated_Source\PSoC5/isr_LUT.c **** * Parameters:
@@ -916,1261 +912,1261 @@ ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 1
  364:.\Generated_Source\PSoC5/isr_LUT.c **** *******************************************************************************/
  365:.\Generated_Source\PSoC5/isr_LUT.c **** void isr_LUT_ClearPending(void)
  366:.\Generated_Source\PSoC5/isr_LUT.c **** {
- 501              		.loc 1 366 0
- 502              		.cfi_startproc
- 503              		@ args = 0, pretend = 0, frame = 0
- 504              		@ frame_needed = 1, uses_anonymous_args = 0
- 505              		@ link register save eliminated.
- 506 0000 80B4     		push	{r7}
- 507              	.LCFI29:
- 508              		.cfi_def_cfa_offset 4
- 509 0002 00AF     		add	r7, sp, #0
- 510              		.cfi_offset 7, -4
- 511              	.LCFI30:
- 512              		.cfi_def_cfa_register 7
+ 497              		.loc 1 366 0
+ 498              		.cfi_startproc
+ 499              		@ args = 0, pretend = 0, frame = 0
+ 500              		@ frame_needed = 1, uses_anonymous_args = 0
+ 501              		@ link register save eliminated.
+ 502 0000 80B4     		push	{r7}
+ 503              	.LCFI29:
+ 504              		.cfi_def_cfa_offset 4
+ 505 0002 00AF     		add	r7, sp, #0
+ 506              		.cfi_offset 7, -4
+ 507              	.LCFI30:
+ 508              		.cfi_def_cfa_register 7
  367:.\Generated_Source\PSoC5/isr_LUT.c ****     *isr_LUT_INTC_CLR_PD = isr_LUT__INTC_MASK;
- 513              		.loc 1 367 0
- 514 0004 4EF28023 		movw	r3, #:lower16:-536812928
- 515 0008 CEF20003 		movt	r3, #:upper16:-536812928
- 516 000c 4FF00102 		mov	r2, #1
- 517 0010 1A60     		str	r2, [r3, #0]
+ 509              		.loc 1 367 0
+ 510 0004 4EF28023 		movw	r3, #:lower16:-536812928
+ 511 0008 CEF20003 		movt	r3, #:upper16:-536812928
+ 512 000c 4FF00102 		mov	r2, #1
+ 513 0010 1A60     		str	r2, [r3, #0]
  368:.\Generated_Source\PSoC5/isr_LUT.c **** }
- 518              		.loc 1 368 0
- 519 0012 BD46     		mov	sp, r7
- 520 0014 80BC     		pop	{r7}
- 521 0016 7047     		bx	lr
- 522              		.cfi_endproc
- 523              	.LFE12:
- 524              		.size	isr_LUT_ClearPending, .-isr_LUT_ClearPending
- 525              		.text
- 526              	.Letext0:
- 527              		.section	.debug_loc,"",%progbits
- 528              	.Ldebug_loc0:
- 529              	.LLST0:
- 530 0000 00000000 		.4byte	.LFB0
- 531 0004 02000000 		.4byte	.LCFI0
- 532 0008 0100     		.2byte	0x1
- 533 000a 5D       		.byte	0x5d
- 534 000b 02000000 		.4byte	.LCFI0
- 535 000f 04000000 		.4byte	.LCFI1
- 536 0013 0200     		.2byte	0x2
- 537 0015 7D       		.byte	0x7d
- 538 0016 08       		.sleb128 8
- 539 0017 04000000 		.4byte	.LCFI1
- 540 001b 22000000 		.4byte	.LFE0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 17
+ 514              		.loc 1 368 0
+ 515 0012 BD46     		mov	sp, r7
+ 516 0014 80BC     		pop	{r7}
+ 517 0016 7047     		bx	lr
+ 518              		.cfi_endproc
+ 519              	.LFE12:
+ 520              		.size	isr_LUT_ClearPending, .-isr_LUT_ClearPending
+ 521              		.text
+ 522              	.Letext0:
+ 523              		.section	.debug_loc,"",%progbits
+ 524              	.Ldebug_loc0:
+ 525              	.LLST0:
+ 526 0000 00000000 		.4byte	.LFB0
+ 527 0004 02000000 		.4byte	.LCFI0
+ 528 0008 0100     		.2byte	0x1
+ 529 000a 5D       		.byte	0x5d
+ 530 000b 02000000 		.4byte	.LCFI0
+ 531 000f 04000000 		.4byte	.LCFI1
+ 532 0013 0200     		.2byte	0x2
+ 533 0015 7D       		.byte	0x7d
+ 534 0016 08       		.sleb128 8
+ 535 0017 04000000 		.4byte	.LCFI1
+ 536 001b 22000000 		.4byte	.LFE0
+ 537 001f 0200     		.2byte	0x2
+ 538 0021 77       		.byte	0x77
+ 539 0022 08       		.sleb128 8
+ 540 0023 00000000 		.4byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 17
 
 
- 541 001f 0200     		.2byte	0x2
- 542 0021 77       		.byte	0x77
- 543 0022 08       		.sleb128 8
- 544 0023 00000000 		.4byte	0x0
- 545 0027 00000000 		.4byte	0x0
- 546              	.LLST1:
- 547 002b 00000000 		.4byte	.LFB1
- 548 002f 02000000 		.4byte	.LCFI2
- 549 0033 0100     		.2byte	0x1
- 550 0035 5D       		.byte	0x5d
- 551 0036 02000000 		.4byte	.LCFI2
- 552 003a 04000000 		.4byte	.LCFI3
- 553 003e 0200     		.2byte	0x2
- 554 0040 7D       		.byte	0x7d
- 555 0041 08       		.sleb128 8
- 556 0042 04000000 		.4byte	.LCFI3
- 557 0046 06000000 		.4byte	.LCFI4
- 558 004a 0200     		.2byte	0x2
- 559 004c 7D       		.byte	0x7d
- 560 004d 10       		.sleb128 16
- 561 004e 06000000 		.4byte	.LCFI4
- 562 0052 26000000 		.4byte	.LFE1
- 563 0056 0200     		.2byte	0x2
- 564 0058 77       		.byte	0x77
- 565 0059 10       		.sleb128 16
- 566 005a 00000000 		.4byte	0x0
- 567 005e 00000000 		.4byte	0x0
- 568              	.LLST2:
- 569 0062 00000000 		.4byte	.LFB2
- 570 0066 02000000 		.4byte	.LCFI5
- 571 006a 0100     		.2byte	0x1
- 572 006c 5D       		.byte	0x5d
- 573 006d 02000000 		.4byte	.LCFI5
- 574 0071 04000000 		.4byte	.LCFI6
- 575 0075 0200     		.2byte	0x2
- 576 0077 7D       		.byte	0x7d
- 577 0078 08       		.sleb128 8
- 578 0079 04000000 		.4byte	.LCFI6
- 579 007d 16000000 		.4byte	.LFE2
- 580 0081 0200     		.2byte	0x2
- 581 0083 77       		.byte	0x77
- 582 0084 08       		.sleb128 8
- 583 0085 00000000 		.4byte	0x0
- 584 0089 00000000 		.4byte	0x0
- 585              	.LLST3:
- 586 008d 00000000 		.4byte	.LFB3
- 587 0091 02000000 		.4byte	.LCFI7
- 588 0095 0100     		.2byte	0x1
- 589 0097 5D       		.byte	0x5d
- 590 0098 02000000 		.4byte	.LCFI7
- 591 009c 04000000 		.4byte	.LCFI8
- 592 00a0 0200     		.2byte	0x2
- 593 00a2 7D       		.byte	0x7d
- 594 00a3 08       		.sleb128 8
- 595 00a4 04000000 		.4byte	.LCFI8
- 596 00a8 4E000000 		.4byte	.LFE3
- 597 00ac 0200     		.2byte	0x2
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 18
+ 541 0027 00000000 		.4byte	0x0
+ 542              	.LLST1:
+ 543 002b 00000000 		.4byte	.LFB1
+ 544 002f 02000000 		.4byte	.LCFI2
+ 545 0033 0100     		.2byte	0x1
+ 546 0035 5D       		.byte	0x5d
+ 547 0036 02000000 		.4byte	.LCFI2
+ 548 003a 04000000 		.4byte	.LCFI3
+ 549 003e 0200     		.2byte	0x2
+ 550 0040 7D       		.byte	0x7d
+ 551 0041 08       		.sleb128 8
+ 552 0042 04000000 		.4byte	.LCFI3
+ 553 0046 06000000 		.4byte	.LCFI4
+ 554 004a 0200     		.2byte	0x2
+ 555 004c 7D       		.byte	0x7d
+ 556 004d 10       		.sleb128 16
+ 557 004e 06000000 		.4byte	.LCFI4
+ 558 0052 26000000 		.4byte	.LFE1
+ 559 0056 0200     		.2byte	0x2
+ 560 0058 77       		.byte	0x77
+ 561 0059 10       		.sleb128 16
+ 562 005a 00000000 		.4byte	0x0
+ 563 005e 00000000 		.4byte	0x0
+ 564              	.LLST2:
+ 565 0062 00000000 		.4byte	.LFB2
+ 566 0066 02000000 		.4byte	.LCFI5
+ 567 006a 0100     		.2byte	0x1
+ 568 006c 5D       		.byte	0x5d
+ 569 006d 02000000 		.4byte	.LCFI5
+ 570 0071 04000000 		.4byte	.LCFI6
+ 571 0075 0200     		.2byte	0x2
+ 572 0077 7D       		.byte	0x7d
+ 573 0078 08       		.sleb128 8
+ 574 0079 04000000 		.4byte	.LCFI6
+ 575 007d 16000000 		.4byte	.LFE2
+ 576 0081 0200     		.2byte	0x2
+ 577 0083 77       		.byte	0x77
+ 578 0084 08       		.sleb128 8
+ 579 0085 00000000 		.4byte	0x0
+ 580 0089 00000000 		.4byte	0x0
+ 581              	.LLST3:
+ 582 008d 00000000 		.4byte	.LFB3
+ 583 0091 02000000 		.4byte	.LCFI7
+ 584 0095 0100     		.2byte	0x1
+ 585 0097 5D       		.byte	0x5d
+ 586 0098 02000000 		.4byte	.LCFI7
+ 587 009c 04000000 		.4byte	.LCFI8
+ 588 00a0 0200     		.2byte	0x2
+ 589 00a2 7D       		.byte	0x7d
+ 590 00a3 04       		.sleb128 4
+ 591 00a4 04000000 		.4byte	.LCFI8
+ 592 00a8 42000000 		.4byte	.LFE3
+ 593 00ac 0200     		.2byte	0x2
+ 594 00ae 77       		.byte	0x77
+ 595 00af 04       		.sleb128 4
+ 596 00b0 00000000 		.4byte	0x0
+ 597 00b4 00000000 		.4byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 18
 
 
- 598 00ae 77       		.byte	0x77
- 599 00af 08       		.sleb128 8
- 600 00b0 00000000 		.4byte	0x0
- 601 00b4 00000000 		.4byte	0x0
- 602              	.LLST4:
- 603 00b8 00000000 		.4byte	.LFB4
- 604 00bc 02000000 		.4byte	.LCFI9
- 605 00c0 0100     		.2byte	0x1
- 606 00c2 5D       		.byte	0x5d
- 607 00c3 02000000 		.4byte	.LCFI9
- 608 00c7 04000000 		.4byte	.LCFI10
- 609 00cb 0200     		.2byte	0x2
- 610 00cd 7D       		.byte	0x7d
- 611 00ce 04       		.sleb128 4
- 612 00cf 04000000 		.4byte	.LCFI10
- 613 00d3 06000000 		.4byte	.LCFI11
- 614 00d7 0200     		.2byte	0x2
- 615 00d9 7D       		.byte	0x7d
- 616 00da 18       		.sleb128 24
- 617 00db 06000000 		.4byte	.LCFI11
- 618 00df 28000000 		.4byte	.LFE4
- 619 00e3 0200     		.2byte	0x2
- 620 00e5 77       		.byte	0x77
- 621 00e6 18       		.sleb128 24
- 622 00e7 00000000 		.4byte	0x0
- 623 00eb 00000000 		.4byte	0x0
- 624              	.LLST5:
- 625 00ef 00000000 		.4byte	.LFB5
- 626 00f3 02000000 		.4byte	.LCFI12
- 627 00f7 0100     		.2byte	0x1
- 628 00f9 5D       		.byte	0x5d
- 629 00fa 02000000 		.4byte	.LCFI12
- 630 00fe 04000000 		.4byte	.LCFI13
- 631 0102 0200     		.2byte	0x2
- 632 0104 7D       		.byte	0x7d
- 633 0105 04       		.sleb128 4
- 634 0106 04000000 		.4byte	.LCFI13
- 635 010a 06000000 		.4byte	.LCFI14
- 636 010e 0200     		.2byte	0x2
- 637 0110 7D       		.byte	0x7d
- 638 0111 10       		.sleb128 16
- 639 0112 06000000 		.4byte	.LCFI14
- 640 0116 26000000 		.4byte	.LFE5
- 641 011a 0200     		.2byte	0x2
- 642 011c 77       		.byte	0x77
- 643 011d 10       		.sleb128 16
- 644 011e 00000000 		.4byte	0x0
- 645 0122 00000000 		.4byte	0x0
- 646              	.LLST6:
- 647 0126 00000000 		.4byte	.LFB6
- 648 012a 02000000 		.4byte	.LCFI15
- 649 012e 0100     		.2byte	0x1
- 650 0130 5D       		.byte	0x5d
- 651 0131 02000000 		.4byte	.LCFI15
- 652 0135 04000000 		.4byte	.LCFI16
- 653 0139 0200     		.2byte	0x2
- 654 013b 7D       		.byte	0x7d
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 19
+ 598              	.LLST4:
+ 599 00b8 00000000 		.4byte	.LFB4
+ 600 00bc 02000000 		.4byte	.LCFI9
+ 601 00c0 0100     		.2byte	0x1
+ 602 00c2 5D       		.byte	0x5d
+ 603 00c3 02000000 		.4byte	.LCFI9
+ 604 00c7 04000000 		.4byte	.LCFI10
+ 605 00cb 0200     		.2byte	0x2
+ 606 00cd 7D       		.byte	0x7d
+ 607 00ce 04       		.sleb128 4
+ 608 00cf 04000000 		.4byte	.LCFI10
+ 609 00d3 06000000 		.4byte	.LCFI11
+ 610 00d7 0200     		.2byte	0x2
+ 611 00d9 7D       		.byte	0x7d
+ 612 00da 18       		.sleb128 24
+ 613 00db 06000000 		.4byte	.LCFI11
+ 614 00df 28000000 		.4byte	.LFE4
+ 615 00e3 0200     		.2byte	0x2
+ 616 00e5 77       		.byte	0x77
+ 617 00e6 18       		.sleb128 24
+ 618 00e7 00000000 		.4byte	0x0
+ 619 00eb 00000000 		.4byte	0x0
+ 620              	.LLST5:
+ 621 00ef 00000000 		.4byte	.LFB5
+ 622 00f3 02000000 		.4byte	.LCFI12
+ 623 00f7 0100     		.2byte	0x1
+ 624 00f9 5D       		.byte	0x5d
+ 625 00fa 02000000 		.4byte	.LCFI12
+ 626 00fe 04000000 		.4byte	.LCFI13
+ 627 0102 0200     		.2byte	0x2
+ 628 0104 7D       		.byte	0x7d
+ 629 0105 04       		.sleb128 4
+ 630 0106 04000000 		.4byte	.LCFI13
+ 631 010a 06000000 		.4byte	.LCFI14
+ 632 010e 0200     		.2byte	0x2
+ 633 0110 7D       		.byte	0x7d
+ 634 0111 10       		.sleb128 16
+ 635 0112 06000000 		.4byte	.LCFI14
+ 636 0116 26000000 		.4byte	.LFE5
+ 637 011a 0200     		.2byte	0x2
+ 638 011c 77       		.byte	0x77
+ 639 011d 10       		.sleb128 16
+ 640 011e 00000000 		.4byte	0x0
+ 641 0122 00000000 		.4byte	0x0
+ 642              	.LLST6:
+ 643 0126 00000000 		.4byte	.LFB6
+ 644 012a 02000000 		.4byte	.LCFI15
+ 645 012e 0100     		.2byte	0x1
+ 646 0130 5D       		.byte	0x5d
+ 647 0131 02000000 		.4byte	.LCFI15
+ 648 0135 04000000 		.4byte	.LCFI16
+ 649 0139 0200     		.2byte	0x2
+ 650 013b 7D       		.byte	0x7d
+ 651 013c 04       		.sleb128 4
+ 652 013d 04000000 		.4byte	.LCFI16
+ 653 0141 06000000 		.4byte	.LCFI17
+ 654 0145 0200     		.2byte	0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 19
 
 
- 655 013c 04       		.sleb128 4
- 656 013d 04000000 		.4byte	.LCFI16
- 657 0141 06000000 		.4byte	.LCFI17
- 658 0145 0200     		.2byte	0x2
- 659 0147 7D       		.byte	0x7d
- 660 0148 10       		.sleb128 16
- 661 0149 06000000 		.4byte	.LCFI17
- 662 014d 26000000 		.4byte	.LFE6
- 663 0151 0200     		.2byte	0x2
- 664 0153 77       		.byte	0x77
- 665 0154 10       		.sleb128 16
- 666 0155 00000000 		.4byte	0x0
- 667 0159 00000000 		.4byte	0x0
- 668              	.LLST7:
- 669 015d 00000000 		.4byte	.LFB7
- 670 0161 02000000 		.4byte	.LCFI18
- 671 0165 0100     		.2byte	0x1
- 672 0167 5D       		.byte	0x5d
- 673 0168 02000000 		.4byte	.LCFI18
- 674 016c 04000000 		.4byte	.LCFI19
- 675 0170 0200     		.2byte	0x2
- 676 0172 7D       		.byte	0x7d
- 677 0173 04       		.sleb128 4
- 678 0174 04000000 		.4byte	.LCFI19
- 679 0178 06000000 		.4byte	.LCFI20
- 680 017c 0200     		.2byte	0x2
- 681 017e 7D       		.byte	0x7d
- 682 017f 10       		.sleb128 16
- 683 0180 06000000 		.4byte	.LCFI20
- 684 0184 26000000 		.4byte	.LFE7
- 685 0188 0200     		.2byte	0x2
- 686 018a 77       		.byte	0x77
- 687 018b 10       		.sleb128 16
- 688 018c 00000000 		.4byte	0x0
- 689 0190 00000000 		.4byte	0x0
- 690              	.LLST8:
- 691 0194 00000000 		.4byte	.LFB8
- 692 0198 02000000 		.4byte	.LCFI21
- 693 019c 0100     		.2byte	0x1
- 694 019e 5D       		.byte	0x5d
- 695 019f 02000000 		.4byte	.LCFI21
- 696 01a3 04000000 		.4byte	.LCFI22
- 697 01a7 0200     		.2byte	0x2
- 698 01a9 7D       		.byte	0x7d
- 699 01aa 04       		.sleb128 4
- 700 01ab 04000000 		.4byte	.LCFI22
- 701 01af 18000000 		.4byte	.LFE8
- 702 01b3 0200     		.2byte	0x2
- 703 01b5 77       		.byte	0x77
- 704 01b6 04       		.sleb128 4
- 705 01b7 00000000 		.4byte	0x0
- 706 01bb 00000000 		.4byte	0x0
- 707              	.LLST9:
- 708 01bf 00000000 		.4byte	.LFB9
- 709 01c3 02000000 		.4byte	.LCFI23
- 710 01c7 0100     		.2byte	0x1
- 711 01c9 5D       		.byte	0x5d
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 20
+ 655 0147 7D       		.byte	0x7d
+ 656 0148 10       		.sleb128 16
+ 657 0149 06000000 		.4byte	.LCFI17
+ 658 014d 26000000 		.4byte	.LFE6
+ 659 0151 0200     		.2byte	0x2
+ 660 0153 77       		.byte	0x77
+ 661 0154 10       		.sleb128 16
+ 662 0155 00000000 		.4byte	0x0
+ 663 0159 00000000 		.4byte	0x0
+ 664              	.LLST7:
+ 665 015d 00000000 		.4byte	.LFB7
+ 666 0161 02000000 		.4byte	.LCFI18
+ 667 0165 0100     		.2byte	0x1
+ 668 0167 5D       		.byte	0x5d
+ 669 0168 02000000 		.4byte	.LCFI18
+ 670 016c 04000000 		.4byte	.LCFI19
+ 671 0170 0200     		.2byte	0x2
+ 672 0172 7D       		.byte	0x7d
+ 673 0173 04       		.sleb128 4
+ 674 0174 04000000 		.4byte	.LCFI19
+ 675 0178 06000000 		.4byte	.LCFI20
+ 676 017c 0200     		.2byte	0x2
+ 677 017e 7D       		.byte	0x7d
+ 678 017f 10       		.sleb128 16
+ 679 0180 06000000 		.4byte	.LCFI20
+ 680 0184 26000000 		.4byte	.LFE7
+ 681 0188 0200     		.2byte	0x2
+ 682 018a 77       		.byte	0x77
+ 683 018b 10       		.sleb128 16
+ 684 018c 00000000 		.4byte	0x0
+ 685 0190 00000000 		.4byte	0x0
+ 686              	.LLST8:
+ 687 0194 00000000 		.4byte	.LFB8
+ 688 0198 02000000 		.4byte	.LCFI21
+ 689 019c 0100     		.2byte	0x1
+ 690 019e 5D       		.byte	0x5d
+ 691 019f 02000000 		.4byte	.LCFI21
+ 692 01a3 04000000 		.4byte	.LCFI22
+ 693 01a7 0200     		.2byte	0x2
+ 694 01a9 7D       		.byte	0x7d
+ 695 01aa 04       		.sleb128 4
+ 696 01ab 04000000 		.4byte	.LCFI22
+ 697 01af 18000000 		.4byte	.LFE8
+ 698 01b3 0200     		.2byte	0x2
+ 699 01b5 77       		.byte	0x77
+ 700 01b6 04       		.sleb128 4
+ 701 01b7 00000000 		.4byte	0x0
+ 702 01bb 00000000 		.4byte	0x0
+ 703              	.LLST9:
+ 704 01bf 00000000 		.4byte	.LFB9
+ 705 01c3 02000000 		.4byte	.LCFI23
+ 706 01c7 0100     		.2byte	0x1
+ 707 01c9 5D       		.byte	0x5d
+ 708 01ca 02000000 		.4byte	.LCFI23
+ 709 01ce 04000000 		.4byte	.LCFI24
+ 710 01d2 0200     		.2byte	0x2
+ 711 01d4 7D       		.byte	0x7d
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 20
 
 
- 712 01ca 02000000 		.4byte	.LCFI23
- 713 01ce 04000000 		.4byte	.LCFI24
- 714 01d2 0200     		.2byte	0x2
- 715 01d4 7D       		.byte	0x7d
- 716 01d5 04       		.sleb128 4
- 717 01d6 04000000 		.4byte	.LCFI24
- 718 01da 2A000000 		.4byte	.LFE9
- 719 01de 0200     		.2byte	0x2
- 720 01e0 77       		.byte	0x77
- 721 01e1 04       		.sleb128 4
- 722 01e2 00000000 		.4byte	0x0
- 723 01e6 00000000 		.4byte	0x0
- 724              	.LLST10:
- 725 01ea 00000000 		.4byte	.LFB10
- 726 01ee 02000000 		.4byte	.LCFI25
- 727 01f2 0100     		.2byte	0x1
- 728 01f4 5D       		.byte	0x5d
- 729 01f5 02000000 		.4byte	.LCFI25
- 730 01f9 04000000 		.4byte	.LCFI26
- 731 01fd 0200     		.2byte	0x2
- 732 01ff 7D       		.byte	0x7d
- 733 0200 04       		.sleb128 4
- 734 0201 04000000 		.4byte	.LCFI26
- 735 0205 18000000 		.4byte	.LFE10
- 736 0209 0200     		.2byte	0x2
- 737 020b 77       		.byte	0x77
- 738 020c 04       		.sleb128 4
- 739 020d 00000000 		.4byte	0x0
- 740 0211 00000000 		.4byte	0x0
- 741              	.LLST11:
- 742 0215 00000000 		.4byte	.LFB11
- 743 0219 02000000 		.4byte	.LCFI27
- 744 021d 0100     		.2byte	0x1
- 745 021f 5D       		.byte	0x5d
- 746 0220 02000000 		.4byte	.LCFI27
- 747 0224 04000000 		.4byte	.LCFI28
- 748 0228 0200     		.2byte	0x2
- 749 022a 7D       		.byte	0x7d
- 750 022b 04       		.sleb128 4
- 751 022c 04000000 		.4byte	.LCFI28
- 752 0230 18000000 		.4byte	.LFE11
- 753 0234 0200     		.2byte	0x2
- 754 0236 77       		.byte	0x77
- 755 0237 04       		.sleb128 4
- 756 0238 00000000 		.4byte	0x0
- 757 023c 00000000 		.4byte	0x0
- 758              	.LLST12:
- 759 0240 00000000 		.4byte	.LFB12
- 760 0244 02000000 		.4byte	.LCFI29
- 761 0248 0100     		.2byte	0x1
- 762 024a 5D       		.byte	0x5d
- 763 024b 02000000 		.4byte	.LCFI29
- 764 024f 04000000 		.4byte	.LCFI30
- 765 0253 0200     		.2byte	0x2
- 766 0255 7D       		.byte	0x7d
- 767 0256 04       		.sleb128 4
- 768 0257 04000000 		.4byte	.LCFI30
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 21
+ 712 01d5 04       		.sleb128 4
+ 713 01d6 04000000 		.4byte	.LCFI24
+ 714 01da 2A000000 		.4byte	.LFE9
+ 715 01de 0200     		.2byte	0x2
+ 716 01e0 77       		.byte	0x77
+ 717 01e1 04       		.sleb128 4
+ 718 01e2 00000000 		.4byte	0x0
+ 719 01e6 00000000 		.4byte	0x0
+ 720              	.LLST10:
+ 721 01ea 00000000 		.4byte	.LFB10
+ 722 01ee 02000000 		.4byte	.LCFI25
+ 723 01f2 0100     		.2byte	0x1
+ 724 01f4 5D       		.byte	0x5d
+ 725 01f5 02000000 		.4byte	.LCFI25
+ 726 01f9 04000000 		.4byte	.LCFI26
+ 727 01fd 0200     		.2byte	0x2
+ 728 01ff 7D       		.byte	0x7d
+ 729 0200 04       		.sleb128 4
+ 730 0201 04000000 		.4byte	.LCFI26
+ 731 0205 18000000 		.4byte	.LFE10
+ 732 0209 0200     		.2byte	0x2
+ 733 020b 77       		.byte	0x77
+ 734 020c 04       		.sleb128 4
+ 735 020d 00000000 		.4byte	0x0
+ 736 0211 00000000 		.4byte	0x0
+ 737              	.LLST11:
+ 738 0215 00000000 		.4byte	.LFB11
+ 739 0219 02000000 		.4byte	.LCFI27
+ 740 021d 0100     		.2byte	0x1
+ 741 021f 5D       		.byte	0x5d
+ 742 0220 02000000 		.4byte	.LCFI27
+ 743 0224 04000000 		.4byte	.LCFI28
+ 744 0228 0200     		.2byte	0x2
+ 745 022a 7D       		.byte	0x7d
+ 746 022b 04       		.sleb128 4
+ 747 022c 04000000 		.4byte	.LCFI28
+ 748 0230 18000000 		.4byte	.LFE11
+ 749 0234 0200     		.2byte	0x2
+ 750 0236 77       		.byte	0x77
+ 751 0237 04       		.sleb128 4
+ 752 0238 00000000 		.4byte	0x0
+ 753 023c 00000000 		.4byte	0x0
+ 754              	.LLST12:
+ 755 0240 00000000 		.4byte	.LFB12
+ 756 0244 02000000 		.4byte	.LCFI29
+ 757 0248 0100     		.2byte	0x1
+ 758 024a 5D       		.byte	0x5d
+ 759 024b 02000000 		.4byte	.LCFI29
+ 760 024f 04000000 		.4byte	.LCFI30
+ 761 0253 0200     		.2byte	0x2
+ 762 0255 7D       		.byte	0x7d
+ 763 0256 04       		.sleb128 4
+ 764 0257 04000000 		.4byte	.LCFI30
+ 765 025b 18000000 		.4byte	.LFE12
+ 766 025f 0200     		.2byte	0x2
+ 767 0261 77       		.byte	0x77
+ 768 0262 04       		.sleb128 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 21
 
 
- 769 025b 18000000 		.4byte	.LFE12
- 770 025f 0200     		.2byte	0x2
- 771 0261 77       		.byte	0x77
- 772 0262 04       		.sleb128 4
- 773 0263 00000000 		.4byte	0x0
- 774 0267 00000000 		.4byte	0x0
- 775              		.file 2 "./Generated_Source/PSoC5/cytypes.h"
- 776              		.section	.debug_info
- 777 0000 63020000 		.4byte	0x263
- 778 0004 0200     		.2byte	0x2
- 779 0006 00000000 		.4byte	.Ldebug_abbrev0
- 780 000a 04       		.byte	0x4
- 781 000b 01       		.uleb128 0x1
- 782 000c 93010000 		.4byte	.LASF32
- 783 0010 01       		.byte	0x1
- 784 0011 FE010000 		.4byte	.LASF33
- 785 0015 44010000 		.4byte	.LASF34
- 786 0019 00000000 		.4byte	0x0
- 787 001d 00000000 		.4byte	0x0
- 788 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
- 789 0025 00000000 		.4byte	.Ldebug_line0
- 790 0029 02       		.uleb128 0x2
- 791 002a 01       		.byte	0x1
- 792 002b 06       		.byte	0x6
- 793 002c F2010000 		.4byte	.LASF0
- 794 0030 02       		.uleb128 0x2
- 795 0031 01       		.byte	0x1
- 796 0032 08       		.byte	0x8
- 797 0033 79000000 		.4byte	.LASF1
- 798 0037 02       		.uleb128 0x2
- 799 0038 02       		.byte	0x2
- 800 0039 05       		.byte	0x5
- 801 003a 4A000000 		.4byte	.LASF2
- 802 003e 02       		.uleb128 0x2
- 803 003f 02       		.byte	0x2
- 804 0040 07       		.byte	0x7
- 805 0041 37000000 		.4byte	.LASF3
- 806 0045 03       		.uleb128 0x3
- 807 0046 04       		.byte	0x4
- 808 0047 05       		.byte	0x5
- 809 0048 696E7400 		.ascii	"int\000"
- 810 004c 02       		.uleb128 0x2
- 811 004d 04       		.byte	0x4
- 812 004e 07       		.byte	0x7
- 813 004f 08010000 		.4byte	.LASF4
- 814 0053 02       		.uleb128 0x2
- 815 0054 08       		.byte	0x8
- 816 0055 05       		.byte	0x5
- 817 0056 00000000 		.4byte	.LASF5
- 818 005a 02       		.uleb128 0x2
- 819 005b 08       		.byte	0x8
- 820 005c 07       		.byte	0x7
- 821 005d 1D010000 		.4byte	.LASF6
- 822 0061 02       		.uleb128 0x2
- 823 0062 04       		.byte	0x4
- 824 0063 05       		.byte	0x5
- 825 0064 DB010000 		.4byte	.LASF7
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 22
+ 769 0263 00000000 		.4byte	0x0
+ 770 0267 00000000 		.4byte	0x0
+ 771              		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 772              		.section	.debug_info
+ 773 0000 63020000 		.4byte	0x263
+ 774 0004 0200     		.2byte	0x2
+ 775 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 776 000a 04       		.byte	0x4
+ 777 000b 01       		.uleb128 0x1
+ 778 000c 95010000 		.4byte	.LASF32
+ 779 0010 01       		.byte	0x1
+ 780 0011 00020000 		.4byte	.LASF33
+ 781 0015 F7000000 		.4byte	.LASF34
+ 782 0019 00000000 		.4byte	0x0
+ 783 001d 00000000 		.4byte	0x0
+ 784 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 785 0025 00000000 		.4byte	.Ldebug_line0
+ 786 0029 02       		.uleb128 0x2
+ 787 002a 01       		.byte	0x1
+ 788 002b 06       		.byte	0x6
+ 789 002c F4010000 		.4byte	.LASF0
+ 790 0030 02       		.uleb128 0x2
+ 791 0031 01       		.byte	0x1
+ 792 0032 08       		.byte	0x8
+ 793 0033 79000000 		.4byte	.LASF1
+ 794 0037 02       		.uleb128 0x2
+ 795 0038 02       		.byte	0x2
+ 796 0039 05       		.byte	0x5
+ 797 003a 4A000000 		.4byte	.LASF2
+ 798 003e 02       		.uleb128 0x2
+ 799 003f 02       		.byte	0x2
+ 800 0040 07       		.byte	0x7
+ 801 0041 37000000 		.4byte	.LASF3
+ 802 0045 03       		.uleb128 0x3
+ 803 0046 04       		.byte	0x4
+ 804 0047 05       		.byte	0x5
+ 805 0048 696E7400 		.ascii	"int\000"
+ 806 004c 02       		.uleb128 0x2
+ 807 004d 04       		.byte	0x4
+ 808 004e 07       		.byte	0x7
+ 809 004f 4C010000 		.4byte	.LASF4
+ 810 0053 02       		.uleb128 0x2
+ 811 0054 08       		.byte	0x8
+ 812 0055 05       		.byte	0x5
+ 813 0056 00000000 		.4byte	.LASF5
+ 814 005a 02       		.uleb128 0x2
+ 815 005b 08       		.byte	0x8
+ 816 005c 07       		.byte	0x7
+ 817 005d 61010000 		.4byte	.LASF6
+ 818 0061 02       		.uleb128 0x2
+ 819 0062 04       		.byte	0x4
+ 820 0063 05       		.byte	0x5
+ 821 0064 DD010000 		.4byte	.LASF7
+ 822 0068 04       		.uleb128 0x4
+ 823 0069 04       		.byte	0x4
+ 824 006a 07       		.byte	0x7
+ 825 006b 02       		.uleb128 0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 22
 
 
- 826 0068 04       		.uleb128 0x4
- 827 0069 04       		.byte	0x4
- 828 006a 07       		.byte	0x7
- 829 006b 02       		.uleb128 0x2
- 830 006c 04       		.byte	0x4
- 831 006d 07       		.byte	0x7
- 832 006e 9F000000 		.4byte	.LASF8
- 833 0072 05       		.uleb128 0x5
- 834 0073 01       		.byte	0x1
- 835 0074 06       		.uleb128 0x6
- 836 0075 04       		.byte	0x4
- 837 0076 72000000 		.4byte	0x72
- 838 007a 02       		.uleb128 0x2
- 839 007b 01       		.byte	0x1
- 840 007c 08       		.byte	0x8
- 841 007d 9F010000 		.4byte	.LASF9
- 842 0081 07       		.uleb128 0x7
- 843 0082 B1000000 		.4byte	.LASF10
- 844 0086 02       		.byte	0x2
- 845 0087 4C       		.byte	0x4c
- 846 0088 30000000 		.4byte	0x30
- 847 008c 07       		.uleb128 0x7
- 848 008d 99000000 		.4byte	.LASF11
- 849 0091 02       		.byte	0x2
- 850 0092 50       		.byte	0x50
- 851 0093 37000000 		.4byte	0x37
- 852 0097 02       		.uleb128 0x2
- 853 0098 04       		.byte	0x4
- 854 0099 04       		.byte	0x4
- 855 009a 61000000 		.4byte	.LASF12
- 856 009e 02       		.uleb128 0x2
- 857 009f 08       		.byte	0x8
- 858 00a0 04       		.byte	0x4
- 859 00a1 CF000000 		.4byte	.LASF13
- 860 00a5 07       		.uleb128 0x7
- 861 00a6 86010000 		.4byte	.LASF14
- 862 00aa 02       		.byte	0x2
- 863 00ab EB       		.byte	0xeb
- 864 00ac 74000000 		.4byte	0x74
- 865 00b0 08       		.uleb128 0x8
- 866 00b1 01       		.byte	0x1
- 867 00b2 E4010000 		.4byte	.LASF15
- 868 00b6 01       		.byte	0x1
- 869 00b7 3A       		.byte	0x3a
- 870 00b8 01       		.byte	0x1
- 871 00b9 00000000 		.4byte	.LFB0
- 872 00bd 22000000 		.4byte	.LFE0
- 873 00c1 00000000 		.4byte	.LLST0
- 874 00c5 09       		.uleb128 0x9
- 875 00c6 01       		.byte	0x1
- 876 00c7 34010000 		.4byte	.LASF18
- 877 00cb 01       		.byte	0x1
- 878 00cc 58       		.byte	0x58
- 879 00cd 01       		.byte	0x1
- 880 00ce 00000000 		.4byte	.LFB1
- 881 00d2 26000000 		.4byte	.LFE1
- 882 00d6 2B000000 		.4byte	.LLST1
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 23
+ 826 006c 04       		.byte	0x4
+ 827 006d 07       		.byte	0x7
+ 828 006e 9F000000 		.4byte	.LASF8
+ 829 0072 05       		.uleb128 0x5
+ 830 0073 01       		.byte	0x1
+ 831 0074 06       		.uleb128 0x6
+ 832 0075 04       		.byte	0x4
+ 833 0076 72000000 		.4byte	0x72
+ 834 007a 02       		.uleb128 0x2
+ 835 007b 01       		.byte	0x1
+ 836 007c 08       		.byte	0x8
+ 837 007d A1010000 		.4byte	.LASF9
+ 838 0081 07       		.uleb128 0x7
+ 839 0082 B1000000 		.4byte	.LASF10
+ 840 0086 02       		.byte	0x2
+ 841 0087 4C       		.byte	0x4c
+ 842 0088 30000000 		.4byte	0x30
+ 843 008c 07       		.uleb128 0x7
+ 844 008d 99000000 		.4byte	.LASF11
+ 845 0091 02       		.byte	0x2
+ 846 0092 50       		.byte	0x50
+ 847 0093 37000000 		.4byte	0x37
+ 848 0097 02       		.uleb128 0x2
+ 849 0098 04       		.byte	0x4
+ 850 0099 04       		.byte	0x4
+ 851 009a 61000000 		.4byte	.LASF12
+ 852 009e 02       		.uleb128 0x2
+ 853 009f 08       		.byte	0x8
+ 854 00a0 04       		.byte	0x4
+ 855 00a1 CF000000 		.4byte	.LASF13
+ 856 00a5 07       		.uleb128 0x7
+ 857 00a6 88010000 		.4byte	.LASF14
+ 858 00aa 02       		.byte	0x2
+ 859 00ab EB       		.byte	0xeb
+ 860 00ac 74000000 		.4byte	0x74
+ 861 00b0 08       		.uleb128 0x8
+ 862 00b1 01       		.byte	0x1
+ 863 00b2 E6010000 		.4byte	.LASF15
+ 864 00b6 01       		.byte	0x1
+ 865 00b7 3A       		.byte	0x3a
+ 866 00b8 01       		.byte	0x1
+ 867 00b9 00000000 		.4byte	.LFB0
+ 868 00bd 22000000 		.4byte	.LFE0
+ 869 00c1 00000000 		.4byte	.LLST0
+ 870 00c5 09       		.uleb128 0x9
+ 871 00c6 01       		.byte	0x1
+ 872 00c7 78010000 		.4byte	.LASF18
+ 873 00cb 01       		.byte	0x1
+ 874 00cc 58       		.byte	0x58
+ 875 00cd 01       		.byte	0x1
+ 876 00ce 00000000 		.4byte	.LFB1
+ 877 00d2 26000000 		.4byte	.LFE1
+ 878 00d6 2B000000 		.4byte	.LLST1
+ 879 00da ED000000 		.4byte	0xed
+ 880 00de 0A       		.uleb128 0xa
+ 881 00df 59010000 		.4byte	.LASF20
+ 882 00e3 01       		.byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 23
 
 
- 883 00da ED000000 		.4byte	0xed
- 884 00de 0A       		.uleb128 0xa
- 885 00df 15010000 		.4byte	.LASF20
- 886 00e3 01       		.byte	0x1
- 887 00e4 58       		.byte	0x58
- 888 00e5 A5000000 		.4byte	0xa5
- 889 00e9 02       		.byte	0x2
- 890 00ea 91       		.byte	0x91
- 891 00eb 74       		.sleb128 -12
- 892 00ec 00       		.byte	0x0
- 893 00ed 08       		.uleb128 0x8
- 894 00ee 01       		.byte	0x1
- 895 00ef EA000000 		.4byte	.LASF16
- 896 00f3 01       		.byte	0x1
- 897 00f4 75       		.byte	0x75
- 898 00f5 01       		.byte	0x1
- 899 00f6 00000000 		.4byte	.LFB2
- 900 00fa 16000000 		.4byte	.LFE2
- 901 00fe 62000000 		.4byte	.LLST2
- 902 0102 08       		.uleb128 0x8
- 903 0103 01       		.byte	0x1
- 904 0104 87000000 		.4byte	.LASF17
- 905 0108 01       		.byte	0x1
- 906 0109 8F       		.byte	0x8f
- 907 010a 01       		.byte	0x1
- 908 010b 00000000 		.4byte	.LFB3
- 909 010f 4E000000 		.4byte	.LFE3
- 910 0113 8D000000 		.4byte	.LLST3
- 911 0117 09       		.uleb128 0x9
- 912 0118 01       		.byte	0x1
- 913 0119 21020000 		.4byte	.LASF19
- 914 011d 01       		.byte	0x1
- 915 011e B8       		.byte	0xb8
- 916 011f 01       		.byte	0x1
- 917 0120 00000000 		.4byte	.LFB4
- 918 0124 28000000 		.4byte	.LFE4
- 919 0128 B8000000 		.4byte	.LLST4
- 920 012c 4D010000 		.4byte	0x14d
- 921 0130 0A       		.uleb128 0xa
- 922 0131 15010000 		.4byte	.LASF20
- 923 0135 01       		.byte	0x1
- 924 0136 B8       		.byte	0xb8
- 925 0137 A5000000 		.4byte	0xa5
- 926 013b 02       		.byte	0x2
- 927 013c 91       		.byte	0x91
- 928 013d 6C       		.sleb128 -20
- 929 013e 0B       		.uleb128 0xb
- 930 013f A4010000 		.4byte	.LASF21
- 931 0143 01       		.byte	0x1
- 932 0144 BA       		.byte	0xba
- 933 0145 4D010000 		.4byte	0x14d
- 934 0149 02       		.byte	0x2
- 935 014a 91       		.byte	0x91
- 936 014b 74       		.sleb128 -12
- 937 014c 00       		.byte	0x0
- 938 014d 06       		.uleb128 0x6
- 939 014e 04       		.byte	0x4
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 24
+ 883 00e4 58       		.byte	0x58
+ 884 00e5 A5000000 		.4byte	0xa5
+ 885 00e9 02       		.byte	0x2
+ 886 00ea 91       		.byte	0x91
+ 887 00eb 74       		.sleb128 -12
+ 888 00ec 00       		.byte	0x0
+ 889 00ed 08       		.uleb128 0x8
+ 890 00ee 01       		.byte	0x1
+ 891 00ef EA000000 		.4byte	.LASF16
+ 892 00f3 01       		.byte	0x1
+ 893 00f4 75       		.byte	0x75
+ 894 00f5 01       		.byte	0x1
+ 895 00f6 00000000 		.4byte	.LFB2
+ 896 00fa 16000000 		.4byte	.LFE2
+ 897 00fe 62000000 		.4byte	.LLST2
+ 898 0102 08       		.uleb128 0x8
+ 899 0103 01       		.byte	0x1
+ 900 0104 87000000 		.4byte	.LASF17
+ 901 0108 01       		.byte	0x1
+ 902 0109 8F       		.byte	0x8f
+ 903 010a 01       		.byte	0x1
+ 904 010b 00000000 		.4byte	.LFB3
+ 905 010f 42000000 		.4byte	.LFE3
+ 906 0113 8D000000 		.4byte	.LLST3
+ 907 0117 09       		.uleb128 0x9
+ 908 0118 01       		.byte	0x1
+ 909 0119 23020000 		.4byte	.LASF19
+ 910 011d 01       		.byte	0x1
+ 911 011e B8       		.byte	0xb8
+ 912 011f 01       		.byte	0x1
+ 913 0120 00000000 		.4byte	.LFB4
+ 914 0124 28000000 		.4byte	.LFE4
+ 915 0128 B8000000 		.4byte	.LLST4
+ 916 012c 4D010000 		.4byte	0x14d
+ 917 0130 0A       		.uleb128 0xa
+ 918 0131 59010000 		.4byte	.LASF20
+ 919 0135 01       		.byte	0x1
+ 920 0136 B8       		.byte	0xb8
+ 921 0137 A5000000 		.4byte	0xa5
+ 922 013b 02       		.byte	0x2
+ 923 013c 91       		.byte	0x91
+ 924 013d 6C       		.sleb128 -20
+ 925 013e 0B       		.uleb128 0xb
+ 926 013f A6010000 		.4byte	.LASF21
+ 927 0143 01       		.byte	0x1
+ 928 0144 BA       		.byte	0xba
+ 929 0145 4D010000 		.4byte	0x14d
+ 930 0149 02       		.byte	0x2
+ 931 014a 91       		.byte	0x91
+ 932 014b 74       		.sleb128 -12
+ 933 014c 00       		.byte	0x0
+ 934 014d 06       		.uleb128 0x6
+ 935 014e 04       		.byte	0x4
+ 936 014f A5000000 		.4byte	0xa5
+ 937 0153 0C       		.uleb128 0xc
+ 938 0154 01       		.byte	0x1
+ 939 0155 67000000 		.4byte	.LASF24
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 24
 
 
- 940 014f A5000000 		.4byte	0xa5
- 941 0153 0C       		.uleb128 0xc
- 942 0154 01       		.byte	0x1
- 943 0155 67000000 		.4byte	.LASF24
- 944 0159 01       		.byte	0x1
- 945 015a D0       		.byte	0xd0
- 946 015b 01       		.byte	0x1
- 947 015c A5000000 		.4byte	0xa5
- 948 0160 00000000 		.4byte	.LFB5
- 949 0164 26000000 		.4byte	.LFE5
- 950 0168 EF000000 		.4byte	.LLST5
- 951 016c 7F010000 		.4byte	0x17f
- 952 0170 0B       		.uleb128 0xb
- 953 0171 A4010000 		.4byte	.LASF21
- 954 0175 01       		.byte	0x1
- 955 0176 D2       		.byte	0xd2
- 956 0177 4D010000 		.4byte	0x14d
- 957 017b 02       		.byte	0x2
- 958 017c 91       		.byte	0x91
- 959 017d 74       		.sleb128 -12
- 960 017e 00       		.byte	0x0
- 961 017f 09       		.uleb128 0x9
- 962 0180 01       		.byte	0x1
- 963 0181 23000000 		.4byte	.LASF22
- 964 0185 01       		.byte	0x1
- 965 0186 EC       		.byte	0xec
- 966 0187 01       		.byte	0x1
- 967 0188 00000000 		.4byte	.LFB6
- 968 018c 26000000 		.4byte	.LFE6
- 969 0190 26010000 		.4byte	.LLST6
- 970 0194 A7010000 		.4byte	0x1a7
- 971 0198 0A       		.uleb128 0xa
- 972 0199 C6000000 		.4byte	.LASF23
- 973 019d 01       		.byte	0x1
- 974 019e EC       		.byte	0xec
- 975 019f 81000000 		.4byte	0x81
- 976 01a3 02       		.byte	0x2
- 977 01a4 91       		.byte	0x91
- 978 01a5 77       		.sleb128 -9
- 979 01a6 00       		.byte	0x0
- 980 01a7 0D       		.uleb128 0xd
- 981 01a8 01       		.byte	0x1
- 982 01a9 D6000000 		.4byte	.LASF25
- 983 01ad 01       		.byte	0x1
- 984 01ae 0001     		.2byte	0x100
- 985 01b0 01       		.byte	0x1
- 986 01b1 81000000 		.4byte	0x81
- 987 01b5 00000000 		.4byte	.LFB7
- 988 01b9 26000000 		.4byte	.LFE7
- 989 01bd 5D010000 		.4byte	.LLST7
- 990 01c1 D5010000 		.4byte	0x1d5
- 991 01c5 0E       		.uleb128 0xe
- 992 01c6 C6000000 		.4byte	.LASF23
- 993 01ca 01       		.byte	0x1
- 994 01cb 0201     		.2byte	0x102
- 995 01cd 81000000 		.4byte	0x81
- 996 01d1 02       		.byte	0x2
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 25
+ 940 0159 01       		.byte	0x1
+ 941 015a D0       		.byte	0xd0
+ 942 015b 01       		.byte	0x1
+ 943 015c A5000000 		.4byte	0xa5
+ 944 0160 00000000 		.4byte	.LFB5
+ 945 0164 26000000 		.4byte	.LFE5
+ 946 0168 EF000000 		.4byte	.LLST5
+ 947 016c 7F010000 		.4byte	0x17f
+ 948 0170 0B       		.uleb128 0xb
+ 949 0171 A6010000 		.4byte	.LASF21
+ 950 0175 01       		.byte	0x1
+ 951 0176 D2       		.byte	0xd2
+ 952 0177 4D010000 		.4byte	0x14d
+ 953 017b 02       		.byte	0x2
+ 954 017c 91       		.byte	0x91
+ 955 017d 74       		.sleb128 -12
+ 956 017e 00       		.byte	0x0
+ 957 017f 09       		.uleb128 0x9
+ 958 0180 01       		.byte	0x1
+ 959 0181 23000000 		.4byte	.LASF22
+ 960 0185 01       		.byte	0x1
+ 961 0186 EC       		.byte	0xec
+ 962 0187 01       		.byte	0x1
+ 963 0188 00000000 		.4byte	.LFB6
+ 964 018c 26000000 		.4byte	.LFE6
+ 965 0190 26010000 		.4byte	.LLST6
+ 966 0194 A7010000 		.4byte	0x1a7
+ 967 0198 0A       		.uleb128 0xa
+ 968 0199 C6000000 		.4byte	.LASF23
+ 969 019d 01       		.byte	0x1
+ 970 019e EC       		.byte	0xec
+ 971 019f 81000000 		.4byte	0x81
+ 972 01a3 02       		.byte	0x2
+ 973 01a4 91       		.byte	0x91
+ 974 01a5 77       		.sleb128 -9
+ 975 01a6 00       		.byte	0x0
+ 976 01a7 0D       		.uleb128 0xd
+ 977 01a8 01       		.byte	0x1
+ 978 01a9 D6000000 		.4byte	.LASF25
+ 979 01ad 01       		.byte	0x1
+ 980 01ae 0001     		.2byte	0x100
+ 981 01b0 01       		.byte	0x1
+ 982 01b1 81000000 		.4byte	0x81
+ 983 01b5 00000000 		.4byte	.LFB7
+ 984 01b9 26000000 		.4byte	.LFE7
+ 985 01bd 5D010000 		.4byte	.LLST7
+ 986 01c1 D5010000 		.4byte	0x1d5
+ 987 01c5 0E       		.uleb128 0xe
+ 988 01c6 C6000000 		.4byte	.LASF23
+ 989 01ca 01       		.byte	0x1
+ 990 01cb 0201     		.2byte	0x102
+ 991 01cd 81000000 		.4byte	0x81
+ 992 01d1 02       		.byte	0x2
+ 993 01d2 91       		.byte	0x91
+ 994 01d3 77       		.sleb128 -9
+ 995 01d4 00       		.byte	0x0
+ 996 01d5 0F       		.uleb128 0xf
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 25
 
 
- 997 01d2 91       		.byte	0x91
- 998 01d3 77       		.sleb128 -9
- 999 01d4 00       		.byte	0x0
- 1000 01d5 0F       		.uleb128 0xf
- 1001 01d6 01       		.byte	0x1
- 1002 01d7 B7000000 		.4byte	.LASF26
- 1003 01db 01       		.byte	0x1
- 1004 01dc 1901     		.2byte	0x119
- 1005 01de 01       		.byte	0x1
- 1006 01df 00000000 		.4byte	.LFB8
- 1007 01e3 18000000 		.4byte	.LFE8
- 1008 01e7 94010000 		.4byte	.LLST8
- 1009 01eb 10       		.uleb128 0x10
- 1010 01ec 01       		.byte	0x1
- 1011 01ed F7000000 		.4byte	.LASF35
- 1012 01f1 01       		.byte	0x1
- 1013 01f2 2E01     		.2byte	0x12e
- 1014 01f4 01       		.byte	0x1
- 1015 01f5 81000000 		.4byte	0x81
- 1016 01f9 00000000 		.4byte	.LFB9
- 1017 01fd 2A000000 		.4byte	.LFE9
- 1018 0201 BF010000 		.4byte	.LLST9
- 1019 0205 0F       		.uleb128 0xf
- 1020 0206 01       		.byte	0x1
- 1021 0207 13000000 		.4byte	.LASF27
- 1022 020b 01       		.byte	0x1
- 1023 020c 4301     		.2byte	0x143
- 1024 020e 01       		.byte	0x1
- 1025 020f 00000000 		.4byte	.LFB10
- 1026 0213 18000000 		.4byte	.LFE10
- 1027 0217 EA010000 		.4byte	.LLST10
- 1028 021b 0F       		.uleb128 0xf
- 1029 021c 01       		.byte	0x1
- 1030 021d C8010000 		.4byte	.LASF28
- 1031 0221 01       		.byte	0x1
- 1032 0222 5901     		.2byte	0x159
- 1033 0224 01       		.byte	0x1
- 1034 0225 00000000 		.4byte	.LFB11
- 1035 0229 18000000 		.4byte	.LFE11
- 1036 022d 15020000 		.4byte	.LLST11
- 1037 0231 0F       		.uleb128 0xf
- 1038 0232 01       		.byte	0x1
- 1039 0233 B3010000 		.4byte	.LASF29
- 1040 0237 01       		.byte	0x1
- 1041 0238 6D01     		.2byte	0x16d
- 1042 023a 01       		.byte	0x1
- 1043 023b 00000000 		.4byte	.LFB12
- 1044 023f 18000000 		.4byte	.LFE12
- 1045 0243 40020000 		.4byte	.LLST12
- 1046 0247 11       		.uleb128 0x11
- 1047 0248 54000000 		.4byte	.LASF30
- 1048 024c 01       		.byte	0x1
- 1049 024d 1D       		.byte	0x1d
- 1050 024e 8C000000 		.4byte	0x8c
- 1051 0252 01       		.byte	0x1
- 1052 0253 01       		.byte	0x1
- 1053 0254 12       		.uleb128 0x12
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 26
+ 997 01d6 01       		.byte	0x1
+ 998 01d7 B7000000 		.4byte	.LASF26
+ 999 01db 01       		.byte	0x1
+ 1000 01dc 1901     		.2byte	0x119
+ 1001 01de 01       		.byte	0x1
+ 1002 01df 00000000 		.4byte	.LFB8
+ 1003 01e3 18000000 		.4byte	.LFE8
+ 1004 01e7 94010000 		.4byte	.LLST8
+ 1005 01eb 10       		.uleb128 0x10
+ 1006 01ec 01       		.byte	0x1
+ 1007 01ed 3B010000 		.4byte	.LASF35
+ 1008 01f1 01       		.byte	0x1
+ 1009 01f2 2E01     		.2byte	0x12e
+ 1010 01f4 01       		.byte	0x1
+ 1011 01f5 81000000 		.4byte	0x81
+ 1012 01f9 00000000 		.4byte	.LFB9
+ 1013 01fd 2A000000 		.4byte	.LFE9
+ 1014 0201 BF010000 		.4byte	.LLST9
+ 1015 0205 0F       		.uleb128 0xf
+ 1016 0206 01       		.byte	0x1
+ 1017 0207 13000000 		.4byte	.LASF27
+ 1018 020b 01       		.byte	0x1
+ 1019 020c 4301     		.2byte	0x143
+ 1020 020e 01       		.byte	0x1
+ 1021 020f 00000000 		.4byte	.LFB10
+ 1022 0213 18000000 		.4byte	.LFE10
+ 1023 0217 EA010000 		.4byte	.LLST10
+ 1024 021b 0F       		.uleb128 0xf
+ 1025 021c 01       		.byte	0x1
+ 1026 021d CA010000 		.4byte	.LASF28
+ 1027 0221 01       		.byte	0x1
+ 1028 0222 5901     		.2byte	0x159
+ 1029 0224 01       		.byte	0x1
+ 1030 0225 00000000 		.4byte	.LFB11
+ 1031 0229 18000000 		.4byte	.LFE11
+ 1032 022d 15020000 		.4byte	.LLST11
+ 1033 0231 0F       		.uleb128 0xf
+ 1034 0232 01       		.byte	0x1
+ 1035 0233 B5010000 		.4byte	.LASF29
+ 1036 0237 01       		.byte	0x1
+ 1037 0238 6D01     		.2byte	0x16d
+ 1038 023a 01       		.byte	0x1
+ 1039 023b 00000000 		.4byte	.LFB12
+ 1040 023f 18000000 		.4byte	.LFE12
+ 1041 0243 40020000 		.4byte	.LLST12
+ 1042 0247 11       		.uleb128 0x11
+ 1043 0248 54000000 		.4byte	.LASF30
+ 1044 024c 01       		.byte	0x1
+ 1045 024d 1D       		.byte	0x1d
+ 1046 024e 8C000000 		.4byte	0x8c
+ 1047 0252 01       		.byte	0x1
+ 1048 0253 01       		.byte	0x1
+ 1049 0254 12       		.uleb128 0x12
+ 1050 0255 0E000000 		.4byte	.LASF31
+ 1051 0259 01       		.byte	0x1
+ 1052 025a 1E       		.byte	0x1e
+ 1053 025b 45000000 		.4byte	0x45
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 26
 
 
- 1054 0255 0E000000 		.4byte	.LASF31
- 1055 0259 01       		.byte	0x1
- 1056 025a 1E       		.byte	0x1e
- 1057 025b 45000000 		.4byte	0x45
- 1058 025f 01       		.byte	0x1
- 1059 0260 05       		.byte	0x5
- 1060 0261 03       		.byte	0x3
- 1061 0262 00000000 		.4byte	test
- 1062 0266 00       		.byte	0x0
- 1063              		.section	.debug_abbrev
- 1064 0000 01       		.uleb128 0x1
- 1065 0001 11       		.uleb128 0x11
- 1066 0002 01       		.byte	0x1
- 1067 0003 25       		.uleb128 0x25
- 1068 0004 0E       		.uleb128 0xe
- 1069 0005 13       		.uleb128 0x13
- 1070 0006 0B       		.uleb128 0xb
- 1071 0007 03       		.uleb128 0x3
- 1072 0008 0E       		.uleb128 0xe
- 1073 0009 1B       		.uleb128 0x1b
- 1074 000a 0E       		.uleb128 0xe
- 1075 000b 11       		.uleb128 0x11
- 1076 000c 01       		.uleb128 0x1
- 1077 000d 52       		.uleb128 0x52
- 1078 000e 01       		.uleb128 0x1
- 1079 000f 55       		.uleb128 0x55
- 1080 0010 06       		.uleb128 0x6
- 1081 0011 10       		.uleb128 0x10
- 1082 0012 06       		.uleb128 0x6
- 1083 0013 00       		.byte	0x0
- 1084 0014 00       		.byte	0x0
- 1085 0015 02       		.uleb128 0x2
- 1086 0016 24       		.uleb128 0x24
- 1087 0017 00       		.byte	0x0
- 1088 0018 0B       		.uleb128 0xb
- 1089 0019 0B       		.uleb128 0xb
- 1090 001a 3E       		.uleb128 0x3e
- 1091 001b 0B       		.uleb128 0xb
- 1092 001c 03       		.uleb128 0x3
- 1093 001d 0E       		.uleb128 0xe
- 1094 001e 00       		.byte	0x0
- 1095 001f 00       		.byte	0x0
- 1096 0020 03       		.uleb128 0x3
- 1097 0021 24       		.uleb128 0x24
- 1098 0022 00       		.byte	0x0
- 1099 0023 0B       		.uleb128 0xb
- 1100 0024 0B       		.uleb128 0xb
- 1101 0025 3E       		.uleb128 0x3e
- 1102 0026 0B       		.uleb128 0xb
- 1103 0027 03       		.uleb128 0x3
- 1104 0028 08       		.uleb128 0x8
- 1105 0029 00       		.byte	0x0
- 1106 002a 00       		.byte	0x0
- 1107 002b 04       		.uleb128 0x4
- 1108 002c 24       		.uleb128 0x24
- 1109 002d 00       		.byte	0x0
- 1110 002e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 27
+ 1054 025f 01       		.byte	0x1
+ 1055 0260 05       		.byte	0x5
+ 1056 0261 03       		.byte	0x3
+ 1057 0262 00000000 		.4byte	test
+ 1058 0266 00       		.byte	0x0
+ 1059              		.section	.debug_abbrev
+ 1060 0000 01       		.uleb128 0x1
+ 1061 0001 11       		.uleb128 0x11
+ 1062 0002 01       		.byte	0x1
+ 1063 0003 25       		.uleb128 0x25
+ 1064 0004 0E       		.uleb128 0xe
+ 1065 0005 13       		.uleb128 0x13
+ 1066 0006 0B       		.uleb128 0xb
+ 1067 0007 03       		.uleb128 0x3
+ 1068 0008 0E       		.uleb128 0xe
+ 1069 0009 1B       		.uleb128 0x1b
+ 1070 000a 0E       		.uleb128 0xe
+ 1071 000b 11       		.uleb128 0x11
+ 1072 000c 01       		.uleb128 0x1
+ 1073 000d 52       		.uleb128 0x52
+ 1074 000e 01       		.uleb128 0x1
+ 1075 000f 55       		.uleb128 0x55
+ 1076 0010 06       		.uleb128 0x6
+ 1077 0011 10       		.uleb128 0x10
+ 1078 0012 06       		.uleb128 0x6
+ 1079 0013 00       		.byte	0x0
+ 1080 0014 00       		.byte	0x0
+ 1081 0015 02       		.uleb128 0x2
+ 1082 0016 24       		.uleb128 0x24
+ 1083 0017 00       		.byte	0x0
+ 1084 0018 0B       		.uleb128 0xb
+ 1085 0019 0B       		.uleb128 0xb
+ 1086 001a 3E       		.uleb128 0x3e
+ 1087 001b 0B       		.uleb128 0xb
+ 1088 001c 03       		.uleb128 0x3
+ 1089 001d 0E       		.uleb128 0xe
+ 1090 001e 00       		.byte	0x0
+ 1091 001f 00       		.byte	0x0
+ 1092 0020 03       		.uleb128 0x3
+ 1093 0021 24       		.uleb128 0x24
+ 1094 0022 00       		.byte	0x0
+ 1095 0023 0B       		.uleb128 0xb
+ 1096 0024 0B       		.uleb128 0xb
+ 1097 0025 3E       		.uleb128 0x3e
+ 1098 0026 0B       		.uleb128 0xb
+ 1099 0027 03       		.uleb128 0x3
+ 1100 0028 08       		.uleb128 0x8
+ 1101 0029 00       		.byte	0x0
+ 1102 002a 00       		.byte	0x0
+ 1103 002b 04       		.uleb128 0x4
+ 1104 002c 24       		.uleb128 0x24
+ 1105 002d 00       		.byte	0x0
+ 1106 002e 0B       		.uleb128 0xb
+ 1107 002f 0B       		.uleb128 0xb
+ 1108 0030 3E       		.uleb128 0x3e
+ 1109 0031 0B       		.uleb128 0xb
+ 1110 0032 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 27
 
 
- 1111 002f 0B       		.uleb128 0xb
- 1112 0030 3E       		.uleb128 0x3e
- 1113 0031 0B       		.uleb128 0xb
- 1114 0032 00       		.byte	0x0
- 1115 0033 00       		.byte	0x0
- 1116 0034 05       		.uleb128 0x5
- 1117 0035 15       		.uleb128 0x15
- 1118 0036 00       		.byte	0x0
- 1119 0037 27       		.uleb128 0x27
- 1120 0038 0C       		.uleb128 0xc
- 1121 0039 00       		.byte	0x0
- 1122 003a 00       		.byte	0x0
- 1123 003b 06       		.uleb128 0x6
- 1124 003c 0F       		.uleb128 0xf
- 1125 003d 00       		.byte	0x0
- 1126 003e 0B       		.uleb128 0xb
- 1127 003f 0B       		.uleb128 0xb
- 1128 0040 49       		.uleb128 0x49
- 1129 0041 13       		.uleb128 0x13
- 1130 0042 00       		.byte	0x0
- 1131 0043 00       		.byte	0x0
- 1132 0044 07       		.uleb128 0x7
- 1133 0045 16       		.uleb128 0x16
- 1134 0046 00       		.byte	0x0
- 1135 0047 03       		.uleb128 0x3
- 1136 0048 0E       		.uleb128 0xe
- 1137 0049 3A       		.uleb128 0x3a
- 1138 004a 0B       		.uleb128 0xb
- 1139 004b 3B       		.uleb128 0x3b
- 1140 004c 0B       		.uleb128 0xb
- 1141 004d 49       		.uleb128 0x49
- 1142 004e 13       		.uleb128 0x13
- 1143 004f 00       		.byte	0x0
- 1144 0050 00       		.byte	0x0
- 1145 0051 08       		.uleb128 0x8
- 1146 0052 2E       		.uleb128 0x2e
- 1147 0053 00       		.byte	0x0
- 1148 0054 3F       		.uleb128 0x3f
- 1149 0055 0C       		.uleb128 0xc
- 1150 0056 03       		.uleb128 0x3
- 1151 0057 0E       		.uleb128 0xe
- 1152 0058 3A       		.uleb128 0x3a
- 1153 0059 0B       		.uleb128 0xb
- 1154 005a 3B       		.uleb128 0x3b
- 1155 005b 0B       		.uleb128 0xb
- 1156 005c 27       		.uleb128 0x27
- 1157 005d 0C       		.uleb128 0xc
- 1158 005e 11       		.uleb128 0x11
- 1159 005f 01       		.uleb128 0x1
- 1160 0060 12       		.uleb128 0x12
- 1161 0061 01       		.uleb128 0x1
- 1162 0062 40       		.uleb128 0x40
- 1163 0063 06       		.uleb128 0x6
- 1164 0064 00       		.byte	0x0
- 1165 0065 00       		.byte	0x0
- 1166 0066 09       		.uleb128 0x9
- 1167 0067 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 28
+ 1111 0033 00       		.byte	0x0
+ 1112 0034 05       		.uleb128 0x5
+ 1113 0035 15       		.uleb128 0x15
+ 1114 0036 00       		.byte	0x0
+ 1115 0037 27       		.uleb128 0x27
+ 1116 0038 0C       		.uleb128 0xc
+ 1117 0039 00       		.byte	0x0
+ 1118 003a 00       		.byte	0x0
+ 1119 003b 06       		.uleb128 0x6
+ 1120 003c 0F       		.uleb128 0xf
+ 1121 003d 00       		.byte	0x0
+ 1122 003e 0B       		.uleb128 0xb
+ 1123 003f 0B       		.uleb128 0xb
+ 1124 0040 49       		.uleb128 0x49
+ 1125 0041 13       		.uleb128 0x13
+ 1126 0042 00       		.byte	0x0
+ 1127 0043 00       		.byte	0x0
+ 1128 0044 07       		.uleb128 0x7
+ 1129 0045 16       		.uleb128 0x16
+ 1130 0046 00       		.byte	0x0
+ 1131 0047 03       		.uleb128 0x3
+ 1132 0048 0E       		.uleb128 0xe
+ 1133 0049 3A       		.uleb128 0x3a
+ 1134 004a 0B       		.uleb128 0xb
+ 1135 004b 3B       		.uleb128 0x3b
+ 1136 004c 0B       		.uleb128 0xb
+ 1137 004d 49       		.uleb128 0x49
+ 1138 004e 13       		.uleb128 0x13
+ 1139 004f 00       		.byte	0x0
+ 1140 0050 00       		.byte	0x0
+ 1141 0051 08       		.uleb128 0x8
+ 1142 0052 2E       		.uleb128 0x2e
+ 1143 0053 00       		.byte	0x0
+ 1144 0054 3F       		.uleb128 0x3f
+ 1145 0055 0C       		.uleb128 0xc
+ 1146 0056 03       		.uleb128 0x3
+ 1147 0057 0E       		.uleb128 0xe
+ 1148 0058 3A       		.uleb128 0x3a
+ 1149 0059 0B       		.uleb128 0xb
+ 1150 005a 3B       		.uleb128 0x3b
+ 1151 005b 0B       		.uleb128 0xb
+ 1152 005c 27       		.uleb128 0x27
+ 1153 005d 0C       		.uleb128 0xc
+ 1154 005e 11       		.uleb128 0x11
+ 1155 005f 01       		.uleb128 0x1
+ 1156 0060 12       		.uleb128 0x12
+ 1157 0061 01       		.uleb128 0x1
+ 1158 0062 40       		.uleb128 0x40
+ 1159 0063 06       		.uleb128 0x6
+ 1160 0064 00       		.byte	0x0
+ 1161 0065 00       		.byte	0x0
+ 1162 0066 09       		.uleb128 0x9
+ 1163 0067 2E       		.uleb128 0x2e
+ 1164 0068 01       		.byte	0x1
+ 1165 0069 3F       		.uleb128 0x3f
+ 1166 006a 0C       		.uleb128 0xc
+ 1167 006b 03       		.uleb128 0x3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 28
 
 
- 1168 0068 01       		.byte	0x1
- 1169 0069 3F       		.uleb128 0x3f
- 1170 006a 0C       		.uleb128 0xc
- 1171 006b 03       		.uleb128 0x3
- 1172 006c 0E       		.uleb128 0xe
- 1173 006d 3A       		.uleb128 0x3a
- 1174 006e 0B       		.uleb128 0xb
- 1175 006f 3B       		.uleb128 0x3b
- 1176 0070 0B       		.uleb128 0xb
- 1177 0071 27       		.uleb128 0x27
- 1178 0072 0C       		.uleb128 0xc
- 1179 0073 11       		.uleb128 0x11
- 1180 0074 01       		.uleb128 0x1
- 1181 0075 12       		.uleb128 0x12
- 1182 0076 01       		.uleb128 0x1
- 1183 0077 40       		.uleb128 0x40
- 1184 0078 06       		.uleb128 0x6
- 1185 0079 01       		.uleb128 0x1
- 1186 007a 13       		.uleb128 0x13
- 1187 007b 00       		.byte	0x0
- 1188 007c 00       		.byte	0x0
- 1189 007d 0A       		.uleb128 0xa
- 1190 007e 05       		.uleb128 0x5
- 1191 007f 00       		.byte	0x0
- 1192 0080 03       		.uleb128 0x3
- 1193 0081 0E       		.uleb128 0xe
- 1194 0082 3A       		.uleb128 0x3a
- 1195 0083 0B       		.uleb128 0xb
- 1196 0084 3B       		.uleb128 0x3b
- 1197 0085 0B       		.uleb128 0xb
- 1198 0086 49       		.uleb128 0x49
- 1199 0087 13       		.uleb128 0x13
- 1200 0088 02       		.uleb128 0x2
- 1201 0089 0A       		.uleb128 0xa
- 1202 008a 00       		.byte	0x0
- 1203 008b 00       		.byte	0x0
- 1204 008c 0B       		.uleb128 0xb
- 1205 008d 34       		.uleb128 0x34
- 1206 008e 00       		.byte	0x0
- 1207 008f 03       		.uleb128 0x3
- 1208 0090 0E       		.uleb128 0xe
- 1209 0091 3A       		.uleb128 0x3a
- 1210 0092 0B       		.uleb128 0xb
- 1211 0093 3B       		.uleb128 0x3b
- 1212 0094 0B       		.uleb128 0xb
- 1213 0095 49       		.uleb128 0x49
- 1214 0096 13       		.uleb128 0x13
- 1215 0097 02       		.uleb128 0x2
- 1216 0098 0A       		.uleb128 0xa
- 1217 0099 00       		.byte	0x0
- 1218 009a 00       		.byte	0x0
- 1219 009b 0C       		.uleb128 0xc
- 1220 009c 2E       		.uleb128 0x2e
- 1221 009d 01       		.byte	0x1
- 1222 009e 3F       		.uleb128 0x3f
- 1223 009f 0C       		.uleb128 0xc
- 1224 00a0 03       		.uleb128 0x3
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 29
+ 1168 006c 0E       		.uleb128 0xe
+ 1169 006d 3A       		.uleb128 0x3a
+ 1170 006e 0B       		.uleb128 0xb
+ 1171 006f 3B       		.uleb128 0x3b
+ 1172 0070 0B       		.uleb128 0xb
+ 1173 0071 27       		.uleb128 0x27
+ 1174 0072 0C       		.uleb128 0xc
+ 1175 0073 11       		.uleb128 0x11
+ 1176 0074 01       		.uleb128 0x1
+ 1177 0075 12       		.uleb128 0x12
+ 1178 0076 01       		.uleb128 0x1
+ 1179 0077 40       		.uleb128 0x40
+ 1180 0078 06       		.uleb128 0x6
+ 1181 0079 01       		.uleb128 0x1
+ 1182 007a 13       		.uleb128 0x13
+ 1183 007b 00       		.byte	0x0
+ 1184 007c 00       		.byte	0x0
+ 1185 007d 0A       		.uleb128 0xa
+ 1186 007e 05       		.uleb128 0x5
+ 1187 007f 00       		.byte	0x0
+ 1188 0080 03       		.uleb128 0x3
+ 1189 0081 0E       		.uleb128 0xe
+ 1190 0082 3A       		.uleb128 0x3a
+ 1191 0083 0B       		.uleb128 0xb
+ 1192 0084 3B       		.uleb128 0x3b
+ 1193 0085 0B       		.uleb128 0xb
+ 1194 0086 49       		.uleb128 0x49
+ 1195 0087 13       		.uleb128 0x13
+ 1196 0088 02       		.uleb128 0x2
+ 1197 0089 0A       		.uleb128 0xa
+ 1198 008a 00       		.byte	0x0
+ 1199 008b 00       		.byte	0x0
+ 1200 008c 0B       		.uleb128 0xb
+ 1201 008d 34       		.uleb128 0x34
+ 1202 008e 00       		.byte	0x0
+ 1203 008f 03       		.uleb128 0x3
+ 1204 0090 0E       		.uleb128 0xe
+ 1205 0091 3A       		.uleb128 0x3a
+ 1206 0092 0B       		.uleb128 0xb
+ 1207 0093 3B       		.uleb128 0x3b
+ 1208 0094 0B       		.uleb128 0xb
+ 1209 0095 49       		.uleb128 0x49
+ 1210 0096 13       		.uleb128 0x13
+ 1211 0097 02       		.uleb128 0x2
+ 1212 0098 0A       		.uleb128 0xa
+ 1213 0099 00       		.byte	0x0
+ 1214 009a 00       		.byte	0x0
+ 1215 009b 0C       		.uleb128 0xc
+ 1216 009c 2E       		.uleb128 0x2e
+ 1217 009d 01       		.byte	0x1
+ 1218 009e 3F       		.uleb128 0x3f
+ 1219 009f 0C       		.uleb128 0xc
+ 1220 00a0 03       		.uleb128 0x3
+ 1221 00a1 0E       		.uleb128 0xe
+ 1222 00a2 3A       		.uleb128 0x3a
+ 1223 00a3 0B       		.uleb128 0xb
+ 1224 00a4 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 29
 
 
- 1225 00a1 0E       		.uleb128 0xe
- 1226 00a2 3A       		.uleb128 0x3a
- 1227 00a3 0B       		.uleb128 0xb
- 1228 00a4 3B       		.uleb128 0x3b
- 1229 00a5 0B       		.uleb128 0xb
- 1230 00a6 27       		.uleb128 0x27
- 1231 00a7 0C       		.uleb128 0xc
- 1232 00a8 49       		.uleb128 0x49
- 1233 00a9 13       		.uleb128 0x13
- 1234 00aa 11       		.uleb128 0x11
- 1235 00ab 01       		.uleb128 0x1
- 1236 00ac 12       		.uleb128 0x12
- 1237 00ad 01       		.uleb128 0x1
- 1238 00ae 40       		.uleb128 0x40
- 1239 00af 06       		.uleb128 0x6
- 1240 00b0 01       		.uleb128 0x1
- 1241 00b1 13       		.uleb128 0x13
- 1242 00b2 00       		.byte	0x0
- 1243 00b3 00       		.byte	0x0
- 1244 00b4 0D       		.uleb128 0xd
- 1245 00b5 2E       		.uleb128 0x2e
- 1246 00b6 01       		.byte	0x1
- 1247 00b7 3F       		.uleb128 0x3f
- 1248 00b8 0C       		.uleb128 0xc
- 1249 00b9 03       		.uleb128 0x3
- 1250 00ba 0E       		.uleb128 0xe
- 1251 00bb 3A       		.uleb128 0x3a
- 1252 00bc 0B       		.uleb128 0xb
- 1253 00bd 3B       		.uleb128 0x3b
- 1254 00be 05       		.uleb128 0x5
- 1255 00bf 27       		.uleb128 0x27
- 1256 00c0 0C       		.uleb128 0xc
- 1257 00c1 49       		.uleb128 0x49
- 1258 00c2 13       		.uleb128 0x13
- 1259 00c3 11       		.uleb128 0x11
- 1260 00c4 01       		.uleb128 0x1
- 1261 00c5 12       		.uleb128 0x12
- 1262 00c6 01       		.uleb128 0x1
- 1263 00c7 40       		.uleb128 0x40
- 1264 00c8 06       		.uleb128 0x6
- 1265 00c9 01       		.uleb128 0x1
- 1266 00ca 13       		.uleb128 0x13
- 1267 00cb 00       		.byte	0x0
- 1268 00cc 00       		.byte	0x0
- 1269 00cd 0E       		.uleb128 0xe
- 1270 00ce 34       		.uleb128 0x34
- 1271 00cf 00       		.byte	0x0
- 1272 00d0 03       		.uleb128 0x3
- 1273 00d1 0E       		.uleb128 0xe
- 1274 00d2 3A       		.uleb128 0x3a
- 1275 00d3 0B       		.uleb128 0xb
- 1276 00d4 3B       		.uleb128 0x3b
- 1277 00d5 05       		.uleb128 0x5
- 1278 00d6 49       		.uleb128 0x49
- 1279 00d7 13       		.uleb128 0x13
- 1280 00d8 02       		.uleb128 0x2
- 1281 00d9 0A       		.uleb128 0xa
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 30
+ 1225 00a5 0B       		.uleb128 0xb
+ 1226 00a6 27       		.uleb128 0x27
+ 1227 00a7 0C       		.uleb128 0xc
+ 1228 00a8 49       		.uleb128 0x49
+ 1229 00a9 13       		.uleb128 0x13
+ 1230 00aa 11       		.uleb128 0x11
+ 1231 00ab 01       		.uleb128 0x1
+ 1232 00ac 12       		.uleb128 0x12
+ 1233 00ad 01       		.uleb128 0x1
+ 1234 00ae 40       		.uleb128 0x40
+ 1235 00af 06       		.uleb128 0x6
+ 1236 00b0 01       		.uleb128 0x1
+ 1237 00b1 13       		.uleb128 0x13
+ 1238 00b2 00       		.byte	0x0
+ 1239 00b3 00       		.byte	0x0
+ 1240 00b4 0D       		.uleb128 0xd
+ 1241 00b5 2E       		.uleb128 0x2e
+ 1242 00b6 01       		.byte	0x1
+ 1243 00b7 3F       		.uleb128 0x3f
+ 1244 00b8 0C       		.uleb128 0xc
+ 1245 00b9 03       		.uleb128 0x3
+ 1246 00ba 0E       		.uleb128 0xe
+ 1247 00bb 3A       		.uleb128 0x3a
+ 1248 00bc 0B       		.uleb128 0xb
+ 1249 00bd 3B       		.uleb128 0x3b
+ 1250 00be 05       		.uleb128 0x5
+ 1251 00bf 27       		.uleb128 0x27
+ 1252 00c0 0C       		.uleb128 0xc
+ 1253 00c1 49       		.uleb128 0x49
+ 1254 00c2 13       		.uleb128 0x13
+ 1255 00c3 11       		.uleb128 0x11
+ 1256 00c4 01       		.uleb128 0x1
+ 1257 00c5 12       		.uleb128 0x12
+ 1258 00c6 01       		.uleb128 0x1
+ 1259 00c7 40       		.uleb128 0x40
+ 1260 00c8 06       		.uleb128 0x6
+ 1261 00c9 01       		.uleb128 0x1
+ 1262 00ca 13       		.uleb128 0x13
+ 1263 00cb 00       		.byte	0x0
+ 1264 00cc 00       		.byte	0x0
+ 1265 00cd 0E       		.uleb128 0xe
+ 1266 00ce 34       		.uleb128 0x34
+ 1267 00cf 00       		.byte	0x0
+ 1268 00d0 03       		.uleb128 0x3
+ 1269 00d1 0E       		.uleb128 0xe
+ 1270 00d2 3A       		.uleb128 0x3a
+ 1271 00d3 0B       		.uleb128 0xb
+ 1272 00d4 3B       		.uleb128 0x3b
+ 1273 00d5 05       		.uleb128 0x5
+ 1274 00d6 49       		.uleb128 0x49
+ 1275 00d7 13       		.uleb128 0x13
+ 1276 00d8 02       		.uleb128 0x2
+ 1277 00d9 0A       		.uleb128 0xa
+ 1278 00da 00       		.byte	0x0
+ 1279 00db 00       		.byte	0x0
+ 1280 00dc 0F       		.uleb128 0xf
+ 1281 00dd 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 30
 
 
- 1282 00da 00       		.byte	0x0
- 1283 00db 00       		.byte	0x0
- 1284 00dc 0F       		.uleb128 0xf
- 1285 00dd 2E       		.uleb128 0x2e
- 1286 00de 00       		.byte	0x0
- 1287 00df 3F       		.uleb128 0x3f
- 1288 00e0 0C       		.uleb128 0xc
- 1289 00e1 03       		.uleb128 0x3
- 1290 00e2 0E       		.uleb128 0xe
- 1291 00e3 3A       		.uleb128 0x3a
- 1292 00e4 0B       		.uleb128 0xb
- 1293 00e5 3B       		.uleb128 0x3b
- 1294 00e6 05       		.uleb128 0x5
- 1295 00e7 27       		.uleb128 0x27
- 1296 00e8 0C       		.uleb128 0xc
- 1297 00e9 11       		.uleb128 0x11
- 1298 00ea 01       		.uleb128 0x1
- 1299 00eb 12       		.uleb128 0x12
- 1300 00ec 01       		.uleb128 0x1
- 1301 00ed 40       		.uleb128 0x40
- 1302 00ee 06       		.uleb128 0x6
- 1303 00ef 00       		.byte	0x0
- 1304 00f0 00       		.byte	0x0
- 1305 00f1 10       		.uleb128 0x10
- 1306 00f2 2E       		.uleb128 0x2e
- 1307 00f3 00       		.byte	0x0
- 1308 00f4 3F       		.uleb128 0x3f
- 1309 00f5 0C       		.uleb128 0xc
- 1310 00f6 03       		.uleb128 0x3
- 1311 00f7 0E       		.uleb128 0xe
- 1312 00f8 3A       		.uleb128 0x3a
- 1313 00f9 0B       		.uleb128 0xb
- 1314 00fa 3B       		.uleb128 0x3b
- 1315 00fb 05       		.uleb128 0x5
- 1316 00fc 27       		.uleb128 0x27
- 1317 00fd 0C       		.uleb128 0xc
- 1318 00fe 49       		.uleb128 0x49
- 1319 00ff 13       		.uleb128 0x13
- 1320 0100 11       		.uleb128 0x11
- 1321 0101 01       		.uleb128 0x1
- 1322 0102 12       		.uleb128 0x12
- 1323 0103 01       		.uleb128 0x1
- 1324 0104 40       		.uleb128 0x40
- 1325 0105 06       		.uleb128 0x6
- 1326 0106 00       		.byte	0x0
- 1327 0107 00       		.byte	0x0
- 1328 0108 11       		.uleb128 0x11
- 1329 0109 34       		.uleb128 0x34
- 1330 010a 00       		.byte	0x0
- 1331 010b 03       		.uleb128 0x3
- 1332 010c 0E       		.uleb128 0xe
- 1333 010d 3A       		.uleb128 0x3a
- 1334 010e 0B       		.uleb128 0xb
- 1335 010f 3B       		.uleb128 0x3b
- 1336 0110 0B       		.uleb128 0xb
- 1337 0111 49       		.uleb128 0x49
- 1338 0112 13       		.uleb128 0x13
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 31
+ 1282 00de 00       		.byte	0x0
+ 1283 00df 3F       		.uleb128 0x3f
+ 1284 00e0 0C       		.uleb128 0xc
+ 1285 00e1 03       		.uleb128 0x3
+ 1286 00e2 0E       		.uleb128 0xe
+ 1287 00e3 3A       		.uleb128 0x3a
+ 1288 00e4 0B       		.uleb128 0xb
+ 1289 00e5 3B       		.uleb128 0x3b
+ 1290 00e6 05       		.uleb128 0x5
+ 1291 00e7 27       		.uleb128 0x27
+ 1292 00e8 0C       		.uleb128 0xc
+ 1293 00e9 11       		.uleb128 0x11
+ 1294 00ea 01       		.uleb128 0x1
+ 1295 00eb 12       		.uleb128 0x12
+ 1296 00ec 01       		.uleb128 0x1
+ 1297 00ed 40       		.uleb128 0x40
+ 1298 00ee 06       		.uleb128 0x6
+ 1299 00ef 00       		.byte	0x0
+ 1300 00f0 00       		.byte	0x0
+ 1301 00f1 10       		.uleb128 0x10
+ 1302 00f2 2E       		.uleb128 0x2e
+ 1303 00f3 00       		.byte	0x0
+ 1304 00f4 3F       		.uleb128 0x3f
+ 1305 00f5 0C       		.uleb128 0xc
+ 1306 00f6 03       		.uleb128 0x3
+ 1307 00f7 0E       		.uleb128 0xe
+ 1308 00f8 3A       		.uleb128 0x3a
+ 1309 00f9 0B       		.uleb128 0xb
+ 1310 00fa 3B       		.uleb128 0x3b
+ 1311 00fb 05       		.uleb128 0x5
+ 1312 00fc 27       		.uleb128 0x27
+ 1313 00fd 0C       		.uleb128 0xc
+ 1314 00fe 49       		.uleb128 0x49
+ 1315 00ff 13       		.uleb128 0x13
+ 1316 0100 11       		.uleb128 0x11
+ 1317 0101 01       		.uleb128 0x1
+ 1318 0102 12       		.uleb128 0x12
+ 1319 0103 01       		.uleb128 0x1
+ 1320 0104 40       		.uleb128 0x40
+ 1321 0105 06       		.uleb128 0x6
+ 1322 0106 00       		.byte	0x0
+ 1323 0107 00       		.byte	0x0
+ 1324 0108 11       		.uleb128 0x11
+ 1325 0109 34       		.uleb128 0x34
+ 1326 010a 00       		.byte	0x0
+ 1327 010b 03       		.uleb128 0x3
+ 1328 010c 0E       		.uleb128 0xe
+ 1329 010d 3A       		.uleb128 0x3a
+ 1330 010e 0B       		.uleb128 0xb
+ 1331 010f 3B       		.uleb128 0x3b
+ 1332 0110 0B       		.uleb128 0xb
+ 1333 0111 49       		.uleb128 0x49
+ 1334 0112 13       		.uleb128 0x13
+ 1335 0113 3F       		.uleb128 0x3f
+ 1336 0114 0C       		.uleb128 0xc
+ 1337 0115 3C       		.uleb128 0x3c
+ 1338 0116 0C       		.uleb128 0xc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 31
 
 
- 1339 0113 3F       		.uleb128 0x3f
- 1340 0114 0C       		.uleb128 0xc
- 1341 0115 3C       		.uleb128 0x3c
- 1342 0116 0C       		.uleb128 0xc
- 1343 0117 00       		.byte	0x0
- 1344 0118 00       		.byte	0x0
- 1345 0119 12       		.uleb128 0x12
- 1346 011a 34       		.uleb128 0x34
- 1347 011b 00       		.byte	0x0
- 1348 011c 03       		.uleb128 0x3
- 1349 011d 0E       		.uleb128 0xe
- 1350 011e 3A       		.uleb128 0x3a
- 1351 011f 0B       		.uleb128 0xb
- 1352 0120 3B       		.uleb128 0x3b
- 1353 0121 0B       		.uleb128 0xb
- 1354 0122 49       		.uleb128 0x49
- 1355 0123 13       		.uleb128 0x13
- 1356 0124 3F       		.uleb128 0x3f
- 1357 0125 0C       		.uleb128 0xc
- 1358 0126 02       		.uleb128 0x2
- 1359 0127 0A       		.uleb128 0xa
- 1360 0128 00       		.byte	0x0
- 1361 0129 00       		.byte	0x0
- 1362 012a 00       		.byte	0x0
- 1363              		.section	.debug_pubnames,"",%progbits
- 1364 0000 2C010000 		.4byte	0x12c
- 1365 0004 0200     		.2byte	0x2
- 1366 0006 00000000 		.4byte	.Ldebug_info0
- 1367 000a 67020000 		.4byte	0x267
- 1368 000e B0000000 		.4byte	0xb0
- 1369 0012 6973725F 		.ascii	"isr_LUT_Start\000"
+ 1339 0117 00       		.byte	0x0
+ 1340 0118 00       		.byte	0x0
+ 1341 0119 12       		.uleb128 0x12
+ 1342 011a 34       		.uleb128 0x34
+ 1343 011b 00       		.byte	0x0
+ 1344 011c 03       		.uleb128 0x3
+ 1345 011d 0E       		.uleb128 0xe
+ 1346 011e 3A       		.uleb128 0x3a
+ 1347 011f 0B       		.uleb128 0xb
+ 1348 0120 3B       		.uleb128 0x3b
+ 1349 0121 0B       		.uleb128 0xb
+ 1350 0122 49       		.uleb128 0x49
+ 1351 0123 13       		.uleb128 0x13
+ 1352 0124 3F       		.uleb128 0x3f
+ 1353 0125 0C       		.uleb128 0xc
+ 1354 0126 02       		.uleb128 0x2
+ 1355 0127 0A       		.uleb128 0xa
+ 1356 0128 00       		.byte	0x0
+ 1357 0129 00       		.byte	0x0
+ 1358 012a 00       		.byte	0x0
+ 1359              		.section	.debug_pubnames,"",%progbits
+ 1360 0000 2C010000 		.4byte	0x12c
+ 1361 0004 0200     		.2byte	0x2
+ 1362 0006 00000000 		.4byte	.Ldebug_info0
+ 1363 000a 67020000 		.4byte	0x267
+ 1364 000e B0000000 		.4byte	0xb0
+ 1365 0012 6973725F 		.ascii	"isr_LUT_Start\000"
+ 1365      4C55545F 
+ 1365      53746172 
+ 1365      7400
+ 1366 0020 C5000000 		.4byte	0xc5
+ 1367 0024 6973725F 		.ascii	"isr_LUT_StartEx\000"
+ 1367      4C55545F 
+ 1367      53746172 
+ 1367      74457800 
+ 1368 0034 ED000000 		.4byte	0xed
+ 1369 0038 6973725F 		.ascii	"isr_LUT_Stop\000"
  1369      4C55545F 
- 1369      53746172 
- 1369      7400
- 1370 0020 C5000000 		.4byte	0xc5
- 1371 0024 6973725F 		.ascii	"isr_LUT_StartEx\000"
+ 1369      53746F70 
+ 1369      00
+ 1370 0045 02010000 		.4byte	0x102
+ 1371 0049 6973725F 		.ascii	"isr_LUT_Interrupt\000"
  1371      4C55545F 
- 1371      53746172 
- 1371      74457800 
- 1372 0034 ED000000 		.4byte	0xed
- 1373 0038 6973725F 		.ascii	"isr_LUT_Stop\000"
+ 1371      496E7465 
+ 1371      72727570 
+ 1371      7400
+ 1372 005b 17010000 		.4byte	0x117
+ 1373 005f 6973725F 		.ascii	"isr_LUT_SetVector\000"
  1373      4C55545F 
- 1373      53746F70 
- 1373      00
- 1374 0045 02010000 		.4byte	0x102
- 1375 0049 6973725F 		.ascii	"isr_LUT_Interrupt\000"
+ 1373      53657456 
+ 1373      6563746F 
+ 1373      7200
+ 1374 0071 53010000 		.4byte	0x153
+ 1375 0075 6973725F 		.ascii	"isr_LUT_GetVector\000"
  1375      4C55545F 
- 1375      496E7465 
- 1375      72727570 
- 1375      7400
- 1376 005b 17010000 		.4byte	0x117
- 1377 005f 6973725F 		.ascii	"isr_LUT_SetVector\000"
+ 1375      47657456 
+ 1375      6563746F 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 32
+
+
+ 1375      7200
+ 1376 0087 7F010000 		.4byte	0x17f
+ 1377 008b 6973725F 		.ascii	"isr_LUT_SetPriority\000"
  1377      4C55545F 
- 1377      53657456 
- 1377      6563746F 
- 1377      7200
- 1378 0071 53010000 		.4byte	0x153
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 32
-
-
- 1379 0075 6973725F 		.ascii	"isr_LUT_GetVector\000"
+ 1377      53657450 
+ 1377      72696F72 
+ 1377      69747900 
+ 1378 009f A7010000 		.4byte	0x1a7
+ 1379 00a3 6973725F 		.ascii	"isr_LUT_GetPriority\000"
  1379      4C55545F 
- 1379      47657456 
- 1379      6563746F 
- 1379      7200
- 1380 0087 7F010000 		.4byte	0x17f
- 1381 008b 6973725F 		.ascii	"isr_LUT_SetPriority\000"
+ 1379      47657450 
+ 1379      72696F72 
+ 1379      69747900 
+ 1380 00b7 D5010000 		.4byte	0x1d5
+ 1381 00bb 6973725F 		.ascii	"isr_LUT_Enable\000"
  1381      4C55545F 
- 1381      53657450 
- 1381      72696F72 
- 1381      69747900 
- 1382 009f A7010000 		.4byte	0x1a7
- 1383 00a3 6973725F 		.ascii	"isr_LUT_GetPriority\000"
+ 1381      456E6162 
+ 1381      6C6500
+ 1382 00ca EB010000 		.4byte	0x1eb
+ 1383 00ce 6973725F 		.ascii	"isr_LUT_GetState\000"
  1383      4C55545F 
- 1383      47657450 
- 1383      72696F72 
- 1383      69747900 
- 1384 00b7 D5010000 		.4byte	0x1d5
- 1385 00bb 6973725F 		.ascii	"isr_LUT_Enable\000"
+ 1383      47657453 
+ 1383      74617465 
+ 1383      00
+ 1384 00df 05020000 		.4byte	0x205
+ 1385 00e3 6973725F 		.ascii	"isr_LUT_Disable\000"
  1385      4C55545F 
- 1385      456E6162 
- 1385      6C6500
- 1386 00ca EB010000 		.4byte	0x1eb
- 1387 00ce 6973725F 		.ascii	"isr_LUT_GetState\000"
+ 1385      44697361 
+ 1385      626C6500 
+ 1386 00f3 1B020000 		.4byte	0x21b
+ 1387 00f7 6973725F 		.ascii	"isr_LUT_SetPending\000"
  1387      4C55545F 
- 1387      47657453 
- 1387      74617465 
- 1387      00
- 1388 00df 05020000 		.4byte	0x205
- 1389 00e3 6973725F 		.ascii	"isr_LUT_Disable\000"
+ 1387      53657450 
+ 1387      656E6469 
+ 1387      6E6700
+ 1388 010a 31020000 		.4byte	0x231
+ 1389 010e 6973725F 		.ascii	"isr_LUT_ClearPending\000"
  1389      4C55545F 
- 1389      44697361 
- 1389      626C6500 
- 1390 00f3 1B020000 		.4byte	0x21b
- 1391 00f7 6973725F 		.ascii	"isr_LUT_SetPending\000"
- 1391      4C55545F 
- 1391      53657450 
- 1391      656E6469 
- 1391      6E6700
- 1392 010a 31020000 		.4byte	0x231
- 1393 010e 6973725F 		.ascii	"isr_LUT_ClearPending\000"
- 1393      4C55545F 
- 1393      436C6561 
- 1393      7250656E 
- 1393      64696E67 
- 1394 0123 54020000 		.4byte	0x254
- 1395 0127 74657374 		.ascii	"test\000"
- 1395      00
- 1396 012c 00000000 		.4byte	0x0
- 1397              		.section	.debug_aranges,"",%progbits
- 1398 0000 7C000000 		.4byte	0x7c
- 1399 0004 0200     		.2byte	0x2
- 1400 0006 00000000 		.4byte	.Ldebug_info0
- 1401 000a 04       		.byte	0x4
- 1402 000b 00       		.byte	0x0
- 1403 000c 0000     		.2byte	0x0
- 1404 000e 0000     		.2byte	0x0
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 33
+ 1389      436C6561 
+ 1389      7250656E 
+ 1389      64696E67 
+ 1390 0123 54020000 		.4byte	0x254
+ 1391 0127 74657374 		.ascii	"test\000"
+ 1391      00
+ 1392 012c 00000000 		.4byte	0x0
+ 1393              		.section	.debug_aranges,"",%progbits
+ 1394 0000 7C000000 		.4byte	0x7c
+ 1395 0004 0200     		.2byte	0x2
+ 1396 0006 00000000 		.4byte	.Ldebug_info0
+ 1397 000a 04       		.byte	0x4
+ 1398 000b 00       		.byte	0x0
+ 1399 000c 0000     		.2byte	0x0
+ 1400 000e 0000     		.2byte	0x0
+ 1401 0010 00000000 		.4byte	.LFB0
+ 1402 0014 22000000 		.4byte	.LFE0-.LFB0
+ 1403 0018 00000000 		.4byte	.LFB1
+ 1404 001c 26000000 		.4byte	.LFE1-.LFB1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 33
 
 
- 1405 0010 00000000 		.4byte	.LFB0
- 1406 0014 22000000 		.4byte	.LFE0-.LFB0
- 1407 0018 00000000 		.4byte	.LFB1
- 1408 001c 26000000 		.4byte	.LFE1-.LFB1
- 1409 0020 00000000 		.4byte	.LFB2
- 1410 0024 16000000 		.4byte	.LFE2-.LFB2
- 1411 0028 00000000 		.4byte	.LFB3
- 1412 002c 4E000000 		.4byte	.LFE3-.LFB3
- 1413 0030 00000000 		.4byte	.LFB4
- 1414 0034 28000000 		.4byte	.LFE4-.LFB4
- 1415 0038 00000000 		.4byte	.LFB5
- 1416 003c 26000000 		.4byte	.LFE5-.LFB5
- 1417 0040 00000000 		.4byte	.LFB6
- 1418 0044 26000000 		.4byte	.LFE6-.LFB6
- 1419 0048 00000000 		.4byte	.LFB7
- 1420 004c 26000000 		.4byte	.LFE7-.LFB7
- 1421 0050 00000000 		.4byte	.LFB8
- 1422 0054 18000000 		.4byte	.LFE8-.LFB8
- 1423 0058 00000000 		.4byte	.LFB9
- 1424 005c 2A000000 		.4byte	.LFE9-.LFB9
- 1425 0060 00000000 		.4byte	.LFB10
- 1426 0064 18000000 		.4byte	.LFE10-.LFB10
- 1427 0068 00000000 		.4byte	.LFB11
- 1428 006c 18000000 		.4byte	.LFE11-.LFB11
- 1429 0070 00000000 		.4byte	.LFB12
- 1430 0074 18000000 		.4byte	.LFE12-.LFB12
- 1431 0078 00000000 		.4byte	0x0
- 1432 007c 00000000 		.4byte	0x0
- 1433              		.section	.debug_ranges,"",%progbits
- 1434              	.Ldebug_ranges0:
- 1435 0000 00000000 		.4byte	.Ltext0
- 1436 0004 00000000 		.4byte	.Letext0
- 1437 0008 00000000 		.4byte	.LFB0
- 1438 000c 22000000 		.4byte	.LFE0
- 1439 0010 00000000 		.4byte	.LFB1
- 1440 0014 26000000 		.4byte	.LFE1
- 1441 0018 00000000 		.4byte	.LFB2
- 1442 001c 16000000 		.4byte	.LFE2
- 1443 0020 00000000 		.4byte	.LFB3
- 1444 0024 4E000000 		.4byte	.LFE3
- 1445 0028 00000000 		.4byte	.LFB4
- 1446 002c 28000000 		.4byte	.LFE4
- 1447 0030 00000000 		.4byte	.LFB5
- 1448 0034 26000000 		.4byte	.LFE5
- 1449 0038 00000000 		.4byte	.LFB6
- 1450 003c 26000000 		.4byte	.LFE6
- 1451 0040 00000000 		.4byte	.LFB7
- 1452 0044 26000000 		.4byte	.LFE7
- 1453 0048 00000000 		.4byte	.LFB8
- 1454 004c 18000000 		.4byte	.LFE8
- 1455 0050 00000000 		.4byte	.LFB9
- 1456 0054 2A000000 		.4byte	.LFE9
- 1457 0058 00000000 		.4byte	.LFB10
- 1458 005c 18000000 		.4byte	.LFE10
- 1459 0060 00000000 		.4byte	.LFB11
- 1460 0064 18000000 		.4byte	.LFE11
- 1461 0068 00000000 		.4byte	.LFB12
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 34
+ 1405 0020 00000000 		.4byte	.LFB2
+ 1406 0024 16000000 		.4byte	.LFE2-.LFB2
+ 1407 0028 00000000 		.4byte	.LFB3
+ 1408 002c 42000000 		.4byte	.LFE3-.LFB3
+ 1409 0030 00000000 		.4byte	.LFB4
+ 1410 0034 28000000 		.4byte	.LFE4-.LFB4
+ 1411 0038 00000000 		.4byte	.LFB5
+ 1412 003c 26000000 		.4byte	.LFE5-.LFB5
+ 1413 0040 00000000 		.4byte	.LFB6
+ 1414 0044 26000000 		.4byte	.LFE6-.LFB6
+ 1415 0048 00000000 		.4byte	.LFB7
+ 1416 004c 26000000 		.4byte	.LFE7-.LFB7
+ 1417 0050 00000000 		.4byte	.LFB8
+ 1418 0054 18000000 		.4byte	.LFE8-.LFB8
+ 1419 0058 00000000 		.4byte	.LFB9
+ 1420 005c 2A000000 		.4byte	.LFE9-.LFB9
+ 1421 0060 00000000 		.4byte	.LFB10
+ 1422 0064 18000000 		.4byte	.LFE10-.LFB10
+ 1423 0068 00000000 		.4byte	.LFB11
+ 1424 006c 18000000 		.4byte	.LFE11-.LFB11
+ 1425 0070 00000000 		.4byte	.LFB12
+ 1426 0074 18000000 		.4byte	.LFE12-.LFB12
+ 1427 0078 00000000 		.4byte	0x0
+ 1428 007c 00000000 		.4byte	0x0
+ 1429              		.section	.debug_ranges,"",%progbits
+ 1430              	.Ldebug_ranges0:
+ 1431 0000 00000000 		.4byte	.Ltext0
+ 1432 0004 00000000 		.4byte	.Letext0
+ 1433 0008 00000000 		.4byte	.LFB0
+ 1434 000c 22000000 		.4byte	.LFE0
+ 1435 0010 00000000 		.4byte	.LFB1
+ 1436 0014 26000000 		.4byte	.LFE1
+ 1437 0018 00000000 		.4byte	.LFB2
+ 1438 001c 16000000 		.4byte	.LFE2
+ 1439 0020 00000000 		.4byte	.LFB3
+ 1440 0024 42000000 		.4byte	.LFE3
+ 1441 0028 00000000 		.4byte	.LFB4
+ 1442 002c 28000000 		.4byte	.LFE4
+ 1443 0030 00000000 		.4byte	.LFB5
+ 1444 0034 26000000 		.4byte	.LFE5
+ 1445 0038 00000000 		.4byte	.LFB6
+ 1446 003c 26000000 		.4byte	.LFE6
+ 1447 0040 00000000 		.4byte	.LFB7
+ 1448 0044 26000000 		.4byte	.LFE7
+ 1449 0048 00000000 		.4byte	.LFB8
+ 1450 004c 18000000 		.4byte	.LFE8
+ 1451 0050 00000000 		.4byte	.LFB9
+ 1452 0054 2A000000 		.4byte	.LFE9
+ 1453 0058 00000000 		.4byte	.LFB10
+ 1454 005c 18000000 		.4byte	.LFE10
+ 1455 0060 00000000 		.4byte	.LFB11
+ 1456 0064 18000000 		.4byte	.LFE11
+ 1457 0068 00000000 		.4byte	.LFB12
+ 1458 006c 18000000 		.4byte	.LFE12
+ 1459 0070 00000000 		.4byte	0x0
+ 1460 0074 00000000 		.4byte	0x0
+ 1461              		.section	.debug_str,"MS",%progbits,1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 34
 
 
- 1462 006c 18000000 		.4byte	.LFE12
- 1463 0070 00000000 		.4byte	0x0
- 1464 0074 00000000 		.4byte	0x0
- 1465              		.section	.debug_str,"MS",%progbits,1
- 1466              	.LASF5:
- 1467 0000 6C6F6E67 		.ascii	"long long int\000"
- 1467      206C6F6E 
- 1467      6720696E 
- 1467      7400
- 1468              	.LASF31:
- 1469 000e 74657374 		.ascii	"test\000"
- 1469      00
- 1470              	.LASF27:
- 1471 0013 6973725F 		.ascii	"isr_LUT_Disable\000"
- 1471      4C55545F 
- 1471      44697361 
- 1471      626C6500 
- 1472              	.LASF22:
- 1473 0023 6973725F 		.ascii	"isr_LUT_SetPriority\000"
- 1473      4C55545F 
- 1473      53657450 
- 1473      72696F72 
- 1473      69747900 
- 1474              	.LASF3:
- 1475 0037 73686F72 		.ascii	"short unsigned int\000"
- 1475      7420756E 
- 1475      7369676E 
- 1475      65642069 
- 1475      6E7400
- 1476              	.LASF2:
- 1477 004a 73686F72 		.ascii	"short int\000"
- 1477      7420696E 
+ 1462              	.LASF5:
+ 1463 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1463      206C6F6E 
+ 1463      6720696E 
+ 1463      7400
+ 1464              	.LASF31:
+ 1465 000e 74657374 		.ascii	"test\000"
+ 1465      00
+ 1466              	.LASF27:
+ 1467 0013 6973725F 		.ascii	"isr_LUT_Disable\000"
+ 1467      4C55545F 
+ 1467      44697361 
+ 1467      626C6500 
+ 1468              	.LASF22:
+ 1469 0023 6973725F 		.ascii	"isr_LUT_SetPriority\000"
+ 1469      4C55545F 
+ 1469      53657450 
+ 1469      72696F72 
+ 1469      69747900 
+ 1470              	.LASF3:
+ 1471 0037 73686F72 		.ascii	"short unsigned int\000"
+ 1471      7420756E 
+ 1471      7369676E 
+ 1471      65642069 
+ 1471      6E7400
+ 1472              	.LASF2:
+ 1473 004a 73686F72 		.ascii	"short int\000"
+ 1473      7420696E 
+ 1473      7400
+ 1474              	.LASF30:
+ 1475 0054 73696E65 		.ascii	"sineLUTindex\000"
+ 1475      4C555469 
+ 1475      6E646578 
+ 1475      00
+ 1476              	.LASF12:
+ 1477 0061 666C6F61 		.ascii	"float\000"
  1477      7400
- 1478              	.LASF30:
- 1479 0054 73696E65 		.ascii	"sineLUTindex\000"
- 1479      4C555469 
- 1479      6E646578 
- 1479      00
- 1480              	.LASF12:
- 1481 0061 666C6F61 		.ascii	"float\000"
- 1481      7400
- 1482              	.LASF24:
- 1483 0067 6973725F 		.ascii	"isr_LUT_GetVector\000"
+ 1478              	.LASF24:
+ 1479 0067 6973725F 		.ascii	"isr_LUT_GetVector\000"
+ 1479      4C55545F 
+ 1479      47657456 
+ 1479      6563746F 
+ 1479      7200
+ 1480              	.LASF1:
+ 1481 0079 756E7369 		.ascii	"unsigned char\000"
+ 1481      676E6564 
+ 1481      20636861 
+ 1481      7200
+ 1482              	.LASF17:
+ 1483 0087 6973725F 		.ascii	"isr_LUT_Interrupt\000"
  1483      4C55545F 
- 1483      47657456 
- 1483      6563746F 
- 1483      7200
- 1484              	.LASF1:
- 1485 0079 756E7369 		.ascii	"unsigned char\000"
- 1485      676E6564 
- 1485      20636861 
- 1485      7200
- 1486              	.LASF17:
- 1487 0087 6973725F 		.ascii	"isr_LUT_Interrupt\000"
- 1487      4C55545F 
- 1487      496E7465 
- 1487      72727570 
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 35
+ 1483      496E7465 
+ 1483      72727570 
+ 1483      7400
+ 1484              	.LASF11:
+ 1485 0099 696E7431 		.ascii	"int16\000"
+ 1485      3600
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 35
 
 
+ 1486              	.LASF8:
+ 1487 009f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1487      20756E73 
+ 1487      69676E65 
+ 1487      6420696E 
  1487      7400
- 1488              	.LASF11:
- 1489 0099 696E7431 		.ascii	"int16\000"
- 1489      3600
- 1490              	.LASF8:
- 1491 009f 6C6F6E67 		.ascii	"long unsigned int\000"
- 1491      20756E73 
- 1491      69676E65 
- 1491      6420696E 
- 1491      7400
- 1492              	.LASF10:
- 1493 00b1 75696E74 		.ascii	"uint8\000"
- 1493      3800
- 1494              	.LASF26:
- 1495 00b7 6973725F 		.ascii	"isr_LUT_Enable\000"
- 1495      4C55545F 
- 1495      456E6162 
+ 1488              	.LASF10:
+ 1489 00b1 75696E74 		.ascii	"uint8\000"
+ 1489      3800
+ 1490              	.LASF26:
+ 1491 00b7 6973725F 		.ascii	"isr_LUT_Enable\000"
+ 1491      4C55545F 
+ 1491      456E6162 
+ 1491      6C6500
+ 1492              	.LASF23:
+ 1493 00c6 7072696F 		.ascii	"priority\000"
+ 1493      72697479 
+ 1493      00
+ 1494              	.LASF13:
+ 1495 00cf 646F7562 		.ascii	"double\000"
  1495      6C6500
- 1496              	.LASF23:
- 1497 00c6 7072696F 		.ascii	"priority\000"
- 1497      72697479 
- 1497      00
- 1498              	.LASF13:
- 1499 00cf 646F7562 		.ascii	"double\000"
- 1499      6C6500
- 1500              	.LASF25:
- 1501 00d6 6973725F 		.ascii	"isr_LUT_GetPriority\000"
- 1501      4C55545F 
- 1501      47657450 
- 1501      72696F72 
- 1501      69747900 
- 1502              	.LASF16:
- 1503 00ea 6973725F 		.ascii	"isr_LUT_Stop\000"
- 1503      4C55545F 
- 1503      53746F70 
- 1503      00
- 1504              	.LASF35:
- 1505 00f7 6973725F 		.ascii	"isr_LUT_GetState\000"
- 1505      4C55545F 
- 1505      47657453 
- 1505      74617465 
- 1505      00
- 1506              	.LASF4:
- 1507 0108 756E7369 		.ascii	"unsigned int\000"
- 1507      676E6564 
- 1507      20696E74 
- 1507      00
- 1508              	.LASF20:
- 1509 0115 61646472 		.ascii	"address\000"
- 1509      65737300 
- 1510              	.LASF6:
- 1511 011d 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1511      206C6F6E 
- 1511      6720756E 
- 1511      7369676E 
- 1511      65642069 
- 1512              	.LASF18:
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 36
+ 1496              	.LASF25:
+ 1497 00d6 6973725F 		.ascii	"isr_LUT_GetPriority\000"
+ 1497      4C55545F 
+ 1497      47657450 
+ 1497      72696F72 
+ 1497      69747900 
+ 1498              	.LASF16:
+ 1499 00ea 6973725F 		.ascii	"isr_LUT_Stop\000"
+ 1499      4C55545F 
+ 1499      53746F70 
+ 1499      00
+ 1500              	.LASF34:
+ 1501 00f7 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 1501      73657273 
+ 1501      5C686F61 
+ 1501      6E67705C 
+ 1501      446F6375 
+ 1502 0124 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 1502      6E766572 
+ 1502      745C696E 
+ 1502      76657274 
+ 1502      2E637964 
+ 1503              	.LASF35:
+ 1504 013b 6973725F 		.ascii	"isr_LUT_GetState\000"
+ 1504      4C55545F 
+ 1504      47657453 
+ 1504      74617465 
+ 1504      00
+ 1505              	.LASF4:
+ 1506 014c 756E7369 		.ascii	"unsigned int\000"
+ 1506      676E6564 
+ 1506      20696E74 
+ 1506      00
+ 1507              	.LASF20:
+ 1508 0159 61646472 		.ascii	"address\000"
+ 1508      65737300 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 36
 
 
- 1513 0134 6973725F 		.ascii	"isr_LUT_StartEx\000"
- 1513      4C55545F 
- 1513      53746172 
- 1513      74457800 
- 1514              	.LASF34:
- 1515 0144 433A5C55 		.ascii	"C:\\Users\\USER\\Documents\\GitHub\\EE542\\firmware"
- 1515      73657273 
- 1515      5C555345 
- 1515      525C446F 
- 1515      63756D65 
- 1516 0171 5C696E76 		.ascii	"\\invert\\invert.cydsn\000"
- 1516      6572745C 
- 1516      696E7665 
- 1516      72742E63 
- 1516      7964736E 
- 1517              	.LASF14:
- 1518 0186 63796973 		.ascii	"cyisraddress\000"
- 1518      72616464 
- 1518      72657373 
+ 1509              	.LASF6:
+ 1510 0161 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1510      206C6F6E 
+ 1510      6720756E 
+ 1510      7369676E 
+ 1510      65642069 
+ 1511              	.LASF18:
+ 1512 0178 6973725F 		.ascii	"isr_LUT_StartEx\000"
+ 1512      4C55545F 
+ 1512      53746172 
+ 1512      74457800 
+ 1513              	.LASF14:
+ 1514 0188 63796973 		.ascii	"cyisraddress\000"
+ 1514      72616464 
+ 1514      72657373 
+ 1514      00
+ 1515              	.LASF32:
+ 1516 0195 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 1516      4320342E 
+ 1516      342E3100 
+ 1517              	.LASF9:
+ 1518 01a1 63686172 		.ascii	"char\000"
  1518      00
- 1519              	.LASF32:
- 1520 0193 474E5520 		.ascii	"GNU C 4.4.1\000"
- 1520      4320342E 
- 1520      342E3100 
- 1521              	.LASF9:
- 1522 019f 63686172 		.ascii	"char\000"
- 1522      00
- 1523              	.LASF21:
- 1524 01a4 72616D56 		.ascii	"ramVectorTable\000"
- 1524      6563746F 
- 1524      72546162 
- 1524      6C6500
- 1525              	.LASF29:
- 1526 01b3 6973725F 		.ascii	"isr_LUT_ClearPending\000"
- 1526      4C55545F 
- 1526      436C6561 
- 1526      7250656E 
- 1526      64696E67 
- 1527              	.LASF28:
- 1528 01c8 6973725F 		.ascii	"isr_LUT_SetPending\000"
+ 1519              	.LASF21:
+ 1520 01a6 72616D56 		.ascii	"ramVectorTable\000"
+ 1520      6563746F 
+ 1520      72546162 
+ 1520      6C6500
+ 1521              	.LASF29:
+ 1522 01b5 6973725F 		.ascii	"isr_LUT_ClearPending\000"
+ 1522      4C55545F 
+ 1522      436C6561 
+ 1522      7250656E 
+ 1522      64696E67 
+ 1523              	.LASF28:
+ 1524 01ca 6973725F 		.ascii	"isr_LUT_SetPending\000"
+ 1524      4C55545F 
+ 1524      53657450 
+ 1524      656E6469 
+ 1524      6E6700
+ 1525              	.LASF7:
+ 1526 01dd 6C6F6E67 		.ascii	"long int\000"
+ 1526      20696E74 
+ 1526      00
+ 1527              	.LASF15:
+ 1528 01e6 6973725F 		.ascii	"isr_LUT_Start\000"
  1528      4C55545F 
- 1528      53657450 
- 1528      656E6469 
- 1528      6E6700
- 1529              	.LASF7:
- 1530 01db 6C6F6E67 		.ascii	"long int\000"
- 1530      20696E74 
- 1530      00
- 1531              	.LASF15:
- 1532 01e4 6973725F 		.ascii	"isr_LUT_Start\000"
- 1532      4C55545F 
- 1532      53746172 
- 1532      7400
- 1533              	.LASF0:
- 1534 01f2 7369676E 		.ascii	"signed char\000"
- 1534      65642063 
- 1534      68617200 
-ARM GAS  C:\Users\USER\AppData\Local\Temp\ccCLqiiu.s 			page 37
+ 1528      53746172 
+ 1528      7400
+ 1529              	.LASF0:
+ 1530 01f4 7369676E 		.ascii	"signed char\000"
+ 1530      65642063 
+ 1530      68617200 
+ 1531              	.LASF33:
+ 1532 0200 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\isr_LUT.c\000"
+ 1532      6E657261 
+ 1532      7465645F 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccOr15dw.s 			page 37
 
 
- 1535              	.LASF33:
- 1536 01fe 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\isr_LUT.c\000"
- 1536      6E657261 
- 1536      7465645F 
- 1536      536F7572 
- 1536      63655C50 
- 1537              	.LASF19:
- 1538 0221 6973725F 		.ascii	"isr_LUT_SetVector\000"
- 1538      4C55545F 
- 1538      53657456 
- 1538      6563746F 
- 1538      7200
- 1539              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
+ 1532      536F7572 
+ 1532      63655C50 
+ 1533              	.LASF19:
+ 1534 0223 6973725F 		.ascii	"isr_LUT_SetVector\000"
+ 1534      4C55545F 
+ 1534      53657456 
+ 1534      6563746F 
+ 1534      7200
+ 1535              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

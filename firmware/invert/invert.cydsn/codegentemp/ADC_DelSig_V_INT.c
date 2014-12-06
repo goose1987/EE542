@@ -25,7 +25,8 @@
 *******************************************************************************/
 /* `#START ADC_SYS_VAR`  */
 extern int16 buffvolt;
-
+extern int16 sineLUTindex;
+extern int16 sineLUT[256];
 
 
 /*
@@ -94,7 +95,12 @@ CY_ISR( ADC_DelSig_V_ISR1)
     if (buffvolt < 0) {
         buffvolt = 0;
     }
+    if (buffvolt<50){
+        Control_Reg_1_Write(0);
     
+    }else{
+        Control_Reg_1_Write(1);
+    }
     //U[3]=U[2];
     //U[2]=U[1];
    // U[1]=U[0];

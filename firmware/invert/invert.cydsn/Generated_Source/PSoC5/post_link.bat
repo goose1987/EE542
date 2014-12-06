@@ -15,5 +15,5 @@ move "%~1\%~2\%~n3.hex" "%~1\%~2\%~n3.ihx"
 @IF %errorlevel% NEQ 0 EXIT /b %errorlevel% 
 CD /D "C:\Keil\UV4"
 @IF %errorlevel% NEQ 0 EXIT /b %errorlevel% 
-IF NOT EXIST "C:\Users\USER\Documents\GitHub\EE542\firmware\invert\invert.cydsn\invert.svd" rem "C:\Users\USER\Documents\GitHub\EE542\firmware\invert\invert.cydsn\invert.sfr"
+IF NOT EXIST "C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\invert.svd" rem "C:\Users\hoangp\Documents\GitHub\EE542\firmware\invert\invert.cydsn\invert.sfr"
 @IF %errorlevel% NEQ 0 EXIT /b %errorlevel% 

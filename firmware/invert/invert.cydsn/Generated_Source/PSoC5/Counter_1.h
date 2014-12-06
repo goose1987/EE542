@@ -154,8 +154,8 @@ void Counter_1_Wakeup(void)        ;
  *  Initialization Values
  **************************************/
 #define Counter_1_CAPTURE_MODE_CONF       0u
-#define Counter_1_INIT_PERIOD_VALUE       1500u
-#define Counter_1_INIT_COUNTER_VALUE      1500u
+#define Counter_1_INIT_PERIOD_VALUE       795u
+#define Counter_1_INIT_COUNTER_VALUE      795u
 #if (Counter_1_UsingFixedFunction)
 #define Counter_1_INIT_INTERRUPTS_MASK    ((uint8)((uint8)0u << Counter_1_STATUS_ZERO_INT_EN_MASK_SHIFT))
 #else

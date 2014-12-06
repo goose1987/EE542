@@ -158,7 +158,7 @@ CY_ISR(isr_LUT_Interrupt)
   
     if(sineLUTindex>=256){
         sineLUTindex=0;
-        Control_Reg_1_Write(~Control_Reg_1_Read());
+        //Control_Reg_1_Write(~Control_Reg_1_Read());
     }
     
     /* `#END` */
