@@ -10,6 +10,18 @@
  * ========================================
 */
 #include <device.h>
+#include <math.h>
+
+#define DFB_ONE (0x7FFFFFu)
+ 
+void DMA_Init(void);
+//void Matrix_Print(uint16 Mass[ROW][COLUMN]) CYREENTRANT;
+
+uint8 dma_stga_in_channel;
+uint8 dma_stga_in_td;
+uint8 dma_stga_out_channel;
+uint8 dma_stga_out_td;
+uint8 dma_ack_channel, dma_ack_td;
 
 int16 buffvolt=0;
 uint8 dataReady=0;
@@ -18,25 +30,12 @@ int16 * sinptr;
 int16 sineLUTindex=0;
 
 char recbyte=0;
-/*
-float A1=0.09305911;
-float A2=0.75486969;
-float A3=0.15207120;
 
-float B0=4.93296886;
-float B1=-1.63710219;
-float B2=-4.38245164;
-float B3=2.18761941;
 
-float A1=0.09;
-float A2=0.75;
-float A3=0.15;
-
-float B0=4.93;
-float B1=-1.64;
-float B2=-4.38;
-float B3=2.19;
-*/
+uint32 varray[4];
+//uint32 varray[4]={0x42000,0x43000,0x44000,0x42000};
+//uint32 varray[1]={0x300000};
+int16 varridx=0;
 
 float K = 33; //K factor
 
@@ -48,39 +47,6 @@ int32 U[4] ={0,0,0,0};
     
 //error array
 int32 E[4]={0,0,0,0};
-
-/*int16 sineLUT[256]={384,389,393,398,403,408,412,417,
-                    422,426,431,436,440,445,450,454,
-                    459,464,468,473,477,482,486,491,
-                    495,500,504,509,513,518,522,527,
-                    531,535,540,544,548,552,557,561,
-                    565,569,573,577,581,585,589,593,
-                    597,601,605,609,613,617,620,624,
-                    628,631,635,638,642,645,649,652,
-                    656,659,662,665,669,672,675,678,
-                    681,684,687,690,692,695,698,701,
-                    703,706,708,711,713,716,718,720,
-                    723,725,727,729,731,733,735,737,
-                    739,741,742,744,746,747,749,750,
-                    751,753,754,755,756,758,759,760,
-                    761,762,762,763,764,765,765,766,
-                    766,767,767,767,768,768,768,768,
-                    768,768,768,768,768,767,767,767,
-                    766,766,765,765,764,763,762,762,
-                    761,760,759,758,756,755,754,753,
-                    751,750,749,747,746,744,742,741,
-                    739,737,735,733,731,729,727,725,
-                    723,720,718,716,713,711,708,706,
-                    703,701,698,695,692,690,687,684,
-                    681,678,675,672,669,665,662,659,
-                    656,652,649,645,642,638,635,631,
-                    628,624,620,617,613,609,605,601,
-                    597,593,589,585,581,577,573,569,
-                    565,561,557,552,548,544,540,535,
-                    531,527,522,518,513,509,504,500,
-                    495,491,486,482,477,473,468,464,
-                    459,454,450,445,440,436,431,426,
-                    422,417,412,408,403,398,393,389};*/
                   
 int16 sineLUT[256] = {200,202,205,207,210,212,215,217,
 220,222,224,227,229,232,234,237,
@@ -114,10 +80,38 @@ int16 sineLUT[256] = {200,202,205,207,210,212,215,217,
 258,256,253,251,249,246,244,241,
 239,237,234,232,229,227,224,222,
 220,217,215,212,210,207,205,202};
-//calculate the duty cycle by multiplying the transfer function with the K factor 
-//double calcDuty(double U1, double U2, double U3, double E0, double E1, double E2, double E3){
-//    return K*(A1*U1+A2*U2+A3*U3+B0*E0+B1*E1+B2*E2+B3*E3);
-//}
+
+
+/*******************************************************************************/
+CY_ISR(isr_DFB_Interrupt)
+{
+    /*  Place your Interrupt code here. */
+    /* `#START isr_DFB_Interrupt` */
+    
+   uint32 qur=DFB_1_GetOutputValue(1);
+   DFB_1_Stop();
+   CyGlobalIntDisable;
+   DFB_1_Start();
+   DFB_1_ClearSemaphores(DFB_1_SEM1);
+    LCD_Char_1_Position(1, 0);
+        //LCD_Char_1_PrintInt16(E[0]);
+        //LCD_Char_1_PrintString(tstr);
+        
+        //LCD_Char_1_Position(1u,0u);
+        /*
+        qur=sqrt(qur);
+        LCD_Char_1_PrintInt16(qur>>16);
+        LCD_Char_1_PrintInt16(qur);
+        
+        LCD_Char_1_PutChar(' ');
+        LCD_Char_1_PrintInt16(buffvolt);
+        */
+        DFB_1_SetSemaphores(DFB_1_SEM1);
+        
+     CyGlobalIntEnable;   
+        
+    /* `#END` */
+}
 
 void main()
 {
@@ -128,14 +122,16 @@ void main()
     
     //counter
     Counter_1_Start();
+    
 
     //clock
 
     Clock_2_Enable();
-    Clock_4_Enable();
+
     
     Counter_1_Start();
     isr_LUT_Start();
+    isr_DFB_Start();
     
     //start LCD
     LCD_Char_1_Start();
@@ -144,44 +140,100 @@ void main()
     //start voltage ADC
     ADC_DelSig_V_IRQ_Enable();
     ADC_DelSig_V_Start();
-    //ADC_SAR_V_IRQ_Enable();
     ADC_DelSig_V_StartConvert();
     
     //start pwm
     PWM_BUCK_Start();
     
+
+    
+    DFB_1_Start();
+    DFB_1_SetCoherency(DFB_1_STGA_KEY_MID | DFB_1_STGB_KEY_MID | DFB_1_HOLDA_KEY_MID | DFB_1_HOLDB_KEY_MID);	
+    
+    //DFB_1_SetCoherency(DFB_1_STGA_KEY_LOW | DFB_1_STGB_KEY_LOW | DFB_1_HOLDA_KEY_LOW | DFB_1_HOLDB_KEY_LOW);	
+    DMA_Init();
+    //DFB_1_LoadDataRAMA(&scalar, (uint32 *)DFB_1_DA_RAM_PTR, 1u);
+    //DFB_1_LoadInputValue(1, 0x1FFFFF);
+    CyDelay(300);
+    DFB_1_SetSemaphores(DFB_1_SEM1);
     //unfolder register
     Control_Reg_1_Write(0);
     
     //UART communication 
     UART_1_Start();
     
-    sinptr = sineLUT;
+    //sinptr = sineLUT;
 
     //CyDelay(5000);//delay
     
     CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
+    
+    
+    
     for(;;)
     {
         /* Place your application code here. */
     
         
-
+        /*
         recbyte=UART_1_GetChar();
         if(recbyte=='V'){
             UART_1_PutChar((buffvolt>>8));
             UART_1_PutChar(buffvolt);
         }
-             
-        //sprintf(tstr, "%1.4lf", U[0]);
-        LCD_Char_1_Position(1, 0);
-        //LCD_Char_1_PrintInt16(E[0]);
-        //LCD_Char_1_PrintString(tstr);
+        */
         
-        //LCD_Char_1_Position(1u,0u);
-        LCD_Char_1_PrintInt16(buffvolt);
+        
+        //sprintf(tstr, "%1.4lf", U[0]);
+        
 
  
-        //CyDelay(5);//delay
+        //CyDelay(1000);//delay
     }
+}
+
+
+/********************************************************************************
+* Function Name: DMA_Init
+*******************************************************************************
+*
+* Summary:
+*  This function performs DMA_IN_A and DMA_OUT_A initialization.
+*
+* Parameters:
+*	void
+*
+* Return:
+*	void
+*
+*******************************************************************************/
+void DMA_Init(void)
+{	
+    /* DMA_IN_A */
+    dma_stga_in_td = CyDmaTdAllocate();
+    
+    dma_stga_in_channel = DMA_IN_A_DmaInitialize(4u, 0u, HI16((uint32)&varray[0u]), HI16((uint32)DFB_1_STAGEA_PTR));
+    CyDmaTdSetConfiguration(dma_stga_in_td, 16u, DMA_INVALID_TD, (DMA_IN_A__TD_TERMOUT_EN |
+                                                                                    TD_INC_SRC_ADR));
+    
+	CyDmaTdSetAddress(dma_stga_in_td, LO16((uint32)&varray[0u]), LO16((uint32)DFB_1_STAGEA_PTR));
+	CyDmaChSetInitialTd(dma_stga_in_channel, dma_stga_in_td);
+	CyDmaChEnable(dma_stga_in_channel, 1u);
+	
+    /* DMA_OUT_A */
+    /*
+    dma_stga_out_td = CyDmaTdAllocate();
+    #if (CY_PSOC3)
+	dma_stga_out_channel = DMA_OUT_A_DmaInitialize(2u, 1u, HI16(CYDEV_SRAM_BASE), HI16(CYDEV_SRAM_BASE));
+    CyDmaTdSetConfiguration(dma_stga_out_td, (COLUMN * ROW * 2u), DMA_INVALID_TD, (DMA_OUT_A__TD_TERMOUT_EN | 
+                                                                                    TD_SWAP_EN | TD_INC_DST_ADR));    
+	#elif (CY_PSOC5)
+    dma_stga_out_channel = DMA_OUT_A_DmaInitialize(2u, 1u, HI16((uint32)DFB_HOLDA_PTR), HI16((uint32)&OutMass[0u][0u]));	
+    CyDmaTdSetConfiguration(dma_stga_out_td, (COLUMN * ROW * 2u), DMA_INVALID_TD, (DMA_OUT_A__TD_TERMOUT_EN | 
+                                                                                   TD_INC_DST_ADR));
+    #endif	
+    CyDmaTdSetAddress(dma_stga_out_td, LO16((uint32)DFB_HOLDA_PTR), LO16((uint32)&OutMass[0u][0u]));
+	CyDmaChSetInitialTd(dma_stga_out_channel, dma_stga_out_td);
+	CyDmaChEnable(dma_stga_out_channel, 1u);
+    */
 }

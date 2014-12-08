@@ -143,7 +143,7 @@ void ADC_DelSig_V_IRQ_Start(void) ;
 #define ADC_DelSig_V_CFG1_RANGE_VALUE        (5)
 #define ADC_DelSig_V_DEFAULT_STROBE                     (0u) 
 #define ADC_DelSig_V_DEFAULT_INTERNAL_CLK               (1u)           
-#define ADC_DelSig_V_DEFAULT_NUM_CONFIGS                (4u)    
+#define ADC_DelSig_V_DEFAULT_NUM_CONFIGS                (1u)    
 #define ADC_DelSig_V_DEFAULT_CHARGE_PUMP_CLOCK          (1u)    
 #define ADC_DelSig_V_DEFAULT_INPUT_MODE                 (1u)
 

@@ -2,7 +2,7 @@
 --	Conversion of invert.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Dec 05 21:23:49 2014
+--	Sun Dec 07 18:49:47 2014
 --
 
 USE cypress.cypress.all;
@@ -1381,13 +1381,21 @@ SIGNAL \Counter_1:Net_48\ : bit;
 SIGNAL \Counter_1:Net_47\ : bit;
 SIGNAL \Counter_1:Net_42\ : bit;
 SIGNAL Net_642 : bit;
-SIGNAL Net_552 : bit;
+SIGNAL Net_759 : bit;
 SIGNAL \Counter_1:Net_89\ : bit;
 SIGNAL \Counter_1:Net_95\ : bit;
 SIGNAL \Counter_1:Net_102\ : bit;
-SIGNAL Net_608 : bit;
+SIGNAL Net_723 : bit;
 SIGNAL cy_tff_1 : bit;
 SIGNAL Net_683 : bit;
+SIGNAL \DFB_1:Net_38\ : bit;
+SIGNAL \DFB_1:in_1\ : bit;
+SIGNAL \DFB_1:in_2\ : bit;
+SIGNAL Net_761 : bit;
+SIGNAL Net_743 : bit;
+SIGNAL Net_744 : bit;
+SIGNAL Net_745 : bit;
+SIGNAL Net_730 : bit;
 SIGNAL \PWM_BUCK:PWMUDB:tc_reg_i\\D\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:prevCapture\\D\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:trig_last\\D\ : bit;
@@ -3454,22 +3462,31 @@ BUCK_HS:cy_psoc3_pins_v1_10
 		enable=>zero,
 		capture=>zero,
 		timer_reset=>zero,
-		tc=>Net_552,
+		tc=>Net_759,
 		compare=>\Counter_1:Net_47\,
 		interrupt=>\Counter_1:Net_42\);
 isr_LUT:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>Net_552);
-Clock_4:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"ffff4376-fb38-4695-a941-654cb1e5bd78",
-		source_clock_id=>"",
-		divisor=>0,
-		period=>"1000000000",
-		is_direct=>'0',
-		is_digital=>'1')
-	PORT MAP(clock_out=>Net_608,
-		dig_domain_out=>open);
+	PORT MAP(int_signal=>Net_759);
+isr_DFB:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_723);
+\DFB_1:DFB\:cy_psoc3_dfb_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>zero,
+		in_1=>zero,
+		in_2=>zero,
+		out_1=>Net_761,
+		out_2=>Net_743,
+		dmareq_1=>Net_744,
+		dmareq_2=>Net_745,
+		interrupt=>Net_723);
+DMA_IN_A:cy_dma_v1_0
+	GENERIC MAP(drq_type=>"00",
+		num_tds=>0)
+	PORT MAP(drq=>Net_761,
+		trq=>zero,
+		nrq=>Net_730);
 \PWM_BUCK:PWMUDB:tc_reg_i\:cy_dff
 	PORT MAP(d=>\PWM_BUCK:PWMUDB:tc_i\,
 		clk=>\PWM_BUCK:PWMUDB:ClockOutFromEnBlock\,

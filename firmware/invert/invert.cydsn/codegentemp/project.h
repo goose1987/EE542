@@ -50,7 +50,9 @@
 #include <BUCK_HS.h>
 #include <Counter_1.h>
 #include <isr_LUT.h>
-#include <Clock_4.h>
+#include <isr_DFB.h>
+#include <DFB_1.h>
+#include <DMA_IN_A_dma.h>
 #include <ADC_DelSig_V_theACLK.h>
 #include <ADC_DelSig_V_Ext_CP_Clk.h>
 #include <ADC_DelSig_V_AMux.h>

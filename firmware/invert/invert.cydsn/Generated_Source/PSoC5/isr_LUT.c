@@ -26,8 +26,13 @@
 *  Place your includes, defines and code here 
 ********************************************************************************/
 /* `#START isr_LUT_intc` */
+extern int16 buffvolt;
 extern int16 sineLUTindex;
+extern uint32 varray[4];
 int test = 0;
+
+
+
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -144,21 +149,15 @@ CY_ISR(isr_LUT_Interrupt)
 {
     /*  Place your Interrupt code here. */
     /* `#START isr_LUT_Interrupt` */
-    sineLUTindex++;
-   /* if (test == 0) {
-        sineLUTindex = 100;
-        test = 1;
-    } else  {
-        sineLUTindex = 200;
-        test = 0;
-    } */
+    
    
+    varray[sineLUTindex/64]=(uint32)buffvolt<<12;
     
-    
-  
+    sineLUTindex++;  
     if(sineLUTindex>=256){
         sineLUTindex=0;
-        //Control_Reg_1_Write(~Control_Reg_1_Read());
+       //varray[0]=(uint32)buffvolt<<12;
+
     }
     
     /* `#END` */

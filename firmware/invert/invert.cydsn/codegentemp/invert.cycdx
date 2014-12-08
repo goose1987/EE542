@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="MISO" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="MOSI" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="SCLK" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Clock_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="SPIS_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="BSPIS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="SPIS_1_RX_DATA" address="0x40006407" bitWidth="8" desc="SPIS RX Data" />
-    <register name="SPIS_1_TX_DATA" address="0x40006408" bitWidth="8" desc="SPIS TX Data" />
+    <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="SPIS_1_RXSTATUS" address="0x40006467" bitWidth="8" desc="SPIS RX Status Register">
+      <field name="RX_FIFO_Not_Empty" from="3" to="3" access="R" resetVal="" desc="Set when the RX Data FIFO is not empty. That is, at least one byte/word is in the RX FIFO                               (does not indicate the RX buffer RAM array conditions)" />
+      <field name="RX_FIFO_Empty" from="4" to="4" access="R" resetVal="" desc="Set when the RX Data FIFO is empty" />
+      <field name="RX_Buf_Overrun" from="5" to="5" access="R" resetVal="" desc="Set when RX Data has overrun the 4 byte/word FIFO without being moved to the RX buffer                                 memory array (if one exists)" />
+      <field name="RX_FIFO_Full" from="6" to="6" access="R" resetVal="" desc="Set when the RX Data FIFO is full" />
+      <field name="Interrupt" from="7" to="7" access="R" resetVal="" desc="Set when interrupt occurs" />
+    </register>
     <register name="SPIS_1_TXSTATUS" address="0x4000646B" bitWidth="8" desc="SPIS TX Status Register">
       <field name="SPI_Done" from="0" to="0" access="R" resetVal="" desc="Set when all of the data in the transmit FIFO has been sent. Set when Byte/Word Complete                                has been set and TX Data FIFO is empty" />
       <field name="TX_FIFO_Not_Full" from="1" to="1" access="R" resetVal="" desc="Set when the TX Data FIFO is not full" />
@@ -16,50 +22,73 @@
       <field name="Byte_Word_Complete" from="6" to="6" access="R" resetVal="" desc="Set when a byte/word transmit has completed" />
       <field name="Interrupt" from="7" to="7" access="R" resetVal="" desc="Set when interrupt occurs" />
     </register>
-    <register name="SPIS_1_RXSTATUS" address="0x4000646C" bitWidth="8" desc="SPIS RX Status Register">
-      <field name="RX_FIFO_Not_Empty" from="3" to="3" access="R" resetVal="" desc="Set when the RX Data FIFO is not empty. That is, at least one byte/word is in the RX FIFO                               (does not indicate the RX buffer RAM array conditions)" />
-      <field name="RX_FIFO_Empty" from="4" to="4" access="R" resetVal="" desc="Set when the RX Data FIFO is empty" />
-      <field name="RX_Buf_Overrun" from="5" to="5" access="R" resetVal="" desc="Set when RX Data has overrun the 4 byte/word FIFO without being moved to the RX buffer                                 memory array (if one exists)" />
-      <field name="RX_FIFO_Full" from="6" to="6" access="R" resetVal="" desc="Set when the RX Data FIFO is full" />
-      <field name="Interrupt" from="7" to="7" access="R" resetVal="" desc="Set when interrupt occurs" />
-    </register>
+    <register name="SPIS_1_RX_DATA" address="0x40006506" bitWidth="8" desc="SPIS RX Data" />
+    <register name="SPIS_1_TX_DATA" address="0x40006507" bitWidth="8" desc="SPIS TX Data" />
   </block>
-  <block name="MISO" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="SS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Rx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="UART_1" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="RX_UART_1_RX_ADDRESS1" address="0x4000642E" bitWidth="8" desc="RX Address1 Register" />
-    <register name="RX_UART_1_RX_ADDRESS2" address="0x4000643E" bitWidth="8" desc="RX Address2 Register" />
-    <register name="TX_UART_1_TX_DATA" address="0x4000644A" bitWidth="8" desc="TX Data Register" />
-    <register name="RX_UART_1_RX_DATA" address="0x4000644E" bitWidth="8" desc="RX Data Register" />
-    <register name="TX_UART_1_TX_STATUS" address="0x40006469" bitWidth="8" desc="TX status register">
-      <field name="UART_1_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
-      <field name="UART_1_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
-      <field name="UART_1_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
-      <field name="UART_1_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
-    </register>
-    <register name="RX_UART_1_RX_STATUS" address="0x4000646D" bitWidth="8" desc="RX status register">
-      <field name="UART_1_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
-    </register>
-  </block>
-  <block name="cy_constant_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="SCLK" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Tx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clock_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Rx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="SS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="cy_constant_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="BUCK_HS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cy_constant_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cy_tff_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="isr_LUT" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="BUCK_HS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clock_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="DMA_IN_A" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="DFB_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="DFB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="DFB_SR" address="0x4000C784" bitWidth="8" desc="This register contains 5 bits indicating the status of block generated interrupts and 3 bits of status         from the Datapath unit. Of the 5 sources of interrupts, only those configured in INT_CTRL are activated.          If not activated in INT_CTRL they will never assert in this register. If an interrupt source bit (7:3) is set          this indicates it is at least one of the sources of the currently driven interrupt on dfb_intr. More than one         of the 5 could be asserted. Note that if the system SW wishes to poll for an event and not have an interrupt         generated, the interrupt must be enabled in the INT_CTRL register so that it can be polled here and then         disable the interrupt in the Interrupt Controller or not connect the dfb_intr signal to the Interrupt          Controller at all by not configuring the DSI path. Bits 2:0 are read-only - writes to these bits have          no effect. Writes to bits 7:3 of '1' clear the bit, writes of 0 have no effect.">
+      <field name="RAM_SEL" from="0" to="0" access="R" resetVal="" desc="This bit indicates which Control Store memory is in use, RAM A or RAM B." />
+      <field name="SAT_MODE" from="1" to="1" access="R" resetVal="" desc="Indicates that the DP unit is in Saturation mode - meaning that any mathematic operation                executed that produces a number outside the range of a 24-bit 2's compliment number is clamped                 to the mode positive or negative number allowed. Saturation mode is set/unset under Assembly                control in the DFB Controller." />
+      <field name="RND_MODE" from="2" to="2" access="R" resetVal="" desc="Indicates that the DP is in Round mode - meaning that any result passing out of the DP unit                is being rounded to a 16-bit value." />
+      <field name="INTR_HOLDA" from="3" to="3" access="R" resetVal="" desc="f this bit is high, Holding register A is a source of the current interrupt. Write a '1' to                 this bit to clear it. Reading the Holding register A also clears this bit." />
+      <field name="INTR_HOLDB" from="4" to="4" access="R" resetVal="" desc="If this bit is high, Holding register B is a source of the current interrupt. Write a '1' to                 this bit to clear it. Reading the Holding register B also clears this bit." />
+      <field name="INTR_SEM0" from="5" to="5" access="R" resetVal="" desc="If this bit is high, semaphore register bit 0 is a source of the current interrupt.                 Write a '1' to this bit to clear it." />
+      <field name="INTR_SEM1" from="6" to="6" access="R" resetVal="" desc="If this bit is high, semaphore register bit 1 is a source of the current interrupt.                Write a '1' to this bit to clear it." />
+      <field name="INTR_SEM2" from="7" to="7" access="R" resetVal="" desc="If this bit is high, semaphore register bit 2 is a source of the current interrupt.                 Write a '1' to this bit to clear it." />
+    </register>
+    <register name="DFB_SEMA" address="0x4000C790" bitWidth="8" desc="This register controls the DFB Semaphore register. These bits are used to pass semaphores between          the DFB Controller and the System SW. Their use and purpose is user defined. A read to this register returns          what was last written by either System SW or the DFB Controller.">
+      <field name="SEMA" from="2" to="0" access="RW" resetVal="" desc="These bits are used to pass semaphores between the DFB Controller and the System SW.                 Their definition is user defined. There is no HW implementing an arbitration methodology should both                 the System and Control access the same SEM bit at the same time. Coherency of the SEM bits is the                 responsibility of the SW running on the Controller and the System CPU. If the same SEM bit is written                by the Controller and the System in the exact same cycle (a collision), the System write takes                precedence over the Controller. In this manner, each of the 3 bits are treated individually." />
+      <field name="SEMA_MASK" from="6" to="4" access="W" resetVal="" desc="These bits are used to mask writes to bits 2-0. They are write-only. If bit 4 is a 1 then the                value on bit 0 will be written to SEM0, otherwise SEM0 will not be altered. Likewise for MASK1 and SEM1,                and MASK2 and SEM2." />
+    </register>
+    <register name="DFB_STAGEA" address="0x4000C7A0" bitWidth="8" desc="This is the low byte of the Streaming input Staging Register - Port A. If the Staging A Data Alignment         bit is set in the DALIGN register then data written to this address will be written into bits 15:8 instead.         Although the Staging A/B registers are shown here as 3 byte-wide registers, it is primarily intended that they         be treated as 24-bit registers at a 32-bit offset. Due to the architecture of the DFB, any value written to          the Staging A or B registers that is less than 24 bits in size must be msb aligned. For example, a 16-bit value         written to the Staging A register must be written to STAGExM and STAGExH with STAGEx set to 0. The Staging         registers support byte and half-word accesses as well. However, if byte and half-word accesses are used then         the Key Coherency Byte feature must be used. Also see the COHER register description below. In some use models         it is desirous to write 16-bit values on bus bits 15:0 and have them actually writing to bits 23:8 of the          register. A System SW convenience feature to accomplish this is provided. If the Data Alignment bit for          these registers is set in the DALIGN register the byte written is shifted up (left) to the next byte position.         This is only true of the two lower bytes. READ: AHB: What was last written. The DFB Controller reads this          register (and the other 2 bytes) by asserting busrd and setting the low-order ACU RAM address bit low.         WRITE: Writes the low byte of the input Staging Register for Port A or the middle byte if the Data Alignment         bit is set in the DALIGN register.">
+      <field name="STGA_LOW" from="7" to="0" access="RW" resetVal="" desc="A write to this register sets the low byte of the input Staging Register for Port A." />
+    </register>
+    <register name="DFB_STAGEAM" address="0x4000C7A1" bitWidth="8" desc="This is the middle byte of the Streaming input Staging Register - Port A. If the Staging A Data Alignment         bit is set in the DALIGN register then data written to this address will be written into bits 23:16 instead.         See usage notes in STAGEA register description.">
+      <field name="STGA_MID" from="7" to="0" access="RW" resetVal="" desc="A write to this register sets the middle byte of the input Staging Register for Port A." />
+    </register>
+    <register name="DFB_STAGEAH" address="0x4000C7A2" bitWidth="8" desc="This is the high byte of the Streaming input Staging Register - Port A. See usage notes in STAGEA          register description.">
+      <field name="STGA_HIGH" from="7" to="0" access="RW" resetVal="" desc="A write to this register sets the high byte of the input Staging Register for Port A." />
+    </register>
+    <register name="DFB_STAGEB" address="0x4000C7A4" bitWidth="8" desc="This is the low byte of the Streaming input Staging Register - Port B. If the Staging B Data Alignment          bit is set in the DALIGN register then data written to this address will be written into bits 15:8 instead.          See usage notes in STAGEA register description.">
+      <field name="STGB_LOW" from="7" to="0" access="RW" resetVal="" desc="A write to this register sets the low byte of the input Staging Register for Port B." />
+    </register>
+    <register name="DFB_STAGEBM" address="0x4000C7A5" bitWidth="8" desc="This is the middle byte of the Streaming input Staging Register - Port B. If the Staging B Data Alignment         bit is set in the DALIGN register then data written to this address will be written into bits 23:16 instead.         See usage notes in STAGEA register description.">
+      <field name="STGB_MID" from="7" to="0" access="RW" resetVal="" desc="A write to this register sets the middle byte of the input Staging Register for Port B." />
+    </register>
+    <register name="DFB_STAGEBH" address="0x4000C7A6" bitWidth="8" desc="This is the high byte of the Streaming input Staging Register - Port B. See usage notes in STAGEA          register description.">
+      <field name="STGA_HIGH" from="7" to="0" access="RW" resetVal="" desc="A write to this register sets the high byte of the input Staging Register for Port B." />
+    </register>
+    <register name="DFB_HOLDA" address="0x4000C7A8" bitWidth="8" desc="This is the low byte of the output Holding Register - Port A. If the Holding A Data Alignment bit is set         in the DALIGN register then data read from this address will be bits 15:8 instead. Although the Holding A/B         registers are shown here as 3 byte-wide registers, it is primarily intended that they be treated as 24-bit         registers at a 32-bit offset. Due to the architecture of the DFB, any value read from the Holding A or B          registers will be msb aligned unless shifted otherwise by the Datapath shifter. For example, if the resultant          output samples are 16-bit values, a read of a Holding register will produce that data on bits 23:8, or HOLDxH          and HOLDxM. The Holding registers support byte and half-word accesses as well. However, if byte and half-word         accesses are used then the Key Coherency Byte feature must be used. Also see the COHER register description          below. In some use models it is desirous to read 16-bit values on bus bits 15:0 and have them actually source         from bits 23:8 of the register. A System SW convenience feature to accomplish this is provided. If the Data          Alignment bit for these registers is set in the DALIGN register the byte read is shifted down (right) to the          next byte position. This is only true of the two upper bytes. Also as a System SW convenience, reads of the         Holding registers are sign extended up to bit 31 of the bus even though the top byte is not documented or          implemented as a real register. If the DFB is configured (see INT_CTRL) to generate an interrupt based on          valid data in the Holding register, the interrupt status bit in the SR register will be cleared when any         portion (byte, 16-bit or full 32-bit read) of the Holding register is read, by the CPU or the DMA Controller.          READ: What was last written by the DFB Controller. WRITE: Read-only by AHB, DFB Controller writes to this          register (including the other 2 bytes) with a buswr command and the low-order ACU RAM address bit set low.">
+      <field name="HOLDA_LOW" from="7" to="0" access="R" resetVal="" desc="Low byte of the output Holding Register, Port A." />
+    </register>
+    <register name="DFB_HOLDAM" address="0x4000C7A9" bitWidth="8" desc="This is the middle byte of the output Holding Register - Port A. If the Holding A Data Alignment bit is         set in the DALIGN register then data read from this address will be bits 23:16 instead. See usage notes in          HOLDA register description.">
+      <field name="HOLDA_MID" from="7" to="0" access="R" resetVal="" desc="Middle byte of the output Holding Register, Port A." />
+    </register>
+    <register name="DFB_HOLDAH" address="0x4000C7AA" bitWidth="8" desc="This is the high byte of the output Holding Register - Port A. See usage notes in HOLDA register          description.">
+      <field name="HOLDA_HIGH" from="7" to="0" access="R" resetVal="" desc="High byte of the output Holding Register, Port A." />
+    </register>
+    <register name="DFB_HOLDB" address="0x4000C7AC" bitWidth="8" desc="This is the middle byte of the output Holding Register - Port B. If the Holding B Data Alignment bit is          set in the DALIGN register then data read from this address will be bits 23:16 instead. See usage notes in          HOLDA register description.">
+      <field name="HOLDB_LOW" from="7" to="0" access="R" resetVal="" desc="Low byte of the output Holding Register, Port B." />
+    </register>
+    <register name="DFB_HOLDBM" address="0x4000C7AD" bitWidth="8" desc="This is the middle byte of the output Holding Register - Port B. If the Holding A Data Alignment bit is         set in the DALIGN register then data read from this address will be bits 23:16 instead. See usage notes in          HOLDA register description.">
+      <field name="HOLDB_MID" from="7" to="0" access="R" resetVal="" desc="Middle byte of the output Holding Register, Port B." />
+    </register>
+    <register name="DFB_HOLDBH" address="0x4000C7AE" bitWidth="8" desc="This is the high byte of the output Holding Register - Port B. See usage notes in HOLDA register          description.">
+      <field name="HOLDB_HIGH" from="7" to="0" access="R" resetVal="" desc="High byte of the output Holding Register, Port B." />
+    </register>
+  </block>
+  <block name="isr_DFB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Counter_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="TC_vm" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -102,7 +131,32 @@
     <register name="Counter_1_COUNTER" address="0x40004F04" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
   </block>
   <block name="and_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="cy_constant_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="isr_LUT" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="UART_1" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="RX_UART_1_RX_ADDRESS1" address="0x4000642E" bitWidth="8" desc="RX Address1 Register" />
+    <register name="RX_UART_1_RX_ADDRESS2" address="0x4000643E" bitWidth="8" desc="RX Address2 Register" />
+    <register name="TX_UART_1_TX_DATA" address="0x4000644B" bitWidth="8" desc="TX Data Register" />
+    <register name="RX_UART_1_RX_DATA" address="0x4000644E" bitWidth="8" desc="RX Data Register" />
+    <register name="TX_UART_1_TX_STATUS" address="0x4000646C" bitWidth="8" desc="TX status register">
+      <field name="UART_1_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
+      <field name="UART_1_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
+      <field name="UART_1_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
+      <field name="UART_1_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
+    </register>
+    <register name="RX_UART_1_RX_STATUS" address="0x4000646F" bitWidth="8" desc="RX status register">
+      <field name="UART_1_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
+    </register>
+  </block>
   <block name="A_HS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cy_constant_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="B_HS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -117,12 +171,64 @@
     <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="PWMUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="PWM_BUCK_Control_Reg" address="0x40006476" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
+    <register name="PWM_BUCK_COMPARE_Reg" address="0x40006426" bitWidth="16" desc="UDB.D0 - Assigned Compare Value" />
+    <register name="PWM_BUCK_Control_Reg" address="0x40006477" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
       <field name="CTRL_ENABLE" from="7" to="7" access="RW" resetVal="" desc="Enable the PWM" />
       <field name="CTRL_CMPMODE2" from="5" to="3" access="RW" resetVal="" desc="Compare mode 2" />
       <field name="CTRL_CMPMODE1" from="2" to="0" access="RW" resetVal="" desc="Compare mode 1" />
     </register>
-    <register name="PWM_BUCK_COMPARE_Reg" address="0x40006526" bitWidth="16" desc="UDB.D0 - Assigned Compare Value" />
+    <register name="PWM_BUCK_STATUS_AUX_CTRLDP0" address="0x40006496" bitWidth="8" desc="UDB Auxilliary Control Register">
+      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
+        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
+        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
+      </field>
+      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_CNT_START0" value="0" desc="Disable counter" />
+        <value name="E_CNT_START1" value="1" desc="Enable counter" />
+      </field>
+    </register>
+    <register name="PWM_BUCK_STATUS_AUX_CTRLDP1" address="0x40006497" bitWidth="8" desc="UDB Auxilliary Control Register">
+      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
+        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
+        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
+      </field>
+      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_CNT_START0" value="0" desc="Disable counter" />
+        <value name="E_CNT_START1" value="1" desc="Enable counter" />
+      </field>
+    </register>
     <register name="PWM_BUCK_STATUS_MASK" address="0x40006586" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
       <field name="PWM_STS_CMP1" from="0" to="0" access="R" resetVal="" desc="Enables the Interrupt on Compare 1" />
       <field name="PWM_STS_CMP2" from="1" to="1" access="R" resetVal="" desc="Enables the Interrupt on Compare 2" />
@@ -130,70 +236,20 @@
       <field name="PWM_STS_FIFO_FULL" from="3" to="3" access="R" resetVal="" desc="FIFO Full Status Mask " />
       <field name="PWM_STS_KILL" from="5" to="5" access="R" resetVal="" desc="Enables the Interrupt on Kill" />
     </register>
-    <register name="PWM_BUCK_STATUS_AUX_CTRLDP0" address="0x40006596" bitWidth="8" desc="UDB Auxilliary Control Register">
-      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
-        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
-        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
-      </field>
-      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
-        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
-        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
-      </field>
-      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
-        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
-        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
-      </field>
-      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
-        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
-        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
-      </field>
-      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
-        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
-        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
-      </field>
-      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
-        <value name="E_CNT_START0" value="0" desc="Disable counter" />
-        <value name="E_CNT_START1" value="1" desc="Enable counter" />
-      </field>
-    </register>
-    <register name="PWM_BUCK_STATUS_AUX_CTRLDP1" address="0x40006597" bitWidth="8" desc="UDB Auxilliary Control Register">
-      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
-        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
-        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
-      </field>
-      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
-        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
-        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
-      </field>
-      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
-        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
-        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
-      </field>
-      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
-        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
-        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
-      </field>
-      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
-        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
-        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
-      </field>
-      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
-        <value name="E_CNT_START0" value="0" desc="Disable counter" />
-        <value name="E_CNT_START1" value="1" desc="Enable counter" />
-      </field>
-    </register>
   </block>
   <block name="cydff_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cydff_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="nor_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="and_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Control_Reg_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <register name="Control_Reg_1_CONTROL_REG" address="0x40006577" bitWidth="8" desc="" />
-  </block>
+  <block name="B_LS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="LCD_Char_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   </block>
-  <block name="V_SENSE" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="nor_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Control_Reg_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <register name="Control_Reg_1_CONTROL_REG" address="0x4000647C" bitWidth="8" desc="" />
+  </block>
+  <block name="and_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ADC_DelSig_V" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="cy_analog_virtualmux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="cy_analog_virtualmux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -995,7 +1051,6 @@
       </field>
     </register>
   </block>
-  <block name="B_LS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="V_SENSE" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="nor_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
 </blockRegMap>

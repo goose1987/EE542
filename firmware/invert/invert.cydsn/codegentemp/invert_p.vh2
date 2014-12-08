@@ -1,5 +1,5 @@
 -- Project:   invert
--- Generated: 12/05/2014 21:23:50
+-- Generated: 12/07/2014 18:49:49
 -- 
 
 ENTITY invert IS
@@ -69,14 +69,17 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL Net_517 : bit;
     SIGNAL Net_518 : bit;
     SIGNAL Net_529 : bit;
-    SIGNAL Net_552 : bit;
-    SIGNAL Net_608 : bit;
-    ATTRIBUTE global_signal OF Net_608 : SIGNAL IS true;
-    SIGNAL Net_608_local : bit;
     SIGNAL Net_685 : bit;
     ATTRIBUTE global_signal OF Net_685 : SIGNAL IS true;
     SIGNAL Net_685_local : bit;
     SIGNAL Net_687 : bit;
+    SIGNAL Net_723 : bit;
+    SIGNAL Net_730 : bit;
+    SIGNAL Net_743 : bit;
+    SIGNAL Net_744 : bit;
+    SIGNAL Net_745 : bit;
+    SIGNAL Net_759 : bit;
+    SIGNAL Net_761 : bit;
     SIGNAL Rx_1(0)__PA : bit;
     SIGNAL SCLK(0)__PA : bit;
     SIGNAL SS(0)__PA : bit;
@@ -250,6 +253,7 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE Location OF B_HS(0) : LABEL IS "P5[3]";
     ATTRIBUTE lib_model OF B_LS(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF B_LS(0) : LABEL IS "P5[4]";
+    ATTRIBUTE lib_model OF DMA_IN_A : LABEL IS "drqcell1";
     ATTRIBUTE lib_model OF MOSI(0) : LABEL IS "iocell_ireg";
     ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_309 : LABEL IS "macrocell2";
@@ -1813,12 +1817,20 @@ BEGIN
             clk_a_dig_0 => \ADC_DelSig_V:Net_40_adig_local\,
             dclk_glb_2 => Net_374,
             dclk_2 => Net_374_local,
-            dclk_glb_3 => Net_608,
-            dclk_3 => Net_608_local,
-            dclk_glb_4 => \UART_1:Net_9\,
-            dclk_4 => \UART_1:Net_9_local\,
+            dclk_glb_3 => \UART_1:Net_9\,
+            dclk_3 => \UART_1:Net_9_local\,
             clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\,
             aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
+
+    DMA_IN_A:drqcell
+        GENERIC MAP(
+            drq_type => "00",
+            num_tds => 0)
+        PORT MAP(
+            dmareq => Net_761,
+            termin => '0',
+            termout => Net_730,
+            clock => ClockBlock_BUS_CLK);
 
     MISO:logicalport
         GENERIC MAP(
@@ -2567,9 +2579,21 @@ BEGIN
             enable => open,
             capture => open,
             timer_reset => open,
-            tc => Net_552,
+            tc => Net_759,
             cmp => \Counter_1:Net_47\,
             irq => \Counter_1:Net_42\);
+
+    \DFB_1:DFB\:dfbcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            in_1 => open,
+            in_2 => open,
+            out_1 => Net_761,
+            out_2 => Net_743,
+            dmareq_1 => Net_744,
+            dmareq_2 => Net_745,
+            interrupt => Net_723);
 
     \LCD_Char_1:LCDPort(0)\:iocell
         GENERIC MAP(
@@ -3702,11 +3726,18 @@ BEGIN
             main_0 => Net_475,
             clock_0 => Net_685);
 
+    isr_DFB:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => Net_723,
+            clock => ClockBlock_BUS_CLK);
+
     isr_LUT:interrupt
         GENERIC MAP(
             int_type => "10")
         PORT MAP(
-            interrupt => Net_552,
+            interrupt => Net_759,
             clock => ClockBlock_BUS_CLK);
 
 END __DEFAULT__;

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
   15:.\Generated_Source\PSoC5/DFB_1.c **** * the software package with which this file was provided.
   16:.\Generated_Source\PSoC5/DFB_1.c **** *******************************************************************************/
   17:.\Generated_Source\PSoC5/DFB_1.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 2
 
 
   18:.\Generated_Source\PSoC5/DFB_1.c **** #include "DFB_1.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
   50:.\Generated_Source\PSoC5/DFB_1.c ****     while (count > 0u)
   59              		.loc 1 50 0
   60 0014 13E0     		b	.L2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 3
 
 
   61              	.L3:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
   65:.\Generated_Source\PSoC5/DFB_1.c **** *
   66:.\Generated_Source\PSoC5/DFB_1.c **** * Parameters:
   67:.\Generated_Source\PSoC5/DFB_1.c **** *  reg32 regAddress[]: register address;
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 4
 
 
   68:.\Generated_Source\PSoC5/DFB_1.c **** *  uint8 count: number of 32-bit registers for zeroing.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  136              		.loc 1 86 0
  137 002c FB7B     		ldrb	r3, [r7, #15]
  138 002e 03F10103 		add	r3, r3, #1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 5
 
 
  139 0032 FB73     		strb	r3, [r7, #15]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  119:.\Generated_Source\PSoC5/DFB_1.c **** *******************************************************************************/
  120:.\Generated_Source\PSoC5/DFB_1.c **** void DFB_1_Init(void) 
  121:.\Generated_Source\PSoC5/DFB_1.c **** {
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 6
 
 
  161              		.loc 1 121 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  133:.\Generated_Source\PSoC5/DFB_1.c ****     /* Turns off Run Bit */
  134:.\Generated_Source\PSoC5/DFB_1.c ****     DFB_1_CR_REG &= (uint8) (~DFB_1_RUN_MASK);
  204              		.loc 1 134 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 7
 
 
  205 004e 4CF28073 		movw	r3, #:lower16:1073792896
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  146:.\Generated_Source\PSoC5/DFB_1.c ****     DFB_1_ZeroReg32(DFB_1_CFSM_RAM_PTR, DFB_1_CFSM_RAM_SIZE);
  248              		.loc 1 146 0
  249 00d4 4CF20060 		movw	r0, #:lower16:1073792512
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 8
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 8
 
 
  250 00d8 C4F20000 		movt	r0, #:upper16:1073792512
@@ -439,7 +439,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  255 00e8 C4F20000 		movt	r0, #:upper16:1073792000
  256 00ec 40F20001 		movw	r1, #:lower16:DFB_1_control
  257 00f0 C0F20001 		movt	r1, #:upper16:DFB_1_control
- 258 00f4 4FF00102 		mov	r2, #1
+ 258 00f4 4FF00702 		mov	r2, #7
  259 00f8 FFF7FEFF 		bl	DFB_1_LoadReg32
  157:.\Generated_Source\PSoC5/DFB_1.c ****                                     DFB_1_CSA_RAM_SIZE_CUR);
  158:.\Generated_Source\PSoC5/DFB_1.c ****         DFB_1_LoadReg32(DFB_1_CSB_RAM_PTR, DFB_1_control,
@@ -448,7 +448,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  262 0100 C4F20000 		movt	r0, #:upper16:1073792256
  263 0104 40F20001 		movw	r1, #:lower16:DFB_1_control
  264 0108 C0F20001 		movt	r1, #:upper16:DFB_1_control
- 265 010c 4FF00102 		mov	r2, #1
+ 265 010c 4FF00702 		mov	r2, #7
  266 0110 FFF7FEFF 		bl	DFB_1_LoadReg32
  159:.\Generated_Source\PSoC5/DFB_1.c ****                                     DFB_1_CSB_RAM_SIZE_CUR);
  160:.\Generated_Source\PSoC5/DFB_1.c ****     #endif /* DFB_1_OPTIMIZE_ASSEMBLY */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  284 014c 40F20001 		movw	r1, #:lower16:DFB_1_acu
  285 0150 C0F20001 		movt	r1, #:upper16:DFB_1_acu
  286 0154 4FF00102 		mov	r2, #1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 9
 
 
  287 0158 FFF7FEFF 		bl	DFB_1_LoadReg32
@@ -489,7 +489,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  290 0160 C4F20000 		movt	r0, #:upper16:1073792512
  291 0164 40F20001 		movw	r1, #:lower16:DFB_1_cfsm
  292 0168 C0F20001 		movt	r1, #:upper16:DFB_1_cfsm
- 293 016c 4FF00202 		mov	r2, #2
+ 293 016c 4FF00402 		mov	r2, #4
  294 0170 FFF7FEFF 		bl	DFB_1_LoadReg32
  169:.\Generated_Source\PSoC5/DFB_1.c ****                                 DFB_1_CFSM_RAM_SIZE_CUR);
  170:.\Generated_Source\PSoC5/DFB_1.c **** 
@@ -504,17 +504,17 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  174:.\Generated_Source\PSoC5/DFB_1.c ****     /* Sets up interrupt and DMA events */
  175:.\Generated_Source\PSoC5/DFB_1.c ****     DFB_1_SetInterruptMode(DFB_1_INIT_INTERRUPT_MODE);
  300              		.loc 1 175 0
- 301 0182 4FF00000 		mov	r0, #0
+ 301 0182 4FF00100 		mov	r0, #1
  302 0186 FFF7FEFF 		bl	DFB_1_SetInterruptMode
  176:.\Generated_Source\PSoC5/DFB_1.c ****     DFB_1_SetDMAMode(DFB_1_INIT_DMA_MODE);
  303              		.loc 1 176 0
- 304 018a 4FF00000 		mov	r0, #0
+ 304 018a 4FF00100 		mov	r0, #1
  305 018e FFF7FEFF 		bl	DFB_1_SetDMAMode
  177:.\Generated_Source\PSoC5/DFB_1.c **** 
  178:.\Generated_Source\PSoC5/DFB_1.c ****     /* Sets up internal signals, which will be mapped to the DSI outputs */
  179:.\Generated_Source\PSoC5/DFB_1.c ****     DFB_1_SetOutput1Source(DFB_1_INIT_OUT1_SOURCE);
  306              		.loc 1 179 0
- 307 0192 4FF00000 		mov	r0, #0
+ 307 0192 4FF00200 		mov	r0, #2
  308 0196 FFF7FEFF 		bl	DFB_1_SetOutput1Source
  180:.\Generated_Source\PSoC5/DFB_1.c ****     DFB_1_SetOutput2Source(DFB_1_INIT_OUT2_SOURCE);
  309              		.loc 1 180 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  323              		.size	DFB_1_Init, .-DFB_1_Init
  324              		.section	.text.DFB_1_Enable,"ax",%progbits
  325              		.align	2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 10
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 10
 
 
  326              		.global	DFB_1_Enable
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  355 001a C4F20002 		movt	r2, #:upper16:1073759142
  356 001e 1278     		ldrb	r2, [r2, #0]
  357 0020 D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 11
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 11
 
 
  358 0022 42F01002 		orr	r2, r2, #16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  402              		.type	DFB_1_Start, %function
  403              	DFB_1_Start:
  404              	.LFB4:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 12
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 12
 
 
  220:.\Generated_Source\PSoC5/DFB_1.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  429 0022 1A70     		strb	r2, [r3, #0]
  430              	.L14:
  250:.\Generated_Source\PSoC5/DFB_1.c ****     }
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 13
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 13
 
 
  251:.\Generated_Source\PSoC5/DFB_1.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  460              		.cfi_def_cfa_register 7
  276:.\Generated_Source\PSoC5/DFB_1.c ****     uint8 enableInterrupts;
  277:.\Generated_Source\PSoC5/DFB_1.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 14
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 14
 
 
  278:.\Generated_Source\PSoC5/DFB_1.c ****     enableInterrupts = CyEnterCriticalSection();
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  503              		.section	.text.DFB_1_Pause,"ax",%progbits
  504              		.align	2
  505              		.global	DFB_1_Pause
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 15
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 15
 
 
  506              		.thumb
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  535 0026 4FF03F02 		mov	r2, #63
  536 002a 1A70     		strb	r2, [r3, #0]
  315:.\Generated_Source\PSoC5/DFB_1.c **** }
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 16
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 16
 
 
  537              		.loc 1 315 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  338:.\Generated_Source\PSoC5/DFB_1.c ****     /* Clears any pending interrupts */
  339:.\Generated_Source\PSoC5/DFB_1.c ****     DFB_1_SR_REG = 0xFFu;
  569              		.loc 1 339 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 17
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 17
 
 
  570 0012 4CF28473 		movw	r3, #:lower16:1073792900
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  365:.\Generated_Source\PSoC5/DFB_1.c **** *    Define                             Description
  366:.\Generated_Source\PSoC5/DFB_1.c **** *     DFB_1_STGA_KEY_LOW      Key Byte is low byte.
  367:.\Generated_Source\PSoC5/DFB_1.c **** *     DFB_1_STGA_KEY_MID      Key Byte is med byte.
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 18
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 18
 
 
  368:.\Generated_Source\PSoC5/DFB_1.c **** *     DFB_1_STGA_KEY_HIGH     Key Byte is high byte.
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  400:.\Generated_Source\PSoC5/DFB_1.c **** }
  621              		.loc 1 400 0
  622 0016 07F10C07 		add	r7, r7, #12
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 19
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 19
 
 
  623 001a BD46     		mov	sp, r7
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  637              		.loc 1 440 0
  638              		.cfi_startproc
  639              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 20
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 20
 
 
  640              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  460:.\Generated_Source\PSoC5/DFB_1.c **** *  address is out of range.
  461:.\Generated_Source\PSoC5/DFB_1.c **** *  DFB_1_DATA_OUT_OF_RANGE - error code, indicates a data overflow
  462:.\Generated_Source\PSoC5/DFB_1.c **** *  error.
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 21
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 21
 
 
  463:.\Generated_Source\PSoC5/DFB_1.c **** *
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  714 003a BB75     		strb	r3, [r7, #22]
  715              		.loc 1 475 0
  716 003c 47E0     		b	.L29
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 22
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 22
 
 
  717              	.L28:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  759 0096 FA68     		ldr	r2, [r7, #12]
  760 0098 0A44     		add	r2, r1, r2
  761 009a 1268     		ldr	r2, [r2, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 23
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 23
 
 
  762 009c 1A60     		str	r2, [r3, #0]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  501:.\Generated_Source\PSoC5/DFB_1.c **** /*******************************************************************************
  502:.\Generated_Source\PSoC5/DFB_1.c **** * Function Name: DFB_1_LoadDataRAMB
  503:.\Generated_Source\PSoC5/DFB_1.c **** ********************************************************************************
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 24
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 24
 
 
  504:.\Generated_Source\PSoC5/DFB_1.c **** *
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  831 001a BA68     		ldr	r2, [r7, #8]
  832 001c 4CF2FF13 		movw	r3, #:lower16:1073791487
  833 0020 C4F20003 		movt	r3, #:upper16:1073791487
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 25
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 25
 
 
  834 0024 9A42     		cmp	r2, r3
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  877 0080 D2B2     		uxtb	r2, r2
  878 0082 1A70     		strb	r2, [r3, #0]
  543:.\Generated_Source\PSoC5/DFB_1.c ****         while (size > 0u)
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 26
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 26
 
 
  879              		.loc 1 543 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  922 00d8 80BC     		pop	{r7}
  923 00da 7047     		bx	lr
  924              		.cfi_endproc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 27
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 27
 
 
  925              	.LFE11:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  581:.\Generated_Source\PSoC5/DFB_1.c **** 
  582:.\Generated_Source\PSoC5/DFB_1.c ****     value = (uint32) sample;
  953              		.loc 1 582 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 28
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 28
 
 
  954 000c 3B68     		ldr	r3, [r7, #0]
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  996 0068 4FEA1222 		lsr	r2, r2, #8
  997 006c D2B2     		uxtb	r2, r2
  998 006e 1A70     		strb	r2, [r3, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 29
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 29
 
 
  595:.\Generated_Source\PSoC5/DFB_1.c ****         DFB_1_STAGEBH_REG = (uint8) (value >> 16u);
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  625:.\Generated_Source\PSoC5/DFB_1.c **** *
  626:.\Generated_Source\PSoC5/DFB_1.c **** *******************************************************************************/
  627:.\Generated_Source\PSoC5/DFB_1.c **** int32 DFB_1_GetOutputValue(uint8 channel) 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 30
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 30
 
 
  628:.\Generated_Source\PSoC5/DFB_1.c **** {
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1063 003a 02DA     		bge	.L50
  1064 003c 4FF0FF03 		mov	r3, #255
  1065 0040 01E0     		b	.L51
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 31
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 31
 
 
  1066              	.L50:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1108 0090 4FF00003 		mov	r3, #0
  1109 0094 7B72     		strb	r3, [r7, #9]
  654:.\Generated_Source\PSoC5/DFB_1.c ****         data2 = 0x00u;
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 32
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 32
 
 
  1110              		.loc 1 654 0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  671:.\Generated_Source\PSoC5/DFB_1.c **** *
  672:.\Generated_Source\PSoC5/DFB_1.c **** * Parameters:
  673:.\Generated_Source\PSoC5/DFB_1.c **** *  events: Bits [0:5] of events represent the events that trigger DFB
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 33
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 33
 
 
  674:.\Generated_Source\PSoC5/DFB_1.c **** *          interrupts.
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1176              		.cfi_endproc
  1177              	.LFE14:
  1178              		.size	DFB_1_SetInterruptMode, .-DFB_1_SetInterruptMode
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 34
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 34
 
 
  1179              		.section	.text.DFB_1_GetInterruptSource,"ax",%progbits
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1200 0004 4CF28473 		movw	r3, #:lower16:1073792900
  1201 0008 C4F20003 		movt	r3, #:upper16:1073792900
  1202 000c 1B78     		ldrb	r3, [r3, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 35
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 35
 
 
  1203 000e DBB2     		uxtb	r3, r3
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1225              		@ frame_needed = 1, uses_anonymous_args = 0
  1226              		@ link register save eliminated.
  1227 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 36
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 36
 
 
  1228              	.LCFI44:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  779:.\Generated_Source\PSoC5/DFB_1.c **** *          request for the DFB.
  780:.\Generated_Source\PSoC5/DFB_1.c **** *   DMA Request 1:
  781:.\Generated_Source\PSoC5/DFB_1.c **** *    Define                                 Description
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 37
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 37
 
 
  782:.\Generated_Source\PSoC5/DFB_1.c **** *    DFB_1_DMAREQ1_DISABLED       No request will be generated;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1296              		.cfi_endproc
  1297              	.LFE17:
  1298              		.size	DFB_1_SetDMAMode, .-DFB_1_SetDMAMode
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 38
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 38
 
 
  1299              		.section	.text.DFB_1_SetSemaphores,"ax",%progbits
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1330 001c D2B2     		uxtb	r2, r2
  1331 001e 42F00702 		orr	r2, r2, #7
  1332 0022 D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 39
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 39
 
 
  1333 0024 1A70     		strb	r2, [r3, #0]
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  856:.\Generated_Source\PSoC5/DFB_1.c ****     /* Masked the valide bits in case the reserved bits in SEM_REG [4 and 7] get used for something
  857:.\Generated_Source\PSoC5/DFB_1.c ****     return (DFB_1_SEM_REG & DFB_1_SEM_MASK);
  1362              		.loc 1 857 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 40
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 40
 
 
  1363 0004 4CF29073 		movw	r3, #:lower16:1073792912
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1394              		.cfi_def_cfa_offset 16
  1395 0004 00AF     		add	r7, sp, #0
  1396              		.cfi_offset 7, -4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 41
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 41
 
 
  1397              	.LCFI57:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  907:.\Generated_Source\PSoC5/DFB_1.c **** *******************************************************************************/
  908:.\Generated_Source\PSoC5/DFB_1.c **** void DFB_1_SetOutput1Source(uint8 source) 
  909:.\Generated_Source\PSoC5/DFB_1.c **** {
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 42
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 42
 
 
  1425              		.loc 1 909 0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  919:.\Generated_Source\PSoC5/DFB_1.c **** *  This function allows you to choose which internal signal will be mapped to
  920:.\Generated_Source\PSoC5/DFB_1.c **** *  the DSI output 2.
  921:.\Generated_Source\PSoC5/DFB_1.c **** *
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 43
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 43
 
 
  922:.\Generated_Source\PSoC5/DFB_1.c **** * Parameters:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1496 0024 42EA0102 		orr	r2, r2, r1
  1497 0028 D2B2     		uxtb	r2, r2
  1498 002a 1A70     		strb	r2, [r3, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 44
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 44
 
 
  950:.\Generated_Source\PSoC5/DFB_1.c **** }
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1552 0065 18       		.sleb128 24
  1553 0066 00000000 		.4byte	0x0
  1554 006a 00000000 		.4byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 45
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 45
 
 
  1555              	.LLST2:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1609 00f3 04000000 		.4byte	.LCFI13
  1610 00f7 2A000000 		.4byte	.LFE4
  1611 00fb 0200     		.2byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 46
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 46
 
 
  1612 00fd 77       		.byte	0x77
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1666 0184 42000000 		.4byte	.LFE7
  1667 0188 0200     		.2byte	0x2
  1668 018a 77       		.byte	0x77
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 47
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 47
 
 
  1669 018b 04       		.sleb128 4
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1723 0215 0200     		.2byte	0x2
  1724 0217 7D       		.byte	0x7d
  1725 0218 04       		.sleb128 4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 48
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 48
 
 
  1726 0219 04000000 		.4byte	.LCFI28
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1780 029f 00000000 		.4byte	0x0
  1781 02a3 00000000 		.4byte	0x0
  1782              	.LLST13:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 49
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 49
 
 
  1783 02a7 00000000 		.4byte	.LFB13
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1837 0330 1E000000 		.4byte	.LFE15
  1838 0334 0200     		.2byte	0x2
  1839 0336 77       		.byte	0x77
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 50
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 50
 
 
  1840 0337 04       		.sleb128 4
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1894 03c1 0200     		.2byte	0x2
  1895 03c3 7D       		.byte	0x7d
  1896 03c4 04       		.sleb128 4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 51
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 51
 
 
  1897 03c5 04000000 		.4byte	.LCFI51
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1951 044f 0100     		.2byte	0x1
  1952 0451 5D       		.byte	0x5d
  1953 0452 02000000 		.4byte	.LCFI58
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 52
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 52
 
 
  1954 0456 04000000 		.4byte	.LCFI59
@@ -3102,7 +3102,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  1992              		.file 2 ".\\Generated_Source\\PSoC5\\/cytypes.h"
  1993              		.file 3 ".\\Generated_Source\\PSoC5\\/DFB_1.h"
  1994              		.section	.debug_info
- 1995 0000 E2050000 		.4byte	0x5e2
+ 1995 0000 F2050000 		.4byte	0x5f2
  1996 0004 0200     		.2byte	0x2
  1997 0006 00000000 		.4byte	.Ldebug_abbrev0
  1998 000a 04       		.byte	0x4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2008 0029 02       		.uleb128 0x2
  2009 002a 01       		.byte	0x1
  2010 002b 06       		.byte	0x6
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 53
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 53
 
 
  2011 002c 50000000 		.4byte	.LASF0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2065 0092 04       		.byte	0x4
  2066 0093 D5010000 		.4byte	.LASF12
  2067 0097 02       		.uleb128 0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 54
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 54
 
 
  2068 0098 08       		.byte	0x8
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2122 00f9 FD000000 		.4byte	0xfd
  2123 00fd 0A       		.uleb128 0xa
  2124 00fe 4C000000 		.4byte	0x4c
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 55
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 55
 
 
  2125 0102 09       		.uleb128 0x9
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2179 0172 02       		.byte	0x2
  2180 0173 91       		.byte	0x91
  2181 0174 77       		.sleb128 -9
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 56
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 56
 
 
  2182 0175 00       		.byte	0x0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2236 01e7 00000000 		.4byte	.LFB6
  2237 01eb 32000000 		.4byte	.LFE6
  2238 01ef 3E010000 		.4byte	.LLST6
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 57
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 57
 
 
  2239 01f3 11       		.uleb128 0x11
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2293 026b 00000000 		.4byte	.LFB10
  2294 026f DC000000 		.4byte	.LFE10
  2295 0273 02020000 		.4byte	.LLST10
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 58
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 58
 
 
  2296 0277 C5020000 		.4byte	0x2c5
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2350 02dd 0D02     		.2byte	0x20d
  2351 02df 01       		.byte	0x1
  2352 02e0 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 59
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 59
 
 
  2353 02e4 00000000 		.4byte	.LFB11
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2407 0354 86030000 		.4byte	0x386
  2408 0358 12       		.uleb128 0x12
  2409 0359 6F020000 		.4byte	.LASF37
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 60
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 60
 
 
  2410 035d 01       		.byte	0x1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2464 03ca 6F000000 		.4byte	0x6f
  2465 03ce 02       		.byte	0x2
  2466 03cf 91       		.byte	0x91
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 61
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 61
 
 
  2467 03d0 71       		.sleb128 -15
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2521 043f 15030000 		.4byte	.LLST15
  2522 0443 0F       		.uleb128 0xf
  2523 0444 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 62
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 62
 
 
  2524 0445 BC000000 		.4byte	.LASF48
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2578 04c0 00       		.byte	0x0
  2579 04c1 16       		.uleb128 0x16
  2580 04c2 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 63
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 63
 
 
  2581 04c3 95030000 		.4byte	.LASF54
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2635 0541 7E040000 		.4byte	.LLST22
  2636 0545 59050000 		.4byte	0x559
  2637 0549 12       		.uleb128 0x12
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 64
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 64
 
 
  2638 054a 79010000 		.4byte	.LASF16
@@ -3803,7 +3803,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2657 0570 7B050000 		.4byte	0x57b
  2658 0574 19       		.uleb128 0x19
  2659 0575 A5000000 		.4byte	0xa5
- 2660 0579 00       		.byte	0x0
+ 2660 0579 06       		.byte	0x6
  2661 057a 00       		.byte	0x0
  2662 057b 1A       		.uleb128 0x1a
  2663 057c 98010000 		.4byte	.LASF59
@@ -3814,1046 +3814,1056 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 1
  2668 0587 01       		.byte	0x1
  2669 0588 0B       		.uleb128 0xb
  2670 0589 6B050000 		.4byte	0x56b
- 2671 058d 1A       		.uleb128 0x1a
- 2672 058e BD020000 		.4byte	.LASF60
- 2673 0592 03       		.byte	0x3
- 2674 0593 41       		.byte	0x41
- 2675 0594 9A050000 		.4byte	0x59a
- 2676 0598 01       		.byte	0x1
- 2677 0599 01       		.byte	0x1
- 2678 059a 0B       		.uleb128 0xb
- 2679 059b 6B050000 		.4byte	0x56b
- 2680 059f 1A       		.uleb128 0x1a
- 2681 05a0 42010000 		.4byte	.LASF61
- 2682 05a4 03       		.byte	0x3
- 2683 05a5 42       		.byte	0x42
- 2684 05a6 AC050000 		.4byte	0x5ac
- 2685 05aa 01       		.byte	0x1
- 2686 05ab 01       		.byte	0x1
- 2687 05ac 0B       		.uleb128 0xb
- 2688 05ad 6B050000 		.4byte	0x56b
- 2689 05b1 18       		.uleb128 0x18
- 2690 05b2 7A000000 		.4byte	0x7a
- 2691 05b6 C1050000 		.4byte	0x5c1
- 2692 05ba 19       		.uleb128 0x19
- 2693 05bb A5000000 		.4byte	0xa5
- 2694 05bf 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 65
+ 2671 058d 18       		.uleb128 0x18
+ 2672 058e 7A000000 		.4byte	0x7a
+ 2673 0592 9D050000 		.4byte	0x59d
+ 2674 0596 19       		.uleb128 0x19
+ 2675 0597 A5000000 		.4byte	0xa5
+ 2676 059b 00       		.byte	0x0
+ 2677 059c 00       		.byte	0x0
+ 2678 059d 1A       		.uleb128 0x1a
+ 2679 059e BD020000 		.4byte	.LASF60
+ 2680 05a2 03       		.byte	0x3
+ 2681 05a3 41       		.byte	0x41
+ 2682 05a4 AA050000 		.4byte	0x5aa
+ 2683 05a8 01       		.byte	0x1
+ 2684 05a9 01       		.byte	0x1
+ 2685 05aa 0B       		.uleb128 0xb
+ 2686 05ab 8D050000 		.4byte	0x58d
+ 2687 05af 1A       		.uleb128 0x1a
+ 2688 05b0 42010000 		.4byte	.LASF61
+ 2689 05b4 03       		.byte	0x3
+ 2690 05b5 42       		.byte	0x42
+ 2691 05b6 BC050000 		.4byte	0x5bc
+ 2692 05ba 01       		.byte	0x1
+ 2693 05bb 01       		.byte	0x1
+ 2694 05bc 0B       		.uleb128 0xb
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 65
 
 
- 2695 05c0 00       		.byte	0x0
- 2696 05c1 1A       		.uleb128 0x1a
- 2697 05c2 17030000 		.4byte	.LASF62
- 2698 05c6 03       		.byte	0x3
- 2699 05c7 43       		.byte	0x43
- 2700 05c8 CE050000 		.4byte	0x5ce
- 2701 05cc 01       		.byte	0x1
- 2702 05cd 01       		.byte	0x1
- 2703 05ce 0B       		.uleb128 0xb
- 2704 05cf B1050000 		.4byte	0x5b1
- 2705 05d3 1A       		.uleb128 0x1a
- 2706 05d4 5D010000 		.4byte	.LASF63
- 2707 05d8 03       		.byte	0x3
- 2708 05d9 44       		.byte	0x44
- 2709 05da E0050000 		.4byte	0x5e0
- 2710 05de 01       		.byte	0x1
- 2711 05df 01       		.byte	0x1
- 2712 05e0 0B       		.uleb128 0xb
- 2713 05e1 6B050000 		.4byte	0x56b
- 2714 05e5 00       		.byte	0x0
- 2715              		.section	.debug_abbrev
- 2716 0000 01       		.uleb128 0x1
- 2717 0001 11       		.uleb128 0x11
- 2718 0002 01       		.byte	0x1
- 2719 0003 25       		.uleb128 0x25
- 2720 0004 0E       		.uleb128 0xe
- 2721 0005 13       		.uleb128 0x13
- 2722 0006 0B       		.uleb128 0xb
- 2723 0007 03       		.uleb128 0x3
- 2724 0008 0E       		.uleb128 0xe
- 2725 0009 1B       		.uleb128 0x1b
- 2726 000a 0E       		.uleb128 0xe
- 2727 000b 11       		.uleb128 0x11
- 2728 000c 01       		.uleb128 0x1
- 2729 000d 52       		.uleb128 0x52
- 2730 000e 01       		.uleb128 0x1
- 2731 000f 55       		.uleb128 0x55
- 2732 0010 06       		.uleb128 0x6
- 2733 0011 10       		.uleb128 0x10
- 2734 0012 06       		.uleb128 0x6
- 2735 0013 00       		.byte	0x0
- 2736 0014 00       		.byte	0x0
- 2737 0015 02       		.uleb128 0x2
- 2738 0016 24       		.uleb128 0x24
- 2739 0017 00       		.byte	0x0
- 2740 0018 0B       		.uleb128 0xb
- 2741 0019 0B       		.uleb128 0xb
- 2742 001a 3E       		.uleb128 0x3e
- 2743 001b 0B       		.uleb128 0xb
- 2744 001c 03       		.uleb128 0x3
- 2745 001d 0E       		.uleb128 0xe
- 2746 001e 00       		.byte	0x0
- 2747 001f 00       		.byte	0x0
- 2748 0020 03       		.uleb128 0x3
- 2749 0021 24       		.uleb128 0x24
- 2750 0022 00       		.byte	0x0
- 2751 0023 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 66
+ 2695 05bd 8D050000 		.4byte	0x58d
+ 2696 05c1 18       		.uleb128 0x18
+ 2697 05c2 7A000000 		.4byte	0x7a
+ 2698 05c6 D1050000 		.4byte	0x5d1
+ 2699 05ca 19       		.uleb128 0x19
+ 2700 05cb A5000000 		.4byte	0xa5
+ 2701 05cf 03       		.byte	0x3
+ 2702 05d0 00       		.byte	0x0
+ 2703 05d1 1A       		.uleb128 0x1a
+ 2704 05d2 17030000 		.4byte	.LASF62
+ 2705 05d6 03       		.byte	0x3
+ 2706 05d7 43       		.byte	0x43
+ 2707 05d8 DE050000 		.4byte	0x5de
+ 2708 05dc 01       		.byte	0x1
+ 2709 05dd 01       		.byte	0x1
+ 2710 05de 0B       		.uleb128 0xb
+ 2711 05df C1050000 		.4byte	0x5c1
+ 2712 05e3 1A       		.uleb128 0x1a
+ 2713 05e4 5D010000 		.4byte	.LASF63
+ 2714 05e8 03       		.byte	0x3
+ 2715 05e9 44       		.byte	0x44
+ 2716 05ea F0050000 		.4byte	0x5f0
+ 2717 05ee 01       		.byte	0x1
+ 2718 05ef 01       		.byte	0x1
+ 2719 05f0 0B       		.uleb128 0xb
+ 2720 05f1 8D050000 		.4byte	0x58d
+ 2721 05f5 00       		.byte	0x0
+ 2722              		.section	.debug_abbrev
+ 2723 0000 01       		.uleb128 0x1
+ 2724 0001 11       		.uleb128 0x11
+ 2725 0002 01       		.byte	0x1
+ 2726 0003 25       		.uleb128 0x25
+ 2727 0004 0E       		.uleb128 0xe
+ 2728 0005 13       		.uleb128 0x13
+ 2729 0006 0B       		.uleb128 0xb
+ 2730 0007 03       		.uleb128 0x3
+ 2731 0008 0E       		.uleb128 0xe
+ 2732 0009 1B       		.uleb128 0x1b
+ 2733 000a 0E       		.uleb128 0xe
+ 2734 000b 11       		.uleb128 0x11
+ 2735 000c 01       		.uleb128 0x1
+ 2736 000d 52       		.uleb128 0x52
+ 2737 000e 01       		.uleb128 0x1
+ 2738 000f 55       		.uleb128 0x55
+ 2739 0010 06       		.uleb128 0x6
+ 2740 0011 10       		.uleb128 0x10
+ 2741 0012 06       		.uleb128 0x6
+ 2742 0013 00       		.byte	0x0
+ 2743 0014 00       		.byte	0x0
+ 2744 0015 02       		.uleb128 0x2
+ 2745 0016 24       		.uleb128 0x24
+ 2746 0017 00       		.byte	0x0
+ 2747 0018 0B       		.uleb128 0xb
+ 2748 0019 0B       		.uleb128 0xb
+ 2749 001a 3E       		.uleb128 0x3e
+ 2750 001b 0B       		.uleb128 0xb
+ 2751 001c 03       		.uleb128 0x3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 66
 
 
- 2752 0024 0B       		.uleb128 0xb
- 2753 0025 3E       		.uleb128 0x3e
- 2754 0026 0B       		.uleb128 0xb
- 2755 0027 03       		.uleb128 0x3
- 2756 0028 08       		.uleb128 0x8
- 2757 0029 00       		.byte	0x0
- 2758 002a 00       		.byte	0x0
- 2759 002b 04       		.uleb128 0x4
- 2760 002c 16       		.uleb128 0x16
- 2761 002d 00       		.byte	0x0
- 2762 002e 03       		.uleb128 0x3
- 2763 002f 0E       		.uleb128 0xe
- 2764 0030 3A       		.uleb128 0x3a
- 2765 0031 0B       		.uleb128 0xb
- 2766 0032 3B       		.uleb128 0x3b
- 2767 0033 0B       		.uleb128 0xb
- 2768 0034 49       		.uleb128 0x49
- 2769 0035 13       		.uleb128 0x13
- 2770 0036 00       		.byte	0x0
- 2771 0037 00       		.byte	0x0
- 2772 0038 05       		.uleb128 0x5
- 2773 0039 24       		.uleb128 0x24
- 2774 003a 00       		.byte	0x0
- 2775 003b 0B       		.uleb128 0xb
- 2776 003c 0B       		.uleb128 0xb
- 2777 003d 3E       		.uleb128 0x3e
- 2778 003e 0B       		.uleb128 0xb
- 2779 003f 00       		.byte	0x0
- 2780 0040 00       		.byte	0x0
- 2781 0041 06       		.uleb128 0x6
- 2782 0042 2E       		.uleb128 0x2e
- 2783 0043 01       		.byte	0x1
- 2784 0044 03       		.uleb128 0x3
- 2785 0045 0E       		.uleb128 0xe
- 2786 0046 3A       		.uleb128 0x3a
- 2787 0047 0B       		.uleb128 0xb
- 2788 0048 3B       		.uleb128 0x3b
- 2789 0049 0B       		.uleb128 0xb
- 2790 004a 27       		.uleb128 0x27
- 2791 004b 0C       		.uleb128 0xc
- 2792 004c 11       		.uleb128 0x11
- 2793 004d 01       		.uleb128 0x1
- 2794 004e 12       		.uleb128 0x12
- 2795 004f 01       		.uleb128 0x1
- 2796 0050 40       		.uleb128 0x40
- 2797 0051 06       		.uleb128 0x6
- 2798 0052 01       		.uleb128 0x1
- 2799 0053 13       		.uleb128 0x13
- 2800 0054 00       		.byte	0x0
- 2801 0055 00       		.byte	0x0
- 2802 0056 07       		.uleb128 0x7
- 2803 0057 05       		.uleb128 0x5
- 2804 0058 00       		.byte	0x0
- 2805 0059 03       		.uleb128 0x3
- 2806 005a 0E       		.uleb128 0xe
- 2807 005b 3A       		.uleb128 0x3a
- 2808 005c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 67
+ 2752 001d 0E       		.uleb128 0xe
+ 2753 001e 00       		.byte	0x0
+ 2754 001f 00       		.byte	0x0
+ 2755 0020 03       		.uleb128 0x3
+ 2756 0021 24       		.uleb128 0x24
+ 2757 0022 00       		.byte	0x0
+ 2758 0023 0B       		.uleb128 0xb
+ 2759 0024 0B       		.uleb128 0xb
+ 2760 0025 3E       		.uleb128 0x3e
+ 2761 0026 0B       		.uleb128 0xb
+ 2762 0027 03       		.uleb128 0x3
+ 2763 0028 08       		.uleb128 0x8
+ 2764 0029 00       		.byte	0x0
+ 2765 002a 00       		.byte	0x0
+ 2766 002b 04       		.uleb128 0x4
+ 2767 002c 16       		.uleb128 0x16
+ 2768 002d 00       		.byte	0x0
+ 2769 002e 03       		.uleb128 0x3
+ 2770 002f 0E       		.uleb128 0xe
+ 2771 0030 3A       		.uleb128 0x3a
+ 2772 0031 0B       		.uleb128 0xb
+ 2773 0032 3B       		.uleb128 0x3b
+ 2774 0033 0B       		.uleb128 0xb
+ 2775 0034 49       		.uleb128 0x49
+ 2776 0035 13       		.uleb128 0x13
+ 2777 0036 00       		.byte	0x0
+ 2778 0037 00       		.byte	0x0
+ 2779 0038 05       		.uleb128 0x5
+ 2780 0039 24       		.uleb128 0x24
+ 2781 003a 00       		.byte	0x0
+ 2782 003b 0B       		.uleb128 0xb
+ 2783 003c 0B       		.uleb128 0xb
+ 2784 003d 3E       		.uleb128 0x3e
+ 2785 003e 0B       		.uleb128 0xb
+ 2786 003f 00       		.byte	0x0
+ 2787 0040 00       		.byte	0x0
+ 2788 0041 06       		.uleb128 0x6
+ 2789 0042 2E       		.uleb128 0x2e
+ 2790 0043 01       		.byte	0x1
+ 2791 0044 03       		.uleb128 0x3
+ 2792 0045 0E       		.uleb128 0xe
+ 2793 0046 3A       		.uleb128 0x3a
+ 2794 0047 0B       		.uleb128 0xb
+ 2795 0048 3B       		.uleb128 0x3b
+ 2796 0049 0B       		.uleb128 0xb
+ 2797 004a 27       		.uleb128 0x27
+ 2798 004b 0C       		.uleb128 0xc
+ 2799 004c 11       		.uleb128 0x11
+ 2800 004d 01       		.uleb128 0x1
+ 2801 004e 12       		.uleb128 0x12
+ 2802 004f 01       		.uleb128 0x1
+ 2803 0050 40       		.uleb128 0x40
+ 2804 0051 06       		.uleb128 0x6
+ 2805 0052 01       		.uleb128 0x1
+ 2806 0053 13       		.uleb128 0x13
+ 2807 0054 00       		.byte	0x0
+ 2808 0055 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 67
 
 
- 2809 005d 3B       		.uleb128 0x3b
- 2810 005e 0B       		.uleb128 0xb
- 2811 005f 49       		.uleb128 0x49
- 2812 0060 13       		.uleb128 0x13
- 2813 0061 02       		.uleb128 0x2
- 2814 0062 0A       		.uleb128 0xa
- 2815 0063 00       		.byte	0x0
- 2816 0064 00       		.byte	0x0
- 2817 0065 08       		.uleb128 0x8
- 2818 0066 34       		.uleb128 0x34
- 2819 0067 00       		.byte	0x0
- 2820 0068 03       		.uleb128 0x3
- 2821 0069 08       		.uleb128 0x8
- 2822 006a 3A       		.uleb128 0x3a
- 2823 006b 0B       		.uleb128 0xb
- 2824 006c 3B       		.uleb128 0x3b
- 2825 006d 0B       		.uleb128 0xb
- 2826 006e 49       		.uleb128 0x49
- 2827 006f 13       		.uleb128 0x13
- 2828 0070 02       		.uleb128 0x2
- 2829 0071 0A       		.uleb128 0xa
- 2830 0072 00       		.byte	0x0
- 2831 0073 00       		.byte	0x0
- 2832 0074 09       		.uleb128 0x9
- 2833 0075 0F       		.uleb128 0xf
- 2834 0076 00       		.byte	0x0
- 2835 0077 0B       		.uleb128 0xb
- 2836 0078 0B       		.uleb128 0xb
- 2837 0079 49       		.uleb128 0x49
- 2838 007a 13       		.uleb128 0x13
- 2839 007b 00       		.byte	0x0
- 2840 007c 00       		.byte	0x0
- 2841 007d 0A       		.uleb128 0xa
- 2842 007e 35       		.uleb128 0x35
- 2843 007f 00       		.byte	0x0
- 2844 0080 49       		.uleb128 0x49
- 2845 0081 13       		.uleb128 0x13
- 2846 0082 00       		.byte	0x0
- 2847 0083 00       		.byte	0x0
- 2848 0084 0B       		.uleb128 0xb
- 2849 0085 26       		.uleb128 0x26
- 2850 0086 00       		.byte	0x0
- 2851 0087 49       		.uleb128 0x49
- 2852 0088 13       		.uleb128 0x13
- 2853 0089 00       		.byte	0x0
- 2854 008a 00       		.byte	0x0
- 2855 008b 0C       		.uleb128 0xc
- 2856 008c 2E       		.uleb128 0x2e
- 2857 008d 01       		.byte	0x1
- 2858 008e 3F       		.uleb128 0x3f
- 2859 008f 0C       		.uleb128 0xc
- 2860 0090 03       		.uleb128 0x3
- 2861 0091 0E       		.uleb128 0xe
- 2862 0092 3A       		.uleb128 0x3a
- 2863 0093 0B       		.uleb128 0xb
- 2864 0094 3B       		.uleb128 0x3b
- 2865 0095 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 68
+ 2809 0056 07       		.uleb128 0x7
+ 2810 0057 05       		.uleb128 0x5
+ 2811 0058 00       		.byte	0x0
+ 2812 0059 03       		.uleb128 0x3
+ 2813 005a 0E       		.uleb128 0xe
+ 2814 005b 3A       		.uleb128 0x3a
+ 2815 005c 0B       		.uleb128 0xb
+ 2816 005d 3B       		.uleb128 0x3b
+ 2817 005e 0B       		.uleb128 0xb
+ 2818 005f 49       		.uleb128 0x49
+ 2819 0060 13       		.uleb128 0x13
+ 2820 0061 02       		.uleb128 0x2
+ 2821 0062 0A       		.uleb128 0xa
+ 2822 0063 00       		.byte	0x0
+ 2823 0064 00       		.byte	0x0
+ 2824 0065 08       		.uleb128 0x8
+ 2825 0066 34       		.uleb128 0x34
+ 2826 0067 00       		.byte	0x0
+ 2827 0068 03       		.uleb128 0x3
+ 2828 0069 08       		.uleb128 0x8
+ 2829 006a 3A       		.uleb128 0x3a
+ 2830 006b 0B       		.uleb128 0xb
+ 2831 006c 3B       		.uleb128 0x3b
+ 2832 006d 0B       		.uleb128 0xb
+ 2833 006e 49       		.uleb128 0x49
+ 2834 006f 13       		.uleb128 0x13
+ 2835 0070 02       		.uleb128 0x2
+ 2836 0071 0A       		.uleb128 0xa
+ 2837 0072 00       		.byte	0x0
+ 2838 0073 00       		.byte	0x0
+ 2839 0074 09       		.uleb128 0x9
+ 2840 0075 0F       		.uleb128 0xf
+ 2841 0076 00       		.byte	0x0
+ 2842 0077 0B       		.uleb128 0xb
+ 2843 0078 0B       		.uleb128 0xb
+ 2844 0079 49       		.uleb128 0x49
+ 2845 007a 13       		.uleb128 0x13
+ 2846 007b 00       		.byte	0x0
+ 2847 007c 00       		.byte	0x0
+ 2848 007d 0A       		.uleb128 0xa
+ 2849 007e 35       		.uleb128 0x35
+ 2850 007f 00       		.byte	0x0
+ 2851 0080 49       		.uleb128 0x49
+ 2852 0081 13       		.uleb128 0x13
+ 2853 0082 00       		.byte	0x0
+ 2854 0083 00       		.byte	0x0
+ 2855 0084 0B       		.uleb128 0xb
+ 2856 0085 26       		.uleb128 0x26
+ 2857 0086 00       		.byte	0x0
+ 2858 0087 49       		.uleb128 0x49
+ 2859 0088 13       		.uleb128 0x13
+ 2860 0089 00       		.byte	0x0
+ 2861 008a 00       		.byte	0x0
+ 2862 008b 0C       		.uleb128 0xc
+ 2863 008c 2E       		.uleb128 0x2e
+ 2864 008d 01       		.byte	0x1
+ 2865 008e 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 68
 
 
- 2866 0096 27       		.uleb128 0x27
- 2867 0097 0C       		.uleb128 0xc
- 2868 0098 11       		.uleb128 0x11
- 2869 0099 01       		.uleb128 0x1
- 2870 009a 12       		.uleb128 0x12
- 2871 009b 01       		.uleb128 0x1
- 2872 009c 40       		.uleb128 0x40
- 2873 009d 06       		.uleb128 0x6
- 2874 009e 01       		.uleb128 0x1
- 2875 009f 13       		.uleb128 0x13
- 2876 00a0 00       		.byte	0x0
- 2877 00a1 00       		.byte	0x0
- 2878 00a2 0D       		.uleb128 0xd
- 2879 00a3 34       		.uleb128 0x34
- 2880 00a4 00       		.byte	0x0
- 2881 00a5 03       		.uleb128 0x3
- 2882 00a6 0E       		.uleb128 0xe
- 2883 00a7 3A       		.uleb128 0x3a
- 2884 00a8 0B       		.uleb128 0xb
- 2885 00a9 3B       		.uleb128 0x3b
- 2886 00aa 0B       		.uleb128 0xb
- 2887 00ab 49       		.uleb128 0x49
- 2888 00ac 13       		.uleb128 0x13
- 2889 00ad 02       		.uleb128 0x2
- 2890 00ae 0A       		.uleb128 0xa
- 2891 00af 00       		.byte	0x0
- 2892 00b0 00       		.byte	0x0
- 2893 00b1 0E       		.uleb128 0xe
- 2894 00b2 2E       		.uleb128 0x2e
- 2895 00b3 00       		.byte	0x0
- 2896 00b4 3F       		.uleb128 0x3f
- 2897 00b5 0C       		.uleb128 0xc
- 2898 00b6 03       		.uleb128 0x3
- 2899 00b7 0E       		.uleb128 0xe
- 2900 00b8 3A       		.uleb128 0x3a
- 2901 00b9 0B       		.uleb128 0xb
- 2902 00ba 3B       		.uleb128 0x3b
- 2903 00bb 0B       		.uleb128 0xb
- 2904 00bc 27       		.uleb128 0x27
- 2905 00bd 0C       		.uleb128 0xc
- 2906 00be 11       		.uleb128 0x11
- 2907 00bf 01       		.uleb128 0x1
- 2908 00c0 12       		.uleb128 0x12
- 2909 00c1 01       		.uleb128 0x1
- 2910 00c2 40       		.uleb128 0x40
- 2911 00c3 06       		.uleb128 0x6
- 2912 00c4 00       		.byte	0x0
- 2913 00c5 00       		.byte	0x0
- 2914 00c6 0F       		.uleb128 0xf
- 2915 00c7 2E       		.uleb128 0x2e
- 2916 00c8 01       		.byte	0x1
- 2917 00c9 3F       		.uleb128 0x3f
- 2918 00ca 0C       		.uleb128 0xc
- 2919 00cb 03       		.uleb128 0x3
- 2920 00cc 0E       		.uleb128 0xe
- 2921 00cd 3A       		.uleb128 0x3a
- 2922 00ce 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 69
+ 2866 008f 0C       		.uleb128 0xc
+ 2867 0090 03       		.uleb128 0x3
+ 2868 0091 0E       		.uleb128 0xe
+ 2869 0092 3A       		.uleb128 0x3a
+ 2870 0093 0B       		.uleb128 0xb
+ 2871 0094 3B       		.uleb128 0x3b
+ 2872 0095 0B       		.uleb128 0xb
+ 2873 0096 27       		.uleb128 0x27
+ 2874 0097 0C       		.uleb128 0xc
+ 2875 0098 11       		.uleb128 0x11
+ 2876 0099 01       		.uleb128 0x1
+ 2877 009a 12       		.uleb128 0x12
+ 2878 009b 01       		.uleb128 0x1
+ 2879 009c 40       		.uleb128 0x40
+ 2880 009d 06       		.uleb128 0x6
+ 2881 009e 01       		.uleb128 0x1
+ 2882 009f 13       		.uleb128 0x13
+ 2883 00a0 00       		.byte	0x0
+ 2884 00a1 00       		.byte	0x0
+ 2885 00a2 0D       		.uleb128 0xd
+ 2886 00a3 34       		.uleb128 0x34
+ 2887 00a4 00       		.byte	0x0
+ 2888 00a5 03       		.uleb128 0x3
+ 2889 00a6 0E       		.uleb128 0xe
+ 2890 00a7 3A       		.uleb128 0x3a
+ 2891 00a8 0B       		.uleb128 0xb
+ 2892 00a9 3B       		.uleb128 0x3b
+ 2893 00aa 0B       		.uleb128 0xb
+ 2894 00ab 49       		.uleb128 0x49
+ 2895 00ac 13       		.uleb128 0x13
+ 2896 00ad 02       		.uleb128 0x2
+ 2897 00ae 0A       		.uleb128 0xa
+ 2898 00af 00       		.byte	0x0
+ 2899 00b0 00       		.byte	0x0
+ 2900 00b1 0E       		.uleb128 0xe
+ 2901 00b2 2E       		.uleb128 0x2e
+ 2902 00b3 00       		.byte	0x0
+ 2903 00b4 3F       		.uleb128 0x3f
+ 2904 00b5 0C       		.uleb128 0xc
+ 2905 00b6 03       		.uleb128 0x3
+ 2906 00b7 0E       		.uleb128 0xe
+ 2907 00b8 3A       		.uleb128 0x3a
+ 2908 00b9 0B       		.uleb128 0xb
+ 2909 00ba 3B       		.uleb128 0x3b
+ 2910 00bb 0B       		.uleb128 0xb
+ 2911 00bc 27       		.uleb128 0x27
+ 2912 00bd 0C       		.uleb128 0xc
+ 2913 00be 11       		.uleb128 0x11
+ 2914 00bf 01       		.uleb128 0x1
+ 2915 00c0 12       		.uleb128 0x12
+ 2916 00c1 01       		.uleb128 0x1
+ 2917 00c2 40       		.uleb128 0x40
+ 2918 00c3 06       		.uleb128 0x6
+ 2919 00c4 00       		.byte	0x0
+ 2920 00c5 00       		.byte	0x0
+ 2921 00c6 0F       		.uleb128 0xf
+ 2922 00c7 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 69
 
 
- 2923 00cf 3B       		.uleb128 0x3b
- 2924 00d0 05       		.uleb128 0x5
- 2925 00d1 27       		.uleb128 0x27
- 2926 00d2 0C       		.uleb128 0xc
- 2927 00d3 11       		.uleb128 0x11
- 2928 00d4 01       		.uleb128 0x1
- 2929 00d5 12       		.uleb128 0x12
- 2930 00d6 01       		.uleb128 0x1
- 2931 00d7 40       		.uleb128 0x40
- 2932 00d8 06       		.uleb128 0x6
- 2933 00d9 01       		.uleb128 0x1
- 2934 00da 13       		.uleb128 0x13
- 2935 00db 00       		.byte	0x0
- 2936 00dc 00       		.byte	0x0
- 2937 00dd 10       		.uleb128 0x10
- 2938 00de 34       		.uleb128 0x34
- 2939 00df 00       		.byte	0x0
- 2940 00e0 03       		.uleb128 0x3
- 2941 00e1 0E       		.uleb128 0xe
- 2942 00e2 3A       		.uleb128 0x3a
- 2943 00e3 0B       		.uleb128 0xb
- 2944 00e4 3B       		.uleb128 0x3b
- 2945 00e5 05       		.uleb128 0x5
- 2946 00e6 49       		.uleb128 0x49
- 2947 00e7 13       		.uleb128 0x13
- 2948 00e8 02       		.uleb128 0x2
- 2949 00e9 0A       		.uleb128 0xa
- 2950 00ea 00       		.byte	0x0
- 2951 00eb 00       		.byte	0x0
- 2952 00ec 11       		.uleb128 0x11
- 2953 00ed 2E       		.uleb128 0x2e
- 2954 00ee 00       		.byte	0x0
- 2955 00ef 3F       		.uleb128 0x3f
- 2956 00f0 0C       		.uleb128 0xc
- 2957 00f1 03       		.uleb128 0x3
- 2958 00f2 0E       		.uleb128 0xe
- 2959 00f3 3A       		.uleb128 0x3a
- 2960 00f4 0B       		.uleb128 0xb
- 2961 00f5 3B       		.uleb128 0x3b
- 2962 00f6 05       		.uleb128 0x5
- 2963 00f7 27       		.uleb128 0x27
- 2964 00f8 0C       		.uleb128 0xc
- 2965 00f9 11       		.uleb128 0x11
- 2966 00fa 01       		.uleb128 0x1
- 2967 00fb 12       		.uleb128 0x12
- 2968 00fc 01       		.uleb128 0x1
- 2969 00fd 40       		.uleb128 0x40
- 2970 00fe 06       		.uleb128 0x6
- 2971 00ff 00       		.byte	0x0
- 2972 0100 00       		.byte	0x0
- 2973 0101 12       		.uleb128 0x12
- 2974 0102 05       		.uleb128 0x5
- 2975 0103 00       		.byte	0x0
- 2976 0104 03       		.uleb128 0x3
- 2977 0105 0E       		.uleb128 0xe
- 2978 0106 3A       		.uleb128 0x3a
- 2979 0107 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 70
+ 2923 00c8 01       		.byte	0x1
+ 2924 00c9 3F       		.uleb128 0x3f
+ 2925 00ca 0C       		.uleb128 0xc
+ 2926 00cb 03       		.uleb128 0x3
+ 2927 00cc 0E       		.uleb128 0xe
+ 2928 00cd 3A       		.uleb128 0x3a
+ 2929 00ce 0B       		.uleb128 0xb
+ 2930 00cf 3B       		.uleb128 0x3b
+ 2931 00d0 05       		.uleb128 0x5
+ 2932 00d1 27       		.uleb128 0x27
+ 2933 00d2 0C       		.uleb128 0xc
+ 2934 00d3 11       		.uleb128 0x11
+ 2935 00d4 01       		.uleb128 0x1
+ 2936 00d5 12       		.uleb128 0x12
+ 2937 00d6 01       		.uleb128 0x1
+ 2938 00d7 40       		.uleb128 0x40
+ 2939 00d8 06       		.uleb128 0x6
+ 2940 00d9 01       		.uleb128 0x1
+ 2941 00da 13       		.uleb128 0x13
+ 2942 00db 00       		.byte	0x0
+ 2943 00dc 00       		.byte	0x0
+ 2944 00dd 10       		.uleb128 0x10
+ 2945 00de 34       		.uleb128 0x34
+ 2946 00df 00       		.byte	0x0
+ 2947 00e0 03       		.uleb128 0x3
+ 2948 00e1 0E       		.uleb128 0xe
+ 2949 00e2 3A       		.uleb128 0x3a
+ 2950 00e3 0B       		.uleb128 0xb
+ 2951 00e4 3B       		.uleb128 0x3b
+ 2952 00e5 05       		.uleb128 0x5
+ 2953 00e6 49       		.uleb128 0x49
+ 2954 00e7 13       		.uleb128 0x13
+ 2955 00e8 02       		.uleb128 0x2
+ 2956 00e9 0A       		.uleb128 0xa
+ 2957 00ea 00       		.byte	0x0
+ 2958 00eb 00       		.byte	0x0
+ 2959 00ec 11       		.uleb128 0x11
+ 2960 00ed 2E       		.uleb128 0x2e
+ 2961 00ee 00       		.byte	0x0
+ 2962 00ef 3F       		.uleb128 0x3f
+ 2963 00f0 0C       		.uleb128 0xc
+ 2964 00f1 03       		.uleb128 0x3
+ 2965 00f2 0E       		.uleb128 0xe
+ 2966 00f3 3A       		.uleb128 0x3a
+ 2967 00f4 0B       		.uleb128 0xb
+ 2968 00f5 3B       		.uleb128 0x3b
+ 2969 00f6 05       		.uleb128 0x5
+ 2970 00f7 27       		.uleb128 0x27
+ 2971 00f8 0C       		.uleb128 0xc
+ 2972 00f9 11       		.uleb128 0x11
+ 2973 00fa 01       		.uleb128 0x1
+ 2974 00fb 12       		.uleb128 0x12
+ 2975 00fc 01       		.uleb128 0x1
+ 2976 00fd 40       		.uleb128 0x40
+ 2977 00fe 06       		.uleb128 0x6
+ 2978 00ff 00       		.byte	0x0
+ 2979 0100 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 70
 
 
- 2980 0108 3B       		.uleb128 0x3b
- 2981 0109 05       		.uleb128 0x5
- 2982 010a 49       		.uleb128 0x49
- 2983 010b 13       		.uleb128 0x13
- 2984 010c 02       		.uleb128 0x2
- 2985 010d 0A       		.uleb128 0xa
- 2986 010e 00       		.byte	0x0
- 2987 010f 00       		.byte	0x0
- 2988 0110 13       		.uleb128 0x13
- 2989 0111 2E       		.uleb128 0x2e
- 2990 0112 01       		.byte	0x1
- 2991 0113 3F       		.uleb128 0x3f
- 2992 0114 0C       		.uleb128 0xc
- 2993 0115 03       		.uleb128 0x3
- 2994 0116 0E       		.uleb128 0xe
- 2995 0117 3A       		.uleb128 0x3a
- 2996 0118 0B       		.uleb128 0xb
- 2997 0119 3B       		.uleb128 0x3b
- 2998 011a 05       		.uleb128 0x5
- 2999 011b 27       		.uleb128 0x27
- 3000 011c 0C       		.uleb128 0xc
- 3001 011d 49       		.uleb128 0x49
- 3002 011e 13       		.uleb128 0x13
- 3003 011f 11       		.uleb128 0x11
- 3004 0120 01       		.uleb128 0x1
- 3005 0121 12       		.uleb128 0x12
- 3006 0122 01       		.uleb128 0x1
- 3007 0123 40       		.uleb128 0x40
- 3008 0124 06       		.uleb128 0x6
- 3009 0125 01       		.uleb128 0x1
- 3010 0126 13       		.uleb128 0x13
- 3011 0127 00       		.byte	0x0
- 3012 0128 00       		.byte	0x0
- 3013 0129 14       		.uleb128 0x14
- 3014 012a 05       		.uleb128 0x5
- 3015 012b 00       		.byte	0x0
- 3016 012c 03       		.uleb128 0x3
- 3017 012d 08       		.uleb128 0x8
- 3018 012e 3A       		.uleb128 0x3a
- 3019 012f 0B       		.uleb128 0xb
- 3020 0130 3B       		.uleb128 0x3b
- 3021 0131 05       		.uleb128 0x5
- 3022 0132 49       		.uleb128 0x49
- 3023 0133 13       		.uleb128 0x13
- 3024 0134 02       		.uleb128 0x2
- 3025 0135 0A       		.uleb128 0xa
- 3026 0136 00       		.byte	0x0
- 3027 0137 00       		.byte	0x0
- 3028 0138 15       		.uleb128 0x15
- 3029 0139 34       		.uleb128 0x34
- 3030 013a 00       		.byte	0x0
- 3031 013b 03       		.uleb128 0x3
- 3032 013c 08       		.uleb128 0x8
- 3033 013d 3A       		.uleb128 0x3a
- 3034 013e 0B       		.uleb128 0xb
- 3035 013f 3B       		.uleb128 0x3b
- 3036 0140 05       		.uleb128 0x5
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 71
+ 2980 0101 12       		.uleb128 0x12
+ 2981 0102 05       		.uleb128 0x5
+ 2982 0103 00       		.byte	0x0
+ 2983 0104 03       		.uleb128 0x3
+ 2984 0105 0E       		.uleb128 0xe
+ 2985 0106 3A       		.uleb128 0x3a
+ 2986 0107 0B       		.uleb128 0xb
+ 2987 0108 3B       		.uleb128 0x3b
+ 2988 0109 05       		.uleb128 0x5
+ 2989 010a 49       		.uleb128 0x49
+ 2990 010b 13       		.uleb128 0x13
+ 2991 010c 02       		.uleb128 0x2
+ 2992 010d 0A       		.uleb128 0xa
+ 2993 010e 00       		.byte	0x0
+ 2994 010f 00       		.byte	0x0
+ 2995 0110 13       		.uleb128 0x13
+ 2996 0111 2E       		.uleb128 0x2e
+ 2997 0112 01       		.byte	0x1
+ 2998 0113 3F       		.uleb128 0x3f
+ 2999 0114 0C       		.uleb128 0xc
+ 3000 0115 03       		.uleb128 0x3
+ 3001 0116 0E       		.uleb128 0xe
+ 3002 0117 3A       		.uleb128 0x3a
+ 3003 0118 0B       		.uleb128 0xb
+ 3004 0119 3B       		.uleb128 0x3b
+ 3005 011a 05       		.uleb128 0x5
+ 3006 011b 27       		.uleb128 0x27
+ 3007 011c 0C       		.uleb128 0xc
+ 3008 011d 49       		.uleb128 0x49
+ 3009 011e 13       		.uleb128 0x13
+ 3010 011f 11       		.uleb128 0x11
+ 3011 0120 01       		.uleb128 0x1
+ 3012 0121 12       		.uleb128 0x12
+ 3013 0122 01       		.uleb128 0x1
+ 3014 0123 40       		.uleb128 0x40
+ 3015 0124 06       		.uleb128 0x6
+ 3016 0125 01       		.uleb128 0x1
+ 3017 0126 13       		.uleb128 0x13
+ 3018 0127 00       		.byte	0x0
+ 3019 0128 00       		.byte	0x0
+ 3020 0129 14       		.uleb128 0x14
+ 3021 012a 05       		.uleb128 0x5
+ 3022 012b 00       		.byte	0x0
+ 3023 012c 03       		.uleb128 0x3
+ 3024 012d 08       		.uleb128 0x8
+ 3025 012e 3A       		.uleb128 0x3a
+ 3026 012f 0B       		.uleb128 0xb
+ 3027 0130 3B       		.uleb128 0x3b
+ 3028 0131 05       		.uleb128 0x5
+ 3029 0132 49       		.uleb128 0x49
+ 3030 0133 13       		.uleb128 0x13
+ 3031 0134 02       		.uleb128 0x2
+ 3032 0135 0A       		.uleb128 0xa
+ 3033 0136 00       		.byte	0x0
+ 3034 0137 00       		.byte	0x0
+ 3035 0138 15       		.uleb128 0x15
+ 3036 0139 34       		.uleb128 0x34
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 71
 
 
- 3037 0141 49       		.uleb128 0x49
- 3038 0142 13       		.uleb128 0x13
- 3039 0143 02       		.uleb128 0x2
- 3040 0144 0A       		.uleb128 0xa
- 3041 0145 00       		.byte	0x0
- 3042 0146 00       		.byte	0x0
- 3043 0147 16       		.uleb128 0x16
- 3044 0148 2E       		.uleb128 0x2e
- 3045 0149 00       		.byte	0x0
- 3046 014a 3F       		.uleb128 0x3f
- 3047 014b 0C       		.uleb128 0xc
- 3048 014c 03       		.uleb128 0x3
- 3049 014d 0E       		.uleb128 0xe
- 3050 014e 3A       		.uleb128 0x3a
- 3051 014f 0B       		.uleb128 0xb
- 3052 0150 3B       		.uleb128 0x3b
- 3053 0151 05       		.uleb128 0x5
- 3054 0152 27       		.uleb128 0x27
- 3055 0153 0C       		.uleb128 0xc
- 3056 0154 49       		.uleb128 0x49
- 3057 0155 13       		.uleb128 0x13
- 3058 0156 11       		.uleb128 0x11
- 3059 0157 01       		.uleb128 0x1
- 3060 0158 12       		.uleb128 0x12
- 3061 0159 01       		.uleb128 0x1
- 3062 015a 40       		.uleb128 0x40
- 3063 015b 06       		.uleb128 0x6
- 3064 015c 00       		.byte	0x0
- 3065 015d 00       		.byte	0x0
- 3066 015e 17       		.uleb128 0x17
- 3067 015f 34       		.uleb128 0x34
- 3068 0160 00       		.byte	0x0
- 3069 0161 03       		.uleb128 0x3
- 3070 0162 0E       		.uleb128 0xe
- 3071 0163 3A       		.uleb128 0x3a
- 3072 0164 0B       		.uleb128 0xb
- 3073 0165 3B       		.uleb128 0x3b
- 3074 0166 0B       		.uleb128 0xb
- 3075 0167 49       		.uleb128 0x49
- 3076 0168 13       		.uleb128 0x13
- 3077 0169 3F       		.uleb128 0x3f
- 3078 016a 0C       		.uleb128 0xc
- 3079 016b 02       		.uleb128 0x2
- 3080 016c 0A       		.uleb128 0xa
- 3081 016d 00       		.byte	0x0
- 3082 016e 00       		.byte	0x0
- 3083 016f 18       		.uleb128 0x18
- 3084 0170 01       		.uleb128 0x1
- 3085 0171 01       		.byte	0x1
- 3086 0172 49       		.uleb128 0x49
- 3087 0173 13       		.uleb128 0x13
- 3088 0174 01       		.uleb128 0x1
- 3089 0175 13       		.uleb128 0x13
- 3090 0176 00       		.byte	0x0
- 3091 0177 00       		.byte	0x0
- 3092 0178 19       		.uleb128 0x19
- 3093 0179 21       		.uleb128 0x21
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 72
+ 3037 013a 00       		.byte	0x0
+ 3038 013b 03       		.uleb128 0x3
+ 3039 013c 08       		.uleb128 0x8
+ 3040 013d 3A       		.uleb128 0x3a
+ 3041 013e 0B       		.uleb128 0xb
+ 3042 013f 3B       		.uleb128 0x3b
+ 3043 0140 05       		.uleb128 0x5
+ 3044 0141 49       		.uleb128 0x49
+ 3045 0142 13       		.uleb128 0x13
+ 3046 0143 02       		.uleb128 0x2
+ 3047 0144 0A       		.uleb128 0xa
+ 3048 0145 00       		.byte	0x0
+ 3049 0146 00       		.byte	0x0
+ 3050 0147 16       		.uleb128 0x16
+ 3051 0148 2E       		.uleb128 0x2e
+ 3052 0149 00       		.byte	0x0
+ 3053 014a 3F       		.uleb128 0x3f
+ 3054 014b 0C       		.uleb128 0xc
+ 3055 014c 03       		.uleb128 0x3
+ 3056 014d 0E       		.uleb128 0xe
+ 3057 014e 3A       		.uleb128 0x3a
+ 3058 014f 0B       		.uleb128 0xb
+ 3059 0150 3B       		.uleb128 0x3b
+ 3060 0151 05       		.uleb128 0x5
+ 3061 0152 27       		.uleb128 0x27
+ 3062 0153 0C       		.uleb128 0xc
+ 3063 0154 49       		.uleb128 0x49
+ 3064 0155 13       		.uleb128 0x13
+ 3065 0156 11       		.uleb128 0x11
+ 3066 0157 01       		.uleb128 0x1
+ 3067 0158 12       		.uleb128 0x12
+ 3068 0159 01       		.uleb128 0x1
+ 3069 015a 40       		.uleb128 0x40
+ 3070 015b 06       		.uleb128 0x6
+ 3071 015c 00       		.byte	0x0
+ 3072 015d 00       		.byte	0x0
+ 3073 015e 17       		.uleb128 0x17
+ 3074 015f 34       		.uleb128 0x34
+ 3075 0160 00       		.byte	0x0
+ 3076 0161 03       		.uleb128 0x3
+ 3077 0162 0E       		.uleb128 0xe
+ 3078 0163 3A       		.uleb128 0x3a
+ 3079 0164 0B       		.uleb128 0xb
+ 3080 0165 3B       		.uleb128 0x3b
+ 3081 0166 0B       		.uleb128 0xb
+ 3082 0167 49       		.uleb128 0x49
+ 3083 0168 13       		.uleb128 0x13
+ 3084 0169 3F       		.uleb128 0x3f
+ 3085 016a 0C       		.uleb128 0xc
+ 3086 016b 02       		.uleb128 0x2
+ 3087 016c 0A       		.uleb128 0xa
+ 3088 016d 00       		.byte	0x0
+ 3089 016e 00       		.byte	0x0
+ 3090 016f 18       		.uleb128 0x18
+ 3091 0170 01       		.uleb128 0x1
+ 3092 0171 01       		.byte	0x1
+ 3093 0172 49       		.uleb128 0x49
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 72
 
 
- 3094 017a 00       		.byte	0x0
- 3095 017b 49       		.uleb128 0x49
- 3096 017c 13       		.uleb128 0x13
- 3097 017d 2F       		.uleb128 0x2f
- 3098 017e 0B       		.uleb128 0xb
- 3099 017f 00       		.byte	0x0
- 3100 0180 00       		.byte	0x0
- 3101 0181 1A       		.uleb128 0x1a
- 3102 0182 34       		.uleb128 0x34
- 3103 0183 00       		.byte	0x0
- 3104 0184 03       		.uleb128 0x3
- 3105 0185 0E       		.uleb128 0xe
- 3106 0186 3A       		.uleb128 0x3a
- 3107 0187 0B       		.uleb128 0xb
- 3108 0188 3B       		.uleb128 0x3b
- 3109 0189 0B       		.uleb128 0xb
- 3110 018a 49       		.uleb128 0x49
- 3111 018b 13       		.uleb128 0x13
- 3112 018c 3F       		.uleb128 0x3f
- 3113 018d 0C       		.uleb128 0xc
- 3114 018e 3C       		.uleb128 0x3c
- 3115 018f 0C       		.uleb128 0xc
- 3116 0190 00       		.byte	0x0
- 3117 0191 00       		.byte	0x0
- 3118 0192 00       		.byte	0x0
- 3119              		.section	.debug_pubnames,"",%progbits
- 3120 0000 F1010000 		.4byte	0x1f1
- 3121 0004 0200     		.2byte	0x2
- 3122 0006 00000000 		.4byte	.Ldebug_info0
- 3123 000a E6050000 		.4byte	0x5e6
- 3124 000e 4E010000 		.4byte	0x14e
- 3125 0012 4446425F 		.ascii	"DFB_1_Init\000"
- 3125      315F496E 
- 3125      697400
- 3126 001d 76010000 		.4byte	0x176
- 3127 0021 4446425F 		.ascii	"DFB_1_Enable\000"
- 3127      315F456E 
- 3127      61626C65 
- 3127      00
- 3128 002e 9E010000 		.4byte	0x19e
- 3129 0032 4446425F 		.ascii	"DFB_1_Start\000"
- 3129      315F5374 
- 3129      61727400 
- 3130 003e B3010000 		.4byte	0x1b3
- 3131 0042 4446425F 		.ascii	"DFB_1_Stop\000"
- 3131      315F5374 
- 3131      6F7000
- 3132 004d DD010000 		.4byte	0x1dd
- 3133 0051 4446425F 		.ascii	"DFB_1_Pause\000"
- 3133      315F5061 
- 3133      75736500 
- 3134 005d F3010000 		.4byte	0x1f3
- 3135 0061 4446425F 		.ascii	"DFB_1_Resume\000"
- 3135      315F5265 
- 3135      73756D65 
- 3135      00
- 3136 006e 09020000 		.4byte	0x209
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 73
+ 3094 0173 13       		.uleb128 0x13
+ 3095 0174 01       		.uleb128 0x1
+ 3096 0175 13       		.uleb128 0x13
+ 3097 0176 00       		.byte	0x0
+ 3098 0177 00       		.byte	0x0
+ 3099 0178 19       		.uleb128 0x19
+ 3100 0179 21       		.uleb128 0x21
+ 3101 017a 00       		.byte	0x0
+ 3102 017b 49       		.uleb128 0x49
+ 3103 017c 13       		.uleb128 0x13
+ 3104 017d 2F       		.uleb128 0x2f
+ 3105 017e 0B       		.uleb128 0xb
+ 3106 017f 00       		.byte	0x0
+ 3107 0180 00       		.byte	0x0
+ 3108 0181 1A       		.uleb128 0x1a
+ 3109 0182 34       		.uleb128 0x34
+ 3110 0183 00       		.byte	0x0
+ 3111 0184 03       		.uleb128 0x3
+ 3112 0185 0E       		.uleb128 0xe
+ 3113 0186 3A       		.uleb128 0x3a
+ 3114 0187 0B       		.uleb128 0xb
+ 3115 0188 3B       		.uleb128 0x3b
+ 3116 0189 0B       		.uleb128 0xb
+ 3117 018a 49       		.uleb128 0x49
+ 3118 018b 13       		.uleb128 0x13
+ 3119 018c 3F       		.uleb128 0x3f
+ 3120 018d 0C       		.uleb128 0xc
+ 3121 018e 3C       		.uleb128 0x3c
+ 3122 018f 0C       		.uleb128 0xc
+ 3123 0190 00       		.byte	0x0
+ 3124 0191 00       		.byte	0x0
+ 3125 0192 00       		.byte	0x0
+ 3126              		.section	.debug_pubnames,"",%progbits
+ 3127 0000 F1010000 		.4byte	0x1f1
+ 3128 0004 0200     		.2byte	0x2
+ 3129 0006 00000000 		.4byte	.Ldebug_info0
+ 3130 000a F6050000 		.4byte	0x5f6
+ 3131 000e 4E010000 		.4byte	0x14e
+ 3132 0012 4446425F 		.ascii	"DFB_1_Init\000"
+ 3132      315F496E 
+ 3132      697400
+ 3133 001d 76010000 		.4byte	0x176
+ 3134 0021 4446425F 		.ascii	"DFB_1_Enable\000"
+ 3134      315F456E 
+ 3134      61626C65 
+ 3134      00
+ 3135 002e 9E010000 		.4byte	0x19e
+ 3136 0032 4446425F 		.ascii	"DFB_1_Start\000"
+ 3136      315F5374 
+ 3136      61727400 
+ 3137 003e B3010000 		.4byte	0x1b3
+ 3138 0042 4446425F 		.ascii	"DFB_1_Stop\000"
+ 3138      315F5374 
+ 3138      6F7000
+ 3139 004d DD010000 		.4byte	0x1dd
+ 3140 0051 4446425F 		.ascii	"DFB_1_Pause\000"
+ 3140      315F5061 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 73
 
 
- 3137 0072 4446425F 		.ascii	"DFB_1_SetCoherency\000"
- 3137      315F5365 
- 3137      74436F68 
- 3137      6572656E 
- 3137      637900
- 3138 0085 33020000 		.4byte	0x233
- 3139 0089 4446425F 		.ascii	"DFB_1_SetDalign\000"
- 3139      315F5365 
- 3139      7444616C 
- 3139      69676E00 
- 3140 0099 5D020000 		.4byte	0x25d
- 3141 009d 4446425F 		.ascii	"DFB_1_LoadDataRAMA\000"
- 3141      315F4C6F 
- 3141      61644461 
- 3141      74615241 
- 3141      4D4100
- 3142 00b0 D6020000 		.4byte	0x2d6
- 3143 00b4 4446425F 		.ascii	"DFB_1_LoadDataRAMB\000"
- 3143      315F4C6F 
- 3143      61644461 
- 3143      74615241 
- 3143      4D4200
- 3144 00c7 3E030000 		.4byte	0x33e
- 3145 00cb 4446425F 		.ascii	"DFB_1_LoadInputValue\000"
- 3145      315F4C6F 
- 3145      6164496E 
- 3145      70757456 
- 3145      616C7565 
- 3146 00e0 86030000 		.4byte	0x386
- 3147 00e4 4446425F 		.ascii	"DFB_1_GetOutputValue\000"
- 3147      315F4765 
- 3147      744F7574 
- 3147      70757456 
- 3147      616C7565 
- 3148 00f9 FF030000 		.4byte	0x3ff
- 3149 00fd 4446425F 		.ascii	"DFB_1_SetInterruptMode\000"
- 3149      315F5365 
- 3149      74496E74 
- 3149      65727275 
- 3149      70744D6F 
- 3150 0114 29040000 		.4byte	0x429
- 3151 0118 4446425F 		.ascii	"DFB_1_GetInterruptSource\000"
- 3151      315F4765 
- 3151      74496E74 
- 3151      65727275 
- 3151      7074536F 
- 3152 0131 43040000 		.4byte	0x443
- 3153 0135 4446425F 		.ascii	"DFB_1_ClearInterrupt\000"
- 3153      315F436C 
- 3153      65617249 
- 3153      6E746572 
- 3153      72757074 
- 3154 014a 6D040000 		.4byte	0x46d
- 3155 014e 4446425F 		.ascii	"DFB_1_SetDMAMode\000"
- 3155      315F5365 
- 3155      74444D41 
- 3155      4D6F6465 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 74
+ 3140      75736500 
+ 3141 005d F3010000 		.4byte	0x1f3
+ 3142 0061 4446425F 		.ascii	"DFB_1_Resume\000"
+ 3142      315F5265 
+ 3142      73756D65 
+ 3142      00
+ 3143 006e 09020000 		.4byte	0x209
+ 3144 0072 4446425F 		.ascii	"DFB_1_SetCoherency\000"
+ 3144      315F5365 
+ 3144      74436F68 
+ 3144      6572656E 
+ 3144      637900
+ 3145 0085 33020000 		.4byte	0x233
+ 3146 0089 4446425F 		.ascii	"DFB_1_SetDalign\000"
+ 3146      315F5365 
+ 3146      7444616C 
+ 3146      69676E00 
+ 3147 0099 5D020000 		.4byte	0x25d
+ 3148 009d 4446425F 		.ascii	"DFB_1_LoadDataRAMA\000"
+ 3148      315F4C6F 
+ 3148      61644461 
+ 3148      74615241 
+ 3148      4D4100
+ 3149 00b0 D6020000 		.4byte	0x2d6
+ 3150 00b4 4446425F 		.ascii	"DFB_1_LoadDataRAMB\000"
+ 3150      315F4C6F 
+ 3150      61644461 
+ 3150      74615241 
+ 3150      4D4200
+ 3151 00c7 3E030000 		.4byte	0x33e
+ 3152 00cb 4446425F 		.ascii	"DFB_1_LoadInputValue\000"
+ 3152      315F4C6F 
+ 3152      6164496E 
+ 3152      70757456 
+ 3152      616C7565 
+ 3153 00e0 86030000 		.4byte	0x386
+ 3154 00e4 4446425F 		.ascii	"DFB_1_GetOutputValue\000"
+ 3154      315F4765 
+ 3154      744F7574 
+ 3154      70757456 
+ 3154      616C7565 
+ 3155 00f9 FF030000 		.4byte	0x3ff
+ 3156 00fd 4446425F 		.ascii	"DFB_1_SetInterruptMode\000"
+ 3156      315F5365 
+ 3156      74496E74 
+ 3156      65727275 
+ 3156      70744D6F 
+ 3157 0114 29040000 		.4byte	0x429
+ 3158 0118 4446425F 		.ascii	"DFB_1_GetInterruptSource\000"
+ 3158      315F4765 
+ 3158      74496E74 
+ 3158      65727275 
+ 3158      7074536F 
+ 3159 0131 43040000 		.4byte	0x443
+ 3160 0135 4446425F 		.ascii	"DFB_1_ClearInterrupt\000"
+ 3160      315F436C 
+ 3160      65617249 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 74
 
 
- 3155      00
- 3156 015f 97040000 		.4byte	0x497
- 3157 0163 4446425F 		.ascii	"DFB_1_SetSemaphores\000"
- 3157      315F5365 
- 3157      7453656D 
- 3157      6170686F 
- 3157      72657300 
- 3158 0177 C1040000 		.4byte	0x4c1
- 3159 017b 4446425F 		.ascii	"DFB_1_GetSemaphores\000"
- 3159      315F4765 
- 3159      7453656D 
- 3159      6170686F 
- 3159      72657300 
- 3160 018f DB040000 		.4byte	0x4db
- 3161 0193 4446425F 		.ascii	"DFB_1_ClearSemaphores\000"
- 3161      315F436C 
- 3161      65617253 
- 3161      656D6170 
- 3161      686F7265 
- 3162 01a9 05050000 		.4byte	0x505
- 3163 01ad 4446425F 		.ascii	"DFB_1_SetOutput1Source\000"
- 3163      315F5365 
- 3163      744F7574 
- 3163      70757431 
- 3163      536F7572 
- 3164 01c4 2F050000 		.4byte	0x52f
- 3165 01c8 4446425F 		.ascii	"DFB_1_SetOutput2Source\000"
- 3165      315F5365 
- 3165      744F7574 
- 3165      70757432 
- 3165      536F7572 
- 3166 01df 59050000 		.4byte	0x559
- 3167 01e3 4446425F 		.ascii	"DFB_1_initVar\000"
- 3167      315F696E 
- 3167      69745661 
- 3167      7200
- 3168 01f1 00000000 		.4byte	0x0
- 3169              		.section	.debug_aranges,"",%progbits
- 3170 0000 CC000000 		.4byte	0xcc
- 3171 0004 0200     		.2byte	0x2
- 3172 0006 00000000 		.4byte	.Ldebug_info0
- 3173 000a 04       		.byte	0x4
- 3174 000b 00       		.byte	0x0
- 3175 000c 0000     		.2byte	0x0
- 3176 000e 0000     		.2byte	0x0
- 3177 0010 00000000 		.4byte	.LFB0
- 3178 0014 4E000000 		.4byte	.LFE0-.LFB0
- 3179 0018 00000000 		.4byte	.LFB1
- 3180 001c 44000000 		.4byte	.LFE1-.LFB1
- 3181 0020 00000000 		.4byte	.LFB2
- 3182 0024 B8010000 		.4byte	.LFE2-.LFB2
- 3183 0028 00000000 		.4byte	.LFB3
- 3184 002c 80000000 		.4byte	.LFE3-.LFB3
- 3185 0030 00000000 		.4byte	.LFB4
- 3186 0034 2A000000 		.4byte	.LFE4-.LFB4
- 3187 0038 00000000 		.4byte	.LFB5
- 3188 003c 6C000000 		.4byte	.LFE5-.LFB5
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 75
+ 3160      6E746572 
+ 3160      72757074 
+ 3161 014a 6D040000 		.4byte	0x46d
+ 3162 014e 4446425F 		.ascii	"DFB_1_SetDMAMode\000"
+ 3162      315F5365 
+ 3162      74444D41 
+ 3162      4D6F6465 
+ 3162      00
+ 3163 015f 97040000 		.4byte	0x497
+ 3164 0163 4446425F 		.ascii	"DFB_1_SetSemaphores\000"
+ 3164      315F5365 
+ 3164      7453656D 
+ 3164      6170686F 
+ 3164      72657300 
+ 3165 0177 C1040000 		.4byte	0x4c1
+ 3166 017b 4446425F 		.ascii	"DFB_1_GetSemaphores\000"
+ 3166      315F4765 
+ 3166      7453656D 
+ 3166      6170686F 
+ 3166      72657300 
+ 3167 018f DB040000 		.4byte	0x4db
+ 3168 0193 4446425F 		.ascii	"DFB_1_ClearSemaphores\000"
+ 3168      315F436C 
+ 3168      65617253 
+ 3168      656D6170 
+ 3168      686F7265 
+ 3169 01a9 05050000 		.4byte	0x505
+ 3170 01ad 4446425F 		.ascii	"DFB_1_SetOutput1Source\000"
+ 3170      315F5365 
+ 3170      744F7574 
+ 3170      70757431 
+ 3170      536F7572 
+ 3171 01c4 2F050000 		.4byte	0x52f
+ 3172 01c8 4446425F 		.ascii	"DFB_1_SetOutput2Source\000"
+ 3172      315F5365 
+ 3172      744F7574 
+ 3172      70757432 
+ 3172      536F7572 
+ 3173 01df 59050000 		.4byte	0x559
+ 3174 01e3 4446425F 		.ascii	"DFB_1_initVar\000"
+ 3174      315F696E 
+ 3174      69745661 
+ 3174      7200
+ 3175 01f1 00000000 		.4byte	0x0
+ 3176              		.section	.debug_aranges,"",%progbits
+ 3177 0000 CC000000 		.4byte	0xcc
+ 3178 0004 0200     		.2byte	0x2
+ 3179 0006 00000000 		.4byte	.Ldebug_info0
+ 3180 000a 04       		.byte	0x4
+ 3181 000b 00       		.byte	0x0
+ 3182 000c 0000     		.2byte	0x0
+ 3183 000e 0000     		.2byte	0x0
+ 3184 0010 00000000 		.4byte	.LFB0
+ 3185 0014 4E000000 		.4byte	.LFE0-.LFB0
+ 3186 0018 00000000 		.4byte	.LFB1
+ 3187 001c 44000000 		.4byte	.LFE1-.LFB1
+ 3188 0020 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 75
 
 
- 3189 0040 00000000 		.4byte	.LFB6
- 3190 0044 32000000 		.4byte	.LFE6-.LFB6
- 3191 0048 00000000 		.4byte	.LFB7
- 3192 004c 42000000 		.4byte	.LFE7-.LFB7
- 3193 0050 00000000 		.4byte	.LFB8
- 3194 0054 20000000 		.4byte	.LFE8-.LFB8
- 3195 0058 00000000 		.4byte	.LFB9
- 3196 005c 20000000 		.4byte	.LFE9-.LFB9
- 3197 0060 00000000 		.4byte	.LFB10
- 3198 0064 DC000000 		.4byte	.LFE10-.LFB10
- 3199 0068 00000000 		.4byte	.LFB11
- 3200 006c DC000000 		.4byte	.LFE11-.LFB11
- 3201 0070 00000000 		.4byte	.LFB12
- 3202 0074 8C000000 		.4byte	.LFE12-.LFB12
- 3203 0078 00000000 		.4byte	.LFB13
- 3204 007c D2000000 		.4byte	.LFE13-.LFB13
- 3205 0080 00000000 		.4byte	.LFB14
- 3206 0084 24000000 		.4byte	.LFE14-.LFB14
- 3207 0088 00000000 		.4byte	.LFB15
- 3208 008c 1E000000 		.4byte	.LFE15-.LFB15
- 3209 0090 00000000 		.4byte	.LFB16
- 3210 0094 38000000 		.4byte	.LFE16-.LFB16
- 3211 0098 00000000 		.4byte	.LFB17
- 3212 009c 24000000 		.4byte	.LFE17-.LFB17
- 3213 00a0 00000000 		.4byte	.LFB18
- 3214 00a4 30000000 		.4byte	.LFE18-.LFB18
- 3215 00a8 00000000 		.4byte	.LFB19
- 3216 00ac 1C000000 		.4byte	.LFE19-.LFB19
- 3217 00b0 00000000 		.4byte	.LFB20
- 3218 00b4 2A000000 		.4byte	.LFE20-.LFB20
- 3219 00b8 00000000 		.4byte	.LFB21
- 3220 00bc 36000000 		.4byte	.LFE21-.LFB21
- 3221 00c0 00000000 		.4byte	.LFB22
- 3222 00c4 36000000 		.4byte	.LFE22-.LFB22
- 3223 00c8 00000000 		.4byte	0x0
- 3224 00cc 00000000 		.4byte	0x0
- 3225              		.section	.debug_ranges,"",%progbits
- 3226              	.Ldebug_ranges0:
- 3227 0000 00000000 		.4byte	.Ltext0
- 3228 0004 00000000 		.4byte	.Letext0
- 3229 0008 00000000 		.4byte	.LFB0
- 3230 000c 4E000000 		.4byte	.LFE0
- 3231 0010 00000000 		.4byte	.LFB1
- 3232 0014 44000000 		.4byte	.LFE1
- 3233 0018 00000000 		.4byte	.LFB2
- 3234 001c B8010000 		.4byte	.LFE2
- 3235 0020 00000000 		.4byte	.LFB3
- 3236 0024 80000000 		.4byte	.LFE3
- 3237 0028 00000000 		.4byte	.LFB4
- 3238 002c 2A000000 		.4byte	.LFE4
- 3239 0030 00000000 		.4byte	.LFB5
- 3240 0034 6C000000 		.4byte	.LFE5
- 3241 0038 00000000 		.4byte	.LFB6
- 3242 003c 32000000 		.4byte	.LFE6
- 3243 0040 00000000 		.4byte	.LFB7
- 3244 0044 42000000 		.4byte	.LFE7
- 3245 0048 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 76
+ 3189 0024 B8010000 		.4byte	.LFE2-.LFB2
+ 3190 0028 00000000 		.4byte	.LFB3
+ 3191 002c 80000000 		.4byte	.LFE3-.LFB3
+ 3192 0030 00000000 		.4byte	.LFB4
+ 3193 0034 2A000000 		.4byte	.LFE4-.LFB4
+ 3194 0038 00000000 		.4byte	.LFB5
+ 3195 003c 6C000000 		.4byte	.LFE5-.LFB5
+ 3196 0040 00000000 		.4byte	.LFB6
+ 3197 0044 32000000 		.4byte	.LFE6-.LFB6
+ 3198 0048 00000000 		.4byte	.LFB7
+ 3199 004c 42000000 		.4byte	.LFE7-.LFB7
+ 3200 0050 00000000 		.4byte	.LFB8
+ 3201 0054 20000000 		.4byte	.LFE8-.LFB8
+ 3202 0058 00000000 		.4byte	.LFB9
+ 3203 005c 20000000 		.4byte	.LFE9-.LFB9
+ 3204 0060 00000000 		.4byte	.LFB10
+ 3205 0064 DC000000 		.4byte	.LFE10-.LFB10
+ 3206 0068 00000000 		.4byte	.LFB11
+ 3207 006c DC000000 		.4byte	.LFE11-.LFB11
+ 3208 0070 00000000 		.4byte	.LFB12
+ 3209 0074 8C000000 		.4byte	.LFE12-.LFB12
+ 3210 0078 00000000 		.4byte	.LFB13
+ 3211 007c D2000000 		.4byte	.LFE13-.LFB13
+ 3212 0080 00000000 		.4byte	.LFB14
+ 3213 0084 24000000 		.4byte	.LFE14-.LFB14
+ 3214 0088 00000000 		.4byte	.LFB15
+ 3215 008c 1E000000 		.4byte	.LFE15-.LFB15
+ 3216 0090 00000000 		.4byte	.LFB16
+ 3217 0094 38000000 		.4byte	.LFE16-.LFB16
+ 3218 0098 00000000 		.4byte	.LFB17
+ 3219 009c 24000000 		.4byte	.LFE17-.LFB17
+ 3220 00a0 00000000 		.4byte	.LFB18
+ 3221 00a4 30000000 		.4byte	.LFE18-.LFB18
+ 3222 00a8 00000000 		.4byte	.LFB19
+ 3223 00ac 1C000000 		.4byte	.LFE19-.LFB19
+ 3224 00b0 00000000 		.4byte	.LFB20
+ 3225 00b4 2A000000 		.4byte	.LFE20-.LFB20
+ 3226 00b8 00000000 		.4byte	.LFB21
+ 3227 00bc 36000000 		.4byte	.LFE21-.LFB21
+ 3228 00c0 00000000 		.4byte	.LFB22
+ 3229 00c4 36000000 		.4byte	.LFE22-.LFB22
+ 3230 00c8 00000000 		.4byte	0x0
+ 3231 00cc 00000000 		.4byte	0x0
+ 3232              		.section	.debug_ranges,"",%progbits
+ 3233              	.Ldebug_ranges0:
+ 3234 0000 00000000 		.4byte	.Ltext0
+ 3235 0004 00000000 		.4byte	.Letext0
+ 3236 0008 00000000 		.4byte	.LFB0
+ 3237 000c 4E000000 		.4byte	.LFE0
+ 3238 0010 00000000 		.4byte	.LFB1
+ 3239 0014 44000000 		.4byte	.LFE1
+ 3240 0018 00000000 		.4byte	.LFB2
+ 3241 001c B8010000 		.4byte	.LFE2
+ 3242 0020 00000000 		.4byte	.LFB3
+ 3243 0024 80000000 		.4byte	.LFE3
+ 3244 0028 00000000 		.4byte	.LFB4
+ 3245 002c 2A000000 		.4byte	.LFE4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 76
 
 
- 3246 004c 20000000 		.4byte	.LFE8
- 3247 0050 00000000 		.4byte	.LFB9
- 3248 0054 20000000 		.4byte	.LFE9
- 3249 0058 00000000 		.4byte	.LFB10
- 3250 005c DC000000 		.4byte	.LFE10
- 3251 0060 00000000 		.4byte	.LFB11
- 3252 0064 DC000000 		.4byte	.LFE11
- 3253 0068 00000000 		.4byte	.LFB12
- 3254 006c 8C000000 		.4byte	.LFE12
- 3255 0070 00000000 		.4byte	.LFB13
- 3256 0074 D2000000 		.4byte	.LFE13
- 3257 0078 00000000 		.4byte	.LFB14
- 3258 007c 24000000 		.4byte	.LFE14
- 3259 0080 00000000 		.4byte	.LFB15
- 3260 0084 1E000000 		.4byte	.LFE15
- 3261 0088 00000000 		.4byte	.LFB16
- 3262 008c 38000000 		.4byte	.LFE16
- 3263 0090 00000000 		.4byte	.LFB17
- 3264 0094 24000000 		.4byte	.LFE17
- 3265 0098 00000000 		.4byte	.LFB18
- 3266 009c 30000000 		.4byte	.LFE18
- 3267 00a0 00000000 		.4byte	.LFB19
- 3268 00a4 1C000000 		.4byte	.LFE19
- 3269 00a8 00000000 		.4byte	.LFB20
- 3270 00ac 2A000000 		.4byte	.LFE20
- 3271 00b0 00000000 		.4byte	.LFB21
- 3272 00b4 36000000 		.4byte	.LFE21
- 3273 00b8 00000000 		.4byte	.LFB22
- 3274 00bc 36000000 		.4byte	.LFE22
- 3275 00c0 00000000 		.4byte	0x0
- 3276 00c4 00000000 		.4byte	0x0
- 3277              		.section	.debug_str,"MS",%progbits,1
- 3278              	.LASF17:
- 3279 0000 636F756E 		.ascii	"count\000"
- 3279      7400
- 3280              	.LASF7:
- 3281 0006 6C6F6E67 		.ascii	"long long unsigned int\000"
- 3281      206C6F6E 
- 3281      6720756E 
- 3281      7369676E 
- 3281      65642069 
- 3282              	.LASF31:
- 3283 001d 61646472 		.ascii	"addr\000"
- 3283      00
- 3284              	.LASF22:
- 3285 0022 4446425F 		.ascii	"DFB_1_Enable\000"
- 3285      315F456E 
- 3285      61626C65 
- 3285      00
- 3286              	.LASF64:
- 3287 002f 474E5520 		.ascii	"GNU C 4.4.1\000"
- 3287      4320342E 
- 3287      342E3100 
- 3288              	.LASF38:
- 3289 003b 73616D70 		.ascii	"sample\000"
- 3289      6C6500
- 3290              	.LASF6:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 77
+ 3246 0030 00000000 		.4byte	.LFB5
+ 3247 0034 6C000000 		.4byte	.LFE5
+ 3248 0038 00000000 		.4byte	.LFB6
+ 3249 003c 32000000 		.4byte	.LFE6
+ 3250 0040 00000000 		.4byte	.LFB7
+ 3251 0044 42000000 		.4byte	.LFE7
+ 3252 0048 00000000 		.4byte	.LFB8
+ 3253 004c 20000000 		.4byte	.LFE8
+ 3254 0050 00000000 		.4byte	.LFB9
+ 3255 0054 20000000 		.4byte	.LFE9
+ 3256 0058 00000000 		.4byte	.LFB10
+ 3257 005c DC000000 		.4byte	.LFE10
+ 3258 0060 00000000 		.4byte	.LFB11
+ 3259 0064 DC000000 		.4byte	.LFE11
+ 3260 0068 00000000 		.4byte	.LFB12
+ 3261 006c 8C000000 		.4byte	.LFE12
+ 3262 0070 00000000 		.4byte	.LFB13
+ 3263 0074 D2000000 		.4byte	.LFE13
+ 3264 0078 00000000 		.4byte	.LFB14
+ 3265 007c 24000000 		.4byte	.LFE14
+ 3266 0080 00000000 		.4byte	.LFB15
+ 3267 0084 1E000000 		.4byte	.LFE15
+ 3268 0088 00000000 		.4byte	.LFB16
+ 3269 008c 38000000 		.4byte	.LFE16
+ 3270 0090 00000000 		.4byte	.LFB17
+ 3271 0094 24000000 		.4byte	.LFE17
+ 3272 0098 00000000 		.4byte	.LFB18
+ 3273 009c 30000000 		.4byte	.LFE18
+ 3274 00a0 00000000 		.4byte	.LFB19
+ 3275 00a4 1C000000 		.4byte	.LFE19
+ 3276 00a8 00000000 		.4byte	.LFB20
+ 3277 00ac 2A000000 		.4byte	.LFE20
+ 3278 00b0 00000000 		.4byte	.LFB21
+ 3279 00b4 36000000 		.4byte	.LFE21
+ 3280 00b8 00000000 		.4byte	.LFB22
+ 3281 00bc 36000000 		.4byte	.LFE22
+ 3282 00c0 00000000 		.4byte	0x0
+ 3283 00c4 00000000 		.4byte	0x0
+ 3284              		.section	.debug_str,"MS",%progbits,1
+ 3285              	.LASF17:
+ 3286 0000 636F756E 		.ascii	"count\000"
+ 3286      7400
+ 3287              	.LASF7:
+ 3288 0006 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3288      206C6F6E 
+ 3288      6720756E 
+ 3288      7369676E 
+ 3288      65642069 
+ 3289              	.LASF31:
+ 3290 001d 61646472 		.ascii	"addr\000"
+ 3290      00
+ 3291              	.LASF22:
+ 3292 0022 4446425F 		.ascii	"DFB_1_Enable\000"
+ 3292      315F456E 
+ 3292      61626C65 
+ 3292      00
+ 3293              	.LASF64:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 77
 
 
- 3291 0042 6C6F6E67 		.ascii	"long long int\000"
- 3291      206C6F6E 
- 3291      6720696E 
- 3291      7400
- 3292              	.LASF0:
- 3293 0050 7369676E 		.ascii	"signed char\000"
- 3293      65642063 
- 3293      68617200 
- 3294              	.LASF51:
- 3295 005c 4446425F 		.ascii	"DFB_1_SetSemaphores\000"
- 3295      315F5365 
- 3295      7453656D 
- 3295      6170686F 
- 3295      72657300 
- 3296              	.LASF11:
- 3297 0070 696E7433 		.ascii	"int32\000"
- 3297      3200
- 3298              	.LASF53:
- 3299 0076 4446425F 		.ascii	"DFB_1_GetInterruptSource\000"
- 3299      315F4765 
- 3299      74496E74 
- 3299      65727275 
- 3299      7074536F 
- 3300              	.LASF4:
- 3301 008f 6C6F6E67 		.ascii	"long int\000"
- 3301      20696E74 
- 3301      00
- 3302              	.LASF26:
- 3303 0098 4446425F 		.ascii	"DFB_1_Resume\000"
- 3303      315F5265 
- 3303      73756D65 
- 3303      00
- 3304              	.LASF56:
- 3305 00a5 4446425F 		.ascii	"DFB_1_SetOutput1Source\000"
- 3305      315F5365 
- 3305      744F7574 
- 3305      70757431 
- 3305      536F7572 
- 3306              	.LASF48:
- 3307 00bc 4446425F 		.ascii	"DFB_1_ClearInterrupt\000"
- 3307      315F436C 
- 3307      65617249 
- 3307      6E746572 
- 3307      72757074 
- 3308              	.LASF18:
- 3309 00d1 4446425F 		.ascii	"DFB_1_LoadReg32\000"
- 3309      315F4C6F 
- 3309      61645265 
- 3309      67333200 
- 3310              	.LASF9:
- 3311 00e1 75696E74 		.ascii	"uint8\000"
- 3311      3800
- 3312              	.LASF13:
- 3313 00e7 646F7562 		.ascii	"double\000"
- 3313      6C6500
- 3314              	.LASF10:
- 3315 00ee 75696E74 		.ascii	"uint32\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 78
+ 3294 002f 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 3294      4320342E 
+ 3294      342E3100 
+ 3295              	.LASF38:
+ 3296 003b 73616D70 		.ascii	"sample\000"
+ 3296      6C6500
+ 3297              	.LASF6:
+ 3298 0042 6C6F6E67 		.ascii	"long long int\000"
+ 3298      206C6F6E 
+ 3298      6720696E 
+ 3298      7400
+ 3299              	.LASF0:
+ 3300 0050 7369676E 		.ascii	"signed char\000"
+ 3300      65642063 
+ 3300      68617200 
+ 3301              	.LASF51:
+ 3302 005c 4446425F 		.ascii	"DFB_1_SetSemaphores\000"
+ 3302      315F5365 
+ 3302      7453656D 
+ 3302      6170686F 
+ 3302      72657300 
+ 3303              	.LASF11:
+ 3304 0070 696E7433 		.ascii	"int32\000"
+ 3304      3200
+ 3305              	.LASF53:
+ 3306 0076 4446425F 		.ascii	"DFB_1_GetInterruptSource\000"
+ 3306      315F4765 
+ 3306      74496E74 
+ 3306      65727275 
+ 3306      7074536F 
+ 3307              	.LASF4:
+ 3308 008f 6C6F6E67 		.ascii	"long int\000"
+ 3308      20696E74 
+ 3308      00
+ 3309              	.LASF26:
+ 3310 0098 4446425F 		.ascii	"DFB_1_Resume\000"
+ 3310      315F5265 
+ 3310      73756D65 
+ 3310      00
+ 3311              	.LASF56:
+ 3312 00a5 4446425F 		.ascii	"DFB_1_SetOutput1Source\000"
+ 3312      315F5365 
+ 3312      744F7574 
+ 3312      70757431 
+ 3312      536F7572 
+ 3313              	.LASF48:
+ 3314 00bc 4446425F 		.ascii	"DFB_1_ClearInterrupt\000"
+ 3314      315F436C 
+ 3314      65617249 
+ 3314      6E746572 
+ 3314      72757074 
+ 3315              	.LASF18:
+ 3316 00d1 4446425F 		.ascii	"DFB_1_LoadReg32\000"
+ 3316      315F4C6F 
+ 3316      61645265 
+ 3316      67333200 
+ 3317              	.LASF9:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 78
 
 
- 3315      333200
- 3316              	.LASF52:
- 3317 00f5 6D61736B 		.ascii	"mask\000"
- 3317      00
- 3318              	.LASF39:
- 3319 00fa 76616C75 		.ascii	"value\000"
- 3319      6500
- 3320              	.LASF8:
- 3321 0100 756E7369 		.ascii	"unsigned int\000"
- 3321      676E6564 
- 3321      20696E74 
- 3321      00
- 3322              	.LASF5:
- 3323 010d 6C6F6E67 		.ascii	"long unsigned int\000"
- 3323      20756E73 
- 3323      69676E65 
- 3323      6420696E 
- 3323      7400
- 3324              	.LASF15:
- 3325 011f 72656741 		.ascii	"regAddress\000"
- 3325      64647265 
- 3325      737300
- 3326              	.LASF32:
- 3327 012a 73697A65 		.ascii	"size\000"
- 3327      00
- 3328              	.LASF3:
- 3329 012f 73686F72 		.ascii	"short unsigned int\000"
- 3329      7420756E 
- 3329      7369676E 
- 3329      65642069 
- 3329      6E7400
- 3330              	.LASF61:
- 3331 0142 4446425F 		.ascii	"DFB_1_data_b\000"
- 3331      315F6461 
- 3331      74615F62 
- 3331      00
- 3332              	.LASF30:
- 3333 014f 64616C69 		.ascii	"dalignKeyByte\000"
- 3333      676E4B65 
- 3333      79427974 
- 3333      6500
- 3334              	.LASF63:
- 3335 015d 4446425F 		.ascii	"DFB_1_acu\000"
- 3335      315F6163 
- 3335      7500
- 3336              	.LASF23:
- 3337 0167 4446425F 		.ascii	"DFB_1_Stop\000"
- 3337      315F5374 
- 3337      6F7000
- 3338              	.LASF45:
- 3339 0172 6F757470 		.ascii	"output\000"
- 3339      757400
- 3340              	.LASF16:
- 3341 0179 736F7572 		.ascii	"source\000"
- 3341      636500
- 3342              	.LASF41:
- 3343 0180 64617461 		.ascii	"data0\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 79
+ 3318 00e1 75696E74 		.ascii	"uint8\000"
+ 3318      3800
+ 3319              	.LASF13:
+ 3320 00e7 646F7562 		.ascii	"double\000"
+ 3320      6C6500
+ 3321              	.LASF10:
+ 3322 00ee 75696E74 		.ascii	"uint32\000"
+ 3322      333200
+ 3323              	.LASF52:
+ 3324 00f5 6D61736B 		.ascii	"mask\000"
+ 3324      00
+ 3325              	.LASF39:
+ 3326 00fa 76616C75 		.ascii	"value\000"
+ 3326      6500
+ 3327              	.LASF8:
+ 3328 0100 756E7369 		.ascii	"unsigned int\000"
+ 3328      676E6564 
+ 3328      20696E74 
+ 3328      00
+ 3329              	.LASF5:
+ 3330 010d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3330      20756E73 
+ 3330      69676E65 
+ 3330      6420696E 
+ 3330      7400
+ 3331              	.LASF15:
+ 3332 011f 72656741 		.ascii	"regAddress\000"
+ 3332      64647265 
+ 3332      737300
+ 3333              	.LASF32:
+ 3334 012a 73697A65 		.ascii	"size\000"
+ 3334      00
+ 3335              	.LASF3:
+ 3336 012f 73686F72 		.ascii	"short unsigned int\000"
+ 3336      7420756E 
+ 3336      7369676E 
+ 3336      65642069 
+ 3336      6E7400
+ 3337              	.LASF61:
+ 3338 0142 4446425F 		.ascii	"DFB_1_data_b\000"
+ 3338      315F6461 
+ 3338      74615F62 
+ 3338      00
+ 3339              	.LASF30:
+ 3340 014f 64616C69 		.ascii	"dalignKeyByte\000"
+ 3340      676E4B65 
+ 3340      79427974 
+ 3340      6500
+ 3341              	.LASF63:
+ 3342 015d 4446425F 		.ascii	"DFB_1_acu\000"
+ 3342      315F6163 
+ 3342      7500
+ 3343              	.LASF23:
+ 3344 0167 4446425F 		.ascii	"DFB_1_Stop\000"
+ 3344      315F5374 
+ 3344      6F7000
+ 3345              	.LASF45:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 79
 
 
- 3343      3000
- 3344              	.LASF42:
- 3345 0186 64617461 		.ascii	"data1\000"
- 3345      3100
- 3346              	.LASF43:
- 3347 018c 64617461 		.ascii	"data2\000"
- 3347      3200
- 3348              	.LASF44:
- 3349 0192 64617461 		.ascii	"data3\000"
- 3349      3300
- 3350              	.LASF59:
- 3351 0198 4446425F 		.ascii	"DFB_1_control\000"
- 3351      315F636F 
- 3351      6E74726F 
- 3351      6C00
- 3352              	.LASF25:
- 3353 01a6 4446425F 		.ascii	"DFB_1_Pause\000"
- 3353      315F5061 
- 3353      75736500 
- 3354              	.LASF40:
- 3355 01b2 4446425F 		.ascii	"DFB_1_GetOutputValue\000"
- 3355      315F4765 
- 3355      744F7574 
- 3355      70757456 
- 3355      616C7565 
- 3356              	.LASF58:
- 3357 01c7 4446425F 		.ascii	"DFB_1_initVar\000"
- 3357      315F696E 
- 3357      69745661 
- 3357      7200
- 3358              	.LASF12:
- 3359 01d5 666C6F61 		.ascii	"float\000"
- 3359      7400
- 3360              	.LASF55:
- 3361 01db 4446425F 		.ascii	"DFB_1_ClearSemaphores\000"
- 3361      315F436C 
- 3361      65617253 
- 3361      656D6170 
- 3361      686F7265 
- 3362              	.LASF28:
- 3363 01f1 636F6865 		.ascii	"coherencyKeyByte\000"
- 3363      72656E63 
- 3363      794B6579 
- 3363      42797465 
- 3363      00
- 3364              	.LASF1:
- 3365 0202 756E7369 		.ascii	"unsigned char\000"
- 3365      676E6564 
- 3365      20636861 
- 3365      7200
- 3366              	.LASF27:
- 3367 0210 4446425F 		.ascii	"DFB_1_SetCoherency\000"
- 3367      315F5365 
- 3367      74436F68 
- 3367      6572656E 
- 3367      637900
- 3368              	.LASF2:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 80
+ 3346 0172 6F757470 		.ascii	"output\000"
+ 3346      757400
+ 3347              	.LASF16:
+ 3348 0179 736F7572 		.ascii	"source\000"
+ 3348      636500
+ 3349              	.LASF41:
+ 3350 0180 64617461 		.ascii	"data0\000"
+ 3350      3000
+ 3351              	.LASF42:
+ 3352 0186 64617461 		.ascii	"data1\000"
+ 3352      3100
+ 3353              	.LASF43:
+ 3354 018c 64617461 		.ascii	"data2\000"
+ 3354      3200
+ 3355              	.LASF44:
+ 3356 0192 64617461 		.ascii	"data3\000"
+ 3356      3300
+ 3357              	.LASF59:
+ 3358 0198 4446425F 		.ascii	"DFB_1_control\000"
+ 3358      315F636F 
+ 3358      6E74726F 
+ 3358      6C00
+ 3359              	.LASF25:
+ 3360 01a6 4446425F 		.ascii	"DFB_1_Pause\000"
+ 3360      315F5061 
+ 3360      75736500 
+ 3361              	.LASF40:
+ 3362 01b2 4446425F 		.ascii	"DFB_1_GetOutputValue\000"
+ 3362      315F4765 
+ 3362      744F7574 
+ 3362      70757456 
+ 3362      616C7565 
+ 3363              	.LASF58:
+ 3364 01c7 4446425F 		.ascii	"DFB_1_initVar\000"
+ 3364      315F696E 
+ 3364      69745661 
+ 3364      7200
+ 3365              	.LASF12:
+ 3366 01d5 666C6F61 		.ascii	"float\000"
+ 3366      7400
+ 3367              	.LASF55:
+ 3368 01db 4446425F 		.ascii	"DFB_1_ClearSemaphores\000"
+ 3368      315F436C 
+ 3368      65617253 
+ 3368      656D6170 
+ 3368      686F7265 
+ 3369              	.LASF28:
+ 3370 01f1 636F6865 		.ascii	"coherencyKeyByte\000"
+ 3370      72656E63 
+ 3370      794B6579 
+ 3370      42797465 
+ 3370      00
+ 3371              	.LASF1:
+ 3372 0202 756E7369 		.ascii	"unsigned char\000"
+ 3372      676E6564 
+ 3372      20636861 
+ 3372      7200
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 80
 
 
- 3369 0223 73686F72 		.ascii	"short int\000"
- 3369      7420696E 
- 3369      7400
- 3370              	.LASF49:
- 3371 022d 696E7465 		.ascii	"interruptMask\000"
- 3371      72727570 
- 3371      744D6173 
- 3371      6B00
- 3372              	.LASF34:
- 3373 023b 4446425F 		.ascii	"DFB_1_LoadDataRAMA\000"
- 3373      315F4C6F 
- 3373      61644461 
- 3373      74615241 
- 3373      4D4100
- 3374              	.LASF65:
- 3375 024e 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\DFB_1.c\000"
- 3375      6E657261 
- 3375      7465645F 
- 3375      536F7572 
- 3375      63655C50 
- 3376              	.LASF37:
- 3377 026f 6368616E 		.ascii	"channel\000"
- 3377      6E656C00 
- 3378              	.LASF57:
- 3379 0277 4446425F 		.ascii	"DFB_1_SetOutput2Source\000"
- 3379      315F5365 
- 3379      744F7574 
- 3379      70757432 
- 3379      536F7572 
- 3380              	.LASF47:
- 3381 028e 6576656E 		.ascii	"events\000"
- 3381      747300
- 3382              	.LASF14:
- 3383 0295 63686172 		.ascii	"char\000"
- 3383      00
- 3384              	.LASF35:
- 3385 029a 4446425F 		.ascii	"DFB_1_LoadDataRAMB\000"
- 3385      315F4C6F 
- 3385      61644461 
- 3385      74615241 
- 3385      4D4200
- 3386              	.LASF19:
- 3387 02ad 4446425F 		.ascii	"DFB_1_ZeroReg32\000"
- 3387      315F5A65 
- 3387      726F5265 
- 3387      67333200 
- 3388              	.LASF60:
- 3389 02bd 4446425F 		.ascii	"DFB_1_data_a\000"
- 3389      315F6461 
- 3389      74615F61 
- 3389      00
- 3390              	.LASF36:
- 3391 02ca 4446425F 		.ascii	"DFB_1_LoadInputValue\000"
- 3391      315F4C6F 
- 3391      6164496E 
- 3391      70757456 
- 3391      616C7565 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccil7xJT.s 			page 81
+ 3373              	.LASF27:
+ 3374 0210 4446425F 		.ascii	"DFB_1_SetCoherency\000"
+ 3374      315F5365 
+ 3374      74436F68 
+ 3374      6572656E 
+ 3374      637900
+ 3375              	.LASF2:
+ 3376 0223 73686F72 		.ascii	"short int\000"
+ 3376      7420696E 
+ 3376      7400
+ 3377              	.LASF49:
+ 3378 022d 696E7465 		.ascii	"interruptMask\000"
+ 3378      72727570 
+ 3378      744D6173 
+ 3378      6B00
+ 3379              	.LASF34:
+ 3380 023b 4446425F 		.ascii	"DFB_1_LoadDataRAMA\000"
+ 3380      315F4C6F 
+ 3380      61644461 
+ 3380      74615241 
+ 3380      4D4100
+ 3381              	.LASF65:
+ 3382 024e 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\DFB_1.c\000"
+ 3382      6E657261 
+ 3382      7465645F 
+ 3382      536F7572 
+ 3382      63655C50 
+ 3383              	.LASF37:
+ 3384 026f 6368616E 		.ascii	"channel\000"
+ 3384      6E656C00 
+ 3385              	.LASF57:
+ 3386 0277 4446425F 		.ascii	"DFB_1_SetOutput2Source\000"
+ 3386      315F5365 
+ 3386      744F7574 
+ 3386      70757432 
+ 3386      536F7572 
+ 3387              	.LASF47:
+ 3388 028e 6576656E 		.ascii	"events\000"
+ 3388      747300
+ 3389              	.LASF14:
+ 3390 0295 63686172 		.ascii	"char\000"
+ 3390      00
+ 3391              	.LASF35:
+ 3392 029a 4446425F 		.ascii	"DFB_1_LoadDataRAMB\000"
+ 3392      315F4C6F 
+ 3392      61644461 
+ 3392      74615241 
+ 3392      4D4200
+ 3393              	.LASF19:
+ 3394 02ad 4446425F 		.ascii	"DFB_1_ZeroReg32\000"
+ 3394      315F5A65 
+ 3394      726F5265 
+ 3394      67333200 
+ 3395              	.LASF60:
+ 3396 02bd 4446425F 		.ascii	"DFB_1_data_a\000"
+ 3396      315F6461 
+ 3396      74615F61 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 81
 
 
- 3392              	.LASF24:
- 3393 02df 4446425F 		.ascii	"DFB_1_Start\000"
- 3393      315F5374 
- 3393      61727400 
- 3394              	.LASF29:
- 3395 02eb 4446425F 		.ascii	"DFB_1_SetDalign\000"
- 3395      315F5365 
- 3395      7444616C 
- 3395      69676E00 
- 3396              	.LASF20:
- 3397 02fb 656E6162 		.ascii	"enableInterrupts\000"
- 3397      6C65496E 
- 3397      74657272 
- 3397      75707473 
- 3397      00
- 3398              	.LASF21:
- 3399 030c 4446425F 		.ascii	"DFB_1_Init\000"
- 3399      315F496E 
- 3399      697400
- 3400              	.LASF62:
- 3401 0317 4446425F 		.ascii	"DFB_1_cfsm\000"
- 3401      315F6366 
- 3401      736D00
- 3402              	.LASF50:
- 3403 0322 4446425F 		.ascii	"DFB_1_SetDMAMode\000"
- 3403      315F5365 
- 3403      74444D41 
- 3403      4D6F6465 
- 3403      00
- 3404              	.LASF66:
- 3405 0333 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
- 3405      73657273 
- 3405      5C686F61 
- 3405      6E67705C 
- 3405      446F6375 
- 3406 0360 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
- 3406      6E766572 
- 3406      745C696E 
- 3406      76657274 
- 3406      2E637964 
- 3407              	.LASF46:
- 3408 0377 4446425F 		.ascii	"DFB_1_SetInterruptMode\000"
- 3408      315F5365 
- 3408      74496E74 
- 3408      65727275 
- 3408      70744D6F 
- 3409              	.LASF33:
- 3410 038e 72657375 		.ascii	"result\000"
- 3410      6C7400
- 3411              	.LASF54:
- 3412 0395 4446425F 		.ascii	"DFB_1_GetSemaphores\000"
- 3412      315F4765 
- 3412      7453656D 
- 3412      6170686F 
- 3412      72657300 
- 3413              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
+ 3396      00
+ 3397              	.LASF36:
+ 3398 02ca 4446425F 		.ascii	"DFB_1_LoadInputValue\000"
+ 3398      315F4C6F 
+ 3398      6164496E 
+ 3398      70757456 
+ 3398      616C7565 
+ 3399              	.LASF24:
+ 3400 02df 4446425F 		.ascii	"DFB_1_Start\000"
+ 3400      315F5374 
+ 3400      61727400 
+ 3401              	.LASF29:
+ 3402 02eb 4446425F 		.ascii	"DFB_1_SetDalign\000"
+ 3402      315F5365 
+ 3402      7444616C 
+ 3402      69676E00 
+ 3403              	.LASF20:
+ 3404 02fb 656E6162 		.ascii	"enableInterrupts\000"
+ 3404      6C65496E 
+ 3404      74657272 
+ 3404      75707473 
+ 3404      00
+ 3405              	.LASF21:
+ 3406 030c 4446425F 		.ascii	"DFB_1_Init\000"
+ 3406      315F496E 
+ 3406      697400
+ 3407              	.LASF62:
+ 3408 0317 4446425F 		.ascii	"DFB_1_cfsm\000"
+ 3408      315F6366 
+ 3408      736D00
+ 3409              	.LASF50:
+ 3410 0322 4446425F 		.ascii	"DFB_1_SetDMAMode\000"
+ 3410      315F5365 
+ 3410      74444D41 
+ 3410      4D6F6465 
+ 3410      00
+ 3411              	.LASF66:
+ 3412 0333 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 3412      73657273 
+ 3412      5C686F61 
+ 3412      6E67705C 
+ 3412      446F6375 
+ 3413 0360 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 3413      6E766572 
+ 3413      745C696E 
+ 3413      76657274 
+ 3413      2E637964 
+ 3414              	.LASF46:
+ 3415 0377 4446425F 		.ascii	"DFB_1_SetInterruptMode\000"
+ 3415      315F5365 
+ 3415      74496E74 
+ 3415      65727275 
+ 3415      70744D6F 
+ 3416              	.LASF33:
+ 3417 038e 72657375 		.ascii	"result\000"
+ 3417      6C7400
+ 3418              	.LASF54:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccgjX9nd.s 			page 82
+
+
+ 3419 0395 4446425F 		.ascii	"DFB_1_GetSemaphores\000"
+ 3419      315F4765 
+ 3419      7453656D 
+ 3419      6170686F 
+ 3419      72657300 
+ 3420              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"
