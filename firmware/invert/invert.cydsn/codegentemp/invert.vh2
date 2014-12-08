@@ -2,7 +2,7 @@
 --	Conversion of invert.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Dec 07 18:49:47 2014
+--	Mon Dec 08 14:01:09 2014
 --
 
 USE cypress.cypress.all;
@@ -12,7 +12,7 @@ ATTRIBUTE part_name of top_RTL:TYPE IS "cpsoc3";
 END top_RTL;
 --------------------------------------------------------
 ARCHITECTURE R_T_L OF top_RTL IS
-SIGNAL Net_582 : bit;
+SIGNAL Net_844 : bit;
 SIGNAL one : bit;
 SIGNAL \PWM_BUCK:PWMUDB:ClockOutFromEnBlock\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:tc_reg_i\ : bit;
@@ -825,7 +825,7 @@ SIGNAL Net_309 : bit;
 SIGNAL \UART_1:BUART:txn\ : bit;
 SIGNAL Net_408 : bit;
 SIGNAL \UART_1:BUART:tx_interrupt_out\ : bit;
-SIGNAL Net_409 : bit;
+SIGNAL Net_762 : bit;
 SIGNAL \UART_1:BUART:rx_interrupt_out\ : bit;
 SIGNAL \UART_1:BUART:tx_state_1\ : bit;
 SIGNAL \UART_1:BUART:tx_state_0\ : bit;
@@ -1374,17 +1374,6 @@ SIGNAL tmpFB_0__BUCK_HS_net_0 : bit;
 SIGNAL tmpIO_0__BUCK_HS_net_0 : bit;
 TERMINAL tmpSIOVREF__BUCK_HS_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__BUCK_HS_net_0 : bit;
-SIGNAL \Counter_1:Net_82\ : bit;
-SIGNAL \Counter_1:Net_91\ : bit;
-SIGNAL Net_548 : bit;
-SIGNAL \Counter_1:Net_48\ : bit;
-SIGNAL \Counter_1:Net_47\ : bit;
-SIGNAL \Counter_1:Net_42\ : bit;
-SIGNAL Net_642 : bit;
-SIGNAL Net_759 : bit;
-SIGNAL \Counter_1:Net_89\ : bit;
-SIGNAL \Counter_1:Net_95\ : bit;
-SIGNAL \Counter_1:Net_102\ : bit;
 SIGNAL Net_723 : bit;
 SIGNAL cy_tff_1 : bit;
 SIGNAL Net_683 : bit;
@@ -1392,10 +1381,22 @@ SIGNAL \DFB_1:Net_38\ : bit;
 SIGNAL \DFB_1:in_1\ : bit;
 SIGNAL \DFB_1:in_2\ : bit;
 SIGNAL Net_761 : bit;
-SIGNAL Net_743 : bit;
-SIGNAL Net_744 : bit;
-SIGNAL Net_745 : bit;
+SIGNAL Net_851 : bit;
+SIGNAL Net_852 : bit;
+SIGNAL Net_853 : bit;
 SIGNAL Net_730 : bit;
+SIGNAL Net_788 : bit;
+SIGNAL Net_808 : bit;
+SIGNAL \Counter_2:Net_82\ : bit;
+SIGNAL \Counter_2:Net_91\ : bit;
+SIGNAL \Counter_2:Net_48\ : bit;
+SIGNAL \Counter_2:Net_47\ : bit;
+SIGNAL \Counter_2:Net_42\ : bit;
+SIGNAL Net_827 : bit;
+SIGNAL Net_825 : bit;
+SIGNAL \Counter_2:Net_89\ : bit;
+SIGNAL \Counter_2:Net_95\ : bit;
+SIGNAL \Counter_2:Net_102\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:tc_reg_i\\D\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:prevCapture\\D\ : bit;
 SIGNAL \PWM_BUCK:PWMUDB:trig_last\\D\ : bit;
@@ -1634,7 +1635,7 @@ cy_tff_1D <= (not Net_507);
 
 \PWM_BUCK:PWMUDB:clock_enable_block\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
-	PORT MAP(clock_in=>Net_582,
+	PORT MAP(clock_in=>Net_844,
 		enable=>one,
 		clock_out=>\PWM_BUCK:PWMUDB:ClockOutFromEnBlock\);
 \PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:cy_psoc3_control
@@ -1864,7 +1865,7 @@ Clock_1:cy_clock_v1_0
 		period=>"0",
 		is_direct=>'1',
 		is_digital=>'1')
-	PORT MAP(clock_out=>Net_582,
+	PORT MAP(clock_out=>Net_844,
 		dig_domain_out=>open);
 BUCK_LS:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"52f31aa9-2f0a-497d-9a1f-1424095e13e6",
@@ -2203,7 +2204,7 @@ B_LS:cy_psoc3_pins_v1_10
 		id=>"f0264033-fa13-4600-a2f9-aa3a3e26f52f/edd15f43-b66b-457b-be3a-5342345270c8",
 		source_clock_id=>"61737EF6-3B74-48f9-8B91-F7473A442AE7",
 		divisor=>0,
-		period=>"454545454.545455",
+		period=>"1666666666.66667",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>\ADC_DelSig_V:Net_40\,
@@ -2235,7 +2236,7 @@ B_LS:cy_psoc3_pins_v1_10
 		id=>"f0264033-fa13-4600-a2f9-aa3a3e26f52f/b7604721-db56-4477-98c2-8fae77869066",
 		source_clock_id=>"61737EF6-3B74-48f9-8B91-F7473A442AE7",
 		divisor=>0,
-		period=>"113636363.636364",
+		period=>"416666666.666667",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\ADC_DelSig_V:Net_487\,
@@ -2455,7 +2456,7 @@ V_SENSE:cy_psoc3_pins_v1_10
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"13020833333.3333",
+		period=>"1085069444.44444",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\UART_1:Net_9\,
@@ -2754,7 +2755,7 @@ V_SENSE:cy_psoc3_pins_v1_10
 		clock=>\UART_1:BUART:clock_op\,
 		status=>(zero, \UART_1:BUART:rx_status_5\, \UART_1:BUART:rx_status_4\, \UART_1:BUART:rx_status_3\,
 			\UART_1:BUART:rx_status_2\, zero, zero),
-		interrupt=>\UART_1:BUART:rx_interrupt_out\);
+		interrupt=>Net_762);
 Rx_1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"1425177d-0d0e-4468-8bcc-e638e5509a9b",
 		drive_mode=>"001",
@@ -3455,19 +3456,6 @@ BUCK_HS:cy_psoc3_pins_v1_10
 		out_clock_en=>one,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__BUCK_HS_net_0);
-\Counter_1:CounterHW\:cy_psoc3_timer_v1_0
-	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_582,
-		kill=>zero,
-		enable=>zero,
-		capture=>zero,
-		timer_reset=>zero,
-		tc=>Net_759,
-		compare=>\Counter_1:Net_47\,
-		interrupt=>\Counter_1:Net_42\);
-isr_LUT:cy_isr_v1_0
-	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>Net_759);
 isr_DFB:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>Net_723);
@@ -3477,9 +3465,9 @@ isr_DFB:cy_isr_v1_0
 		in_1=>zero,
 		in_2=>zero,
 		out_1=>Net_761,
-		out_2=>Net_743,
-		dmareq_1=>Net_744,
-		dmareq_2=>Net_745,
+		out_2=>Net_851,
+		dmareq_1=>Net_852,
+		dmareq_2=>Net_853,
 		interrupt=>Net_723);
 DMA_IN_A:cy_dma_v1_0
 	GENERIC MAP(drq_type=>"00",
@@ -3487,6 +3475,35 @@ DMA_IN_A:cy_dma_v1_0
 	PORT MAP(drq=>Net_761,
 		trq=>zero,
 		nrq=>Net_730);
+isr_spark_drq:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_762);
+DMA_OUT_A:cy_dma_v1_0
+	GENERIC MAP(drq_type=>"10",
+		num_tds=>0)
+	PORT MAP(drq=>zero,
+		trq=>zero,
+		nrq=>Net_788);
+\Counter_2:CounterHW\:cy_psoc3_timer_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_808,
+		kill=>zero,
+		enable=>zero,
+		capture=>zero,
+		timer_reset=>zero,
+		tc=>\Counter_2:Net_48\,
+		compare=>\Counter_2:Net_47\,
+		interrupt=>\Counter_2:Net_42\);
+Clock_LUT:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"0960658c-5b03-482b-a17f-e4f27c03a4e0",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"33125745329.2699",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_808,
+		dig_domain_out=>open);
 \PWM_BUCK:PWMUDB:tc_reg_i\:cy_dff
 	PORT MAP(d=>\PWM_BUCK:PWMUDB:tc_i\,
 		clk=>\PWM_BUCK:PWMUDB:ClockOutFromEnBlock\,

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
   20:.\Generated_Source\PSoC5/isr_DFB.c **** #include <CYLIB.H>
   21:.\Generated_Source\PSoC5/isr_DFB.c **** #include <isr_DFB.H>
   22:.\Generated_Source\PSoC5/isr_DFB.c **** 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 2
 
 
   23:.\Generated_Source\PSoC5/isr_DFB.c **** #if !defined(isr_DFB__REMOVED) /* Check for removal by optimization */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
   63:.\Generated_Source\PSoC5/isr_DFB.c ****     isr_DFB_SetVector(&isr_DFB_Interrupt);
   46              		.loc 1 63 0
   47 0008 40F20000 		movw	r0, #:lower16:isr_DFB_Interrupt
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 3
 
 
   48 000c C0F20000 		movt	r0, #:upper16:isr_DFB_Interrupt
@@ -127,7 +127,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
   65:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Set the priority. */
   66:.\Generated_Source\PSoC5/isr_DFB.c ****     isr_DFB_SetPriority((uint8)isr_DFB_INTC_PRIOR_NUMBER);
   50              		.loc 1 66 0
-  51 0014 4FF00700 		mov	r0, #7
+  51 0014 4FF00200 		mov	r0, #2
   52 0018 FFF7FEFF 		bl	isr_DFB_SetPriority
   67:.\Generated_Source\PSoC5/isr_DFB.c **** 
   68:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Enable it. */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
   77              		.cfi_def_cfa_offset 16
   78 0004 00AF     		add	r7, sp, #0
   79              		.cfi_offset 14, -4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 4
 
 
   80              		.cfi_offset 7, -8
@@ -199,7 +199,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
   95:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Set the priority. */
   96:.\Generated_Source\PSoC5/isr_DFB.c ****     isr_DFB_SetPriority((uint8)isr_DFB_INTC_PRIOR_NUMBER);
   89              		.loc 1 96 0
-  90 0012 4FF00700 		mov	r0, #7
+  90 0012 4FF00200 		mov	r0, #2
   91 0016 FFF7FEFF 		bl	isr_DFB_SetPriority
   97:.\Generated_Source\PSoC5/isr_DFB.c **** 
   98:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Enable it. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  114:.\Generated_Source\PSoC5/isr_DFB.c **** *
  115:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
  116:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_Stop(void)
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 5
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 5
 
 
  117:.\Generated_Source\PSoC5/isr_DFB.c **** {
@@ -297,37 +297,30 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  139:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
  140:.\Generated_Source\PSoC5/isr_DFB.c **** *
  141:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 142:.\Generated_Source\PSoC5/isr_DFB.c **** //CY_ISR(isr_DFB_Interrupt)
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 6
+ 142:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 6
 
 
- 143:.\Generated_Source\PSoC5/isr_DFB.c **** //{
- 144:.\Generated_Source\PSoC5/isr_DFB.c ****     /*  Place your Interrupt code here. */
- 145:.\Generated_Source\PSoC5/isr_DFB.c ****     /* `#START isr_DFB_Interrupt` */
- 146:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 147:.\Generated_Source\PSoC5/isr_DFB.c ****     /* `#END` */
- 148:.\Generated_Source\PSoC5/isr_DFB.c **** //}
- 149:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 150:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 151:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 152:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_SetVector
- 153:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
- 154:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 155:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 156:.\Generated_Source\PSoC5/isr_DFB.c **** *   Change the ISR vector for the Interrupt. Note calling isr_DFB_Start
- 157:.\Generated_Source\PSoC5/isr_DFB.c **** *   will override any effect this method would have had. To set the vector 
- 158:.\Generated_Source\PSoC5/isr_DFB.c **** *   before the component has been started use isr_DFB_StartEx instead.
- 159:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 160:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 161:.\Generated_Source\PSoC5/isr_DFB.c **** *   address: Address of the ISR to set in the interrupt vector table.
- 162:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 163:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 164:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 165:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 166:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 167:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_SetVector(cyisraddress address)
- 168:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 140              		.loc 1 168 0
+ 143:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 144:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 145:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_SetVector
+ 146:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 147:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 148:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 149:.\Generated_Source\PSoC5/isr_DFB.c **** *   Change the ISR vector for the Interrupt. Note calling isr_DFB_Start
+ 150:.\Generated_Source\PSoC5/isr_DFB.c **** *   will override any effect this method would have had. To set the vector 
+ 151:.\Generated_Source\PSoC5/isr_DFB.c **** *   before the component has been started use isr_DFB_StartEx instead.
+ 152:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 153:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 154:.\Generated_Source\PSoC5/isr_DFB.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 155:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 156:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 157:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 158:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 159:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 160:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_SetVector(cyisraddress address)
+ 161:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 140              		.loc 1 161 0
  141              		.cfi_startproc
  142              		@ args = 0, pretend = 0, frame = 16
  143              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -343,31 +336,31 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  153              	.LCFI9:
  154              		.cfi_def_cfa_register 7
  155 0006 7860     		str	r0, [r7, #4]
- 169:.\Generated_Source\PSoC5/isr_DFB.c ****     cyisraddress * ramVectorTable;
- 170:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 171:.\Generated_Source\PSoC5/isr_DFB.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
- 156              		.loc 1 171 0
+ 162:.\Generated_Source\PSoC5/isr_DFB.c ****     cyisraddress * ramVectorTable;
+ 163:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 164:.\Generated_Source\PSoC5/isr_DFB.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+ 156              		.loc 1 164 0
  157 0008 4EF60853 		movw	r3, #:lower16:-536810232
  158 000c CEF20003 		movt	r3, #:upper16:-536810232
  159 0010 1B68     		ldr	r3, [r3, #0]
  160 0012 FB60     		str	r3, [r7, #12]
- 172:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 173:.\Generated_Source\PSoC5/isr_DFB.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_DFB__INTC_NUMBER] = address;
- 161              		.loc 1 173 0
+ 165:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 166:.\Generated_Source\PSoC5/isr_DFB.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_DFB__INTC_NUMBER] = address;
+ 161              		.loc 1 166 0
  162 0014 FB68     		ldr	r3, [r7, #12]
  163 0016 03F1B003 		add	r3, r3, #176
  164 001a 7A68     		ldr	r2, [r7, #4]
  165 001c 1A60     		str	r2, [r3, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 7
-
-
- 174:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 166              		.loc 1 174 0
+ 167:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 166              		.loc 1 167 0
  167 001e 07F11407 		add	r7, r7, #20
  168 0022 BD46     		mov	sp, r7
  169 0024 80BC     		pop	{r7}
  170 0026 7047     		bx	lr
  171              		.cfi_endproc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 7
+
+
  172              	.LFE3:
  173              		.size	isr_DFB_SetVector, .-isr_DFB_SetVector
  174              		.section	.text.isr_DFB_GetVector,"ax",%progbits
@@ -378,25 +371,25 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  179              		.type	isr_DFB_GetVector, %function
  180              	isr_DFB_GetVector:
  181              	.LFB4:
- 175:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 176:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 177:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 178:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_GetVector
- 179:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
- 180:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 181:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 182:.\Generated_Source\PSoC5/isr_DFB.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
- 183:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 184:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 185:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 186:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 187:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 188:.\Generated_Source\PSoC5/isr_DFB.c **** *   Address of the ISR in the interrupt vector table.
- 189:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 190:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 191:.\Generated_Source\PSoC5/isr_DFB.c **** cyisraddress isr_DFB_GetVector(void)
- 192:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 182              		.loc 1 192 0
+ 168:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 169:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 170:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 171:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_GetVector
+ 172:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 173:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 174:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 175:.\Generated_Source\PSoC5/isr_DFB.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 176:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 177:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 178:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 179:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 180:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 181:.\Generated_Source\PSoC5/isr_DFB.c **** *   Address of the ISR in the interrupt vector table.
+ 182:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 183:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 184:.\Generated_Source\PSoC5/isr_DFB.c **** cyisraddress isr_DFB_GetVector(void)
+ 185:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 182              		.loc 1 185 0
  183              		.cfi_startproc
  184              		@ args = 0, pretend = 0, frame = 8
  185              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -411,25 +404,25 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  194              		.cfi_offset 7, -4
  195              	.LCFI12:
  196              		.cfi_def_cfa_register 7
- 193:.\Generated_Source\PSoC5/isr_DFB.c ****     cyisraddress * ramVectorTable;
- 194:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 195:.\Generated_Source\PSoC5/isr_DFB.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
- 197              		.loc 1 195 0
+ 186:.\Generated_Source\PSoC5/isr_DFB.c ****     cyisraddress * ramVectorTable;
+ 187:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 188:.\Generated_Source\PSoC5/isr_DFB.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+ 197              		.loc 1 188 0
  198 0006 4EF60853 		movw	r3, #:lower16:-536810232
  199 000a CEF20003 		movt	r3, #:upper16:-536810232
  200 000e 1B68     		ldr	r3, [r3, #0]
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 8
-
-
  201 0010 7B60     		str	r3, [r7, #4]
- 196:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 197:.\Generated_Source\PSoC5/isr_DFB.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_DFB__INTC_NUMBER];
- 202              		.loc 1 197 0
+ 189:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 190:.\Generated_Source\PSoC5/isr_DFB.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_DFB__INTC_NUMBER];
+ 202              		.loc 1 190 0
  203 0012 7B68     		ldr	r3, [r7, #4]
  204 0014 03F1B003 		add	r3, r3, #176
  205 0018 1B68     		ldr	r3, [r3, #0]
- 198:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 206              		.loc 1 198 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 8
+
+
+ 191:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 206              		.loc 1 191 0
  207 001a 1846     		mov	r0, r3
  208 001c 07F10C07 		add	r7, r7, #12
  209 0020 BD46     		mov	sp, r7
@@ -446,29 +439,29 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  220              		.type	isr_DFB_SetPriority, %function
  221              	isr_DFB_SetPriority:
  222              	.LFB5:
- 199:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 200:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 201:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 202:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_SetPriority
- 203:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 192:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 193:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 194:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 195:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_SetPriority
+ 196:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 197:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 198:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 199:.\Generated_Source\PSoC5/isr_DFB.c **** *   Sets the Priority of the Interrupt. Note calling isr_DFB_Start
+ 200:.\Generated_Source\PSoC5/isr_DFB.c **** *   or isr_DFB_StartEx will override any effect this method 
+ 201:.\Generated_Source\PSoC5/isr_DFB.c **** *   would have had. This method should only be called after 
+ 202:.\Generated_Source\PSoC5/isr_DFB.c **** *   isr_DFB_Start or isr_DFB_StartEx has been called. To set 
+ 203:.\Generated_Source\PSoC5/isr_DFB.c **** *   the initial priority for the component use the cydwr file in the tool.
  204:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 205:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 206:.\Generated_Source\PSoC5/isr_DFB.c **** *   Sets the Priority of the Interrupt. Note calling isr_DFB_Start
- 207:.\Generated_Source\PSoC5/isr_DFB.c **** *   or isr_DFB_StartEx will override any effect this method 
- 208:.\Generated_Source\PSoC5/isr_DFB.c **** *   would have had. This method should only be called after 
- 209:.\Generated_Source\PSoC5/isr_DFB.c **** *   isr_DFB_Start or isr_DFB_StartEx has been called. To set 
- 210:.\Generated_Source\PSoC5/isr_DFB.c **** *   the initial priority for the component use the cydwr file in the tool.
- 211:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 212:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 213:.\Generated_Source\PSoC5/isr_DFB.c **** *   priority: Priority of the interrupt. 0 - 7, 0 being the highest.
- 214:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 215:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 216:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 217:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 218:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 219:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_SetPriority(uint8 priority)
- 220:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 223              		.loc 1 220 0
+ 205:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 206:.\Generated_Source\PSoC5/isr_DFB.c **** *   priority: Priority of the interrupt. 0 - 7, 0 being the highest.
+ 207:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 208:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 209:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 210:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 211:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 212:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_SetPriority(uint8 priority)
+ 213:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 223              		.loc 1 213 0
  224              		.cfi_startproc
  225              		@ args = 0, pretend = 0, frame = 8
  226              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -478,9 +471,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  230              		.cfi_def_cfa_offset 4
  231 0002 83B0     		sub	sp, sp, #12
  232              	.LCFI14:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 9
-
-
  233              		.cfi_def_cfa_offset 16
  234 0004 00AF     		add	r7, sp, #0
  235              		.cfi_offset 7, -4
@@ -488,16 +478,19 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  237              		.cfi_def_cfa_register 7
  238 0006 0346     		mov	r3, r0
  239 0008 FB71     		strb	r3, [r7, #7]
- 221:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_PRIOR = priority << 5;
- 240              		.loc 1 221 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 9
+
+
+ 214:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_PRIOR = priority << 5;
+ 240              		.loc 1 214 0
  241 000a 4EF21C43 		movw	r3, #:lower16:-536812516
  242 000e CEF20003 		movt	r3, #:upper16:-536812516
  243 0012 FA79     		ldrb	r2, [r7, #7]
  244 0014 4FEA4212 		lsl	r2, r2, #5
  245 0018 D2B2     		uxtb	r2, r2
  246 001a 1A70     		strb	r2, [r3, #0]
- 222:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 247              		.loc 1 222 0
+ 215:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 247              		.loc 1 215 0
  248 001c 07F10C07 		add	r7, r7, #12
  249 0020 BD46     		mov	sp, r7
  250 0022 80BC     		pop	{r7}
@@ -513,34 +506,31 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  260              		.type	isr_DFB_GetPriority, %function
  261              	isr_DFB_GetPriority:
  262              	.LFB6:
- 223:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 224:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 225:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 226:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_GetPriority
- 227:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
- 228:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 229:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 230:.\Generated_Source\PSoC5/isr_DFB.c **** *   Gets the Priority of the Interrupt.
- 231:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 232:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 233:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 234:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 235:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 236:.\Generated_Source\PSoC5/isr_DFB.c **** *   Priority of the interrupt. 0 - 7, 0 being the highest.
- 237:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 238:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 239:.\Generated_Source\PSoC5/isr_DFB.c **** uint8 isr_DFB_GetPriority(void)
- 240:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 263              		.loc 1 240 0
+ 216:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 217:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 218:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 219:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_GetPriority
+ 220:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 221:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 222:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 223:.\Generated_Source\PSoC5/isr_DFB.c **** *   Gets the Priority of the Interrupt.
+ 224:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 225:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 226:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 227:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 228:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 229:.\Generated_Source\PSoC5/isr_DFB.c **** *   Priority of the interrupt. 0 - 7, 0 being the highest.
+ 230:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 231:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 232:.\Generated_Source\PSoC5/isr_DFB.c **** uint8 isr_DFB_GetPriority(void)
+ 233:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 263              		.loc 1 233 0
  264              		.cfi_startproc
  265              		@ args = 0, pretend = 0, frame = 8
  266              		@ frame_needed = 1, uses_anonymous_args = 0
  267              		@ link register save eliminated.
  268 0000 80B4     		push	{r7}
  269              	.LCFI16:
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 10
-
-
  270              		.cfi_def_cfa_offset 4
  271 0002 83B0     		sub	sp, sp, #12
  272              	.LCFI17:
@@ -548,24 +538,27 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  274 0004 00AF     		add	r7, sp, #0
  275              		.cfi_offset 7, -4
  276              	.LCFI18:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 10
+
+
  277              		.cfi_def_cfa_register 7
- 241:.\Generated_Source\PSoC5/isr_DFB.c ****     uint8 priority;
- 242:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 243:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 244:.\Generated_Source\PSoC5/isr_DFB.c ****     priority = *isr_DFB_INTC_PRIOR >> 5;
- 278              		.loc 1 244 0
+ 234:.\Generated_Source\PSoC5/isr_DFB.c ****     uint8 priority;
+ 235:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 236:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 237:.\Generated_Source\PSoC5/isr_DFB.c ****     priority = *isr_DFB_INTC_PRIOR >> 5;
+ 278              		.loc 1 237 0
  279 0006 4EF21C43 		movw	r3, #:lower16:-536812516
  280 000a CEF20003 		movt	r3, #:upper16:-536812516
  281 000e 1B78     		ldrb	r3, [r3, #0]
  282 0010 DBB2     		uxtb	r3, r3
  283 0012 4FEA5313 		lsr	r3, r3, #5
  284 0016 FB71     		strb	r3, [r7, #7]
- 245:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 246:.\Generated_Source\PSoC5/isr_DFB.c ****     return priority;
- 285              		.loc 1 246 0
+ 238:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 239:.\Generated_Source\PSoC5/isr_DFB.c ****     return priority;
+ 285              		.loc 1 239 0
  286 0018 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 247:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 287              		.loc 1 247 0
+ 240:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 287              		.loc 1 240 0
  288 001a 1846     		mov	r0, r3
  289 001c 07F10C07 		add	r7, r7, #12
  290 0020 BD46     		mov	sp, r7
@@ -582,32 +575,32 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  301              		.type	isr_DFB_Enable, %function
  302              	isr_DFB_Enable:
  303              	.LFB7:
- 248:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 249:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 250:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 251:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_Enable
- 252:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
- 253:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 254:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 255:.\Generated_Source\PSoC5/isr_DFB.c **** *   Enables the interrupt.
- 256:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 257:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 258:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 259:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 260:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 261:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 262:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 263:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 11
-
-
- 264:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_Enable(void)
- 265:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 304              		.loc 1 265 0
+ 241:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 242:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 243:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 244:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_Enable
+ 245:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 246:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 247:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 248:.\Generated_Source\PSoC5/isr_DFB.c **** *   Enables the interrupt.
+ 249:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 250:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 251:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 252:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 253:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 254:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 255:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 256:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 257:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_Enable(void)
+ 258:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 304              		.loc 1 258 0
  305              		.cfi_startproc
  306              		@ args = 0, pretend = 0, frame = 0
  307              		@ frame_needed = 1, uses_anonymous_args = 0
  308              		@ link register save eliminated.
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 11
+
+
  309 0000 80B4     		push	{r7}
  310              	.LCFI19:
  311              		.cfi_def_cfa_offset 4
@@ -615,15 +608,15 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  313              		.cfi_offset 7, -4
  314              	.LCFI20:
  315              		.cfi_def_cfa_register 7
- 266:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Enable the general interrupt. */
- 267:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_SET_EN = isr_DFB__INTC_MASK;
- 316              		.loc 1 267 0
+ 259:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Enable the general interrupt. */
+ 260:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_SET_EN = isr_DFB__INTC_MASK;
+ 316              		.loc 1 260 0
  317 0004 4EF20013 		movw	r3, #:lower16:-536813312
  318 0008 CEF20003 		movt	r3, #:upper16:-536813312
  319 000c 4FF08052 		mov	r2, #268435456
  320 0010 1A60     		str	r2, [r3, #0]
- 268:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 321              		.loc 1 268 0
+ 261:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 321              		.loc 1 261 0
  322 0012 BD46     		mov	sp, r7
  323 0014 80BC     		pop	{r7}
  324 0016 7047     		bx	lr
@@ -638,29 +631,26 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  333              		.type	isr_DFB_GetState, %function
  334              	isr_DFB_GetState:
  335              	.LFB8:
- 269:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 270:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 271:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 272:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_GetState
- 273:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
- 274:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 275:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 276:.\Generated_Source\PSoC5/isr_DFB.c **** *   Gets the state (enabled, disabled) of the Interrupt.
- 277:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 278:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 279:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 280:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 281:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 282:.\Generated_Source\PSoC5/isr_DFB.c **** *   1 if enabled, 0 if disabled.
- 283:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 284:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 285:.\Generated_Source\PSoC5/isr_DFB.c **** uint8 isr_DFB_GetState(void)
- 286:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 336              		.loc 1 286 0
+ 262:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 263:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 264:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 265:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_GetState
+ 266:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 267:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 268:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 269:.\Generated_Source\PSoC5/isr_DFB.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 270:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 271:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 272:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 273:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 274:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 275:.\Generated_Source\PSoC5/isr_DFB.c **** *   1 if enabled, 0 if disabled.
+ 276:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 277:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 278:.\Generated_Source\PSoC5/isr_DFB.c **** uint8 isr_DFB_GetState(void)
+ 279:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 336              		.loc 1 279 0
  337              		.cfi_startproc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 12
-
-
  338              		@ args = 0, pretend = 0, frame = 0
  339              		@ frame_needed = 1, uses_anonymous_args = 0
  340              		@ link register save eliminated.
@@ -668,12 +658,15 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  342              	.LCFI21:
  343              		.cfi_def_cfa_offset 4
  344 0002 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 12
+
+
  345              		.cfi_offset 7, -4
  346              	.LCFI22:
  347              		.cfi_def_cfa_register 7
- 287:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Get the state of the general interrupt. */
- 288:.\Generated_Source\PSoC5/isr_DFB.c ****     return ((*isr_DFB_INTC_SET_EN & (uint32)isr_DFB__INTC_MASK) != 0u) ? 1u:0u;
- 348              		.loc 1 288 0
+ 280:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Get the state of the general interrupt. */
+ 281:.\Generated_Source\PSoC5/isr_DFB.c ****     return ((*isr_DFB_INTC_SET_EN & (uint32)isr_DFB__INTC_MASK) != 0u) ? 1u:0u;
+ 348              		.loc 1 281 0
  349 0004 4EF20013 		movw	r3, #:lower16:-536813312
  350 0008 CEF20003 		movt	r3, #:upper16:-536813312
  351 000c 1B68     		ldr	r3, [r3, #0]
@@ -685,8 +678,8 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  357              	.L18:
  358 001c 4FF00003 		mov	r3, #0
  359              	.L19:
- 289:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 360              		.loc 1 289 0
+ 282:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 360              		.loc 1 282 0
  361 0020 1846     		mov	r0, r3
  362 0022 BD46     		mov	sp, r7
  363 0024 80BC     		pop	{r7}
@@ -702,32 +695,32 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  373              		.type	isr_DFB_Disable, %function
  374              	isr_DFB_Disable:
  375              	.LFB9:
- 290:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 291:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 292:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 293:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_Disable
- 294:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
- 295:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 296:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 297:.\Generated_Source\PSoC5/isr_DFB.c **** *   Disables the Interrupt.
- 298:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 299:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 300:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 301:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 302:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 303:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 304:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 305:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 13
-
-
- 306:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_Disable(void)
- 307:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 376              		.loc 1 307 0
+ 283:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 284:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 285:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 286:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_Disable
+ 287:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 288:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 289:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 290:.\Generated_Source\PSoC5/isr_DFB.c **** *   Disables the Interrupt.
+ 291:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 292:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 293:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 294:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 295:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 296:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 297:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 298:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 299:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_Disable(void)
+ 300:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 376              		.loc 1 300 0
  377              		.cfi_startproc
  378              		@ args = 0, pretend = 0, frame = 0
  379              		@ frame_needed = 1, uses_anonymous_args = 0
  380              		@ link register save eliminated.
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 13
+
+
  381 0000 80B4     		push	{r7}
  382              	.LCFI23:
  383              		.cfi_def_cfa_offset 4
@@ -735,15 +728,15 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  385              		.cfi_offset 7, -4
  386              	.LCFI24:
  387              		.cfi_def_cfa_register 7
- 308:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Disable the general interrupt. */
- 309:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_CLR_EN = isr_DFB__INTC_MASK;
- 388              		.loc 1 309 0
+ 301:.\Generated_Source\PSoC5/isr_DFB.c ****     /* Disable the general interrupt. */
+ 302:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_CLR_EN = isr_DFB__INTC_MASK;
+ 388              		.loc 1 302 0
  389 0004 4EF28013 		movw	r3, #:lower16:-536813184
  390 0008 CEF20003 		movt	r3, #:upper16:-536813184
  391 000c 4FF08052 		mov	r2, #268435456
  392 0010 1A60     		str	r2, [r3, #0]
- 310:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 393              		.loc 1 310 0
+ 303:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 393              		.loc 1 303 0
  394 0012 BD46     		mov	sp, r7
  395 0014 80BC     		pop	{r7}
  396 0016 7047     		bx	lr
@@ -758,29 +751,26 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  405              		.type	isr_DFB_SetPending, %function
  406              	isr_DFB_SetPending:
  407              	.LFB10:
- 311:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 312:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 313:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 314:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_SetPending
- 315:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 304:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 305:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 306:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 307:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_SetPending
+ 308:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 309:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 310:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 311:.\Generated_Source\PSoC5/isr_DFB.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 312:.\Generated_Source\PSoC5/isr_DFB.c **** *   generating the interrupt.
+ 313:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 314:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 315:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
  316:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 317:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 318:.\Generated_Source\PSoC5/isr_DFB.c **** *   Causes the Interrupt to enter the pending state, a software method of
- 319:.\Generated_Source\PSoC5/isr_DFB.c **** *   generating the interrupt.
- 320:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 321:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 322:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 323:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 324:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 325:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 326:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 327:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 328:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_SetPending(void)
- 329:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 408              		.loc 1 329 0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 14
-
-
+ 317:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 318:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 319:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 320:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 321:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_SetPending(void)
+ 322:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 408              		.loc 1 322 0
  409              		.cfi_startproc
  410              		@ args = 0, pretend = 0, frame = 0
  411              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -788,18 +778,21 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  413 0000 80B4     		push	{r7}
  414              	.LCFI25:
  415              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 14
+
+
  416 0002 00AF     		add	r7, sp, #0
  417              		.cfi_offset 7, -4
  418              	.LCFI26:
  419              		.cfi_def_cfa_register 7
- 330:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_SET_PD = isr_DFB__INTC_MASK;
- 420              		.loc 1 330 0
+ 323:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_SET_PD = isr_DFB__INTC_MASK;
+ 420              		.loc 1 323 0
  421 0004 4EF20023 		movw	r3, #:lower16:-536813056
  422 0008 CEF20003 		movt	r3, #:upper16:-536813056
  423 000c 4FF08052 		mov	r2, #268435456
  424 0010 1A60     		str	r2, [r3, #0]
- 331:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 425              		.loc 1 331 0
+ 324:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 425              		.loc 1 324 0
  426 0012 BD46     		mov	sp, r7
  427 0014 80BC     		pop	{r7}
  428 0016 7047     		bx	lr
@@ -814,47 +807,47 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  437              		.type	isr_DFB_ClearPending, %function
  438              	isr_DFB_ClearPending:
  439              	.LFB11:
- 332:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 333:.\Generated_Source\PSoC5/isr_DFB.c **** 
- 334:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
- 335:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_ClearPending
- 336:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
- 337:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 338:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
- 339:.\Generated_Source\PSoC5/isr_DFB.c **** *   Clears a pending interrupt.
- 340:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 341:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
- 342:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 343:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 344:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
- 345:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
- 346:.\Generated_Source\PSoC5/isr_DFB.c **** *
- 347:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
- 348:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_ClearPending(void)
- 349:.\Generated_Source\PSoC5/isr_DFB.c **** {
- 440              		.loc 1 349 0
+ 325:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 326:.\Generated_Source\PSoC5/isr_DFB.c **** 
+ 327:.\Generated_Source\PSoC5/isr_DFB.c **** /*******************************************************************************
+ 328:.\Generated_Source\PSoC5/isr_DFB.c **** * Function Name: isr_DFB_ClearPending
+ 329:.\Generated_Source\PSoC5/isr_DFB.c **** ********************************************************************************
+ 330:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 331:.\Generated_Source\PSoC5/isr_DFB.c **** * Summary:
+ 332:.\Generated_Source\PSoC5/isr_DFB.c **** *   Clears a pending interrupt.
+ 333:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 334:.\Generated_Source\PSoC5/isr_DFB.c **** * Parameters:
+ 335:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 336:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 337:.\Generated_Source\PSoC5/isr_DFB.c **** * Return:
+ 338:.\Generated_Source\PSoC5/isr_DFB.c **** *   None
+ 339:.\Generated_Source\PSoC5/isr_DFB.c **** *
+ 340:.\Generated_Source\PSoC5/isr_DFB.c **** *******************************************************************************/
+ 341:.\Generated_Source\PSoC5/isr_DFB.c **** void isr_DFB_ClearPending(void)
+ 342:.\Generated_Source\PSoC5/isr_DFB.c **** {
+ 440              		.loc 1 342 0
  441              		.cfi_startproc
  442              		@ args = 0, pretend = 0, frame = 0
  443              		@ frame_needed = 1, uses_anonymous_args = 0
  444              		@ link register save eliminated.
  445 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 15
-
-
  446              	.LCFI27:
  447              		.cfi_def_cfa_offset 4
  448 0002 00AF     		add	r7, sp, #0
  449              		.cfi_offset 7, -4
  450              	.LCFI28:
  451              		.cfi_def_cfa_register 7
- 350:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_CLR_PD = isr_DFB__INTC_MASK;
- 452              		.loc 1 350 0
+ 343:.\Generated_Source\PSoC5/isr_DFB.c ****     *isr_DFB_INTC_CLR_PD = isr_DFB__INTC_MASK;
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 15
+
+
+ 452              		.loc 1 343 0
  453 0004 4EF28023 		movw	r3, #:lower16:-536812928
  454 0008 CEF20003 		movt	r3, #:upper16:-536812928
  455 000c 4FF08052 		mov	r2, #268435456
  456 0010 1A60     		str	r2, [r3, #0]
- 351:.\Generated_Source\PSoC5/isr_DFB.c **** }
- 457              		.loc 1 351 0
+ 344:.\Generated_Source\PSoC5/isr_DFB.c **** }
+ 457              		.loc 1 344 0
  458 0012 BD46     		mov	sp, r7
  459 0014 80BC     		pop	{r7}
  460 0016 7047     		bx	lr
@@ -898,9 +891,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  498 004c 7D       		.byte	0x7d
  499 004d 10       		.sleb128 16
  500 004e 06000000 		.4byte	.LCFI4
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 16
-
-
  501 0052 26000000 		.4byte	.LFE1
  502 0056 0200     		.2byte	0x2
  503 0058 77       		.byte	0x77
@@ -908,6 +898,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  505 005a 00000000 		.4byte	0x0
  506 005e 00000000 		.4byte	0x0
  507              	.LLST2:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 16
+
+
  508 0062 00000000 		.4byte	.LFB2
  509 0066 02000000 		.4byte	.LCFI5
  510 006a 0100     		.2byte	0x1
@@ -958,9 +951,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  555 00da 04       		.sleb128 4
  556 00db 04000000 		.4byte	.LCFI11
  557 00df 06000000 		.4byte	.LCFI12
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 17
-
-
  558 00e3 0200     		.2byte	0x2
  559 00e5 7D       		.byte	0x7d
  560 00e6 10       		.sleb128 16
@@ -968,6 +958,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  562 00eb 26000000 		.4byte	.LFE4
  563 00ef 0200     		.2byte	0x2
  564 00f1 77       		.byte	0x77
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 17
+
+
  565 00f2 10       		.sleb128 16
  566 00f3 00000000 		.4byte	0x0
  567 00f7 00000000 		.4byte	0x0
@@ -1018,9 +1011,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  612              	.LLST7:
  613 0169 00000000 		.4byte	.LFB7
  614 016d 02000000 		.4byte	.LCFI19
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 18
-
-
  615 0171 0100     		.2byte	0x1
  616 0173 5D       		.byte	0x5d
  617 0174 02000000 		.4byte	.LCFI19
@@ -1028,6 +1018,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  619 017c 0200     		.2byte	0x2
  620 017e 7D       		.byte	0x7d
  621 017f 04       		.sleb128 4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 18
+
+
  622 0180 04000000 		.4byte	.LCFI20
  623 0184 18000000 		.4byte	.LFE7
  624 0188 0200     		.2byte	0x2
@@ -1078,9 +1071,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  669 01f9 04000000 		.4byte	.LCFI26
  670 01fd 0200     		.2byte	0x2
  671 01ff 7D       		.byte	0x7d
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 19
-
-
  672 0200 04       		.sleb128 4
  673 0201 04000000 		.4byte	.LCFI26
  674 0205 18000000 		.4byte	.LFE10
@@ -1088,6 +1078,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  676 020b 77       		.byte	0x77
  677 020c 04       		.sleb128 4
  678 020d 00000000 		.4byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 19
+
+
  679 0211 00000000 		.4byte	0x0
  680              	.LLST11:
  681 0215 00000000 		.4byte	.LFB11
@@ -1138,9 +1131,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  726 0040 07       		.byte	0x7
  727 0041 2C000000 		.4byte	.LASF3
  728 0045 03       		.uleb128 0x3
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 20
-
-
  729 0046 04       		.byte	0x4
  730 0047 05       		.byte	0x5
  731 0048 696E7400 		.ascii	"int\000"
@@ -1148,6 +1138,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  733 004d 04       		.byte	0x4
  734 004e 07       		.byte	0x7
  735 004f 60010000 		.4byte	.LASF4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 20
+
+
  736 0053 02       		.uleb128 0x2
  737 0054 08       		.byte	0x8
  738 0055 05       		.byte	0x5
@@ -1198,9 +1191,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  783 00a6 01       		.byte	0x1
  784 00a7 0E000000 		.4byte	.LASF14
  785 00ab 01       		.byte	0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 21
-
-
  786 00ac 39       		.byte	0x39
  787 00ad 01       		.byte	0x1
  788 00ae 00000000 		.4byte	.LFB0
@@ -1208,6 +1198,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  790 00b6 00000000 		.4byte	.LLST0
  791 00ba 09       		.uleb128 0x9
  792 00bb 01       		.byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 21
+
+
  793 00bc BC000000 		.4byte	.LASF16
  794 00c0 01       		.byte	0x1
  795 00c1 57       		.byte	0x57
@@ -1238,7 +1231,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  820 00f8 01       		.byte	0x1
  821 00f9 CC000000 		.4byte	.LASF17
  822 00fd 01       		.byte	0x1
- 823 00fe A7       		.byte	0xa7
+ 823 00fe A0       		.byte	0xa0
  824 00ff 01       		.byte	0x1
  825 0100 00000000 		.4byte	.LFB3
  826 0104 28000000 		.4byte	.LFE3
@@ -1247,7 +1240,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  829 0110 0A       		.uleb128 0xa
  830 0111 6D010000 		.4byte	.LASF18
  831 0115 01       		.byte	0x1
- 832 0116 A7       		.byte	0xa7
+ 832 0116 A0       		.byte	0xa0
  833 0117 9A000000 		.4byte	0x9a
  834 011b 02       		.byte	0x2
  835 011c 91       		.byte	0x91
@@ -1255,12 +1248,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  837 011e 0B       		.uleb128 0xb
  838 011f AA010000 		.4byte	.LASF19
  839 0123 01       		.byte	0x1
- 840 0124 A9       		.byte	0xa9
+ 840 0124 A2       		.byte	0xa2
  841 0125 2D010000 		.4byte	0x12d
  842 0129 02       		.byte	0x2
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 22
-
-
  843 012a 91       		.byte	0x91
  844 012b 74       		.sleb128 -12
  845 012c 00       		.byte	0x0
@@ -1268,10 +1258,13 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  847 012e 04       		.byte	0x4
  848 012f 9A000000 		.4byte	0x9a
  849 0133 0C       		.uleb128 0xc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 22
+
+
  850 0134 01       		.byte	0x1
  851 0135 D7010000 		.4byte	.LASF22
  852 0139 01       		.byte	0x1
- 853 013a BF       		.byte	0xbf
+ 853 013a B8       		.byte	0xb8
  854 013b 01       		.byte	0x1
  855 013c 9A000000 		.4byte	0x9a
  856 0140 00000000 		.4byte	.LFB4
@@ -1281,7 +1274,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  860 0150 0B       		.uleb128 0xb
  861 0151 AA010000 		.4byte	.LASF19
  862 0155 01       		.byte	0x1
- 863 0156 C1       		.byte	0xc1
+ 863 0156 BA       		.byte	0xba
  864 0157 2D010000 		.4byte	0x12d
  865 015b 02       		.byte	0x2
  866 015c 91       		.byte	0x91
@@ -1291,7 +1284,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  870 0160 01       		.byte	0x1
  871 0161 B9010000 		.4byte	.LASF20
  872 0165 01       		.byte	0x1
- 873 0166 DB       		.byte	0xdb
+ 873 0166 D4       		.byte	0xd4
  874 0167 01       		.byte	0x1
  875 0168 00000000 		.4byte	.LFB5
  876 016c 26000000 		.4byte	.LFE5
@@ -1300,7 +1293,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  879 0178 0A       		.uleb128 0xa
  880 0179 A2000000 		.4byte	.LASF21
  881 017d 01       		.byte	0x1
- 882 017e DB       		.byte	0xdb
+ 882 017e D4       		.byte	0xd4
  883 017f 81000000 		.4byte	0x81
  884 0183 02       		.byte	0x2
  885 0184 91       		.byte	0x91
@@ -1310,7 +1303,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  889 0188 01       		.byte	0x1
  890 0189 E5000000 		.4byte	.LASF23
  891 018d 01       		.byte	0x1
- 892 018e EF       		.byte	0xef
+ 892 018e E8       		.byte	0xe8
  893 018f 01       		.byte	0x1
  894 0190 81000000 		.4byte	0x81
  895 0194 00000000 		.4byte	.LFB6
@@ -1318,22 +1311,22 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  897 019c 32010000 		.4byte	.LLST6
  898 01a0 B3010000 		.4byte	0x1b3
  899 01a4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 23
-
-
  900 01a5 A2000000 		.4byte	.LASF21
  901 01a9 01       		.byte	0x1
- 902 01aa F1       		.byte	0xf1
+ 902 01aa EA       		.byte	0xea
  903 01ab 81000000 		.4byte	0x81
  904 01af 02       		.byte	0x2
  905 01b0 91       		.byte	0x91
  906 01b1 77       		.sleb128 -9
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 23
+
+
  907 01b2 00       		.byte	0x0
  908 01b3 0D       		.uleb128 0xd
  909 01b4 01       		.byte	0x1
  910 01b5 3F000000 		.4byte	.LASF24
  911 01b9 01       		.byte	0x1
- 912 01ba 0801     		.2byte	0x108
+ 912 01ba 0101     		.2byte	0x101
  913 01bc 01       		.byte	0x1
  914 01bd 00000000 		.4byte	.LFB7
  915 01c1 18000000 		.4byte	.LFE7
@@ -1342,7 +1335,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  918 01ca 01       		.byte	0x1
  919 01cb AB000000 		.4byte	.LASF31
  920 01cf 01       		.byte	0x1
- 921 01d0 1D01     		.2byte	0x11d
+ 921 01d0 1601     		.2byte	0x116
  922 01d2 01       		.byte	0x1
  923 01d3 81000000 		.4byte	0x81
  924 01d7 00000000 		.4byte	.LFB8
@@ -1352,7 +1345,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  928 01e4 01       		.byte	0x1
  929 01e5 1C000000 		.4byte	.LASF25
  930 01e9 01       		.byte	0x1
- 931 01ea 3201     		.2byte	0x132
+ 931 01ea 2B01     		.2byte	0x12b
  932 01ec 01       		.byte	0x1
  933 01ed 00000000 		.4byte	.LFB9
  934 01f1 18000000 		.4byte	.LFE9
@@ -1361,7 +1354,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  937 01fa 01       		.byte	0x1
  938 01fb 77000000 		.4byte	.LASF26
  939 01ff 01       		.byte	0x1
- 940 0200 4801     		.2byte	0x148
+ 940 0200 4101     		.2byte	0x141
  941 0202 01       		.byte	0x1
  942 0203 00000000 		.4byte	.LFB10
  943 0207 18000000 		.4byte	.LFE10
@@ -1370,7 +1363,7 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  946 0210 01       		.byte	0x1
  947 0211 54000000 		.4byte	.LASF27
  948 0215 01       		.byte	0x1
- 949 0216 5C01     		.2byte	0x15c
+ 949 0216 5501     		.2byte	0x155
  950 0218 01       		.byte	0x1
  951 0219 00000000 		.4byte	.LFB11
  952 021d 18000000 		.4byte	.LFE11
@@ -1378,9 +1371,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  954 0225 00       		.byte	0x0
  955              		.section	.debug_abbrev
  956 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 24
-
-
  957 0001 11       		.uleb128 0x11
  958 0002 01       		.byte	0x1
  959 0003 25       		.uleb128 0x25
@@ -1388,6 +1378,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  961 0005 13       		.uleb128 0x13
  962 0006 0B       		.uleb128 0xb
  963 0007 03       		.uleb128 0x3
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 24
+
+
  964 0008 0E       		.uleb128 0xe
  965 0009 1B       		.uleb128 0x1b
  966 000a 0E       		.uleb128 0xe
@@ -1438,9 +1431,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1011 0037 27       		.uleb128 0x27
  1012 0038 0C       		.uleb128 0xc
  1013 0039 00       		.byte	0x0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 25
-
-
  1014 003a 00       		.byte	0x0
  1015 003b 06       		.uleb128 0x6
  1016 003c 0F       		.uleb128 0xf
@@ -1448,6 +1438,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1018 003e 0B       		.uleb128 0xb
  1019 003f 0B       		.uleb128 0xb
  1020 0040 49       		.uleb128 0x49
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 25
+
+
  1021 0041 13       		.uleb128 0x13
  1022 0042 00       		.byte	0x0
  1023 0043 00       		.byte	0x0
@@ -1498,9 +1491,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1068 0070 0B       		.uleb128 0xb
  1069 0071 27       		.uleb128 0x27
  1070 0072 0C       		.uleb128 0xc
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 26
-
-
  1071 0073 11       		.uleb128 0x11
  1072 0074 01       		.uleb128 0x1
  1073 0075 12       		.uleb128 0x12
@@ -1508,6 +1498,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1075 0077 40       		.uleb128 0x40
  1076 0078 06       		.uleb128 0x6
  1077 0079 01       		.uleb128 0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 26
+
+
  1078 007a 13       		.uleb128 0x13
  1079 007b 00       		.byte	0x0
  1080 007c 00       		.byte	0x0
@@ -1558,9 +1551,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1125 00a9 13       		.uleb128 0x13
  1126 00aa 11       		.uleb128 0x11
  1127 00ab 01       		.uleb128 0x1
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 27
-
-
  1128 00ac 12       		.uleb128 0x12
  1129 00ad 01       		.uleb128 0x1
  1130 00ae 40       		.uleb128 0x40
@@ -1568,6 +1558,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1132 00b0 01       		.uleb128 0x1
  1133 00b1 13       		.uleb128 0x13
  1134 00b2 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 27
+
+
  1135 00b3 00       		.byte	0x0
  1136 00b4 0D       		.uleb128 0xd
  1137 00b5 2E       		.uleb128 0x2e
@@ -1618,9 +1611,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1182 0000 0D010000 		.4byte	0x10d
  1183 0004 0200     		.2byte	0x2
  1184 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 28
-
-
  1185 000a 26020000 		.4byte	0x226
  1186 000e A5000000 		.4byte	0xa5
  1187 0012 6973725F 		.ascii	"isr_DFB_Start\000"
@@ -1628,6 +1618,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1187      53746172 
  1187      7400
  1188 0020 BA000000 		.4byte	0xba
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 28
+
+
  1189 0024 6973725F 		.ascii	"isr_DFB_StartEx\000"
  1189      4446425F 
  1189      53746172 
@@ -1678,9 +1671,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1205      44697361 
  1205      626C6500 
  1206 00dd F9010000 		.4byte	0x1f9
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 29
-
-
  1207 00e1 6973725F 		.ascii	"isr_DFB_SetPending\000"
  1207      4446425F 
  1207      53657450 
@@ -1688,6 +1678,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1207      6E6700
  1208 00f4 0F020000 		.4byte	0x20f
  1209 00f8 6973725F 		.ascii	"isr_DFB_ClearPending\000"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 29
+
+
  1209      4446425F 
  1209      436C6561 
  1209      7250656E 
@@ -1738,9 +1731,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1253 0018 00000000 		.4byte	.LFB2
  1254 001c 16000000 		.4byte	.LFE2
  1255 0020 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 30
-
-
  1256 0024 28000000 		.4byte	.LFE3
  1257 0028 00000000 		.4byte	.LFB4
  1258 002c 26000000 		.4byte	.LFE4
@@ -1748,6 +1738,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1260 0034 26000000 		.4byte	.LFE5
  1261 0038 00000000 		.4byte	.LFB6
  1262 003c 26000000 		.4byte	.LFE6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 30
+
+
  1263 0040 00000000 		.4byte	.LFB7
  1264 0044 18000000 		.4byte	.LFE7
  1265 0048 00000000 		.4byte	.LFB8
@@ -1798,9 +1791,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1289      64696E67 
  1290              	.LASF1:
  1291 0069 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 31
-
-
  1291      676E6564 
  1291      20636861 
  1291      7200
@@ -1808,6 +1798,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1293 0077 6973725F 		.ascii	"isr_DFB_SetPending\000"
  1293      4446425F 
  1293      53657450 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 31
+
+
  1293      656E6469 
  1293      6E6700
  1294              	.LASF8:
@@ -1858,9 +1851,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1312 0126 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
  1312      6E766572 
  1312      745C696E 
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 32
-
-
  1312      76657274 
  1312      2E637964 
  1313              	.LASF29:
@@ -1868,6 +1858,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1314      6E657261 
  1314      7465645F 
  1314      536F7572 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 32
+
+
  1314      63655C50 
  1315              	.LASF4:
  1316 0160 756E7369 		.ascii	"unsigned int\000"
@@ -1918,9 +1911,6 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1334      7200
  1335              	.LASF7:
  1336 01e9 6C6F6E67 		.ascii	"long int\000"
-ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 33
-
-
  1336      20696E74 
  1336      00
  1337              	.LASF0:
@@ -1928,6 +1918,9 @@ ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEu3N1Q.s 			page 1
  1338      65642063 
  1338      68617200 
  1339              	.LASF15:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccEZ3s0O.s 			page 33
+
+
  1340 01fe 6973725F 		.ascii	"isr_DFB_Stop\000"
  1340      4446425F 
  1340      53746F70 

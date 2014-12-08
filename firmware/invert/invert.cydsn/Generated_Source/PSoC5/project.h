@@ -48,11 +48,13 @@
 #include <Clock_3.h>
 #include <BUCK_HS_aliases.h>
 #include <BUCK_HS.h>
-#include <Counter_1.h>
-#include <isr_LUT.h>
 #include <isr_DFB.h>
 #include <DFB_1.h>
 #include <DMA_IN_A_dma.h>
+#include <isr_spark_drq.h>
+#include <DMA_OUT_A_dma.h>
+#include <Counter_2.h>
+#include <Clock_LUT.h>
 #include <ADC_DelSig_V_theACLK.h>
 #include <ADC_DelSig_V_Ext_CP_Clk.h>
 #include <ADC_DelSig_V_AMux.h>

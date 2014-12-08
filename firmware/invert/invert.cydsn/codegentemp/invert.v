@@ -1,6 +1,6 @@
 // ======================================================================
 // invert.v generated from TopDesign.cysch
-// 12/07/2014 at 18:49
+// 12/08/2014 at 14:01
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -300,7 +300,7 @@ module ADC_Vssa_v1_20_2 (
 
 endmodule
 
-// ADC_DelSig_v2_30(ADC_Charge_Pump_Clock=true, ADC_Clock=1, ADC_CLOCK_FREQUENCY=2200000, ADC_Input_Mode=1, ADC_Input_Range=2, ADC_Input_Range_Config2=0, ADC_Input_Range_Config3=0, ADC_Input_Range_Config4=0, ADC_Power=1, ADC_Reference=5, ADC_Reference_Config2=0, ADC_Reference_Config3=0, ADC_Reference_Config4=0, ADC_Resolution=9, ADC_Resolution_Config2=16, ADC_Resolution_Config3=16, ADC_Resolution_Config4=16, Clock_Frequency=64000, Comment_Config1=Default Config, Comment_Config2=Second Config, Comment_Config3=Third Config, Comment_Config4=Fourth Config, Config1_Name=CFG1, Config2_Name=CFG2, Config3_Name=CFG3, Config4_Name=CFG4, Configs=1, Conversion_Mode=2, Conversion_Mode_Config2=2, Conversion_Mode_Config3=2, Conversion_Mode_Config4=2, Debug=false, DsmName=DSM2, Enable_Vref_Vss=false, Input_Buffer_Gain=1, Input_Buffer_Gain_Config2=1, Input_Buffer_Gain_Config3=1, Input_Buffer_Gain_Config4=1, Input_Buffer_Mode=1, Input_Buffer_Mode_Config2=1, Input_Buffer_Mode_Config3=1, Input_Buffer_Mode_Config4=1, PSOC5A=true, Ref_Voltage=1.25, Ref_Voltage_Config2=1.024, Ref_Voltage_Config3=1.024, Ref_Voltage_Config4=1.024, Sample_Rate=110000, Sample_Rate_Config2=10000, Sample_Rate_Config3=10000, Sample_Rate_Config4=10000, sRate_Err=false, Start_of_Conversion=0, Vdda_Value=5, CY_COMPONENT_NAME=ADC_DelSig_v2_30, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_DelSig_V, CY_INSTANCE_SHORT_NAME=ADC_DelSig_V, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=30, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_DelSig_V, )
+// ADC_DelSig_v2_30(ADC_Charge_Pump_Clock=true, ADC_Clock=1, ADC_CLOCK_FREQUENCY=600000, ADC_Input_Mode=1, ADC_Input_Range=2, ADC_Input_Range_Config2=0, ADC_Input_Range_Config3=0, ADC_Input_Range_Config4=0, ADC_Power=1, ADC_Reference=5, ADC_Reference_Config2=0, ADC_Reference_Config3=0, ADC_Reference_Config4=0, ADC_Resolution=9, ADC_Resolution_Config2=16, ADC_Resolution_Config3=16, ADC_Resolution_Config4=16, Clock_Frequency=64000, Comment_Config1=Default Config, Comment_Config2=Second Config, Comment_Config3=Third Config, Comment_Config4=Fourth Config, Config1_Name=CFG1, Config2_Name=CFG2, Config3_Name=CFG3, Config4_Name=CFG4, Configs=1, Conversion_Mode=2, Conversion_Mode_Config2=2, Conversion_Mode_Config3=2, Conversion_Mode_Config4=2, Debug=false, DsmName=DSM2, Enable_Vref_Vss=false, Input_Buffer_Gain=1, Input_Buffer_Gain_Config2=1, Input_Buffer_Gain_Config3=1, Input_Buffer_Gain_Config4=1, Input_Buffer_Mode=1, Input_Buffer_Mode_Config2=1, Input_Buffer_Mode_Config3=1, Input_Buffer_Mode_Config4=1, PSOC5A=true, Ref_Voltage=1.25, Ref_Voltage_Config2=1.024, Ref_Voltage_Config3=1.024, Ref_Voltage_Config4=1.024, Sample_Rate=30000, Sample_Rate_Config2=10000, Sample_Rate_Config3=10000, Sample_Rate_Config4=10000, sRate_Err=false, Start_of_Conversion=0, Vdda_Value=5, CY_COMPONENT_NAME=ADC_DelSig_v2_30, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_DelSig_V, CY_INSTANCE_SHORT_NAME=ADC_DelSig_V, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=30, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_DelSig_V, )
 module ADC_DelSig_v2_30_3 (
     vplus,
     vminus,
@@ -374,7 +374,7 @@ module ADC_DelSig_v2_30_3 (
 		#(.id("f0264033-fa13-4600-a2f9-aa3a3e26f52f/edd15f43-b66b-457b-be3a-5342345270c8"),
 		  .source_clock_id("61737EF6-3B74-48f9-8B91-F7473A442AE7"),
 		  .divisor(0),
-		  .period("454545454.545455"),
+		  .period("1666666666.66667"),
 		  .is_direct(0),
 		  .is_digital(0))
 		theACLK
@@ -414,7 +414,7 @@ module ADC_DelSig_v2_30_3 (
 		#(.id("f0264033-fa13-4600-a2f9-aa3a3e26f52f/b7604721-db56-4477-98c2-8fae77869066"),
 		  .source_clock_id("61737EF6-3B74-48f9-8B91-F7473A442AE7"),
 		  .divisor(0),
-		  .period("113636363.636364"),
+		  .period("416666666.666667"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Ext_CP_Clk
@@ -621,7 +621,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_30\B_UART_v2_30.v"
 `endif
 
-// UART_v2_30(Address1=0, Address2=0, BaudRate=9600, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, CtrlModeReplacementString=AsyncCtl, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=0, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=false, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=76800, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_COMPONENT_NAME=UART_v2_30, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=UART_1, CY_INSTANCE_SHORT_NAME=UART_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=30, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=UART_1, )
+// UART_v2_30(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, CtrlModeReplacementString=AsyncCtl, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=1, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=true, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_COMPONENT_NAME=UART_v2_30, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=UART_1, CY_INSTANCE_SHORT_NAME=UART_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=30, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=UART_1, )
 module UART_v2_30_5 (
     rx_clk,
     rx_data,
@@ -672,7 +672,7 @@ module UART_v2_30_5 (
 		#(.id("b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("13020833333.3333"),
+		  .period("1085069444.44444"),
 		  .is_direct(0),
 		  .is_digital(1))
 		IntClock
@@ -712,7 +712,7 @@ module UART_v2_30_5 (
     defparam BUART.ParityTypeSw = 0;
     defparam BUART.RXAddressMode = 0;
     defparam BUART.RXEnable = 1;
-    defparam BUART.RXStatusIntEnable = 0;
+    defparam BUART.RXStatusIntEnable = 1;
     defparam BUART.TXBitClkGenDP = 1;
     defparam BUART.TXEnable = 1;
     defparam BUART.Use23Polling = 1;
@@ -812,8 +812,58 @@ module SPI_Slave_v2_50_6 (
 
 endmodule
 
-// Counter_v2_40(CaptureMode=0, CaptureModeSoftware=0, ClockMode=3, CompareMode=1, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=1, CONTROL3=0, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, EnableMode=0, FF16=true, FF8=false, FixedFunction=true, FixedFunctionUsed=1, InitCounterValue=795, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=795, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UseInterrupt=true, VerilogSectionReplacementString=sC16, CY_COMPONENT_NAME=Counter_v2_40, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Counter_1, CY_INSTANCE_SHORT_NAME=Counter_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=40, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Counter_1, )
-module Counter_v2_40_7 (
+// Component: cy_tff_v1_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0\cy_tff_v1_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0\cy_tff_v1_0.v"
+`endif
+
+// DFB_v1_20(AssemblyCodeString=initial:\r\nacu(clear, clear) dmux(sa,sa) alu(set0) mac(hold)\r\nacu(setmod, setmod) dmux(sa,sa) alu(hold) mac(clra) jmp(eob, waitForNew)\r\n// Wait for data to be written to Staging Registers\r\nwaitForNew:\r\nacu(hold,hold) dmux(sa,sa) alu(hold) mac(hold) jmpl(in1,dataRead)   \r\n// Read New Data from Staging Register and multilpy and put dat to holding register B\r\ndataRead:\r\nacu(hold, hold) addr(1) dmux(ba,ba) alu(seta) mac(macc)   //Move data from staging register A to ALU o/p\r\nacu(hold, hold) dmux(sm,sa) alu(seta) mac(hold)    //Move MAC o/p to ALU\r\nacu(hold, hold) dmux(sa,sa) alu(hold)   mac(hold) shift(r,1) //Wait for ALU output\r\nacu(hold,hold) dmux(sa,sa) alu(clearsem, 010) mac(hold)\r\nacu(hold, hold) addr(1) dmux(sa,sa) alu(hold) mac(hold) write(bus) jmp(eob,waitForNew) // Write the result to holding //register B", Bus1_data=0x30000\r\n0x30000\r\n0x30000\r\n0x30000, Bus2_data=0x1FFFFF, CustomizerLayout=CYXML_v_1_0<?xml version="1.0" encoding="utf-16"?>\r\n<!--\r\n\r\n  Actipro UIStudio Dock Controls\r\n  Copyright (c) 2001-2006 Actipro Software LLC.  All rights reserved.\r\n  http://www.ActiproSoftware.com/Products/DotNet/\r\n\r\n-->\r\n<ToolWindowLayout Version="1.0">\r\n  <LayoutData>\r\n    <HostContainerControl>\r\n      <ToolWindowContainer Dock="Right" Size="209, 351" SelectedToolWindowGuid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17">\r\n        <ToolWindow Key="Bus1Data" Guid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17" DockedSize="205, 200" ImageIndex="-1" Text="Bus1">\r\n          <AutoHideStateInfo RootDock="Right" />\r\n          <DockedInsideHostStateInfo RootDock="Right" IsAttached="True">\r\n            <AttachedToBefore Guid="bb9322d6-acfd-48fd-9ba2-c952576ce45d" />\r\n            <AttachedToBefore Guid="d0b9c7f2-6d12-400b-9035-8571d13338dd" />\r\n            <DockedBy Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n            <DockedBy Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n        <ToolWindow Key="Bus2Data" Guid="bb9322d6-acfd-48fd-9ba2-c952576ce45d" DockedSize="205, 200" ImageIndex="-1" Text="Bus2">\r\n          <AutoHideStateInfo RootDock="Right" />\r\n          <DockedInsideHostStateInfo RootDock="Right" IsAttached="True">\r\n            <AttachedToBefore Guid="d0b9c7f2-6d12-400b-9035-8571d13338dd" />\r\n            <AttachedToAfter Guid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17" />\r\n            <DockedBy Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n            <DockedBy Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n        <ToolWindow Key="SimulationProperties" Guid="d0b9c7f2-6d12-400b-9035-8571d13338dd" DockedSize="205, 200" ImageIndex="-1" Text="Simulation Properties">\r\n          <AutoHideStateInfo RootDock="Right" />\r\n          <DockedInsideHostStateInfo RootDock="Right" IsAttached="True">\r\n            <AttachedToAfter Guid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17" />\r\n            <AttachedToAfter Guid="bb9322d6-acfd-48fd-9ba2-c952576ce45d" />\r\n            <DockedBy Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n            <DockedBy Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n      </ToolWindowContainer>\r\n      <ToolWindowContainer Dock="Bottom" Size="1344, 341" SelectedToolWindowGuid="6c577fa4-9f61-43fb-856d-5207f6af0dc1">\r\n        <ToolWindow Key="Output" Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" DockedSize="200, 339" ImageIndex="-1" Text="Output">\r\n          <AutoHideStateInfo RootDock="Bottom" />\r\n          <DockedInsideHostStateInfo RootDock="Bottom" IsAttached="True">\r\n            <AttachedToBefore Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n        <ToolWindow Key="ErrorList" Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" DockedSize="200, 339" ImageIndex="-1" Text="Error List: 0 Errors    0 Warnings    0 Notes">\r\n          <AutoHideStateInfo RootDock="Bottom" />\r\n          <DockedInsideHostStateInfo RootDock="Bottom" IsAttached="True">\r\n            <AttachedToAfter Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n      </ToolWindowContainer>\r\n    </HostContainerControl>\r\n    <AutoHide Dock="Left" />\r\n    <AutoHide Dock="Right" />\r\n    <AutoHide Dock="Top" />\r\n    <AutoHide Dock="Bottom" />\r\n    <TabbedDocuments Orientation="Horizontal" />\r\n    <FloatingContainers />\r\n    <Hidden />\r\n  </LayoutData>\r\n  <CustomData />\r\n</ToolWindowLayout>, InitialDMAMode=1, InitialInterruptMode=1, InitialOutput1Source=2, InitialOutput2Source=0, OptimizeAssembly=false, ShowDMA1=true, ShowDMA2=false, ShowIn1=false, ShowIn2=false, ShowOut1=true, ShowOut2=false, CY_COMPONENT_NAME=DFB_v1_20, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=DFB_1, CY_INSTANCE_SHORT_NAME=DFB_1, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=20, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=DFB_1, )
+module DFB_v1_20_7 (
+    out_2,
+    out_1,
+    in_2,
+    in_1,
+    interrupt,
+    dma_req_a,
+    dma_req_b);
+    output      out_2;
+    output      out_1;
+    input       in_2;
+    input       in_1;
+    output      interrupt;
+    output      dma_req_a;
+    output      dma_req_b;
+
+
+          wire  Net_38;
+
+    cy_psoc3_dfb_v1_0 DFB (
+        .in_1(in_1),
+        .out_1(out_1),
+        .out_2(out_2),
+        .interrupt(interrupt),
+        .in_2(in_2),
+        .clock(Net_38),
+        .dmareq_1(dma_req_a),
+        .dmareq_2(dma_req_b));
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(Net_38));
+
+
+
+endmodule
+
+// Counter_v2_40(CaptureMode=0, CaptureModeSoftware=0, ClockMode=3, CompareMode=1, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=128, CONTROL3=0, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, EnableMode=0, FF16=false, FF8=true, FixedFunction=true, FixedFunctionUsed=1, InitCounterValue=255, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=255, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=8, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UseInterrupt=true, VerilogSectionReplacementString=sC8, CY_COMPONENT_NAME=Counter_v2_40, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Counter_2, CY_INSTANCE_SHORT_NAME=Counter_2, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=40, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Counter_2, )
+module Counter_v2_40_8 (
     clock,
     comp,
     tc,
@@ -846,7 +896,7 @@ module Counter_v2_40_7 (
     parameter ReloadOnCompare = 0;
     parameter ReloadOnOverUnder = 1;
     parameter ReloadOnReset = 1;
-    parameter Resolution = 16;
+    parameter Resolution = 8;
     parameter RunMode = 0;
     parameter UseInterrupt = 1;
 
@@ -896,74 +946,30 @@ module Counter_v2_40_7 (
 
 endmodule
 
-// Component: cy_tff_v1_0
-`ifdef CY_BLK_DIR
-`undef CY_BLK_DIR
-`endif
-
-`ifdef WARP
-`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0"
-`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0\cy_tff_v1_0.v"
-`else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_tff_v1_0\cy_tff_v1_0.v"
-`endif
-
-// DFB_v1_20(AssemblyCodeString=initial:\r\nacu(clear, clear) dmux(sa,sa) alu(set0) mac(hold)\r\nacu(setmod, setmod) dmux(sa,sa) alu(hold) mac(clra) jmp(eob, waitForNew)\r\n// Wait for data to be written to Staging Registers\r\nwaitForNew:\r\nacu(hold,hold) dmux(sa,sa) alu(hold) mac(hold) jmpl(in1,dataRead)   \r\n// Read New Data from Staging Register and multilpy and put dat to holding register B\r\ndataRead:\r\nacu(hold, hold) addr(1) dmux(ba,ba) alu(seta) mac(macc)   //Move data from staging register A to ALU o/p\r\nacu(hold, hold) dmux(sm,sa) alu(seta) mac(hold)   //Move MAC o/p to ALU\r\nacu(hold, hold) dmux(sa,sa) alu(hold)   mac(hold) shift(r,1)//Wait for ALU output\r\nacu(hold, hold) addr(1) dmux(sa,sa) alu(hold) mac(hold) write(bus) jmp(eob,waitForNew) // Write the result to holding //register B", Bus1_data=0x30000\r\n, Bus2_data=0x1FFFFF, CustomizerLayout=CYXML_v_1_0<?xml version="1.0" encoding="utf-16"?>\r\n<!--\r\n\r\n  Actipro UIStudio Dock Controls\r\n  Copyright (c) 2001-2006 Actipro Software LLC.  All rights reserved.\r\n  http://www.ActiproSoftware.com/Products/DotNet/\r\n\r\n-->\r\n<ToolWindowLayout Version="1.0">\r\n  <LayoutData>\r\n    <HostContainerControl>\r\n      <ToolWindowContainer Dock="Right" Size="209, 351" SelectedToolWindowGuid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17">\r\n        <ToolWindow Key="Bus1Data" Guid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17" DockedSize="205, 200" ImageIndex="-1" Text="Bus1">\r\n          <AutoHideStateInfo RootDock="Right" />\r\n          <DockedInsideHostStateInfo RootDock="Right" IsAttached="True">\r\n            <AttachedToBefore Guid="bb9322d6-acfd-48fd-9ba2-c952576ce45d" />\r\n            <AttachedToBefore Guid="d0b9c7f2-6d12-400b-9035-8571d13338dd" />\r\n            <DockedBy Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n            <DockedBy Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n        <ToolWindow Key="Bus2Data" Guid="bb9322d6-acfd-48fd-9ba2-c952576ce45d" DockedSize="205, 200" ImageIndex="-1" Text="Bus2">\r\n          <AutoHideStateInfo RootDock="Right" />\r\n          <DockedInsideHostStateInfo RootDock="Right" IsAttached="True">\r\n            <AttachedToBefore Guid="d0b9c7f2-6d12-400b-9035-8571d13338dd" />\r\n            <AttachedToAfter Guid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17" />\r\n            <DockedBy Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n            <DockedBy Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n        <ToolWindow Key="SimulationProperties" Guid="d0b9c7f2-6d12-400b-9035-8571d13338dd" DockedSize="205, 200" ImageIndex="-1" Text="Simulation Properties">\r\n          <AutoHideStateInfo RootDock="Right" />\r\n          <DockedInsideHostStateInfo RootDock="Right" IsAttached="True">\r\n            <AttachedToAfter Guid="46f453b3-8d9d-42dd-b6b4-5b2674eb0b17" />\r\n            <AttachedToAfter Guid="bb9322d6-acfd-48fd-9ba2-c952576ce45d" />\r\n            <DockedBy Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n            <DockedBy Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" RootDock="Bottom" DockOperationType="TopOuter" IsTopMost="True" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n      </ToolWindowContainer>\r\n      <ToolWindowContainer Dock="Bottom" Size="1344, 341" SelectedToolWindowGuid="6c577fa4-9f61-43fb-856d-5207f6af0dc1">\r\n        <ToolWindow Key="Output" Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" DockedSize="200, 339" ImageIndex="-1" Text="Output">\r\n          <AutoHideStateInfo RootDock="Bottom" />\r\n          <DockedInsideHostStateInfo RootDock="Bottom" IsAttached="True">\r\n            <AttachedToBefore Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n        <ToolWindow Key="ErrorList" Guid="9b98fbae-35d0-4880-a0eb-96f0345c47e1" DockedSize="200, 339" ImageIndex="-1" Text="Error List: 0 Errors    0 Warnings    0 Notes">\r\n          <AutoHideStateInfo RootDock="Bottom" />\r\n          <DockedInsideHostStateInfo RootDock="Bottom" IsAttached="True">\r\n            <AttachedToAfter Guid="6c577fa4-9f61-43fb-856d-5207f6af0dc1" />\r\n          </DockedInsideHostStateInfo>\r\n          <DockedOutsideHostStateInfo IsAttached="False" />\r\n        </ToolWindow>\r\n      </ToolWindowContainer>\r\n    </HostContainerControl>\r\n    <AutoHide Dock="Left" />\r\n    <AutoHide Dock="Right" />\r\n    <AutoHide Dock="Top" />\r\n    <AutoHide Dock="Bottom" />\r\n    <TabbedDocuments Orientation="Horizontal" />\r\n    <FloatingContainers />\r\n    <Hidden />\r\n  </LayoutData>\r\n  <CustomData />\r\n</ToolWindowLayout>, InitialDMAMode=1, InitialInterruptMode=1, InitialOutput1Source=2, InitialOutput2Source=0, OptimizeAssembly=false, ShowDMA1=true, ShowDMA2=false, ShowIn1=false, ShowIn2=false, ShowOut1=true, ShowOut2=false, CY_COMPONENT_NAME=DFB_v1_20, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=DFB_1, CY_INSTANCE_SHORT_NAME=DFB_1, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=20, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=DFB_1, )
-module DFB_v1_20_8 (
-    out_2,
-    out_1,
-    in_2,
-    in_1,
-    interrupt,
-    dma_req_a,
-    dma_req_b);
-    output      out_2;
-    output      out_1;
-    input       in_2;
-    input       in_1;
-    output      interrupt;
-    output      dma_req_a;
-    output      dma_req_b;
-
-
-          wire  Net_38;
-
-    cy_psoc3_dfb_v1_0 DFB (
-        .in_1(in_1),
-        .out_1(out_1),
-        .out_2(out_2),
-        .interrupt(interrupt),
-        .in_2(in_2),
-        .clock(Net_38),
-        .dmareq_1(dma_req_a),
-        .dmareq_2(dma_req_b));
-
-    ZeroTerminal ZeroTerminal_1 (
-        .z(Net_38));
-
-
-
-endmodule
-
 // top
 module top ;
 
+          wire  Net_843;
+          wire  Net_833;
+          wire  Net_832;
+          wire  Net_831;
+          wire  Net_830;
+          wire  Net_829;
+          wire  Net_828;
+          wire  Net_827;
+          wire  Net_826;
+          wire  Net_825;
+          wire  Net_824;
+          wire  Net_788;
+          wire  Net_787;
+          wire  Net_846;
           wire  Net_730;
           wire  Net_729;
-          wire  Net_745;
-          wire  Net_744;
-          wire  Net_743;
-          wire  Net_742;
-          wire  Net_741;
-          wire  Net_648;
-          wire  Net_647;
-          wire  Net_646;
-          wire  Net_645;
-          wire  Net_644;
-          wire  Net_643;
-          wire  Net_642;
-          wire  Net_641;
+          wire  Net_853;
+          wire  Net_852;
+          wire  Net_851;
+          wire  Net_850;
+          wire  Net_849;
           wire  Net_388;
           wire  Net_378;
           wire  Net_377;
@@ -973,7 +979,6 @@ module top ;
           wire  Net_412;
           wire  Net_411;
           wire  Net_410;
-          wire  Net_409;
           wire  Net_408;
           wire  Net_314;
           wire  Net_407;
@@ -1008,14 +1013,14 @@ module top ;
           wire  Net_38;
           wire  Net_37;
           wire  Net_36;
-          wire  Net_761;
-          wire  Net_759;
           wire  Net_723;
+          wire  Net_761;
+          wire  Net_808;
+          wire  Net_762;
           wire  Net_683;
           wire  Net_687;
           wire  Net_507;
-          wire  Net_548;
-          wire  Net_582;
+          wire  Net_844;
           wire  Net_685;
           wire  Net_517;
           wire  Net_518;
@@ -1036,7 +1041,7 @@ module top ;
 
     PWM_v2_40_0 PWM_BUCK (
         .reset(Net_429),
-        .clock(Net_582),
+        .clock(Net_844),
         .tc(Net_36),
         .pwm1(Net_37),
         .pwm2(Net_38),
@@ -1060,7 +1065,7 @@ module top ;
 		  .is_direct(1),
 		  .is_digital(1))
 		Clock_1
-		 (.clock_out(Net_582));
+		 (.clock_out(Net_844));
 
 
     // -- DFF Start --
@@ -1564,7 +1569,7 @@ module top ;
         .reset(Net_392),
         .rx(Net_314),
         .tx_interrupt(Net_408),
-        .rx_interrupt(Net_409),
+        .rx_interrupt(Net_762),
         .tx_data(Net_410),
         .tx_clk(Net_411),
         .rx_data(Net_412),
@@ -2092,40 +2097,6 @@ module top ;
 
     assign Net_459 = Net_463 & Net_475;
 
-    Counter_v2_40_7 Counter_1 (
-        .reset(Net_548),
-        .tc(Net_759),
-        .comp(Net_641),
-        .clock(Net_582),
-        .interrupt(Net_642),
-        .enable(1'b0),
-        .capture(1'b0),
-        .upCnt(1'b0),
-        .downCnt(1'b0),
-        .up_ndown(1'b1),
-        .count(1'b0));
-    defparam Counter_1.CaptureMode = 0;
-    defparam Counter_1.ClockMode = 3;
-    defparam Counter_1.CompareMode = 1;
-    defparam Counter_1.CompareStatusEdgeSense = 1;
-    defparam Counter_1.EnableMode = 0;
-    defparam Counter_1.ReloadOnCapture = 0;
-    defparam Counter_1.ReloadOnCompare = 0;
-    defparam Counter_1.ReloadOnOverUnder = 1;
-    defparam Counter_1.ReloadOnReset = 1;
-    defparam Counter_1.Resolution = 16;
-    defparam Counter_1.RunMode = 0;
-    defparam Counter_1.UseInterrupt = 1;
-
-
-	cy_isr_v1_0
-		#(.int_type(2'b10))
-		isr_LUT
-		 (.int_signal(Net_759));
-
-
-    assign Net_548 = 1'h0;
-
 
 	cy_isr_v1_0
 		#(.int_type(2'b10))
@@ -2144,14 +2115,14 @@ module top ;
 
     assign Net_683 = 1'h1;
 
-    DFB_v1_20_8 DFB_1 (
+    DFB_v1_20_7 DFB_1 (
         .interrupt(Net_723),
         .in_1(1'b0),
         .in_2(1'b0),
         .out_1(Net_761),
-        .out_2(Net_743),
-        .dma_req_a(Net_744),
-        .dma_req_b(Net_745));
+        .out_2(Net_851),
+        .dma_req_a(Net_852),
+        .dma_req_b(Net_853));
 
 
 	cy_dma_v1_0
@@ -2160,6 +2131,59 @@ module top ;
 		 (.drq(Net_761),
 		  .trq(1'b0),
 		  .nrq(Net_730));
+
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		isr_spark_drq
+		 (.int_signal(Net_762));
+
+
+
+	cy_dma_v1_0
+		#(.drq_type(2'b10))
+		DMA_OUT_A
+		 (.drq(1'b0),
+		  .trq(1'b0),
+		  .nrq(Net_788));
+
+
+    Counter_v2_40_8 Counter_2 (
+        .reset(1'b0),
+        .tc(Net_825),
+        .comp(Net_826),
+        .clock(Net_808),
+        .interrupt(Net_827),
+        .enable(1'b0),
+        .capture(1'b0),
+        .upCnt(1'b0),
+        .downCnt(1'b0),
+        .up_ndown(1'b1),
+        .count(1'b0));
+    defparam Counter_2.CaptureMode = 0;
+    defparam Counter_2.ClockMode = 3;
+    defparam Counter_2.CompareMode = 1;
+    defparam Counter_2.CompareStatusEdgeSense = 1;
+    defparam Counter_2.EnableMode = 0;
+    defparam Counter_2.ReloadOnCapture = 0;
+    defparam Counter_2.ReloadOnCompare = 0;
+    defparam Counter_2.ReloadOnOverUnder = 1;
+    defparam Counter_2.ReloadOnReset = 1;
+    defparam Counter_2.Resolution = 8;
+    defparam Counter_2.RunMode = 0;
+    defparam Counter_2.UseInterrupt = 1;
+
+
+	cy_clock_v1_0
+		#(.id("0960658c-5b03-482b-a17f-e4f27c03a4e0"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("33125745329.2699"),
+		  .is_direct(0),
+		  .is_digital(1))
+		Clock_LUT
+		 (.clock_out(Net_808));
 
 
 

@@ -45,8 +45,8 @@ extern uint8 DFB_1_initVar;
 /* Sizes of current DFB program */
 #define DFB_1_DA_RAM_SIZE_CUR        (0x01u)
 #define DFB_1_DB_RAM_SIZE_CUR        (0x01u)
-#define DFB_1_CSA_RAM_SIZE_CUR       (0x07u)
-#define DFB_1_CSB_RAM_SIZE_CUR       (0x07u)
+#define DFB_1_CSA_RAM_SIZE_CUR       (0x08u)
+#define DFB_1_CSB_RAM_SIZE_CUR       (0x08u)
 #define DFB_1_CFSM_RAM_SIZE_CUR      (0x04u)
 #define DFB_1_ACU_RAM_SIZE_CUR       (0x01u)
 

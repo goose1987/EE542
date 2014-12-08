@@ -1,0 +1,1941 @@
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"isr_spark_drq.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 4C010000 		.text
+  20      02006500 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.section	.text.isr_spark_drq_Start,"ax",%progbits
+  24              		.align	2
+  25              		.global	isr_spark_drq_Start
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	isr_spark_drq_Start, %function
+  29              	isr_spark_drq_Start:
+  30              	.LFB0:
+  31              		.file 1 ".\\Generated_Source\\PSoC5\\isr_spark_drq.c"
+   1:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/isr_spark_drq.c **** * File Name: isr_spark_drq.c  
+   3:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Version 1.70
+   4:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+   5:.\Generated_Source\PSoC5/isr_spark_drq.c **** *  Description:
+   6:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   API for controlling the state of an interrupt.
+   7:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+   8:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+   9:.\Generated_Source\PSoC5/isr_spark_drq.c **** *  Note:
+  10:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  11:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/isr_spark_drq.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC5/isr_spark_drq.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC5/isr_spark_drq.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  18:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  19:.\Generated_Source\PSoC5/isr_spark_drq.c **** #include <CYDEVICE_TRM.H>
+  20:.\Generated_Source\PSoC5/isr_spark_drq.c **** #include <CYLIB.H>
+  21:.\Generated_Source\PSoC5/isr_spark_drq.c **** #include <isr_spark_drq.H>
+  22:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 2
+
+
+  23:.\Generated_Source\PSoC5/isr_spark_drq.c **** #if !defined(isr_spark_drq__REMOVED) /* Check for removal by optimization */
+  24:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  25:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+  26:.\Generated_Source\PSoC5/isr_spark_drq.c **** *  Place your includes, defines and code here 
+  27:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************/
+  28:.\Generated_Source\PSoC5/isr_spark_drq.c **** /* `#START isr_spark_drq_intc` */
+  29:.\Generated_Source\PSoC5/isr_spark_drq.c **** extern int16 buffvolt;
+  30:.\Generated_Source\PSoC5/isr_spark_drq.c **** extern uint32 rmsvolt;
+  31:.\Generated_Source\PSoC5/isr_spark_drq.c **** /* `#END` */
+  32:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  33:.\Generated_Source\PSoC5/isr_spark_drq.c **** #ifndef CYINT_IRQ_BASE
+  34:.\Generated_Source\PSoC5/isr_spark_drq.c **** #define CYINT_IRQ_BASE      16
+  35:.\Generated_Source\PSoC5/isr_spark_drq.c **** #endif /* CYINT_IRQ_BASE */
+  36:.\Generated_Source\PSoC5/isr_spark_drq.c **** #ifndef CYINT_VECT_TABLE
+  37:.\Generated_Source\PSoC5/isr_spark_drq.c **** #define CYINT_VECT_TABLE    ((cyisraddress **) CYREG_NVIC_VECT_OFFSET)
+  38:.\Generated_Source\PSoC5/isr_spark_drq.c **** #endif /* CYINT_VECT_TABLE */
+  39:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  40:.\Generated_Source\PSoC5/isr_spark_drq.c **** /* Declared in startup, used to set unused interrupts to. */
+  41:.\Generated_Source\PSoC5/isr_spark_drq.c **** CY_ISR_PROTO(IntDefaultHandler);
+  42:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  43:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  44:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+  45:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_Start
+  46:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+  47:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  48:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+  49:.\Generated_Source\PSoC5/isr_spark_drq.c **** *  Set up the interrupt and enable it.
+  50:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  51:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:  
+  52:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+  53:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  54:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+  55:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+  56:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  57:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+  58:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_Start(void)
+  59:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+  32              		.loc 1 59 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 1, uses_anonymous_args = 0
+  36 0000 80B5     		push	{r7, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 8
+  39 0002 00AF     		add	r7, sp, #0
+  40              		.cfi_offset 14, -4
+  41              		.cfi_offset 7, -8
+  42              	.LCFI1:
+  43              		.cfi_def_cfa_register 7
+  60:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* For all we know the interrupt is active. */
+  61:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_Disable();
+  44              		.loc 1 61 0
+  45 0004 FFF7FEFF 		bl	isr_spark_drq_Disable
+  62:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  63:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Set the ISR to point to the isr_spark_drq Interrupt. */
+  64:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_SetVector(&isr_spark_drq_Interrupt);
+  46              		.loc 1 64 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 3
+
+
+  47 0008 40F20000 		movw	r0, #:lower16:isr_spark_drq_Interrupt
+  48 000c C0F20000 		movt	r0, #:upper16:isr_spark_drq_Interrupt
+  49 0010 FFF7FEFF 		bl	isr_spark_drq_SetVector
+  65:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  66:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Set the priority. */
+  67:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_SetPriority((uint8)isr_spark_drq_INTC_PRIOR_NUMBER);
+  50              		.loc 1 67 0
+  51 0014 4FF00100 		mov	r0, #1
+  52 0018 FFF7FEFF 		bl	isr_spark_drq_SetPriority
+  68:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  69:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Enable it. */
+  70:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_Enable();
+  53              		.loc 1 70 0
+  54 001c FFF7FEFF 		bl	isr_spark_drq_Enable
+  71:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+  55              		.loc 1 71 0
+  56 0020 80BD     		pop	{r7, pc}
+  57              		.cfi_endproc
+  58              	.LFE0:
+  59              		.size	isr_spark_drq_Start, .-isr_spark_drq_Start
+  60 0022 00BF     		.section	.text.isr_spark_drq_StartEx,"ax",%progbits
+  61              		.align	2
+  62              		.global	isr_spark_drq_StartEx
+  63              		.thumb
+  64              		.thumb_func
+  65              		.type	isr_spark_drq_StartEx, %function
+  66              	isr_spark_drq_StartEx:
+  67              	.LFB1:
+  72:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  73:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  74:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+  75:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_StartEx
+  76:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+  77:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  78:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+  79:.\Generated_Source\PSoC5/isr_spark_drq.c **** *  Set up the interrupt and enable it.
+  80:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  81:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:  
+  82:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  83:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  84:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+  85:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+  86:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+  87:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+  88:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_StartEx(cyisraddress address)
+  89:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+  68              		.loc 1 89 0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 8
+  71              		@ frame_needed = 1, uses_anonymous_args = 0
+  72 0000 80B5     		push	{r7, lr}
+  73              	.LCFI2:
+  74              		.cfi_def_cfa_offset 8
+  75 0002 82B0     		sub	sp, sp, #8
+  76              	.LCFI3:
+  77              		.cfi_def_cfa_offset 16
+  78 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 4
+
+
+  79              		.cfi_offset 14, -4
+  80              		.cfi_offset 7, -8
+  81              	.LCFI4:
+  82              		.cfi_def_cfa_register 7
+  83 0006 7860     		str	r0, [r7, #4]
+  90:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* For all we know the interrupt is active. */
+  91:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_Disable();
+  84              		.loc 1 91 0
+  85 0008 FFF7FEFF 		bl	isr_spark_drq_Disable
+  92:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  93:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Set the ISR to point to the isr_spark_drq Interrupt. */
+  94:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_SetVector(address);
+  86              		.loc 1 94 0
+  87 000c 7868     		ldr	r0, [r7, #4]
+  88 000e FFF7FEFF 		bl	isr_spark_drq_SetVector
+  95:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  96:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Set the priority. */
+  97:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_SetPriority((uint8)isr_spark_drq_INTC_PRIOR_NUMBER);
+  89              		.loc 1 97 0
+  90 0012 4FF00100 		mov	r0, #1
+  91 0016 FFF7FEFF 		bl	isr_spark_drq_SetPriority
+  98:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+  99:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Enable it. */
+ 100:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_Enable();
+  92              		.loc 1 100 0
+  93 001a FFF7FEFF 		bl	isr_spark_drq_Enable
+ 101:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+  94              		.loc 1 101 0
+  95 001e 07F10807 		add	r7, r7, #8
+  96 0022 BD46     		mov	sp, r7
+  97 0024 80BD     		pop	{r7, pc}
+  98              		.cfi_endproc
+  99              	.LFE1:
+ 100              		.size	isr_spark_drq_StartEx, .-isr_spark_drq_StartEx
+ 101 0026 00BF     		.section	.text.isr_spark_drq_Stop,"ax",%progbits
+ 102              		.align	2
+ 103              		.global	isr_spark_drq_Stop
+ 104              		.thumb
+ 105              		.thumb_func
+ 106              		.type	isr_spark_drq_Stop, %function
+ 107              	isr_spark_drq_Stop:
+ 108              	.LFB2:
+ 102:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 103:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 104:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 105:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_Stop
+ 106:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 107:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 108:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 109:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Disables and removes the interrupt.
+ 110:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 111:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:  
+ 112:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 113:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 114:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 115:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 116:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 5
+
+
+ 117:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_Stop(void)
+ 118:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 109              		.loc 1 118 0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 1, uses_anonymous_args = 0
+ 113 0000 80B5     		push	{r7, lr}
+ 114              	.LCFI5:
+ 115              		.cfi_def_cfa_offset 8
+ 116 0002 00AF     		add	r7, sp, #0
+ 117              		.cfi_offset 14, -4
+ 118              		.cfi_offset 7, -8
+ 119              	.LCFI6:
+ 120              		.cfi_def_cfa_register 7
+ 119:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Disable this interrupt. */
+ 120:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_Disable();
+ 121              		.loc 1 120 0
+ 122 0004 FFF7FEFF 		bl	isr_spark_drq_Disable
+ 121:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 122:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Set the ISR to point to the passive one. */
+ 123:.\Generated_Source\PSoC5/isr_spark_drq.c ****     isr_spark_drq_SetVector(&IntDefaultHandler);
+ 123              		.loc 1 123 0
+ 124 0008 40F20000 		movw	r0, #:lower16:IntDefaultHandler
+ 125 000c C0F20000 		movt	r0, #:upper16:IntDefaultHandler
+ 126 0010 FFF7FEFF 		bl	isr_spark_drq_SetVector
+ 124:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 127              		.loc 1 124 0
+ 128 0014 80BD     		pop	{r7, pc}
+ 129              		.cfi_endproc
+ 130              	.LFE2:
+ 131              		.size	isr_spark_drq_Stop, .-isr_spark_drq_Stop
+ 132 0016 00BF     		.section	.text.isr_spark_drq_SetVector,"ax",%progbits
+ 133              		.align	2
+ 134              		.global	isr_spark_drq_SetVector
+ 135              		.thumb
+ 136              		.thumb_func
+ 137              		.type	isr_spark_drq_SetVector, %function
+ 138              	isr_spark_drq_SetVector:
+ 139              	.LFB3:
+ 125:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 126:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 127:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 128:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_Interrupt
+ 129:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 130:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 131:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 132:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   The default Interrupt Service Routine for isr_spark_drq.
+ 133:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 134:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Add custom code between the coments to keep the next version of this file
+ 135:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   from over writting your code.
+ 136:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 137:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:  
+ 138:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 139:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 140:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 141:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 142:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 6
+
+
+ 143:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 144:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 145:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 146:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 147:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_SetVector
+ 148:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 149:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 150:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 151:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Change the ISR vector for the Interrupt. Note calling isr_spark_drq_Start
+ 152:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   will override any effect this method would have had. To set the vector 
+ 153:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   before the component has been started use isr_spark_drq_StartEx instead.
+ 154:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 155:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 156:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 157:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 158:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 159:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 160:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 161:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 162:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_SetVector(cyisraddress address)
+ 163:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 140              		.loc 1 163 0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 16
+ 143              		@ frame_needed = 1, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 145 0000 80B4     		push	{r7}
+ 146              	.LCFI7:
+ 147              		.cfi_def_cfa_offset 4
+ 148 0002 85B0     		sub	sp, sp, #20
+ 149              	.LCFI8:
+ 150              		.cfi_def_cfa_offset 24
+ 151 0004 00AF     		add	r7, sp, #0
+ 152              		.cfi_offset 7, -4
+ 153              	.LCFI9:
+ 154              		.cfi_def_cfa_register 7
+ 155 0006 7860     		str	r0, [r7, #4]
+ 164:.\Generated_Source\PSoC5/isr_spark_drq.c ****     cyisraddress * ramVectorTable;
+ 165:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 166:.\Generated_Source\PSoC5/isr_spark_drq.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+ 156              		.loc 1 166 0
+ 157 0008 4EF60853 		movw	r3, #:lower16:-536810232
+ 158 000c CEF20003 		movt	r3, #:upper16:-536810232
+ 159 0010 1B68     		ldr	r3, [r3, #0]
+ 160 0012 FB60     		str	r3, [r7, #12]
+ 167:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 168:.\Generated_Source\PSoC5/isr_spark_drq.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_spark_drq__INTC_NUMBER] = address;
+ 161              		.loc 1 168 0
+ 162 0014 FB68     		ldr	r3, [r7, #12]
+ 163 0016 03F14003 		add	r3, r3, #64
+ 164 001a 7A68     		ldr	r2, [r7, #4]
+ 165 001c 1A60     		str	r2, [r3, #0]
+ 169:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 166              		.loc 1 169 0
+ 167 001e 07F11407 		add	r7, r7, #20
+ 168 0022 BD46     		mov	sp, r7
+ 169 0024 80BC     		pop	{r7}
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 7
+
+
+ 170 0026 7047     		bx	lr
+ 171              		.cfi_endproc
+ 172              	.LFE3:
+ 173              		.size	isr_spark_drq_SetVector, .-isr_spark_drq_SetVector
+ 174              		.section	.text.isr_spark_drq_GetVector,"ax",%progbits
+ 175              		.align	2
+ 176              		.global	isr_spark_drq_GetVector
+ 177              		.thumb
+ 178              		.thumb_func
+ 179              		.type	isr_spark_drq_GetVector, %function
+ 180              	isr_spark_drq_GetVector:
+ 181              	.LFB4:
+ 170:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 171:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 172:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 173:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_GetVector
+ 174:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 175:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 176:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 177:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 178:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 179:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 180:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 181:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 182:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 183:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Address of the ISR in the interrupt vector table.
+ 184:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 185:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 186:.\Generated_Source\PSoC5/isr_spark_drq.c **** cyisraddress isr_spark_drq_GetVector(void)
+ 187:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 182              		.loc 1 187 0
+ 183              		.cfi_startproc
+ 184              		@ args = 0, pretend = 0, frame = 8
+ 185              		@ frame_needed = 1, uses_anonymous_args = 0
+ 186              		@ link register save eliminated.
+ 187 0000 80B4     		push	{r7}
+ 188              	.LCFI10:
+ 189              		.cfi_def_cfa_offset 4
+ 190 0002 83B0     		sub	sp, sp, #12
+ 191              	.LCFI11:
+ 192              		.cfi_def_cfa_offset 16
+ 193 0004 00AF     		add	r7, sp, #0
+ 194              		.cfi_offset 7, -4
+ 195              	.LCFI12:
+ 196              		.cfi_def_cfa_register 7
+ 188:.\Generated_Source\PSoC5/isr_spark_drq.c ****     cyisraddress * ramVectorTable;
+ 189:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 190:.\Generated_Source\PSoC5/isr_spark_drq.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+ 197              		.loc 1 190 0
+ 198 0006 4EF60853 		movw	r3, #:lower16:-536810232
+ 199 000a CEF20003 		movt	r3, #:upper16:-536810232
+ 200 000e 1B68     		ldr	r3, [r3, #0]
+ 201 0010 7B60     		str	r3, [r7, #4]
+ 191:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 192:.\Generated_Source\PSoC5/isr_spark_drq.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_spark_drq__INTC_NUMBER];
+ 202              		.loc 1 192 0
+ 203 0012 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 8
+
+
+ 204 0014 03F14003 		add	r3, r3, #64
+ 205 0018 1B68     		ldr	r3, [r3, #0]
+ 193:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 206              		.loc 1 193 0
+ 207 001a 1846     		mov	r0, r3
+ 208 001c 07F10C07 		add	r7, r7, #12
+ 209 0020 BD46     		mov	sp, r7
+ 210 0022 80BC     		pop	{r7}
+ 211 0024 7047     		bx	lr
+ 212              		.cfi_endproc
+ 213              	.LFE4:
+ 214              		.size	isr_spark_drq_GetVector, .-isr_spark_drq_GetVector
+ 215 0026 00BF     		.section	.text.isr_spark_drq_SetPriority,"ax",%progbits
+ 216              		.align	2
+ 217              		.global	isr_spark_drq_SetPriority
+ 218              		.thumb
+ 219              		.thumb_func
+ 220              		.type	isr_spark_drq_SetPriority, %function
+ 221              	isr_spark_drq_SetPriority:
+ 222              	.LFB5:
+ 194:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 195:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 196:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 197:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_SetPriority
+ 198:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 199:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 200:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 201:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Sets the Priority of the Interrupt. Note calling isr_spark_drq_Start
+ 202:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   or isr_spark_drq_StartEx will override any effect this method 
+ 203:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   would have had. This method should only be called after 
+ 204:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   isr_spark_drq_Start or isr_spark_drq_StartEx has been called. To set 
+ 205:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   the initial priority for the component use the cydwr file in the tool.
+ 206:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 207:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 208:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   priority: Priority of the interrupt. 0 - 7, 0 being the highest.
+ 209:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 210:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 211:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 212:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 213:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 214:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_SetPriority(uint8 priority)
+ 215:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 223              		.loc 1 215 0
+ 224              		.cfi_startproc
+ 225              		@ args = 0, pretend = 0, frame = 8
+ 226              		@ frame_needed = 1, uses_anonymous_args = 0
+ 227              		@ link register save eliminated.
+ 228 0000 80B4     		push	{r7}
+ 229              	.LCFI13:
+ 230              		.cfi_def_cfa_offset 4
+ 231 0002 83B0     		sub	sp, sp, #12
+ 232              	.LCFI14:
+ 233              		.cfi_def_cfa_offset 16
+ 234 0004 00AF     		add	r7, sp, #0
+ 235              		.cfi_offset 7, -4
+ 236              	.LCFI15:
+ 237              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 9
+
+
+ 238 0006 0346     		mov	r3, r0
+ 239 0008 FB71     		strb	r3, [r7, #7]
+ 216:.\Generated_Source\PSoC5/isr_spark_drq.c ****     *isr_spark_drq_INTC_PRIOR = priority << 5;
+ 240              		.loc 1 216 0
+ 241 000a 4EF20043 		movw	r3, #:lower16:-536812544
+ 242 000e CEF20003 		movt	r3, #:upper16:-536812544
+ 243 0012 FA79     		ldrb	r2, [r7, #7]
+ 244 0014 4FEA4212 		lsl	r2, r2, #5
+ 245 0018 D2B2     		uxtb	r2, r2
+ 246 001a 1A70     		strb	r2, [r3, #0]
+ 217:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 247              		.loc 1 217 0
+ 248 001c 07F10C07 		add	r7, r7, #12
+ 249 0020 BD46     		mov	sp, r7
+ 250 0022 80BC     		pop	{r7}
+ 251 0024 7047     		bx	lr
+ 252              		.cfi_endproc
+ 253              	.LFE5:
+ 254              		.size	isr_spark_drq_SetPriority, .-isr_spark_drq_SetPriority
+ 255 0026 00BF     		.section	.text.isr_spark_drq_GetPriority,"ax",%progbits
+ 256              		.align	2
+ 257              		.global	isr_spark_drq_GetPriority
+ 258              		.thumb
+ 259              		.thumb_func
+ 260              		.type	isr_spark_drq_GetPriority, %function
+ 261              	isr_spark_drq_GetPriority:
+ 262              	.LFB6:
+ 218:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 219:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 220:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 221:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_GetPriority
+ 222:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 223:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 224:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 225:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Gets the Priority of the Interrupt.
+ 226:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 227:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 228:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 229:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 230:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 231:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Priority of the interrupt. 0 - 7, 0 being the highest.
+ 232:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 233:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 234:.\Generated_Source\PSoC5/isr_spark_drq.c **** uint8 isr_spark_drq_GetPriority(void)
+ 235:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 263              		.loc 1 235 0
+ 264              		.cfi_startproc
+ 265              		@ args = 0, pretend = 0, frame = 8
+ 266              		@ frame_needed = 1, uses_anonymous_args = 0
+ 267              		@ link register save eliminated.
+ 268 0000 80B4     		push	{r7}
+ 269              	.LCFI16:
+ 270              		.cfi_def_cfa_offset 4
+ 271 0002 83B0     		sub	sp, sp, #12
+ 272              	.LCFI17:
+ 273              		.cfi_def_cfa_offset 16
+ 274 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 10
+
+
+ 275              		.cfi_offset 7, -4
+ 276              	.LCFI18:
+ 277              		.cfi_def_cfa_register 7
+ 236:.\Generated_Source\PSoC5/isr_spark_drq.c ****     uint8 priority;
+ 237:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 238:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 239:.\Generated_Source\PSoC5/isr_spark_drq.c ****     priority = *isr_spark_drq_INTC_PRIOR >> 5;
+ 278              		.loc 1 239 0
+ 279 0006 4EF20043 		movw	r3, #:lower16:-536812544
+ 280 000a CEF20003 		movt	r3, #:upper16:-536812544
+ 281 000e 1B78     		ldrb	r3, [r3, #0]
+ 282 0010 DBB2     		uxtb	r3, r3
+ 283 0012 4FEA5313 		lsr	r3, r3, #5
+ 284 0016 FB71     		strb	r3, [r7, #7]
+ 240:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 241:.\Generated_Source\PSoC5/isr_spark_drq.c ****     return priority;
+ 285              		.loc 1 241 0
+ 286 0018 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 242:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 287              		.loc 1 242 0
+ 288 001a 1846     		mov	r0, r3
+ 289 001c 07F10C07 		add	r7, r7, #12
+ 290 0020 BD46     		mov	sp, r7
+ 291 0022 80BC     		pop	{r7}
+ 292 0024 7047     		bx	lr
+ 293              		.cfi_endproc
+ 294              	.LFE6:
+ 295              		.size	isr_spark_drq_GetPriority, .-isr_spark_drq_GetPriority
+ 296 0026 00BF     		.section	.text.isr_spark_drq_Enable,"ax",%progbits
+ 297              		.align	2
+ 298              		.global	isr_spark_drq_Enable
+ 299              		.thumb
+ 300              		.thumb_func
+ 301              		.type	isr_spark_drq_Enable, %function
+ 302              	isr_spark_drq_Enable:
+ 303              	.LFB7:
+ 243:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 244:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 245:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 246:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_Enable
+ 247:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 248:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 249:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 250:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Enables the interrupt.
+ 251:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 252:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 253:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 254:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 255:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 256:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 257:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 258:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 259:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_Enable(void)
+ 260:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 304              		.loc 1 260 0
+ 305              		.cfi_startproc
+ 306              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 11
+
+
+ 307              		@ frame_needed = 1, uses_anonymous_args = 0
+ 308              		@ link register save eliminated.
+ 309 0000 80B4     		push	{r7}
+ 310              	.LCFI19:
+ 311              		.cfi_def_cfa_offset 4
+ 312 0002 00AF     		add	r7, sp, #0
+ 313              		.cfi_offset 7, -4
+ 314              	.LCFI20:
+ 315              		.cfi_def_cfa_register 7
+ 261:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Enable the general interrupt. */
+ 262:.\Generated_Source\PSoC5/isr_spark_drq.c ****     *isr_spark_drq_INTC_SET_EN = isr_spark_drq__INTC_MASK;
+ 316              		.loc 1 262 0
+ 317 0004 4EF20013 		movw	r3, #:lower16:-536813312
+ 318 0008 CEF20003 		movt	r3, #:upper16:-536813312
+ 319 000c 4FF00102 		mov	r2, #1
+ 320 0010 1A60     		str	r2, [r3, #0]
+ 263:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 321              		.loc 1 263 0
+ 322 0012 BD46     		mov	sp, r7
+ 323 0014 80BC     		pop	{r7}
+ 324 0016 7047     		bx	lr
+ 325              		.cfi_endproc
+ 326              	.LFE7:
+ 327              		.size	isr_spark_drq_Enable, .-isr_spark_drq_Enable
+ 328              		.section	.text.isr_spark_drq_GetState,"ax",%progbits
+ 329              		.align	2
+ 330              		.global	isr_spark_drq_GetState
+ 331              		.thumb
+ 332              		.thumb_func
+ 333              		.type	isr_spark_drq_GetState, %function
+ 334              	isr_spark_drq_GetState:
+ 335              	.LFB8:
+ 264:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 265:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 266:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 267:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_GetState
+ 268:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 269:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 270:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 271:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 272:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 273:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 274:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 275:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 276:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 277:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   1 if enabled, 0 if disabled.
+ 278:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 279:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 280:.\Generated_Source\PSoC5/isr_spark_drq.c **** uint8 isr_spark_drq_GetState(void)
+ 281:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 336              		.loc 1 281 0
+ 337              		.cfi_startproc
+ 338              		@ args = 0, pretend = 0, frame = 0
+ 339              		@ frame_needed = 1, uses_anonymous_args = 0
+ 340              		@ link register save eliminated.
+ 341 0000 80B4     		push	{r7}
+ 342              	.LCFI21:
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 12
+
+
+ 343              		.cfi_def_cfa_offset 4
+ 344 0002 00AF     		add	r7, sp, #0
+ 345              		.cfi_offset 7, -4
+ 346              	.LCFI22:
+ 347              		.cfi_def_cfa_register 7
+ 282:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Get the state of the general interrupt. */
+ 283:.\Generated_Source\PSoC5/isr_spark_drq.c ****     return ((*isr_spark_drq_INTC_SET_EN & (uint32)isr_spark_drq__INTC_MASK) != 0u) ? 1u:0u;
+ 348              		.loc 1 283 0
+ 349 0004 4EF20013 		movw	r3, #:lower16:-536813312
+ 350 0008 CEF20003 		movt	r3, #:upper16:-536813312
+ 351 000c 1B68     		ldr	r3, [r3, #0]
+ 352 000e 03F00103 		and	r3, r3, #1
+ 353 0012 DBB2     		uxtb	r3, r3
+ 354 0014 002B     		cmp	r3, #0
+ 355 0016 02D0     		beq	.L18
+ 356 0018 4FF00103 		mov	r3, #1
+ 357 001c 01E0     		b	.L19
+ 358              	.L18:
+ 359 001e 4FF00003 		mov	r3, #0
+ 360              	.L19:
+ 284:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 361              		.loc 1 284 0
+ 362 0022 1846     		mov	r0, r3
+ 363 0024 BD46     		mov	sp, r7
+ 364 0026 80BC     		pop	{r7}
+ 365 0028 7047     		bx	lr
+ 366              		.cfi_endproc
+ 367              	.LFE8:
+ 368              		.size	isr_spark_drq_GetState, .-isr_spark_drq_GetState
+ 369 002a 00BF     		.section	.text.isr_spark_drq_Disable,"ax",%progbits
+ 370              		.align	2
+ 371              		.global	isr_spark_drq_Disable
+ 372              		.thumb
+ 373              		.thumb_func
+ 374              		.type	isr_spark_drq_Disable, %function
+ 375              	isr_spark_drq_Disable:
+ 376              	.LFB9:
+ 285:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 286:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 287:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 288:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_Disable
+ 289:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 290:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 291:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 292:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Disables the Interrupt.
+ 293:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 294:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 295:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 296:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 297:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 298:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 299:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 300:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 301:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_Disable(void)
+ 302:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 377              		.loc 1 302 0
+ 378              		.cfi_startproc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 13
+
+
+ 379              		@ args = 0, pretend = 0, frame = 0
+ 380              		@ frame_needed = 1, uses_anonymous_args = 0
+ 381              		@ link register save eliminated.
+ 382 0000 80B4     		push	{r7}
+ 383              	.LCFI23:
+ 384              		.cfi_def_cfa_offset 4
+ 385 0002 00AF     		add	r7, sp, #0
+ 386              		.cfi_offset 7, -4
+ 387              	.LCFI24:
+ 388              		.cfi_def_cfa_register 7
+ 303:.\Generated_Source\PSoC5/isr_spark_drq.c ****     /* Disable the general interrupt. */
+ 304:.\Generated_Source\PSoC5/isr_spark_drq.c ****     *isr_spark_drq_INTC_CLR_EN = isr_spark_drq__INTC_MASK;
+ 389              		.loc 1 304 0
+ 390 0004 4EF28013 		movw	r3, #:lower16:-536813184
+ 391 0008 CEF20003 		movt	r3, #:upper16:-536813184
+ 392 000c 4FF00102 		mov	r2, #1
+ 393 0010 1A60     		str	r2, [r3, #0]
+ 305:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 394              		.loc 1 305 0
+ 395 0012 BD46     		mov	sp, r7
+ 396 0014 80BC     		pop	{r7}
+ 397 0016 7047     		bx	lr
+ 398              		.cfi_endproc
+ 399              	.LFE9:
+ 400              		.size	isr_spark_drq_Disable, .-isr_spark_drq_Disable
+ 401              		.section	.text.isr_spark_drq_SetPending,"ax",%progbits
+ 402              		.align	2
+ 403              		.global	isr_spark_drq_SetPending
+ 404              		.thumb
+ 405              		.thumb_func
+ 406              		.type	isr_spark_drq_SetPending, %function
+ 407              	isr_spark_drq_SetPending:
+ 408              	.LFB10:
+ 306:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 307:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 308:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 309:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_SetPending
+ 310:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 311:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 312:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 313:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 314:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   generating the interrupt.
+ 315:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 316:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 317:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 318:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 319:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 320:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 321:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 322:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 323:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_SetPending(void)
+ 324:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 409              		.loc 1 324 0
+ 410              		.cfi_startproc
+ 411              		@ args = 0, pretend = 0, frame = 0
+ 412              		@ frame_needed = 1, uses_anonymous_args = 0
+ 413              		@ link register save eliminated.
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 14
+
+
+ 414 0000 80B4     		push	{r7}
+ 415              	.LCFI25:
+ 416              		.cfi_def_cfa_offset 4
+ 417 0002 00AF     		add	r7, sp, #0
+ 418              		.cfi_offset 7, -4
+ 419              	.LCFI26:
+ 420              		.cfi_def_cfa_register 7
+ 325:.\Generated_Source\PSoC5/isr_spark_drq.c ****     *isr_spark_drq_INTC_SET_PD = isr_spark_drq__INTC_MASK;
+ 421              		.loc 1 325 0
+ 422 0004 4EF20023 		movw	r3, #:lower16:-536813056
+ 423 0008 CEF20003 		movt	r3, #:upper16:-536813056
+ 424 000c 4FF00102 		mov	r2, #1
+ 425 0010 1A60     		str	r2, [r3, #0]
+ 326:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 426              		.loc 1 326 0
+ 427 0012 BD46     		mov	sp, r7
+ 428 0014 80BC     		pop	{r7}
+ 429 0016 7047     		bx	lr
+ 430              		.cfi_endproc
+ 431              	.LFE10:
+ 432              		.size	isr_spark_drq_SetPending, .-isr_spark_drq_SetPending
+ 433              		.section	.text.isr_spark_drq_ClearPending,"ax",%progbits
+ 434              		.align	2
+ 435              		.global	isr_spark_drq_ClearPending
+ 436              		.thumb
+ 437              		.thumb_func
+ 438              		.type	isr_spark_drq_ClearPending, %function
+ 439              	isr_spark_drq_ClearPending:
+ 440              	.LFB11:
+ 327:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 328:.\Generated_Source\PSoC5/isr_spark_drq.c **** 
+ 329:.\Generated_Source\PSoC5/isr_spark_drq.c **** /*******************************************************************************
+ 330:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Function Name: isr_spark_drq_ClearPending
+ 331:.\Generated_Source\PSoC5/isr_spark_drq.c **** ********************************************************************************
+ 332:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 333:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Summary:
+ 334:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   Clears a pending interrupt.
+ 335:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 336:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Parameters:
+ 337:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 338:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 339:.\Generated_Source\PSoC5/isr_spark_drq.c **** * Return:
+ 340:.\Generated_Source\PSoC5/isr_spark_drq.c **** *   None
+ 341:.\Generated_Source\PSoC5/isr_spark_drq.c **** *
+ 342:.\Generated_Source\PSoC5/isr_spark_drq.c **** *******************************************************************************/
+ 343:.\Generated_Source\PSoC5/isr_spark_drq.c **** void isr_spark_drq_ClearPending(void)
+ 344:.\Generated_Source\PSoC5/isr_spark_drq.c **** {
+ 441              		.loc 1 344 0
+ 442              		.cfi_startproc
+ 443              		@ args = 0, pretend = 0, frame = 0
+ 444              		@ frame_needed = 1, uses_anonymous_args = 0
+ 445              		@ link register save eliminated.
+ 446 0000 80B4     		push	{r7}
+ 447              	.LCFI27:
+ 448              		.cfi_def_cfa_offset 4
+ 449 0002 00AF     		add	r7, sp, #0
+ 450              		.cfi_offset 7, -4
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 15
+
+
+ 451              	.LCFI28:
+ 452              		.cfi_def_cfa_register 7
+ 345:.\Generated_Source\PSoC5/isr_spark_drq.c ****     *isr_spark_drq_INTC_CLR_PD = isr_spark_drq__INTC_MASK;
+ 453              		.loc 1 345 0
+ 454 0004 4EF28023 		movw	r3, #:lower16:-536812928
+ 455 0008 CEF20003 		movt	r3, #:upper16:-536812928
+ 456 000c 4FF00102 		mov	r2, #1
+ 457 0010 1A60     		str	r2, [r3, #0]
+ 346:.\Generated_Source\PSoC5/isr_spark_drq.c **** }
+ 458              		.loc 1 346 0
+ 459 0012 BD46     		mov	sp, r7
+ 460 0014 80BC     		pop	{r7}
+ 461 0016 7047     		bx	lr
+ 462              		.cfi_endproc
+ 463              	.LFE11:
+ 464              		.size	isr_spark_drq_ClearPending, .-isr_spark_drq_ClearPending
+ 465              		.text
+ 466              	.Letext0:
+ 467              		.section	.debug_loc,"",%progbits
+ 468              	.Ldebug_loc0:
+ 469              	.LLST0:
+ 470 0000 00000000 		.4byte	.LFB0
+ 471 0004 02000000 		.4byte	.LCFI0
+ 472 0008 0100     		.2byte	0x1
+ 473 000a 5D       		.byte	0x5d
+ 474 000b 02000000 		.4byte	.LCFI0
+ 475 000f 04000000 		.4byte	.LCFI1
+ 476 0013 0200     		.2byte	0x2
+ 477 0015 7D       		.byte	0x7d
+ 478 0016 08       		.sleb128 8
+ 479 0017 04000000 		.4byte	.LCFI1
+ 480 001b 22000000 		.4byte	.LFE0
+ 481 001f 0200     		.2byte	0x2
+ 482 0021 77       		.byte	0x77
+ 483 0022 08       		.sleb128 8
+ 484 0023 00000000 		.4byte	0x0
+ 485 0027 00000000 		.4byte	0x0
+ 486              	.LLST1:
+ 487 002b 00000000 		.4byte	.LFB1
+ 488 002f 02000000 		.4byte	.LCFI2
+ 489 0033 0100     		.2byte	0x1
+ 490 0035 5D       		.byte	0x5d
+ 491 0036 02000000 		.4byte	.LCFI2
+ 492 003a 04000000 		.4byte	.LCFI3
+ 493 003e 0200     		.2byte	0x2
+ 494 0040 7D       		.byte	0x7d
+ 495 0041 08       		.sleb128 8
+ 496 0042 04000000 		.4byte	.LCFI3
+ 497 0046 06000000 		.4byte	.LCFI4
+ 498 004a 0200     		.2byte	0x2
+ 499 004c 7D       		.byte	0x7d
+ 500 004d 10       		.sleb128 16
+ 501 004e 06000000 		.4byte	.LCFI4
+ 502 0052 26000000 		.4byte	.LFE1
+ 503 0056 0200     		.2byte	0x2
+ 504 0058 77       		.byte	0x77
+ 505 0059 10       		.sleb128 16
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 16
+
+
+ 506 005a 00000000 		.4byte	0x0
+ 507 005e 00000000 		.4byte	0x0
+ 508              	.LLST2:
+ 509 0062 00000000 		.4byte	.LFB2
+ 510 0066 02000000 		.4byte	.LCFI5
+ 511 006a 0100     		.2byte	0x1
+ 512 006c 5D       		.byte	0x5d
+ 513 006d 02000000 		.4byte	.LCFI5
+ 514 0071 04000000 		.4byte	.LCFI6
+ 515 0075 0200     		.2byte	0x2
+ 516 0077 7D       		.byte	0x7d
+ 517 0078 08       		.sleb128 8
+ 518 0079 04000000 		.4byte	.LCFI6
+ 519 007d 16000000 		.4byte	.LFE2
+ 520 0081 0200     		.2byte	0x2
+ 521 0083 77       		.byte	0x77
+ 522 0084 08       		.sleb128 8
+ 523 0085 00000000 		.4byte	0x0
+ 524 0089 00000000 		.4byte	0x0
+ 525              	.LLST3:
+ 526 008d 00000000 		.4byte	.LFB3
+ 527 0091 02000000 		.4byte	.LCFI7
+ 528 0095 0100     		.2byte	0x1
+ 529 0097 5D       		.byte	0x5d
+ 530 0098 02000000 		.4byte	.LCFI7
+ 531 009c 04000000 		.4byte	.LCFI8
+ 532 00a0 0200     		.2byte	0x2
+ 533 00a2 7D       		.byte	0x7d
+ 534 00a3 04       		.sleb128 4
+ 535 00a4 04000000 		.4byte	.LCFI8
+ 536 00a8 06000000 		.4byte	.LCFI9
+ 537 00ac 0200     		.2byte	0x2
+ 538 00ae 7D       		.byte	0x7d
+ 539 00af 18       		.sleb128 24
+ 540 00b0 06000000 		.4byte	.LCFI9
+ 541 00b4 28000000 		.4byte	.LFE3
+ 542 00b8 0200     		.2byte	0x2
+ 543 00ba 77       		.byte	0x77
+ 544 00bb 18       		.sleb128 24
+ 545 00bc 00000000 		.4byte	0x0
+ 546 00c0 00000000 		.4byte	0x0
+ 547              	.LLST4:
+ 548 00c4 00000000 		.4byte	.LFB4
+ 549 00c8 02000000 		.4byte	.LCFI10
+ 550 00cc 0100     		.2byte	0x1
+ 551 00ce 5D       		.byte	0x5d
+ 552 00cf 02000000 		.4byte	.LCFI10
+ 553 00d3 04000000 		.4byte	.LCFI11
+ 554 00d7 0200     		.2byte	0x2
+ 555 00d9 7D       		.byte	0x7d
+ 556 00da 04       		.sleb128 4
+ 557 00db 04000000 		.4byte	.LCFI11
+ 558 00df 06000000 		.4byte	.LCFI12
+ 559 00e3 0200     		.2byte	0x2
+ 560 00e5 7D       		.byte	0x7d
+ 561 00e6 10       		.sleb128 16
+ 562 00e7 06000000 		.4byte	.LCFI12
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 17
+
+
+ 563 00eb 26000000 		.4byte	.LFE4
+ 564 00ef 0200     		.2byte	0x2
+ 565 00f1 77       		.byte	0x77
+ 566 00f2 10       		.sleb128 16
+ 567 00f3 00000000 		.4byte	0x0
+ 568 00f7 00000000 		.4byte	0x0
+ 569              	.LLST5:
+ 570 00fb 00000000 		.4byte	.LFB5
+ 571 00ff 02000000 		.4byte	.LCFI13
+ 572 0103 0100     		.2byte	0x1
+ 573 0105 5D       		.byte	0x5d
+ 574 0106 02000000 		.4byte	.LCFI13
+ 575 010a 04000000 		.4byte	.LCFI14
+ 576 010e 0200     		.2byte	0x2
+ 577 0110 7D       		.byte	0x7d
+ 578 0111 04       		.sleb128 4
+ 579 0112 04000000 		.4byte	.LCFI14
+ 580 0116 06000000 		.4byte	.LCFI15
+ 581 011a 0200     		.2byte	0x2
+ 582 011c 7D       		.byte	0x7d
+ 583 011d 10       		.sleb128 16
+ 584 011e 06000000 		.4byte	.LCFI15
+ 585 0122 26000000 		.4byte	.LFE5
+ 586 0126 0200     		.2byte	0x2
+ 587 0128 77       		.byte	0x77
+ 588 0129 10       		.sleb128 16
+ 589 012a 00000000 		.4byte	0x0
+ 590 012e 00000000 		.4byte	0x0
+ 591              	.LLST6:
+ 592 0132 00000000 		.4byte	.LFB6
+ 593 0136 02000000 		.4byte	.LCFI16
+ 594 013a 0100     		.2byte	0x1
+ 595 013c 5D       		.byte	0x5d
+ 596 013d 02000000 		.4byte	.LCFI16
+ 597 0141 04000000 		.4byte	.LCFI17
+ 598 0145 0200     		.2byte	0x2
+ 599 0147 7D       		.byte	0x7d
+ 600 0148 04       		.sleb128 4
+ 601 0149 04000000 		.4byte	.LCFI17
+ 602 014d 06000000 		.4byte	.LCFI18
+ 603 0151 0200     		.2byte	0x2
+ 604 0153 7D       		.byte	0x7d
+ 605 0154 10       		.sleb128 16
+ 606 0155 06000000 		.4byte	.LCFI18
+ 607 0159 26000000 		.4byte	.LFE6
+ 608 015d 0200     		.2byte	0x2
+ 609 015f 77       		.byte	0x77
+ 610 0160 10       		.sleb128 16
+ 611 0161 00000000 		.4byte	0x0
+ 612 0165 00000000 		.4byte	0x0
+ 613              	.LLST7:
+ 614 0169 00000000 		.4byte	.LFB7
+ 615 016d 02000000 		.4byte	.LCFI19
+ 616 0171 0100     		.2byte	0x1
+ 617 0173 5D       		.byte	0x5d
+ 618 0174 02000000 		.4byte	.LCFI19
+ 619 0178 04000000 		.4byte	.LCFI20
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 18
+
+
+ 620 017c 0200     		.2byte	0x2
+ 621 017e 7D       		.byte	0x7d
+ 622 017f 04       		.sleb128 4
+ 623 0180 04000000 		.4byte	.LCFI20
+ 624 0184 18000000 		.4byte	.LFE7
+ 625 0188 0200     		.2byte	0x2
+ 626 018a 77       		.byte	0x77
+ 627 018b 04       		.sleb128 4
+ 628 018c 00000000 		.4byte	0x0
+ 629 0190 00000000 		.4byte	0x0
+ 630              	.LLST8:
+ 631 0194 00000000 		.4byte	.LFB8
+ 632 0198 02000000 		.4byte	.LCFI21
+ 633 019c 0100     		.2byte	0x1
+ 634 019e 5D       		.byte	0x5d
+ 635 019f 02000000 		.4byte	.LCFI21
+ 636 01a3 04000000 		.4byte	.LCFI22
+ 637 01a7 0200     		.2byte	0x2
+ 638 01a9 7D       		.byte	0x7d
+ 639 01aa 04       		.sleb128 4
+ 640 01ab 04000000 		.4byte	.LCFI22
+ 641 01af 2A000000 		.4byte	.LFE8
+ 642 01b3 0200     		.2byte	0x2
+ 643 01b5 77       		.byte	0x77
+ 644 01b6 04       		.sleb128 4
+ 645 01b7 00000000 		.4byte	0x0
+ 646 01bb 00000000 		.4byte	0x0
+ 647              	.LLST9:
+ 648 01bf 00000000 		.4byte	.LFB9
+ 649 01c3 02000000 		.4byte	.LCFI23
+ 650 01c7 0100     		.2byte	0x1
+ 651 01c9 5D       		.byte	0x5d
+ 652 01ca 02000000 		.4byte	.LCFI23
+ 653 01ce 04000000 		.4byte	.LCFI24
+ 654 01d2 0200     		.2byte	0x2
+ 655 01d4 7D       		.byte	0x7d
+ 656 01d5 04       		.sleb128 4
+ 657 01d6 04000000 		.4byte	.LCFI24
+ 658 01da 18000000 		.4byte	.LFE9
+ 659 01de 0200     		.2byte	0x2
+ 660 01e0 77       		.byte	0x77
+ 661 01e1 04       		.sleb128 4
+ 662 01e2 00000000 		.4byte	0x0
+ 663 01e6 00000000 		.4byte	0x0
+ 664              	.LLST10:
+ 665 01ea 00000000 		.4byte	.LFB10
+ 666 01ee 02000000 		.4byte	.LCFI25
+ 667 01f2 0100     		.2byte	0x1
+ 668 01f4 5D       		.byte	0x5d
+ 669 01f5 02000000 		.4byte	.LCFI25
+ 670 01f9 04000000 		.4byte	.LCFI26
+ 671 01fd 0200     		.2byte	0x2
+ 672 01ff 7D       		.byte	0x7d
+ 673 0200 04       		.sleb128 4
+ 674 0201 04000000 		.4byte	.LCFI26
+ 675 0205 18000000 		.4byte	.LFE10
+ 676 0209 0200     		.2byte	0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 19
+
+
+ 677 020b 77       		.byte	0x77
+ 678 020c 04       		.sleb128 4
+ 679 020d 00000000 		.4byte	0x0
+ 680 0211 00000000 		.4byte	0x0
+ 681              	.LLST11:
+ 682 0215 00000000 		.4byte	.LFB11
+ 683 0219 02000000 		.4byte	.LCFI27
+ 684 021d 0100     		.2byte	0x1
+ 685 021f 5D       		.byte	0x5d
+ 686 0220 02000000 		.4byte	.LCFI27
+ 687 0224 04000000 		.4byte	.LCFI28
+ 688 0228 0200     		.2byte	0x2
+ 689 022a 7D       		.byte	0x7d
+ 690 022b 04       		.sleb128 4
+ 691 022c 04000000 		.4byte	.LCFI28
+ 692 0230 18000000 		.4byte	.LFE11
+ 693 0234 0200     		.2byte	0x2
+ 694 0236 77       		.byte	0x77
+ 695 0237 04       		.sleb128 4
+ 696 0238 00000000 		.4byte	0x0
+ 697 023c 00000000 		.4byte	0x0
+ 698              		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 699              		.section	.debug_info
+ 700 0000 22020000 		.4byte	0x222
+ 701 0004 0200     		.2byte	0x2
+ 702 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 703 000a 04       		.byte	0x4
+ 704 000b 01       		.uleb128 0x1
+ 705 000c A8010000 		.4byte	.LASF28
+ 706 0010 01       		.byte	0x1
+ 707 0011 B4010000 		.4byte	.LASF29
+ 708 0015 AE000000 		.4byte	.LASF30
+ 709 0019 00000000 		.4byte	0x0
+ 710 001d 00000000 		.4byte	0x0
+ 711 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 712 0025 00000000 		.4byte	.Ldebug_line0
+ 713 0029 02       		.uleb128 0x2
+ 714 002a 01       		.byte	0x1
+ 715 002b 06       		.byte	0x6
+ 716 002c 34020000 		.4byte	.LASF0
+ 717 0030 02       		.uleb128 0x2
+ 718 0031 01       		.byte	0x1
+ 719 0032 08       		.byte	0x8
+ 720 0033 8C000000 		.4byte	.LASF1
+ 721 0037 02       		.uleb128 0x2
+ 722 0038 02       		.byte	0x2
+ 723 0039 05       		.byte	0x5
+ 724 003a F1010000 		.4byte	.LASF2
+ 725 003e 02       		.uleb128 0x2
+ 726 003f 02       		.byte	0x2
+ 727 0040 07       		.byte	0x7
+ 728 0041 29000000 		.4byte	.LASF3
+ 729 0045 03       		.uleb128 0x3
+ 730 0046 04       		.byte	0x4
+ 731 0047 05       		.byte	0x5
+ 732 0048 696E7400 		.ascii	"int\000"
+ 733 004c 02       		.uleb128 0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 20
+
+
+ 734 004d 04       		.byte	0x4
+ 735 004e 07       		.byte	0x7
+ 736 004f 43010000 		.4byte	.LASF4
+ 737 0053 02       		.uleb128 0x2
+ 738 0054 08       		.byte	0x8
+ 739 0055 05       		.byte	0x5
+ 740 0056 00000000 		.4byte	.LASF5
+ 741 005a 02       		.uleb128 0x2
+ 742 005b 08       		.byte	0x8
+ 743 005c 07       		.byte	0x7
+ 744 005d 6F010000 		.4byte	.LASF6
+ 745 0061 02       		.uleb128 0x2
+ 746 0062 04       		.byte	0x4
+ 747 0063 05       		.byte	0x5
+ 748 0064 13020000 		.4byte	.LASF7
+ 749 0068 04       		.uleb128 0x4
+ 750 0069 04       		.byte	0x4
+ 751 006a 07       		.byte	0x7
+ 752 006b 02       		.uleb128 0x2
+ 753 006c 04       		.byte	0x4
+ 754 006d 07       		.byte	0x7
+ 755 006e F2000000 		.4byte	.LASF8
+ 756 0072 05       		.uleb128 0x5
+ 757 0073 01       		.byte	0x1
+ 758 0074 06       		.uleb128 0x6
+ 759 0075 04       		.byte	0x4
+ 760 0076 72000000 		.4byte	0x72
+ 761 007a 02       		.uleb128 0x2
+ 762 007b 01       		.byte	0x1
+ 763 007c 08       		.byte	0x8
+ 764 007d DD010000 		.4byte	.LASF9
+ 765 0081 07       		.uleb128 0x7
+ 766 0082 04010000 		.4byte	.LASF12
+ 767 0086 02       		.byte	0x2
+ 768 0087 4C       		.byte	0x4c
+ 769 0088 30000000 		.4byte	0x30
+ 770 008c 02       		.uleb128 0x2
+ 771 008d 04       		.byte	0x4
+ 772 008e 04       		.byte	0x4
+ 773 008f 6C000000 		.4byte	.LASF10
+ 774 0093 02       		.uleb128 0x2
+ 775 0094 08       		.byte	0x8
+ 776 0095 04       		.byte	0x4
+ 777 0096 13010000 		.4byte	.LASF11
+ 778 009a 07       		.uleb128 0x7
+ 779 009b 86010000 		.4byte	.LASF13
+ 780 009f 02       		.byte	0x2
+ 781 00a0 EB       		.byte	0xeb
+ 782 00a1 74000000 		.4byte	0x74
+ 783 00a5 08       		.uleb128 0x8
+ 784 00a6 01       		.byte	0x1
+ 785 00a7 9A000000 		.4byte	.LASF14
+ 786 00ab 01       		.byte	0x1
+ 787 00ac 3A       		.byte	0x3a
+ 788 00ad 01       		.byte	0x1
+ 789 00ae 00000000 		.4byte	.LFB0
+ 790 00b2 22000000 		.4byte	.LFE0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 21
+
+
+ 791 00b6 00000000 		.4byte	.LLST0
+ 792 00ba 09       		.uleb128 0x9
+ 793 00bb 01       		.byte	0x1
+ 794 00bc 3C000000 		.4byte	.LASF16
+ 795 00c0 01       		.byte	0x1
+ 796 00c1 58       		.byte	0x58
+ 797 00c2 01       		.byte	0x1
+ 798 00c3 00000000 		.4byte	.LFB1
+ 799 00c7 26000000 		.4byte	.LFE1
+ 800 00cb 2B000000 		.4byte	.LLST1
+ 801 00cf E2000000 		.4byte	0xe2
+ 802 00d3 0A       		.uleb128 0xa
+ 803 00d4 67010000 		.4byte	.LASF18
+ 804 00d8 01       		.byte	0x1
+ 805 00d9 58       		.byte	0x58
+ 806 00da 9A000000 		.4byte	0x9a
+ 807 00de 02       		.byte	0x2
+ 808 00df 91       		.byte	0x91
+ 809 00e0 74       		.sleb128 -12
+ 810 00e1 00       		.byte	0x0
+ 811 00e2 08       		.uleb128 0x8
+ 812 00e3 01       		.byte	0x1
+ 813 00e4 30010000 		.4byte	.LASF15
+ 814 00e8 01       		.byte	0x1
+ 815 00e9 75       		.byte	0x75
+ 816 00ea 01       		.byte	0x1
+ 817 00eb 00000000 		.4byte	.LFB2
+ 818 00ef 16000000 		.4byte	.LFE2
+ 819 00f3 62000000 		.4byte	.LLST2
+ 820 00f7 09       		.uleb128 0x9
+ 821 00f8 01       		.byte	0x1
+ 822 00f9 1C020000 		.4byte	.LASF17
+ 823 00fd 01       		.byte	0x1
+ 824 00fe A2       		.byte	0xa2
+ 825 00ff 01       		.byte	0x1
+ 826 0100 00000000 		.4byte	.LFB3
+ 827 0104 28000000 		.4byte	.LFE3
+ 828 0108 8D000000 		.4byte	.LLST3
+ 829 010c 2D010000 		.4byte	0x12d
+ 830 0110 0A       		.uleb128 0xa
+ 831 0111 67010000 		.4byte	.LASF18
+ 832 0115 01       		.byte	0x1
+ 833 0116 A2       		.byte	0xa2
+ 834 0117 9A000000 		.4byte	0x9a
+ 835 011b 02       		.byte	0x2
+ 836 011c 91       		.byte	0x91
+ 837 011d 6C       		.sleb128 -20
+ 838 011e 0B       		.uleb128 0xb
+ 839 011f E2010000 		.4byte	.LASF19
+ 840 0123 01       		.byte	0x1
+ 841 0124 A4       		.byte	0xa4
+ 842 0125 2D010000 		.4byte	0x12d
+ 843 0129 02       		.byte	0x2
+ 844 012a 91       		.byte	0x91
+ 845 012b 74       		.sleb128 -12
+ 846 012c 00       		.byte	0x0
+ 847 012d 06       		.uleb128 0x6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 22
+
+
+ 848 012e 04       		.byte	0x4
+ 849 012f 9A000000 		.4byte	0x9a
+ 850 0133 0C       		.uleb128 0xc
+ 851 0134 01       		.byte	0x1
+ 852 0135 FB010000 		.4byte	.LASF22
+ 853 0139 01       		.byte	0x1
+ 854 013a BA       		.byte	0xba
+ 855 013b 01       		.byte	0x1
+ 856 013c 9A000000 		.4byte	0x9a
+ 857 0140 00000000 		.4byte	.LFB4
+ 858 0144 26000000 		.4byte	.LFE4
+ 859 0148 C4000000 		.4byte	.LLST4
+ 860 014c 5F010000 		.4byte	0x15f
+ 861 0150 0B       		.uleb128 0xb
+ 862 0151 E2010000 		.4byte	.LASF19
+ 863 0155 01       		.byte	0x1
+ 864 0156 BC       		.byte	0xbc
+ 865 0157 2D010000 		.4byte	0x12d
+ 866 015b 02       		.byte	0x2
+ 867 015c 91       		.byte	0x91
+ 868 015d 74       		.sleb128 -12
+ 869 015e 00       		.byte	0x0
+ 870 015f 09       		.uleb128 0x9
+ 871 0160 01       		.byte	0x1
+ 872 0161 72000000 		.4byte	.LASF20
+ 873 0165 01       		.byte	0x1
+ 874 0166 D6       		.byte	0xd6
+ 875 0167 01       		.byte	0x1
+ 876 0168 00000000 		.4byte	.LFB5
+ 877 016c 26000000 		.4byte	.LFE5
+ 878 0170 FB000000 		.4byte	.LLST5
+ 879 0174 87010000 		.4byte	0x187
+ 880 0178 0A       		.uleb128 0xa
+ 881 0179 0A010000 		.4byte	.LASF21
+ 882 017d 01       		.byte	0x1
+ 883 017e D6       		.byte	0xd6
+ 884 017f 81000000 		.4byte	0x81
+ 885 0183 02       		.byte	0x2
+ 886 0184 91       		.byte	0x91
+ 887 0185 77       		.sleb128 -9
+ 888 0186 00       		.byte	0x0
+ 889 0187 0C       		.uleb128 0xc
+ 890 0188 01       		.byte	0x1
+ 891 0189 52000000 		.4byte	.LASF23
+ 892 018d 01       		.byte	0x1
+ 893 018e EA       		.byte	0xea
+ 894 018f 01       		.byte	0x1
+ 895 0190 81000000 		.4byte	0x81
+ 896 0194 00000000 		.4byte	.LFB6
+ 897 0198 26000000 		.4byte	.LFE6
+ 898 019c 32010000 		.4byte	.LLST6
+ 899 01a0 B3010000 		.4byte	0x1b3
+ 900 01a4 0B       		.uleb128 0xb
+ 901 01a5 0A010000 		.4byte	.LASF21
+ 902 01a9 01       		.byte	0x1
+ 903 01aa EC       		.byte	0xec
+ 904 01ab 81000000 		.4byte	0x81
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 23
+
+
+ 905 01af 02       		.byte	0x2
+ 906 01b0 91       		.byte	0x91
+ 907 01b1 77       		.sleb128 -9
+ 908 01b2 00       		.byte	0x0
+ 909 01b3 0D       		.uleb128 0xd
+ 910 01b4 01       		.byte	0x1
+ 911 01b5 93010000 		.4byte	.LASF24
+ 912 01b9 01       		.byte	0x1
+ 913 01ba 0301     		.2byte	0x103
+ 914 01bc 01       		.byte	0x1
+ 915 01bd 00000000 		.4byte	.LFB7
+ 916 01c1 18000000 		.4byte	.LFE7
+ 917 01c5 69010000 		.4byte	.LLST7
+ 918 01c9 0E       		.uleb128 0xe
+ 919 01ca 01       		.byte	0x1
+ 920 01cb 50010000 		.4byte	.LASF31
+ 921 01cf 01       		.byte	0x1
+ 922 01d0 1801     		.2byte	0x118
+ 923 01d2 01       		.byte	0x1
+ 924 01d3 81000000 		.4byte	0x81
+ 925 01d7 00000000 		.4byte	.LFB8
+ 926 01db 2A000000 		.4byte	.LFE8
+ 927 01df 94010000 		.4byte	.LLST8
+ 928 01e3 0D       		.uleb128 0xd
+ 929 01e4 01       		.byte	0x1
+ 930 01e5 1A010000 		.4byte	.LASF25
+ 931 01e9 01       		.byte	0x1
+ 932 01ea 2D01     		.2byte	0x12d
+ 933 01ec 01       		.byte	0x1
+ 934 01ed 00000000 		.4byte	.LFB9
+ 935 01f1 18000000 		.4byte	.LFE9
+ 936 01f5 BF010000 		.4byte	.LLST9
+ 937 01f9 0D       		.uleb128 0xd
+ 938 01fa 01       		.byte	0x1
+ 939 01fb 40020000 		.4byte	.LASF26
+ 940 01ff 01       		.byte	0x1
+ 941 0200 4301     		.2byte	0x143
+ 942 0202 01       		.byte	0x1
+ 943 0203 00000000 		.4byte	.LFB10
+ 944 0207 18000000 		.4byte	.LFE10
+ 945 020b EA010000 		.4byte	.LLST10
+ 946 020f 0D       		.uleb128 0xd
+ 947 0210 01       		.byte	0x1
+ 948 0211 0E000000 		.4byte	.LASF27
+ 949 0215 01       		.byte	0x1
+ 950 0216 5701     		.2byte	0x157
+ 951 0218 01       		.byte	0x1
+ 952 0219 00000000 		.4byte	.LFB11
+ 953 021d 18000000 		.4byte	.LFE11
+ 954 0221 15020000 		.4byte	.LLST11
+ 955 0225 00       		.byte	0x0
+ 956              		.section	.debug_abbrev
+ 957 0000 01       		.uleb128 0x1
+ 958 0001 11       		.uleb128 0x11
+ 959 0002 01       		.byte	0x1
+ 960 0003 25       		.uleb128 0x25
+ 961 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 24
+
+
+ 962 0005 13       		.uleb128 0x13
+ 963 0006 0B       		.uleb128 0xb
+ 964 0007 03       		.uleb128 0x3
+ 965 0008 0E       		.uleb128 0xe
+ 966 0009 1B       		.uleb128 0x1b
+ 967 000a 0E       		.uleb128 0xe
+ 968 000b 11       		.uleb128 0x11
+ 969 000c 01       		.uleb128 0x1
+ 970 000d 52       		.uleb128 0x52
+ 971 000e 01       		.uleb128 0x1
+ 972 000f 55       		.uleb128 0x55
+ 973 0010 06       		.uleb128 0x6
+ 974 0011 10       		.uleb128 0x10
+ 975 0012 06       		.uleb128 0x6
+ 976 0013 00       		.byte	0x0
+ 977 0014 00       		.byte	0x0
+ 978 0015 02       		.uleb128 0x2
+ 979 0016 24       		.uleb128 0x24
+ 980 0017 00       		.byte	0x0
+ 981 0018 0B       		.uleb128 0xb
+ 982 0019 0B       		.uleb128 0xb
+ 983 001a 3E       		.uleb128 0x3e
+ 984 001b 0B       		.uleb128 0xb
+ 985 001c 03       		.uleb128 0x3
+ 986 001d 0E       		.uleb128 0xe
+ 987 001e 00       		.byte	0x0
+ 988 001f 00       		.byte	0x0
+ 989 0020 03       		.uleb128 0x3
+ 990 0021 24       		.uleb128 0x24
+ 991 0022 00       		.byte	0x0
+ 992 0023 0B       		.uleb128 0xb
+ 993 0024 0B       		.uleb128 0xb
+ 994 0025 3E       		.uleb128 0x3e
+ 995 0026 0B       		.uleb128 0xb
+ 996 0027 03       		.uleb128 0x3
+ 997 0028 08       		.uleb128 0x8
+ 998 0029 00       		.byte	0x0
+ 999 002a 00       		.byte	0x0
+ 1000 002b 04       		.uleb128 0x4
+ 1001 002c 24       		.uleb128 0x24
+ 1002 002d 00       		.byte	0x0
+ 1003 002e 0B       		.uleb128 0xb
+ 1004 002f 0B       		.uleb128 0xb
+ 1005 0030 3E       		.uleb128 0x3e
+ 1006 0031 0B       		.uleb128 0xb
+ 1007 0032 00       		.byte	0x0
+ 1008 0033 00       		.byte	0x0
+ 1009 0034 05       		.uleb128 0x5
+ 1010 0035 15       		.uleb128 0x15
+ 1011 0036 00       		.byte	0x0
+ 1012 0037 27       		.uleb128 0x27
+ 1013 0038 0C       		.uleb128 0xc
+ 1014 0039 00       		.byte	0x0
+ 1015 003a 00       		.byte	0x0
+ 1016 003b 06       		.uleb128 0x6
+ 1017 003c 0F       		.uleb128 0xf
+ 1018 003d 00       		.byte	0x0
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 25
+
+
+ 1019 003e 0B       		.uleb128 0xb
+ 1020 003f 0B       		.uleb128 0xb
+ 1021 0040 49       		.uleb128 0x49
+ 1022 0041 13       		.uleb128 0x13
+ 1023 0042 00       		.byte	0x0
+ 1024 0043 00       		.byte	0x0
+ 1025 0044 07       		.uleb128 0x7
+ 1026 0045 16       		.uleb128 0x16
+ 1027 0046 00       		.byte	0x0
+ 1028 0047 03       		.uleb128 0x3
+ 1029 0048 0E       		.uleb128 0xe
+ 1030 0049 3A       		.uleb128 0x3a
+ 1031 004a 0B       		.uleb128 0xb
+ 1032 004b 3B       		.uleb128 0x3b
+ 1033 004c 0B       		.uleb128 0xb
+ 1034 004d 49       		.uleb128 0x49
+ 1035 004e 13       		.uleb128 0x13
+ 1036 004f 00       		.byte	0x0
+ 1037 0050 00       		.byte	0x0
+ 1038 0051 08       		.uleb128 0x8
+ 1039 0052 2E       		.uleb128 0x2e
+ 1040 0053 00       		.byte	0x0
+ 1041 0054 3F       		.uleb128 0x3f
+ 1042 0055 0C       		.uleb128 0xc
+ 1043 0056 03       		.uleb128 0x3
+ 1044 0057 0E       		.uleb128 0xe
+ 1045 0058 3A       		.uleb128 0x3a
+ 1046 0059 0B       		.uleb128 0xb
+ 1047 005a 3B       		.uleb128 0x3b
+ 1048 005b 0B       		.uleb128 0xb
+ 1049 005c 27       		.uleb128 0x27
+ 1050 005d 0C       		.uleb128 0xc
+ 1051 005e 11       		.uleb128 0x11
+ 1052 005f 01       		.uleb128 0x1
+ 1053 0060 12       		.uleb128 0x12
+ 1054 0061 01       		.uleb128 0x1
+ 1055 0062 40       		.uleb128 0x40
+ 1056 0063 06       		.uleb128 0x6
+ 1057 0064 00       		.byte	0x0
+ 1058 0065 00       		.byte	0x0
+ 1059 0066 09       		.uleb128 0x9
+ 1060 0067 2E       		.uleb128 0x2e
+ 1061 0068 01       		.byte	0x1
+ 1062 0069 3F       		.uleb128 0x3f
+ 1063 006a 0C       		.uleb128 0xc
+ 1064 006b 03       		.uleb128 0x3
+ 1065 006c 0E       		.uleb128 0xe
+ 1066 006d 3A       		.uleb128 0x3a
+ 1067 006e 0B       		.uleb128 0xb
+ 1068 006f 3B       		.uleb128 0x3b
+ 1069 0070 0B       		.uleb128 0xb
+ 1070 0071 27       		.uleb128 0x27
+ 1071 0072 0C       		.uleb128 0xc
+ 1072 0073 11       		.uleb128 0x11
+ 1073 0074 01       		.uleb128 0x1
+ 1074 0075 12       		.uleb128 0x12
+ 1075 0076 01       		.uleb128 0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 26
+
+
+ 1076 0077 40       		.uleb128 0x40
+ 1077 0078 06       		.uleb128 0x6
+ 1078 0079 01       		.uleb128 0x1
+ 1079 007a 13       		.uleb128 0x13
+ 1080 007b 00       		.byte	0x0
+ 1081 007c 00       		.byte	0x0
+ 1082 007d 0A       		.uleb128 0xa
+ 1083 007e 05       		.uleb128 0x5
+ 1084 007f 00       		.byte	0x0
+ 1085 0080 03       		.uleb128 0x3
+ 1086 0081 0E       		.uleb128 0xe
+ 1087 0082 3A       		.uleb128 0x3a
+ 1088 0083 0B       		.uleb128 0xb
+ 1089 0084 3B       		.uleb128 0x3b
+ 1090 0085 0B       		.uleb128 0xb
+ 1091 0086 49       		.uleb128 0x49
+ 1092 0087 13       		.uleb128 0x13
+ 1093 0088 02       		.uleb128 0x2
+ 1094 0089 0A       		.uleb128 0xa
+ 1095 008a 00       		.byte	0x0
+ 1096 008b 00       		.byte	0x0
+ 1097 008c 0B       		.uleb128 0xb
+ 1098 008d 34       		.uleb128 0x34
+ 1099 008e 00       		.byte	0x0
+ 1100 008f 03       		.uleb128 0x3
+ 1101 0090 0E       		.uleb128 0xe
+ 1102 0091 3A       		.uleb128 0x3a
+ 1103 0092 0B       		.uleb128 0xb
+ 1104 0093 3B       		.uleb128 0x3b
+ 1105 0094 0B       		.uleb128 0xb
+ 1106 0095 49       		.uleb128 0x49
+ 1107 0096 13       		.uleb128 0x13
+ 1108 0097 02       		.uleb128 0x2
+ 1109 0098 0A       		.uleb128 0xa
+ 1110 0099 00       		.byte	0x0
+ 1111 009a 00       		.byte	0x0
+ 1112 009b 0C       		.uleb128 0xc
+ 1113 009c 2E       		.uleb128 0x2e
+ 1114 009d 01       		.byte	0x1
+ 1115 009e 3F       		.uleb128 0x3f
+ 1116 009f 0C       		.uleb128 0xc
+ 1117 00a0 03       		.uleb128 0x3
+ 1118 00a1 0E       		.uleb128 0xe
+ 1119 00a2 3A       		.uleb128 0x3a
+ 1120 00a3 0B       		.uleb128 0xb
+ 1121 00a4 3B       		.uleb128 0x3b
+ 1122 00a5 0B       		.uleb128 0xb
+ 1123 00a6 27       		.uleb128 0x27
+ 1124 00a7 0C       		.uleb128 0xc
+ 1125 00a8 49       		.uleb128 0x49
+ 1126 00a9 13       		.uleb128 0x13
+ 1127 00aa 11       		.uleb128 0x11
+ 1128 00ab 01       		.uleb128 0x1
+ 1129 00ac 12       		.uleb128 0x12
+ 1130 00ad 01       		.uleb128 0x1
+ 1131 00ae 40       		.uleb128 0x40
+ 1132 00af 06       		.uleb128 0x6
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 27
+
+
+ 1133 00b0 01       		.uleb128 0x1
+ 1134 00b1 13       		.uleb128 0x13
+ 1135 00b2 00       		.byte	0x0
+ 1136 00b3 00       		.byte	0x0
+ 1137 00b4 0D       		.uleb128 0xd
+ 1138 00b5 2E       		.uleb128 0x2e
+ 1139 00b6 00       		.byte	0x0
+ 1140 00b7 3F       		.uleb128 0x3f
+ 1141 00b8 0C       		.uleb128 0xc
+ 1142 00b9 03       		.uleb128 0x3
+ 1143 00ba 0E       		.uleb128 0xe
+ 1144 00bb 3A       		.uleb128 0x3a
+ 1145 00bc 0B       		.uleb128 0xb
+ 1146 00bd 3B       		.uleb128 0x3b
+ 1147 00be 05       		.uleb128 0x5
+ 1148 00bf 27       		.uleb128 0x27
+ 1149 00c0 0C       		.uleb128 0xc
+ 1150 00c1 11       		.uleb128 0x11
+ 1151 00c2 01       		.uleb128 0x1
+ 1152 00c3 12       		.uleb128 0x12
+ 1153 00c4 01       		.uleb128 0x1
+ 1154 00c5 40       		.uleb128 0x40
+ 1155 00c6 06       		.uleb128 0x6
+ 1156 00c7 00       		.byte	0x0
+ 1157 00c8 00       		.byte	0x0
+ 1158 00c9 0E       		.uleb128 0xe
+ 1159 00ca 2E       		.uleb128 0x2e
+ 1160 00cb 00       		.byte	0x0
+ 1161 00cc 3F       		.uleb128 0x3f
+ 1162 00cd 0C       		.uleb128 0xc
+ 1163 00ce 03       		.uleb128 0x3
+ 1164 00cf 0E       		.uleb128 0xe
+ 1165 00d0 3A       		.uleb128 0x3a
+ 1166 00d1 0B       		.uleb128 0xb
+ 1167 00d2 3B       		.uleb128 0x3b
+ 1168 00d3 05       		.uleb128 0x5
+ 1169 00d4 27       		.uleb128 0x27
+ 1170 00d5 0C       		.uleb128 0xc
+ 1171 00d6 49       		.uleb128 0x49
+ 1172 00d7 13       		.uleb128 0x13
+ 1173 00d8 11       		.uleb128 0x11
+ 1174 00d9 01       		.uleb128 0x1
+ 1175 00da 12       		.uleb128 0x12
+ 1176 00db 01       		.uleb128 0x1
+ 1177 00dc 40       		.uleb128 0x40
+ 1178 00dd 06       		.uleb128 0x6
+ 1179 00de 00       		.byte	0x0
+ 1180 00df 00       		.byte	0x0
+ 1181 00e0 00       		.byte	0x0
+ 1182              		.section	.debug_pubnames,"",%progbits
+ 1183 0000 55010000 		.4byte	0x155
+ 1184 0004 0200     		.2byte	0x2
+ 1185 0006 00000000 		.4byte	.Ldebug_info0
+ 1186 000a 26020000 		.4byte	0x226
+ 1187 000e A5000000 		.4byte	0xa5
+ 1188 0012 6973725F 		.ascii	"isr_spark_drq_Start\000"
+ 1188      73706172 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 28
+
+
+ 1188      6B5F6472 
+ 1188      715F5374 
+ 1188      61727400 
+ 1189 0026 BA000000 		.4byte	0xba
+ 1190 002a 6973725F 		.ascii	"isr_spark_drq_StartEx\000"
+ 1190      73706172 
+ 1190      6B5F6472 
+ 1190      715F5374 
+ 1190      61727445 
+ 1191 0040 E2000000 		.4byte	0xe2
+ 1192 0044 6973725F 		.ascii	"isr_spark_drq_Stop\000"
+ 1192      73706172 
+ 1192      6B5F6472 
+ 1192      715F5374 
+ 1192      6F7000
+ 1193 0057 F7000000 		.4byte	0xf7
+ 1194 005b 6973725F 		.ascii	"isr_spark_drq_SetVector\000"
+ 1194      73706172 
+ 1194      6B5F6472 
+ 1194      715F5365 
+ 1194      74566563 
+ 1195 0073 33010000 		.4byte	0x133
+ 1196 0077 6973725F 		.ascii	"isr_spark_drq_GetVector\000"
+ 1196      73706172 
+ 1196      6B5F6472 
+ 1196      715F4765 
+ 1196      74566563 
+ 1197 008f 5F010000 		.4byte	0x15f
+ 1198 0093 6973725F 		.ascii	"isr_spark_drq_SetPriority\000"
+ 1198      73706172 
+ 1198      6B5F6472 
+ 1198      715F5365 
+ 1198      74507269 
+ 1199 00ad 87010000 		.4byte	0x187
+ 1200 00b1 6973725F 		.ascii	"isr_spark_drq_GetPriority\000"
+ 1200      73706172 
+ 1200      6B5F6472 
+ 1200      715F4765 
+ 1200      74507269 
+ 1201 00cb B3010000 		.4byte	0x1b3
+ 1202 00cf 6973725F 		.ascii	"isr_spark_drq_Enable\000"
+ 1202      73706172 
+ 1202      6B5F6472 
+ 1202      715F456E 
+ 1202      61626C65 
+ 1203 00e4 C9010000 		.4byte	0x1c9
+ 1204 00e8 6973725F 		.ascii	"isr_spark_drq_GetState\000"
+ 1204      73706172 
+ 1204      6B5F6472 
+ 1204      715F4765 
+ 1204      74537461 
+ 1205 00ff E3010000 		.4byte	0x1e3
+ 1206 0103 6973725F 		.ascii	"isr_spark_drq_Disable\000"
+ 1206      73706172 
+ 1206      6B5F6472 
+ 1206      715F4469 
+ 1206      7361626C 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 29
+
+
+ 1207 0119 F9010000 		.4byte	0x1f9
+ 1208 011d 6973725F 		.ascii	"isr_spark_drq_SetPending\000"
+ 1208      73706172 
+ 1208      6B5F6472 
+ 1208      715F5365 
+ 1208      7450656E 
+ 1209 0136 0F020000 		.4byte	0x20f
+ 1210 013a 6973725F 		.ascii	"isr_spark_drq_ClearPending\000"
+ 1210      73706172 
+ 1210      6B5F6472 
+ 1210      715F436C 
+ 1210      65617250 
+ 1211 0155 00000000 		.4byte	0x0
+ 1212              		.section	.debug_aranges,"",%progbits
+ 1213 0000 74000000 		.4byte	0x74
+ 1214 0004 0200     		.2byte	0x2
+ 1215 0006 00000000 		.4byte	.Ldebug_info0
+ 1216 000a 04       		.byte	0x4
+ 1217 000b 00       		.byte	0x0
+ 1218 000c 0000     		.2byte	0x0
+ 1219 000e 0000     		.2byte	0x0
+ 1220 0010 00000000 		.4byte	.LFB0
+ 1221 0014 22000000 		.4byte	.LFE0-.LFB0
+ 1222 0018 00000000 		.4byte	.LFB1
+ 1223 001c 26000000 		.4byte	.LFE1-.LFB1
+ 1224 0020 00000000 		.4byte	.LFB2
+ 1225 0024 16000000 		.4byte	.LFE2-.LFB2
+ 1226 0028 00000000 		.4byte	.LFB3
+ 1227 002c 28000000 		.4byte	.LFE3-.LFB3
+ 1228 0030 00000000 		.4byte	.LFB4
+ 1229 0034 26000000 		.4byte	.LFE4-.LFB4
+ 1230 0038 00000000 		.4byte	.LFB5
+ 1231 003c 26000000 		.4byte	.LFE5-.LFB5
+ 1232 0040 00000000 		.4byte	.LFB6
+ 1233 0044 26000000 		.4byte	.LFE6-.LFB6
+ 1234 0048 00000000 		.4byte	.LFB7
+ 1235 004c 18000000 		.4byte	.LFE7-.LFB7
+ 1236 0050 00000000 		.4byte	.LFB8
+ 1237 0054 2A000000 		.4byte	.LFE8-.LFB8
+ 1238 0058 00000000 		.4byte	.LFB9
+ 1239 005c 18000000 		.4byte	.LFE9-.LFB9
+ 1240 0060 00000000 		.4byte	.LFB10
+ 1241 0064 18000000 		.4byte	.LFE10-.LFB10
+ 1242 0068 00000000 		.4byte	.LFB11
+ 1243 006c 18000000 		.4byte	.LFE11-.LFB11
+ 1244 0070 00000000 		.4byte	0x0
+ 1245 0074 00000000 		.4byte	0x0
+ 1246              		.section	.debug_ranges,"",%progbits
+ 1247              	.Ldebug_ranges0:
+ 1248 0000 00000000 		.4byte	.Ltext0
+ 1249 0004 00000000 		.4byte	.Letext0
+ 1250 0008 00000000 		.4byte	.LFB0
+ 1251 000c 22000000 		.4byte	.LFE0
+ 1252 0010 00000000 		.4byte	.LFB1
+ 1253 0014 26000000 		.4byte	.LFE1
+ 1254 0018 00000000 		.4byte	.LFB2
+ 1255 001c 16000000 		.4byte	.LFE2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 30
+
+
+ 1256 0020 00000000 		.4byte	.LFB3
+ 1257 0024 28000000 		.4byte	.LFE3
+ 1258 0028 00000000 		.4byte	.LFB4
+ 1259 002c 26000000 		.4byte	.LFE4
+ 1260 0030 00000000 		.4byte	.LFB5
+ 1261 0034 26000000 		.4byte	.LFE5
+ 1262 0038 00000000 		.4byte	.LFB6
+ 1263 003c 26000000 		.4byte	.LFE6
+ 1264 0040 00000000 		.4byte	.LFB7
+ 1265 0044 18000000 		.4byte	.LFE7
+ 1266 0048 00000000 		.4byte	.LFB8
+ 1267 004c 2A000000 		.4byte	.LFE8
+ 1268 0050 00000000 		.4byte	.LFB9
+ 1269 0054 18000000 		.4byte	.LFE9
+ 1270 0058 00000000 		.4byte	.LFB10
+ 1271 005c 18000000 		.4byte	.LFE10
+ 1272 0060 00000000 		.4byte	.LFB11
+ 1273 0064 18000000 		.4byte	.LFE11
+ 1274 0068 00000000 		.4byte	0x0
+ 1275 006c 00000000 		.4byte	0x0
+ 1276              		.section	.debug_str,"MS",%progbits,1
+ 1277              	.LASF5:
+ 1278 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1278      206C6F6E 
+ 1278      6720696E 
+ 1278      7400
+ 1279              	.LASF27:
+ 1280 000e 6973725F 		.ascii	"isr_spark_drq_ClearPending\000"
+ 1280      73706172 
+ 1280      6B5F6472 
+ 1280      715F436C 
+ 1280      65617250 
+ 1281              	.LASF3:
+ 1282 0029 73686F72 		.ascii	"short unsigned int\000"
+ 1282      7420756E 
+ 1282      7369676E 
+ 1282      65642069 
+ 1282      6E7400
+ 1283              	.LASF16:
+ 1284 003c 6973725F 		.ascii	"isr_spark_drq_StartEx\000"
+ 1284      73706172 
+ 1284      6B5F6472 
+ 1284      715F5374 
+ 1284      61727445 
+ 1285              	.LASF23:
+ 1286 0052 6973725F 		.ascii	"isr_spark_drq_GetPriority\000"
+ 1286      73706172 
+ 1286      6B5F6472 
+ 1286      715F4765 
+ 1286      74507269 
+ 1287              	.LASF10:
+ 1288 006c 666C6F61 		.ascii	"float\000"
+ 1288      7400
+ 1289              	.LASF20:
+ 1290 0072 6973725F 		.ascii	"isr_spark_drq_SetPriority\000"
+ 1290      73706172 
+ 1290      6B5F6472 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 31
+
+
+ 1290      715F5365 
+ 1290      74507269 
+ 1291              	.LASF1:
+ 1292 008c 756E7369 		.ascii	"unsigned char\000"
+ 1292      676E6564 
+ 1292      20636861 
+ 1292      7200
+ 1293              	.LASF14:
+ 1294 009a 6973725F 		.ascii	"isr_spark_drq_Start\000"
+ 1294      73706172 
+ 1294      6B5F6472 
+ 1294      715F5374 
+ 1294      61727400 
+ 1295              	.LASF30:
+ 1296 00ae 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 1296      73657273 
+ 1296      5C686F61 
+ 1296      6E67705C 
+ 1296      446F6375 
+ 1297 00db 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 1297      6E766572 
+ 1297      745C696E 
+ 1297      76657274 
+ 1297      2E637964 
+ 1298              	.LASF8:
+ 1299 00f2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1299      20756E73 
+ 1299      69676E65 
+ 1299      6420696E 
+ 1299      7400
+ 1300              	.LASF12:
+ 1301 0104 75696E74 		.ascii	"uint8\000"
+ 1301      3800
+ 1302              	.LASF21:
+ 1303 010a 7072696F 		.ascii	"priority\000"
+ 1303      72697479 
+ 1303      00
+ 1304              	.LASF11:
+ 1305 0113 646F7562 		.ascii	"double\000"
+ 1305      6C6500
+ 1306              	.LASF25:
+ 1307 011a 6973725F 		.ascii	"isr_spark_drq_Disable\000"
+ 1307      73706172 
+ 1307      6B5F6472 
+ 1307      715F4469 
+ 1307      7361626C 
+ 1308              	.LASF15:
+ 1309 0130 6973725F 		.ascii	"isr_spark_drq_Stop\000"
+ 1309      73706172 
+ 1309      6B5F6472 
+ 1309      715F5374 
+ 1309      6F7000
+ 1310              	.LASF4:
+ 1311 0143 756E7369 		.ascii	"unsigned int\000"
+ 1311      676E6564 
+ 1311      20696E74 
+ 1311      00
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 32
+
+
+ 1312              	.LASF31:
+ 1313 0150 6973725F 		.ascii	"isr_spark_drq_GetState\000"
+ 1313      73706172 
+ 1313      6B5F6472 
+ 1313      715F4765 
+ 1313      74537461 
+ 1314              	.LASF18:
+ 1315 0167 61646472 		.ascii	"address\000"
+ 1315      65737300 
+ 1316              	.LASF6:
+ 1317 016f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1317      206C6F6E 
+ 1317      6720756E 
+ 1317      7369676E 
+ 1317      65642069 
+ 1318              	.LASF13:
+ 1319 0186 63796973 		.ascii	"cyisraddress\000"
+ 1319      72616464 
+ 1319      72657373 
+ 1319      00
+ 1320              	.LASF24:
+ 1321 0193 6973725F 		.ascii	"isr_spark_drq_Enable\000"
+ 1321      73706172 
+ 1321      6B5F6472 
+ 1321      715F456E 
+ 1321      61626C65 
+ 1322              	.LASF28:
+ 1323 01a8 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 1323      4320342E 
+ 1323      342E3100 
+ 1324              	.LASF29:
+ 1325 01b4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\isr_spark_drq.c\000"
+ 1325      6E657261 
+ 1325      7465645F 
+ 1325      536F7572 
+ 1325      63655C50 
+ 1326              	.LASF9:
+ 1327 01dd 63686172 		.ascii	"char\000"
+ 1327      00
+ 1328              	.LASF19:
+ 1329 01e2 72616D56 		.ascii	"ramVectorTable\000"
+ 1329      6563746F 
+ 1329      72546162 
+ 1329      6C6500
+ 1330              	.LASF2:
+ 1331 01f1 73686F72 		.ascii	"short int\000"
+ 1331      7420696E 
+ 1331      7400
+ 1332              	.LASF22:
+ 1333 01fb 6973725F 		.ascii	"isr_spark_drq_GetVector\000"
+ 1333      73706172 
+ 1333      6B5F6472 
+ 1333      715F4765 
+ 1333      74566563 
+ 1334              	.LASF7:
+ 1335 0213 6C6F6E67 		.ascii	"long int\000"
+ 1335      20696E74 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\cc8KuxB9.s 			page 33
+
+
+ 1335      00
+ 1336              	.LASF17:
+ 1337 021c 6973725F 		.ascii	"isr_spark_drq_SetVector\000"
+ 1337      73706172 
+ 1337      6B5F6472 
+ 1337      715F5365 
+ 1337      74566563 
+ 1338              	.LASF0:
+ 1339 0234 7369676E 		.ascii	"signed char\000"
+ 1339      65642063 
+ 1339      68617200 
+ 1340              	.LASF26:
+ 1341 0240 6973725F 		.ascii	"isr_spark_drq_SetPending\000"
+ 1341      73706172 
+ 1341      6B5F6472 
+ 1341      715F5365 
+ 1341      7450656E 
+ 1342              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

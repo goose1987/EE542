@@ -4,7 +4,8 @@
 const uint32 CYCODE DFB_1_control[] = 
 {
     0x26001760u,      0x25801321u,      0x26800001u,      0x03100002u,  
-    0xA6100000u,      0x26810000u,      0x26802003u,  
+    0xA6100000u,      0x26810000u,      0x26A00004u,      0x26802003u,  
+
 };
 
 const uint32 CYCODE DFB_1_data_a[] = 

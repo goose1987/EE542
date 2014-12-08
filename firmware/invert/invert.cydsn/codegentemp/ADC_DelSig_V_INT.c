@@ -26,8 +26,8 @@
 /* `#START ADC_SYS_VAR`  */
 extern int16 buffvolt;
 extern int16 sineLUTindex;
-
-
+extern int16 sineLUT[256];
+extern uint32 varray[4];
 
 
 int16 A1 = -7;
@@ -74,15 +74,16 @@ CY_ISR( ADC_DelSig_V_ISR1)
     /* `#START MAIN_ADC_ISR1`  */
     
     buffvolt=ADC_DelSig_V_GetResult16();
+    sineLUTindex=Counter_2_ReadCounter();
+    varray[sineLUTindex>>6]=buffvolt<<12;
     
     
-   
     
     if (buffvolt < 0) {
         buffvolt = 0;
         
     }
-    if (buffvolt<15){
+    if (buffvolt<20){
         Control_Reg_1_Write(1);
     
     }else{

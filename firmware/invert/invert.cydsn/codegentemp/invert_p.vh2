@@ -1,5 +1,5 @@
 -- Project:   invert
--- Generated: 12/07/2014 18:49:49
+-- Generated: 12/08/2014 14:01:11
 -- 
 
 ENTITY invert IS
@@ -56,9 +56,13 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL Net_148 : bit;
     SIGNAL Net_309 : bit;
     SIGNAL Net_314 : bit;
+    SIGNAL Net_314_SYNCOUT : bit;
     SIGNAL Net_370 : bit;
+    SIGNAL Net_370_SYNCOUT : bit;
     SIGNAL Net_371 : bit;
+    SIGNAL Net_371_SYNCOUT : bit;
     SIGNAL Net_372 : bit;
+    SIGNAL Net_372_SYNCOUT : bit;
     SIGNAL Net_374 : bit;
     ATTRIBUTE global_signal OF Net_374 : SIGNAL IS true;
     SIGNAL Net_374_local : bit;
@@ -75,11 +79,15 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL Net_687 : bit;
     SIGNAL Net_723 : bit;
     SIGNAL Net_730 : bit;
-    SIGNAL Net_743 : bit;
-    SIGNAL Net_744 : bit;
-    SIGNAL Net_745 : bit;
-    SIGNAL Net_759 : bit;
     SIGNAL Net_761 : bit;
+    SIGNAL Net_762 : bit;
+    SIGNAL Net_788 : bit;
+    SIGNAL Net_808 : bit;
+    ATTRIBUTE global_signal OF Net_808 : SIGNAL IS true;
+    SIGNAL Net_808_local : bit;
+    SIGNAL Net_851 : bit;
+    SIGNAL Net_852 : bit;
+    SIGNAL Net_853 : bit;
     SIGNAL Rx_1(0)__PA : bit;
     SIGNAL SCLK(0)__PA : bit;
     SIGNAL SS(0)__PA : bit;
@@ -114,8 +122,9 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     SIGNAL \Control_Reg_1:control_5\ : bit;
     SIGNAL \Control_Reg_1:control_6\ : bit;
     SIGNAL \Control_Reg_1:control_7\ : bit;
-    SIGNAL \Counter_1:Net_42\ : bit;
-    SIGNAL \Counter_1:Net_47\ : bit;
+    SIGNAL \Counter_2:Net_42\ : bit;
+    SIGNAL \Counter_2:Net_47\ : bit;
+    SIGNAL \Counter_2:Net_48\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(0)\\__PA\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(1)\\__PA\ : bit;
     SIGNAL \\\LCD_Char_1:LCDPort(2)\\__PA\ : bit;
@@ -226,8 +235,8 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE POWER OF one : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
-    SIGNAL \ClockBlock.clk_bus_glb_ff__sig\ : bit;
     SIGNAL \ClockBlock.aclk_glb_ff_0__sig\ : bit;
+    SIGNAL \ClockBlock.dclk_glb_ff_4__sig\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:sP16:pwmdp:u0.ce0__sig\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:sP16:pwmdp:u0.cl0__sig\ : bit;
     SIGNAL \PWM_BUCK:PWMUDB:sP16:pwmdp:u0.z0__sig\ : bit;
@@ -254,7 +263,7 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE lib_model OF B_LS(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF B_LS(0) : LABEL IS "P5[4]";
     ATTRIBUTE lib_model OF DMA_IN_A : LABEL IS "drqcell1";
-    ATTRIBUTE lib_model OF MOSI(0) : LABEL IS "iocell_ireg";
+    ATTRIBUTE lib_model OF DMA_OUT_A : LABEL IS "drqcell2";
     ATTRIBUTE lib_model OF Net_148 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_309 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF Net_380 : LABEL IS "macrocell3";
@@ -265,12 +274,10 @@ ARCHITECTURE __DEFAULT__ OF invert IS
     ATTRIBUTE lib_model OF Net_518 : LABEL IS "macrocell8";
     ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Rx_1(0) : LABEL IS "P0[0]";
-    ATTRIBUTE lib_model OF SCLK(0) : LABEL IS "iocell_ireg";
-    ATTRIBUTE lib_model OF SS(0) : LABEL IS "iocell_ireg";
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF V_SENSE(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P1[2]";
+    ATTRIBUTE Location OF V_SENSE(0) : LABEL IS "P6[5]";
     ATTRIBUTE Location OF \ADC_DelSig_V:DSM2\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE lib_model OF \Control_Reg_1:Async:ctrl_reg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \LCD_Char_1:LCDPort(0)\ : LABEL IS "iocell10";
@@ -1811,16 +1818,18 @@ BEGIN
             dclk_0 => Net_685_local,
             dclk_glb_1 => \ADC_DelSig_V:Net_487\,
             dclk_1 => \ADC_DelSig_V:Net_487_local\,
-            aclk_glb_0 => \ADC_DelSig_V:Net_40\,
-            aclk_0 => \ADC_DelSig_V:Net_40_local\,
-            clk_a_dig_glb_0 => \ADC_DelSig_V:Net_40_adig\,
-            clk_a_dig_0 => \ADC_DelSig_V:Net_40_adig_local\,
             dclk_glb_2 => Net_374,
             dclk_2 => Net_374_local,
             dclk_glb_3 => \UART_1:Net_9\,
             dclk_3 => \UART_1:Net_9_local\,
-            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\,
-            aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
+            aclk_glb_0 => \ADC_DelSig_V:Net_40\,
+            aclk_0 => \ADC_DelSig_V:Net_40_local\,
+            clk_a_dig_glb_0 => \ADC_DelSig_V:Net_40_adig\,
+            clk_a_dig_0 => \ADC_DelSig_V:Net_40_adig_local\,
+            dclk_glb_4 => Net_808,
+            dclk_4 => Net_808_local,
+            aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\,
+            dclk_glb_ff_4 => \ClockBlock.dclk_glb_ff_4__sig\);
 
     DMA_IN_A:drqcell
         GENERIC MAP(
@@ -1830,6 +1839,16 @@ BEGIN
             dmareq => Net_761,
             termin => '0',
             termout => Net_730,
+            clock => ClockBlock_BUS_CLK);
+
+    DMA_OUT_A:drqcell
+        GENERIC MAP(
+            drq_type => "10",
+            num_tds => 0)
+        PORT MAP(
+            dmareq => '0',
+            termin => '0',
+            termout => Net_788,
             clock => ClockBlock_BUS_CLK);
 
     MISO:logicalport
@@ -1988,7 +2007,7 @@ BEGIN
 
     MOSI(0):iocell
         GENERIC MAP(
-            in_sync_mode => 2,
+            in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
             logicalport => "MOSI",
@@ -2005,6 +2024,14 @@ BEGIN
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
+
+    MOSI(0)_SYNC:synccell
+        GENERIC MAP(
+            clk_inv => '0')
+        PORT MAP(
+            in => Net_370,
+            out => Net_370_SYNCOUT,
+            clock => ClockBlock_BUS_CLK);
 
     Net_148:macrocell
         GENERIC MAP(
@@ -2023,11 +2050,11 @@ BEGIN
 
     Net_380:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * main_1)")
+            eqn_main => "(main_0 * !main_1)")
         PORT MAP(
             q => Net_380,
-            main_0 => Net_372,
-            main_1 => \SPIS_1:BSPIS:es2:SPISlave:miso_from_dp\);
+            main_0 => \SPIS_1:BSPIS:es2:SPISlave:miso_from_dp\,
+            main_1 => Net_372_SYNCOUT);
 
     Net_459:macrocell
         GENERIC MAP(
@@ -2145,7 +2172,7 @@ BEGIN
 
     Rx_1(0):iocell
         GENERIC MAP(
-            in_sync_mode => 2,
+            in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
             logicalport => "Rx_1",
@@ -2162,6 +2189,14 @@ BEGIN
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
+
+    Rx_1(0)_SYNC:synccell
+        GENERIC MAP(
+            clk_inv => '0')
+        PORT MAP(
+            in => Net_314,
+            out => Net_314_SYNCOUT,
+            clock => ClockBlock_BUS_CLK);
 
     SCLK:logicalport
         GENERIC MAP(
@@ -2232,7 +2267,7 @@ BEGIN
 
     SCLK(0):iocell
         GENERIC MAP(
-            in_sync_mode => 2,
+            in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
             logicalport => "SCLK",
@@ -2249,6 +2284,14 @@ BEGIN
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
+
+    SCLK(0)_SYNC:synccell
+        GENERIC MAP(
+            clk_inv => '0')
+        PORT MAP(
+            in => Net_371,
+            out => Net_371_SYNCOUT,
+            clock => ClockBlock_BUS_CLK);
 
     SS:logicalport
         GENERIC MAP(
@@ -2319,7 +2362,7 @@ BEGIN
 
     SS(0):iocell
         GENERIC MAP(
-            in_sync_mode => 2,
+            in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
             logicalport => "SS",
@@ -2336,6 +2379,14 @@ BEGIN
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
+
+    SS(0)_SYNC:synccell
+        GENERIC MAP(
+            clk_inv => '0')
+        PORT MAP(
+            in => Net_372,
+            out => Net_372_SYNCOUT,
+            clock => ClockBlock_BUS_CLK);
 
     Tx_1:logicalport
         GENERIC MAP(
@@ -2570,18 +2621,18 @@ BEGIN
             control_0 => Net_687,
             busclk => ClockBlock_BUS_CLK);
 
-    \Counter_1:CounterHW\:timercell
+    \Counter_2:CounterHW\:timercell
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => \ClockBlock.clk_bus_glb_ff__sig\,
+            clock => \ClockBlock.dclk_glb_ff_4__sig\,
             kill => open,
             enable => open,
             capture => open,
             timer_reset => open,
-            tc => Net_759,
-            cmp => \Counter_1:Net_47\,
-            irq => \Counter_1:Net_42\);
+            tc => \Counter_2:Net_48\,
+            cmp => \Counter_2:Net_47\,
+            irq => \Counter_2:Net_42\);
 
     \DFB_1:DFB\:dfbcell
         GENERIC MAP(
@@ -2590,9 +2641,9 @@ BEGIN
             in_1 => open,
             in_2 => open,
             out_1 => Net_761,
-            out_2 => Net_743,
-            dmareq_1 => Net_744,
-            dmareq_2 => Net_745,
+            out_2 => Net_851,
+            dmareq_1 => Net_852,
+            dmareq_2 => Net_853,
             interrupt => Net_723);
 
     \LCD_Char_1:LCDPort(0)\:iocell
@@ -3062,8 +3113,8 @@ BEGIN
             clk_inv => '0',
             reset_inv => '0')
         PORT MAP(
-            clock => Net_371,
-            reset => Net_372,
+            clock => Net_371_SYNCOUT,
+            reset => Net_372_SYNCOUT,
             load => open,
             enable => \SPIS_1:BSPIS:es2:SPISlave:inv_ss\,
             count_6 => \SPIS_1:BSPIS:es2:SPISlave:count_6\,
@@ -3148,7 +3199,7 @@ BEGIN
             eqn_main => "(!main_0)")
         PORT MAP(
             q => \SPIS_1:BSPIS:es2:SPISlave:inv_ss\,
-            main_0 => Net_372);
+            main_0 => Net_372_SYNCOUT);
 
     \SPIS_1:BSPIS:es2:SPISlave:mosi_rx_empty\:macrocell
         GENERIC MAP(
@@ -3192,8 +3243,8 @@ BEGIN
             uses_p_out => '0',
             clk_inv => '1')
         PORT MAP(
-            clock => Net_371,
-            cs_addr_2 => Net_372,
+            clock => Net_371_SYNCOUT,
+            cs_addr_2 => Net_372_SYNCOUT,
             cs_addr_0 => \SPIS_1:BSPIS:es2:SPISlave:dpcounter_zero\,
             so_comb => \SPIS_1:BSPIS:es2:SPISlave:miso_from_dp\,
             f0_bus_stat_comb => \SPIS_1:BSPIS:es2:SPISlave:dp8MISO_f0_not_full\,
@@ -3227,9 +3278,9 @@ BEGIN
             uses_p_out => '0',
             clk_inv => '0')
         PORT MAP(
-            clock => Net_371,
-            cs_addr_2 => Net_372,
-            route_si => Net_370,
+            clock => Net_371_SYNCOUT,
+            cs_addr_2 => Net_372_SYNCOUT,
+            route_si => Net_370_SYNCOUT,
             f0_load => \SPIS_1:BSPIS:es2:SPISlave:dpcounter_one\,
             f0_bus_stat_comb => \SPIS_1:BSPIS:es2:SPISlave:dp8MOSI_f0_not_empty\,
             f0_blk_stat_comb => \SPIS_1:BSPIS:es2:SPISlave:mosi_rx_full\,
@@ -3287,8 +3338,8 @@ BEGIN
             clock_0 => \UART_1:Net_9\,
             main_0 => \UART_1:BUART:rx_count_2\,
             main_1 => \UART_1:BUART:rx_count_1\,
-            main_2 => Net_314,
-            main_3 => \UART_1:BUART:pollcount_0\);
+            main_2 => \UART_1:BUART:pollcount_0\,
+            main_3 => Net_314_SYNCOUT);
 
     \UART_1:BUART:pollcount_1\:macrocell
         GENERIC MAP(
@@ -3300,8 +3351,8 @@ BEGIN
             main_0 => \UART_1:BUART:rx_count_2\,
             main_1 => \UART_1:BUART:rx_count_1\,
             main_2 => \UART_1:BUART:pollcount_1\,
-            main_3 => Net_314,
-            main_4 => \UART_1:BUART:pollcount_0\);
+            main_3 => \UART_1:BUART:pollcount_0\,
+            main_4 => Net_314_SYNCOUT);
 
     \UART_1:BUART:rx_address_detected\:macrocell
         GENERIC MAP(
@@ -3339,7 +3390,7 @@ BEGIN
         PORT MAP(
             q => \UART_1:BUART:rx_last\,
             clock_0 => \UART_1:Net_9\,
-            main_0 => Net_314);
+            main_0 => Net_314_SYNCOUT);
 
     \UART_1:BUART:rx_load_fifo\:macrocell
         GENERIC MAP(
@@ -3363,12 +3414,12 @@ BEGIN
         PORT MAP(
             q => \UART_1:BUART:rx_postpoll\,
             main_0 => \UART_1:BUART:pollcount_1\,
-            main_1 => Net_314,
-            main_2 => \UART_1:BUART:pollcount_0\);
+            main_1 => \UART_1:BUART:pollcount_0\,
+            main_2 => Net_314_SYNCOUT);
 
     \UART_1:BUART:rx_state_0\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_1 * main_2 * !main_3 * main_4 * !main_8 * !main_9 * !main_0) + (!main_1 * main_2 * !main_3 * main_4 * !main_8 * !main_10 * !main_0) + (main_1 * !main_3 * !main_4 * !main_5 * !main_6 * !main_0) + (main_1 * !main_3 * !main_4 * !main_5 * !main_7 * !main_0)",
+            eqn_main => "(!main_1 * main_2 * !main_3 * main_4 * !main_8 * !main_9 * !main_0) + (!main_1 * main_2 * !main_3 * main_4 * !main_8 * !main_0 * !main_10) + (main_1 * !main_3 * !main_4 * !main_5 * !main_6 * !main_0) + (main_1 * !main_3 * !main_4 * !main_5 * !main_7 * !main_0)",
             clk_inv => '0')
         PORT MAP(
             q => \UART_1:BUART:rx_state_0\,
@@ -3382,12 +3433,12 @@ BEGIN
             main_6 => \UART_1:BUART:rx_count_5\,
             main_7 => \UART_1:BUART:rx_count_4\,
             main_8 => \UART_1:BUART:pollcount_1\,
-            main_9 => Net_314,
-            main_10 => \UART_1:BUART:pollcount_0\);
+            main_9 => \UART_1:BUART:pollcount_0\,
+            main_10 => Net_314_SYNCOUT);
 
     \UART_1:BUART:rx_state_2\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_1 * main_2 * main_3 * !main_0) + (!main_1 * main_2 * main_4 * !main_0) + (!main_1 * !main_3 * !main_4 * !main_8 * !main_0 * main_9) + (main_1 * !main_3 * !main_4 * !main_5 * !main_6 * !main_0) + (main_1 * !main_3 * !main_4 * !main_5 * !main_7 * !main_0)",
+            eqn_main => "(!main_1 * main_2 * main_3 * !main_0) + (!main_1 * main_2 * main_4 * !main_0) + (!main_1 * !main_3 * !main_4 * !main_0 * main_8 * !main_9) + (main_1 * !main_3 * !main_4 * !main_5 * !main_6 * !main_0) + (main_1 * !main_3 * !main_4 * !main_5 * !main_7 * !main_0)",
             clk_inv => '0')
         PORT MAP(
             q => \UART_1:BUART:rx_state_2\,
@@ -3400,8 +3451,8 @@ BEGIN
             main_5 => \UART_1:BUART:rx_count_6\,
             main_6 => \UART_1:BUART:rx_count_5\,
             main_7 => \UART_1:BUART:rx_count_4\,
-            main_8 => Net_314,
-            main_9 => \UART_1:BUART:rx_last\);
+            main_8 => \UART_1:BUART:rx_last\,
+            main_9 => Net_314_SYNCOUT);
 
     \UART_1:BUART:rx_state_3\:macrocell
         GENERIC MAP(
@@ -3433,7 +3484,7 @@ BEGIN
 
     \UART_1:BUART:rx_status_3\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_1 * main_2 * main_3 * main_4 * !main_5 * !main_6 * !main_0) + (!main_1 * main_2 * main_3 * main_4 * !main_5 * !main_7 * !main_0)",
+            eqn_main => "(!main_1 * main_2 * main_3 * main_4 * !main_5 * !main_6 * !main_0) + (!main_1 * main_2 * main_3 * main_4 * !main_5 * !main_0 * !main_7)",
             clk_inv => '0')
         PORT MAP(
             q => \UART_1:BUART:rx_status_3\,
@@ -3444,8 +3495,8 @@ BEGIN
             main_3 => \UART_1:BUART:rx_state_3\,
             main_4 => \UART_1:BUART:rx_state_2\,
             main_5 => \UART_1:BUART:pollcount_1\,
-            main_6 => Net_314,
-            main_7 => \UART_1:BUART:pollcount_0\);
+            main_6 => \UART_1:BUART:pollcount_0\,
+            main_7 => Net_314_SYNCOUT);
 
     \UART_1:BUART:rx_status_4\:macrocell
         GENERIC MAP(
@@ -3536,7 +3587,8 @@ BEGIN
             status_3 => \UART_1:BUART:rx_status_3\,
             status_2 => open,
             status_1 => open,
-            status_0 => open);
+            status_0 => open,
+            interrupt => Net_762);
 
     \UART_1:BUART:sTX:TxShifter:u0\:datapathcell
         GENERIC MAP(
@@ -3733,11 +3785,11 @@ BEGIN
             interrupt => Net_723,
             clock => ClockBlock_BUS_CLK);
 
-    isr_LUT:interrupt
+    isr_spark_drq:interrupt
         GENERIC MAP(
             int_type => "10")
         PORT MAP(
-            interrupt => Net_759,
+            interrupt => Net_762,
             clock => ClockBlock_BUS_CLK);
 
 END __DEFAULT__;
