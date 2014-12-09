@@ -75,7 +75,7 @@ CY_ISR( ADC_DelSig_V_ISR1)
     
     buffvolt=ADC_DelSig_V_GetResult16();
     sineLUTindex=Counter_2_ReadCounter();
-    varray[sineLUTindex>>5]=buffvolt<<12;
+    varray[sineLUTindex>>3]=buffvolt<<12;
     
     
     

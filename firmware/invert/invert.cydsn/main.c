@@ -37,6 +37,7 @@ uint8 DMA_OUT_A_TD[1];
     #define DMA_OUT_A_DST_BASE (CYDEV_SRAM_BASE)
 
 int16 buffvolt=0;
+int16 buffamp=0;
 uint8 dataReady=0;
 
 int16 * sinptr;
@@ -45,10 +46,12 @@ int16 sineLUTindex=0;
 char recbyte=0;
 
 
-uint32 varray[8];
+uint32 varray[32];
+uint32 iarray[32];
 //uint32 varray[4]={0x30000,0x30000,0x30000,0x30000};
 //uint32 varray[1]={0x300000};
 uint32 rmsvolt;
+uint32 rmsamp;
 int16 varridx=0;
 
 float K = 33; //K factor
@@ -103,48 +106,13 @@ CY_ISR(isr_DFB_Interrupt)
     /* `#START isr_DFB_Interrupt` */
     
    //uint32 qur=DFB_1_GetOutputValue(1);
-   rmsvolt=sqrt(DFB_1_GetOutputValue(1)>>3);
+   rmsamp=sqrt(DFB_1_GetOutputValue(1)>>3);
    DFB_1_Stop();
-   //CyGlobalIntDisable;
-   //DFB_1_Start();
-   //DFB_1_ClearSemaphores(DFB_1_SEM1);
-   
-   //LCD_Char_1_Position(1, 0);
-        //LCD_Char_1_PrintInt16(E[0]);
-        //LCD_Char_1_PrintString(tstr);
-        
-        //LCD_Char_1_Position(1u,0u);
-        
-        //qur=sqrt(qur);
-        //LCD_Char_1_PrintInt16(qur>>16);
-        //LCD_Char_1_PrintInt16(qur);
-        
-        //LCD_Char_1_PutChar(' ');
-        //LCD_Char_1_PrintInt16(buffvolt);
-        
-        //DFB_1_SetSemaphores(DFB_1_SEM1);
-        
-     //CyGlobalIntEnable;   
+  
         
     /* `#END` */
 }
 
-CY_ISR(isr_spark_drq_Interrupt)
-{
-    /*  Place your Interrupt code here. */
-    /* `#START isr_spark_drq_Interrupt` */
-        //DFB_1_SetSemaphores(DFB_1_SEM1);
-        int recbyte=UART_1_GetChar();
-        //UART_1_PutChar(0x10);
-        
-        if(recbyte=='V'){
-            UART_1_PutChar((rmsvolt>>8));
-            UART_1_PutChar(rmsvolt);
-            //UART_1_PutChar((0x12AF>>8));
-            //UART_1_PutChar(0xAF);
-        }
-    /* `#END` */
-}
 
 void main()
 {
@@ -175,6 +143,11 @@ void main()
     ADC_DelSig_V_IRQ_Enable();
     ADC_DelSig_V_Start();
     ADC_DelSig_V_StartConvert();
+    
+    //start current ADC
+    ADC_SAR_I_IRQ_Enable();
+    ADC_SAR_I_Start();
+    ADC_SAR_I_StartConvert();
     
     //start pwm
     PWM_BUCK_Start();
@@ -215,17 +188,18 @@ void main()
         LCD_Char_1_Position(1u,0u);
         
         //qur=sqrt(qur);
-        LCD_Char_1_PrintInt16(buffvolt);
+        LCD_Char_1_PrintInt16(buffamp);
         LCD_Char_1_PutChar(' ');
         //LCD_Char_1_PrintInt16(varray[0]);
-        LCD_Char_1_PrintInt16(rmsvolt>>16);
-        LCD_Char_1_PrintInt16(rmsvolt);
+        LCD_Char_1_PrintInt16(rmsamp>>16);
+        LCD_Char_1_PrintInt16(rmsamp);
         
         DFB_1_Init();
         DFB_1_Enable();
         CyDelay(100);//delay
         
         DFB_1_SetSemaphores(DFB_1_SEM1);
+        CyDelay(1000);//delay
         
     }
 }
@@ -250,11 +224,11 @@ void DMA_Init(void)
     /* DMA_IN_A */
     dma_stga_in_td = CyDmaTdAllocate();
     
-    dma_stga_in_channel = DMA_IN_A_DmaInitialize(4u, 0u, HI16((uint32)&varray[0u]), HI16((uint32)DFB_1_STAGEA_PTR));
-    CyDmaTdSetConfiguration(dma_stga_in_td, 32u, DMA_INVALID_TD, (DMA_IN_A__TD_TERMOUT_EN |
+    dma_stga_in_channel = DMA_IN_A_DmaInitialize(4u, 0u, HI16((uint32)&iarray[0u]), HI16((uint32)DFB_1_STAGEA_PTR));
+    CyDmaTdSetConfiguration(dma_stga_in_td, 128u, DMA_INVALID_TD, (DMA_IN_A__TD_TERMOUT_EN |
                                                                                     TD_INC_SRC_ADR));
     
-	CyDmaTdSetAddress(dma_stga_in_td, LO16((uint32)&varray[0u]), LO16((uint32)DFB_1_STAGEA_PTR));
+	CyDmaTdSetAddress(dma_stga_in_td, LO16((uint32)&iarray[0u]), LO16((uint32)DFB_1_STAGEA_PTR));
 	CyDmaChSetInitialTd(dma_stga_in_channel, dma_stga_in_td);
 	CyDmaChEnable(dma_stga_in_channel, 1u);
 	

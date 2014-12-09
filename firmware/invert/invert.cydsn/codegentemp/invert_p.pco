@@ -1,86 +1,88 @@
 dont_use_io iocell 1 0
 dont_use_io iocell 1 1
 dont_use_io iocell 1 3
-set_location "\UART_1:BUART:rx_status_3\" macrocell 3 4 1 0
-set_location "\PWM_BUCK:PWMUDB:pwm_db_reg\" macrocell 2 0 0 1
-set_location "\UART_1:BUART:tx_status_2\" macrocell 2 2 1 2
-set_location "\UART_1:BUART:rx_last\" macrocell 3 4 1 2
-set_location "\UART_1:BUART:rx_state_2\" macrocell 3 4 0 1
-set_location "\UART_1:BUART:rx_address_detected\" macrocell 3 4 0 3
-set_location "\SPIS_1:BSPIS:es2:SPISlave:RxStsReg\" statusicell 2 2 4 
-set_location "__ONE__" macrocell 3 1 1 1
-set_location "\SPIS_1:BSPIS:es2:SPISlave:inv_ss\" macrocell 2 2 0 2
-set_location "\UART_1:BUART:pollcount_0\" macrocell 3 3 0 1
-set_location "\UART_1:BUART:pollcount_1\" macrocell 3 3 0 0
-set_location "\UART_1:BUART:tx_bitclk_enable_pre\" macrocell 3 3 1 2
-set_location "\PWM_BUCK:PWMUDB:runmode_enable\" macrocell 2 0 0 0
-set_location "\UART_1:BUART:rx_status_5\" macrocell 3 2 1 1
-set_location "\UART_1:BUART:tx_status_0\" macrocell 2 3 1 0
-set_location "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one\" macrocell 2 1 0 1
-set_location "\UART_1:BUART:rx_state_3\" macrocell 3 4 0 2
-set_location "\PWM_BUCK:PWMUDB:db_ph2_run_temp\" macrocell 3 0 0 0
-set_location "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_zero\" macrocell 2 1 0 0
-set_location "Net_148" macrocell 2 2 1 1
-set_location "\PWM_BUCK:PWMUDB:prevCompare1\" macrocell 3 1 0 0
-set_location "\UART_1:BUART:rx_bitclk_enable\" macrocell 3 3 0 2
-set_location "\SPIS_1:BSPIS:es2:SPISlave:TxStsReg\" statusicell 2 0 4 
-set_location "\UART_1:BUART:sTX:sCLOCK:TxBitClkGen\" datapathcell 3 3 2 
-set_location "\UART_1:BUART:tx_bitclk\" macrocell 3 3 1 1
-set_location "\SPIS_1:BSPIS:es2:SPISlave:sR8:DpMISO:u0\" datapathcell 2 1 2 
-set_location "\PWM_BUCK:PWMUDB:sSTSReg:nrstSts:stsreg\" statusicell 3 0 4 
-set_location "\SPIS_1:BSPIS:es2:SPISlave:tx_status_0\" macrocell 2 1 0 2
-set_location "\UART_1:BUART:sTX:TxSts\" statusicell 2 3 4 
-set_location "\PWM_BUCK:PWMUDB:db_cnt_0\" macrocell 2 0 1 0
-set_location "\UART_1:BUART:counter_load_not\" macrocell 2 3 1 1
-set_location "Net_518" macrocell 2 0 1 1
+dont_use_io iocell 3 7
+set_location "\UART_1:BUART:rx_status_3\" macrocell 3 4 1 1
+set_location "\PWM_BUCK:PWMUDB:pwm_db_reg\" macrocell 2 0 1 1
+set_location "\UART_1:BUART:rx_state_2\" macrocell 3 3 1 3
+set_location "\UART_1:BUART:rx_address_detected\" macrocell 3 4 1 3
+set_location "\UART_1:BUART:tx_bitclk\" macrocell 3 1 0 3
+set_location "\SPIS_1:BSPIS:es2:SPISlave:RxStsReg\" statusicell 2 1 4 
+set_location "__ONE__" macrocell 0 3 1 0
+set_location "Net_518" macrocell 2 0 0 1
+set_location "\UART_1:BUART:pollcount_0\" macrocell 3 4 0 1
+set_location "\UART_1:BUART:pollcount_1\" macrocell 3 4 0 0
+set_location "\PWM_BUCK:PWMUDB:runmode_enable\" macrocell 3 0 0 0
 set_location "\PWM_BUCK:PWMUDB:status_0\" macrocell 3 0 0 1
-set_location "\PWM_BUCK:PWMUDB:sP16:pwmdp:u1\" datapathcell 3 0 2 
-set_location "\SPIS_1:BSPIS:es2:SPISlave:BitCounter\" count7cell 2 1 7 
-set_location "\UART_1:BUART:rx_load_fifo\" macrocell 3 4 1 3
-set_location "\PWM_BUCK:PWMUDB:final_kill_reg\" macrocell 3 1 0 2
-set_location "\UART_1:BUART:sRX:RxSts\" statusicell 3 2 4 
-set_location "\UART_1:BUART:rx_state_0\" macrocell 3 4 0 0
-set_location "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_empty\" macrocell 2 2 1 3
-set_location "\UART_1:BUART:rx_postpoll\" macrocell 3 3 0 3
-set_location "\UART_1:BUART:tx_state_0\" macrocell 2 4 1 3
-set_location "\UART_1:BUART:sTX:TxShifter:u0\" datapathcell 2 3 2 
-set_location "Net_507" macrocell 3 2 1 0
-set_location "cydff_2" macrocell 2 2 1 0
-set_location "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_reg\" macrocell 2 1 0 3
-set_location "Net_517" macrocell 3 1 0 3
-set_location "\UART_1:BUART:txn\" macrocell 2 3 0 0
-set_location "Net_459" macrocell 2 2 0 3
-set_location "Net_380" macrocell 2 2 0 1
-set_location "\UART_1:BUART:tx_state_1\" macrocell 3 3 1 0
-set_location "\UART_1:BUART:rx_status_4\" macrocell 3 2 0 0
-set_location "\SPIS_1:BSPIS:es2:SPISlave:rx_status_5\" macrocell 2 1 1 1
-set_location "\UART_1:BUART:rx_counter_load\" macrocell 3 1 0 1
-set_location "\PWM_BUCK:PWMUDB:db_ph1_run_temp\" macrocell 3 0 0 2
-set_location "\UART_1:BUART:tx_state_2\" macrocell 3 3 1 3
-set_location "\PWM_BUCK:PWMUDB:db_cnt_1\" macrocell 2 0 0 3
-set_location "\SPIS_1:BSPIS:es2:SPISlave:byte_complete\" macrocell 2 1 1 0
-set_location "\UART_1:BUART:rx_state_stop1_reg\" macrocell 3 4 1 1
-set_location "\UART_1:BUART:sRX:RxShifter:u0\" datapathcell 3 2 2 
+set_location "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one\" macrocell 3 2 0 2
+set_location "\UART_1:BUART:rx_state_3\" macrocell 3 3 1 0
+set_location "\PWM_BUCK:PWMUDB:db_ph2_run_temp\" macrocell 2 0 1 0
+set_location "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_zero\" macrocell 3 2 0 1
 set_location "\PWM_BUCK:PWMUDB:sP16:pwmdp:u0\" datapathcell 2 0 2 
-set_location "\UART_1:BUART:sRX:RxBitCounter\" count7cell 3 4 7 
-set_location "Net_309" macrocell 3 2 0 3
-set_location "\SPIS_1:BSPIS:es2:SPISlave:sR8:DpMOSI:u0\" datapathcell 2 2 2 
-set_location "Net_475" macrocell 3 2 0 1
-set_location "\PWM_BUCK:PWMUDB:status_5\" macrocell 3 1 1 3
+set_location "\PWM_BUCK:PWMUDB:prevCompare1\" macrocell 3 0 0 3
+set_location "\UART_1:BUART:rx_status_4\" macrocell 3 2 0 3
+set_location "\UART_1:BUART:rx_bitclk_enable\" macrocell 3 4 0 2
+set_location "\SPIS_1:BSPIS:es2:SPISlave:TxStsReg\" statusicell 2 4 4 
+set_location "\UART_1:BUART:tx_status_2\" macrocell 3 1 1 0
+set_location "\SPIS_1:BSPIS:es2:SPISlave:rx_status_5\" macrocell 2 1 1 3
+set_location "\PWM_BUCK:PWMUDB:sSTSReg:nrstSts:stsreg\" statusicell 3 0 4 
+set_location "\UART_1:BUART:sTX:TxSts\" statusicell 3 1 4 
+set_location "\PWM_BUCK:PWMUDB:db_cnt_0\" macrocell 2 0 0 0
+set_location "\UART_1:BUART:tx_state_2\" macrocell 3 3 0 1
+set_location "\UART_1:BUART:tx_bitclk_enable_pre\" macrocell 3 2 1 2
+set_location "\SPIS_1:BSPIS:es2:SPISlave:sR8:DpMISO:u0\" datapathcell 3 3 2 
+set_location "\SPIS_1:BSPIS:es2:SPISlave:byte_complete\" macrocell 2 2 1 1
+set_location "\UART_1:BUART:sTX:sCLOCK:TxBitClkGen\" datapathcell 3 1 2 
+set_location "\SPIS_1:BSPIS:es2:SPISlave:BitCounter\" count7cell 3 2 7 
+set_location "\UART_1:BUART:rx_load_fifo\" macrocell 3 4 1 2
+set_location "Net_148" macrocell 2 2 1 0
+set_location "\PWM_BUCK:PWMUDB:final_kill_reg\" macrocell 2 1 0 2
+set_location "Net_380" macrocell 3 1 0 0
+set_location "\UART_1:BUART:sRX:RxSts\" statusicell 2 2 4 
+set_location "\UART_1:BUART:rx_state_0\" macrocell 3 4 1 0
+set_location "\UART_1:BUART:rx_postpoll\" macrocell 2 4 0 3
+set_location "\UART_1:BUART:rx_last\" macrocell 3 3 1 2
+set_location "\UART_1:BUART:tx_state_0\" macrocell 3 1 1 2
+set_location "\PWM_BUCK:PWMUDB:sP16:pwmdp:u1\" datapathcell 3 0 2 
+set_location "\SPIS_1:BSPIS:es2:SPISlave:inv_ss\" macrocell 3 0 1 3
+set_location "Net_507" macrocell 2 4 1 0
+set_location "cydff_2" macrocell 2 4 0 1
+set_location "\UART_1:BUART:sTX:TxShifter:u0\" datapathcell 3 2 2 
+set_location "\SPIS_1:BSPIS:es2:SPISlave:dpcounter_one_reg\" macrocell 2 2 0 0
+set_location "\UART_1:BUART:tx_status_0\" macrocell 3 1 1 1
+set_location "\UART_1:BUART:txn\" macrocell 3 3 0 0
+set_location "Net_309" macrocell 2 3 0 3
+set_location "\SPIS_1:BSPIS:es2:SPISlave:sR8:DpMOSI:u0\" datapathcell 2 3 2 
+set_location "\UART_1:BUART:tx_state_1\" macrocell 3 1 1 3
+set_location "\SPIS_1:BSPIS:es2:SPISlave:mosi_rx_empty\" macrocell 2 2 1 2
+set_location "\UART_1:BUART:sRX:RxShifter:u0\" datapathcell 3 4 2 
+set_location "\UART_1:BUART:rx_counter_load\" macrocell 3 3 1 1
+set_location "\SPIS_1:BSPIS:es2:SPISlave:tx_status_0\" macrocell 2 2 0 1
+set_location "\PWM_BUCK:PWMUDB:db_ph1_run_temp\" macrocell 2 0 1 2
+set_location "\UART_1:BUART:counter_load_not\" macrocell 3 1 0 1
+set_location "\UART_1:BUART:rx_status_5\" macrocell 3 2 1 3
+set_location "\PWM_BUCK:PWMUDB:db_cnt_1\" macrocell 2 1 0 0
+set_location "Net_517" macrocell 3 0 0 2
+set_location "\UART_1:BUART:rx_state_stop1_reg\" macrocell 3 2 0 0
+set_location "\UART_1:BUART:sRX:RxBitCounter\" count7cell 3 3 7 
+set_location "Net_459" macrocell 2 4 0 0
+set_location "Net_475" macrocell 2 4 0 2
+set_location "\PWM_BUCK:PWMUDB:status_5\" macrocell 2 1 1 0
 set_io "\LCD_Char_1:LCDPort(4)\" iocell 2 4
-set_location "\ADC_DelSig_V:DSM2\" dsmodcell -1 -1 0
-set_io "MOSI(0)" iocell 0 2
-set_location "\SPIS_1:BSPIS:es2:SPISlave:sync_1\" synccell 3 1 5 0
-set_location "Rx_1(0)_SYNC" synccell 3 3 5 0
+set_io "MOSI(0)" iocell 0 3
+set_location "\SPIS_1:BSPIS:es2:SPISlave:sync_1\" synccell 2 3 5 0
+set_location "Rx_1(0)_SYNC" synccell 3 4 5 0
 set_location "DMA_OUT_A" drqcell -1 -1 1
-set_location "\ADC_DelSig_V:IRQ\" interrupt -1 -1 29
 set_location "isr_DFB" interrupt -1 -1 28
-set_location "isr_spark_drq" interrupt -1 -1 0
+set_location "isr_spark_drq" interrupt -1 -1 1
+set_location "\ADC_DelSig_V:IRQ\" interrupt -1 -1 29
 set_io "Rx_1(0)" iocell 0 0
+set_location "\ADC_SAR_I:IRQ\" interrupt -1 -1 0
 set_location "\Counter_2:CounterHW\" timercell -1 -1 0
-set_location "MOSI(0)_SYNC" synccell 2 4 5 0
-set_io "MISO(0)" iocell 0 5
-set_io "SS(0)" iocell 0 4
+set_location "MOSI(0)_SYNC" synccell 2 0 5 0
+set_io "MISO(0)" iocell 0 6
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "SS(0)" iocell 0 5
 set_io "\LCD_Char_1:LCDPort(6)\" iocell 2 6
 set_io "\LCD_Char_1:LCDPort(5)\" iocell 2 5
 set_io "\LCD_Char_1:LCDPort(2)\" iocell 2 2
@@ -88,22 +90,25 @@ set_io "BUCK_LS(0)" iocell 5 6
 set_io "Tx_1(0)" iocell 0 1
 set_location "DMA_IN_A" drqcell -1 -1 0
 set_location "\DFB_1:DFB\" dfbcell -1 -1 0
-set_location "ClockBlock" clockblockcell -1 -1 0
+set_location "\ADC_DelSig_V:DSM2\" dsmodcell -1 -1 0
 set_io "B_HS(0)" iocell 5 3
-set_location "\Control_Reg_1:Async:ctrl_reg\" controlcell 3 2 6 
-set_location "\SPIS_1:BSPIS:es2:SPISlave:sync_2\" synccell 3 1 5 1
-set_location "\SPIS_1:BSPIS:es2:SPISlave:sync_3\" synccell 3 1 5 2
-set_location "SCLK(0)_SYNC" synccell 2 4 5 1
-set_location "\PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\" controlcell 3 0 6 
+set_location "\Control_Reg_1:Async:ctrl_reg\" controlcell 2 4 6 
+set_location "\SPIS_1:BSPIS:es2:SPISlave:sync_2\" synccell 2 3 5 1
+set_location "\SPIS_1:BSPIS:es2:SPISlave:sync_3\" synccell 2 3 5 2
+set_location "SCLK(0)_SYNC" synccell 2 0 5 1
+set_location "\PWM_BUCK:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\" controlcell 2 0 6 
 set_location "\ADC_DelSig_V:DEC\" decimatorcell -1 -1 0
-set_location "SS(0)_SYNC" synccell 2 4 5 2
+set_location "SS(0)_SYNC" synccell 2 0 5 2
+set_location "\ADC_SAR_I:ADC_SAR\" sarcell -1 -1 1
 set_io "\LCD_Char_1:LCDPort(1)\" iocell 2 1
-set_io "SCLK(0)" iocell 0 3
+set_io "SCLK(0)" iocell 0 4
 set_io "B_LS(0)" iocell 5 4
-set_io "V_SENSE(0)" iocell 6 5
+set_io "I_SENSE(0)" iocell 1 6
+set_io "V_SENSE(0)" iocell 1 2
+set_io "\ADC_SAR_I:Bypass(0)\" iocell 0 2
 set_io "\LCD_Char_1:LCDPort(0)\" iocell 2 0
 set_io "\LCD_Char_1:LCDPort(3)\" iocell 2 3
 set_io "A_HS(0)" iocell 5 1
 set_io "BUCK_HS(0)" iocell 5 5
 set_io "A_LS(0)" iocell 5 2
-set_location "\PWM_BUCK:PWMUDB:sDB3:AsyncCtl:dbctrlreg\" controlcell 2 0 6 
+set_location "\PWM_BUCK:PWMUDB:sDB3:AsyncCtl:dbctrlreg\" controlcell 2 1 6 

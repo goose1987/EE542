@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="MISO" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="MOSI" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="SPIS_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="BSPIS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="SPIS_1_RX_DATA" address="0x40006407" bitWidth="8" desc="SPIS RX Data" />
-    <register name="SPIS_1_RXSTATUS" address="0x40006467" bitWidth="8" desc="SPIS RX Status Register">
-      <field name="RX_FIFO_Not_Empty" from="3" to="3" access="R" resetVal="" desc="Set when the RX Data FIFO is not empty. That is, at least one byte/word is in the RX FIFO                               (does not indicate the RX buffer RAM array conditions)" />
-      <field name="RX_FIFO_Empty" from="4" to="4" access="R" resetVal="" desc="Set when the RX Data FIFO is empty" />
-      <field name="RX_Buf_Overrun" from="5" to="5" access="R" resetVal="" desc="Set when RX Data has overrun the 4 byte/word FIFO without being moved to the RX buffer                                 memory array (if one exists)" />
-      <field name="RX_FIFO_Full" from="6" to="6" access="R" resetVal="" desc="Set when the RX Data FIFO is full" />
-      <field name="Interrupt" from="7" to="7" access="R" resetVal="" desc="Set when interrupt occurs" />
-    </register>
-    <register name="SPIS_1_TX_DATA" address="0x40006507" bitWidth="8" desc="SPIS TX Data" />
-    <register name="SPIS_1_TXSTATUS" address="0x40006564" bitWidth="8" desc="SPIS TX Status Register">
+    <register name="SPIS_1_RX_DATA" address="0x40006404" bitWidth="8" desc="SPIS RX Data" />
+    <register name="SPIS_1_TX_DATA" address="0x40006405" bitWidth="8" desc="SPIS TX Data" />
+    <register name="SPIS_1_TXSTATUS" address="0x40006463" bitWidth="8" desc="SPIS TX Status Register">
       <field name="SPI_Done" from="0" to="0" access="R" resetVal="" desc="Set when all of the data in the transmit FIFO has been sent. Set when Byte/Word Complete                                has been set and TX Data FIFO is empty" />
       <field name="TX_FIFO_Not_Full" from="1" to="1" access="R" resetVal="" desc="Set when the TX Data FIFO is not full" />
       <field name="TX_FIFO_Empty" from="2" to="2" access="R" resetVal="" desc="Set when the TX Data FIFO is empty" />
       <field name="Byte_Word_Complete" from="6" to="6" access="R" resetVal="" desc="Set when a byte/word transmit has completed" />
       <field name="Interrupt" from="7" to="7" access="R" resetVal="" desc="Set when interrupt occurs" />
     </register>
+    <register name="SPIS_1_RXSTATUS" address="0x40006567" bitWidth="8" desc="SPIS RX Status Register">
+      <field name="RX_FIFO_Not_Empty" from="3" to="3" access="R" resetVal="" desc="Set when the RX Data FIFO is not empty. That is, at least one byte/word is in the RX FIFO                               (does not indicate the RX buffer RAM array conditions)" />
+      <field name="RX_FIFO_Empty" from="4" to="4" access="R" resetVal="" desc="Set when the RX Data FIFO is empty" />
+      <field name="RX_Buf_Overrun" from="5" to="5" access="R" resetVal="" desc="Set when RX Data has overrun the 4 byte/word FIFO without being moved to the RX buffer                                 memory array (if one exists)" />
+      <field name="RX_FIFO_Full" from="6" to="6" access="R" resetVal="" desc="Set when the RX Data FIFO is full" />
+      <field name="Interrupt" from="7" to="7" access="R" resetVal="" desc="Set when interrupt occurs" />
+    </register>
   </block>
-  <block name="BUCK_HS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="MISO" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Clock_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Tx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Rx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="and_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="BUCK_HS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cy_constant_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="SCLK" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Tx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="SS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="isr_spark_drq" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="DMA_IN_A" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="DMA_OUT_A" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clock_LUT" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="MOSI" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="SCLK" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="isr_DFB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Counter_2" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="TC_vm" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -76,8 +73,48 @@
     <register name="Counter_2_PERIOD" address="0x40004F02" bitWidth="8" desc="TMRx.PER0 - Assigned Period" />
     <register name="Counter_2_COUNTER" address="0x40004F04" bitWidth="8" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
   </block>
-  <block name="isr_DFB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="and_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="DMA_OUT_A" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Clock_LUT" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="I_SENSE" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="ADC_SAR_I" BASE="0x0" SIZE="0x0" desc="SAR ADC" visible="true">
+    <block name="ZeroTerminal_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="theACLK" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Clock_VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_virtualmux_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="noconnect" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="vRef_Vdda_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_virtualmux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ADC_SAR" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_virtualmux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Bypass" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_virtualmux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="SAR_TR0" address="0x40004616" bitWidth="8" desc="SAR trim register" />
+    <register name="SAR_CSR0" address="0x40005908" bitWidth="8" desc="SAR status and control register 0" />
+    <register name="SAR_CSR1" address="0x40005909" bitWidth="8" desc="SAR status and control register 1" />
+    <register name="SAR_CSR2" address="0x4000590A" bitWidth="8" desc="SAR status and control register 2" />
+    <register name="SAR_CSR3" address="0x4000590B" bitWidth="8" desc="SAR status and control register 3" />
+    <register name="SAR_CSR4" address="0x4000590C" bitWidth="8" desc="SAR status and control register 4" />
+    <register name="SAR_CSR5" address="0x4000590D" bitWidth="8" desc="SAR status and control register 5" />
+    <register name="SAR_CSR6" address="0x4000590E" bitWidth="8" desc="SAR status and control register 6" />
+    <register name="SAR_SW0" address="0x40005B28" bitWidth="8" desc="SAR Analog Routing Register 0" />
+    <register name="SAR_SW2" address="0x40005B2A" bitWidth="8" desc="SAR Analog Routing Register 2" />
+    <register name="SAR_SW3" address="0x40005B2B" bitWidth="8" desc="SAR Analog Routing Register 3" />
+    <register name="SAR_SW4" address="0x40005B2C" bitWidth="8" desc="SAR Analog Routing Register 4" />
+    <register name="SAR_SW6" address="0x40005B2E" bitWidth="8" desc="SAR Analog Routing Register 6" />
+    <register name="SAR_CLK" address="0x40005B2F" bitWidth="8" desc="SAR Clock Selection Register" />
+    <register name="SAR_WRK" address="0x40005BA2" bitWidth="16" desc="SAR working register" />
+  </block>
+  <block name="cy_constant_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cy_tff_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="DFB_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="DFB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -133,7 +170,8 @@
       <field name="HOLDB_HIGH" from="7" to="0" access="R" resetVal="" desc="High byte of the output Holding Register, Port B." />
     </register>
   </block>
-  <block name="cy_constant_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="isr_spark_drq" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="DMA_IN_A" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="A_HS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cy_constant_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="A_LS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -149,7 +187,7 @@
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="PWMUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <register name="PWM_BUCK_COMPARE_Reg" address="0x40006524" bitWidth="16" desc="UDB.D0 - Assigned Compare Value" />
-    <register name="PWM_BUCK_Control_Reg" address="0x40006575" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
+    <register name="PWM_BUCK_Control_Reg" address="0x40006574" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
       <field name="CTRL_ENABLE" from="7" to="7" access="RW" resetVal="" desc="Enable the PWM" />
       <field name="CTRL_CMPMODE2" from="5" to="3" access="RW" resetVal="" desc="Compare mode 2" />
       <field name="CTRL_CMPMODE1" from="2" to="0" access="RW" resetVal="" desc="Compare mode 1" />
@@ -217,39 +255,6 @@
   <block name="cydff_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="BUCK_LS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cydff_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="LCD_Char_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  </block>
-  <block name="nor_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Control_Reg_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <register name="Control_Reg_1_CONTROL_REG" address="0x40006476" bitWidth="8" desc="" />
-  </block>
-  <block name="UART_1" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="RX_UART_1_RX_ADDRESS1" address="0x40006426" bitWidth="8" desc="RX Address1 Register" />
-    <register name="RX_UART_1_RX_ADDRESS2" address="0x40006436" bitWidth="8" desc="RX Address2 Register" />
-    <register name="TX_UART_1_TX_DATA" address="0x40006444" bitWidth="8" desc="TX Data Register" />
-    <register name="RX_UART_1_RX_DATA" address="0x40006446" bitWidth="8" desc="RX Data Register" />
-    <register name="TX_UART_1_TX_STATUS" address="0x40006464" bitWidth="8" desc="TX status register">
-      <field name="UART_1_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
-      <field name="UART_1_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
-      <field name="UART_1_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
-      <field name="UART_1_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
-    </register>
-    <register name="RX_UART_1_RX_STATUS" address="0x40006466" bitWidth="8" desc="RX status register">
-      <field name="UART_1_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" />
-      <field name="UART_1_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
-    </register>
-  </block>
-  <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ADC_DelSig_V" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="cy_analog_virtualmux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="cy_analog_virtualmux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -1051,7 +1056,41 @@
       </field>
     </register>
   </block>
+  <block name="Control_Reg_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <register name="Control_Reg_1_CONTROL_REG" address="0x40006473" bitWidth="8" desc="" />
+  </block>
+  <block name="LCD_Char_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  </block>
+  <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Rx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="UART_1" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="RX_UART_1_RX_ADDRESS1" address="0x40006422" bitWidth="8" desc="RX Address1 Register" />
+    <register name="RX_UART_1_RX_ADDRESS2" address="0x40006432" bitWidth="8" desc="RX Address2 Register" />
+    <register name="RX_UART_1_RX_DATA" address="0x40006442" bitWidth="8" desc="RX Data Register" />
+    <register name="TX_UART_1_TX_DATA" address="0x40006446" bitWidth="8" desc="TX Data Register" />
+    <register name="RX_UART_1_RX_STATUS" address="0x40006467" bitWidth="8" desc="RX status register">
+      <field name="UART_1_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" />
+      <field name="UART_1_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
+    </register>
+    <register name="TX_UART_1_TX_STATUS" address="0x40006566" bitWidth="8" desc="TX status register">
+      <field name="UART_1_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
+      <field name="UART_1_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
+      <field name="UART_1_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
+      <field name="UART_1_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
+    </register>
+  </block>
   <block name="nor_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="and_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="V_SENSE" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="nor_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="and_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
 </blockRegMap>

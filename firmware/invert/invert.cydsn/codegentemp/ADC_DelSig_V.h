@@ -136,7 +136,7 @@ void ADC_DelSig_V_IRQ_Start(void) ;
 
 #define ADC_DelSig_V_CFG1_RESOLUTION         (9u )
 #define ADC_DelSig_V_CFG1_RANGE              (2u)    
-#define ADC_DelSig_V_CFG1_SRATE              (30000u)         
+#define ADC_DelSig_V_CFG1_SRATE              (25000u)         
 #define ADC_DelSig_V_CFG1_REFERENCE          (5u)       
 #define ADC_DelSig_V_CFG1_BUF_GAIN           (1u)   
 #define ADC_DelSig_V_CFG1_CONV_MODE          (2u)     
@@ -1363,13 +1363,13 @@ void ADC_DelSig_V_IRQ_Start(void) ;
 
 /* Default register settings for the Config 1 */
 /* Default Config */
-/* ADC_DelSig_V_CFG1 Sample Rate: 30000 Samples per Second */
+/* ADC_DelSig_V_CFG1 Sample Rate: 25000 Samples per Second */
 /* ADC_DelSig_V_CFG1 Conversion Mode: 2 */
 /* ADC_DelSig_V_CFG1 Input Buffer Gain: 1   */
 /* ADC_DelSig_V_CFG1 Reference: 5 */
 /* ADC_DelSig_V_CFG1 Input Range: 2  */
 /* ADC_DelSig_V_CFG1 Resolution: 9 bits */
-/* ADC_DelSig_V_CFG1 Clock: 600000 Hz */
+/* ADC_DelSig_V_CFG1 Clock: 500000 Hz */
 
 #define ADC_DelSig_V_CFG1_DEC_CR             (0X38u)
 #define ADC_DelSig_V_CFG1_DEC_SR             (0X14u)
@@ -1419,8 +1419,8 @@ void ADC_DelSig_V_IRQ_Start(void) ;
 #define ADC_DelSig_V_CFG1_DSM_OUT1           (0X00u)
 #define ADC_DelSig_V_CFG1_DSM_SW3            (0X40u)
 #define ADC_DelSig_V_CFG1_CLOCKS_PER_SAMPLE  (0X0014u)
-#define ADC_DelSig_V_CFG1_CLOCK_FREQ         (600000u)
-#define ADC_DelSig_V_CFG1_CP_CLOCK_FREQ      (2400000u)
+#define ADC_DelSig_V_CFG1_CLOCK_FREQ         (500000u)
+#define ADC_DelSig_V_CFG1_CP_CLOCK_FREQ      (2000000u)
 #define ADC_DelSig_V_CFG1_REFERENCE_VOLTAGE  (1.2500)
 #define ADC_DelSig_V_CFG1_COUNTS_PER_VOLT    (102u)
 #define ADC_DelSig_V_CFG1_IDEAL_DEC_GAIN     (0X9000u)

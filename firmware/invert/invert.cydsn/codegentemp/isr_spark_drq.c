@@ -144,7 +144,18 @@ CY_ISR(isr_spark_drq_Interrupt)
 {
     /*  Place your Interrupt code here. */
     /* `#START isr_spark_drq_Interrupt` */
+    int recbyte=UART_1_GetChar();
 
+        
+        if(recbyte=='V'){
+            UART_1_PutChar((rmsvolt>>8));
+            UART_1_PutChar(rmsvolt);
+            
+        }else if(recbyte=='I'){
+            UART_1_PutChar((rmsamp>>8));
+            UART_1_PutChar(rmsamp);
+        
+        }
     /* `#END` */
 }
 

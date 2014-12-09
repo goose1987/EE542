@@ -1,0 +1,563 @@
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"ADC_SAR_I_INT.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 7F000000 		.text
+  20      02006600 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.section	.text.ADC_SAR_I_ISR,"ax",%progbits
+  24              		.align	2
+  25              		.global	ADC_SAR_I_ISR
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	ADC_SAR_I_ISR, %function
+  29              	ADC_SAR_I_ISR:
+  30              	.LFB0:
+  31              		.file 1 ".\\Generated_Source\\PSoC5\\ADC_SAR_I_INT.c"
+   1:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * File Name: ADC_SAR_I_INT.c
+   3:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * Version 2.0
+   4:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *
+   5:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *  Description:
+   6:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *    This file contains the code that operates during the ADC_SAR interrupt
+   7:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *    service routine.
+   8:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *
+   9:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *   Note:
+  10:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *
+  11:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  18:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** #include "ADC_SAR_I.h"
+  19:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  20:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  21:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** /******************************************************************************
+  22:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * Custom Declarations and Variables
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 2
+
+
+  23:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** * - add user inlcude files, prototypes and variables between the following
+  24:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** *   #START and #END tags
+  25:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** ******************************************************************************/
+  26:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** /* `#START ADC_SYS_VAR`  */
+  27:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** extern int16 buffamp;
+  28:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** extern int16 sineLUTindex;
+  29:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** extern uint32 varray[32];
+  30:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** extern uint32 iarray[32];
+  31:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** /* `#END`  */
+  32:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  33:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  34:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** #if(ADC_SAR_I_IRQ_REMOVE == 0u)
+  35:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  36:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  37:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     /******************************************************************************
+  38:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     * Function Name: ADC_SAR_I_ISR
+  39:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *******************************************************************************
+  40:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *
+  41:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     * Summary:
+  42:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *  Handle Interrupt Service Routine.
+  43:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *
+  44:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     * Parameters:
+  45:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *  None.
+  46:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *
+  47:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     * Return:
+  48:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *  None.
+  49:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *
+  50:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     * Reentrant:
+  51:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *  No.
+  52:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     *
+  53:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     ******************************************************************************/
+  54:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     CY_ISR( ADC_SAR_I_ISR )
+  55:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     {
+  32              		.loc 1 55 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 1, uses_anonymous_args = 0
+  36 0000 80B5     		push	{r7, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 8
+  39 0002 00AF     		add	r7, sp, #0
+  40              		.cfi_offset 14, -4
+  41              		.cfi_offset 7, -8
+  42              	.LCFI1:
+  43              		.cfi_def_cfa_register 7
+  56:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****         /************************************************************************
+  57:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****         *  Custom Code
+  58:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****         *  - add user ISR code between the following #START and #END tags
+  59:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****         *************************************************************************/
+  60:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****           /* `#START MAIN_ADC_ISR`  */
+  61:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****             buffamp=ADC_SAR_I_GetResult16();
+  44              		.loc 1 61 0
+  45 0004 FFF7FEFF 		bl	ADC_SAR_I_GetResult16
+  46 0008 0346     		mov	r3, r0
+  47 000a 9AB2     		uxth	r2, r3
+  48 000c 40F20003 		movw	r3, #:lower16:buffamp
+  49 0010 C0F20003 		movt	r3, #:upper16:buffamp
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 3
+
+
+  50 0014 1A80     		strh	r2, [r3, #0]	@ movhi
+  62:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****             iarray[sineLUTindex>>3]=buffamp<<12;
+  51              		.loc 1 62 0
+  52 0016 40F20003 		movw	r3, #:lower16:sineLUTindex
+  53 001a C0F20003 		movt	r3, #:upper16:sineLUTindex
+  54 001e 1B88     		ldrh	r3, [r3, #0]
+  55 0020 1BB2     		sxth	r3, r3
+  56 0022 4FEAE303 		asr	r3, r3, #3
+  57 0026 9BB2     		uxth	r3, r3
+  58 0028 1AB2     		sxth	r2, r3
+  59 002a 40F20003 		movw	r3, #:lower16:buffamp
+  60 002e C0F20003 		movt	r3, #:upper16:buffamp
+  61 0032 1B88     		ldrh	r3, [r3, #0]
+  62 0034 1BB2     		sxth	r3, r3
+  63 0036 4FEA0333 		lsl	r3, r3, #12
+  64 003a 1946     		mov	r1, r3
+  65 003c 40F20003 		movw	r3, #:lower16:iarray
+  66 0040 C0F20003 		movt	r3, #:upper16:iarray
+  67 0044 43F82210 		str	r1, [r3, r2, lsl #2]
+  63:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****           /* `#END`  */
+  64:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c **** 
+  65:.\Generated_Source\PSoC5/ADC_SAR_I_INT.c ****     }
+  68              		.loc 1 65 0
+  69 0048 80BD     		pop	{r7, pc}
+  70              		.cfi_endproc
+  71              	.LFE0:
+  72              		.size	ADC_SAR_I_ISR, .-ADC_SAR_I_ISR
+  73 004a 00BF     		.text
+  74              	.Letext0:
+  75              		.section	.debug_loc,"",%progbits
+  76              	.Ldebug_loc0:
+  77              	.LLST0:
+  78 0000 00000000 		.4byte	.LFB0
+  79 0004 02000000 		.4byte	.LCFI0
+  80 0008 0100     		.2byte	0x1
+  81 000a 5D       		.byte	0x5d
+  82 000b 02000000 		.4byte	.LCFI0
+  83 000f 04000000 		.4byte	.LCFI1
+  84 0013 0200     		.2byte	0x2
+  85 0015 7D       		.byte	0x7d
+  86 0016 08       		.sleb128 8
+  87 0017 04000000 		.4byte	.LCFI1
+  88 001b 4A000000 		.4byte	.LFE0
+  89 001f 0200     		.2byte	0x2
+  90 0021 77       		.byte	0x77
+  91 0022 08       		.sleb128 8
+  92 0023 00000000 		.4byte	0x0
+  93 0027 00000000 		.4byte	0x0
+  94              		.file 2 ".\\Generated_Source\\PSoC5\\/cytypes.h"
+  95              		.section	.debug_info
+  96 0000 E6000000 		.4byte	0xe6
+  97 0004 0200     		.2byte	0x2
+  98 0006 00000000 		.4byte	.Ldebug_abbrev0
+  99 000a 04       		.byte	0x4
+ 100 000b 01       		.uleb128 0x1
+ 101 000c D8000000 		.4byte	.LASF17
+ 102 0010 01       		.byte	0x1
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 4
+
+
+ 103 0011 08010000 		.4byte	.LASF18
+ 104 0015 69000000 		.4byte	.LASF19
+ 105 0019 00000000 		.4byte	0x0
+ 106 001d 00000000 		.4byte	0x0
+ 107 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 108 0025 00000000 		.4byte	.Ldebug_line0
+ 109 0029 02       		.uleb128 0x2
+ 110 002a 01       		.byte	0x1
+ 111 002b 06       		.byte	0x6
+ 112 002c 3A010000 		.4byte	.LASF0
+ 113 0030 02       		.uleb128 0x2
+ 114 0031 01       		.byte	0x1
+ 115 0032 08       		.byte	0x8
+ 116 0033 21000000 		.4byte	.LASF1
+ 117 0037 02       		.uleb128 0x2
+ 118 0038 02       		.byte	0x2
+ 119 0039 05       		.byte	0x5
+ 120 003a F7000000 		.4byte	.LASF2
+ 121 003e 02       		.uleb128 0x2
+ 122 003f 02       		.byte	0x2
+ 123 0040 07       		.byte	0x7
+ 124 0041 4F000000 		.4byte	.LASF3
+ 125 0045 02       		.uleb128 0x2
+ 126 0046 04       		.byte	0x4
+ 127 0047 05       		.byte	0x5
+ 128 0048 31010000 		.4byte	.LASF4
+ 129 004c 02       		.uleb128 0x2
+ 130 004d 04       		.byte	0x4
+ 131 004e 07       		.byte	0x7
+ 132 004f 3D000000 		.4byte	.LASF5
+ 133 0053 02       		.uleb128 0x2
+ 134 0054 08       		.byte	0x8
+ 135 0055 05       		.byte	0x5
+ 136 0056 00000000 		.4byte	.LASF6
+ 137 005a 02       		.uleb128 0x2
+ 138 005b 08       		.byte	0x8
+ 139 005c 07       		.byte	0x7
+ 140 005d C1000000 		.4byte	.LASF7
+ 141 0061 03       		.uleb128 0x3
+ 142 0062 04       		.byte	0x4
+ 143 0063 05       		.byte	0x5
+ 144 0064 696E7400 		.ascii	"int\000"
+ 145 0068 02       		.uleb128 0x2
+ 146 0069 04       		.byte	0x4
+ 147 006a 07       		.byte	0x7
+ 148 006b B4000000 		.4byte	.LASF8
+ 149 006f 04       		.uleb128 0x4
+ 150 0070 AD000000 		.4byte	.LASF9
+ 151 0074 02       		.byte	0x2
+ 152 0075 4E       		.byte	0x4e
+ 153 0076 4C000000 		.4byte	0x4c
+ 154 007a 04       		.uleb128 0x4
+ 155 007b 37000000 		.4byte	.LASF10
+ 156 007f 02       		.byte	0x2
+ 157 0080 50       		.byte	0x50
+ 158 0081 37000000 		.4byte	0x37
+ 159 0085 02       		.uleb128 0x2
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 5
+
+
+ 160 0086 04       		.byte	0x4
+ 161 0087 04       		.byte	0x4
+ 162 0088 1B000000 		.4byte	.LASF11
+ 163 008c 02       		.uleb128 0x2
+ 164 008d 08       		.byte	0x8
+ 165 008e 04       		.byte	0x4
+ 166 008f 62000000 		.4byte	.LASF12
+ 167 0093 02       		.uleb128 0x2
+ 168 0094 01       		.byte	0x1
+ 169 0095 08       		.byte	0x8
+ 170 0096 E4000000 		.4byte	.LASF13
+ 171 009a 05       		.uleb128 0x5
+ 172 009b 01       		.byte	0x1
+ 173 009c E9000000 		.4byte	.LASF20
+ 174 00a0 01       		.byte	0x1
+ 175 00a1 36       		.byte	0x36
+ 176 00a2 01       		.byte	0x1
+ 177 00a3 00000000 		.4byte	.LFB0
+ 178 00a7 4A000000 		.4byte	.LFE0
+ 179 00ab 00000000 		.4byte	.LLST0
+ 180 00af 06       		.uleb128 0x6
+ 181 00b0 2F000000 		.4byte	.LASF14
+ 182 00b4 01       		.byte	0x1
+ 183 00b5 1B       		.byte	0x1b
+ 184 00b6 7A000000 		.4byte	0x7a
+ 185 00ba 01       		.byte	0x1
+ 186 00bb 01       		.byte	0x1
+ 187 00bc 06       		.uleb128 0x6
+ 188 00bd 0E000000 		.4byte	.LASF15
+ 189 00c1 01       		.byte	0x1
+ 190 00c2 1C       		.byte	0x1c
+ 191 00c3 7A000000 		.4byte	0x7a
+ 192 00c7 01       		.byte	0x1
+ 193 00c8 01       		.byte	0x1
+ 194 00c9 07       		.uleb128 0x7
+ 195 00ca 6F000000 		.4byte	0x6f
+ 196 00ce D9000000 		.4byte	0xd9
+ 197 00d2 08       		.uleb128 0x8
+ 198 00d3 D9000000 		.4byte	0xd9
+ 199 00d7 1F       		.byte	0x1f
+ 200 00d8 00       		.byte	0x0
+ 201 00d9 09       		.uleb128 0x9
+ 202 00da 04       		.byte	0x4
+ 203 00db 07       		.byte	0x7
+ 204 00dc 06       		.uleb128 0x6
+ 205 00dd 01010000 		.4byte	.LASF16
+ 206 00e1 01       		.byte	0x1
+ 207 00e2 1E       		.byte	0x1e
+ 208 00e3 C9000000 		.4byte	0xc9
+ 209 00e7 01       		.byte	0x1
+ 210 00e8 01       		.byte	0x1
+ 211 00e9 00       		.byte	0x0
+ 212              		.section	.debug_abbrev
+ 213 0000 01       		.uleb128 0x1
+ 214 0001 11       		.uleb128 0x11
+ 215 0002 01       		.byte	0x1
+ 216 0003 25       		.uleb128 0x25
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 6
+
+
+ 217 0004 0E       		.uleb128 0xe
+ 218 0005 13       		.uleb128 0x13
+ 219 0006 0B       		.uleb128 0xb
+ 220 0007 03       		.uleb128 0x3
+ 221 0008 0E       		.uleb128 0xe
+ 222 0009 1B       		.uleb128 0x1b
+ 223 000a 0E       		.uleb128 0xe
+ 224 000b 11       		.uleb128 0x11
+ 225 000c 01       		.uleb128 0x1
+ 226 000d 52       		.uleb128 0x52
+ 227 000e 01       		.uleb128 0x1
+ 228 000f 55       		.uleb128 0x55
+ 229 0010 06       		.uleb128 0x6
+ 230 0011 10       		.uleb128 0x10
+ 231 0012 06       		.uleb128 0x6
+ 232 0013 00       		.byte	0x0
+ 233 0014 00       		.byte	0x0
+ 234 0015 02       		.uleb128 0x2
+ 235 0016 24       		.uleb128 0x24
+ 236 0017 00       		.byte	0x0
+ 237 0018 0B       		.uleb128 0xb
+ 238 0019 0B       		.uleb128 0xb
+ 239 001a 3E       		.uleb128 0x3e
+ 240 001b 0B       		.uleb128 0xb
+ 241 001c 03       		.uleb128 0x3
+ 242 001d 0E       		.uleb128 0xe
+ 243 001e 00       		.byte	0x0
+ 244 001f 00       		.byte	0x0
+ 245 0020 03       		.uleb128 0x3
+ 246 0021 24       		.uleb128 0x24
+ 247 0022 00       		.byte	0x0
+ 248 0023 0B       		.uleb128 0xb
+ 249 0024 0B       		.uleb128 0xb
+ 250 0025 3E       		.uleb128 0x3e
+ 251 0026 0B       		.uleb128 0xb
+ 252 0027 03       		.uleb128 0x3
+ 253 0028 08       		.uleb128 0x8
+ 254 0029 00       		.byte	0x0
+ 255 002a 00       		.byte	0x0
+ 256 002b 04       		.uleb128 0x4
+ 257 002c 16       		.uleb128 0x16
+ 258 002d 00       		.byte	0x0
+ 259 002e 03       		.uleb128 0x3
+ 260 002f 0E       		.uleb128 0xe
+ 261 0030 3A       		.uleb128 0x3a
+ 262 0031 0B       		.uleb128 0xb
+ 263 0032 3B       		.uleb128 0x3b
+ 264 0033 0B       		.uleb128 0xb
+ 265 0034 49       		.uleb128 0x49
+ 266 0035 13       		.uleb128 0x13
+ 267 0036 00       		.byte	0x0
+ 268 0037 00       		.byte	0x0
+ 269 0038 05       		.uleb128 0x5
+ 270 0039 2E       		.uleb128 0x2e
+ 271 003a 00       		.byte	0x0
+ 272 003b 3F       		.uleb128 0x3f
+ 273 003c 0C       		.uleb128 0xc
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 7
+
+
+ 274 003d 03       		.uleb128 0x3
+ 275 003e 0E       		.uleb128 0xe
+ 276 003f 3A       		.uleb128 0x3a
+ 277 0040 0B       		.uleb128 0xb
+ 278 0041 3B       		.uleb128 0x3b
+ 279 0042 0B       		.uleb128 0xb
+ 280 0043 27       		.uleb128 0x27
+ 281 0044 0C       		.uleb128 0xc
+ 282 0045 11       		.uleb128 0x11
+ 283 0046 01       		.uleb128 0x1
+ 284 0047 12       		.uleb128 0x12
+ 285 0048 01       		.uleb128 0x1
+ 286 0049 40       		.uleb128 0x40
+ 287 004a 06       		.uleb128 0x6
+ 288 004b 00       		.byte	0x0
+ 289 004c 00       		.byte	0x0
+ 290 004d 06       		.uleb128 0x6
+ 291 004e 34       		.uleb128 0x34
+ 292 004f 00       		.byte	0x0
+ 293 0050 03       		.uleb128 0x3
+ 294 0051 0E       		.uleb128 0xe
+ 295 0052 3A       		.uleb128 0x3a
+ 296 0053 0B       		.uleb128 0xb
+ 297 0054 3B       		.uleb128 0x3b
+ 298 0055 0B       		.uleb128 0xb
+ 299 0056 49       		.uleb128 0x49
+ 300 0057 13       		.uleb128 0x13
+ 301 0058 3F       		.uleb128 0x3f
+ 302 0059 0C       		.uleb128 0xc
+ 303 005a 3C       		.uleb128 0x3c
+ 304 005b 0C       		.uleb128 0xc
+ 305 005c 00       		.byte	0x0
+ 306 005d 00       		.byte	0x0
+ 307 005e 07       		.uleb128 0x7
+ 308 005f 01       		.uleb128 0x1
+ 309 0060 01       		.byte	0x1
+ 310 0061 49       		.uleb128 0x49
+ 311 0062 13       		.uleb128 0x13
+ 312 0063 01       		.uleb128 0x1
+ 313 0064 13       		.uleb128 0x13
+ 314 0065 00       		.byte	0x0
+ 315 0066 00       		.byte	0x0
+ 316 0067 08       		.uleb128 0x8
+ 317 0068 21       		.uleb128 0x21
+ 318 0069 00       		.byte	0x0
+ 319 006a 49       		.uleb128 0x49
+ 320 006b 13       		.uleb128 0x13
+ 321 006c 2F       		.uleb128 0x2f
+ 322 006d 0B       		.uleb128 0xb
+ 323 006e 00       		.byte	0x0
+ 324 006f 00       		.byte	0x0
+ 325 0070 09       		.uleb128 0x9
+ 326 0071 24       		.uleb128 0x24
+ 327 0072 00       		.byte	0x0
+ 328 0073 0B       		.uleb128 0xb
+ 329 0074 0B       		.uleb128 0xb
+ 330 0075 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 8
+
+
+ 331 0076 0B       		.uleb128 0xb
+ 332 0077 00       		.byte	0x0
+ 333 0078 00       		.byte	0x0
+ 334 0079 00       		.byte	0x0
+ 335              		.section	.debug_pubnames,"",%progbits
+ 336 0000 20000000 		.4byte	0x20
+ 337 0004 0200     		.2byte	0x2
+ 338 0006 00000000 		.4byte	.Ldebug_info0
+ 339 000a EA000000 		.4byte	0xea
+ 340 000e 9A000000 		.4byte	0x9a
+ 341 0012 4144435F 		.ascii	"ADC_SAR_I_ISR\000"
+ 341      5341525F 
+ 341      495F4953 
+ 341      5200
+ 342 0020 00000000 		.4byte	0x0
+ 343              		.section	.debug_aranges,"",%progbits
+ 344 0000 1C000000 		.4byte	0x1c
+ 345 0004 0200     		.2byte	0x2
+ 346 0006 00000000 		.4byte	.Ldebug_info0
+ 347 000a 04       		.byte	0x4
+ 348 000b 00       		.byte	0x0
+ 349 000c 0000     		.2byte	0x0
+ 350 000e 0000     		.2byte	0x0
+ 351 0010 00000000 		.4byte	.LFB0
+ 352 0014 4A000000 		.4byte	.LFE0-.LFB0
+ 353 0018 00000000 		.4byte	0x0
+ 354 001c 00000000 		.4byte	0x0
+ 355              		.section	.debug_ranges,"",%progbits
+ 356              	.Ldebug_ranges0:
+ 357 0000 00000000 		.4byte	.Ltext0
+ 358 0004 00000000 		.4byte	.Letext0
+ 359 0008 00000000 		.4byte	.LFB0
+ 360 000c 4A000000 		.4byte	.LFE0
+ 361 0010 00000000 		.4byte	0x0
+ 362 0014 00000000 		.4byte	0x0
+ 363              		.section	.debug_str,"MS",%progbits,1
+ 364              	.LASF6:
+ 365 0000 6C6F6E67 		.ascii	"long long int\000"
+ 365      206C6F6E 
+ 365      6720696E 
+ 365      7400
+ 366              	.LASF15:
+ 367 000e 73696E65 		.ascii	"sineLUTindex\000"
+ 367      4C555469 
+ 367      6E646578 
+ 367      00
+ 368              	.LASF11:
+ 369 001b 666C6F61 		.ascii	"float\000"
+ 369      7400
+ 370              	.LASF1:
+ 371 0021 756E7369 		.ascii	"unsigned char\000"
+ 371      676E6564 
+ 371      20636861 
+ 371      7200
+ 372              	.LASF14:
+ 373 002f 62756666 		.ascii	"buffamp\000"
+ 373      616D7000 
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 9
+
+
+ 374              	.LASF10:
+ 375 0037 696E7431 		.ascii	"int16\000"
+ 375      3600
+ 376              	.LASF5:
+ 377 003d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 377      20756E73 
+ 377      69676E65 
+ 377      6420696E 
+ 377      7400
+ 378              	.LASF3:
+ 379 004f 73686F72 		.ascii	"short unsigned int\000"
+ 379      7420756E 
+ 379      7369676E 
+ 379      65642069 
+ 379      6E7400
+ 380              	.LASF12:
+ 381 0062 646F7562 		.ascii	"double\000"
+ 381      6C6500
+ 382              	.LASF19:
+ 383 0069 433A5C55 		.ascii	"C:\\Users\\hoangp\\Documents\\GitHub\\EE542\\firmwa"
+ 383      73657273 
+ 383      5C686F61 
+ 383      6E67705C 
+ 383      446F6375 
+ 384 0096 72655C69 		.ascii	"re\\invert\\invert.cydsn\000"
+ 384      6E766572 
+ 384      745C696E 
+ 384      76657274 
+ 384      2E637964 
+ 385              	.LASF9:
+ 386 00ad 75696E74 		.ascii	"uint32\000"
+ 386      333200
+ 387              	.LASF8:
+ 388 00b4 756E7369 		.ascii	"unsigned int\000"
+ 388      676E6564 
+ 388      20696E74 
+ 388      00
+ 389              	.LASF7:
+ 390 00c1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 390      206C6F6E 
+ 390      6720756E 
+ 390      7369676E 
+ 390      65642069 
+ 391              	.LASF17:
+ 392 00d8 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 392      4320342E 
+ 392      342E3100 
+ 393              	.LASF13:
+ 394 00e4 63686172 		.ascii	"char\000"
+ 394      00
+ 395              	.LASF20:
+ 396 00e9 4144435F 		.ascii	"ADC_SAR_I_ISR\000"
+ 396      5341525F 
+ 396      495F4953 
+ 396      5200
+ 397              	.LASF2:
+ 398 00f7 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\hoangp\AppData\Local\Temp\ccKE8B1Z.s 			page 10
+
+
+ 398      7420696E 
+ 398      7400
+ 399              	.LASF16:
+ 400 0101 69617272 		.ascii	"iarray\000"
+ 400      617900
+ 401              	.LASF18:
+ 402 0108 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ADC_SAR_I_INT.c\000"
+ 402      6E657261 
+ 402      7465645F 
+ 402      536F7572 
+ 402      63655C50 
+ 403              	.LASF4:
+ 404 0131 6C6F6E67 		.ascii	"long int\000"
+ 404      20696E74 
+ 404      00
+ 405              	.LASF0:
+ 406 013a 7369676E 		.ascii	"signed char\000"
+ 406      65642063 
+ 406      68617200 
+ 407              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

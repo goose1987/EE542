@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="invert\invert\Generated_Source\PSoC5\isr_spark_drq\isr_spark_drq.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I_INT.c">
 <ExpandedNodeIds>
 <v>invert</v>
 <v>invert\invert</v>
@@ -47,6 +47,21 @@
 <v>invert\invert\Generated_Source\PSoC5\ADC_DelSig_V_theACLK</v>
 <v>invert\invert\Generated_Source\PSoC5\ADC_DelSig_V_theACLK\ADC_DelSig_V_theACLK.c</v>
 <v>invert\invert\Generated_Source\PSoC5\ADC_DelSig_V_theACLK\ADC_DelSig_V_theACLK.h</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I.h</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I_INT.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I_PM.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_Bypass</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_Bypass\ADC_SAR_I_Bypass.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_Bypass\ADC_SAR_I_Bypass.h</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_Bypass\ADC_SAR_I_Bypass_aliases.h</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_IRQ</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_IRQ\ADC_SAR_I_IRQ.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_IRQ\ADC_SAR_I_IRQ.h</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_theACLK</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_theACLK\ADC_SAR_I_theACLK.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_theACLK\ADC_SAR_I_theACLK.h</v>
 <v>invert\invert\Generated_Source\PSoC5\B_HS</v>
 <v>invert\invert\Generated_Source\PSoC5\B_HS\B_HS.c</v>
 <v>invert\invert\Generated_Source\PSoC5\B_HS\B_HS.h</v>
@@ -112,6 +127,10 @@
 <v>invert\invert\Generated_Source\PSoC5\DMA_OUT_A</v>
 <v>invert\invert\Generated_Source\PSoC5\DMA_OUT_A\DMA_OUT_A_dma.c</v>
 <v>invert\invert\Generated_Source\PSoC5\DMA_OUT_A\DMA_OUT_A_dma.h</v>
+<v>invert\invert\Generated_Source\PSoC5\I_SENSE</v>
+<v>invert\invert\Generated_Source\PSoC5\I_SENSE\I_SENSE.c</v>
+<v>invert\invert\Generated_Source\PSoC5\I_SENSE\I_SENSE.h</v>
+<v>invert\invert\Generated_Source\PSoC5\I_SENSE\I_SENSE_aliases.h</v>
 <v>invert\invert\Generated_Source\PSoC5\isr_DFB</v>
 <v>invert\invert\Generated_Source\PSoC5\isr_DFB\isr_DFB.c</v>
 <v>invert\invert\Generated_Source\PSoC5\isr_DFB\isr_DFB.h</v>
@@ -211,12 +230,12 @@
 <v>invert\invert\Generated_Source\PSoC5\ADC_DelSig_V_theACLK</v>
 <v>invert\invert\Generated_Source\PSoC5\ADC_DelSig_V_theACLK\ADC_DelSig_V_theACLK.c</v>
 <v>invert\invert\Generated_Source\PSoC5\ADC_DelSig_V_theACLK\ADC_DelSig_V_theACLK.h</v>
-<v>invert\invert\Generated_Source\PSoC5\B_HS</v>
-<v>invert\invert\Generated_Source\PSoC5\B_HS\B_HS.c</v>
-<v>invert\invert\Generated_Source\PSoC5\B_HS\B_HS.h</v>
-<v>invert\invert\Generated_Source\PSoC5\B_HS\B_HS_aliases.h</v>
-<v>invert\invert\Generated_Source\PSoC5\B_LS</v>
-<v>invert\invert\Generated_Source\PSoC5\B_LS\B_LS.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I.h</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I_INT.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I\ADC_SAR_I_PM.c</v>
+<v>invert\invert\Generated_Source\PSoC5\ADC_SAR_I_Bypass</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -249,6 +268,12 @@
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_DelSig_V_INT.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_DelSig_V_PM.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_DelSig_V_theACLK.lst</v>
+<v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_SAR_I.lst</v>
+<v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_SAR_I_Bypass.lst</v>
+<v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_SAR_I_INT.lst</v>
+<v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_SAR_I_IRQ.lst</v>
+<v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_SAR_I_PM.lst</v>
+<v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\ADC_SAR_I_theACLK.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\B_HS.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\B_LS.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\BUCK_HS.lst</v>
@@ -274,6 +299,7 @@
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\DFB_1_RAM_Data.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\DMA_IN_A_dma.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\DMA_OUT_A_dma.lst</v>
+<v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\I_SENSE.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\isr_DFB.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\isr_spark_drq.lst</v>
 <v>invert\invert\CortexM3\ARM_GCC_441\Debug\Listing Files\LCD_Char_1.lst</v>
@@ -320,6 +346,7 @@
 <v>invert\invert\CY8C55 Family Datasheet</v>
 <v>invert\invert\System Reference Guide v3_40</v>
 <v>invert\invert\ADC_DelSig_v2_30</v>
+<v>invert\invert\ADC_SAR_v2_0</v>
 <v>invert\invert\and_v1_0</v>
 <v>invert\invert\CharLCD_v1_90</v>
 <v>invert\invert\Counter_v2_40</v>
@@ -344,6 +371,7 @@
 <v>invert\invert\CY8C55 Family Datasheet</v>
 <v>invert\invert\System Reference Guide v3_40</v>
 <v>invert\invert\ADC_DelSig_v2_30</v>
+<v>invert\invert\ADC_SAR_v2_0</v>
 <v>invert\invert\and_v1_0</v>
 <v>invert\invert\CharLCD_v1_90</v>
 <v>invert\invert\Counter_v2_40</v>
@@ -375,6 +403,7 @@
 <name v=".\invert.cydsn\Generated_Source\PSoC5\ADC_DelSig_V_INT.c" />
 <name v=".\invert.cydsn\main.c" />
 <name v=".\invert.cydsn\Generated_Source\PSoC5\isr_DFB.c" />
+<name v=".\invert.cydsn\Generated_Source\PSoC5\ADC_SAR_I_INT.c" />
 </OpenDocs>
 <config v="" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
