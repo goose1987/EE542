@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	#fullpage
+		#section0.section.active
+			h1 &laquo&microinverter&raquo
+			iframe(width='800',height='600',frameborder='0',seamless='seamless',scrolling='no',src='https://plot.ly/~hoang.pham/12.embed?width=800&height=600')
+		#section1.section
+			.slide
+				h1 Weather data
+			.slide.active
+				h1 forecast
+			.slide
+				h1 humidity
+			.slide
+				h1 precipitation
+		#section2.section
+			h1 location
+		#section3.section
+			h1 the end
